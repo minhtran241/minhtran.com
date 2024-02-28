@@ -1,12 +1,13 @@
 import styles from './singlePost.module.css';
 import { Suspense } from 'react';
 import { Loader2 } from 'lucide-react';
-import Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 import ShareButtons from '@/components/shareButtons/shareButtons';
 import PostMetadata from '@/components/postMetadata/postMetadata';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import rehypeRaw from 'rehype-raw';
+import gfm from 'remark-gfm';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -102,41 +103,38 @@ const SinglePostContent = ({ post }) => {
                                 {post.description}
                             </div>
                             <div>
-                                <div className="rich-content mb-8">
-                                    {/* <Markdown>{post.content}</Markdown> */}
-                                    <Markdown
-                                        rehypePlugins={[rehypeRaw]}
-                                        className="language-go"
-                                        children={post.content}
+                                <div className="mb-8 rich-content prose lg:prose-xl">
+                                    <ReactMarkdown
+                                        children={project.content}
                                         components={{
-                                            code(props) {
-                                                const {
-                                                    children,
-                                                    className,
-                                                    node,
-                                                    ...rest
-                                                } = props;
+                                            code({
+                                                node,
+                                                inline,
+                                                className,
+                                                children,
+                                                ...props
+                                            }) {
                                                 const match =
                                                     /language-(\w+)/.exec(
                                                         className || ''
                                                     );
-                                                return match ? (
+                                                return !inline && match ? (
                                                     <SyntaxHighlighter
-                                                        {...rest}
-                                                        PreTag="div"
                                                         children={String(
                                                             children
                                                         ).replace(/\n$/, '')}
-                                                        language={match[1]}
                                                         style={nightOwl}
+                                                        language={match[1]}
+                                                        PreTag="div"
+                                                        {...props}
                                                     />
                                                 ) : (
-                                                    <code
-                                                        {...rest}
+                                                    <span
                                                         className={className}
+                                                        {...props}
                                                     >
                                                         {children}
-                                                    </code>
+                                                    </span>
                                                 );
                                             },
                                         }}

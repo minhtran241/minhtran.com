@@ -53,16 +53,16 @@ const ProjectPage = async () => {
                         // onClick={() => incrementViewCount(project.slug)}
                     >
                         <Image
-                            className="rounded-md"
+                            className="rounded-md max-w-full max-h-[200px] object-cover w-full"
                             src={project.thumbnail}
                             alt={project.title}
                             width={0}
                             height={0}
                             sizes="100vw"
-                            style={{
-                                width: 'auto',
-                                height: 'auto',
-                            }}
+                            // style={{
+                            //     width: 'auto',
+                            //     height: 'auto',
+                            // }}
                         />
                     </Link>
 

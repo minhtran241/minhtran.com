@@ -7,14 +7,15 @@ const Navbar = async () => {
     return (
         <div className="h-[80px] flex justify-between items-center px-12 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white">
             <Link href="/">
-                <Image
+                {/* <Image
                     src="/logo.svg"
                     alt="logo"
                     width={160}
                     height={80}
                     // invert in light mode and not in dark mode
                     className="invert"
-                />
+                /> */}
+                <p className="text-2xl font-bold">minhtran.com</p>
             </Link>
             <div>
                 <Links />

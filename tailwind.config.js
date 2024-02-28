@@ -1,4 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
+const disabledCss = {
+	'code::before': false,
+	'code::after': false,
+	'blockquote p:first-of-type::before': false,
+	'blockquote p:last-of-type::after': false,
+	pre: false,
+	code: false,
+	'pre code': false,
+	'code::before': false,
+	'code::after': false,
+}
+
 module.exports = {
     darkMode: ['class'],
     content: [
@@ -71,7 +84,20 @@ module.exports = {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
             },
+			typography: {
+				DEFAULT: { css: disabledCss },
+				sm: { css: disabledCss },
+				lg: { css: disabledCss },
+				xl: { css: disabledCss },
+				'2xl': { css: disabledCss },
+				base: { css: disabledCss },
+			},
         },
     },
-    plugins: [require('tailwindcss-animate')],
+    plugins: [
+		require("daisyui"),
+		require("tailwind-scrollbar")({ nocompatible: true }),
+        require('tailwindcss-animate'),
+        require('@tailwindcss/typography'),
+    ],
 };

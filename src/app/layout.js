@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
                     <div className="sticky top-0 z-50">
                         <Navbar />
                     </div>
-                    <div className="container">
+                    <div className="container dark:text-white">
                         {children}
 
                         <Toaster />

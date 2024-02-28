@@ -1,8 +1,8 @@
-# Building Scalable Microservices with Go
+## Building Scalable Microservices with Go
 
 Welcome to my latest project showcase! In this project, I'll walk you through the journey of building scalable microservices using Go. Let's get started!
 
-## Overview
+### Overview
 
 The microservices architecture consists of several essential components:
 
@@ -12,7 +12,7 @@ The microservices architecture consists of several essential components:
 - **Mail Service**: Facilitates seamless email communication.
 - **Listener Service AMQP**: Listens for and processes requests pushed to RabbitMQ.
 
-## Tools and Technologies
+### Tools and Technologies
 
 To develop and manage the microservices ecosystem, I utilized various tools and technologies:
 
@@ -24,7 +24,7 @@ To develop and manage the microservices ecosystem, I utilized various tools and 
 - **[RabbitMQ](https://www.rabbitmq.com/)**: To facilitate seamless communication between services.
 - **[Go-Chi](https://github.com/go-chi/chi)**: A lightweight, idiomatic, and composable router for building Go HTTP services.
 
-## Deployment
+### Deployment
 
 The deployment process is streamlined with Docker Swarm:
 
@@ -32,14 +32,14 @@ The deployment process is streamlined with Docker Swarm:
 - **Swarm Deployment**: Services are deployed using Docker Swarm, ensuring scalability and resilience.
 - **Caddy Proxy**: Caddy is deployed as a proxy to frontend and broker services, providing an additional layer of security.
 
-## Testing and Development
+### Testing and Development
 
 For testing and development purposes, I've implemented a robust environment:
 
 - **Frontend Test**: A dedicated test page allows for comprehensive testing of the services.
 - **Local Development**: Detailed instructions for local development using Docker Compose are provided, ensuring a smooth development experience.
 
-## Conclusion
+### Conclusion
 
 Building scalable microservices with Go has been an exhilarating journey. With a focus on modularity, scalability, and resilience, we've created a robust ecosystem capable of handling diverse workloads effectively.
 

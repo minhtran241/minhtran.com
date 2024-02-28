@@ -34,7 +34,7 @@ const Footer = () => {
             <div className="flex justify-between flex-col md:flex-row items-center md:items-start md:gap-[5rem] sm:gap-[5rem] text-left">
                 {/* logo side */}
                 <div className="flex flex-col w-1/2 md:p-0 py-4 gap-5">
-                    <Image
+                    {/* <Image
                         src="/logo.svg"
                         alt="logo"
                         width={150}
@@ -44,7 +44,8 @@ const Footer = () => {
                     <p className="text-[15px] font-medium">
                         A modern web application template that helps you build
                         stunning web applications and sites.
-                    </p>
+                    </p> */}
+                    <p className="text-2xl font-bold">minhtran.com</p>
                     {/* socials */}
                     <div className="flex gap-5 text-[14px] justify-center md:justify-start">
                         {iconsTab.map(({ icon }, index) => {

@@ -1,13 +1,14 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import rehypeRaw from 'rehype-raw';
-import Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 import { Github, Radio, Loader2 } from 'lucide-react';
 import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
@@ -47,9 +48,9 @@ const SingleProjectContent = async ({ project }) => {
                     <Image
                         src={project.thumbnail}
                         alt={project.title}
-                        width={1000}
-                        height={1000}
-                        className="rounded-lg"
+                        width={600}
+                        height={300}
+                        className="rounded-lg border border-[#0033A0] dark:border-white max-w-[1000px] max-h-[500px] w-full h-full"
                     />
                 </div>
                 {/* Title */}
@@ -89,7 +90,7 @@ const SingleProjectContent = async ({ project }) => {
             </div>
             <div className="container mx-auto px-4 !pt-8">
                 <div className="-mx-4 flex flex-wrap justify-center">
-                    <div className="w-full px-4 lg:w-8/12">
+                    <div className="w-full px-4 lg:w-9/12">
                         <div>
                             <div className="flex flex-wrap items-center justify-center ">
                                 {/* tech_stack url badges */}
@@ -114,43 +115,9 @@ const SingleProjectContent = async ({ project }) => {
                                 {project.description}
                             </div>
                             <div>
-                                <div className="rich-content mb-8">
-                                    {/* <Markdown>{project.content}</Markdown> */}
-                                    <Markdown
-                                        rehypePlugins={[rehypeRaw]}
-                                        children={project.content}
-                                        components={{
-                                            code(props) {
-                                                const {
-                                                    children,
-                                                    className,
-                                                    node,
-                                                    ...rest
-                                                } = props;
-                                                const match =
-                                                    /language-(\w+)/.exec(
-                                                        className || ''
-                                                    );
-                                                return match ? (
-                                                    <SyntaxHighlighter
-                                                        {...rest}
-                                                        PreTag="div"
-                                                        children={String(
-                                                            children
-                                                        ).replace(/\n$/, '')}
-                                                        language={match[1]}
-                                                        style={nightOwl}
-                                                    />
-                                                ) : (
-                                                    <code
-                                                        {...rest}
-                                                        className={className}
-                                                    >
-                                                        {children}
-                                                    </code>
-                                                );
-                                            },
-                                        }}
+                                <div className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] prose-hr:text-gray marker:text-[#0033A0] items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm">
+                                    <MarkdownRender
+                                        mdString={project.content}
                                     />
                                 </div>
                             </div>

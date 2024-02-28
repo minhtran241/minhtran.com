@@ -4,73 +4,85 @@
 
 Welcome to the SwiftUI tutorial! In this guide, we'll dive into the world of SwiftUI, Apple's modern UI framework, as we embark on the journey to build a comprehensive application—GVCourse.
 
-# Overview
+## Overview
 
-## What is SwiftUI?
+### What is SwiftUI?
 
 SwiftUI is a declarative UI framework built with the Swift programming language. While SwiftUI is a relatively new framework, it is built on top of Swift, which has been around for a while. If you are new to Swift, consider going through the [official Swift tutorials](https://developer.apple.com/tutorials/swiftui) to get familiar with the basics.
 
-## Why SwiftUI?
+### Why SwiftUI?
 
 SwiftUI is a powerful framework that allows developers to build sophisticated and visually appealing user interfaces with significantly less boilerplate code. SwiftUI's declarative syntax empowers developers to focus on the *what* rather than the *how* of UI creation, fostering a more user-friendly and efficient approach to UI development. SwiftUI also offers a wide range of features such as data binding, seamless integration, and cross-platform capabilities that make it a great choice for building modern applications. From my experience with other UI frameworks, I find SwiftUI to be quite intuitive and easy to use. I hope that you will find it to be the same.
 
-## GVCourse App
+### GVCourse App
 
 GVCourse serves as a centralized hub for exploring all the courses and information offered by Grand Valley State University. The motivation behind developing the GVCourse application stems from the observation that, at Grand Valley State University school of Computing, the dissemination of information about new courses often relies on social platforms like Discord or email. While these methods are effective, occasional oversight occurs as Discord messages may go unnoticed, and a barrage of emails can lead to missed announcements. In response, GVCourse offers a streamlined solution, providing users with a centralized platform to access information about both new and existing courses.
 
-### Course Catalog with Search and Filter
+#### Course Catalog with Search and Filter
 
 The course catalog is a list of courses offered by Grand Valley State University that users can search and filter. When users type in the search bar, the list is updated in real-time to display courses that match the search query. User can explore details about a course by tapping on the card.
 
-### Course News and Announcements
+#### Course News and Announcements
 
 Every information relating to course (new courses, course changes, etc.) is displayed in the course news and announcements section. The course news and announcements section is updated in real-time, ensuring that users are always up to date with the latest information. Users can read the full article by tapping on the card. Here is also the place to present posters for new courses.
 
-### Authentication
+#### Authentication
 
 The authentication feature allows users to create accounts and log in using third-party authentication services like Google. Users can also log out of their accounts.
 
-## GVCourse App Screenshots
+### GVCourse App Screenshots
 
-### Authentication
+#### Authentication
 
+<!-- Sign In | Sign Up
+--- | ---
+![Sign In](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png) | ![Sign Up](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png) -->
+
+<p align="center" style="display: flex; justify-content: center;">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png" alt="Courses List" width="350" height="650">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png" alt="Course Details" width="350" height="650">
+</p>
 
-### Course News and Announcements
+#### Course News and Announcements
 
+<p align="center" style="display: flex; justify-content: center;">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png" alt="Courses List" width="350" height="650">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png" alt="Course Details" width="350" height="650">
+</p>
 
-### Course Catalog
+#### Course Catalog
 
+<p align="center" style="display: flex; justify-content: center;">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png" alt="Courses List" width="350" height="650">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png" alt="Course Details" width="350" height="650">
+  </p>
 
-### Settings
+#### Settings
 
 <!-- ![Settings](https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png) -->
 <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png" alt="Settings" width="350" height="650">
 </p>
 
-**Demo Video:**
+### GVCourse App Demo Video
 
-<https://github.com/minhtran241/gvcourse/assets/98200886/21a407cf-9d93-47dd-b627-b46187c47ac8>
+<p align="center">
+<a href='https://github.com/minhtran241/gvcourse/assets/98200886/21a407cf-9d93-47dd-b627-b46187c47ac8' target='_blank'><img src='https://i9.ytimg.com/vi/PlNbIZ-Zggo/mq1.jpg?sqp=CMz9964G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLCqU_kCwQHVpkpVxSaOaVEHCnt7RA' width='350' alt='GVCourse Demo' /></a>
+</p>
 
-## Why GVCourse is a Great Example of a SwiftUI App?
+### Why GVCourse is a Great Example of a SwiftUI App?
 
 GVCourse utilizes many of SwiftUI's features to create a seamless user experience. For example, the course catalog is a list of courses that users can search and filter. SwiftUI's data binding feature allows us to update the list in real-time as users type in the search bar. SwiftUI also offers a wide range of UI components that we can use to build the GVCourse app. For example, we can use the `List` component to display the course catalog.
 
 Throughout the tutorial, we'll leverage SwiftUI's powerful features such as declarative UI, data binding, and seamless integration to bring the GVCourse app to life. Screenshots and code snippets will be seamlessly integrated to enhance your understanding of the app's functionality, making this tutorial an immersive learning experience.
 
-# Getting Started
+## Getting Started
 
 Before we begin building our GVCourse app, let's ensure your development environment is set up correctly.
 
-## Software Requirements
+### Software Requirements
 
-### macOS
+#### macOS
 
 SwiftUI requires macOS 10.15 Catalina or later. To check your macOS version, click the Apple icon in the top left corner of your screen and select **About This Mac**.
 
@@ -78,18 +90,18 @@ SwiftUI requires macOS 10.15 Catalina or later. To check your macOS version, cli
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/catalina.png" alt="Catalina" width="200" height="200">
 </p>
 
-### Xcode and Simulator
+#### Xcode and Simulator
 
 Install the latest version of Xcode from the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12).
 
 Simulator is a tool that allows you to run your app on a virtual device. To open Simulator, open Xcode and select **Xcode** > **Open Developer Tool** > **Simulator**.
 
-<p align="center" style="display: flex; justify-content: space-between;">
+<p align="center" style="display: flex; justify-content: center;">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png" alt="Xcode" width="200" height="200">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png" alt="Simulator" width="200" height="200">
 </p>
 
-### SF Symbols
+#### SF Symbols
 
 SF Symbols is a set of over 3,100 symbols that you can use in your app. To install SF Symbols, open Xcode and select **File** > **Swift Packages** > **Add Package Dependency**. In the search bar, type *"SF Symbols"* and click **Next**. Select the latest version and click **Next**. Finally, click **Finish**.
 
@@ -103,19 +115,19 @@ In this tutorial, we will use SF Symbols to display icons in our app. For exampl
 Image(systemName: "person.circle")
 ```
 
-# Step-by-Step Instructions
+## Step-by-Step Instructions
 
 Now that your environment is set up, let's take a look at SwiftUI's basic concepts that I found essential in learning SwiftUI. The following sections will guide you through the process with code snippets, explanations, and visual aids. We will also use these concepts to build the GVCourse app. Let's get started!
 
-## Main components
+### Main components
 
 There are three main components in SwiftUI:  **Views**, **Modifiers** and **Data flow**. Let's explore each component in more detail.
 
-### Views
+#### Views
 
 Views layout in SwiftUI is based on a tree of view components. Each view component is responsible for displaying a part of the UI.
 
-#### View protocol
+##### View protocol
 
 Views are the building blocks of your app's UI. In SwiftUI, a view is a struct that conforms to the View protocol. For example, the following code snippet defines a view that displays a text:
 
@@ -130,7 +142,7 @@ struct CourseRowView: View {
 }
 ```
 
-#### HSack, VStack and ZStack
+##### HSack, VStack and ZStack
 
 One of the most common concepts in SwiftUI is HStack, VStack and ZStack. So let's explore them in more detail.
 
@@ -201,7 +213,7 @@ HStack {
 }
 ```
 
-### Modifiers
+#### Modifiers
 
 In SwiftUI, we can use modifiers to style the views. For example, we can use *foregroundStyle* to change the text color:
 
@@ -219,7 +231,7 @@ In order to know what modifiers are available for a view, we can use Xcode's cod
 
 ![Styling in SwiftUI](https://github.com/minhtran241/gvcourse/raw/main/screenshots/styling.png)
 
-### Data flow
+#### Data flow
 
 The data flow in SwiftUI is unidirectional, which means the data flows from the parent view to the child view. The parent view is responsible for passing the data to the child view. For example, the following code snippet defines a view tree with a root view and two child views:
 
@@ -245,7 +257,7 @@ We can use state to store the state of a view. The concept of state in SwiftUI i
 @State var name: String = ""
 ```
 
-#### Property wrappers
+##### Property wrappers
 
 In SwiftUI, we can use property wrappers to store the state of a view. There are many property wrappers available in SwiftUI, in this tutorial, we will use *@State*, *@Binding*, *@EnvironmentObject* and *@Published* and they are also the most essential property wrappers in SwiftUI. Let's explore when to use each property wrapper:
 
@@ -277,19 +289,19 @@ Following the undirectional data flow, SwiftUI can maintain clear and consistent
 
 That's it for all the basic concepts in SwiftUI that we will use in this tutorial to build the GVCourse app. If you want to learn more about SwiftUI, you can check out the [official SwiftUI documentation](https://developer.apple.com/documentation/swiftui). Apple also provides a [great tutorial](https://developer.apple.com/tutorials/swiftui) to get started with SwiftUI. Now let's start building the GVCourse app!
 
-# Setting Up the Project
+## Setting Up the Project
 
 - Open Xcode and create a new SwiftUI project named "GVCourse", please make sure to select "SwiftUI" as the user interface and "SwiftUI App" as the life cycle.
 
 - You can run the app by clicking the play button in the top left corner of Xcode's toolbar. If everything is set up correctly, you should see a blank screen with the text "Hello, world!".
 
-# Building the Views
+## Building the Views
 
 The views are responsible for displaying the app's content and handling user interactions. In this section, we will explore how to build the views for GVCourse. We will start with the Course component, which is responsible for displaying the course catalog.
 
-## Create views
+### Create views
 
-### Create view for a single object showing in a list
+#### Create view for a single object showing in a list
 
 Create a new SwiftUI file named [CourseRowView.swift](https://github.com/minhtran241/gvcourses/blob/main/GVCourses/Views/Courses/CourseRowView.swift) and add the following code, which defines the View for a single course row, we will use struct to define the view in SwiftUI because struct is immutable and it is easy to maintain the state of the view.
 
@@ -322,7 +334,7 @@ As you can see in the code snippet above, we use HStack to arrange the course na
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_row_view.png" alt="CourseRowView" width="450" height="100">
 </p>
 
-### Create view for a list of objects
+#### Create view for a list of objects
 
 Create a new SwiftUI file named [CourseListView.swift](https://github.com/minhtran241/gvcourses/blob/main/GVCourses/Views/Courses/CourseListView.swift) and add the following code, which defines the View for the course list.
 
@@ -341,7 +353,7 @@ struct CoursesListView: View {
 }
 ```
 
-### Create view for a single object showing in a detail view
+#### Create view for a single object showing in a detail view
 
 Create a new SwiftUI file named "CourseDetailsView" and add the following code. This view will display the properties of a course. We will use ScrollView to make the view scrollable.
 
@@ -412,7 +424,7 @@ Here is the result:
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details_view.png" alt="CourseDetailsView" width="450" height="380">
 </p>
 
-### Custom view components (subviews)
+#### Custom view components (subviews)
 
 You may notice that we use a custom view called CustomTextBox in the code snippet above. Yes, we can create our own custom view in SwiftUI, all the custom views are defined in the [Custom](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Views/Custom) folder. Let's create a new SwiftUI file named [CustomTextBox.swift](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Views/Custom/CustomTextBox) and add the following code:
 
@@ -456,7 +468,7 @@ With just a few lines of code, we have created a beautiful custom view. Here is 
 
 That's it, we have finished building the views for Course component. All the code for views is located in the [Views](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Views) folder. Now, let's explore how to build the model for the Course component.
 
-# Building the Models
+## Building the Models
 
 In this app, the each model contains data object type of specific component. For example, the Course model contains data object type of Course component. In this section, we will explore how to build the models for GVCourse. We will start with the Course model. First, let's create a Models folder and a new Swift file named [Course.swift](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Models/Course.swift) inside the Models folder. Our Course model will have the following properties:
 
@@ -511,11 +523,11 @@ You may notice that we use Identifiable protocol in the code snippet above. Iden
 
 Basically, we define a Course struct with all the properties we need, and we define two initializers for the Course struct, one is the default initializer and the other one is the custom initializer. You can apply the same approach to build other models. All the code for models is located in the [Models](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Models)
 
-# Interacting with Database
+## Interacting with Database
 
 In this section, we will explore how to interact with the database. We will use Firebase Firestore as the database for GVCourse. If you are not familiar with Firebase Firestore, you can check out the [official documentation](https://firebase.google.com/docs/firestore) to learn more about it. In SwiftUI, the way to connect with Firebase Firestore is the same as using normal Swift, so you can follow the [official documentation](https://firebase.google.com/docs/firestore/quickstart) to set up Firebase Firestore.
 
-## Implementing stores
+### Implementing stores
 
 The [Stores](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Stores) folder contains *ObservableObject* that can also be used globally as an *EnvironmentObject*. This is where we will implement the logic to fetch data from the database. First, let's create a new folder named "Stores" and a new Swift file named [CourseStore.swift](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Stores/CourseStore.swift) inside the [Stores](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Stores) folder. This class will provide methods to fetch data from the database. Add the following code to the file:
 
@@ -638,7 +650,7 @@ struct CoursesListView: View {
 
 That's it, we have finished implementing the *CourseStore* class. You can apply the same approach to implement the *NewsStore* class. All the code for stores is located in the [Stores](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Stores) folder.
 
-# Implementing authentication
+## Implementing authentication
 
 In this section, we will explore how to implement authentication functionalities in GVCourse. We will use Firebase Authentication to implement authentication. If you are not familiar with Firebase Authentication, you can check out the [official documentation](https://firebase.google.com/docs/auth) to learn more about it.
 
@@ -723,7 +735,7 @@ With just a few lines of code, we have created a beautiful sign in view. Here is
 
 That is our authenticaion implementation. Now, let's explore how to navigate between views.
 
-# Navigating between Views
+## Navigating between Views
 
 SwiftUI provides default navigation functionality and UI components, which makes it easy to navigate between views. However, in this tutorial, we will use a custom tab bar to navigate between views. I want to use a custom tab bar because it is more flexible and customizable, help us to learn more about SwiftUI.
 
@@ -871,7 +883,7 @@ And here is the result of our beautiful custom tab bar:
 
 That's it, we have finished implementing the navigation between views! Now let's explore the search functionality.
 
-# Implementing search
+## Implementing search
 
 In this section, we will explore how to implement search functionality in GVCourse, so that users can search for courses they need easily. First, let's create a new folder named [Searching](https://github.com/minhtran241/gvcourses/blob/main/GVCourses/Views/Searching) and a new Swift file named [GVCoursesSearchBar.swift](https://github.com/minhtran241/gvcourses/blob/main/GVCourses/Views/Searching/GVCoursesSearchBar.swift) inside the [Searching](https://github.com/minhtran241/gvcourses/blob/main/GVCourses/Views/Searching) folder. This file contains the code for the search bar's UI. You can copy code from [here](https://github.com/minhtran241/gvcourses/blob/main/GVCourses/Views/Searching/GVCoursesSearchBar.swift)
 
@@ -911,7 +923,7 @@ List {
 }
 ```
 
-# See also
+## See also
 
 Here is a list of resources that I found helpful when learning SwiftUI, building the GVCourse app, and writing this tutorial:
 
@@ -925,19 +937,19 @@ Here is a list of resources that I found helpful when learning SwiftUI, building
 - [SearchBar in SwiftUI](https://www.hackingwithswift.com/quick-start/swiftui/how-to-add-a-search-bar-to-filter-your-data)
 - [SwiftUI vs UIKit](https://www.linkedin.com/pulse/swiftui-vs-uikit-evaluating-battle-ios-development-theatechh)
 
-# Conclusion
+## Conclusion
 
 Let's discuss further about the advantages and disadvantages of SwiftUI and alternative approaches.
 
-## Performance
+### Performance
 
 SwiftUI uses a technologies called [Metal](https://developer.apple.com/metal/) to render the UI, which makes the UI more performant. The most important thing is that **SwiftUI's rendering engine efficiently updates only the parts of the UI that have changed, reducing unnecessary work**. This is a huge improvement over UIKit, which being older, has a lot of legacy code that is not optimized for performance.
 
-## Third party components
+### Third party components
 
 Because SwiftUI is quite new, there are not many third party components available compared to UIKit. However, it is still growing rapidly.
 
-## Use cases
+### Use cases
 
 SwiftUI is recommended for:
 
@@ -949,11 +961,11 @@ SwiftUI is recommended for:
 
 - Developers who prefer a declarative and Swift-based approach.
 
-## Alternative approaches
+### Alternative approaches
 
 [SwiftUIX](https://github.com/SwiftUIX/SwiftUIX) is an open source library of extensions to the standard SwiftUI library. It provides developers with a set of components to help them build apps faster. It is a great alternative approach to implement the same functionality.
 
-## Related platform features
+### Related platform features
 
 SwiftUI is a framework that provides views, controls, and layout structures for declaring your app's user interface. The framework provides event handlers for delivering taps, gestures, and other types of input to your app. SwiftUI also provides APIs for managing your app's user interface in different ways, such as adapting the layout to different platforms, displaying different UI elements based on the size of the screen, and localizing your app's interface into different languages.
 
@@ -961,6 +973,6 @@ In this tutorial, we have explored how to implement the GVCourse app using Swift
 
 Source code can be found [here](https://github.com/minhtran241/gvcourses).
 
-# License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/minhtran241/gvcourses/blob/main/LICENSE) file for details.
