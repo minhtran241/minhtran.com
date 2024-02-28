@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Github, Radio, CalendarDays } from 'lucide-react';
 import path from 'path';
 import fs from 'fs/promises';
+import ProjectCard from '@/components/projectCard/projectCard';
 
 const PROJECT_FETCH_LIMIT = 100;
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
@@ -26,85 +27,74 @@ const getProjects = async (limit) => {
 
 const ProjectPage = async () => {
     const projects = await getProjects(PROJECT_FETCH_LIMIT);
+    const firstProject = projects[0];
+    const otherProjects = projects.slice(1);
     return (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
-            {projects.map((project, index) => (
-                // same height for all cards
-                <div
-                    className="flex flex-col p-4 shadow-lg rounded-md hover:shadow-2xl border dark:border-gray-700 border-gray-200"
-                    key={index}
+        <div className="items-center justify-center flex flex-col gap-16">
+            {/* // First project */}
+            <div className="mt-12 lg:-mx-6 lg:flex lg:items-center">
+                <Link
+                    href={`/project/${firstProject.slug}`}
+                    className="h-[218px] w-full object-cover dark:hover:shadow-black/30 lg:mx-6 lg:h-[327px] lg:w-1/2"
                 >
-                    {/* Created at */}
-                    <div className="flex flex-row justify-end leading-none text-[#0033A0] dark:text-blue-600 gap-2 mb-4">
-                        <CalendarDays className="h-4 w-4" />
-                        <span className="italic">
-                            {new Date(project.created_at).toLocaleDateString(
-                                'en-GB',
-                                {
-                                    day: 'numeric',
-                                    month: 'short',
-                                    year: 'numeric',
-                                }
-                            )}
-                        </span>
-                    </div>
+                    <Image
+                        className="h-[218px] w-full rounded-md lg:h-[327px] border-2 border-[#0033A0] dark:border-white"
+                        src={firstProject.thumbnail}
+                        alt={firstProject.title}
+                        width={433}
+                        height={218}
+                    />
+                </Link>
+                <div className="mt-6 lg:mx-6 lg:mt-0 lg:w-1/2 ">
+                    <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
+                        {new Date(firstProject?.created_at).toLocaleDateString(
+                            'en-GB',
+                            {
+                                weekday: 'long',
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                            }
+                        )}
+                    </p>
                     <Link
-                        href={`/project/${project.slug}`}
-                        // onClick={() => incrementViewCount(project.slug)}
+                        href={`/project/${firstProject.slug}`}
+                        className="mt-4 block text-2xl font-semibold transition duration-300 ease-in-out hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
                     >
-                        <Image
-                            className="rounded-md max-w-full max-h-[200px] object-cover w-full"
-                            src={project.thumbnail}
-                            alt={project.title}
-                            width={0}
-                            height={0}
-                            sizes="100vw"
-                            // style={{
-                            //     width: 'auto',
-                            //     height: 'auto',
-                            // }}
-                        />
+                        {firstProject.title}
                     </Link>
-
-                    <Link
-                        // href={project.link ? project.link : project.repo_link}
-                        href={`/project/${project.slug}`}
-                        className="text-xl font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600"
-                    >
-                        {project.title}
-                    </Link>
-                    <p className=" text-gray-600">{project.description}</p>
-                    {project.link && (
+                    <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-300">
+                        {firstProject.description}
+                    </p>
+                    {firstProject.link && (
                         <div className="flex flex-row gap-2 mt-4">
                             <Link
-                                href={project.link}
+                                href={firstProject.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none"
-                                // onClick={() => incrementViewCount(project.slug)}
                             >
                                 <Radio className="h-4 w-4" />
                                 View Live
                             </Link>
                         </div>
                     )}
-
-                    {project.repo_link && (
+                    {firstProject.repo_link && (
                         <div className="flex flex-row gap-2 mt-4">
                             <Link
-                                href={project.repo_link}
+                                href={firstProject.repo_link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none"
-                                // onClick={() => incrementViewCount(project.slug)}
                             >
-                                <Github className="h-4 w-4" />
+                                <Github className="h-5 w-5" />
                                 View on Github
                             </Link>
                         </div>
                     )}
+                    {/* Tech stack */}
                     <div className="flex flex-wrap gap-2 mt-4">
-                        {project.tech_stack.map((badge, index) => (
+                        {firstProject.tech_stack.map((badge, index) => (
                             <Image
                                 key={index}
                                 src={badge}
@@ -119,7 +109,14 @@ const ProjectPage = async () => {
                         ))}
                     </div>
                 </div>
-            ))}
+            </div>
+            {/* // Other projects */}
+            <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
+                {otherProjects.map((project, index) => (
+                    // same height for all cards
+                    <ProjectCard key={index} project={project} />
+                ))}
+            </div>
         </div>
     );
 };

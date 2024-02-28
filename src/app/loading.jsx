@@ -1,7 +1,7 @@
 const Loading = () => {
     return (
-        <div className="loading">
-            <div className="loading__spinner"></div>
+        <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+            <span class="loading loading-bars loading-lg text-[#0033A0] dark:text-blue-600"></span>
         </div>
     );
 };

@@ -9,6 +9,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
+import Loading from '@/app/loading';
 
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
@@ -115,11 +116,11 @@ const SingleProjectContent = async ({ project }) => {
                                 {project.description}
                             </div>
                             <div>
-                                <div className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] prose-hr:text-gray marker:text-[#0033A0] items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm">
+                                <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm">
                                     <MarkdownRender
                                         mdString={project.content}
                                     />
-                                </div>
+                                </article>
                             </div>
                         </div>
                     </div>
@@ -134,13 +135,7 @@ const SingleProjectPage = async ({ params }) => {
     const project = await getProject(slug);
 
     return (
-        <Suspense
-            fallback={
-                <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                    <Loader2 className="mr-2 h-12 w-12 animate-spin text-[#0033A0]" />
-                </div>
-            }
-        >
+        <Suspense fallback={<Loading />}>
             <SingleProjectContent project={project} />
         </Suspense>
     );
