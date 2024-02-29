@@ -71,7 +71,7 @@ const Projects = async ({ limit }) => {
             {/* See More */}
             <div className="flex justify-center mt-8">
                 <Link href="/project">
-                    <div className="flex flex-row items-center gap-2 text-lg font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer">
+                    <div className="flex flex-row items-center gap-2 text-lg font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer transition">
                         See More
                         <ArrowRight className="h-6 w-6" />
                     </div>

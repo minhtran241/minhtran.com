@@ -1,19 +1,17 @@
 import styles from './singlePost.module.css';
 import { Suspense } from 'react';
-import { Loader2 } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
 import ShareButtons from '@/components/shareButtons/shareButtons';
 import PostMetadata from '@/components/postMetadata/postMetadata';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import rehypeRaw from 'rehype-raw';
-import gfm from 'remark-gfm';
 import fs from 'fs/promises';
 import path from 'path';
+import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
+import readingTime from 'reading-time';
+import Loading from '@/app/loading';
 
 // * Fetch data from local JSON
+const DATA_ATTRS_FILENAME = 'blogs.json';
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'blog');
-const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'blogs.json');
+const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, DATA_ATTRS_FILENAME);
 const DATA_CONTENTS_DIR = path.join(DATA_ATTRS_DIR, 'contents');
 
 const getPost = async (slug) => {
@@ -25,11 +23,21 @@ const getPost = async (slug) => {
         );
         const posts = JSON.parse(postsData);
         const post = posts.find((post) => post.slug === slug);
+
+        const views = post.view_count + 1;
+        post.view_count = views;
+        // Write new view of this post to JSON file
+        fs.writeFile(DATA_ATTRS_FILE, JSON.stringify(posts, null, 2), 'utf-8');
+
         const content = await fs.readFile(
             path.join(DATA_CONTENTS_DIR, `${slug}.md`),
             'utf-8'
         );
         post.content = content;
+
+        const stats = readingTime(content);
+        post.read_time = stats.minutes;
+
         return post;
     } catch (error) {
         console.error('Error fetching post:', error);
@@ -39,16 +47,6 @@ const getPost = async (slug) => {
 
 const SinglePostContent = ({ post }) => {
     const createdAtText = new Date(post.created_at).toLocaleDateString(
-        'en-US',
-        {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        }
-    );
-
-    const updatedAtText = new Date(post.updated_at).toLocaleDateString(
         'en-US',
         {
             weekday: 'long',
@@ -103,43 +101,9 @@ const SinglePostContent = ({ post }) => {
                                 {post.description}
                             </div>
                             <div>
-                                <div className="mb-8 rich-content prose lg:prose-xl">
-                                    <ReactMarkdown
-                                        children={project.content}
-                                        components={{
-                                            code({
-                                                node,
-                                                inline,
-                                                className,
-                                                children,
-                                                ...props
-                                            }) {
-                                                const match =
-                                                    /language-(\w+)/.exec(
-                                                        className || ''
-                                                    );
-                                                return !inline && match ? (
-                                                    <SyntaxHighlighter
-                                                        children={String(
-                                                            children
-                                                        ).replace(/\n$/, '')}
-                                                        style={nightOwl}
-                                                        language={match[1]}
-                                                        PreTag="div"
-                                                        {...props}
-                                                    />
-                                                ) : (
-                                                    <span
-                                                        className={className}
-                                                        {...props}
-                                                    >
-                                                        {children}
-                                                    </span>
-                                                );
-                                            },
-                                        }}
-                                    />
-                                </div>
+                                <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose prose-a:text-[#0033A0] dark:prose-a:text-blue-600 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm">
+                                    <MarkdownRender mdString={post.content} />
+                                </article>
                                 <div className="items-center justify-between sm:flex">
                                     <div className="mb-5">
                                         {/* <PostUser userId={post.user_id} /> */}
@@ -167,13 +131,7 @@ const SinglePostPage = async ({ params }) => {
     const post = await getPost(slug);
 
     return (
-        <Suspense
-            fallback={
-                <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                    <Loader2 className="mr-2 h-12 w-12 animate-spin" />
-                </div>
-            }
-        >
+        <Suspense fallback={<Loading />}>
             <SinglePostContent post={post} />
         </Suspense>
     );

@@ -23,7 +23,7 @@ const Brands = async () => {
                             <span className="text-black dark:text-white">
                                 Mainly
                             </span>{' '}
-                            <span className="text-[#0033A0]">working with</span>{' '}
+                            <span className="text-[#0033A0] dark:text-blue-600">working with</span>{' '}
                         </h1>
                         <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
                             <div className="flex-1 h-2 bg-blue-200"></div>
@@ -38,33 +38,7 @@ const Brands = async () => {
                     </p>
                 </div>
             </div>
-            {/* Skill Boxes and with title is the key and content is badge list (value), each key is a card with title is key and badges are content of the card, 4 cards */}
             <div className="flex flex-col items-center justify-center gap-10 grid-cols-2 lg:grid lg:grid-cols-2">
-                {/* {Object.keys(skills).map((skill, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col items-center justify-center gap-4 shadow-lg p-4 rounded dark:border dark:border-gray-700 hover:shadow-2xl min-h-[150px]"
-                    >
-                        <h1 className="text-xl font-semibold">{skill}</h1>
-                        <div className="flex flex-wrap gap-4">
-                            {skillSets[skillSet].map((badge, index) => (
-                                <div key={index}>
-                                    <Image
-                                        src={badge}
-                                        alt="skill"
-                                        width={0}
-                                        height={0}
-                                        // sizes="100vw"
-                                        style={{
-                                            width: 'auto',
-                                            height: 'auto',
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                ))} */}
                 {skills.map((skill, index) => (
                     <div
                         key={index}
@@ -79,7 +53,6 @@ const Brands = async () => {
                                         alt="skill"
                                         width={0}
                                         height={0}
-                                        // sizes="100vw"
                                         style={{
                                             width: 'auto',
                                             height: 'auto',

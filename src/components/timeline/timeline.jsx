@@ -27,7 +27,7 @@ const Timeline = async () => {
                         <h1 className="text-5xl font-semibold leading-tight dark:text-white">
                             {' '}
                             Employment{' '}
-                            <span className="text-[#0033A0]">History</span>{' '}
+                            <span className="text-[#0033A0] dark:text-blue-600">History</span>{' '}
                         </h1>
                         <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
                             <div className="flex-1 h-2 bg-blue-200"></div>
@@ -46,7 +46,7 @@ const Timeline = async () => {
                 {/* lg:max-w-full */}
                 <div className="w-full mx-auto">
                     <div className="relative">
-                        <div className="absolute hidden w-1 h-full transform -translate-x-1/2 bg-[#0033A0] lg:block left-1/2"></div>
+                        <div className="absolute hidden w-1 h-full transform -translate-x-1/2 bg-[#0033A0] dark:bg-blue-600 lg:block left-1/2"></div>
                         <div className="space-y-2 lg:space-y-4">
                             {milestones.map((milestone, index) => (
                                 <Milestone

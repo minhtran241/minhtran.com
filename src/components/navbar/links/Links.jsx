@@ -24,6 +24,11 @@ const links = [
         title: 'Blogs',
         path: '/blog',
     },
+    {
+        id: 4,
+        title: 'Contact',
+        path: '/contact',
+    },
 ];
 
 const Links = () => {

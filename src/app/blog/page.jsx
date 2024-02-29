@@ -1,6 +1,7 @@
 import PostCard from '@/components/postCard/postCard';
 import fs from 'fs/promises';
 import path from 'path';
+import readingTime from 'reading-time';
 
 // * Fetch data from local JSON
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'blog');

@@ -59,7 +59,7 @@ const ProjectPage = async () => {
                     </p>
                     <Link
                         href={`/project/${firstProject.slug}`}
-                        className="mt-4 block text-2xl font-semibold transition duration-300 ease-in-out hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
+                        className="mt-4 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
                     >
                         {firstProject.title}
                     </Link>
@@ -72,7 +72,7 @@ const ProjectPage = async () => {
                                 href={firstProject.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none"
+                                className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
                             >
                                 <Radio className="h-4 w-4" />
                                 View Live
@@ -85,7 +85,7 @@ const ProjectPage = async () => {
                                 href={firstProject.repo_link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none"
+                                className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
                             >
                                 <Github className="h-5 w-5" />
                                 View on Github

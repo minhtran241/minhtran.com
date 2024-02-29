@@ -35,13 +35,13 @@ const Milestone = ({ milestone, right }) => {
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="text-xl font-bold text-[#0033A0]">
+                                        <p className="text-xl font-bold text-[#0033A0] dark:text-blue-600">
                                             {milestone.title}
                                         </p>
                                         <p className=" mb-2 italic text-gray-600">
                                             {milestone.job_title}
                                         </p>
-                                        <ul className="list-disc marker:text-[#0033A0]">
+                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600">
                                             {paragraphs.map(
                                                 (paragraph, index) => (
                                                     <li
@@ -59,7 +59,7 @@ const Milestone = ({ milestone, right }) => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] rounded-full left-1/2 lg:translate-y-[3px]">
+                <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[3px]">
                     {icons[milestone.icon]}
                 </div>
             </div>
@@ -85,13 +85,13 @@ const Milestone = ({ milestone, right }) => {
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="text-xl font-bold text-[#0033A0]">
+                                        <p className="text-xl font-bold text-[#0033A0] dark:text-blue-600">
                                             {milestone.title}
                                         </p>
                                         <p className=" mb-2 italic text-gray-600">
                                             {milestone.job_title}
                                         </p>
-                                        <ul className="list-disc marker:text-[#0033A0]">
+                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600">
                                             {paragraphs.map(
                                                 (paragraph, index) => (
                                                     <li
@@ -109,7 +109,7 @@ const Milestone = ({ milestone, right }) => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] rounded-full left-1/2 lg:translate-y-[4px]">
+                <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[4px]">
                     {icons[milestone.icon]}
                 </div>
             </div>
