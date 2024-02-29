@@ -1,15 +1,9 @@
 'use client';
 
-import styles from './hero.module.css';
 import Image from 'next/image';
 // import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
 import {
-    Send,
-    Download,
     Github,
     Mail,
     Facebook,
@@ -17,13 +11,8 @@ import {
     Twitter,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { saveAs } from 'file-saver';
 
 const Hero = () => {
-    const saveResumeFile = () => {
-        saveAs('/resume.pdf', 'MinhTran-Resume.pdf');
-    };
-
     return (
         <div>
             <div class="shadow-lg transform  duration-200 easy-in-out">
@@ -139,18 +128,20 @@ const Hero = () => {
                     <hr class="mt-6" />
                     <div class="flex  bg-gray-50 dark:bg-gray-800">
                         <Link
+                            target="_blank"
                             class="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
                             href="/contact"
                         >
                             Contact
                         </Link>
                         <div class="border border-gray-200 dark:border-gray-700"></div>
-                        <Button
-                            class="items-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
-                            onClick={saveResumeFile}
+                        <Link
+                            target="_blank"
+                            class="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
+                            href="/resume.pdf"
                         >
                             Resume
-                        </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

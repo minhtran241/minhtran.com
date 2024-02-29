@@ -48,7 +48,7 @@ const Milestone = ({ milestone, right }) => {
                                                         key={index}
                                                         className="mb-2 ml-5"
                                                     >
-                                                        {paragraph}
+                                                        {paragraph}.
                                                     </li>
                                                 )
                                             )}
@@ -98,7 +98,7 @@ const Milestone = ({ milestone, right }) => {
                                                         key={index}
                                                         className="mb-2 ml-5"
                                                     >
-                                                        {paragraph}
+                                                        {paragraph}.
                                                     </li>
                                                 )
                                             )}

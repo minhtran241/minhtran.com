@@ -1,7 +1,7 @@
 import styles from './contact.module.css';
 import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import path from 'path';
-import { Send, Mail, Github, Linkedin, Globe, Briefcase } from 'lucide-react';
+import { Send, Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -37,6 +37,7 @@ const ContactPage = async () => {
                             <span className="flex items-center space-x-2">
                                 <Mail className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
                                 <Link
+                                    target="_blank"
                                     className="hover:text-[#0033A0]"
                                     href="mailto:tranmq@mail.gvsu.edu"
                                 >
@@ -45,30 +46,30 @@ const ContactPage = async () => {
                             </span>
                             <span className="flex items-center space-x-2">
                                 <Github className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
-                                <Link className="hover:text-[#0033A0]" href="/">
+                                <Link
+                                    target="_blank"
+                                    className="hover:text-[#0033A0]"
+                                    href="https://github.com/minhtran241"
+                                >
                                     minhtran241
                                 </Link>
                             </span>
                             <span className="flex items-center space-x-2">
                                 <Linkedin className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
-                                <Link className="hover:text-[#0033A0]" href="/">
-                                    minhtran241
-                                </Link>
-                            </span>
-                            <span className="flex items-center space-x-2">
-                                <Globe className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
                                 <Link
-                                    className="hover:text-[#0033A0] dark:hover:text-blue-600"
-                                    href="/"
+                                    target="_blank"
+                                    className="hover:text-[#0033A0]"
+                                    href="https://www.linkedin.com/in/minh-tran-12a3aa218/"
                                 >
-                                    https://minhtran.com
+                                    Minh Tran
                                 </Link>
                             </span>
                             <span className="flex items-center space-x-2">
                                 <Briefcase className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
                                 <Link
+                                    target="_blank"
                                     className="hover:text-[#0033A0] dark:hover:text-blue-600"
-                                    href={'/'}
+                                    href={'/resume.pdf'}
                                 >
                                     Minh Tran's resume
                                 </Link>

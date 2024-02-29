@@ -15,9 +15,11 @@ const Navbar = async () => {
                     // invert in light mode and not in dark mode
                     className="invert"
                 /> */}
-                <p className="text-2xl font-bold">minhtran.com</p>
+                <p className="text-2xl font-bold invisible lg:visible md:visible">
+                    minhtran.com
+                </p>
             </Link>
-            <div>
+            <div className="">
                 <Links />
             </div>
         </div>
