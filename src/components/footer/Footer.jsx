@@ -54,7 +54,7 @@ const Footer = () => {
         },
     ];
     return (
-        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white rounded">
+        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white rounded mt-12">
             <nav className="grid grid-flow-col gap-4">
                 {linksTab.map((link, index) => (
                     <Link

@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { Loader2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Suspense } from 'react';
 import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '../projectCard/projectCard';
 import Loading from '@/app/loading';
+import SectionLabel from '../sectionLabel/sectionLabel';
 
 const PROJECT_FETCH_LIMIT = 100;
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
@@ -28,46 +29,21 @@ const getProjects = async (limit) => {
 
 const ProjectsComponent = async ({ limit }) => {
     const projects = await getProjects(limit || PROJECT_FETCH_LIMIT);
+    const sectionTitle = 'Personal Projects';
+    const sectionDescription =
+        'I have worked on these projects in my free time. I have used these projects to learn new technologies and implement new features.';
     return (
         <div className="items-center justify-center mt-20">
-            <div className="max-w-xl mx-auto">
-                <div className="text-center ">
-                    <div className="flex flex-col items-center ">
-                        <h1 className="text-5xl font-semibold leading-tight dark:text-white">
-                            {' '}
-                            Personal{' '}
-                            <span className="text-[#0033A0] dark:text-blue-600">
-                                Projects
-                            </span>{' '}
-                        </h1>
-                        <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
-                            <div className="flex-1 h-2 bg-blue-200"></div>
-                            <div className="flex-1 h-2 bg-blue-400"></div>
-                            <div className="flex-1 h-2 bg-[#0033A0]"></div>
-                        </div>
-                    </div>
-                    <p className="mb-16 text-base text-center text-gray-600">
-                        I have worked on these projects in my free time. I have
-                        used these projects to learn new technologies and
-                        implement new features.
-                    </p>
-                </div>
+            <SectionLabel
+                title={sectionTitle}
+                description={sectionDescription}
+            />
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                {projects.map((project, index) => (
+                    // same height for all cards
+                    <ProjectCard key={index} project={project} />
+                ))}
             </div>
-            <Suspense
-                fallback={
-                    <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                        <Loader2 className="mr-2 h-12 w-12 animate-spin text-[#0033A0]" />
-                    </div>
-                }
-            >
-                {/* // same height for all cards */}
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                    {projects.map((project, index) => (
-                        // same height for all cards
-                        <ProjectCard key={index} project={project} />
-                    ))}
-                </div>
-            </Suspense>
             {/* See More */}
             <div className="flex justify-center mt-8">
                 <Link href="/project">

@@ -77,12 +77,12 @@ export default function MarkdownRender({ mdString }) {
                                                 setTimeout(() => {
                                                     setCopyTip('Copy code');
                                                 }, 2000);
-                                                toast.success(
-                                                    'Code copied to clipboard'
+                                                toast(
+                                                    'Code copied to clipboard!'
                                                 );
                                             }}
                                         >
-                                            <Copy className="h-5 w-5 cursor-pointer text-gray-400 hover:text-blue-600 dark:text-base-300 dark:hover:text-blue-400" />
+                                            <Copy className="h-5 w-5 cursor-pointer text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600 dark:text-base-300" />
                                         </CopyToClipboard>
                                     </button>
                                     <span

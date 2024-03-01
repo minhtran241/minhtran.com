@@ -50,8 +50,8 @@ const getProject = async (slug) => {
 
 const SingleProjectContent = async ({ project }) => {
     return (
-        <div className="mb-12">
-            <div className={`content-center items-center justify-center`}>
+        <>
+            <div className="content-center items-center justify-center">
                 {/* Image in the center */}
                 <div className="flex  items-center justify-center mb-5">
                     <Image
@@ -64,20 +64,18 @@ const SingleProjectContent = async ({ project }) => {
                 </div>
                 {/* Title */}
                 <div className="flex flex-col items-center justify-center gap-4">
-                    <h1 className="text-4xl font-bold text-primary dark:text-white">
-                        {project.title}
-                    </h1>
+                    <h1 className="text-4xl font-semibold">{project.title}</h1>
                     <div className="flex flex-col items-center gap-2">
                         {project.repo_link && (
                             <Link
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href={project.repo_link}
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600 hover:text-blue-800 dark:hover:text-blue-700 cursor-pointer"
                             >
-                                <Github className="h-5 w-5" />
-                                <span className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer">
-                                    {project.repo_link}
+                                <Github className="h-4 w-4" />
+                                <span className="hover:underline">
+                                    View Source
                                 </span>
                             </Link>
                         )}
@@ -86,11 +84,11 @@ const SingleProjectContent = async ({ project }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href={project.link}
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600 hover:text-blue-800 dark:hover:text-blue-700 cursor-pointer"
                             >
-                                <Radio className="h-6 w-6" />
-                                <span className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer">
-                                    {project.link}
+                                <Radio className="h-4 w-4" />
+                                <span className="hover:underline">
+                                    View Live
                                 </span>
                             </Link>
                         )}
@@ -98,7 +96,7 @@ const SingleProjectContent = async ({ project }) => {
                 </div>
             </div>
             <div className="container mx-auto px-4 !pt-8">
-                <div className="-mx-4 flex flex-wrap justify-center">
+                <div className="flex flex-wrap justify-center">
                     <div className="w-full px-4 lg:w-9/12">
                         <div>
                             <div className="flex flex-wrap items-center justify-center ">
@@ -130,7 +128,7 @@ const SingleProjectContent = async ({ project }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

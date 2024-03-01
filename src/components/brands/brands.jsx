@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
+import SectionLabel from '../sectionLabel/sectionLabel';
 
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'skill');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'skills.json');
@@ -16,32 +17,15 @@ const getSKills = async () => {
 
 const BrandsComponent = async () => {
     const skills = await getSKills();
+    const sectionTitle = 'Mainly working with';
+    const sectionDescription =
+        'I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies.';
     return (
         <div className="items-center justify-center mt-20">
-            <div className="max-w-xl mx-auto">
-                <div className="text-center ">
-                    <div className="flex flex-col items-center ">
-                        <h1 className="text-5xl font-semibold leading-tight dark:text-white">
-                            <span className="text-black dark:text-white">
-                                Mainly
-                            </span>{' '}
-                            <span className="text-[#0033A0] dark:text-blue-600">
-                                working with
-                            </span>{' '}
-                        </h1>
-                        <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
-                            <div className="flex-1 h-2 bg-blue-200"></div>
-                            <div className="flex-1 h-2 bg-blue-400"></div>
-                            <div className="flex-1 h-2 bg-[#0033A0]"></div>
-                        </div>
-                    </div>
-                    <p className="mb-16 text-base text-center text-gray-600">
-                        I have experience working with these technologies and
-                        tools. I am always open to learning new things and
-                        working with new technologies.
-                    </p>
-                </div>
-            </div>
+            <SectionLabel
+                title={sectionTitle}
+                description={sectionDescription}
+            />
             <div className="flex flex-col items-center justify-center gap-10 grid-cols-2 lg:grid lg:grid-cols-2">
                 {skills.map((skill, index) => (
                     <div

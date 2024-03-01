@@ -27,7 +27,7 @@ const HeroComponent = () => {
                 <div className="h-40 overflow-hidden">
                     <Image
                         className="w-full object-cover"
-                        src="https://cms-assets.themuse.com/media/lead/01212022-1047259374-coding-classes_scanrail.jpg"
+                        src="/bg-image.jpeg"
                         alt="background_image"
                         width={2000}
                         height={800}
@@ -70,12 +70,6 @@ const HeroComponent = () => {
                                     (3.94 GPA)
                                 </span>
                             </p>
-                            {/* <p className="text-gray-600 italic text-sm">
-                                Sep 2021 - May 2025
-                            </p> */}
-                            {/* <p className="text-[#0033A0] dark:text-blue-600">
-                                3.94 GPA
-                            </p> */}
                         </div>
                     </div>
                     <p className="text-center font-light pt-4 px-4">
@@ -103,12 +97,12 @@ const HeroComponent = () => {
                             high-speed inserts
                         </span>
                         .
-                    </p>{' '}
+                    </p>
                     <hr className="mt-6" />
                     <div className="flex bg-gray-50 dark:bg-gray-800">
                         <Link
                             target="_blank"
-                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
+                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] dark:hover:bg-blue-600 hover:text-white font-medium transition"
                             href="/contact"
                         >
                             Contact
@@ -116,7 +110,7 @@ const HeroComponent = () => {
                         <div className="border border-gray-200 dark:border-gray-700"></div>
                         <Link
                             target="_blank"
-                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
+                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] dark:hover:bg-blue-600 hover:text-white font-medium transition"
                             href={process.env.RESUME_LINK}
                         >
                             Resume

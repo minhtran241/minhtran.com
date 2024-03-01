@@ -69,7 +69,7 @@ const SinglePostContent = ({ post }) => {
     );
 
     return (
-        <div className="mb-12">
+        <>
             <div
                 className={`${styles.hero} relative flex content-center items-center justify-center pt-12`}
             >
@@ -100,7 +100,7 @@ const SinglePostContent = ({ post }) => {
                 </div>
             </div>
             <div className="container mx-auto px-4 pt-10">
-                <div className="-mx-4 flex flex-wrap justify-center pt-12">
+                <div className="flex flex-wrap justify-center pt-12">
                     <div className="w-full px-4 lg:w-8/12">
                         <div>
                             <div className="flex flex-wrap items-center justify-between ">
@@ -113,7 +113,7 @@ const SinglePostContent = ({ post }) => {
                                 {post.description}
                             </div>
                             <div>
-                                    <MarkdownRender mdString={post.content} />
+                                <MarkdownRender mdString={post.content} />
                                 <div className="items-center justify-between sm:flex">
                                     <div className="mb-5">
                                         {/* <PostUser userId={post.user_id} /> */}
@@ -132,7 +132,7 @@ const SinglePostContent = ({ post }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

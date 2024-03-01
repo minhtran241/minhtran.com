@@ -37,7 +37,7 @@ const BlogPage = async () => {
     const firstPost = posts[0];
     const otherPosts = posts.slice(1);
     return (
-        <div className="items-center justify-center flex flex-col gap-16 mb-12">
+        <div className="items-center justify-center flex flex-col gap-16">
             {/* // First post */}
             <div className="lg:-mx-6 lg:flex lg:items-center">
                 <Link

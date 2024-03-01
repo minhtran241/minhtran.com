@@ -28,12 +28,12 @@ export const generateMetadata = async () => {
 
 const Home = () => {
     return (
-        <div className="mb-12">
+        <>
             <Hero />
             <Timeline />
             <Brands />
             <Projects limit={PROJECT_LIMIT} />
-        </div>
+        </>
     );
 };
 

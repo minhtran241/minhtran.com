@@ -43,11 +43,11 @@ export default function RootLayout({ children }) {
                     <Navbar />
                     <div className="container dark:text-white">
                         {children}
-                        <Toaster />
                         <SpeedInsights />
                         <Analytics />
                     </div>
                     <Footer />
+                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>

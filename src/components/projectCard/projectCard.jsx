@@ -66,7 +66,7 @@ const ProjectCard = ({ project }) => {
                         // onClick={() => incrementViewCount(project.slug)}
                     >
                         <Github className="h-4 w-4" />
-                        View on Github
+                        View Source
                     </Link>
                 </div>
             )}

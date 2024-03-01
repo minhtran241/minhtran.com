@@ -3,6 +3,7 @@ import Milestone from './milestone/milestone';
 import fs from 'fs/promises';
 import path from 'path';
 import { Suspense } from 'react';
+import SectionLabel from '../sectionLabel/sectionLabel';
 
 // * FETCH MILESTONES FROM LOCAL JSON
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'milestone');
@@ -19,33 +20,17 @@ const getMilestones = async () => {
     return sortedMilestones;
 };
 
-const TimelineCompoenent = async () => {
+const TimelineComponent = async () => {
     const milestones = await getMilestones();
+    const sectionTitle = 'Employment History';
+    const sectionDescription =
+        'My working has been in the field of software development, performance optimization, and system design.';
     return (
         <div className="items-center justify-center mt-16">
-            <div className="max-w-xl mx-auto">
-                <div className="text-center ">
-                    <div className="flex flex-col items-center ">
-                        <h1 className="text-5xl font-semibold leading-tight dark:text-white">
-                            {' '}
-                            Employment{' '}
-                            <span className="text-[#0033A0] dark:text-blue-600">
-                                History
-                            </span>{' '}
-                        </h1>
-                        <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
-                            <div className="flex-1 h-2 bg-blue-200"></div>
-                            <div className="flex-1 h-2 bg-blue-400"></div>
-                            <div className="flex-1 h-2 bg-[#0033A0]"></div>
-                        </div>
-                    </div>
-                    <p className="mb-16 text-base text-center text-gray-600">
-                        My working has been in the field of software
-                        development, performance optimization, and system
-                        design.
-                    </p>
-                </div>
-            </div>
+            <SectionLabel
+                title={sectionTitle}
+                description={sectionDescription}
+            />
             <div className="flex flex-col justify-center ">
                 {/* lg:max-w-full */}
                 <div className="w-full mx-auto">
@@ -70,7 +55,7 @@ const TimelineCompoenent = async () => {
 const Timeline = () => {
     return (
         <Suspense fallback={<Loading />}>
-            <TimelineCompoenent />
+            <TimelineComponent />
         </Suspense>
     );
 };

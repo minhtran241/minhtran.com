@@ -39,7 +39,7 @@ const ProjectPage = async () => {
     const firstProject = projects[0];
     const otherProjects = projects.slice(1);
     return (
-        <div className="items-center justify-center flex flex-col gap-16 mb-12">
+        <div className="items-center justify-center flex flex-col gap-16">
             {/* // First project */}
             <div className="lg:-mx-6 lg:flex lg:items-center">
                 <Link
@@ -97,7 +97,7 @@ const ProjectPage = async () => {
                                 className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
                             >
                                 <Github className="h-4 w-4" />
-                                View on Github
+                                View Source
                             </Link>
                         </div>
                     )}
