@@ -16,7 +16,11 @@ export const metadata = {
         default: 'Minh Tran',
         template: '%s | Minh Tran',
     },
-    description: 'Minh Tran personal website',
+    description: {
+        default:
+            "Welcome to Minh Tran's personal website. Explore insights on software engineering, data engineer, and more.",
+        template: '%s | Minh Tran',
+    },
 };
 
 export default function RootLayout({ children }) {
@@ -39,12 +43,11 @@ export default function RootLayout({ children }) {
                     </div>
                     <div className="container dark:text-white">
                         {children}
-
                         <Toaster />
                     </div>
-                    <div className="mt-20">
-                        <Footer />
-                    </div>
+                    {/* <div className="mt-20"> */}
+                    <Footer />
+                    {/* </div> */}
                 </ThemeProvider>
             </body>
         </html>

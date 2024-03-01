@@ -8,6 +8,14 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import fs from 'fs/promises';
 
+// SEO metadata
+export const generateMetadata = async ({ params }) => {
+    return {
+        title: 'Contact Minh Tran',
+        description: 'Contact Minh Tran - Software Engineer and Data Engineer',
+    };
+};
+
 const MARKDOWN_FILE = path.join(
     process.cwd(),
     'data',
@@ -18,7 +26,7 @@ const MARKDOWN_FILE = path.join(
 const ContactPage = async () => {
     const aboutWebsiteMdString = await fs.readFile(MARKDOWN_FILE, 'utf-8');
     return (
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 mb-12">
             <div className={styles.container}>
                 <div className="relative flex-1 rounded-lg p-8 shadow-lg border border-gray-200 dark:border-gray-700">
                     <div className="flex flex-col space-y-4">
@@ -41,7 +49,7 @@ const ContactPage = async () => {
                                     className="hover:text-[#0033A0]"
                                     href="mailto:tranmq@mail.gvsu.edu"
                                 >
-                                    tranmq@mail.gvsu.edu
+                                    {process.env.EMAIL}
                                 </Link>
                             </span>
                             <span className="flex items-center space-x-2">
@@ -49,9 +57,9 @@ const ContactPage = async () => {
                                 <Link
                                     target="_blank"
                                     className="hover:text-[#0033A0]"
-                                    href="https://github.com/minhtran241"
+                                    href={process.env.GITHUB_LINK}
                                 >
-                                    minhtran241
+                                    {process.env.GITHUB_USER}
                                 </Link>
                             </span>
                             <span className="flex items-center space-x-2">
@@ -59,9 +67,9 @@ const ContactPage = async () => {
                                 <Link
                                     target="_blank"
                                     className="hover:text-[#0033A0]"
-                                    href="https://www.linkedin.com/in/minh-tran-12a3aa218/"
+                                    href={process.env.LINKEDIN_LINK}
                                 >
-                                    Minh Tran
+                                    {process.env.LINKEDIN_USER}
                                 </Link>
                             </span>
                             <span className="flex items-center space-x-2">
@@ -69,7 +77,7 @@ const ContactPage = async () => {
                                 <Link
                                     target="_blank"
                                     className="hover:text-[#0033A0] dark:hover:text-blue-600"
-                                    href={'/resume.pdf'}
+                                    href={process.env.RESUME_LINK}
                                 >
                                     Minh Tran's resume
                                 </Link>

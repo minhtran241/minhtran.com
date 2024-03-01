@@ -5,12 +5,32 @@ import Hero from '@/components/hero/hero';
 
 const PROJECT_LIMIT = 3;
 
+export const generateMetadata = async ({ params }) => {
+    return {
+        title: 'Minh Tran - Software Engineer & Data Engineer',
+        description:
+            "Welcome to Minh Tran's personal website. Explore insights on software engineering, data engineer, and more.",
+        keywords: [
+            'minhtran',
+            'minh tran',
+            'Minh Tran',
+            'software engineer',
+            'data engineer',
+            'personal website',
+            'software engineering',
+            'data science',
+        ],
+        author: 'Minh Tran',
+        url: 'https://minhtran.com',
+        image: '/minhtran-ava.png',
+    };
+};
+
 const Home = () => {
     return (
-        <div>
+        <div className="mb-12">
             <Hero />
             <Timeline />
-            {/* </div> */}
             <Brands />
             <Projects limit={PROJECT_LIMIT} />
         </div>

@@ -7,6 +7,18 @@ import { Suspense } from 'react';
 import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import Loading from '@/app/loading';
 
+// SEO metadata
+export const generateMetadata = async ({ params }) => {
+    const p = getProject(params.slug);
+    return {
+        title: p.title,
+        description: p.description,
+        image: p.thumbnail,
+        author: 'Minh Tran',
+        keywords: p.tech_stack,
+    };
+};
+
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 const DATA_CONTENTS_DIR = path.join(DATA_ATTRS_DIR, 'contents');
@@ -38,7 +50,7 @@ const getProject = async (slug) => {
 
 const SingleProjectContent = async ({ project }) => {
     return (
-        <>
+        <div  className="mb-12">
             <div className={`content-center items-center justify-center`}>
                 {/* Image in the center */}
                 <div className="flex  items-center justify-center mb-5">
@@ -122,7 +134,7 @@ const SingleProjectContent = async ({ project }) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

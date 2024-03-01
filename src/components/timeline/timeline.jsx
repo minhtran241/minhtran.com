@@ -1,6 +1,8 @@
+import Loading from '@/app/loading';
 import Milestone from './milestone/milestone';
 import fs from 'fs/promises';
 import path from 'path';
+import { Suspense } from 'react';
 
 // * FETCH MILESTONES FROM LOCAL JSON
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'milestone');
@@ -17,17 +19,19 @@ const getMilestones = async () => {
     return sortedMilestones;
 };
 
-const Timeline = async () => {
+const TimelineCompoenent = async () => {
     const milestones = await getMilestones();
     return (
-        <div className="items-center justify-center mt-20">
+        <div className="items-center justify-center mt-16">
             <div className="max-w-xl mx-auto">
                 <div className="text-center ">
                     <div className="flex flex-col items-center ">
                         <h1 className="text-5xl font-semibold leading-tight dark:text-white">
                             {' '}
                             Employment{' '}
-                            <span className="text-[#0033A0] dark:text-blue-600">History</span>{' '}
+                            <span className="text-[#0033A0] dark:text-blue-600">
+                                History
+                            </span>{' '}
                         </h1>
                         <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
                             <div className="flex-1 h-2 bg-blue-200"></div>
@@ -60,6 +64,14 @@ const Timeline = async () => {
                 </div>
             </div>
         </div>
+    );
+};
+
+const Timeline = () => {
+    return (
+        <Suspense fallback={<Loading />}>
+            <TimelineCompoenent />
+        </Suspense>
     );
 };
 

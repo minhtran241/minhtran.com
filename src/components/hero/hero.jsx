@@ -1,102 +1,77 @@
-'use client';
-
 import Image from 'next/image';
-// import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
-import {
-    Github,
-    Mail,
-    Facebook,
-    Instagram,
-    Twitter,
-} from 'lucide-react';
+import { Github, Mail, Linkedin } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Suspense } from 'react';
+import Loading from '@/app/loading';
 
-const Hero = () => {
+const HeroComponent = () => {
     return (
         <div>
-            <div class="shadow-lg transform  duration-200 easy-in-out">
-                <div class="h-32 overflow-hidden">
+            <div className="shadow-lg transform duration-300 easy-in-out">
+                <div className="h-40 overflow-hidden">
                     <Image
-                        class="w-full"
-                        src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                        className="w-full object-cover"
+                        src="https://cms-assets.themuse.com/media/lead/01212022-1047259374-coding-classes_scanrail.jpg"
                         alt="background_image"
                         width={2000}
                         height={800}
                     />
                 </div>
-                <div class="flex justify-center px-5  -mt-12">
+                <div className="flex justify-center px-5  -mt-12">
                     <Avatar className="h-32 w-32 bg-white dark:bg-black p-2">
                         <AvatarImage src="/minhtran-ava.png" alt="minhtran" />
-                        <AvatarFallback>VC</AvatarFallback>
+                        <AvatarFallback>MT</AvatarFallback>
                     </Avatar>{' '}
                 </div>
-                <div class=" ">
-                    <div class="text-center px-14">
-                        <h2 class="text-3xl font-bold">Minh Tran</h2>
-                        <div class="flex flex-row justify-center gap-2">
+                <div className="">
+                    <div className="text-center px-14">
+                        <h2 className="text-3xl font-bold">Minh Tran</h2>
+                        <p className="text-[#0033A0] dark:text-blue-600 italic text-sm">
+                            Software Engineer / Data Engineer
+                        </p>
+                        <div className="flex flex-row justify-center gap-2">
                             <Link
-                                class="text-gray-400 mt-2 hover:text-[#0033A0]"
-                                href="https://www.instagram.com/immohitdhiman/"
+                                className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
+                                href={process.env.GITHUB_LINK}
                                 target="_blank"
                             >
                                 <Github className="h-4 w-4" />
                             </Link>
                             <Link
-                                class="text-gray-400 mt-2 hover:text-[#0033A0]"
-                                href="mailto:tranmq@mail.gvsu.edu"
+                                className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
+                                href={`mailto:${process.env.EMAIL}`}
                                 target="_blank"
                             >
                                 <Mail className="h-4 w-4" />
                             </Link>
                             <Link
-                                class="text-gray-400 mt-2 hover:text-[#0033A0]"
-                                href="https://www.instagram.com/immohitdhiman/"
+                                className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
+                                href={process.env.LINKEDIN_LINK}
                                 target="_blank"
                             >
-                                <Instagram className="h-4 w-4" />
-                            </Link>
-                            <Link
-                                class="text-gray-400 mt-2 hover:text-[#0033A0]"
-                                href="https://www.instagram.com/immohitdhiman/"
-                                target="_blank"
-                            >
-                                <Facebook className="h-4 w-4" />
-                            </Link>
-                            <Link
-                                class="text-gray-400 mt-2 hover:text-[#0033A0]"
-                                href="https://www.instagram.com/immohitdhiman/"
-                                target="_blank"
-                            >
-                                <Twitter className="h-4 w-4" />
+                                <Linkedin className="h-4 w-4" />
                             </Link>
                         </div>
-                        <div class="flex flex-col items-center gap-1 mt-2">
-                            <div class="">
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href="https://www.gvsu.edu/acad/computer-science-bs.htm"
-                                    class="hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold"
-                                >
-                                    B.S in Computer Science
-                                </Link>{' '}
-                                |
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href="https://gvsu.edu"
-                                    class="ml-2 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold"
-                                >
-                                    Grand Valley State University
-                                </Link>
-                            </div>
-                            <p class="text-gray-600 italic">
+                        <div className="flex flex-col items-center gap-1 mt-2">
+                            <Link
+                                href={process.env.CURRENT_ORG_LINK}
+                                className="text-[#0033A0] dark:text-blue-600 font-semibold"
+                            >
+                                {process.env.CURRENT_ORG}
+                            </Link>
+                            <p className="text-gray-600 italic font-semibold">
+                                {process.env.CURRENT_ROLE}{' '}
+                                <span className="text-[#0033A0] dark:text-blue-600">
+                                    (3.94 GPA)
+                                </span>
+                            </p>
+                            {/* <p className="text-gray-600 italic text-sm">
                                 Sep 2021 - May 2025
-                            </p>
-                            <p class="text-[#0033A0] dark:text-blue-600">
+                            </p> */}
+                            {/* <p className="text-[#0033A0] dark:text-blue-600">
                                 3.94 GPA
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                     <p className="text-center font-light pt-4 px-4">
@@ -125,20 +100,20 @@ const Hero = () => {
                         </span>
                         .
                     </p>{' '}
-                    <hr class="mt-6" />
-                    <div class="flex  bg-gray-50 dark:bg-gray-800">
+                    <hr className="mt-6" />
+                    <div className="flex bg-gray-50 dark:bg-gray-800">
                         <Link
                             target="_blank"
-                            class="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
+                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
                             href="/contact"
                         >
                             Contact
                         </Link>
-                        <div class="border border-gray-200 dark:border-gray-700"></div>
+                        <div className="border border-gray-200 dark:border-gray-700"></div>
                         <Link
                             target="_blank"
-                            class="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
-                            href="/resume.pdf"
+                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] hover:text-white font-medium transition"
+                            href={process.env.RESUME_LINK}
                         >
                             Resume
                         </Link>
@@ -146,6 +121,14 @@ const Hero = () => {
                 </div>
             </div>
         </div>
+    );
+};
+
+const Hero = () => {
+    return (
+        <Suspense fallback={<Loading />}>
+            <HeroComponent />
+        </Suspense>
     );
 };
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Radio, CalendarDays } from 'lucide-react';
+import { Github, Radio } from 'lucide-react';
 import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '@/components/projectCard/projectCard';
@@ -8,6 +8,15 @@ import ProjectCard from '@/components/projectCard/projectCard';
 const PROJECT_FETCH_LIMIT = 100;
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
+
+// SEO metadata
+export const generateMetadata = async ({ params }) => {
+    return {
+        title: "Minh Tran's Personal Projects",
+        description:
+            'Explore personal projects by Minh Tran - A software engineer and data engineer.',
+    };
+};
 
 // * Fetch projects from file system
 const getProjects = async (limit) => {
@@ -30,9 +39,9 @@ const ProjectPage = async () => {
     const firstProject = projects[0];
     const otherProjects = projects.slice(1);
     return (
-        <div className="items-center justify-center flex flex-col gap-16">
+        <div className="items-center justify-center flex flex-col gap-16 mb-12">
             {/* // First project */}
-            <div className="mt-12 lg:-mx-6 lg:flex lg:items-center">
+            <div className="lg:-mx-6 lg:flex lg:items-center">
                 <Link
                     href={`/project/${firstProject.slug}`}
                     className="h-[218px] w-full object-cover dark:hover:shadow-black/30 lg:mx-6 lg:h-[327px] lg:w-1/2"

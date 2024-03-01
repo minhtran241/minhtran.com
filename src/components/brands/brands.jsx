@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import fs from 'fs/promises';
 import path from 'path';
+import { Suspense } from 'react';
+import Loading from '@/app/loading';
 
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'skill');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'skills.json');
@@ -12,7 +14,7 @@ const getSKills = async () => {
     return skills;
 };
 
-const Brands = async () => {
+const BrandsComponent = async () => {
     const skills = await getSKills();
     return (
         <div className="items-center justify-center mt-20">
@@ -23,7 +25,9 @@ const Brands = async () => {
                             <span className="text-black dark:text-white">
                                 Mainly
                             </span>{' '}
-                            <span className="text-[#0033A0] dark:text-blue-600">working with</span>{' '}
+                            <span className="text-[#0033A0] dark:text-blue-600">
+                                working with
+                            </span>{' '}
                         </h1>
                         <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
                             <div className="flex-1 h-2 bg-blue-200"></div>
@@ -65,6 +69,14 @@ const Brands = async () => {
                 ))}
             </div>
         </div>
+    );
+};
+
+const Brands = () => {
+    return (
+        <Suspense fallback={<Loading />}>
+            <BrandsComponent />
+        </Suspense>
     );
 };
 

@@ -5,7 +5,6 @@ const Milestone = ({ milestone, right }) => {
     const month = new Date(milestone.date).toLocaleString('default', {
         month: 'short',
     });
-    const date = new Date(milestone.date).getDate();
     const paragraphs = milestone.description
         .split('.')
         .filter((p) => p.length > 1);
@@ -24,9 +23,9 @@ const Milestone = ({ milestone, right }) => {
                             <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4">
                                 <div className="hidden h-10 origin-top-right transform -rotate-45 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 lg:block drop-shadow-lg"></div>
                             </div>
-                            <div className="relative z-20 ">
+                            <div className="relative z-20">
                                 <div className="flex flex-wrap items-center">
-                                    <div className="p-4 md:w-1/4 ">
+                                    <div className="p-4 md:w-1/6">
                                         <p className="text-2xl font-bold  text-bold  text-[#0033A0] dark:text-white">
                                             {month}
                                         </p>
@@ -76,7 +75,7 @@ const Milestone = ({ milestone, right }) => {
                             </div>
                             <div className="relative z-20 ">
                                 <div className="flex flex-wrap items-center">
-                                    <div className="p-4 md:w-1/4 ">
+                                    <div className="p-4 md:w-1/6">
                                         <p className="text-2xl font-bold  text-bold text-[#0033A0] dark:text-white ">
                                             {month}
                                         </p>

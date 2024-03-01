@@ -39,22 +39,22 @@ The authentication feature allows users to create accounts and log in using thir
 ![Sign In](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png) | ![Sign Up](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png) -->
 
 <p align="center" style="display: flex; justify-content: center;">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png" alt="Courses List" width="350" height="650">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png" alt="Course Details" width="350" height="650">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png" alt="Courses List" width="250" height="500">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png" alt="Course Details" width="250" height="500">
 </p>
 
 #### Course News and Announcements
 
 <p align="center" style="display: flex; justify-content: center;">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png" alt="Courses List" width="350" height="650">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png" alt="Course Details" width="350" height="650">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png" alt="Courses List" width="250" height="500">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png" alt="Course Details" width="250" height="500">
 </p>
 
 #### Course Catalog
 
 <p align="center" style="display: flex; justify-content: center;">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png" alt="Courses List" width="350" height="650">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png" alt="Course Details" width="350" height="650">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png" alt="Courses List" width="250" height="500">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png" alt="Course Details" width="250" height="500">
   </p>
 
 #### Settings
@@ -97,8 +97,8 @@ Install the latest version of Xcode from the [Mac App Store](https://apps.apple.
 Simulator is a tool that allows you to run your app on a virtual device. To open Simulator, open Xcode and select **Xcode** > **Open Developer Tool** > **Simulator**.
 
 <p align="center" style="display: flex; justify-content: center;">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png" alt="Xcode" width="200" height="200">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png" alt="Simulator" width="200" height="200">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png" alt="Xcode" width="150" height="150">
+  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png" alt="Simulator" width="150" height="150">
 </p>
 
 #### SF Symbols

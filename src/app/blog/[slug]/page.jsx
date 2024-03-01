@@ -8,6 +8,18 @@ import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 
+// SEO metadata
+export const generateMetadata = async ({ params }) => {
+    const p = getPost(params.slug);
+    return {
+        title: p.title,
+        description: p.description,
+        image: p.thumbnail,
+        author: 'Minh Tran',
+        keywords: p.tags,
+    };
+};
+
 // * Fetch data from local JSON
 const DATA_ATTRS_FILENAME = 'blogs.json';
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'blog');
@@ -57,7 +69,7 @@ const SinglePostContent = ({ post }) => {
     );
 
     return (
-        <>
+        <div className="mb-12">
             <div
                 className={`${styles.hero} relative flex content-center items-center justify-center pt-12`}
             >
@@ -122,7 +134,7 @@ const SinglePostContent = ({ post }) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

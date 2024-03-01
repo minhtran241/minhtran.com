@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '../projectCard/projectCard';
+import Loading from '@/app/loading';
 
 const PROJECT_FETCH_LIMIT = 100;
 const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
@@ -26,7 +27,7 @@ const getProjects = async (limit) => {
     }
 };
 
-const Projects = async ({ limit }) => {
+const ProjectsComponent = async ({ limit }) => {
     const projects = await getProjects(limit || PROJECT_FETCH_LIMIT);
     return (
         <div className="items-center justify-center mt-20">
@@ -78,6 +79,14 @@ const Projects = async ({ limit }) => {
                 </Link>
             </div>
         </div>
+    );
+};
+
+const Projects = () => {
+    return (
+        <Suspense fallback={<Loading />}>
+            <ProjectsComponent />
+        </Suspense>
     );
 };
 
