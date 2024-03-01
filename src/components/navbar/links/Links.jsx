@@ -1,12 +1,4 @@
-'use client';
-
-import NavLink from './navLink/navLink';
-import DropdownTheme from '@/components/themeProvider/dropdownTheme';
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuList,
-} from '@/components/ui/navigation-menu';
+import Link from 'next/link';
 
 const links = [
     {
@@ -33,16 +25,13 @@ const links = [
 
 const Links = () => {
     return (
-        <NavigationMenu>
-            <NavigationMenuList>
-                {links.map((link, i) => (
-                    <NavLink key={i} item={link} />
-                ))}{' '}
-                <NavigationMenuItem>
-                    <DropdownTheme />
-                </NavigationMenuItem>
-            </NavigationMenuList>
-        </NavigationMenu>
+        <>
+            {links.map((link) => (
+                <li key={link.id}>
+                    <Link href={link.path}>{link.title}</Link>
+                </li>
+            ))}
+        </>
     );
 };
 

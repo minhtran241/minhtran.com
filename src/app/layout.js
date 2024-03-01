@@ -40,18 +40,14 @@ export default function RootLayout({ children }) {
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <div className="sticky top-0 z-50">
-                        <Navbar />
-                    </div>
+                    <Navbar />
                     <div className="container dark:text-white">
                         {children}
                         <Toaster />
                         <SpeedInsights />
                         <Analytics />
                     </div>
-                    {/* <div className="mt-20"> */}
                     <Footer />
-                    {/* </div> */}
                 </ThemeProvider>
             </body>
         </html>

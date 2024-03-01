@@ -5,6 +5,21 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 
+const iconsTab = [
+    {
+        icon: <Mail className="h-4 w-4" />,
+        link: `mailto:${process.env.EMAIL}`,
+    },
+    {
+        icon: <Github className="h-4 w-4" />,
+        link: process.env.GITHUB_LINK,
+    },
+    {
+        icon: <Linkedin className="h-4 w-4" />,
+        link: process.env.LINKEDIN_LINK,
+    },
+];
+
 const HeroComponent = () => {
     return (
         <div>
@@ -31,27 +46,16 @@ const HeroComponent = () => {
                             Software Engineer / Data Engineer
                         </p>
                         <div className="flex flex-row justify-center gap-2">
-                            <Link
-                                className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
-                                href={process.env.GITHUB_LINK}
-                                target="_blank"
-                            >
-                                <Github className="h-4 w-4" />
-                            </Link>
-                            <Link
-                                className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
-                                href={`mailto:${process.env.EMAIL}`}
-                                target="_blank"
-                            >
-                                <Mail className="h-4 w-4" />
-                            </Link>
-                            <Link
-                                className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
-                                href={process.env.LINKEDIN_LINK}
-                                target="_blank"
-                            >
-                                <Linkedin className="h-4 w-4" />
-                            </Link>
+                            {iconsTab.map((icon, index) => (
+                                <Link
+                                    className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
+                                    href={icon.link}
+                                    target="_blank"
+                                    key={index}
+                                >
+                                    {icon.icon}
+                                </Link>
+                            ))}
                         </div>
                         <div className="flex flex-col items-center gap-1 mt-2">
                             <Link
