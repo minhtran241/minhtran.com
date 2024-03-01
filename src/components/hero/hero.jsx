@@ -24,13 +24,13 @@ const HeroComponent = () => {
     return (
         <div>
             <div className="shadow-lg transform duration-300 easy-in-out">
-                <div className="h-40 overflow-hidden">
+                <div className="h-36 overflow-hidden">
                     <Image
                         className="w-full object-cover"
                         src="/bg-image.jpeg"
                         alt="background_image"
-                        width={2000}
-                        height={800}
+                        width={1600}
+                        height={400}
                     />
                 </div>
                 <div className="flex justify-center px-5  -mt-12">
@@ -66,9 +66,9 @@ const HeroComponent = () => {
                             </Link>
                             <p className="text-gray-600">
                                 {process.env.CURRENT_ROLE}{' '}
-                                <span className="text-[#0033A0] dark:text-blue-600">
+                                {/* <span className="text-[#0033A0] dark:text-blue-600">
                                     (3.94 GPA)
-                                </span>
+                                </span> */}
                             </p>
                         </div>
                     </div>
