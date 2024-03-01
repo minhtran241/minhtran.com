@@ -32,18 +32,14 @@ const DATA_CONTENTS_DIR = path.join(DATA_ATTRS_DIR, 'contents');
 const getPost = async (slug) => {
     try {
         // Read post data from JSON file
-        const postsData = await fs.readFile(
-            path.join(DATA_ATTRS_FILE),
-            'utf-8'
-        );
+        const postsData = await fs.readFile(DATA_ATTRS_FILE, 'utf-8');
         const posts = JSON.parse(postsData);
         const post = posts.find((post) => post.slug === slug);
 
         const views = post.view_count + 1;
         post.view_count = views;
         // Write new view of this post to JSON file
-        fs.writeFile(DATA_ATTRS_FILE, JSON.stringify(posts, null, 2), 'utf-8');
-
+        // fs.writeFile(DATA_ATTRS_FILE, JSON.stringify(posts, null, 2), 'utf-8');
         const content = await fs.readFile(
             path.join(DATA_CONTENTS_DIR, `${slug}.md`),
             'utf-8'
