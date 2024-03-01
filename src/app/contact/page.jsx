@@ -24,6 +24,36 @@ const MARKDOWN_FILE = path.join(
 );
 
 const ContactPage = async () => {
+    const iconsTab = {
+        mail: {
+            icon: (
+                <Mail className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
+            ),
+            link: `mailto:${process.env.EMAIL}`,
+            text: process.env.EMAIL,
+        },
+        github: {
+            icon: (
+                <Github className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
+            ),
+            link: process.env.GITHUB_LINK,
+            text: process.env.GITHUB_USER,
+        },
+        linkedin: {
+            icon: (
+                <Linkedin className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
+            ),
+            link: process.env.LINKEDIN_LINK,
+            text: process.env.LINKEDIN_USER,
+        },
+        resume: {
+            icon: (
+                <Briefcase className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
+            ),
+            link: process.env.RESUME_LINK,
+            text: 'Resume',
+        },
+    };
     const aboutWebsiteMdString = await fs.readFile(MARKDOWN_FILE, 'utf-8');
     return (
         <div className="flex flex-col gap-12 mb-12">
@@ -35,53 +65,31 @@ const ContactPage = async () => {
                                 Minh Tran
                             </h2>
                             <p className="text-md dark:text-gray-400">
-                                Grand Valley State University
+                                {process.env.CURRENT_ORG}
                             </p>
                             <span className="text-sm dark:text-blue-600 text-[#0033A0] italic">
-                                Software Engineer / Data Engineer
+                                {process.env.CURRENT_JOB}
                             </span>
                         </div>
                         <div className="space-y-1">
-                            <span className="flex items-center space-x-2">
-                                <Mail className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
-                                <Link
-                                    target="_blank"
-                                    className="hover:text-[#0033A0]"
-                                    href="mailto:tranmq@mail.gvsu.edu"
-                                >
-                                    {process.env.EMAIL}
-                                </Link>
-                            </span>
-                            <span className="flex items-center space-x-2">
-                                <Github className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
-                                <Link
-                                    target="_blank"
-                                    className="hover:text-[#0033A0]"
-                                    href={process.env.GITHUB_LINK}
-                                >
-                                    {process.env.GITHUB_USER}
-                                </Link>
-                            </span>
-                            <span className="flex items-center space-x-2">
-                                <Linkedin className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
-                                <Link
-                                    target="_blank"
-                                    className="hover:text-[#0033A0]"
-                                    href={process.env.LINKEDIN_LINK}
-                                >
-                                    {process.env.LINKEDIN_USER}
-                                </Link>
-                            </span>
-                            <span className="flex items-center space-x-2">
-                                <Briefcase className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
-                                <Link
-                                    target="_blank"
-                                    className="hover:text-[#0033A0] dark:hover:text-blue-600"
-                                    href={process.env.RESUME_LINK}
-                                >
-                                    Minh Tran's resume
-                                </Link>
-                            </span>
+                            {Object.keys(iconsTab).map((key, index) => {
+                                const { icon, link, text } = iconsTab[key];
+                                return (
+                                    <span
+                                        className="flex items-center space-x-2"
+                                        key={index}
+                                    >
+                                        {icon}
+                                        <Link
+                                            target="_blank"
+                                            className="hover:text-[#0033A0] dark:hover:text-blue-600"
+                                            href={link}
+                                        >
+                                            {text}
+                                        </Link>
+                                    </span>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
