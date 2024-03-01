@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/themeProvider/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export const fontSans = FontSans({
     subsets: ['latin'],
@@ -45,6 +46,8 @@ export default function RootLayout({ children }) {
                     <div className="container dark:text-white">
                         {children}
                         <Toaster />
+                        <SpeedInsights />
+                        <Analytics />
                     </div>
                     {/* <div className="mt-20"> */}
                     <Footer />
