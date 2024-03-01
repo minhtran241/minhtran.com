@@ -1,4 +1,4 @@
-import { EyeIcon, Clock, Minus, PenLine } from 'lucide-react';
+import { Clock, Minus, PenLine, Calculator } from 'lucide-react';
 
 // Get post view count and update every 30 seconds
 
@@ -17,21 +17,18 @@ const PostMetadata = ({ post }) => {
             <div className="mb-5 flex flex-col text-[#0033A0] dark:text-blue-600">
                 <div className="mr-5 flex items-center">
                     <span className="">
-                        {' '}
-                        <EyeIcon className="h-[1.2rem] w-[1.2rem]" />
+                        <Calculator className="h-[1.2rem] w-[1.2rem]" />
                     </span>
-                    {/* change the view count in the post object with style effect like YouTube */}
                     <p className="ml-2">
-                        <span id="view"> {post.view_count} views</span>
+                        <span id="view">{post.word_count} words</span>
                     </p>
                     <span className="ml-2">
                         <Minus className="h-[1.2rem] w-[1.2rem]" />
                     </span>
                     <span className="ml-2">
-                        {' '}
                         <Clock className="h-[1.2rem] w-[1.2rem]" />
                     </span>
-                    <span className="ml-2">{post.read_time} min read</span>
+                    <span className="ml-2">{post.read_time}</span>
                 </div>
                 <p className="mr-5 flex text-base items-center">
                     <span className="mr-2">

@@ -3,6 +3,9 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
+import readingTime from 'reading-time';
+import Promise from 'promise';
+import { Clock } from 'lucide-react';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -29,6 +32,21 @@ const getPosts = async (limit) => {
             'utf-8'
         );
         const posts = JSON.parse(postsData);
+        // Get contents for each post and calculate reading time
+        await Promise.all(
+            posts.map(async (post) => {
+                const content = await fs.readFile(
+                    path.join(DATA_ATTRS_DIR, 'contents', `${post.slug}.md`),
+                    'utf-8'
+                );
+                post.content = content;
+                const { text, words } = readingTime(content);
+                post.read_time = text;
+                post.word_count = words;
+                return post;
+            })
+        );
+
         return posts.slice(0, limit);
     } catch (error) {
         console.error('Error fetching posts:', error);
@@ -77,8 +95,9 @@ const BlogPage = async () => {
                     <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-300">
                         {firstPost.description}
                     </p>
-                    <div className="flex flex-row gap-2 mt-4 text-[#0033A0] dark:text-blue-600">
-                        <p>{firstPost.view_count} views</p>
+                    <div className="flex flex-row leading-none gap-2 mt-4 text-[#0033A0] dark:text-blue-600">
+                        <Clock className="h-4 w-4" />
+                        <p>{firstPost.read_time}</p>
                     </div>
                 </div>
             </div>
