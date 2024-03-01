@@ -1,4 +1,3 @@
-import styles from './singlePost.module.css';
 import { Suspense } from 'react';
 import ShareButtons from '@/components/shareButtons/shareButtons';
 import PostMetadata from '@/components/postMetadata/postMetadata';
@@ -22,7 +21,11 @@ export const generateMetadata = async ({ params }) => {
 
 // * Fetch data from local JSON
 const DATA_ATTRS_FILENAME = 'blogs.json';
-const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'blog');
+const DATA_ATTRS_DIR = path.join(
+    process.cwd(),
+    process.env.DATA_FETCH_DIR,
+    'blog'
+);
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, DATA_ATTRS_FILENAME);
 const DATA_CONTENTS_DIR = path.join(DATA_ATTRS_DIR, 'contents');
 
@@ -70,9 +73,7 @@ const SinglePostContent = ({ post }) => {
 
     return (
         <>
-            <div
-                className={`${styles.hero} relative flex content-center items-center justify-center pt-12`}
-            >
+            <div className="relative flex content-center items-center justify-center pt-12">
                 <div
                     className="absolute top-0 w-full bg-cover bg-center bg-no-repeat h-[400px] pb-10"
                     style={{ backgroundImage: `url(${post.thumbnail})` }}

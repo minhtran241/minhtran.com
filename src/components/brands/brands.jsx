@@ -5,7 +5,11 @@ import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 
-const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'skill');
+const DATA_ATTRS_DIR = path.join(
+    process.cwd(),
+    process.env.DATA_FETCH_DIR,
+    'skill'
+);
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'skills.json');
 
 // * FETCH SKILLS FROM LOCAL JSON

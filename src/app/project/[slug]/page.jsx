@@ -19,7 +19,11 @@ export const generateMetadata = async ({ params }) => {
     };
 };
 
-const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
+const DATA_ATTRS_DIR = path.join(
+    process.cwd(),
+    process.env.DATA_FETCH_DIR,
+    'project'
+);
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 const DATA_CONTENTS_DIR = path.join(DATA_ATTRS_DIR, 'contents');
 

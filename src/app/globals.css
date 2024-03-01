@@ -155,20 +155,3 @@ strong {
 .shadow {
     @apply shadow-[0_12px_24px_-6px_rgba(45,67,121,0.1)];
 }
-
-/* Change view counter of blog apply flip animation */
-.flip {
-    @apply transform rotate-180;
-    animation: flip 0.5s;
-    /* slow motion when change */
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes flip {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(180deg);
-    }
-}

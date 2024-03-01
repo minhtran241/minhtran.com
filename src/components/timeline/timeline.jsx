@@ -6,7 +6,11 @@ import { Suspense } from 'react';
 import SectionLabel from '../sectionLabel/sectionLabel';
 
 // * FETCH MILESTONES FROM LOCAL JSON
-const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'milestone');
+const DATA_ATTRS_DIR = path.join(
+    process.cwd(),
+    process.env.DATA_FETCH_DIR,
+    'milestone'
+);
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'milestones.json');
 const getMilestones = async () => {
     const milestonesData = await fs.readFile(

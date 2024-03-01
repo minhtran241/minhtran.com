@@ -14,7 +14,11 @@ export const generateMetadata = async () => {
 };
 
 // * Fetch data from local JSON
-const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'blog');
+const DATA_ATTRS_DIR = path.join(
+    process.cwd(),
+    process.env.DATA_FETCH_DIR,
+    'blog'
+);
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'blogs.json');
 // * Fetch posts from file system
 const getPosts = async (limit) => {

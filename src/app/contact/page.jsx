@@ -1,4 +1,3 @@
-import styles from './contact.module.css';
 import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import path from 'path';
 import { Send, Mail, Github, Linkedin, Briefcase } from 'lucide-react';
@@ -18,7 +17,7 @@ export const generateMetadata = async () => {
 
 const MARKDOWN_FILE = path.join(
     process.cwd(),
-    'data',
+    process.env.DATA_FETCH_DIR,
     'contact',
     'about-this-website.md'
 );

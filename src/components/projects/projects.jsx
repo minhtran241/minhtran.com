@@ -8,7 +8,11 @@ import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 
 const PROJECT_FETCH_LIMIT = 100;
-const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
+const DATA_ATTRS_DIR = path.join(
+    process.cwd(),
+    process.env.DATA_FETCH_DIR,
+    'project'
+);
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 
 // * Fetch projects from file system
