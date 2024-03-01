@@ -113,9 +113,7 @@ const SinglePostContent = ({ post }) => {
                                 {post.description}
                             </div>
                             <div>
-                                <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose prose-a:text-[#0033A0] dark:prose-a:text-blue-600 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm">
                                     <MarkdownRender mdString={post.content} />
-                                </article>
                                 <div className="items-center justify-between sm:flex">
                                     <div className="mb-5">
                                         {/* <PostUser userId={post.user_id} /> */}

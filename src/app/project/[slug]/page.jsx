@@ -50,7 +50,7 @@ const getProject = async (slug) => {
 
 const SingleProjectContent = async ({ project }) => {
     return (
-        <div  className="mb-12">
+        <div className="mb-12">
             <div className={`content-center items-center justify-center`}>
                 {/* Image in the center */}
                 <div className="flex  items-center justify-center mb-5">
@@ -124,11 +124,7 @@ const SingleProjectContent = async ({ project }) => {
                                 {project.description}
                             </div>
                             <div>
-                                <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose prose-a:text-[#0033A0] dark:prose-a:text-blue-600 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm">
-                                    <MarkdownRender
-                                        mdString={project.content}
-                                    />
-                                </article>
+                                <MarkdownRender mdString={project.content} />
                             </div>
                         </div>
                     </div>
