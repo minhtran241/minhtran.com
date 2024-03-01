@@ -64,7 +64,7 @@ const HeroComponent = () => {
                             >
                                 {process.env.CURRENT_ORG}
                             </Link>
-                            <p className="text-gray-600 italic font-semibold">
+                            <p className="text-gray-600">
                                 {process.env.CURRENT_ROLE}{' '}
                                 <span className="text-[#0033A0] dark:text-blue-600">
                                     (3.94 GPA)
@@ -72,31 +72,14 @@ const HeroComponent = () => {
                             </p>
                         </div>
                     </div>
-                    <p className="text-center font-light pt-4 px-4">
-                        Experienced{' '}
-                        <span className="text-[#0033A0] dark:text-blue-600">
-                            Software Engineer
-                        </span>{' '}
-                        and{' '}
-                        <span className="text-[#0033A0] dark:text-blue-600">
-                            Data Engineer
-                        </span>{' '}
-                        with a 2-year track record in backend systems,
-                        specializing in API development, performance
-                        optimization, and system design. Notable achievements in
-                        a major real estate system serving{' '}
-                        <span className="text-[#0033A0] dark:text-blue-600">
-                            10,000+ users
-                        </span>
-                        , showcasing expertise in managing{' '}
-                        <span className="text-[#0033A0] dark:text-blue-600">
-                            large-scale databases
-                        </span>{' '}
-                        and optimizing{' '}
-                        <span className="text-[#0033A0] dark:text-blue-600">
-                            high-speed inserts
-                        </span>
-                        .
+                    <p className="text-center pt-4 px-4">
+                        Experienced Software Engineer and Data Engineer with a
+                        2-year track record in backend systems, specializing in
+                        API development, performance optimization, and system
+                        design. Notable achievements in a major real estate
+                        system serving 10,000+ users, showcasing expertise in
+                        managing large-scale databases and optimizing high-speed
+                        inserts.
                     </p>
                     <hr className="mt-6" />
                     <div className="flex bg-gray-50 dark:bg-gray-800">
