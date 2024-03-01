@@ -1,6 +1,8 @@
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/swiftui2.png" alt="SwiftUI" width="800" height="530"/>
-</p>
+</p> -->
+
+![SwiftUI](https://github.com/minhtran241/gvcourse/raw/main/screenshots/swiftui2.png)
 
 Welcome to the SwiftUI tutorial! In this guide, we'll dive into the world of SwiftUI, Apple's modern UI framework, as we embark on the journey to build a comprehensive application—GVCourse.
 
@@ -38,31 +40,54 @@ The authentication feature allows users to create accounts and log in using thir
 --- | ---
 ![Sign In](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png) | ![Sign Up](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png) -->
 
-<p align="center" style="display: flex; justify-content: center;">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png" alt="Courses List" width="250" height="500">
+</p> -->
+
+![Sign In Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png)
+
+<!-- <p  align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png" alt="Course Details" width="250" height="500">
-</p>
+</p> -->
+
+![Sign Up Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png)
 
 #### Course News and Announcements
 
-<p align="center" style="display: flex; justify-content: center;">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png" alt="Courses List" width="250" height="500">
+</p> -->
+
+![News List Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png)
+
+<!-- <p  align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png" alt="Course Details" width="250" height="500">
-</p>
+</p> -->
+
+![News Details Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png)
 
 #### Course Catalog
 
-<p align="center" style="display: flex; justify-content: center;">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png" alt="Courses List" width="250" height="500">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png" alt="Course Details" width="250" height="500">
-  </p>
+</p> -->
+
+![Courses List Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png)
+
+<!-- <p align="center">
+    <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png" alt="Course Details" width="250" height="500">
+</p> -->
+
+![Course Details Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png)
 
 #### Settings
 
 <!-- ![Settings](https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png) -->
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png" alt="Settings" width="350" height="650">
-</p>
+</p> -->
+
+![Settings Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png)
 
 ### GVCourse App Demo Video
 
@@ -86,9 +111,11 @@ Before we begin building our GVCourse app, let's ensure your development environ
 
 SwiftUI requires macOS 10.15 Catalina or later. To check your macOS version, click the Apple icon in the top left corner of your screen and select **About This Mac**.
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/catalina.png" alt="Catalina" width="200" height="200">
-</p>
+</p> -->
+
+![Download macOS Catalina](https://github.com/minhtran241/gvcourse/raw/main/screenshots/catalina.png)
 
 #### Xcode and Simulator
 
@@ -96,18 +123,19 @@ Install the latest version of Xcode from the [Mac App Store](https://apps.apple.
 
 Simulator is a tool that allows you to run your app on a virtual device. To open Simulator, open Xcode and select **Xcode** > **Open Developer Tool** > **Simulator**.
 
-<p align="center" style="display: flex; justify-content: center;">
+<!-- <p align="center" style="display: flex; justify-content: center;">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png" alt="Xcode" width="150" height="150">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png" alt="Simulator" width="150" height="150">
-</p>
+</p> -->
+
+![Download Xcode](https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png)
+![Download Simulator](https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png)
 
 #### SF Symbols
 
 SF Symbols is a set of over 3,100 symbols that you can use in your app. To install SF Symbols, open Xcode and select **File** > **Swift Packages** > **Add Package Dependency**. In the search bar, type *"SF Symbols"* and click **Next**. Select the latest version and click **Next**. Finally, click **Finish**.
 
-<p align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/sf_icon.png" alt="SFSymbols" width="200" height="200">
-</p>
+![sficon](https://github.com/minhtran241/gvcourse/raw/main/screenshots/sf_icon.png)
 
 In this tutorial, we will use SF Symbols to display icons in our app. For example, we will use the following code snippet to display a user icon:
 
@@ -328,11 +356,11 @@ struct CourseRowView: View {
 
 As you can see in the code snippet above, we use HStack to arrange the course name and course title in a horizontal line. Here is the result:
 
-<!-- ![CourseRowView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_row_view.png) -->
+![CourseRowView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_row_view.png)
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_row_view.png" alt="CourseRowView" width="450" height="100">
-</p>
+</p> -->
 
 #### Create view for a list of objects
 
@@ -420,9 +448,11 @@ struct CourseDetailsView: View {
 
 Here is the result:
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details_view.png" alt="CourseDetailsView" width="450" height="380">
-</p>
+</p> -->
+
+![CourseDetailsView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details_view.png)
 
 #### Custom view components (subviews)
 
@@ -460,11 +490,11 @@ struct CustomTextBox: View {
 
 With just a few lines of code, we have created a beautiful custom view. Here is the result:
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/custom_textbox_view.png" alt="CustomTextBox" width="450" height="380">
-</p>
+</p> -->
 
-<!-- ![CustomTextBox](https://github.com/minhtran241/gvcourse/raw/main/screenshots/custom_textbox_view.png) -->
+![CustomTextBox](https://github.com/minhtran241/gvcourse/raw/main/screenshots/custom_textbox_view.png)
 
 That's it, we have finished building the views for Course component. All the code for views is located in the [Views](https://github.com/minhtran241/gvcourses/tree/main/GVCourses/Views) folder. Now, let's explore how to build the model for the Course component.
 
@@ -727,11 +757,11 @@ Simmilarly, we can use the *AuthManager* class to handle the authentication in t
 
 With just a few lines of code, we have created a beautiful sign in view. Here is the result:
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png" alt="SignInView" width="350" height="650">
-</p>
+</p> -->
 
-<!-- ![SignInView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png) -->
+![SignInView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png)
 
 That is our authenticaion implementation. Now, let's explore how to navigate between views.
 
@@ -875,11 +905,11 @@ struct GVCoursesApp: App {
 
 And here is the result of our beautiful custom tab bar:
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/tabbar.png" alt="GVCoursesTabView">
-</p>
+</p> -->
 
-<!-- ![GVCoursesTabView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/tabbar.png) -->
+![GVCoursesTabView](https://github.com/minhtran241/gvcourse/raw/main/screenshots/tabbar.png)
 
 That's it, we have finished implementing the navigation between views! Now let's explore the search functionality.
 

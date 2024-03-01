@@ -53,7 +53,7 @@ const SingleProjectContent = async ({ project }) => {
         <>
             <div className="content-center items-center justify-center">
                 {/* Image in the center */}
-                <div className="flex  items-center justify-center mb-5">
+                <div className="flex items-center justify-center mb-5">
                     <Image
                         src={project.thumbnail}
                         alt={project.title}
@@ -64,7 +64,9 @@ const SingleProjectContent = async ({ project }) => {
                 </div>
                 {/* Title */}
                 <div className="flex flex-col items-center justify-center gap-4">
-                    <h1 className="text-4xl font-semibold">{project.title}</h1>
+                    <h1 className="lg:text-4xl font-semibold text-2xl md:text-3xl">
+                        {project.title}
+                    </h1>
                     <div className="flex flex-col items-center gap-2">
                         {project.repo_link && (
                             <Link
@@ -93,38 +95,35 @@ const SingleProjectContent = async ({ project }) => {
                             </Link>
                         )}
                     </div>
+                    <div className="flex flex-wrap items-center justify-center">
+                        {/* tech_stack url badges */}
+                        <div className="flex flex-wrap items-center justify-center gap-4 mb-5">
+                            {project.tech_stack.map((tech, index) => (
+                                <div key={index}>
+                                    <Image
+                                        src={tech}
+                                        alt={tech}
+                                        width={0}
+                                        height={0}
+                                        style={{
+                                            width: 'auto',
+                                            height: 'auto',
+                                        }}
+                                        className="rounded-full border border-[#0033A0] dark:border-white"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="container mx-auto px-4 !pt-8">
+            <div className="content-center items-center justify-center !pt-[16px]">
                 <div className="flex flex-wrap justify-center">
-                    <div className="w-full px-4 lg:w-9/12">
-                        <div>
-                            <div className="flex flex-wrap items-center justify-center ">
-                                {/* tech_stack url badges */}
-                                <div className="flex flex-wrap items-center justify-center gap-4 mb-5">
-                                    {project.tech_stack.map((tech, index) => (
-                                        <div key={index}>
-                                            <Image
-                                                src={tech}
-                                                alt={tech}
-                                                width={0}
-                                                height={0}
-                                                style={{
-                                                    width: 'auto',
-                                                    height: 'auto',
-                                                }}
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="mb-5 border-b border-[#e9e9e9] pb-[20px] text-justify text-lg font-light italic text-primary dark:border-white dark:border-opacity-10">
-                                {project.description}
-                            </div>
-                            <div>
-                                <MarkdownRender mdString={project.content} />
-                            </div>
-                        </div>
+                    <div className="w-full lg:w-9/12 gap-4">
+                        <p className="mb-5 border-b border-[#e9e9e9] pb-[20px] text-justify italic dark:border-white dark:border-opacity-10">
+                            {project.description}
+                        </p>
+                        <MarkdownRender mdString={project.content} />
                     </div>
                 </div>
             </div>

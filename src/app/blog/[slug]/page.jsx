@@ -99,32 +99,27 @@ const SinglePostContent = ({ post }) => {
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto px-4 pt-10">
-                <div className="flex flex-wrap justify-center pt-12">
-                    <div className="w-full px-4 lg:w-8/12">
-                        <div>
-                            <div className="flex flex-wrap items-center justify-between ">
-                                <PostMetadata post={post} />
-                                <div className="mb-5">
-                                    <ShareButtons />
-                                </div>
+            <div className="content-center items-center justify-center">
+                <div className="flex flex-wrap justify-center !pt-[110px]">
+                    <div className="w-full px-4 justify-center lg:w-9/12">
+                        <div className="flex flex-wrap items-center justify-between">
+                            <PostMetadata post={post} />
+                            <div className="mb-5">
+                                <ShareButtons />
                             </div>
-                            <div className="mb-5 border-b border-[#e9e9e9] pb-[20px] text-justify text-lg font-light italic text-primary dark:border-white dark:border-opacity-10">
-                                {post.description}
-                            </div>
-                            <div>
-                                <MarkdownRender mdString={post.content} />
-                                <div className="items-center justify-between sm:flex">
-                                    <div className="mb-5">
-                                        {/* <PostUser userId={post.user_id} /> */}
-                                    </div>
-                                    <div className="mb-5">
-                                        <h5 className="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400 sm:text-right">
-                                            Share this blog :
-                                        </h5>
-                                        <div className="flex items-center sm:justify-end">
-                                            <ShareButtons />
-                                        </div>
+                        </div>
+                        <p className="mb-5 border-b border-[#e9e9e9] pb-[20px] text-justify italic dark:border-white dark:border-opacity-10">
+                            {post.description}
+                        </p>
+                        <div className="flex flex-col gap-4">
+                            <MarkdownRender mdString={post.content} />
+                            <div className="items-center justify-end sm:flex">
+                                <div>
+                                    <h5 className="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400 sm:text-right">
+                                        Share this blog :
+                                    </h5>
+                                    <div className="flex items-center sm:justify-end">
+                                        <ShareButtons />
                                     </div>
                                 </div>
                             </div>
