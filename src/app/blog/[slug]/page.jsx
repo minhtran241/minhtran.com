@@ -39,7 +39,11 @@ const getPost = async (slug) => {
         const views = post.view_count + 1;
         post.view_count = views;
         // Write new view of this post to JSON file
-        // fs.writeFile(DATA_ATTRS_FILE, JSON.stringify(posts, null, 2), 'utf-8');
+        await fs.writeFile(
+            DATA_ATTRS_FILE,
+            JSON.stringify(posts, null, 2),
+            'utf-8'
+        );
         const content = await fs.readFile(
             path.join(DATA_CONTENTS_DIR, `${slug}.md`),
             'utf-8'
