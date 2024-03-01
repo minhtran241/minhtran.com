@@ -36,7 +36,7 @@ const ProjectsComponent = async ({ limit }) => {
                         <h1 className="text-5xl font-semibold leading-tight dark:text-white">
                             {' '}
                             Personal{' '}
-                            <span className="text-[#0033A0]">
+                            <span className="text-[#0033A0] dark:text-blue-600">
                                 Projects
                             </span>{' '}
                         </h1>
