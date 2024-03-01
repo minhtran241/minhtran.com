@@ -10,7 +10,7 @@ const DATA_ATTRS_DIR = path.join(process.cwd(), 'data', 'project');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 
 // SEO metadata
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async () => {
     return {
         title: "Minh Tran's Personal Projects",
         description:

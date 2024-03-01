@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Radio, Loader2, ArrowRight, CalendarDays } from 'lucide-react';
+import { Loader2, ArrowRight } from 'lucide-react';
 import { Suspense } from 'react';
 import path from 'path';
 import fs from 'fs/promises';

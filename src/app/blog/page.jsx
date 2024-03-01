@@ -3,10 +3,9 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Radio } from 'lucide-react';
 
 // SEO metadata
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async () => {
     return {
         title: "Minh Tran's Blog",
         description:

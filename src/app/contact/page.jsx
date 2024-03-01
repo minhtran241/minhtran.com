@@ -9,7 +9,7 @@ import Link from 'next/link';
 import fs from 'fs/promises';
 
 // SEO metadata
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async () => {
     return {
         title: 'Contact Minh Tran',
         description: 'Contact Minh Tran - Software Engineer and Data Engineer',

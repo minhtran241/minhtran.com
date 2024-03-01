@@ -5,7 +5,7 @@ import Hero from '@/components/hero/hero';
 
 const PROJECT_LIMIT = 3;
 
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async () => {
     return {
         title: 'Minh Tran - Software Engineer & Data Engineer',
         description:

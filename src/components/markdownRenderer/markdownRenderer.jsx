@@ -73,10 +73,10 @@ export default function MarkdownRender({ mdString }) {
                                             text={codeChunk}
                                             onCopy={async () => {
                                                 setCopyTip('Copied');
-                                                await new Promise((resolve) =>
-                                                    setTimeout(resolve, 500)
-                                                );
-                                                setCopyTip(`Copy code`);
+                                                // reset the tooltip after 2 seconds
+                                                setTimeout(() => {
+                                                    setCopyTip('Copy code');
+                                                }, 2000);
                                                 toast.success(
                                                     'Code copied to clipboard'
                                                 );
