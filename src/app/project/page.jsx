@@ -84,7 +84,6 @@ const ProjectPage = async () => {
                             <Link
                                 href={firstProject.link}
                                 target="_blank"
-                                rel="noopener noreferrer"
                                 className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
                             >
                                 <Radio className="h-4 w-4" />
@@ -97,7 +96,6 @@ const ProjectPage = async () => {
                             <Link
                                 href={firstProject.repo_link}
                                 target="_blank"
-                                rel="noopener noreferrer"
                                 className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
                             >
                                 <Github className="h-4 w-4" />
