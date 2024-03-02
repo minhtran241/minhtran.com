@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
                     disableTransitionOnChange
                 >
                     <Navbar />
-                    <div className="container dark:text-white">
+                    <div className="container dark:text-white text-black">
                         {children}
                         <SpeedInsights />
                         <Analytics />
