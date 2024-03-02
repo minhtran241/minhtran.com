@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import fs from 'fs/promises';
+import ContactForm from '@/components/contactForm/contactForm';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -92,23 +93,7 @@ const ContactPage = async () => {
                         </div>
                     </div>
                 </div>
-                <div className="">
-                    <p className="text-2xl font-semibold text-[#0033A0] dark:text-white mb-4">
-                        Leave me a message!
-                    </p>
-                    <form className="flex flex-col gap-4" action="">
-                        {/* <input type="text" placeholder="Name and Surname" /> */}
-                        <Input type="text" placeholder="Name and Surname" />
-                        <Input type="email" placeholder="Email Address" />
-                        <Textarea
-                            placeholder="Type your message here."
-                            className="dark:bg-black"
-                        />
-                        <Button className="bg-[#0033A0] text-white hover:bg-blue-800">
-                            <Send className="mr-2 h-4 w-4" /> Send message
-                        </Button>
-                    </form>
-                </div>
+                <ContactForm />
             </div>
             <div>
                 <MarkdownRender mdString={aboutWebsiteMdString} />
