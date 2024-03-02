@@ -28,3 +28,7 @@ Ditching the complexities of CMS, API, and databases, this iteration of the webs
 ### Seamless Deployment
 
 Powered by [Vercel](https://vercel.com/), this website enjoys swift and hassle-free deployment. Leveraging the [Vercel CLI](https://vercel.com/download), updates and enhancements are effortlessly pushed live, ensuring a seamless user experience.
+
+### Speed Insights
+
+In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically.
