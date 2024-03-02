@@ -31,7 +31,7 @@ Powered by [Vercel](https://vercel.com/), this website enjoys swift and hassle-f
 
 ### Speed Insights
 
-In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically.
+In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically. The performance report is generated using [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights).
 
 #### Lighthouse Report (Desktop)
 
