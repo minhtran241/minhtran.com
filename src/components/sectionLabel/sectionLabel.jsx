@@ -17,7 +17,7 @@ const SectionLabel = ({ title, description }) => {
                         <div className="flex-1 h-2 bg-[#0033A0]"></div>
                     </div>
                 </div>
-                <p className="mb-16 text-base text-center text-gray-600 dark:text-gray-400">
+                <p className="mb-8 text-base text-center text-gray-600 dark:text-gray-400">
                     {description}
                 </p>
             </div>
