@@ -101,7 +101,7 @@ const SinglePostContent = ({ post }) => {
                                 <ShareButtons />
                             </div>
                         </div>
-                        <p className="mb-5 border-b border-[#e9e9e9] pb-[20px] text-justify italic dark:border-white dark:border-opacity-10">
+                        <p className="mb-5 border-b font-medium border-[#e9e9e9] pb-[20px] text-justify italic dark:border-white dark:border-opacity-10">
                             {post.description}
                         </p>
                         <div className="flex flex-col gap-4">

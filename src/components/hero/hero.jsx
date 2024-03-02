@@ -33,7 +33,7 @@ const HeroComponent = () => {
                         height={400}
                     />
                 </div>
-                <div className="flex justify-center px-5  -mt-12">
+                <div className="flex justify-center px-5 -mt-12">
                     <Avatar className="h-32 w-32 bg-white dark:bg-black p-2">
                         <AvatarImage src="/minhtran-ava.png" alt="minhtran" />
                         <AvatarFallback>MT</AvatarFallback>
@@ -48,7 +48,7 @@ const HeroComponent = () => {
                         <div className="flex flex-row justify-center gap-2">
                             {iconsTab.map((icon, index) => (
                                 <Link
-                                    className="text-gray-400 mt-2 hover:text-[#0033A0] cursor-pointer"
+                                    className="text-gray-600 dark:text-gray-400 mt-2 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer"
                                     href={icon.link}
                                     target="_blank"
                                     key={index}
@@ -64,7 +64,7 @@ const HeroComponent = () => {
                             >
                                 {process.env.CURRENT_ORG}
                             </Link>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 dark:text-gray-400">
                                 {process.env.CURRENT_ROLE}{' '}
                                 {/* <span className="text-[#0033A0] dark:text-blue-600">
                                     (3.94 GPA)
@@ -73,13 +73,12 @@ const HeroComponent = () => {
                         </div>
                     </div>
                     <p className="text-center pt-4 px-4">
-                        Experienced Software Engineer and Data Engineer with a
-                        2-year track record in backend systems, specializing in
-                        API development, performance optimization, and system
-                        design. Notable achievements in a major real estate
-                        system serving 10,000+ users, showcasing expertise in
-                        managing large-scale databases and optimizing high-speed
-                        inserts.
+                        Experienced Software and Data Engineer with 2 years in
+                        backend systems. Specializing in API development,
+                        performance optimization, and system design. Recognized
+                        for achievements in a real estate system serving 10,000+
+                        users, including managing large-scale databases and
+                        optimizing high-speed inserts.
                     </p>
                     <hr className="mt-6" />
                     <div className="flex bg-gray-50 dark:bg-gray-800">

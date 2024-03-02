@@ -37,7 +37,7 @@ const Milestone = ({ milestone, right }) => {
                                         <p className="text-xl font-bold text-[#0033A0] dark:text-blue-600">
                                             {milestone.title}
                                         </p>
-                                        <p className=" mb-2 italic text-gray-600">
+                                        <p className=" mb-2 italic text-gray-600 dark:text-gray-400">
                                             {milestone.job_title}
                                         </p>
                                         <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600">
@@ -87,7 +87,7 @@ const Milestone = ({ milestone, right }) => {
                                         <p className="text-xl font-bold text-[#0033A0] dark:text-blue-600">
                                             {milestone.title}
                                         </p>
-                                        <p className=" mb-2 italic text-gray-600">
+                                        <p className=" mb-2 italic text-gray-600 dark:text-gray-400">
                                             {milestone.job_title}
                                         </p>
                                         <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600">

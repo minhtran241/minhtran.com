@@ -37,7 +37,7 @@ const ProjectsComponent = async ({ limit }) => {
     const sectionDescription =
         'I have worked on these projects in my free time. I have used these projects to learn new technologies and implement new features.';
     return (
-        <div className="items-center justify-center mt-20">
+        <div className="items-center justify-center mt-12">
             <SectionLabel
                 title={sectionTitle}
                 description={sectionDescription}

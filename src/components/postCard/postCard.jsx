@@ -38,7 +38,7 @@ const PostCard = ({ post }) => {
                     >
                         {post.title}
                     </Link>
-                    <p className="text-md text-justify font-light italic text-gray-600">
+                    <p className="text-md text-justify font-light italic text-gray-600 dark:text-gray-400">
                         {post.description?.length > 150
                             ? `${post.description?.substring(0, 150)}...`
                             : post.description}

@@ -25,7 +25,7 @@ const BrandsComponent = async () => {
     const sectionDescription =
         'I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies.';
     return (
-        <div className="items-center justify-center mt-20">
+        <div className="items-center justify-center mt-12">
             <SectionLabel
                 title={sectionTitle}
                 description={sectionDescription}

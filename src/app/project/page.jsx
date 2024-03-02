@@ -76,7 +76,7 @@ const ProjectPage = async () => {
                     >
                         {firstProject.title}
                     </Link>
-                    <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-300">
+                    <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-400">
                         {firstProject.description}
                     </p>
                     {firstProject.link && (

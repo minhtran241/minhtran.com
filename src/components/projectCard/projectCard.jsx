@@ -16,10 +16,7 @@ const ProjectCard = ({ project }) => {
                     })}
                 </span>
             </div>
-            <Link
-                href={`/project/${project.slug}`}
-                // onClick={() => incrementViewCount(project.slug)}
-            >
+            <Link href={`/project/${project.slug}`}>
                 <Image
                     className="rounded-md max-w-full max-h-[200px] object-cover w-full border-2 border-[#0033A0] dark:border-white"
                     src={project.thumbnail}
@@ -27,10 +24,6 @@ const ProjectCard = ({ project }) => {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    // style={{
-                    //     width: 'auto',
-                    //     height: 'auto',
-                    // }}
                 />
             </Link>
 
@@ -40,7 +33,11 @@ const ProjectCard = ({ project }) => {
             >
                 {project.title}
             </Link>
-            <p className=" text-gray-600">{project.description}</p>
+            <p className="text-gray-600 dark:text-gray-400">
+                {project.description?.length > 150
+                    ? `${project.description?.substring(0, 150)}...`
+                    : project.description}
+            </p>
             {project.link && (
                 <div className="flex flex-row gap-2 mt-4">
                     <Link
@@ -48,7 +45,6 @@ const ProjectCard = ({ project }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
-                        // onClick={() => incrementViewCount(project.slug)}
                     >
                         <Radio className="h-4 w-4" />
                         View Live
@@ -63,7 +59,6 @@ const ProjectCard = ({ project }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
-                        // onClick={() => incrementViewCount(project.slug)}
                     >
                         <Github className="h-4 w-4" />
                         View Source

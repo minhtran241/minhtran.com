@@ -30,7 +30,7 @@ const TimelineComponent = async () => {
     const sectionDescription =
         'My working has been in the field of software development, performance optimization, and system design.';
     return (
-        <div className="items-center justify-center mt-16">
+        <div className="items-center justify-center mt-12">
             <SectionLabel
                 title={sectionTitle}
                 description={sectionDescription}

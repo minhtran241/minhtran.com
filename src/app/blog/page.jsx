@@ -92,7 +92,7 @@ const BlogPage = async () => {
                     >
                         {firstPost.title}
                     </Link>
-                    <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-300">
+                    <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-400">
                         {firstPost.description}
                     </p>
                     <div className="flex flex-row leading-none gap-2 mt-4 text-[#0033A0] dark:text-blue-600">
