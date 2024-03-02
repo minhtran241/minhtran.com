@@ -1,7 +1,7 @@
 import Links from './links/Links';
 import DropdownTheme from '../themeProvider/dropdownTheme';
 import { Menu } from 'lucide-react';
-import { Link } from 'next/link';
+import Link from 'next/link';
 
 const Navbar = async () => {
     return (
@@ -22,7 +22,7 @@ const Navbar = async () => {
                         <Links />
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost text-xl">
+                <Link href="/" className="text-xl btn btn-ghost">
                     minhtran.com
                 </Link>
             </div>
