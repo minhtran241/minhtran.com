@@ -26,7 +26,7 @@ const HeroComponent = () => {
             <div className="shadow-lg transform duration-300 easy-in-out">
                 <div className="h-36 overflow-hidden">
                     <Image
-                        className="w-full object-cover"
+                        className="rounded-md w-full object-cover"
                         src="/bg-image.jpeg"
                         alt="background_image"
                         width={1600}

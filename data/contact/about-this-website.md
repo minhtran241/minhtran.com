@@ -32,3 +32,13 @@ Powered by [Vercel](https://vercel.com/), this website enjoys swift and hassle-f
 ### Speed Insights
 
 In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically.
+
+#### Lighthouse Report (Desktop)
+
+![Lighthouse Report (Desktop)](lighthouse-report-desktop.png)
+
+---
+
+<p align="center">
+  Best regards, <strong>Minh Tran</strong>
+</p>
