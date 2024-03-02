@@ -75,10 +75,7 @@ const HeroComponent = () => {
                     <p className="text-center pt-4 px-4">
                         Experienced Software and Data Engineer with 2 years in
                         backend systems. Specializing in API development,
-                        performance optimization, and system design. Recognized
-                        for achievements in a real estate system serving 10,000+
-                        users, including managing large-scale databases and
-                        optimizing high-speed inserts.
+                        performance optimization, and system design.
                     </p>
                     <hr className="mt-6" />
                     <div className="flex bg-gray-50 dark:bg-gray-800">
