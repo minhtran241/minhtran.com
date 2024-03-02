@@ -35,7 +35,11 @@ In building this website, I really paid attention to all aspects related to perf
 
 #### Lighthouse Report (Desktop)
 
-![Lighthouse Report (Desktop)](lighthouse-report-desktop.png)
+![Lighthouse Report (Desktop)](lh-rp-desktop.png)
+
+#### Lighthouse Report (Mobile)
+
+![Lighthouse Report (Mobile)](lh-rp-mobile.png)
 
 ---
 
