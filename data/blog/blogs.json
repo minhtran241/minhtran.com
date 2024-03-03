@@ -11,5 +11,18 @@
     "user_id": 1,
     "is_published": true,
     "tags": "database, sharding, partitioning"
+  },
+  {
+	"id": 2,
+	"title": "Introduction to Large Language Models and Transformer Architecture",
+	"description": "Large language models are a type of neural network that can be trained to perform a variety of natural language processing tasks.",
+	"slug": "introduction-to-large-language-models-and-transformer-architecture",
+	"thumbnail": "https://miro.medium.com/v2/resize:fit:1256/format:webp/1*zlj8N1mdfX-OLfxDqrzmig.png",
+	"view_count": 0,
+	"created_at": "2024-03-03T16:22:48.255Z",
+	"updated_at": "2024-03-03T16:22:48.255Z",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "nlp, transformer, language models, llm, llms"
   }
 ]

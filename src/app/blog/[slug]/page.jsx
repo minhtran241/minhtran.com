@@ -65,7 +65,7 @@ const SinglePostContent = ({ post }) => {
 
     return (
         <>
-            <div className="relative flex content-center items-center justify-center pt-12">
+            <div className="relative flex content-center items-center justify-center">
                 <div
                     className="absolute top-0 w-full bg-cover bg-center bg-no-repeat h-[400px] pb-10"
                     style={{ backgroundImage: `url(${post.thumbnail})` }}

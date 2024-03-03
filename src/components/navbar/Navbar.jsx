@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Navbar = async () => {
     return (
-        <div className="navbar bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white">
+        <div className="navbar bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white mb-12">
             <div className="navbar-start">
                 <div className="dropdown ">
                     <div

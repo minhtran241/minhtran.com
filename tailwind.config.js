@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 
 const disabledCss = {
-	'code::before': false,
-	'code::after': false,
-	'blockquote p:first-of-type::before': false,
-	'blockquote p:last-of-type::after': false,
-	pre: false,
-	code: false,
-	'pre code': false,
-	'code::before': false,
-	'code::after': false,
-}
+    'code::before': false,
+    'code::after': false,
+    'blockquote p:first-of-type::before': false,
+    'blockquote p:last-of-type::after': false,
+    pre: false,
+    code: false,
+    'pre code': false,
+    'code::before': false,
+    'code::after': false,
+};
 
 module.exports = {
     darkMode: ['class'],
@@ -24,9 +24,19 @@ module.exports = {
     theme: {
         container: {
             center: true,
-            padding: '2rem',
+            padding: '6rem',
             screens: {
-                '2xl': '1400px',
+                '2xl': { max: '1535px' },
+                xl: { max: '1279px' },
+                lg: { max: '1023px' },
+                md: { max: '767px' },
+                sm: { max: '639px' },
+
+                minsm: { min: '640px' },
+                minmd: { min: '768px' },
+                minlg: { min: '1024px' },
+                minxl: { min: '1280px' },
+                min2xl: { min: '1536px' },
             },
         },
         extend: {
@@ -84,19 +94,19 @@ module.exports = {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
             },
-			typography: {
-				DEFAULT: { css: disabledCss },
-				sm: { css: disabledCss },
-				lg: { css: disabledCss },
-				xl: { css: disabledCss },
-				'2xl': { css: disabledCss },
-				base: { css: disabledCss },
-			},
+            typography: {
+                DEFAULT: { css: disabledCss },
+                sm: { css: disabledCss },
+                lg: { css: disabledCss },
+                xl: { css: disabledCss },
+                '2xl': { css: disabledCss },
+                base: { css: disabledCss },
+            },
         },
     },
     plugins: [
-		require("daisyui"),
-		require("tailwind-scrollbar")({ nocompatible: true }),
+        require('daisyui'),
+        require('tailwind-scrollbar')({ nocompatible: true }),
         require('tailwindcss-animate'),
         require('@tailwindcss/typography'),
     ],
