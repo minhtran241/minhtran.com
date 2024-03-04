@@ -70,7 +70,7 @@ const SinglePostContent = ({ post }) => {
             <div className="content-center items-center justify-center mb-5">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
-                        <h1 className="font-bold text-[#0033A0] dark:text-blue-600 lg:text-4xl md:text-4xl sm:text-3xl mb-3">
+                        <h1 className="font-bold text-[#0033A0] dark:text-blue-600 text-4xl mb-3">
                             {post.title}
                         </h1>
                         <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
