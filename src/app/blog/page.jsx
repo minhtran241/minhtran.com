@@ -31,22 +31,29 @@ const getPosts = async (limit) => {
             path.join(DATA_ATTRS_FILE),
             'utf-8'
         );
-        const posts = JSON.parse(postsData);
+        let posts = JSON.parse(postsData);
         // Get contents for each post and calculate reading time
-        await Promise.all(
-            posts.map(async (post) => {
-                const content = await fs.readFile(
-                    path.join(DATA_ATTRS_DIR, 'contents', `${post.slug}.md`),
-                    'utf-8'
-                );
-                post.content = content;
-                const { text, words } = readingTime(content);
-                post.read_time = text;
-                post.word_count = words;
-                return post;
-            })
-        );
+        // await Promise.all(
+        //     posts.map(async (post) => {
+        //         const content = await fs.readFile(
+        //             path.join(DATA_ATTRS_DIR, 'contents', `${post.slug}.md`),
+        //             'utf-8'
+        //         );
+        //         post.content = content;
+        //         const { text, words } = readingTime(content);
+        //         post.read_time = text;
+        //         post.word_count = words;
+        //         return post;
+        //     })
+        // );
+        posts = posts.map((post) => ({
+            ...post,
+            // Splitting tags into an array
+            tags: post.tags.split(',').map((tag) => tag.trim()),
+        }));
 
+        // Sort posts by creation date in descending order
+        posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         return posts.slice(0, limit);
     } catch (error) {
         console.error('Error fetching posts:', error);
@@ -61,20 +68,20 @@ const BlogPage = async () => {
     return (
         <div className="items-center justify-center flex flex-col gap-16">
             {/* // First post */}
-            <div className="lg:-mx-6 lg:flex lg:items-center">
+            <div className="lg:flex lg:items-center lg:gap-12">
                 <Link
                     href={`/blog/${firstPost.slug}`}
-                    className="h-[218px] w-full object-cover dark:hover:shadow-black/30 lg:mx-6 lg:h-[327px] lg:w-1/2"
+                    className="w-full object-cover dark:hover:shadow-black/30 lg:w-1/2"
                 >
                     <Image
-                        className="h-[218px] w-full rounded-md lg:h-[327px] border-2 border-[#0033A0] dark:border-white"
+                        className="lg:min-h-[270px] w-full rounded-md border-2 border-[#0033A0] dark:border-white"
                         src={firstPost.thumbnail}
                         alt={firstPost.title}
                         width={433}
                         height={218}
                     />
                 </Link>
-                <div className="mt-6 lg:mx-6 lg:mt-0 lg:w-1/2 ">
+                <div className="mt-4 lg:mt-0 lg:w-1/2 ">
                     <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
                         {new Date(firstPost?.created_at).toLocaleDateString(
                             'en-GB',
@@ -88,16 +95,23 @@ const BlogPage = async () => {
                     </p>
                     <Link
                         href={`/blog/${firstPost.slug}`}
-                        className="mt-4 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
+                        className="mt-2 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
                     >
                         {firstPost.title}
                     </Link>
                     <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-400">
                         {firstPost.description}
                     </p>
-                    <div className="flex flex-row leading-none gap-2 mt-4 text-[#0033A0] dark:text-blue-600">
-                        <Clock className="h-4 w-4" />
-                        <p>{firstPost.read_time}</p>
+                    <div className="flex flex-wrap leading-none gap-2 mt-4 text-[#0033A0] dark:text-blue-600">
+                        {firstPost.tags?.map((tag, index) => (
+                            <div
+                                key={index}
+                                // href={`/blog?tag=${tag}`}
+                                className="px-2 py-1 text-xs font-semibold text-white bg-[#0033A0] dark:bg-blue-600 rounded-md italic"
+                            >
+                                #{tag}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

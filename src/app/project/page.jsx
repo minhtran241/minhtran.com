@@ -31,6 +31,9 @@ const getProjects = async (limit) => {
             'utf-8'
         );
         const projects = JSON.parse(projectsData);
+        projects.sort(
+            (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        );
         return projects.slice(0, limit);
     } catch (error) {
         console.error('Error fetching projects:', error);
@@ -45,20 +48,20 @@ const ProjectPage = async () => {
     return (
         <div className="items-center justify-center flex flex-col gap-16">
             {/* // First project */}
-            <div className="lg:-mx-6 lg:flex lg:items-center">
+            <div className="lg:flex lg:items-center w-full lg:gap-12">
                 <Link
                     href={`/project/${firstProject.slug}`}
-                    className="h-[218px] w-full object-cover dark:hover:shadow-black/30 lg:mx-6 lg:h-[327px] lg:w-1/2"
+                    className="w-full object-cover dark:hover:shadow-black/30 lg:w-1/2"
                 >
                     <Image
-                        className="h-[218px] w-full rounded-md lg:h-[327px] border-2 border-[#0033A0] dark:border-white"
+                        className="lg:min-h-[270px] w-full rounded-md  border-2 border-[#0033A0] dark:border-white"
                         src={firstProject.thumbnail}
                         alt={firstProject.title}
                         width={433}
                         height={218}
                     />
                 </Link>
-                <div className="mt-6 lg:mx-6 lg:mt-0 lg:w-1/2 ">
+                <div className="mt-6 lg:mt-0 lg:w-1/2 ">
                     <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
                         {new Date(firstProject?.created_at).toLocaleDateString(
                             'en-GB',
