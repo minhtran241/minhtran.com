@@ -14,7 +14,7 @@ const PostMetadata = ({ post }) => {
     );
     return (
         <div className="flex flex-col items-center">
-            <div className="mb-5 flex flex-col text-[#0033A0] dark:text-blue-600">
+            <div className="mb-5 flex flex-col text-sm font-medium text-gray-600 dark:text-gray-400">
                 <div className="mr-5 flex items-center">
                     <span className="">
                         <Calculator className="h-[1.2rem] w-[1.2rem]" />
@@ -30,7 +30,7 @@ const PostMetadata = ({ post }) => {
                     </span>
                     <span className="ml-2">{post.read_time}</span>
                 </div>
-                <p className="mr-5 flex text-base items-center">
+                <p className="mr-5 flex items-center">
                     <span className="mr-2">
                         <PenLine className="h-[1.2rem] w-[1.2rem]" />
                     </span>

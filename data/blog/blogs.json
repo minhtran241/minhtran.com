@@ -24,5 +24,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, tokenization, padding, mapping, llms"
+  },
+  {
+	"id": 3,
+	"title": "Cloudflare ditched NGINX and open-sourced Pingora",
+	"description": "Cloudflare has open-sourced Pingora, a high-performance HTTP server that is designed to be a drop-in replacement for NGINX.",
+	"slug": "cloudflare-ditched-nginx-and-open-sourced-pingora",
+	"thumbnail": "https://blog.cloudflare.com/content/images/2024/02/Rock-crab-OG.png",
+	"view_count": 0,
+	"created_at": "2024-03-04T14:11:48",
+	"updated_at": "2024-03-04T14:11:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "cloudflare, nginx, pingora, proxy"
   }
 ]
