@@ -1,19 +1,6 @@
 [
   {
-    "id": 1,
-    "title": "How Database Sharding Works",
-    "description": "Database sharding is a type of database partitioning that separates very large databases into smaller, faster, more easily managed parts called data shards.",
-    "slug": "how-database-sharding-works",
-    "thumbnail": "https://miro.medium.com/v2/resize:fit:1400/0*p9zBvAhwdhEOhiMY",
-    "view_count": 0,
-    "created_at": "2024-02-25T19:00:48.255Z",
-    "updated_at": "2024-02-25T19:00:48.255Z",
-    "user_id": 1,
-    "is_published": true,
-    "tags": "database, sharding, partitioning"
-  },
-  {
-	"id": 2,
+	"id": 1,
 	"title": "Introduction to Large Language Models and Transformer Architecture",
 	"description": "Large language models are a type of neural network that can be trained to perform a variety of natural language processing tasks.",
 	"slug": "introduction-to-large-language-models-and-transformer-architecture",
@@ -24,5 +11,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, language models, llm, llms"
+  },
+  {
+	"id": 2,
+	"title": "Preparing Text Data for Transformers: Tokenization, Mapping and Padding",
+	"description": "Transformers require a specific input format, which includes tokenization, mapping and padding. This article explains how to prepare text data for transformer models.",
+	"slug": "preparing-text-data-for-transformers-tokenization-mapping-and-padding",
+	"thumbnail": "https://miro.medium.com/v2/resize:fit:894/format:webp/1*N_DGewxYutuK94hy8QXRkA.png",
+	"view_count": 0,
+	"created_at": "2024-03-03T16:22:48.255Z",
+	"updated_at": "2024-03-03T16:22:48.255Z",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "nlp, transformer, tokenization, padding, mapping, llm, llms, language models"
   }
 ]

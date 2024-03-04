@@ -65,19 +65,24 @@ const SinglePostContent = ({ post }) => {
 
     return (
         <>
-            <div className="relative flex content-center items-center justify-center">
+            <div
+                className="relative flex content-center items-center justify-center pb-32 pt-16"
+                style={{ minHeight: '55vh' }}
+            >
                 <div
-                    className="absolute top-0 w-full bg-cover bg-center bg-no-repeat h-[400px] pb-10"
-                    style={{ backgroundImage: `url(${post.thumbnail})` }}
+                    className="absolute top-0 h-full w-full bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: `url(${post.thumbnail})`,
+                    }}
                 >
                     <span
                         id="blackOverlay"
                         className="absolute h-full w-full bg-black opacity-75"
                     ></span>
                 </div>
-                <div className="relative flex items-center justify-center pb-4 pt-8">
-                    <div className="py-16 text-center">
-                        <div className="mx-auto px-4">
+                <div className="relative flex items-center justify-center py-12">
+                    <div className="py-8 text-center">
+                        <div className="container mx-auto px-4">
                             <div className="mx-auto max-w-5xl text-center">
                                 <h1 className="text-2xl font-normal uppercase leading-[1.5] tracking-[3px] text-white dark:text-primary-title sm:text-xl md:text-[30px] md:tracking-[4px] lg:!leading-relaxed">
                                     {post.title}
@@ -93,7 +98,7 @@ const SinglePostContent = ({ post }) => {
                 </div>
             </div>
             <div className="content-center items-center justify-center">
-                <div className="flex flex-wrap justify-center !pt-[110px]">
+                <div className="flex flex-wrap justify-center !pt-[30px]">
                     <div className="w-full px-4 justify-center lg:w-9/12">
                         <div className="flex flex-wrap items-center justify-between">
                             <PostMetadata post={post} />
