@@ -50,5 +50,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, llms, fine-tuning, peft, lora"
+  }, 
+  {
+	"id": 5,
+	"title": "Retrieval Augmented Generation (RAG)",
+	"description": "Retrieval augmented generation (RAG) is an architecture that provides the most relevant and contextually-important proprietary, private or dynamic data to your Generative AI application's large language model (LLM) when it is performing tasks to enhance its accuracy and performance.",
+	"slug": "retrieval-augmented-generation-rag",
+	"thumbnail": "https://miro.medium.com/v2/resize:fit:1400/1*kSkeaXRvRzbJ9SrFZaMoOg.png",
+	"view_count": 0,
+	"created_at": "2024-03-04T23:56:48",
+	"updated_at": "2024-03-04T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "nlp, llms, rag, retrieval, generation, generativeai"
   }
 ]

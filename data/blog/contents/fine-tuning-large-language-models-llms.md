@@ -9,9 +9,7 @@ The **key upside** of this approach is that models can achieve better performanc
 While strictly self-supervised base models can exhibit impressive performance on a wide variety of tasks with the help of prompt engineering [2], they are still word predictors and may generate completions that are not entirely helpful or accurate. For example, let’s compare the completions of davinci (base GPT-3 model) and text-davinci-003 (a fine-tuned model).
 
 ![BasevsFineTuned](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*EkrxqoTYHuZrM_tBzvFdQg.png)
-<p align="center">
-  Completion comparison of davinci (base GPT-3 model) and text-davinci-003 (a fine-tuned model)
-</p>
+<figcaption align = "center">Completion comparison of davinci (base GPT-3 model) and text-davinci-003 (a fine-tuned model)</figcaption>
 
 Notice the base model is simply trying to complete the text by listing a set of questions like a Google search or homework assignment, while the **fine-tuned model gives a more helpful response**. The flavor of fine-tuning used for text-davinci-003 is **alignment tuning**, which aims to make the LLM’s responses more helpful, honest, and harmless, but more on that later [3,4].
 
@@ -102,9 +100,9 @@ While leaving the majority of parameters untouched mitigates the huge computatio
 PEFT encapsulates a family of techniques, one of which is the popular **LoRA (Low-Rank Adaptation)** method [6]. The basic idea behind LoRA is to pick a subset of layers in an existing model and modify their weights according to the following equation.
 
 ![LoRA](https://miro.medium.com/v2/resize:fit:1214/format:webp/1*GmCISYhd-JLqHNEvAQU1tQ.png)
-<p align="center">
+<figcaption align="center">
   Equation showing how weight matrices are modified for fine-tuning using LoRA
-</p>
+</figcaption>
 
 Where h() = a hidden layer that will be tuned, x = the input to h(), W₀ = the original weight matrix for the h, and ΔW = a matrix of trainable parameters injected into h. ΔW is decomposed according to ΔW=BA, where ΔW is a d by k matrix, B is d by r, and A is r by k. r is the assumed “intrinsic rank” of ΔW (which can be as small as 1 or 2) [6].
 
@@ -348,9 +346,9 @@ trainer.train()
 The above code will generate the following table of metrics during training.
 
 ![TrainingMetrics](https://miro.medium.com/v2/resize:fit:1214/format:webp/1*4rd_YQmPs-fh1tltHduBjA.png)
-<p align="center">
+<figcaption align="center">
   Model training metrics
-</p>
+</figcaption>
 
 ### Trained model performance
 

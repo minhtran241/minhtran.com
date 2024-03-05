@@ -24,6 +24,7 @@ import java from 'react-syntax-highlighter/dist/cjs/languages/prism/java';
 import { toast } from 'sonner';
 import { useTheme } from 'next-themes';
 import Loading from '@/app/loading';
+import Image from 'next/image';
 
 SyntaxHighlighter.registerLanguage('tsx', tsx);
 SyntaxHighlighter.registerLanguage('typescript', typescript);
@@ -42,7 +43,7 @@ export default function MarkdownRender({ mdString }) {
 
     return (
         <Suspense fallback={<Loading />}>
-            <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose text-black dark:text-white prose-a:text-[#0033A0] dark:prose-a:text-blue-600 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-500 prose-img:rounded-md prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-headings:mb-2 prose-headings:mt-4 prose-ul:my-2 prose-p:my-2 prose-strong:text-black dark:prose-strong:text-white prose-li:my-0 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm prose-img:mx-auto prose-figcaption:text-center">
+            <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose text-black dark:text-white prose-a:text-[#0033A0] dark:prose-a:text-blue-600 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-500 prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-headings:mb-2 prose-headings:mt-4 prose-ul:my-2 prose-p:my-4 prose-strong:text-black dark:prose-strong:text-white prose-li:my-0 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm prose-img:mx-auto prose-figcaption:text-center prose-img:mb-2 prose-img:rounded-md">
                 <Markdown
                     rehypePlugins={[rehypeRaw]}
                     linkTarget="_blank"
@@ -119,6 +120,9 @@ export default function MarkdownRender({ mdString }) {
                             ) : (
                                 <code className={className} {...props} />
                             );
+                        },
+                        image: (props) => {
+                            return <Image {...props} alt={props.alt} />;
                         },
                     }}
                 >
