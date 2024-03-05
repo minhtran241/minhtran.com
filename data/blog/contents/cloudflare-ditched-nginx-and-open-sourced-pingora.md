@@ -1,4 +1,5 @@
-![NGINXvsPingora](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xZcJYuGXk8plCGdtDeHfBg@2x.jpeg)
+![NGINXvsPingora](/blog/images/cloudflare-ditched-nginx-and-open-sourced-pingora/nginxvspingora.webp)
+<figcaption>NGINX's multi-process architecture vs Pingora's multi-threaded architecture</figcaption>
 
 ## Cloudflare Ditched NGINX
 
@@ -28,7 +29,8 @@ Now this makes me think if NGINX was multi-threaded as opposed to multi-processe
 
 The creator on HAProxy (Willy Tarreau) has a good write up on why he chose multi-threaded over multi-processes for HAProxy.
 
-![Willy's X](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fmCph0YU-dJXMJPP3kwc1A@2x.jpeg)
+![Willy's X](/blog/images/cloudflare-ditched-nginx-and-open-sourced-pingora/willy-x.webp)
+<figcaption>Willy's X</figcaption>
 
 ### Extensive customization
 

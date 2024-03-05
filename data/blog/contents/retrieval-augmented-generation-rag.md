@@ -17,7 +17,7 @@ This post will examine why [Retrieval Augmented Generation](https://www.pinecone
 
 ChatGPT’s training data “cutoff point” was September 2021. If you ask ChatGPT about something that occurred last month, it will not only fail to answer your question factually; it will likely dream up a very convincing-sounding outright lie. We commonly refer to this behavior as “hallucination.”
 
-![Hallucination](https://cdn.sanity.io/images/vr8gru94/production/ffc1bd17088006b246799f2c10872ff68fdcb609-1522x1160.png)
+![Hallucination](/blog/images/retrieval-augmented-generation-rag/hallucination.png)
 <figcaption>LLMs like ChatGPT can hallucinate when asked questions about recent events</figcaption>
 
 The LLM lacks domain-specific information about the Volvo XC60 in the above example. Although the LLM has no idea how to turn off reverse braking for that car model, it performs its generative task to the best of its ability anyway, producing an answer that sounds grammatically solid - but is unfortunately flatly incorrect.
@@ -88,7 +88,7 @@ An LLM’s context window is its field of vision at a given moment. RAG is like 
 
 To understand RAG, we must first understand semantic search, which attempts to find the true meaning of the user’s query and retrieve relevant information instead of simply matching keywords in the user’s query. Semantic search aims to deliver results that better fit the user’s intent, not just their exact words.
 
-![Embedding Model](https://cdn.sanity.io/images/vr8gru94/production/9a4dc90a3dd063fabbfa8481ed63faee5e7ea045-1770x776.png)
+![Embedding Model](/blog/images/retrieval-augmented-generation-rag/embedding-model.png)
 <figcaption>Creating a vector database from your domain-specific proprietary data using an embedding model</figcaption>
 
 This diagram shows how you make a vector database from your domain-specific, proprietary data. To create your vector database, you convert your data into vectors by running it through an embedding model.
@@ -111,14 +111,14 @@ Now that your vector database contains numerical representations of your target 
 
 Let's see what happens to our retrieval augmented generation example when we are able to inject context dynamically:
 
-![RAG uses semantic search](https://cdn.sanity.io/images/vr8gru94/production/16d192aac65c918a8bd554fcff022541b49498cb-1999x955.png)
+![RAG uses semantic search](/blog/images/retrieval-augmented-generation-rag/semantic-search.png)
 <figcaption>Retrieval Augmented Generation (RAG) uses semantic search to retrieve relevant and timely context that LLMs use to produce more accurate responses</figcaption>
 
 You originally converted your proprietary data into embeddings. When the user issues a query or question, you translate their natural language search terms into embeddings.
 
 You send these embeddings to the vector database. The database performs a “nearest neighbor” search, finding the vectors that most closely resemble the user’s intent. When the vector database returns the relevant results, your application provides them to the LLM via its context window, prompting it to perform its generative task.
 
-![RAG reduces hallucination](https://cdn.sanity.io/images/vr8gru94/production/74e2ae38fb5abdaec054050bd6c7d8ee8cd2858d-1999x1374.png)
+![RAG reduces hallucination](/blog/images/retrieval-augmented-generation-rag/reduce-hallucination.png)
 <figcaption>Retrieval Augmented Generation reduces the likelihood of hallucinations by providing domain-specific information through an LLM's context window</figcaption>
 
 Since the LLM now has access to the most pertinent and grounding facts from your vector database, your rag application can provide an accurate answer for your user. RAG reduces the likelihood of hallucination.

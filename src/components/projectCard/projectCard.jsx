@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
             </div>
             <Link href={`/project/${project.slug}`}>
                 <Image
-                    className="rounded-md max-w-full h-[200px] object-cover w-full border-2 border-[#0033A0] dark:border-white"
+                    className="rounded-md relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
                     src={project.thumbnail}
                     alt={project.title}
                     width={0}

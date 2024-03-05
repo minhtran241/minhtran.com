@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
         >
             <div className="overflow-hidden">
                 <Link href={`/blog/${post.slug}`}>
-                    <div className="relative h-[218px] w-full">
+                    <div className="relative w-full lg:h-56 md:h-52 sm:h-44 h-44">
                         <Image
                             className="border rounded-md border-[#0033A0] "
                             src={post.thumbnail}

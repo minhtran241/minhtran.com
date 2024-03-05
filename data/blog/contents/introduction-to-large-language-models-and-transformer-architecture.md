@@ -4,13 +4,15 @@ Large Language Models (LLMs) are trained on massive amounts of text data. As a r
 
 > The basic premise of a language model is its ability to predict the next word or sub-word (called tokens) based on the text it has observed so far. To better understand this, let’s look at an example.
 
-![GPT-3](https://miro.medium.com/v2/resize:fit:1256/format:webp/1*zlj8N1mdfX-OLfxDqrzmig.png)
+![Language Model](/blog/images/introduction-to-large-language-models-and-transformer-architecture/language-model.webp)
+<figcaption>Large language models</figcaption>
 
 ## Transformer Architecture: The Building Block of Large Language Models
 
 The transformer architecture is the fundamental building block of all Language Models with Transformers (LLMs). The transformer architecture was introduced in the paper [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf), published in December 2017. The simplified version of the Transformer Architecture looks like this:
 
-![Transformer Architecture](https://miro.medium.com/v2/resize:fit:1278/format:webp/1*BIA2niZY7XpPlOsLKD2Qrw.png)
+![Transformer Architecture](/blog/images/introduction-to-large-language-models-and-transformer-architecture/transformer.webp)
+<figcaption>The Transformer Architecture</figcaption>
 
 There are seven important components in transformer architecture. Let’s go through each of these components and understand what they do in a simplified manner:
 

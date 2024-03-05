@@ -140,8 +140,8 @@ Sequence 2: "Torn page detection is a technique used in database recovery"
 Sequence 3: "Hello world [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]"
 ```
 
-![Padding](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*I0JbAgArgFzMCWiOB1o9CQ.png)
-<p align="center">Padding</p>
+![Padding](/blog/images/preparing-text-data-for-transformers-tokenization-mapping-and-padding/padding.webp)
+<figcaption align="center">Padding</figcaption>
 
 For truncation, we would cut off the end of each sequence so that it fits within the maximum length of 5 tokens. The truncated sequences would look like this:
 
@@ -151,8 +151,8 @@ Sequence 2: "Torn page detection is a"
 Sequence 3: "Hello world"
 ```
 
-![Truncation](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*97eDjgwFVO_QATNYIJBzIA.png)
-<p align="center">Truncation</p>
+![Truncation](/blog/images/preparing-text-data-for-transformers-tokenization-mapping-and-padding/truncating.webp)
+<figcaption align="center">Truncation</figcaption>
 
 > Note that the choice of padding or truncation, or a combination of both, will depend on the specific task and the desired trade-off between preserving information from the original sequence and reducing computational overhead.
 
