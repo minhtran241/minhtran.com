@@ -3,9 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
-import readingTime from 'reading-time';
-import Promise from 'promise';
-import { Clock } from 'lucide-react';
+import { BellRing } from 'lucide-react';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -82,17 +80,24 @@ const BlogPage = async () => {
                     />
                 </Link>
                 <div className="mt-4 lg:mt-0 lg:w-1/2 ">
-                    <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
-                        {new Date(firstPost?.created_at).toLocaleDateString(
-                            'en-GB',
-                            {
-                                weekday: 'long',
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                            }
-                        )}
-                    </p>
+                    <div className="flex flex-row justify-between">
+                        <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
+                            {new Date(firstPost?.created_at).toLocaleDateString(
+                                'en-GB',
+                                {
+                                    weekday: 'long',
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                }
+                            )}
+                        </p>
+                        {/* Latest label */}
+                        <div className="flex flex-row gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                            <BellRing className="h-4 w-4" />
+                            <p className="text-xs font-semibold">Latest</p>
+                        </div>
+                    </div>
                     <Link
                         href={`/blog/${firstPost.slug}`}
                         className="mt-2 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"

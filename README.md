@@ -12,7 +12,6 @@ pnpm install
 bun install
 ```
 
-
 run the development server:
 
 ```bash

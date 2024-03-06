@@ -88,5 +88,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "postgresql, indexing, create-index-concurrently, hot, heap-only-tuple"
+  },
+  {
+	"id": 8,
+	"title": "Introducing txtai, the all-in-one embeddings database",
+	"description": "txtai is an all-in-one embeddings database for semantic search, LLM orchestration and language model workflows.",
+	"slug": "introducing-txtai-the-all-in-one-embeddings-database",
+	"thumbnail": "/blog/thumbnails/introducing-txtai-the-all-in-one-embeddings-database.webp",
+	"view_count": 0,
+	"created_at": "2024-03-07T23:56:48",
+	"updated_at": "2024-03-07T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "nlp, llms, txtai, embeddings, semantic-search, vector-database"
   }
 ]
