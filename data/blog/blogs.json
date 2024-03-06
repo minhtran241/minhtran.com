@@ -75,5 +75,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "system-design, payment, transactions"
+  },
+  {
+	"id": 7,
+	"title": "Explaining CREATE INDEX CONCURRENTLY",
+	"description": "This technical blog explains how CREATE INDEX CONCURRENTLY (CIC) works and how it manages to avoid locking the table from updates. A unique distinguishing factor of CIC is that it can build a new index on the table, without blocking it from updates/inserts/deletes.",
+	"slug": "explaining-create-index-concurrently",
+	"thumbnail": "/blog/thumbnails/explaining-create-index-concurrently.png",
+	"view_count": 0,
+	"created_at": "2024-03-06T23:56:48",
+	"updated_at": "2024-03-06T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "postgresql, indexing, create-index-concurrently, hot, heap-only-tuple"
   }
 ]
