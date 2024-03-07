@@ -27,6 +27,7 @@ import { useTheme } from 'next-themes';
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 
 SyntaxHighlighter.registerLanguage('tsx', tsx);
 SyntaxHighlighter.registerLanguage('typescript', typescript);
@@ -46,7 +47,7 @@ export default function MarkdownRender({ mdString }) {
 
     return (
         <Suspense fallback={<Loading />}>
-            <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose text-black dark:text-white prose-a:text-[#0033A0] dark:prose-a:text-blue-600 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-500 prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-headings:my-4 prose-ul:my-2 prose-p:my-4 prose-strong:text-black dark:prose-strong:text-white prose-li:my-0 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm prose-img:mx-auto prose-figcaption:text-center prose-figcaption:my-2 prose-img:mb-2 prose-img:rounded-md prose-figcaption:text-gray-600 dark:prose-figcaption:text-gray-400">
+            <article className="prose md:prose-base lg:prose-lg dark:prose-invert prose-pre:not-prose text-black dark:text-white prose-headings:text-[#0033A0] dark:prose-headings:text-blue-600 prose-headings:my-4 prose-ul:my-2 prose-p:my-4 prose-strong:text-black dark:prose-strong:text-white prose-li:my-0 prose-hr:text-gray marker:text-[#0033A0] dark:marker:text-blue-600 items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm prose-img:mx-auto prose-figcaption:text-center prose-figcaption:my-2 prose-img:mb-2 prose-img:rounded-md prose-figcaption:text-gray-600 dark:prose-figcaption:text-gray-400">
                 <Markdown
                     rehypePlugins={[rehypeRaw]}
                     linkTarget="_blank"
@@ -126,6 +127,17 @@ export default function MarkdownRender({ mdString }) {
                         },
                         image: (props) => {
                             return <Image {...props} alt={props.alt} />;
+                        },
+                        a: (props) => {
+                            return (
+                                <Link
+                                    href={props}
+                                    target="_blank"
+                                    className="hover:underline text-[#0033A0] dark:text-blue-600 no-underline hover:text-blue-800 dark:hover:text-blue-500"
+                                >
+                                    {props.children}
+                                </Link>
+                            );
                         },
                     }}
                 >
