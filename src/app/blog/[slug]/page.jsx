@@ -7,6 +7,8 @@ import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';
+import { extractHeadings } from 'extract-md-headings';
+import Link from 'next/link';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -46,6 +48,10 @@ const getPost = async (slug) => {
         const stats = readingTime(content);
         post.read_time = stats.text;
         post.word_count = stats.words;
+
+        post.headings = extractHeadings(
+            path.join(DATA_CONTENTS_DIR, `${slug}.md`)
+        );
 
         return post;
     } catch (error) {

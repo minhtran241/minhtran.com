@@ -6,8 +6,8 @@
 	"slug": "introduction-to-large-language-models-and-transformer-architecture",
 	"thumbnail": "/blog/thumbnails/introduction-to-large-language-models-and-transformer-architecture.webp",
 	"view_count": 0,
-	"created_at": "2024-03-03T16:22:48.255Z",
-	"updated_at": "2024-03-03T16:22:48.255Z",
+	"created_at": "2024-03-02T16:22:48.255Z",
+	"updated_at": "2024-03-02T16:22:48.255Z",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, llms"
@@ -19,8 +19,8 @@
 	"slug": "preparing-text-data-for-transformers-tokenization-mapping-and-padding",
 	"thumbnail": "/blog/thumbnails/preparing-text-data-for-transformers-tokenization-mapping-and-padding.png",
 	"view_count": 0,
-	"created_at": "2024-03-03T22:22:48.255Z",
-	"updated_at": "2024-03-03T22:22:48.255Z",
+	"created_at": "2024-03-02T22:22:48.255Z",
+	"updated_at": "2024-03-02T22:22:48.255Z",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, tokenization, padding, mapping, llms"
@@ -32,8 +32,8 @@
 	"slug": "cloudflare-ditched-nginx-and-open-sourced-pingora",
 	"thumbnail": "/blog/thumbnails/cloudflare-ditched-nginx-and-open-sourced-pingora.png",
 	"view_count": 0,
-	"created_at": "2024-03-04T14:11:48",
-	"updated_at": "2024-03-04T14:11:48",
+	"created_at": "2024-03-03T14:11:48",
+	"updated_at": "2024-03-03T14:11:48",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "cloudflare, nginx, pingora, proxy"
@@ -45,8 +45,8 @@
 	"slug": "fine-tuning-large-language-models-llms",
 	"thumbnail": "/blog/thumbnails/fine-tuning-large-language-models-llms.png",
 	"view_count": 0,
-	"created_at": "2024-03-04T16:56:48",
-	"updated_at": "2024-03-04T16:56:48",
+	"created_at": "2024-03-03T16:56:48",
+	"updated_at": "2024-03-03T16:56:48",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, llms, fine-tuning, peft, lora"
@@ -58,8 +58,8 @@
 	"slug": "retrieval-augmented-generation-rag",
 	"thumbnail": "/blog/thumbnails/retrieval-augmented-generation-rag.png",
 	"view_count": 0,
-	"created_at": "2024-03-04T23:56:48",
-	"updated_at": "2024-03-04T23:56:48",
+	"created_at": "2024-03-03T23:56:48",
+	"updated_at": "2024-03-03T23:56:48",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, rag, retrieval, generation, generativeai"
@@ -70,8 +70,8 @@
 	"slug": "design-a-payment-system",
 	"thumbnail": "/blog/thumbnails/design-a-payment-system.png",
 	"view_count": 0,
-	"created_at": "2024-03-05T23:56:48",
-	"updated_at": "2024-03-05T23:56:48",
+	"created_at": "2024-03-04T14:56:48",
+	"updated_at": "2024-03-04T14:56:48",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "system-design, payment, transactions"
@@ -83,8 +83,8 @@
 	"slug": "explaining-create-index-concurrently",
 	"thumbnail": "/blog/thumbnails/explaining-create-index-concurrently.png",
 	"view_count": 0,
-	"created_at": "2024-03-06T23:56:48",
-	"updated_at": "2024-03-06T23:56:48",
+	"created_at": "2024-03-04T23:56:48",
+	"updated_at": "2024-03-04T23:56:48",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "postgresql, indexing, create-index-concurrently, hot, heap-only-tuple"
@@ -96,10 +96,23 @@
 	"slug": "introducing-txtai-the-all-in-one-embeddings-database",
 	"thumbnail": "/blog/thumbnails/introducing-txtai-the-all-in-one-embeddings-database.webp",
 	"view_count": 0,
-	"created_at": "2024-03-07T23:56:48",
-	"updated_at": "2024-03-07T23:56:48",
+	"created_at": "2024-03-05T23:56:48",
+	"updated_at": "2024-03-05T23:56:48",
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, txtai, embeddings, semantic-search, vector-database"
+  },
+  {
+	"id": 9,
+	"title": "How does Vector Database work?",
+	"description": "A vector database indexes and stores vector embeddings for fast retrieval and similarity search, with capabilities like CRUD operations, metadata filtering, horizontal scaling, and serverless. This article explains how vector databases work and how they can be used for semantic search and similarity matching.",
+	"slug": "how-does-vector-database-work",
+	"thumbnail": "/blog/thumbnails/how-does-vector-database-work.png",
+	"view_count": 0,
+	"created_at": "2024-03-06T23:56:48",
+	"updated_at": "2024-03-06T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "nlp, llms, embeddings, semantic-search, vector-database, vector-indexing"
   }
 ]
