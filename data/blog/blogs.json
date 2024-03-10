@@ -114,5 +114,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, embeddings, semantic-search, vector-database, vector-indexing"
+  },
+  {
+	"id": 10,
+	"title": "A first intro to Complex RAG (Retrieval Augmented Generation)",
+	"description": "In this article, we discuss various technical considerations when implementing RAG, exploring the concepts of chunking, query augmentation, hierarchies, multi-hop reasoning, and knowledge graphs. We also discuss unsolved problems & opportunities in the RAG infrastructure space, and introduce some infrastructure solutions for building RAG pipelines.",
+	"slug": "a-first-intro-to-complex-rag-retrieval-augmented-generation",
+	"thumbnail": "/blog/thumbnails/a-first-intro-to-complex-rag-retrieval-augmented-generation.webp",
+	"view_count": 0,
+	"created_at": "2024-03-09T23:56:48",
+	"updated_at": "2024-03-09T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "nlp, llms, rag, retrieval, generation, generativeai, complex-rag"
   }
 ]
