@@ -1,4 +1,4 @@
-## About <u>minhtran.com</u>
+## About minhtran.com
 
 This website serves as my personal project where I proudly exhibit my creations and share valuable insights about myself. Crafted with care, I meticulously designed and developed every aspect of this platform.
 
@@ -33,13 +33,11 @@ Powered by [Vercel](https://vercel.com/), this website enjoys swift and hassle-f
 
 In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically. The performance report is generated using [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights).
 
-#### Lighthouse Report (Desktop)
+![Lighthouse Report (Desktop)](/contact/about-this-website/lh-rp-desktop.png)
+<figcaption align="center">Lighthouse Report (Desktop)</figcaption>
 
-![Lighthouse Report (Desktop)](/lh-rp-desktop.png)
-
-#### Lighthouse Report (Mobile)
-
-![Lighthouse Report (Mobile)](/lh-rp-mobile.png)
+![Lighthouse Report (Mobile)](/contact/about-this-website/lh-rp-mobile.png)
+<figcaption align="center">Lighthouse Report (Mobile)</figcaption>
 
 ---
 

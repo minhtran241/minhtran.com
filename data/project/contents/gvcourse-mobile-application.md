@@ -34,56 +34,23 @@ The authentication feature allows users to create accounts and log in using thir
 
 #### Authentication
 
-<!-- Sign In | Sign Up
---- | ---
-![Sign In](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png) | ![Sign Up](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png) -->
-
-<!-- <p align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png" alt="Courses List" width="250" height="500">
-</p> -->
-
 ![Sign In Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signin.png)
-
-<!-- <p  align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png" alt="Course Details" width="250" height="500">
-</p> -->
 
 ![Sign Up Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/signup.png)
 
 #### Course News and Announcements
 
-<!-- <p align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png" alt="Courses List" width="250" height="500">
-</p> -->
-
 ![News List Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_list.png)
-
-<!-- <p  align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png" alt="Course Details" width="250" height="500">
-</p> -->
 
 ![News Details Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/news_details.png)
 
 #### Course Catalog
 
-<!-- <p align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png" alt="Courses List" width="250" height="500">
-</p> -->
-
 ![Courses List Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/courses_list.png)
-
-<!-- <p align="center">
-    <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png" alt="Course Details" width="250" height="500">
-</p> -->
 
 ![Course Details Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/course_details.png)
 
 #### Settings
-
-<!-- ![Settings](https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png) -->
-<!-- <p align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png" alt="Settings" width="350" height="650">
-</p> -->
 
 ![Settings Screenshots](https://github.com/minhtran241/gvcourse/raw/main/screenshots/settings.png)
 
@@ -109,25 +76,11 @@ Before we begin building our GVCourse app, let's ensure your development environ
 
 SwiftUI requires macOS 10.15 Catalina or later. To check your macOS version, click the Apple icon in the top left corner of your screen and select **About This Mac**.
 
-<!-- <p align="center">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/catalina.png" alt="Catalina" width="200" height="200">
-</p> -->
-
-![Download macOS Catalina](https://github.com/minhtran241/gvcourse/raw/main/screenshots/catalina.png)
-
 #### Xcode and Simulator
 
 Install the latest version of Xcode from the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12).
 
 Simulator is a tool that allows you to run your app on a virtual device. To open Simulator, open Xcode and select **Xcode** > **Open Developer Tool** > **Simulator**.
-
-<!-- <p align="center" style="display: flex; justify-content: center;">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png" alt="Xcode" width="150" height="150">
-  <img src="https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png" alt="Simulator" width="150" height="150">
-</p> -->
-
-![Download Xcode](https://github.com/minhtran241/gvcourse/raw/main/screenshots/xcode_icon.png)
-![Download Simulator](https://github.com/minhtran241/gvcourse/raw/main/screenshots/simulator.png)
 
 #### SF Symbols
 

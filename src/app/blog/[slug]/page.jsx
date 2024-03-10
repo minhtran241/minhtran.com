@@ -53,6 +53,12 @@ const getPost = async (slug) => {
             path.join(DATA_CONTENTS_DIR, `${slug}.md`)
         );
 
+        const prevId = post.id > 1 ? post.id - 1 : null;
+        const nextId = post.id < posts.length ? post.id + 1 : null;
+
+        post.prev = prevId ? posts.find((post) => post.id === prevId) : null;
+        post.next = nextId ? posts.find((post) => post.id === nextId) : null;
+
         return post;
     } catch (error) {
         console.error('Error fetching post:', error);
@@ -109,25 +115,59 @@ const SinglePostContent = ({ post }) => {
                         </p>
                         <div className="flex flex-col gap-4">
                             <MarkdownRender mdString={post.content} />
-                            <div className="items-center justify-between sm:flex">
+                            <div className="flex flex-row gap-2">
+                                <h5 className="mb-3 font-semibold">Tags:</h5>
                                 <div className="mb-5 flex flex-wrap gap-2">
                                     {post.tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="px-2 py-1 text-xs font-semibold text-white bg-[#0033A0] dark:bg-blue-600 rounded-md italic"
+                                            className="px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
                                         >
                                             #{tag}
                                         </span>
                                     ))}
                                 </div>
-                                <div>
-                                    <h5 className="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400 sm:text-right">
-                                        Share this blog :
-                                    </h5>
-                                    <div className="flex items-center sm:justify-end">
-                                        <ShareButtons />
+                            </div>
+                            {/* Prev and Next cards */}
+                            <div className="justify-between grid grid-cols-1 gap-8 md:grid-cols-2">
+                                {post.prev && (
+                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-md hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer">
+                                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                                            Older Blog
+                                        </p>
+                                        <Link
+                                            href={`/blog/${post.prev.slug}`}
+                                            className="text-[#0033A0] dark:text-blue-600 font-semibold"
+                                        >
+                                            «{' '}
+                                            {post.prev.title.length > 100
+                                                ? post.prev.title.slice(
+                                                      0,
+                                                      100
+                                                  ) + '...'
+                                                : post.prev.title}
+                                        </Link>
                                     </div>
-                                </div>
+                                )}
+                                {post.next && (
+                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-md hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer">
+                                        <p className="text-sm text-right text-gray-600 dark:text-gray-400">
+                                            Newer Blog
+                                        </p>
+                                        <Link
+                                            href={`/blog/${post.next.slug}`}
+                                            className="text-[#0033A0] dark:text-blue-600 font-semibold text-right"
+                                        >
+                                            {post.next.title.length > 100
+                                                ? post.next.title.slice(
+                                                      0,
+                                                      100
+                                                  ) + '...'
+                                                : post.next.title}{' '}
+                                            »
+                                        </Link>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

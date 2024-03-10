@@ -131,7 +131,7 @@ export default function MarkdownRender({ mdString }) {
                         a: (props) => {
                             return (
                                 <Link
-                                    href={props}
+                                    href={props.href}
                                     target="_blank"
                                     className="hover:underline text-[#0033A0] dark:text-blue-600 no-underline hover:text-blue-800 dark:hover:text-blue-500"
                                 >
