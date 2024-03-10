@@ -54,7 +54,7 @@ Knowledge graphs are a great data framework for document hierarchies to enforce 
 Knowledge graphs map relationships using natural language, which means that even non-technical users can build and modify rules and relationships to control their enterprise RAG systems. For example, a rule can look like: "When answering a question about leave policies, first refer to the correct office’s HR policy document, and then within the document, check the section on holidays."
 
 ![Knowledge Graphs](/blog/images/a-first-intro-to-complex-rag-retrieval-augmented-generation/rag-4.webp)
-<ficaption>An example of a knowledge graph. Source: <https://www.researchgate.net/figure/Control-interfaces-for-Knowledge-graph-and-Hierarchy-More-details-in-Sarrafzadeh-et-al_fig4_318764253></figcaption>
+<figcaption>An example of a knowledge graph. Source: https://www.researchgate.net/figure/Control-interfaces-for-Knowledge-graph-and-Hierarchy-More-details-in-Sarrafzadeh-et-al_fig4_318764253</figcaption>
 
 ### Query Augmentation
 
