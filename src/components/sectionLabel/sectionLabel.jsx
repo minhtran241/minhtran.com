@@ -5,7 +5,7 @@ const SectionLabel = ({ title, description }) => {
         <div className="max-w-xl mx-auto">
             <div className="text-center">
                 <div className="flex flex-col gap-3 items-center">
-                    <h1 className="text-4xl font-semibold leading-tight dark:text-white">
+                    <h1 className="font-semibold leading-tight dark:text-white lg:text-4xl md:text-3xl sm:text-2xl text-3xl ">
                         {t1}{' '}
                         <span className="text-[#0033A0] dark:text-blue-600">
                             {t2}

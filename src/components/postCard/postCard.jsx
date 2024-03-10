@@ -36,7 +36,7 @@ const PostCard = ({ post }) => {
                         <div
                             key={index}
                             // href={`/blog?tag=${tag}`}
-                            className="px-2 py-1 text-xs font-semibold text-white bg-[#0033A0] dark:bg-blue-600 rounded-md italic"
+                            className="px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
                         >
                             #{tag}
                         </div>

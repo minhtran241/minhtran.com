@@ -7,7 +7,7 @@ import ProjectCard from '../projectCard/projectCard';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 
-const PROJECT_FETCH_LIMIT = 100;
+const PROJECT_FETCH_LIMIT = 3;
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
     process.env.DATA_FETCH_DIR,
@@ -24,6 +24,9 @@ const getProjects = async (limit) => {
             'utf-8'
         );
         const projects = JSON.parse(projectsData);
+        projects.sort(
+            (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        );
         return projects.slice(0, limit);
     } catch (error) {
         console.error('Error fetching projects:', error);

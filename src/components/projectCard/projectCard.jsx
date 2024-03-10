@@ -77,6 +77,7 @@ const ProjectCard = ({ project }) => {
                             width: 'auto',
                             height: 'auto',
                         }}
+                        className="rounded-full border border-[#0033A0] dark:border-white"
                     />
                 ))}
             </div>

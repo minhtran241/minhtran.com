@@ -55,5 +55,23 @@
         "view_count": 0,
         "created_at": "2024-02-24T09:02:47.787Z",
         "updated_at": "2024-02-24T09:02:47.787Z"
-    }
+    },
+	{
+		"id": 4,
+		"title": "Nextcorp",
+		"slug": "nextcorp",
+		"description": "Nextcorp is a company showcase website built with Next.js frontend, Bun, ElysiaJS as API, and PostgreSQL database. It serves as a platform for companies to showcase their products, services, and blog posts.",
+		"tech_stack": [
+			"https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white",
+			"https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white",
+			"https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white",
+			"https://img.shields.io/badge/ElysiaJS-%23000000.svg?style=for-the-badge&logo=elysiajs&logoColor=white"
+		],
+		"link": "https://minhtran241.github.io/nextcorp/",
+		"repo_link": "https://github.com/minhtran241/nextcorp",
+		"thumbnail": "https://github.com/minhtran241/nextcorp/raw/main/frontend/docs/diagrams/data-flow-diagram.png",
+		"view_count": 0,
+		"created_at": "2024-03-10T09:02:47.787Z",
+		"updated_at": "2024-03-10T09:02:47.787Z"
+	}
 ]

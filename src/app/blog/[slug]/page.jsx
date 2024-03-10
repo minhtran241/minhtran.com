@@ -9,6 +9,7 @@ import Loading from '@/app/loading';
 import Image from 'next/image';
 import { extractHeadings } from 'extract-md-headings';
 import Link from 'next/link';
+import { ChevronsLeft, ChevronsRight } from 'lucide-react';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -137,9 +138,9 @@ const SinglePostContent = ({ post }) => {
                                         </p>
                                         <Link
                                             href={`/blog/${post.prev.slug}`}
-                                            className="text-[#0033A0] dark:text-blue-600 font-semibold"
+                                            className="flex flex-row gap-2 text-[#0033A0] dark:text-blue-600 font-semibold"
                                         >
-                                            «{' '}
+                                            <ChevronsLeft className="w-6 h-6" />
                                             {post.prev.title.length > 100
                                                 ? post.prev.title.slice(
                                                       0,
@@ -156,7 +157,7 @@ const SinglePostContent = ({ post }) => {
                                         </p>
                                         <Link
                                             href={`/blog/${post.next.slug}`}
-                                            className="text-[#0033A0] dark:text-blue-600 font-semibold text-right"
+                                            className="flex flex-row gap-2 text-[#0033A0] dark:text-blue-600 font-semibold text-right"
                                         >
                                             {post.next.title.length > 100
                                                 ? post.next.title.slice(
@@ -164,7 +165,7 @@ const SinglePostContent = ({ post }) => {
                                                       100
                                                   ) + '...'
                                                 : post.next.title}{' '}
-                                            »
+                                            <ChevronsRight className="w-6 h-6" />
                                         </Link>
                                     </div>
                                 )}
