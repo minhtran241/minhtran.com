@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ChevronsRight } from 'lucide-react';
 import { Suspense } from 'react';
 import path from 'path';
 import fs from 'fs/promises';
@@ -56,7 +56,7 @@ const ProjectsComponent = async ({ limit }) => {
                 <Link href="/project">
                     <div className="flex flex-row items-center gap-2 text-lg font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer transition">
                         See More
-                        <ArrowRight className="h-6 w-6" />
+                        <ChevronsRight className="h-6 w-6" />
                     </div>
                 </Link>
             </div>

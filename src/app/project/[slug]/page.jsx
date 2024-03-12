@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import Loading from '@/app/loading';
+import ProjectMetadata from '@/components/projectMetadata/projectMetadata';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -53,81 +54,49 @@ const getProject = async (slug) => {
 };
 
 const SingleProjectContent = async ({ project }) => {
+    const createdAtText = new Date(project.created_at).toLocaleDateString(
+        'en-US',
+        {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        }
+    );
     return (
         <>
-            <div className="content-center items-center justify-center">
-                {/* Image in the center */}
-                <div className="flex items-center justify-center mb-5">
-                    <Image
-                        src={project.thumbnail}
-                        alt={project.title}
-                        width={600}
-                        height={300}
-                        className="rounded-lg border border-[#0033A0] dark:border-white max-w-[1000px] max-h-[500px] w-full h-full"
-                    />
-                </div>
-                {/* Title */}
-                <div className="flex flex-col items-center justify-center gap-4">
-                    <h1 className="lg:text-4xl font-semibold text-2xl md:text-3xl">
-                        {project.title}
-                    </h1>
-                    <div className="flex flex-col items-center gap-2">
-                        {project.repo_link && (
-                            <Link
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={project.repo_link}
-                                className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600 hover:text-blue-800 dark:hover:text-blue-700 cursor-pointer"
-                            >
-                                <Github className="h-4 w-4" />
-                                <span className="hover:underline">
-                                    View Source
-                                </span>
-                            </Link>
-                        )}
-                        {project.link && (
-                            <Link
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={project.link}
-                                className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600 hover:text-blue-800 dark:hover:text-blue-700 cursor-pointer"
-                            >
-                                <Radio className="h-4 w-4" />
-                                <span className="hover:underline">
-                                    View Live
-                                </span>
-                            </Link>
-                        )}
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center">
-                        {/* tech_stack url badges */}
-                        <div className="flex flex-wrap items-center justify-center gap-4 mb-5">
-                            {project.tech_stack.map((tech, index) => (
-                                <div key={index}>
-                                    <Image
-                                        src={tech}
-                                        alt={tech}
-                                        width={0}
-                                        height={0}
-                                        style={{
-                                            width: 'auto',
-                                            height: 'auto',
-                                        }}
-                                        className="rounded-full border border-[#0033A0] dark:border-white"
-                                    />
-                                </div>
-                            ))}
-                        </div>
+            <div className="content-center items-center justify-center mb-5">
+                <div className="flex flex-wrap justify-center">
+                    <div className="w-full justify-center lg:w-9/12">
+                        <h1 className="font-bold text-[#0033A0] dark:text-blue-600 mb-3 lg:text-4xl md:text-3xl sm:text-3xl text-2xl">
+                            {project.title}
+                        </h1>
+                        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                            {createdAtText}
+                        </p>
                     </div>
                 </div>
             </div>
-            <div className="content-center items-center justify-center !pt-[16px]">
+            <div className="content-center items-center justify-center">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 gap-4">
-                        <p className="mb-5 border-b font-medium italic border-[#e9e9e9] pb-[20px] text-justify dark:border-white dark:border-opacity-10">
-                            {project.description}
-                        </p>
-                        <MarkdownRender mdString={project.content} />
+                        <div className="items-center justify-between">
+                            <ProjectMetadata project={project} />
+                            <div className="mb-5">
+                                <Image
+                                    src={project.thumbnail}
+                                    alt={project.title}
+                                    width={1200}
+                                    height={600}
+                                    layout="responsive"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <p className="mb-5 border-b font-medium italic border-[#e9e9e9] pb-[20px] text-justify dark:border-white dark:border-opacity-10">
+                                {project.description}
+                            </p>
+                            <MarkdownRender mdString={project.content} />
+                        </div>
                     </div>
                 </div>
             </div>

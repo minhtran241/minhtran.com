@@ -61,7 +61,7 @@ const ContactPage = async () => {
                 <div className="rounded-lg p-8 shadow-lg border border-gray-200 dark:border-gray-700">
                     <div className="flex flex-col space-y-4">
                         <div className="gap-1 flex flex-col">
-                            <h2 className="text-2xl font-semibold">
+                            <h2 className="text-2xl font-semibold text-[#0033A0] dark:text-blue-600">
                                 Minh Tran
                             </h2>
                             <p className="text-md dark:text-gray-400">

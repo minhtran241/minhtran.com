@@ -1,7 +1,5 @@
 import { Clock, Minus, PenLine, Calculator } from 'lucide-react';
 
-// Get post view count and update every 30 seconds
-
 const PostMetadata = ({ post }) => {
     const updatedAtText = new Date(post.updated_at).toLocaleDateString(
         'en-US',

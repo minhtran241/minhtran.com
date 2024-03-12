@@ -64,8 +64,8 @@
 		"tech_stack": [
 			"https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white",
 			"https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white",
-			"https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white",
-			"https://img.shields.io/badge/ElysiaJS-%23000000.svg?style=for-the-badge&logo=elysiajs&logoColor=white"
+			"https://img.shields.io/badge/Bun-FF6600?style=for-the-badge&logo=bun&logoColor=white",
+			"https://img.shields.io/badge/ElysiaJS-FF6600?style=for-the-badge&logo=elysiajs&logoColor=white"
 		],
 		"link": "https://minhtran241.github.io/nextcorp/",
 		"repo_link": "https://github.com/minhtran241/nextcorp",
