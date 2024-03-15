@@ -16,9 +16,7 @@ const HeroComponent = () => {
                     <Image
                         className="rounded-md w-full object-cover"
                         src={
-                            theme === 'dark'
-                                ? 'https://9to5mac.com/wp-content/uploads/sites/6/2021/04/hello-Blue-2-dragged.jpg?quality=82&strip=all'
-                                : 'https://9to5mac.com/wp-content/uploads/sites/6/2021/04/hello-Blue-1-dragged.jpg?quality=82&strip=all'
+                            theme === 'dark' ? '/bg-dark.jpg' : '/bg-light.jpg'
                         }
                         alt="bg-image"
                         width={1600}
