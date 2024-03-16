@@ -19,21 +19,21 @@ const detailsData = (data) => {
         {
             id: 2,
             icon: <Users />,
-            title: 'Current Followers',
+            title: 'Followers',
             value: data.followers ? data.followers.totalCount : 0,
             color: 'green',
         },
         {
             id: 3,
             icon: <User />,
-            title: 'Current Following',
+            title: 'Following',
             value: data.following ? data.following.totalCount : 0,
             color: 'purple',
         },
         {
             id: 4,
             icon: <FileCode />,
-            title: 'Public Gists',
+            title: 'Gists',
             value: data.gists ? data.gists.totalCount : 0,
             color: 'yellow', // color for the icon background
         },
@@ -42,7 +42,7 @@ const detailsData = (data) => {
 
 // bg-gradient-to-r from-[#0033A0] to-[#00A3FF] dark:from-blue-600 dark:to-blue-900
 const GitHubInfoComponent = async () => {
-    const username = 'minhtran241';
+    const username = process.env.GITHUB_USERNAME;
     const topReposCount = 5;
     const ghInfo = await getGitHubUserInfo(username);
     const sectionTitle = 'GitHub Stats';
