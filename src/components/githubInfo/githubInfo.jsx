@@ -1,19 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 import { getGitHubUserInfo } from '@/lib/github';
-import {
-    BookMarked,
-    Building2,
-    FileCode,
-    MapPin,
-    Star,
-    User,
-    Users,
-} from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { BookMarked, FileCode, User, Users } from 'lucide-react';
 import PublicReposCard from './publicReposCard';
 import GHUserCard from './ghUserCard';
 import GHInfoCard from './ghInfoCard';
@@ -30,21 +19,21 @@ const detailsData = (data) => {
         {
             id: 2,
             icon: <Users />,
-            title: 'Followers',
+            title: 'Current Followers',
             value: data.followers ? data.followers.totalCount : 0,
             color: 'green',
         },
         {
             id: 3,
             icon: <User />,
-            title: 'Following',
+            title: 'Current Following',
             value: data.following ? data.following.totalCount : 0,
             color: 'purple',
         },
         {
             id: 4,
             icon: <FileCode />,
-            title: 'Gists',
+            title: 'Public Gists',
             value: data.gists ? data.gists.totalCount : 0,
             color: 'yellow', // color for the icon background
         },
@@ -59,23 +48,25 @@ const GitHubInfoComponent = async () => {
     const sectionTitle = 'GitHub Stats';
     const sectionDescription = `GitHub is where I spend most of my time. You can find me on GitHub at @${username}. Here are some stats about my GitHub account.`;
     return (
-        <div className="items-center justify-center mt-12  py-12 bg-gray-200 dark:bg-gray-900">
+        <div className="items-center justify-center py-12 bg-gray-200 dark:bg-gray-900">
             <div className="container">
                 <SectionLabel
                     title={sectionTitle}
                     description={sectionDescription}
                 />
-                <div className="flex flex-col items-center justify-center gap-10 grid-cols-4 lg:grid lg:grid-cols-4">
-                    {detailsData(ghInfo.user).map((detail, index) => (
-                        <GHInfoCard key={index} detail={detail} />
-                    ))}
-                </div>
-                <div className="flex flex-col items-center justify-center gap-10 grid-cols-2 lg:grid lg:grid-cols-2">
-                    <GHUserCard ghInfo={ghInfo} username={username} />
-                    <PublicReposCard
-                        ghInfo={ghInfo}
-                        topReposCount={topReposCount}
-                    />
+                <div className="flex flex-col gap-x-8 gap-y-10 md:gap-x-6 lg:gap-x-8">
+                    <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-4 md:gap-x-6 lg:gap-x-8 xl:grid-cols-4">
+                        {detailsData(ghInfo.user).map((detail, index) => (
+                            <GHInfoCard key={index} detail={detail} />
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
+                        <GHUserCard ghInfo={ghInfo} username={username} />
+                        <PublicReposCard
+                            ghInfo={ghInfo}
+                            topReposCount={topReposCount}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

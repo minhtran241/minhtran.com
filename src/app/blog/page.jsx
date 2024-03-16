@@ -50,7 +50,7 @@ const BlogPage = async () => {
     const firstPost = posts[0];
     const otherPosts = posts.slice(1);
     return (
-        <div className="items-center justify-center flex flex-col gap-16 container">
+        <div className="items-center justify-center flex flex-col gap-16 container mt-12">
             {/* // First post */}
             <div className="lg:flex lg:items-center lg:gap-12">
                 <Link

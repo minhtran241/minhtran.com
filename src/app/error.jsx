@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 
 const Error = () => {
     return (
-        <div className="w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-col items-center justify-center mt-12">
             <p className="text-6xl md:text-7xl lg:text-9xl font-bold tracking-wider text-[#0033A0] dark:text-blue-600">
                 Oops!
             </p>

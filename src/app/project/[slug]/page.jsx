@@ -1,8 +1,6 @@
-import { Github, Radio } from 'lucide-react';
 import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Suspense } from 'react';
 import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
 import Loading from '@/app/loading';
@@ -64,7 +62,7 @@ const SingleProjectContent = async ({ project }) => {
         }
     );
     return (
-        <div className="container">
+        <div className="container mt-12">
             <div className="content-center items-center justify-center mb-5">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">

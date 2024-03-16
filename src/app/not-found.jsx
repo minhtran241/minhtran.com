@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 const NotFound = () => {
     return (
         <div className="w-full flex flex-col items-center justify-center">
-            <p className="text-6xl md:text-7xl lg:text-9xl font-bold tracking-wider text-[#0033A0] dark:text-blue-600">
+            <p className="text-6xl md:text-7xl lg:text-9xl font-bold tracking-wider text-[#0033A0] dark:text-blue-600 mt-12">
                 404
             </p>
             <p className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider mt-4">
