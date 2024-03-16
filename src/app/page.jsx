@@ -1,7 +1,8 @@
 import Timeline from '@/components/timeline/timeline';
-import Brands from '@/components/brands/brands';
 import Projects from '@/components/projects/projects';
 import Hero from '@/components/hero/hero';
+import Skills from '@/components/skills/skills';
+import GitHubInfo from '@/components/githubInfo/githubInfo';
 
 const PROJECT_LIMIT = 3;
 
@@ -30,8 +31,9 @@ const Home = () => {
     return (
         <>
             <Hero />
+            <GitHubInfo />
             <Timeline />
-            <Brands />
+            <Skills />
             <Projects limit={PROJECT_LIMIT} />
         </>
     );

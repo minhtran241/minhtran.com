@@ -79,7 +79,7 @@ const SinglePostContent = ({ post }) => {
     );
 
     return (
-        <>
+        <div className="container">
             <div className="content-center items-center justify-center mb-5">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
@@ -174,7 +174,7 @@ const SinglePostContent = ({ post }) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

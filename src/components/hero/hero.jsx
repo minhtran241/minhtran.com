@@ -1,75 +1,249 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import { useTheme } from 'next-themes';
+import { Download, GraduationCap, School, User } from 'lucide-react';
 
 const HeroComponent = () => {
-    const { theme } = useTheme();
     return (
-        <div className="">
-            <div className="shadow-lg transform duration-300 easy-in-out">
-                <div className="overflow-hidden lg:h-28 md:h-24 h-20">
-                    <Image
-                        className="rounded-md w-full object-cover"
-                        src={
-                            theme === 'dark' ? '/bg-dark.jpg' : '/bg-light.jpg'
-                        }
-                        alt="bg-image"
-                        width={1600}
-                        height={400}
-                    />
-                </div>
-                <div className="flex justify-center px-5 -mt-12">
-                    <Avatar className="bg-white dark:bg-black p-2 lg:h-32 lg:w-32 md:h-28 md:w-28 h-24 w-24">
-                        <AvatarImage src="/minhtran-ava.png" alt="minhtran" />
-                        <AvatarFallback>MT</AvatarFallback>
-                    </Avatar>
-                </div>
-                <div className="">
-                    <div className="text-center px-14">
-                        <h2 className="text-2xl lg:text-3xl md:text-2xl font-semibold">
-                            Minh Tran
-                        </h2>
-                        <p className="text-[#0033A0] dark:text-blue-600 text-sm">
-                            Software Engineer / Data Engineer
-                        </p>
-                        <div className="flex flex-col items-center gap-1 mt-2">
-                            <Link
-                                href="https://www.gvsu.edu/"
-                                className="text-[#0033A0] dark:text-blue-600 font-semibold"
-                            >
-                                Grand Valley State University
-                            </Link>
-                            <p className="text-gray-600 dark:text-gray-400">
-                                B.S in Computer Science
+        <div className="relative pb-[100px] pt-[100px] lg:pt-[120px]">
+            <div className="container">
+                <div className="-mx-4 flex flex-wrap">
+                    <div className="w-full px-4 lg:w-5/12">
+                        <div className="hero-content flex-col items-start">
+                            <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-gradient sm:text-[42px] lg:text-[40px] xl:text-5xl">
+                                Hello, I'm Minh Tran.
+                            </h1>
+                            <p className="mb-8 max-w-[580px]">
+                                Experienced Software and Data Engineer with 2
+                                years in backend systems. Specializing in API
+                                development, performance optimization, and
+                                system design.
                             </p>
+                            <div className="flex flex-col items-start mb-8">
+                                <div className="flex items-center mb-4">
+                                    <p className="text-sm font-semibold text-[#0033A0]">
+                                        <User size={20} />
+                                    </p>
+                                    <p className="ml-2 text-sm text-body-color dark:text-dark-6">
+                                        {process.env.CURRENT_JOB}
+                                    </p>
+                                </div>
+                                <div className="flex items-center mb-4">
+                                    <p className="text-sm font-semibold text-[#0033A0]">
+                                        <School size={20} />
+                                    </p>
+                                    <Link
+                                        className="ml-2 text-sm text-body-color dark:text-dark-6 hover:text-[#0033A0] transition duration-300"
+                                        href={process.env.CURRENT_ORG_LINK}
+                                    >
+                                        {process.env.CURRENT_ORG}
+                                    </Link>
+                                </div>
+                                <div className="flex items-center">
+                                    <p className="text-sm font-semibold text-[#0033A0]">
+                                        <GraduationCap size={20} />
+                                    </p>
+                                    <p className="ml-2 text-sm text-body-color dark:text-dark-6">
+                                        {process.env.CURRENT_ROLE}
+                                    </p>
+                                </div>
+                            </div>
+                            <ul className="flex flex-wrap items-center gap-4">
+                                <li>
+                                    <Link
+                                        href="/contact"
+                                        className="inline-flex items-center justify-center rounded-md px-6 py-3 text-center text-base font-medium text-white bg-[#0033A0] dark:bg-blue-600 lg:px-7"
+                                    >
+                                        Contact with me
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/minhtran-resume.pdf"
+                                        target="_blank"
+                                        className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-[#0033A0] dark:text-white border rounded-md border-[#464646] dark:border-white hover:border-[#0033A0] dark:hover:border-blue-600 dark:hover:text-blue-600 transition duration-300"
+                                    >
+                                        <Download size={20} className="mr-2" />
+                                        Download Resume
+                                    </Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <p className="text-center pt-4 px-4 text-base">
-                        Experienced Software and Data Engineer with 2 years in
-                        backend systems. Specializing in API development,
-                        performance optimization, and system design.
-                    </p>
-                    <hr className="mt-6" />
-                    <div className="flex bg-gray-50 dark:bg-gray-800">
-                        <Link
-                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] dark:hover:bg-blue-600 hover:text-white font-medium transition"
-                            href="/contact"
-                        >
-                            Contact
-                        </Link>
-                        <div className="border border-gray-200 dark:border-gray-700"></div>
-                        <Link
-                            target="_blank"
-                            className="text-center w-1/2 py-2 px-4 uppercase hover:bg-[#0033A0] dark:hover:bg-blue-600 hover:text-white font-medium transition"
-                            href="/minhtran-resume.pdf"
-                        >
-                            Resume
-                        </Link>
+                    <div className="hidden px-4 lg:block lg:w-1/12"></div>
+                    <div className="w-full px-4 lg:w-6/12">
+                        <div className="lg:ml-auto lg:text-right">
+                            <div className="relative z-10 inline-block pt-11 lg:pt-0">
+                                <Image
+                                    src="/minhtran-ava-1.png"
+                                    alt="hero"
+                                    className="max-w-full lg:ml-auto rounded-lg rounded-tl-[100px] w-[400px] h-[400px]"
+                                    width={400}
+                                    height={400}
+                                />
+                                <span className="absolute -bottom-8 -left-8 z-[-1]">
+                                    <svg
+                                        width="93"
+                                        height="93"
+                                        viewBox="0 0 93 93"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <circle
+                                            cx="2.5"
+                                            cy="2.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="2.5"
+                                            cy="24.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="2.5"
+                                            cy="46.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="2.5"
+                                            cy="68.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="2.5"
+                                            cy="90.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="24.5"
+                                            cy="2.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="24.5"
+                                            cy="24.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="24.5"
+                                            cy="46.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="24.5"
+                                            cy="68.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="24.5"
+                                            cy="90.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="46.5"
+                                            cy="2.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="46.5"
+                                            cy="24.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="46.5"
+                                            cy="46.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="46.5"
+                                            cy="68.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="46.5"
+                                            cy="90.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="68.5"
+                                            cy="2.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="68.5"
+                                            cy="24.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="68.5"
+                                            cy="46.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="68.5"
+                                            cy="68.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="68.5"
+                                            cy="90.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="90.5"
+                                            cy="2.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="90.5"
+                                            cy="24.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="90.5"
+                                            cy="46.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="90.5"
+                                            cy="68.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                        <circle
+                                            cx="90.5"
+                                            cy="90.5"
+                                            r="2.5"
+                                            fill="#0033A0"
+                                        />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

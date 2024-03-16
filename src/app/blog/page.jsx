@@ -30,20 +30,6 @@ const getPosts = async (limit) => {
             'utf-8'
         );
         let posts = JSON.parse(postsData);
-        // Get contents for each post and calculate reading time
-        // await Promise.all(
-        //     posts.map(async (post) => {
-        //         const content = await fs.readFile(
-        //             path.join(DATA_ATTRS_DIR, 'contents', `${post.slug}.md`),
-        //             'utf-8'
-        //         );
-        //         post.content = content;
-        //         const { text, words } = readingTime(content);
-        //         post.read_time = text;
-        //         post.word_count = words;
-        //         return post;
-        //     })
-        // );
         posts = posts.map((post) => ({
             ...post,
             // Splitting tags into an array
@@ -64,7 +50,7 @@ const BlogPage = async () => {
     const firstPost = posts[0];
     const otherPosts = posts.slice(1);
     return (
-        <div className="items-center justify-center flex flex-col gap-16">
+        <div className="items-center justify-center flex flex-col gap-16 container">
             {/* // First post */}
             <div className="lg:flex lg:items-center lg:gap-12">
                 <Link

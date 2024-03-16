@@ -21,6 +21,10 @@ Harnessing the power of **Next.js 14**, I integrated cutting-edge features to en
 
 All content is meticulously crafted in markdown and seamlessly rendered during the build process. Employing [react-markdown](https://github.com/remarkjs/react-markdown) and [remark-rehype](https://github.com/remarkjs/remark-rehype), I ensure a smooth conversion of markdown to HTML. Styles are meticulously applied using [Tailwind CSS Typography](https://github.com/tailwindlabs/tailwindcss-typography) and [prose](https://tailwindcss.com/docs/prose).
 
+### GitHub API Integration
+
+To showcase my open-source contributions, I integrated the [GitHub API](https://docs.github.com/en/rest) to dynamically fetch and display my GitHub information and repositories. This makes it easy for visitors to explore my work and contributions and stay updated with my latest projects.
+
 ### Streamlined Infrastructure
 
 Ditching the complexities of CMS, API, and databases, this iteration of the website focuses on efficiency and simplicity. Content is statically generated at build time, minimizing overheads. Previously, I utilized [ElysiaJS](https://elysiajs.com/) and [PostgreSQL](https://www.postgresql.org/), but transitioned to a static site to streamline operations and costs. Hosting is graciously provided by [Vercel](https://vercel.com/), ensuring seamless deployment. Rest assured, the source code remains securely private.

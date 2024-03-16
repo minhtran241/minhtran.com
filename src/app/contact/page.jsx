@@ -56,7 +56,7 @@ const ContactPage = async () => {
     };
     const aboutWebsiteMdString = await fs.readFile(MARKDOWN_FILE, 'utf-8');
     return (
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 container">
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
                 <div className="rounded-lg p-8 shadow-lg border border-gray-200 dark:border-gray-700">
                     <div className="flex flex-col space-y-4">

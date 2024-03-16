@@ -46,7 +46,7 @@ const ProjectPage = async () => {
     const firstProject = projects[0];
     const otherProjects = projects.slice(1);
     return (
-        <div className="items-center justify-center flex flex-col gap-16">
+        <div className="items-center justify-center flex flex-col gap-16 container">
             {/* // First project */}
             <div className="lg:flex lg:items-center w-full lg:gap-12">
                 <Link

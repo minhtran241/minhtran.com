@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.7",
     "@formspree/react": "^2.5.1",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-avatar": "^1.0.4",
