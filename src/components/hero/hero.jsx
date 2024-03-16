@@ -12,7 +12,7 @@ const HeroComponent = () => {
                     <div className="w-full px-4 lg:w-5/12">
                         <div className="hero-content flex-col items-start">
                             <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-gradient sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                                Hello, I'm Minh Tran.
+                                Minh Tran
                             </h1>
                             <p className="mb-8 max-w-[580px]">
                                 Experienced Software and Data Engineer with 2
