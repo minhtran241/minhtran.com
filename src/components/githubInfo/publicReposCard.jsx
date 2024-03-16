@@ -19,6 +19,7 @@ const PublicReposCard = ({ ghInfo, topReposCount }) => {
                         <Link
                             key={index}
                             href={repo.url}
+                            target="_blank"
                             className="text-sm text-[#0033A0] dark:text-blue-600"
                         >
                             {repo.name}

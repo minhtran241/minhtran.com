@@ -17,7 +17,8 @@ const GHUserCard = ({ ghInfo, username }) => {
                             {ghInfo.user.name}
                         </h1>
                         <Link
-                            href={`https://github.com/${username}`}
+							href={`https://github.com/${username}`}
+							target='_blank'
                             className="text-sm text-[#0033A0] dark:text-blue-600"
                         >
                             @{username}
