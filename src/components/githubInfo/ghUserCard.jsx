@@ -1,12 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import {
-    Building2,
-    MapPin,
-    FileCode,
-    Users,
-    User,
-    BookMarked,
-} from 'lucide-react';
+import { MapPin, FileCode, Users, User, BookMarked } from 'lucide-react';
 import Link from 'next/link';
 
 const detailsData = (data) => {
@@ -67,6 +60,12 @@ const GHUserCard = ({ ghInfo, username }) => {
                 </div>
                 <p className="">{ghInfo.user.bio}</p>
                 <div className="flex flex-col gap-1 items-start">
+                    <div className="flex flex-row items-center justify-center gap-2">
+                        <MapPin size={18} />
+                        <span className="text-sm font-semibold">
+                            {ghInfo.user.location}
+                        </span>
+                    </div>
                     {detailsData(ghInfo.user).map((item) => (
                         <div
                             key={item.id}

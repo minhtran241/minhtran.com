@@ -1,11 +1,11 @@
 import { gql } from '@apollo/client';
 import client from './apollo-client';
 
-export const getGitHubUserInfo = async (username) => {
+export const getGitHubUserInfo = async (username, reposNum) => {
     try {
         const res = await client.query({
             query: gql`
-                query GetGitHubUserInfo($username: String!) {
+                query GetGitHubUserInfo($username: String!, $reposNum: Int) {
                     user(login: $username) {
                         name
                         bio
@@ -13,20 +13,25 @@ export const getGitHubUserInfo = async (username) => {
                         location
                         websiteUrl
                         avatarUrl
-                        repositories(last: 8) {
+                        repositories(
+                            first: $reposNum
+                            privacy: PUBLIC
+                            isFork: false
+                            orderBy: { field: PUSHED_AT, direction: DESC }
+                        ) {
                             totalCount
                             nodes {
                                 name
                                 url
                             }
                         }
-                        followers(last: 5) {
+                        followers {
                             totalCount
                         }
-                        following(last: 5) {
+                        following {
                             totalCount
                         }
-                        gists(last: 5) {
+                        gists {
                             totalCount
                         }
                         contributionsCollection {
@@ -37,6 +42,12 @@ export const getGitHubUserInfo = async (username) => {
                                         contributionCount
                                         date
                                     }
+                                }
+                                months {
+                                    name
+                                    year
+                                    totalWeeks
+                                    firstDay
                                 }
                             }
                         }
@@ -51,6 +62,7 @@ export const getGitHubUserInfo = async (username) => {
             `,
             variables: {
                 username,
+                reposNum,
             },
         });
 
