@@ -4,7 +4,7 @@ import { CalendarDays, Github, Radio } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="flex flex-col p-4 rounded-md border dark:border-gray-700 border-gray-200 ">
+        <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200 ">
             {/* Created at */}
             <div className="flex flex-row justify-end leading-none text-[#0033A0] dark:text-blue-600 gap-2 mb-4">
                 <CalendarDays className="h-4 w-4" />
@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
             </div>
             <Link href={`/project/${project.slug}`}>
                 <Image
-                    className="rounded-md relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
+                    className="rounded-lg relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
                     src={project.thumbnail}
                     alt={project.title}
                     width={0}

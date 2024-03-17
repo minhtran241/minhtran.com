@@ -19,7 +19,7 @@ const Milestone = ({ milestone, right }) => {
             <div className="flex flex-col items-center w-full">
                 <div className="flex items-center justify-end w-full mx-0">
                     <div className="w-full lg:w-[50%] lg:pl-8">
-                        <div className="relative flex-1 mb-10 lg:mb-8  shadow-lg rounded border border-gray-200 dark:border-gray-700 w-full">
+                        <div className="relative flex-1 mb-10 lg:mb-8  shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 w-full">
                             <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4">
                                 <div className="hidden h-10 origin-top-right transform -rotate-45 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 lg:block drop-shadow-lg"></div>
                             </div>
@@ -69,7 +69,7 @@ const Milestone = ({ milestone, right }) => {
             <div className="flex flex-col items-center w-full">
                 <div className="flex items-center justify-start w-full mx-0">
                     <div className="w-full lg:w-[50%] lg:pr-8">
-                        <div className="relative flex-1 mb-10 rounded shadow-lg lg:mb-8 border border-gray-200 dark:border-gray-700">
+                        <div className="relative flex-1 mb-10 rounded-lg shadow-lg lg:mb-8 border border-gray-200 dark:border-gray-700">
                             <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-3 -right-4">
                                 <div className="hidden h-10 origin-bottom-left transform -rotate-45 bg-white dark:bg-black shadow lg:block border border-gray-200 dark:border-gray-700"></div>
                             </div>

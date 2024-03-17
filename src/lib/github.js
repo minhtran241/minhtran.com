@@ -29,6 +29,17 @@ export const getGitHubUserInfo = async (username) => {
                         gists(last: 5) {
                             totalCount
                         }
+                        contributionsCollection {
+                            contributionCalendar {
+                                totalContributions
+                                weeks {
+                                    contributionDays {
+                                        contributionCount
+                                        date
+                                    }
+                                }
+                            }
+                        }
                     }
                     rateLimit {
                         limit

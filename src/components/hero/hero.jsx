@@ -28,7 +28,12 @@ const HeroComponent = () => {
                                 Experienced Software and Data Engineer with 2
                                 years in backend systems. Specializing in API
                                 development, performance optimization, and
-                                system design.
+                                system design. Skilled in crafting scalable
+                                solutions and collaborating with
+                                cross-functional teams to deliver high-quality
+                                software solutions. Passionate about leveraging
+                                innovative technologies to drive efficiency and
+                                enhance system functionality.
                             </p>
                             <div className="flex flex-col items-start mb-8">
                                 <div className="flex items-center mb-4">
