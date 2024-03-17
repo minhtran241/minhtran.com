@@ -42,6 +42,7 @@ export const getGitHubUserInfo = async (username, reposNum) => {
                                         contributionCount
                                         date
                                     }
+                                    firstDay
                                 }
                                 months {
                                     name
