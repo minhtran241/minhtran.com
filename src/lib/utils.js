@@ -1,28 +1,97 @@
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-// import fs from 'fs/promises';
+import { format } from 'date-fns';
 
 export function cn(...inputs) {
     return twMerge(clsx(inputs));
 }
 
-// export const readDataFromLocalJson = async (path, slug, contentPath) => {
-//     try {
-//         const data = await fs.readFile(path, 'utf-8');
-//         const jsonData = JSON.parse(data);
-//         // If contentPath is provided, read content from file system
-//         if (contentPath) {
-//             const content = await fs.readFile(contentPath, 'utf-8');
-//             jsonData.content = content;
-//         }
-//         // If slug is provided, filter data by slug
-//         if (slug) {
-//             const filteredData = jsonData.find((item) => item.slug === slug);
-//             return filteredData;
-//         }
-//         return jsonData;
-//     } catch (error) {
-//         console.error('Error fetching data:', error);
-//         throw new Error('Failed to fetch data');
-//     }
-// };
+const chartDataPrototype = (labels, data) => ({
+    labels,
+    datasets: [
+        {
+            label: 'Contributions',
+            data,
+            fill: false,
+            borderColor: 'rgb(0, 51, 160)',
+            backgroundColor: 'rgb(0, 51, 160)',
+            borderWidth: 2,
+            pointRadius: 4,
+        },
+    ],
+});
+
+export function getDailyChartData(weeks, maxDays = 30) {
+    const labels = [];
+    const dailyData = [];
+
+    const lastDays = weeks
+        .flatMap((week) => week.contributionDays)
+        .slice(-maxDays);
+
+    lastDays.forEach((day) => {
+        const date = new Date(day.date);
+        labels.push(format(date, 'MMM d'));
+        dailyData.push(day.contributionCount);
+    });
+
+    return chartDataPrototype(labels, dailyData);
+}
+
+export function getWeeklyChartData(weeks, maxWeeks = 30) {
+    weeks = weeks.slice(-maxWeeks);
+    const labels = weeks.map((week) => {
+        const date = new Date(week.contributionDays[0].date);
+        return format(date, 'MMM d');
+    });
+
+    const weeklyData = weeks.map((week) =>
+        week.contributionDays.reduce(
+            (acc, day) => acc + day.contributionCount,
+            0
+        )
+    );
+
+    return chartDataPrototype(labels, weeklyData);
+}
+
+export function getMonthlyChartData(weeks, months, maxMonths = 30) {
+    months = months.slice(-maxMonths);
+    const labels = months.map((month) => `${month.name} ${month.year}`);
+
+    // Weeks contains contributions for other months as well, so we need to filter. month.name is string, so we need to convert it to number
+    const monthNames = {
+        Jan: '01',
+        Feb: '02',
+        Mar: '03',
+        Apr: '04',
+        May: '05',
+        Jun: '06',
+        Jul: '07',
+        Aug: '08',
+        Sep: '09',
+        Oct: '10',
+        Nov: '11',
+        Dec: '12',
+    };
+
+    const monthlyData = months.map((month) =>
+        weeks
+            .filter((week) =>
+                week.firstDay.startsWith(
+                    month.year + '-' + monthNames[month.name]
+                )
+            )
+            .reduce(
+                (acc, week) =>
+                    acc +
+                    week.contributionDays.reduce(
+                        (acc, day) => acc + day.contributionCount,
+                        0
+                    ),
+                0
+            )
+    );
+
+    return chartDataPrototype(labels, monthlyData);
+}

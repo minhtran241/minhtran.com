@@ -11,7 +11,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
-import { format } from 'date-fns';
 import { useTheme } from 'next-themes';
 import {
     Select,
@@ -22,6 +21,12 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select';
+import {
+    getDailyChartData,
+    getMonthlyChartData,
+    getWeeklyChartData,
+} from '@/lib/utils';
+import Loading from '@/app/loading';
 
 // Register ChartJS components using ChartJS.register
 ChartJS.register(
@@ -32,24 +37,37 @@ ChartJS.register(
     Tooltip
 );
 
+// Constants
+const GET_CHART_DATA = {
+    daily: getDailyChartData,
+    weekly: getWeeklyChartData,
+    monthly: getMonthlyChartData,
+};
+const DEFAULT_TIME_RANGE = Object.keys(GET_CHART_DATA)[0];
+
+/**
+ * ContributionChart component renders a line chart displaying user contributions over time.
+ * @param {Object} contributionCollection - Collection of user contributions.
+ */
 const ContributionChart = ({ contributionCollection }) => {
+    // State variables
     const { theme } = useTheme();
     const { totalContributions, weeks, months } =
         contributionCollection.contributionCalendar;
-    const [selectedTimeRange, setSelectedTimeRange] = useState('weekly');
+    const [selectedTimeRange, setSelectedTimeRange] =
+        useState(DEFAULT_TIME_RANGE);
     const [chartData, setChartData] = useState(null);
-    const weeklyChartData = getWeeklyChartData(weeks);
-    const monthlyChartData = getMonthlyChartData(weeks, months);
 
+    // Effect to update chart data when selected time range changes
     useEffect(() => {
-        if (selectedTimeRange === 'weekly') {
-            setChartData(weeklyChartData);
+        if (selectedTimeRange === 'monthly') {
+            setChartData(GET_CHART_DATA[selectedTimeRange](weeks, months));
         } else {
-            setChartData(monthlyChartData);
-            console.log('okk');
+            setChartData(GET_CHART_DATA[selectedTimeRange](weeks));
         }
     }, [selectedTimeRange]);
 
+    // Chart options
     const options = {
         maintainAspectRatio: false, // Allow resizing to change chart height
         responsive: true,
@@ -94,14 +112,16 @@ const ContributionChart = ({ contributionCollection }) => {
         chartData.datasets[0].backgroundColor = 'rgba(0, 51, 160, 1)'; // Adjust point color for dark mode
     }
 
+    // Render the ContributionChart component
     return (
         <div className="flex flex-col gap-4 bg-white  p-4 rounded-lg shadow-md dark:bg-black dark:shadow-dark-lg">
+            {/* Time range selector */}
             <div className="flex flex-wrap justify-between gap-4">
                 <div className="flex flex-col gap-2">
                     <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">
-                        {selectedTimeRange === 'weekly'
-                            ? 'Weekly Contributions'
-                            : 'Monthly Contributions'}
+                        {selectedTimeRange.charAt(0).toUpperCase() +
+                            selectedTimeRange.slice(1)}{' '}
+                        Contributions
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400">
                         Total Contributions: {totalContributions}
@@ -111,6 +131,7 @@ const ContributionChart = ({ contributionCollection }) => {
                     onValueChange={(e) => {
                         setSelectedTimeRange(e);
                     }}
+                    defaultValue={selectedTimeRange}
                 >
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Select Time Range" />
@@ -118,101 +139,26 @@ const ContributionChart = ({ contributionCollection }) => {
                     <SelectContent>
                         <SelectGroup>
                             <SelectLabel>Time Range</SelectLabel>
-                            <SelectItem value="weekly">Weekly</SelectItem>
-                            <SelectItem value="monthly">Monthly</SelectItem>
+                            {Object.keys(GET_CHART_DATA).map((range, index) => (
+                                <SelectItem key={index} value={range}>
+                                    {range.charAt(0).toUpperCase() +
+                                        range.slice(1)}
+                                </SelectItem>
+                            ))}
                         </SelectGroup>
                     </SelectContent>
                 </Select>
             </div>
+            {/* Chart */}
             <div style={{ height: '300px', width: '100%' }}>
-                {chartData && (
+                {chartData ? (
                     <Line options={options} data={chartData} id="myChart" />
+                ) : (
+                    <Loading />
                 )}
             </div>
         </div>
     );
 };
-
-function getWeeklyChartData(weeks) {
-    const labels = weeks.map((week) => {
-        const date = new Date(week.contributionDays[0].date);
-        return format(date, 'MMM d'); // Using date-fns for consistent date formatting
-    });
-
-    const weeklyData = weeks.map((week) =>
-        week.contributionDays.reduce(
-            (acc, day) => acc + day.contributionCount,
-            0
-        )
-    );
-
-    return {
-        labels,
-        datasets: [
-            {
-                label: 'Contributions',
-                data: weeklyData,
-                fill: false,
-                borderColor: 'rgb(0, 51, 160)',
-                backgroundColor: 'rgb(0, 51, 160)',
-                borderWidth: 2,
-                pointRadius: 4,
-            },
-        ],
-    };
-}
-
-function getMonthlyChartData(weeks, months) {
-    const labels = months.map((month) => `${month.name} ${month.year}`);
-
-    // weeks contains contributions for other months as well, so we need to filter. month.name is string, so we need to convert it to number
-    const monthNames = {
-        Jan: '01',
-        Feb: '02',
-        Mar: '03',
-        Apr: '04',
-        May: '05',
-        Jun: '06',
-        Jul: '07',
-        Aug: '08',
-        Sep: '09',
-        Oct: '10',
-        Nov: '11',
-        Dec: '12',
-    };
-
-    const monthlyData = months.map((month) =>
-        weeks
-            .filter((week) =>
-                week.firstDay.startsWith(
-                    month.year + '-' + monthNames[month.name]
-                )
-            )
-            .reduce(
-                (acc, week) =>
-                    acc +
-                    week.contributionDays.reduce(
-                        (acc, day) => acc + day.contributionCount,
-                        0
-                    ),
-                0
-            )
-    );
-
-    return {
-        labels,
-        datasets: [
-            {
-                label: 'Contributions',
-                data: monthlyData,
-                fill: false,
-                borderColor: 'rgb(0, 51, 160)',
-                backgroundColor: 'rgb(0, 51, 160)',
-                borderWidth: 2,
-                pointRadius: 4,
-            },
-        ],
-    };
-}
 
 export default ContributionChart;
