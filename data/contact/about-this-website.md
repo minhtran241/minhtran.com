@@ -21,9 +21,15 @@ Harnessing the power of **Next.js 14**, I integrated cutting-edge features to en
 
 All content is meticulously crafted in markdown and seamlessly rendered during the build process. Employing [react-markdown](https://github.com/remarkjs/react-markdown) and [remark-rehype](https://github.com/remarkjs/remark-rehype), I ensure a smooth conversion of markdown to HTML. Styles are meticulously applied using [Tailwind CSS Typography](https://github.com/tailwindlabs/tailwindcss-typography) and [prose](https://tailwindcss.com/docs/prose).
 
-### GitHub API Integration
+### GitHub Contributions Showcase
 
-To showcase my open-source contributions, I integrated the [GitHub API](https://docs.github.com/en/rest) to dynamically fetch and display my GitHub information and repositories. This makes it easy for visitors to explore my work and contributions and stay updated with my latest projects.
+#### GitHub API Integration
+
+To showcase my open-source contributions, I integrated the [GitHub API](https://docs.github.com/en/rest) to dynamically fetch and display my GitHub information and repositories by using [GitHub GraphQL API](https://docs.github.com/en/graphql) and [Apollo Client](https://www.apollographql.com/docs/react/). This ensures that my GitHub contributions are always up-to-date and accurately reflected on my website.
+
+#### Generating GitHub Contributions Graph using Chart.js
+
+To display my GitHub contributions graph, I utilized [Chart.js](https://www.chartjs.org/) to dynamically generate the graph based on my GitHub contributions data. The data is fetched from the GitHub API and then processed to generate the graph.
 
 ### Streamlined Infrastructure
 
