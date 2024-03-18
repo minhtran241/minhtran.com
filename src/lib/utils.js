@@ -1,11 +1,22 @@
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { format } from 'date-fns';
+import { clsx } from 'clsx'; // Importing clsx utility for dynamic class names
+import { twMerge } from 'tailwind-merge'; // Importing twMerge utility for Tailwind CSS class merging
+import { format } from 'date-fns'; // Importing format function from date-fns for date formatting
 
+/**
+ * Combines given class names using Tailwind CSS and clsx.
+ * @param {...string} inputs - Class names to combine.
+ * @returns {string} - Combined class names.
+ */
 export function cn(...inputs) {
-    return twMerge(clsx(inputs));
+    return twMerge(clsx(inputs)); // Merging and returning class names
 }
 
+/**
+ * Prototype function to create chart data object.
+ * @param {string[]} labels - Array of labels for the chart.
+ * @param {number[]} data - Array of data points for the chart.
+ * @returns {Object} - Chart data object.
+ */
 const chartDataPrototype = (labels, data) => ({
     labels,
     datasets: [
@@ -21,7 +32,14 @@ const chartDataPrototype = (labels, data) => ({
     ],
 });
 
-export function getDailyChartData(weeks, maxDays = 30) {
+/**
+ * Generates chart data for daily contributions.
+ * @param {Object[]} contrCalendar - Contribution calendar data.
+ * @param {number} maxDays - Maximum number of days to consider.
+ * @returns {Object} - Daily chart data object.
+ */
+export function getDailyChartData(contrCalendar, maxDays = 30) {
+    const { weeks } = contrCalendar;
     const labels = [];
     const dailyData = [];
 
@@ -29,37 +47,49 @@ export function getDailyChartData(weeks, maxDays = 30) {
         .flatMap((week) => week.contributionDays)
         .slice(-maxDays);
 
-    lastDays.forEach((day) => {
-        const date = new Date(day.date);
-        labels.push(format(date, 'MMM d'));
-        dailyData.push(day.contributionCount);
+    lastDays.forEach(({ contributionCount, date }) => {
+        date = new Date(date);
+        date = date.setDate(date.getDate() + 1); // Adding 1 day to UTC date
+        labels.push(format(date, 'MMM d')); // Formatting date and pushing to labels
+        dailyData.push(contributionCount); // Pushing contribution count to data
     });
 
-    return chartDataPrototype(labels, dailyData);
+    return chartDataPrototype(labels, dailyData); // Returning chart data
 }
 
-export function getWeeklyChartData(weeks, maxWeeks = 30) {
-    weeks = weeks.slice(-maxWeeks);
-    const labels = weeks.map((week) => {
-        const date = new Date(week.contributionDays[0].date);
-        return format(date, 'MMM d');
+/**
+ * Generates chart data for weekly contributions.
+ * @param {Object[]} contrCalendar - Contribution calendar data.
+ * @param {number} maxWeeks - Maximum number of weeks to consider.
+ * @returns {Object} - Weekly chart data object.
+ */
+export function getWeeklyChartData(contrCalendar, maxWeeks = 30) {
+    const { weeks } = contrCalendar;
+    const displayedWeeks = weeks.slice(maxWeeks);
+    const labels = displayedWeeks.map((week) => {
+        let date = new Date(week.contributionDays[0].date);
+        date = date.setDate(date.getDate() + 1); // Adding 1 day to UTC date
+        return format(date, 'MMM d'); // Formatting date and returning
     });
 
-    const weeklyData = weeks.map((week) =>
-        week.contributionDays.reduce(
-            (acc, day) => acc + day.contributionCount,
-            0
-        )
+    const weeklyData = displayedWeeks.map(({ contributionDays }) =>
+        contributionDays.reduce((acc, day) => acc + day.contributionCount, 0)
     );
 
-    return chartDataPrototype(labels, weeklyData);
+    return chartDataPrototype(labels, weeklyData); // Returning chart data
 }
 
-export function getMonthlyChartData(weeks, months, maxMonths = 30) {
-    months = months.slice(-maxMonths);
-    const labels = months.map((month) => `${month.name} ${month.year}`);
+/**
+ * Generates chart data for monthly contributions.
+ * @param {Object[]} contrCalendar - Contribution calendar data.
+ * @param {number} maxMonths - Maximum number of months to consider.
+ * @returns {Object} - Monthly chart data object.
+ */
+export function getMonthlyChartData(contrCalendar, maxMonths = 30) {
+    const { weeks, months } = contrCalendar;
+    const displayedMonths = months.slice(-maxMonths);
+    const labels = displayedMonths.map(({ name, year }) => `${name} ${year}`);
 
-    // Weeks contains contributions for other months as well, so we need to filter. month.name is string, so we need to convert it to number
     const monthNames = {
         Jan: '01',
         Feb: '02',
@@ -75,17 +105,15 @@ export function getMonthlyChartData(weeks, months, maxMonths = 30) {
         Dec: '12',
     };
 
-    const monthlyData = months.map((month) =>
+    const monthlyData = displayedMonths.map(({ name, year }) =>
         weeks
-            .filter((week) =>
-                week.firstDay.startsWith(
-                    month.year + '-' + monthNames[month.name]
-                )
+            .filter(({ firstDay }) =>
+                firstDay.startsWith(year + '-' + monthNames[name])
             )
             .reduce(
-                (acc, week) =>
+                (acc, { contributionDays }) =>
                     acc +
-                    week.contributionDays.reduce(
+                    contributionDays.reduce(
                         (acc, day) => acc + day.contributionCount,
                         0
                     ),
@@ -93,5 +121,5 @@ export function getMonthlyChartData(weeks, months, maxMonths = 30) {
             )
     );
 
-    return chartDataPrototype(labels, monthlyData);
+    return chartDataPrototype(labels, monthlyData); // Returning chart data
 }

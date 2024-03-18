@@ -52,20 +52,20 @@ const DEFAULT_TIME_RANGE = Object.keys(GET_CHART_DATA)[0];
 const ContributionChart = ({ contributionCollection }) => {
     // State variables
     const { theme } = useTheme();
-    const { totalContributions, weeks, months } =
-        contributionCollection.contributionCalendar;
+    // { totalContributions, weeks, months }
+    const contrCalendar = contributionCollection.contributionCalendar;
     const [selectedTimeRange, setSelectedTimeRange] =
         useState(DEFAULT_TIME_RANGE);
     const [chartData, setChartData] = useState(null);
 
+    // Reverse the weeks and months arrays to display the most recent data first
+    // weeks.reverse();
+
     // Effect to update chart data when selected time range changes
-    useEffect(() => {
-        if (selectedTimeRange === 'monthly') {
-            setChartData(GET_CHART_DATA[selectedTimeRange](weeks, months));
-        } else {
-            setChartData(GET_CHART_DATA[selectedTimeRange](weeks));
-        }
-    }, [selectedTimeRange]);
+    useEffect(
+        () => setChartData(GET_CHART_DATA[selectedTimeRange](contrCalendar)),
+        [selectedTimeRange]
+    );
 
     // Chart options
     const options = {
@@ -124,7 +124,7 @@ const ContributionChart = ({ contributionCollection }) => {
                         Contributions
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400">
-                        Total Contributions: {totalContributions}
+                        Total Contributions: {contrCalendar.totalContributions}
                     </p>
                 </div>
                 <Select

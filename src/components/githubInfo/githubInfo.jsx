@@ -10,6 +10,7 @@ import ContributionChart from './contributionChart';
 const GitHubInfoComponent = async () => {
     const username = process.env.GITHUB_USERNAME || 'minhtran241';
     const reposNum = process.env.GITHUB_REPOS_NUM || 7;
+    // Send the request to GitHub API to get the user's information every time the component is rendered
     const ghInfo = await getGitHubUserInfo(username, reposNum);
     const sectionTitle = 'GitHub Stats';
     const sectionDescription = `GitHub is where I spend most of my time. You can find me on GitHub at @${username}. Here are some stats about my GitHub account.`;
