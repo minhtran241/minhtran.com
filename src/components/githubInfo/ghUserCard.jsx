@@ -37,7 +37,7 @@ const detailsData = (data) => {
 
 const GHUserCard = ({ ghInfo, username }) => {
     return (
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out rounded-lg p-4">
+        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
             <div className="flex flex-col items-start gap-3">
                 {/* Row, 1 col is name and username, 1 cl is Avatar */}
                 <div className="flex flex-row items-center justify-center gap-4">
@@ -52,7 +52,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                         <Link
                             href={`https://github.com/${username}`}
                             target="_blank"
-                            className="text-sm text-[#0033A0] dark:text-blue-600"
+                            className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline"
                         >
                             @{username}
                         </Link>

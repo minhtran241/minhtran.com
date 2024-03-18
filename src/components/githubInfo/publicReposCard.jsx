@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const PublicReposCard = ({ ghInfo, username }) => {
     return (
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out rounded-lg p-4">
+        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
             <div className="flex flex-col items-start">
                 <h1 className="text-xl font-semibold">
                     Recent Pushed Repositories (Public)
@@ -18,7 +18,7 @@ const PublicReposCard = ({ ghInfo, username }) => {
                         key={index}
                         href={repo.url}
                         target="_blank"
-                        className="text-sm text-[#0033A0] dark:text-blue-600"
+                        className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline"
                     >
                         {username}/{repo.name}
                     </Link>
