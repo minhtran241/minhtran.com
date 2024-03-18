@@ -51,6 +51,7 @@ const HeroComponent = () => {
                                     <Link
                                         className="ml-2 text-sm hover:underline transition duration-300"
                                         href={process.env.CURRENT_ORG_LINK}
+                                        target="_blank"
                                     >
                                         {process.env.CURRENT_ORG}
                                     </Link>

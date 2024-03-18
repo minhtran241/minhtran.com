@@ -9,7 +9,7 @@ import ContributionChart from './contributionChart';
 // bg-gradient-to-r from-[#0033A0] to-[#00A3FF] dark:from-blue-600 dark:to-blue-900
 const GitHubInfoComponent = async () => {
     const username = process.env.GITHUB_USERNAME || 'minhtran241';
-    const reposNum = process.env.GITHUB_REPOS_NUM || 7;
+    const reposNum = process.env.GITHUB_REPOS_NUM || 6;
     // Send the request to GitHub API to get the user's information every time the component is rendered
     const ghInfo = await getGitHubUserInfo(username, reposNum);
     const sectionTitle = 'GitHub Stats';
@@ -23,7 +23,7 @@ const GitHubInfoComponent = async () => {
                 />
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
                     <GHUserCard ghInfo={ghInfo} username={username} />
-                    <PublicReposCard ghInfo={ghInfo} />
+                    <PublicReposCard ghInfo={ghInfo} username={username} />
                 </div>
                 <div className="mt-8">
                     <ContributionChart

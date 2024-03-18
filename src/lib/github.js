@@ -1,7 +1,10 @@
 import { gql } from '@apollo/client';
 import client from './apollo-client';
 
-export const getGitHubUserInfo = async (username, reposNum) => {
+export const getGitHubUserInfo = async (
+    username = 'minhtran241',
+    reposNum = 6
+) => {
     try {
         const res = await client.query({
             query: gql`
