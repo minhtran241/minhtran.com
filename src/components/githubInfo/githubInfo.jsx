@@ -17,7 +17,7 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
                 const response = await fetch(
                     `/api/github?username=${username}&reposNum=${reposNum}`,
                     {
-                        next: { revalidate: 10 },
+                        next: { revalidate: 3600 },
                     }
                 );
                 const data = await response.json();
