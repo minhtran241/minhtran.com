@@ -10,12 +10,16 @@ import ContributionChart from './contributionChart';
 
 const GitHubInfoComponent = ({ username, reposNum }) => {
     const [ghInfo, setGHInfo] = useState(null);
+    const BASE_URL =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3000/api/github?username=${username}&reposNum=${reposNum}`,
+                    `${BASE_URL}/api/github?username=${username}&reposNum=${reposNum}`,
                     {
                         next: { revalidate: 3600 },
                     }
