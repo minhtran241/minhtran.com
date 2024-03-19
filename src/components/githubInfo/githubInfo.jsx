@@ -18,12 +18,9 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(
-                    `${BASE_URL}/api/github?username=${username}&reposNum=${reposNum}`,
-                    {
-                        next: { revalidate: 3600 },
-                    }
-                );
+                const response = await fetch(`${BASE_URL}/api/github/`, {
+                    next: { revalidate: 3600 },
+                });
                 const data = await response.json();
                 setGHInfo(data);
             } catch (error) {

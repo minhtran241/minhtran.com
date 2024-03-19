@@ -11,10 +11,13 @@ export function getQSParamFromURL(key, url) {
 
 export const GET = async (req) => {
     try {
-        const username = getQSParamFromURL('username', req.url);
-        const reposNum = getQSParamFromURL('reposNum', req.url)
-            ? parseInt(getQSParamFromURL('reposNum', req.url))
-            : 6;
+        // const username = getQSParamFromURL('username', req.url);
+        // const reposNum = getQSParamFromURL('reposNum', req.url)
+        //     ? parseInt(getQSParamFromURL('reposNum', req.url))
+        //     : 6;
+
+        const username = 'minhtran241';
+        const reposNum = 6;
 
         const queryResult = await client.query({
             query: gql`
