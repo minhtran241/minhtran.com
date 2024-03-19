@@ -15,7 +15,7 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `/api/github?username=${username}&reposNum=${reposNum}`,
+                    `http://localhost:3000/api/github?username=${username}&reposNum=${reposNum}`,
                     {
                         next: { revalidate: 3600 },
                     }
