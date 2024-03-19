@@ -52,7 +52,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                         <Link
                             href={`https://github.com/${username}`}
                             target="_blank"
-                            className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline"
+                            className="text-sm text-[#0033A0] dark:text-blue-600"
                         >
                             @{username}
                         </Link>

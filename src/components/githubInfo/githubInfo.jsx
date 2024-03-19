@@ -1,19 +1,42 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
-import { getGitHubUserInfo } from '@/lib/github';
 import PublicReposCard from './publicReposCard';
 import GHUserCard from './ghUserCard';
 import ContributionChart from './contributionChart';
 
-// bg-gradient-to-r from-[#0033A0] to-[#00A3FF] dark:from-blue-600 dark:to-blue-900
-const GitHubInfoComponent = async () => {
-    const username = process.env.GITHUB_USERNAME || 'minhtran241';
-    const reposNum = process.env.GITHUB_REPOS_NUM || 6;
-    // Send the request to GitHub API to get the user's information every time the component is rendered
-    const ghInfo = await getGitHubUserInfo(username, reposNum);
+const GitHubInfoComponent = ({ username, reposNum }) => {
+    const [ghInfo, setGHInfo] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    `/api/github?username=${username}&reposNum=${reposNum}`,
+                    {
+                        next: { revalidate: 10 },
+                    }
+                );
+                const data = await response.json();
+                setGHInfo(data);
+            } catch (error) {
+                console.error('Error fetching GitHub info:', error);
+            }
+        };
+
+        fetchData();
+    }, [username, reposNum]);
+
+    if (!ghInfo) {
+        return <Loading />;
+    }
+
     const sectionTitle = 'GitHub Stats';
     const sectionDescription = `GitHub is where I spend most of my time. You can find me on GitHub at @${username}. Here are some stats about my GitHub account.`;
+
     return (
         <div className="items-center justify-center py-12 bg-gray-200 dark:bg-gray-900">
             <div className="container">
@@ -38,9 +61,12 @@ const GitHubInfoComponent = async () => {
 };
 
 const GitHubInfo = () => {
+    const username = process.env.GITHUB_USERNAME || 'minhtran241';
+    const reposNum = process.env.GITHUB_REPOS_NUM || 6;
+
     return (
         <Suspense fallback={<Loading />}>
-            <GitHubInfoComponent />
+            <GitHubInfoComponent username={username} reposNum={reposNum} />
         </Suspense>
     );
 };
