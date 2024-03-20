@@ -13,7 +13,7 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
     const BASE_URL =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
-            : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+            : `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
     useEffect(() => {
         const fetchData = async () => {
