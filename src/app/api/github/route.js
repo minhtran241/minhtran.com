@@ -2,22 +2,14 @@ import { gql } from '@apollo/client';
 import client from './apollo-client';
 import { NextResponse } from 'next/server';
 
-export function getQSParamFromURL(key, url) {
-    if (!url) return '';
-    const search = new URL(url).search;
-    const urlParams = new URLSearchParams(search);
-    return urlParams.get(key);
-}
+export const dynamic = 'force-dynamic'; // defaults to auto
 
-export const GET = async (req) => {
+export const GET = async (request) => {
     try {
-        const username = getQSParamFromURL('username', req.url);
-        const reposNum = getQSParamFromURL('reposNum', req.url)
-            ? parseInt(getQSParamFromURL('reposNum', req.url))
-            : 6;
+        const { searchParams } = new URL(request.url);
 
-        // const username = 'minhtran241';
-        // const reposNum = 6;
+        const username = searchParams.get('username') || 'minhtran241';
+        const reposNum = parseInt(searchParams.get('reposNum')) || 6;
 
         const queryResult = await client.query({
             query: gql`
