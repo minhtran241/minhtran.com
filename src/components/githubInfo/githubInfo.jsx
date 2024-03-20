@@ -13,14 +13,17 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
     const BASE_URL =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
-            : `${process.env.NEXT_PUBLIC_BASE_URL}`;
+            : process.env.NEXT_PUBLIC_BASE_URL;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${BASE_URL}/api/github/`, {
-                    next: { revalidate: 3600 },
-                });
+                const response = await fetch(
+                    `${BASE_URL}/api/github?username=${username}&reposNum=${reposNum}`,
+                    {
+                        next: { revalidate: 3600 },
+                    }
+                );
                 const data = await response.json();
                 setGHInfo(data);
             } catch (error) {
@@ -29,7 +32,7 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
         };
 
         fetchData();
-    }, [username, reposNum]);
+    }, [BASE_URL, username, reposNum]);
 
     if (!ghInfo) {
         return <Loading />;
