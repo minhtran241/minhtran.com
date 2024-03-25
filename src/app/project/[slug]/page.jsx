@@ -2,9 +2,9 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
+import MarkdownRender from '@/components/Common/markdownRenderer/markdownRenderer';
 import Loading from '@/app/loading';
-import ProjectMetadata from '@/components/projectMetadata/projectMetadata';
+import ProjectMetadata from '@/components/Project/projectMetadata/projectMetadata';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {

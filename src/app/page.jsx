@@ -1,8 +1,8 @@
-import Timeline from '@/components/timeline/timeline';
-import Projects from '@/components/projects/projects';
-import Hero from '@/components/hero/hero';
-import Skills from '@/components/skills/skills';
-import GitHubInfo from '@/components/githubInfo/githubInfo';
+import Timeline from '@/components/Home/timeline/timeline';
+import Projects from '@/components/Project/projects/projects';
+import Hero from '@/components/Home/hero/hero';
+import Skills from '@/components/Home/skills/skills';
+import GitHubInfo from '@/components/Home/githubInfo/githubInfo';
 
 const PROJECT_LIMIT = 3;
 

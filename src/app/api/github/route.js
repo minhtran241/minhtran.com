@@ -45,9 +45,11 @@ export const GET = async (request) => {
                         contributionsCollection {
                             contributionCalendar {
                                 totalContributions
+                                colors
                                 weeks {
                                     contributionDays {
                                         contributionCount
+                                        color
                                         date
                                     }
                                     firstDay

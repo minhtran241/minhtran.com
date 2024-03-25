@@ -1,4 +1,4 @@
-import PostCard from '@/components/postCard/postCard';
+import PostCard from '@/components/Post/postCard/postCard';
 import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';

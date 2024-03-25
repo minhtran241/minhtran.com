@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
-import ShareButtons from '@/components/shareButtons/shareButtons';
-import PostMetadata from '@/components/postMetadata/postMetadata';
+import ShareButtons from '@/components/Common/shareButtons/shareButtons';
+import PostMetadata from '@/components/Post/postMetadata/postMetadata';
 import fs from 'fs/promises';
 import path from 'path';
-import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
+import MarkdownRender from '@/components/Common/markdownRenderer/markdownRenderer';
 import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';

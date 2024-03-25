@@ -1,9 +1,9 @@
 import './globals.css';
-import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/footer/Footer';
+import Navbar from '@/components/Common/navbar/Navbar';
+import Footer from '@/components/Common/footer/Footer';
 import { Inter as FontSans } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components/themeProvider/theme-provider';
+import { cn } from '@/common/libs/cn';
+import { ThemeProvider } from '@/components/Common/themeProvider/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';

@@ -1,9 +1,9 @@
-import MarkdownRender from '@/components/markdownRenderer/markdownRenderer';
+import MarkdownRender from '@/components/Common/markdownRenderer/markdownRenderer';
 import path from 'path';
 import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import fs from 'fs/promises';
-import ContactForm from '@/components/contactForm/contactForm';
+import ContactForm from '@/components/Contact/contactForm/contactForm';
 
 // SEO metadata
 export const generateMetadata = async () => {

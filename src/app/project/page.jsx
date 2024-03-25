@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Github, Radio } from 'lucide-react';
 import path from 'path';
 import fs from 'fs/promises';
-import ProjectCard from '@/components/projectCard/projectCard';
+import ProjectCard from '@/components/Project/projectCard/projectCard';
 
 const PROJECT_FETCH_LIMIT = 100;
 const DATA_ATTRS_DIR = path.join(
