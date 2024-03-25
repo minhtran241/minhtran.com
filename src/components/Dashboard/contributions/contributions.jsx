@@ -10,8 +10,15 @@ import SectionHeading from '../sectionHeading/sectionHeading';
 import SectionSubHeading from '../sectionHeading/sectionSubHeading';
 
 const Contributions = () => {
+    const BASE_URL =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : process.env.NEXT_PUBLIC_BASE_URL;
     const username = 'minhtran241';
-    const { data } = useSWR(`/api/github?username=${username}`, fetcher);
+    const { data } = useSWR(
+        `${BASE_URL}/api/github?username=${username}`,
+        fetcher
+    );
 
     return (
         <section className="flex flex-col gap-y-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700">

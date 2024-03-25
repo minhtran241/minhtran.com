@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import SectionLabel from '../../Common/sectionLabel/sectionLabel';
+import SectionLabel from '../sectionLabel/sectionLabel';
 import PublicReposCard from './publicReposCard';
 import GHUserCard from './ghUserCard';
 import ContributionChart from './contributionChart';

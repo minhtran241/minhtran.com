@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import SectionLabel from '../../Common/sectionLabel/sectionLabel';
+import SectionLabel from '../sectionLabel/sectionLabel';
 import {
     Braces,
     Server,

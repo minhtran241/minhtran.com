@@ -13,7 +13,12 @@ import SectionHeading from '../sectionHeading/sectionHeading';
 import SectionSubHeading from '../sectionHeading/sectionSubHeading';
 
 const CodingActive = ({ lastUpdate }) => {
-    const { data } = useSWR('/api/wakatime', fetcher);
+	const BASE_URL =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : process.env.NEXT_PUBLIC_BASE_URL;
+
+    const { data } = useSWR(`${BASE_URL}/api/wakatime`, fetcher);
     const [formattedLastUpdate, setFormattedLastUpdate] = useState(null);
 
     useEffect(() => {
@@ -21,8 +26,8 @@ const CodingActive = ({ lastUpdate }) => {
             const lastUpdateDate = lastUpdate || data?.last_update;
             if (lastUpdateDate) {
                 const zonedDate = utcToZonedTime(
-                    zonedTimeToUtc(lastUpdateDate, 'Asia/Jakarta'),
-                    'Asia/Jakarta'
+                    zonedTimeToUtc(lastUpdateDate, 'Asia/Bangkok'),
+                    'Asia/Bangkok'
                 );
                 const distance = formatDistanceToNowStrict(zonedDate, {
                     addSuffix: true,

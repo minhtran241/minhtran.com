@@ -3,7 +3,7 @@ import Milestone from './milestone/milestone';
 import fs from 'fs/promises';
 import path from 'path';
 import { Suspense } from 'react';
-import SectionLabel from '../../Common/sectionLabel/sectionLabel';
+import SectionLabel from '../sectionLabel/sectionLabel';
 
 // * FETCH MILESTONES FROM LOCAL JSON
 const DATA_ATTRS_DIR = path.join(

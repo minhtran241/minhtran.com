@@ -8,23 +8,9 @@
 </div>
 <br />
 
-<!-- table of 2 images (light and dark mode) -->
-<div align="center">
-  <table>
- <tr>
-   <td align="center">
-  <a href="https://minhtran.com">
-    <img src="#" alt="Light Mode" />
-  </a>
-   </td>
-   <td align="center">
-  <a href="https://minhtran.com">
-    <img src="#" alt="Dark Mode" />
-  </a>
-   </td>
- </tr>
-   </table>
-</div>
+Light Mode | Dark Mode
+--- | ---
+![News List](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-light.png) | ![News Details](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-dark.png)
 
 ## Introduction
 
@@ -43,17 +29,17 @@ If you have any questions, suggestions, or anything else, don't hesitate to reac
 
 This website is built using these technologies:
 
-- Next.js 14.1.0
-- Tailwind CSS 3
-- Apollo Client
-- Axios
-- SWR
-- Framer Motion
-- Lucide Icons
-- React Icons
-- Chart.js
-- WakaTime API
-- GitHub API
+- ◼️ Next.js 14.1.0
+- 💠 Tailwind CSS 3
+- ☀️ Apollo Client
+- ͍ Axios
+- 〰️ SWR
+- ➰ Framer Motion
+- 💢 Lucide Icons
+- 💢 React Icons
+- 📊 Chart.js
+- 🎥 WakaTime API
+- 👨🏻‍💻 GitHub API
 
 <br />
 
@@ -87,10 +73,12 @@ As a developer, I have a lot of projects that I have worked on. This section dis
 - ### PageSpeed Insights
 
 - Desktop: [https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=desktop](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=desktop)
-![image](https://github.com/aulianza/minhtran.com/public/contact/lh-rp-desktop.png)
+  
+![image](https://github.com/minhtran241/minhtran.com/blob/main/public/contact/about-this-website/lh-rp-desktop.png)
 
 - Mobile: [https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=mobile](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=mobile)
-![image](https://github.com/aulianza/minhtran.com/public/contact/lh-rp-mobile.png)
+
+![image](https://github.com/minhtran241/minhtran.com/blob/main/public/contact/about-this-website/lh-rp-mobile.png)
 
 <br /><br />
 

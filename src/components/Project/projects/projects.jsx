@@ -5,7 +5,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '../projectCard/projectCard';
 import Loading from '@/app/loading';
-import SectionLabel from '../../Common/sectionLabel/sectionLabel';
+import SectionLabel from '../../Home/sectionLabel/sectionLabel';
 
 const PROJECT_FETCH_LIMIT = 3;
 const DATA_ATTRS_DIR = path.join(
