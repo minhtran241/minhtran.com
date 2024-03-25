@@ -32,7 +32,7 @@ This website is built using these technologies:
 - ◼️ Next.js 14.1.0
 - 💠 Tailwind CSS 3
 - ☀️ Apollo Client
-- ͍ Axios
+- ←→ Axios
 - 〰️ SWR
 - ➰ Framer Motion
 - 💢 Lucide Icons
