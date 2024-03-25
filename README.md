@@ -1,6 +1,6 @@
 <div align="center">
   <h1>minhtran.com</h1>
-  <p>🔥 Personal website was built originally from scratch using Next.js, Tailwind CSS, SWR, Chart.js, Apollo, Wakatime API, GitHub API and more. </p>
+  <p>🔥 Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, Wakatime API, GitHub API, and more. </p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/minhtran241/minhtran.com)](https://github.com/minhtran241/minhtran.com/stargazers)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
@@ -10,7 +10,7 @@
 
 Light Mode | Dark Mode
 --- | ---
-![News List](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-light.png) | ![News Details](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-dark.png)
+![Light Mode](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-light.png) | ![Dark Mode](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-dark.png)
 
 ## Introduction
 
@@ -31,6 +31,8 @@ This website is built using these technologies:
 
 - ◼️ Next.js 14.1.0
 - 💠 Tailwind CSS 3
+- ♦ shadcn/ui
+- 🌺 daisyUI
 - ☀️ Apollo Client
 - ←→ Axios
 - 〰️ SWR
@@ -45,15 +47,15 @@ This website is built using these technologies:
 
 ## Features
 
-On this website there are several features that will continue to be updated and added in the future.
+On this website, several features will continue to be updated and added in the future.
 
 - ### 🤖 ChatGPT AI (Unavailable)
 
-You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI api key)
+You can access this feature by opening the command palette [cmd+k], and then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI API key)
 
 - ### 🎧 Spotify Status (Unavailable)
 
-Displays song information being played on spotify in real time using the Spotify API and SWR.
+Displays song information being played on Spotify in real-time using the Spotify API and SWR.
 
 - ### 🕗 Wakatime Statistics
 
@@ -65,7 +67,7 @@ The markdown files are server-side rendered using the [React Markdown](https://g
 
 - ### 🗳 Projects
 
-As a developer, I have a lot of projects that I have worked on. This section displays the projects I have worked on. The markdown files are stored in the `data/projects` directory and are server-side rendered.
+As a developer, I have a lot of projects that I have worked on. This section displays the projects I have worked on. The markdown files are stored in the `data/projects` directory and rendered server-side.
 <br /><br />
 
 ## Performance
@@ -84,7 +86,7 @@ As a developer, I have a lot of projects that I have worked on. This section dis
 
 ## Getting Started
 
-If you are interested in running this project on your local machine, you can do so in just 3 easy steps below. Additionally, remember to update the ".env.example" file to ".env" and replace the variables with your own in the ".env" file.
+If you are interested in running this project on your local machine, you can do so in just 3 easy steps below. Additionally, remember to update the `.env.example` file to `.env` and replace the variables with your own in the `.env` file.
 
 ### 1. Clone this template using one of the three ways
 
@@ -121,7 +123,7 @@ npm install
 
 ### 3. Config .env
 
-This repository uses several environment variables. Please copy .env.example into .env, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, GitHub and others, please refer to the official documentation provided by each provider.
+This repository uses several environment variables. Please copy `.env.example` into `.env`, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, GitHub, and others, please refer to the official documentation provided by each provider.
 
 ```
 # Basic Information
@@ -156,9 +158,9 @@ You can start the server using this command:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/app/page.jsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can edit the page by modifying `src/app/page.jsx`. The page auto-updates as you edit the file.
 <br /><br />
 
 ## License
 
-Licensed under the [GPL-3.0 license](https://github.com/minhtran241/minhtran.com/blob/master/LICENSE).
+It is licensed under the [GPL-3.0 license](https://github.com/minhtran241/minhtran.com/blob/master/LICENSE).
