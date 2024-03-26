@@ -6,10 +6,7 @@ export const formatDate = (date, type = 'MMMM dd, yyyy') => {
         return '';
     }
 
-    const formattedDate = format(
-        utcToZonedTime(parseISO(date), 'Asia/Bangkok'),
-        type
-    );
+    const formattedDate = format(utcToZonedTime(parseISO(date)), type);
     return formattedDate;
 };
 

@@ -11,9 +11,11 @@ import { fetcher } from '@/services/fetcher';
 import { SiWakatime as WakatimeIcon } from 'react-icons/si';
 import SectionHeading from '../sectionHeading/sectionHeading';
 import SectionSubHeading from '../sectionHeading/sectionSubHeading';
+import { WAKATIME_USERNAME } from '@/common/constants/wakatimeAPI';
+import { TIMEZONE } from '@/common/constants/timezone';
 
 const CodingActive = ({ lastUpdate }) => {
-	const BASE_URL =
+    const BASE_URL =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : process.env.NEXT_PUBLIC_BASE_URL;
@@ -26,8 +28,8 @@ const CodingActive = ({ lastUpdate }) => {
             const lastUpdateDate = lastUpdate || data?.last_update;
             if (lastUpdateDate) {
                 const zonedDate = utcToZonedTime(
-                    zonedTimeToUtc(lastUpdateDate, 'Asia/Bangkok'),
-                    'Asia/Bangkok'
+                    zonedTimeToUtc(lastUpdateDate, TIMEZONE),
+                    TIMEZONE
                 );
                 const distance = formatDistanceToNowStrict(zonedDate, {
                     addSuffix: true,
@@ -49,14 +51,14 @@ const CodingActive = ({ lastUpdate }) => {
     return (
         <section className="flex flex-col gap-y-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
             <SectionHeading
-                title="Weekly Statistics"
+                title="Weekly Stats"
                 icon={<WakatimeIcon className="mr-1" />}
             />
             <SectionSubHeading>
                 <div className="dark:text-gray-400 md:flex-row md:items-center">
                     <span>My </span>
                     <Link
-                        href="https://wakatime.com/@minhtran241"
+                        href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
                         className="hover:text-gray-900 hover:underline dark:hover:text-gray-100"
                     >
                         WakaTime

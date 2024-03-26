@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
@@ -9,6 +8,8 @@ import GHUserCard from './ghUserCard';
 import ContributionChart from './contributionChart';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
+import { GITHUB_USERNAME } from '@/common/constants/userBasicInfo';
+import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
 
 const GitHubInfoComponent = ({ username, reposNum }) => {
     const BASE_URL =
@@ -52,12 +53,12 @@ const GitHubInfoComponent = ({ username, reposNum }) => {
 };
 
 const GitHubInfo = () => {
-    const username = process.env.GITHUB_USERNAME || 'minhtran241';
-    const reposNum = process.env.GITHUB_REPOS_NUM || 6;
-
     return (
         <Suspense fallback={<Loading />}>
-            <GitHubInfoComponent username={username} reposNum={reposNum} />
+            <GitHubInfoComponent
+                username={GITHUB_USERNAME}
+                reposNum={GITHUB_REPOS_NUM}
+            />
         </Suspense>
     );
 };

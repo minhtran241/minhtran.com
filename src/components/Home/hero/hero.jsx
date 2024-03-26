@@ -10,7 +10,7 @@ import {
     CURRENT_ORG,
     CURRENT_ORG_LINK,
     CURRENT_ROLE,
-} from '@/common/constants/about';
+} from '@/common/constants/userBasicInfo';
 
 const HeroComponent = () => {
     const { theme } = useTheme();
@@ -25,7 +25,7 @@ const HeroComponent = () => {
             >
                 <span
                     id="blackOverlay"
-                    className="absolute h-full w-full bg-black opacity-35"
+                    className={`absolute h-full w-full bg-black ${theme === 'dark' ? 'opacity-35' : 'opacity-45'}`}
                 ></span>
             </div>
             <div className="relative container py-10">

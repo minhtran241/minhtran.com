@@ -15,6 +15,21 @@ export const generateMetadata = async ({ params }) => {
         image: p.thumbnail,
         author: 'Minh Tran',
         keywords: p.tech_stack,
+        canonical: process.env.NEXT_PUBLIC_BASE_URL + `/project/${p.slug}`,
+        openGraph: {
+            type: 'article',
+            article: {
+                publishedTime: p?.created_at,
+                authors: ['Minh Tran'],
+            },
+            url: process.env.NEXT_PUBLIC_BASE_URL + `/project/${p?.slug}`,
+            images: [
+                {
+                    url: p?.thumbnail,
+                },
+            ],
+            siteName: 'Blog Minh Tran',
+        },
     };
 };
 

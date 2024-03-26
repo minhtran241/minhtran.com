@@ -8,13 +8,14 @@ import Overview from './overview';
 import Calendar from './calendar';
 import SectionHeading from '../sectionHeading/sectionHeading';
 import SectionSubHeading from '../sectionHeading/sectionSubHeading';
+import { GITHUB_USERNAME } from '@/common/constants/userBasicInfo';
 
 const Contributions = () => {
     const BASE_URL =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : process.env.NEXT_PUBLIC_BASE_URL;
-    const username = 'minhtran241';
+    const username = GITHUB_USERNAME;
     const { data } = useSWR(
         `${BASE_URL}/api/github?username=${username}`,
         fetcher

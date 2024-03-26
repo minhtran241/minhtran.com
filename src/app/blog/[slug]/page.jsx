@@ -7,7 +7,6 @@ import MarkdownRender from '@/components/Common/markdownRenderer/markdownRendere
 import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';
-import { extractHeadings } from 'extract-md-headings';
 import Link from 'next/link';
 import { ChevronsLeft, ChevronsRight } from 'lucide-react';
 
@@ -20,6 +19,21 @@ export const generateMetadata = async ({ params }) => {
         image: p.thumbnail,
         author: 'Minh Tran',
         keywords: p.tags,
+        canonical: process.env.NEXT_PUBLIC_BASE_URL + `/blog/${p.slug}`,
+        openGraph: {
+            type: 'article',
+            article: {
+                publishedTime: p?.created_at,
+                authors: ['Minh Tran'],
+            },
+            url: process.env.NEXT_PUBLIC_BASE_URL + `/blog/${p?.slug}`,
+            images: [
+                {
+                    url: p?.thumbnail,
+                },
+            ],
+            siteName: 'Blog Minh Tran',
+        },
     };
 };
 
@@ -49,10 +63,6 @@ const getPost = async (slug) => {
         const stats = readingTime(content);
         post.read_time = stats.text;
         post.word_count = stats.words;
-
-        post.headings = extractHeadings(
-            path.join(DATA_CONTENTS_DIR, `${slug}.md`)
-        );
 
         const prevId = post.id > 1 ? post.id - 1 : null;
         const nextId = post.id < posts.length ? post.id + 1 : null;

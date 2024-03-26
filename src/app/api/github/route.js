@@ -1,5 +1,7 @@
+import { GITHUB_USERNAME } from '@/common/constants/userBasicInfo';
+import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
+import client from '@/services/apollo-client';
 import { gql } from '@apollo/client';
-import client from './apollo-client';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic'; // defaults to auto
@@ -8,8 +10,9 @@ export const GET = async (request) => {
     try {
         const { searchParams } = new URL(request.url);
 
-        const username = searchParams.get('username') || 'minhtran241';
-        const reposNum = parseInt(searchParams.get('reposNum')) || 6;
+        const username = searchParams.get('username') || GITHUB_USERNAME;
+        const reposNum =
+            parseInt(searchParams.get('reposNum')) || GITHUB_REPOS_NUM;
 
         const queryResult = await client.query({
             query: gql`
