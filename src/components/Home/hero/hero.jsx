@@ -5,12 +5,9 @@ import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import { Download, GraduationCap, School, User } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import {
-    CURRENT_JOB,
-    CURRENT_ORG,
-    CURRENT_ORG_LINK,
-    CURRENT_ROLE,
-} from '@/common/constants/userBasicInfo';
+import { userBasicInfo } from '@/common/constants/userBasic';
+import { Phone } from 'lucide-react';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 const HeroComponent = () => {
     const { theme } = useTheme();
@@ -25,7 +22,9 @@ const HeroComponent = () => {
             >
                 <span
                     id="blackOverlay"
-                    className={`absolute h-full w-full bg-black ${theme === 'dark' ? 'opacity-35' : 'opacity-45'}`}
+                    className={`absolute h-full w-full bg-black ${
+                        theme === 'dark' ? 'opacity-35' : 'opacity-45'
+                    }`}
                 ></span>
             </div>
             <div className="relative container py-10">
@@ -52,7 +51,7 @@ const HeroComponent = () => {
                                         <User size={20} />
                                     </p>
                                     <p className="ml-2 text-sm">
-                                        {CURRENT_JOB}
+                                        {userBasicInfo.currentJob}
                                     </p>
                                 </div>
                                 <div className="flex items-center mb-4">
@@ -61,10 +60,12 @@ const HeroComponent = () => {
                                     </p>
                                     <Link
                                         className="ml-2 text-sm hover:underline transition duration-300"
-                                        href={CURRENT_ORG_LINK}
+                                        href={
+                                            userBasicInfo.currentOrgLink || '#'
+                                        }
                                         target="_blank"
                                     >
-                                        {CURRENT_ORG}
+                                        {userBasicInfo.currentOrg}
                                     </Link>
                                 </div>
                                 <div className="flex items-center">
@@ -72,7 +73,7 @@ const HeroComponent = () => {
                                         <GraduationCap size={20} />
                                     </p>
                                     <p className="ml-2 text-sm">
-                                        {CURRENT_ROLE}
+                                        {userBasicInfo.currentRole}
                                     </p>
                                 </div>
                             </div>
@@ -82,12 +83,13 @@ const HeroComponent = () => {
                                         href="/contact"
                                         className="inline-flex items-center justify-center rounded-md px-6 py-3 text-center text-base font-medium bg-[#0033A0] dark:bg-blue-600 lg:px-7"
                                     >
-                                        Contact with me
+                                        <Phone size={20} className="mr-2" />
+                                        Contact Me
                                     </Link>
                                 </li>
                                 <li>
                                     <Link
-                                        href="/minhtran-resume.pdf"
+                                        href={fileSystemInfo.resumeLink || '#'}
                                         target="_blank"
                                         className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium border rounded-md border-white transition duration-300"
                                     >

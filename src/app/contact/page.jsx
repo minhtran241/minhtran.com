@@ -4,17 +4,8 @@ import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import fs from 'fs/promises';
 import ContactForm from '@/components/Contact/contactForm/contactForm';
-import {
-    DATA_FETCH_DIR,
-    EMAIL,
-    GITHUB_LINK,
-    GITHUB_USERNAME,
-    LINKEDIN_LINK,
-    LINKEDIN_USER,
-    RESUME_LINK,
-    CURRENT_ORG,
-    CURRENT_JOB,
-} from '@/common/constants/userBasicInfo';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
+import { userBasicInfo } from '@/common/constants/userBasic';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -26,7 +17,7 @@ export const generateMetadata = async () => {
 
 const MARKDOWN_FILE = path.join(
     process.cwd(),
-    DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'contact',
     'about-this-website.md'
 );
@@ -37,28 +28,28 @@ const ContactPage = async () => {
             icon: (
                 <Mail className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
             ),
-            link: `mailto:${EMAIL}`,
-            text: EMAIL,
+            link: `mailto:${userBasicInfo.email}`,
+            text: userBasicInfo.email,
         },
         github: {
             icon: (
                 <Github className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
             ),
-            link: GITHUB_LINK,
-            text: GITHUB_USERNAME,
+            link: userBasicInfo.githubLink,
+            text: userBasicInfo.githubUsername,
         },
         linkedin: {
             icon: (
                 <Linkedin className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
             ),
-            link: LINKEDIN_LINK,
-            text: LINKEDIN_USER,
+            link: userBasicInfo.linkedinLink,
+            text: userBasicInfo.linkedinUser,
         },
         resume: {
             icon: (
                 <Briefcase className="h-4 w-4 dark:text-blue-600 text-[#0033A0]" />
             ),
-            link: RESUME_LINK,
+            link: fileSystemInfo.resumeLink,
             text: 'Resume',
         },
     };
@@ -74,10 +65,10 @@ const ContactPage = async () => {
                                     Minh Tran
                                 </h2>
                                 <p className="text-md dark:text-gray-400">
-                                    {CURRENT_ORG}
+                                    {userBasicInfo.currentOrg}
                                 </p>
                                 <span className="text-sm dark:text-blue-600 text-[#0033A0] italic">
-                                    {CURRENT_JOB}
+                                    {userBasicInfo.currentJob}
                                 </span>
                             </div>
                             <div className="space-y-1">

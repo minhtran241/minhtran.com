@@ -8,14 +8,15 @@ import Overview from './overview';
 import Calendar from './calendar';
 import SectionHeading from '../sectionHeading/sectionHeading';
 import SectionSubHeading from '../sectionHeading/sectionSubHeading';
-import { GITHUB_USERNAME } from '@/common/constants/userBasicInfo';
+import Loading from '@/app/loading';
+import { userBasicInfo } from '@/common/constants/userBasic';
 
 const Contributions = () => {
     const BASE_URL =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : process.env.NEXT_PUBLIC_BASE_URL;
-    const username = GITHUB_USERNAME;
+    const username = userBasicInfo.githubUsername;
     const { data } = useSWR(
         `${BASE_URL}/api/github?username=${username}`,
         fetcher
@@ -41,7 +42,7 @@ const Contributions = () => {
                 </Link>
             </SectionSubHeading>
 
-            {!data && <div className="dark:text-neutral-400">No Data</div>}
+            {!data && <Loading />}
             {data && (
                 <div className="space-y-3">
                     <Overview

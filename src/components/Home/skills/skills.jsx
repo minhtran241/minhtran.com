@@ -12,6 +12,7 @@ import {
     BarChart,
     TextSearch,
 } from 'lucide-react';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 const icons = {
     'Programming Languages': <Braces className="text-white h-4 w-4" />,
@@ -24,7 +25,7 @@ const icons = {
 
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
-    process.env.DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'skill'
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'skills.json');

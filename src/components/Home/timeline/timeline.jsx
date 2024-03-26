@@ -4,11 +4,12 @@ import fs from 'fs/promises';
 import path from 'path';
 import { Suspense } from 'react';
 import SectionLabel from '../sectionLabel/sectionLabel';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 // * FETCH MILESTONES FROM LOCAL JSON
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
-    process.env.DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'milestone'
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'milestones.json');

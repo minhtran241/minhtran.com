@@ -9,6 +9,7 @@ import Loading from '@/app/loading';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronsLeft, ChevronsRight } from 'lucide-react';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -41,7 +42,7 @@ export const generateMetadata = async ({ params }) => {
 const DATA_ATTRS_FILENAME = 'blogs.json';
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
-    process.env.DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'blog'
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, DATA_ATTRS_FILENAME);

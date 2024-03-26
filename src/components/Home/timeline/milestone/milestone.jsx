@@ -1,4 +1,10 @@
-import { Database, Layers, LayoutTemplate, HardDrive } from 'lucide-react';
+import {
+    Database,
+    Layers,
+    LayoutTemplate,
+    HardDrive,
+    Code,
+} from 'lucide-react';
 
 const Milestone = ({ milestone, right }) => {
     const year = new Date(milestone.date).getFullYear();
@@ -13,6 +19,7 @@ const Milestone = ({ milestone, right }) => {
         Layers: <Layers className="text-white" />,
         LayoutTemplate: <LayoutTemplate className="text-white" />,
         HardDrive: <HardDrive className="text-white" />,
+        Code: <Code className="text-white" />,
     };
     return right ? (
         <div className="w-full m-0">

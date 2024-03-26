@@ -1,6 +1,7 @@
-const { sumTotalFromArray } = require('@/common/helpers');
-const { default: Progress } = require('./progress');
-const clsx = require('clsx');
+import Loading from '@/app/loading';
+import { sumTotalFromArray } from '@/common/helpers';
+import Progress from './progress';
+import clsx from 'clsx';
 
 const CodingActiveList = ({ data }) => {
     const getLanguagesTotalHours = sumTotalFromArray(
@@ -48,7 +49,7 @@ const CodingActiveList = ({ data }) => {
     ];
 
     if (!data) {
-        return null;
+        return <Loading />;
     }
 
     return (

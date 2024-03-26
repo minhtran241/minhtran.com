@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import client from '../apollo-client';
-import { GITHUB_USERNAME } from '@/common/constants/userBasicInfo';
+import { GITHUB_USERNAME } from '@/common/constants/userBasic';
 
 export const getGitHubUserInfo = async (
     username = GITHUB_USERNAME,

@@ -4,6 +4,7 @@ import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BellRing } from 'lucide-react';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -17,7 +18,7 @@ export const generateMetadata = async () => {
 // * Fetch data from local JSON
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
-    process.env.DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'blog'
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'blogs.json');

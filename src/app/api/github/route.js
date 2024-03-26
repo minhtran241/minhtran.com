@@ -1,5 +1,5 @@
-import { GITHUB_USERNAME } from '@/common/constants/userBasicInfo';
 import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
+import { userBasicInfo } from '@/common/constants/userBasic';
 import client from '@/services/apollo-client';
 import { gql } from '@apollo/client';
 import { NextResponse } from 'next/server';
@@ -10,7 +10,8 @@ export const GET = async (request) => {
     try {
         const { searchParams } = new URL(request.url);
 
-        const username = searchParams.get('username') || GITHUB_USERNAME;
+        const username =
+            searchParams.get('username') || userBasicInfo.githubUsername;
         const reposNum =
             parseInt(searchParams.get('reposNum')) || GITHUB_REPOS_NUM;
 

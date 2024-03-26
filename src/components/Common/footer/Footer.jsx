@@ -1,3 +1,4 @@
+import { userBasicInfo } from '@/common/constants/userBasic';
 import {
     Mail,
     Facebook,
@@ -30,27 +31,27 @@ const Footer = () => {
     const iconsTab = [
         {
             icon: <Mail className="h-6 w-6 cursor-pointer" />,
-            link: `mailto:${process.env.EMAIL}`,
+            link: `mailto:${userBasicInfo.email}`,
         },
         {
             icon: <Github className="h-6 w-6 cursor-pointer" />,
-            link: process.env.GITHUB_LINK,
+            link: userBasicInfo.githubLink,
         },
         {
             icon: <Linkedin className="h-6 w-6 cursor-pointer" />,
-            link: process.env.LINKEDIN_LINK,
+            link: userBasicInfo.linkedinLink,
         },
         {
             icon: <Instagram className="h-6 w-6 cursor-pointer" />,
-            link: process.env.INSTAGRAM_LINK,
+            link: userBasicInfo.instagramLink,
         },
         {
             icon: <Facebook className="h-6 w-6 cursor-pointer" />,
-            link: process.env.FACEBOOK_LINK,
+            link: userBasicInfo.facebookLink,
         },
         {
             icon: <Twitter className="h-6 w-6 cursor-pointer" />,
-            link: process.env.TWITTER_LINK,
+            link: userBasicInfo.twitterLink,
         },
     ];
     return (
@@ -84,7 +85,7 @@ const Footer = () => {
                 <p>
                     Designed and developed by{' '}
                     <Link
-                        href={process.env.GITHUB_LINK}
+                        href={userBasicInfo.githubLink || '#'}
                         className="hover:underline"
                     >
                         Minh Tran

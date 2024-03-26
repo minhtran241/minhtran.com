@@ -38,5 +38,15 @@
         "icon": "Layers",
         "created_at": "2024-02-24T09:41:22.047Z",
         "updated_at": "2024-02-24T09:41:22.047Z"
-    }
+    },
+	{
+		"id": 5,
+		"date": "2024-03-24T04:00:00.000Z",
+		"title": "GVSU APPLIED COMPUTING INSTITUTE",
+		"job_title": "Research Assistant",
+		"description": "Developed and implemented a microservice architecture for a web application that allows users to extract themes from reviews. Fine-tuned a new model to improve the accuracy of the theme extraction.",
+		"icon": "Code",
+		"created_at": "2024-03-24T09:41:22.056Z",
+		"updated_at": "2024-03-24T09:41:22.056Z"
+	}
 ]

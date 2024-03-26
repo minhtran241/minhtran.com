@@ -6,11 +6,12 @@ import fs from 'fs/promises';
 import ProjectCard from '../projectCard/projectCard';
 import Loading from '@/app/loading';
 import SectionLabel from '../../Home/sectionLabel/sectionLabel';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 const PROJECT_FETCH_LIMIT = 3;
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
-    process.env.DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'project'
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');

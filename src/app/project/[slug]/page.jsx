@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import MarkdownRender from '@/components/Common/markdownRenderer/markdownRenderer';
 import Loading from '@/app/loading';
 import ProjectMetadata from '@/components/Project/projectMetadata/projectMetadata';
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -35,7 +36,7 @@ export const generateMetadata = async ({ params }) => {
 
 const DATA_ATTRS_DIR = path.join(
     process.cwd(),
-    process.env.DATA_FETCH_DIR,
+    fileSystemInfo.dataFetchDir,
     'project'
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');

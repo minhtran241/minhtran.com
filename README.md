@@ -121,36 +121,50 @@ It is encouraged to use **npm** to install the dependencies.
 npm install
 ```
 
-### 3. Config .env
+### 3. Config constants
+
+This repository uses several constants. Please check the `src/common/constants` directory and update the values with your own. For example, the `userBasicInfo.js` file contains the basic information about the user.
+
+```javascript
+export const userBasicInfo = {
+    currentJob: CURRENT_JOB,
+    currentOrg: CURRENT_ORG,
+    currentOrgLink: CURRENT_ORG_LINK,
+    currentRole: CURRENT_ROLE,
+    githubUsername: GITHUB_USERNAME,
+    githubLink: GITHUB_LINK,
+    linkedinUser: LINKEDIN_USER,
+    linkedinLink: LINKEDIN_LINK,
+    facebookLink: FACEBOOK_LINK,
+    instagramLink: INSTAGRAM_LINK,
+    twitterLink: TWITTER_LINK,
+    email: EMAIL,
+    dataFetchDir: DATA_FETCH_DIR,
+    resumeLink: RESUME_LINK,
+};
+```
+
+### 4. Config .env
 
 This repository uses several environment variables. Please copy `.env.example` into `.env`, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, GitHub, and others, please refer to the official documentation provided by each provider.
 
 ```
-# Basic Information
-GITHUB_USER=
-GITHUB_LINK=
-LINKEDIN_USER=
-LINKEDIN_LINK=
-FACEBOOK_LINK=
-INSTAGRAM_LINK=
-TWITTER_LINK=
-EMAIL=
-
-DATA_FETCH_DIR=data
-RESUME_LINK=
 
 NEXT_PUBLIC_BASE_URL=
 
 # GitHub API
+
 GITHUB_TOKEN=
 GITHUB_USERNAME=
 GITHUB_API_URL=
 
 # Wakatime API
+
 WAKATIME_API_KEY=
+
 ```
 
-### 4. Run the development server
+### 5. Run the development server
 
 You can start the server using this command:
 
