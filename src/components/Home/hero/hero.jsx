@@ -3,10 +3,8 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-// import { Download, GraduationCap, School, User } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { userBasicInfo } from '@/common/constants/userBasic';
-import { Phone } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import ContactForm from '@/components/Home/contactForm/contactForm';
 import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
@@ -21,7 +19,7 @@ const iconsTab = {
     github: {
         icon: <Github className="h-4 w-4 " />,
         link: userBasicInfo.githubLink,
-        text: `@${userBasicInfo.githubUsername}`
+        text: `@${userBasicInfo.githubUsername}`,
     },
     linkedin: {
         icon: <Linkedin className="h-4 w-4 " />,
@@ -71,7 +69,7 @@ const HeroComponent = () => {
                                 <h2 className="font-semibold text-2xl">
                                     {userBasicInfo.fullName}
                                 </h2>
-								<p className="text-sm">
+                                <p className="text-sm">
                                     {userBasicInfo.currentJob}
                                 </p>
                             </div>

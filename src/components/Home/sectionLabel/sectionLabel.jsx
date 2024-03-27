@@ -3,7 +3,7 @@ const SectionLabel = ({ title, description }) => {
         <div className="max-w-xl mx-auto">
             <div className="text-center">
                 <div className="flex flex-col gap-3 items-center">
-                    <h1 className="font-semibold leading-tight text-gradient lg:text-4xl md:text-3xl sm:text-2xl text-3xl ">
+                    <h1 className="font-semibold leading-tight text-gradient lg:text-3xl md:text-2xl sm:text-xl text-2xl ">
                         {title}
                     </h1>
                     <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">

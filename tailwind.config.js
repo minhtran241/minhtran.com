@@ -22,11 +22,6 @@ module.exports = {
     ],
     prefix: '',
     theme: {
-        fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
-            mono: ['Fira Code', 'monospace'],
-        },
         screens: {
             xs: '450px',
             sm: '575px',
