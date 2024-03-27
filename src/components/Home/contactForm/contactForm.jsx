@@ -17,7 +17,7 @@ const ContactForm = () => {
     }
     return (
         <div>
-            <p className="text-2xl font-semibold text-white mb-4">Contact me</p>
+            <p className="font-semibold text-white mb-4 text-2xl">Contact me</p>
             <form
                 className="flex flex-col gap-4"
                 onSubmit={handleSubmit}

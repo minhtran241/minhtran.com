@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import { Download, GraduationCap, School, User } from 'lucide-react';
+// import { Download, GraduationCap, School, User } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import { Phone } from 'lucide-react';
@@ -21,7 +21,7 @@ const iconsTab = {
     github: {
         icon: <Github className="h-4 w-4 " />,
         link: userBasicInfo.githubLink,
-        text: userBasicInfo.githubUsername,
+        text: `@${userBasicInfo.githubUsername}`
     },
     linkedin: {
         icon: <Linkedin className="h-4 w-4 " />,
@@ -31,13 +31,13 @@ const iconsTab = {
     resume: {
         icon: <Briefcase className="h-4 w-4 " />,
         link: fileSystemInfo.resumeLink,
-        text: 'Resume',
+        text: 'Download Resume',
     },
 };
 
 const HeroComponent = () => {
     const { theme } = useTheme();
-    const bgUrl = theme === 'dark' ? '/bg-dark.jpg' : '/bg-light.jpg';
+    const bgUrl = theme === 'dark' ? '/home/bg-dark.png' : '/home/bg-light.png';
 
     return (
         <div className="relative">
@@ -55,24 +55,23 @@ const HeroComponent = () => {
                 ></span>
             </div>
             <div className="relative container py-10">
-                {/* Ratio 1/3 and 2/3 */}
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:gap-x-12 xl:grid-cols-2">
-                    <div className="p-8 flex flex-row sm:space-x-6 rounded bg-white dark:bg-black">
+                    <div className="p-8 flex flex-wrap gap-4 rounded bg-white dark:bg-black">
                         <div className="flex-shrink-0">
                             <Image
-                                src="/profile.jpg"
-                                alt=""
-                                className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:mb-0 h-full"
+                                src="/home/headshot.png"
+                                alt="headshot"
+                                className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:h-full w-20 h-full"
                                 width={150}
                                 height={250}
                             />
                         </div>
                         <div className="flex flex-col space-y-4">
                             <div>
-                                <h2 className="text-2xl font-semibold">
+                                <h2 className="font-semibold text-2xl">
                                     {userBasicInfo.fullName}
                                 </h2>
-                                <p className="text-sm ">
+								<p className="text-sm">
                                     {userBasicInfo.currentJob}
                                 </p>
                             </div>
@@ -87,7 +86,7 @@ const HeroComponent = () => {
                                             {icon}
                                             <Link
                                                 target="_blank"
-                                                className="hover:text-[#0033A0] dark:hover:text-blue-600"
+                                                className="hover:text-[#0033A0] dark:hover:text-blue-600 sm:text-sm text-xs"
                                                 href={link}
                                             >
                                                 {text}

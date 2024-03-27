@@ -1,14 +1,10 @@
-## About This Website
-
-This website serves as my personal project where I proudly exhibit my creations and share valuable insights about myself. Crafted with care, I meticulously designed and developed every aspect of this platform. Source code and usage instruction can be found on [this repository](https://github.com/minhtran241/minhtran.com).
-
-![Repo BG](/readme/repo.png)
+![Repo BG](/about-this-website/repo.png)
 
 ### Crafting User Experiences
 
 #### Design Philosophy
 
-Using the versatile tool [Figma](https://www.figma.com/), I sculpted a user-friendly interface that prioritizes simplicity and clarity. By employing ample white space and a muted color palette, I aimed to deliver an experience that's both visually soothing and effortlessly navigable. Upholding the principles of inclusivity, I ensured adherence to top-notch web accessibility standards. Leveraging [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com), and [DaisyUI](https://daisyui.com/), I brought my design vision to life, complemented by icons from [Lucide](https://lucide.dev).
+Using the versatile tool [Figma](https://www.figma.com/), I sculpted a user-friendly interface that prioritizes simplicity and clarity. By employing ample white space and a muted color palette, I aimed to deliver an experience that's both visually soothing and effortlessly navigable. Upholding the principles of inclusively, I ensured adherence to top-notch web accessibility standards. Leveraging [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com), and [DaisyUI](https://daisyui.com/), I brought my design vision to life, complemented by icons from [Lucide](https://lucide.dev).
 
 #### Development Mastery
 
@@ -57,10 +53,10 @@ Powered by [Vercel](https://vercel.com/), this website enjoys swift and hassle-f
 
 In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically. The performance report is generated using [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights).
 
-![Lighthouse Report (Desktop)](/readme/about-this-website/lh-rp-desktop.png)
+![Lighthouse Report (Desktop)](/about-this-website/lh-rp-desktop.png)
 <figcaption align="center">Lighthouse Report (Desktop)</figcaption>
 
-![Lighthouse Report (Mobile)](/readme/about-this-website/lh-rp-mobile.png)
+![Lighthouse Report (Mobile)](/about-this-website/lh-rp-mobile.png)
 <figcaption align="center">Lighthouse Report (Mobile)</figcaption>
 
 ---
