@@ -1,6 +1,8 @@
-## About minhtran.com
+## About This Website
 
-This website serves as my personal project where I proudly exhibit my creations and share valuable insights about myself. Crafted with care, I meticulously designed and developed every aspect of this platform.
+This website serves as my personal project where I proudly exhibit my creations and share valuable insights about myself. Crafted with care, I meticulously designed and developed every aspect of this platform. Source code and usage instruction can be found on [this repository](https://github.com/minhtran241/minhtran.com).
+
+![Repo BG](/readme/repo.png)
 
 ### Crafting User Experiences
 
@@ -31,6 +33,18 @@ To showcase my open-source contributions, I integrated the [GitHub API](https://
 
 To display my GitHub contributions graph, I utilized [Chart.js](https://www.chartjs.org/) to dynamically generate the graph based on my GitHub contributions data. The data is fetched from the GitHub API and then processed to generate the graph.
 
+### Personal Dashboard
+
+I created a personal dashboard to display my GitHub contributions, coding activity, and other relevant information. This dashboard is designed to provide a comprehensive overview of my coding activity and contributions. The [framer-motion](https://www.framer.com/motion/) library is used to create smooth animations and transitions for a more engaging user experience.
+
+#### WakaTime Integration
+
+To showcase my coding activity, I integrated the [WakaTime API](https://wakatime.com/developers) to dynamically fetch and display my coding activity by using [swr](https://swr.vercel.app/). This ensures that my coding activity is always up-to-date and accurately reflected on my website.
+
+#### GitHub Contributions Calendar
+
+I mimicked the GitHub contributions calendar to display my daily coding activity. The data is fetched from the GitHub API and then processed to generate the dynamic and interactive calendar.
+
 ### Streamlined Infrastructure
 
 Ditching the complexities of CMS, API, and databases, this iteration of the website focuses on efficiency and simplicity. Content is statically generated at build time, minimizing overheads. Previously, I utilized [ElysiaJS](https://elysiajs.com/) and [PostgreSQL](https://www.postgresql.org/), but transitioned to a static site to streamline operations and costs. Hosting is graciously provided by [Vercel](https://vercel.com/), ensuring seamless deployment. Rest assured, the source code remains securely private.
@@ -43,10 +57,10 @@ Powered by [Vercel](https://vercel.com/), this website enjoys swift and hassle-f
 
 In building this website, I really paid attention to all aspects related to performance and SEO. Therefore, I'll display the website performance report on this page, and it will always be updated periodically. The performance report is generated using [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights).
 
-![Lighthouse Report (Desktop)](/contact/about-this-website/lh-rp-desktop.png)
+![Lighthouse Report (Desktop)](/readme/about-this-website/lh-rp-desktop.png)
 <figcaption align="center">Lighthouse Report (Desktop)</figcaption>
 
-![Lighthouse Report (Mobile)](/contact/about-this-website/lh-rp-mobile.png)
+![Lighthouse Report (Mobile)](/readme/about-this-website/lh-rp-mobile.png)
 <figcaption align="center">Lighthouse Report (Mobile)</figcaption>
 
 ---

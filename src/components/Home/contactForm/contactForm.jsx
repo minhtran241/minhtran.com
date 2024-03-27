@@ -17,20 +17,18 @@ const ContactForm = () => {
     }
     return (
         <div>
-            <p className="text-2xl font-semibold text-[#0033A0] dark:text-white mb-4">
-                Leave me a message!
-            </p>
+            <p className="text-2xl font-semibold text-white mb-4">Contact me</p>
             <form
                 className="flex flex-col gap-4"
                 onSubmit={handleSubmit}
                 id="contact-form"
             >
-                <Input
+                {/* <Input
                     type="text"
                     placeholder="Name and Surname"
                     id="name"
                     name="name"
-                />
+                /> */}
                 <Input
                     type="email"
                     placeholder="Email Address"
@@ -62,7 +60,7 @@ const ContactForm = () => {
                 </Button>
                 <ValidationError
                     errors={state.errors}
-                    className="text-red-500 italic"
+                    className="border-l-4 border-[#0033A0] p-2"
                 />
             </form>
         </div>

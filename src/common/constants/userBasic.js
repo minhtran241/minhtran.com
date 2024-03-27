@@ -1,3 +1,4 @@
+const FULL_NAME = 'Minh Tran';
 const CURRENT_JOB = 'Software Engineer / Data Engineer';
 const CURRENT_ORG = 'Grand Valley State University';
 const CURRENT_ORG_LINK = 'https://www.gvsu.edu/';
@@ -13,6 +14,7 @@ const TWITTER_LINK = 'https://twitter.com/QuangMi17303138';
 const EMAIL = 'tranmq@mail.gvsu.edu';
 
 export const userBasicInfo = {
+    fullName: FULL_NAME,
     currentJob: CURRENT_JOB,
     currentOrg: CURRENT_ORG,
     currentOrgLink: CURRENT_ORG_LINK,

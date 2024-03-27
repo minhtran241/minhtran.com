@@ -23,8 +23,8 @@ const links = [
     },
     {
         id: 5,
-        title: 'Contact',
-        path: '/contact',
+        title: 'README',
+        path: '/readme',
     },
 ];
 

@@ -8,10 +8,37 @@ import { useTheme } from 'next-themes';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import { Phone } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import ContactForm from '@/components/Home/contactForm/contactForm';
+import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
+import Image from 'next/image';
+
+const iconsTab = {
+    mail: {
+        icon: <Mail className="h-4 w-4 " />,
+        link: `mailto:${userBasicInfo.email}`,
+        text: userBasicInfo.email,
+    },
+    github: {
+        icon: <Github className="h-4 w-4 " />,
+        link: userBasicInfo.githubLink,
+        text: userBasicInfo.githubUsername,
+    },
+    linkedin: {
+        icon: <Linkedin className="h-4 w-4 " />,
+        link: userBasicInfo.linkedinLink,
+        text: userBasicInfo.linkedinUser,
+    },
+    resume: {
+        icon: <Briefcase className="h-4 w-4 " />,
+        link: fileSystemInfo.resumeLink,
+        text: 'Resume',
+    },
+};
 
 const HeroComponent = () => {
     const { theme } = useTheme();
     const bgUrl = theme === 'dark' ? '/bg-dark.jpg' : '/bg-light.jpg';
+
     return (
         <div className="relative">
             <div
@@ -28,78 +55,50 @@ const HeroComponent = () => {
                 ></span>
             </div>
             <div className="relative container py-10">
-                <div className="-mx-4 flex flex-wrap">
-                    <div className="w-full px-4">
-                        <div className="hero-content flex-col items-start text-white">
-                            <h1 className="text-4xl font-semibold !leading-[1.208] sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                                Minh Tran
-                            </h1>
-                            <p className="mb-8 max-w-[1080px]">
-                                Experienced Software and Data Engineer with 2
-                                years in backend systems. Specializing in API
-                                development, performance optimization, and
-                                system design. Skilled in crafting scalable
-                                solutions and collaborating with
-                                cross-functional teams to deliver high-quality
-                                software solutions. Passionate about leveraging
-                                innovative technologies to drive efficiency and
-                                enhance system functionality.
-                            </p>
-                            <div className="flex flex-col items-start mb-8">
-                                <div className="flex items-center mb-4">
-                                    <p className="text-sm font-semibold">
-                                        <User size={20} />
-                                    </p>
-                                    <p className="ml-2 text-sm">
-                                        {userBasicInfo.currentJob}
-                                    </p>
-                                </div>
-                                <div className="flex items-center mb-4">
-                                    <p className="text-sm font-semibold">
-                                        <School size={20} />
-                                    </p>
-                                    <Link
-                                        className="ml-2 text-sm hover:underline transition duration-300"
-                                        href={
-                                            userBasicInfo.currentOrgLink || '#'
-                                        }
-                                        target="_blank"
-                                    >
-                                        {userBasicInfo.currentOrg}
-                                    </Link>
-                                </div>
-                                <div className="flex items-center">
-                                    <p className="text-sm font-semibold">
-                                        <GraduationCap size={20} />
-                                    </p>
-                                    <p className="ml-2 text-sm">
-                                        {userBasicInfo.currentRole}
-                                    </p>
-                                </div>
+                {/* Ratio 1/3 and 2/3 */}
+                <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:gap-x-12 xl:grid-cols-2">
+                    <div className="p-8 flex flex-row sm:space-x-6 rounded bg-white dark:bg-black">
+                        <div className="flex-shrink-0">
+                            <Image
+                                src="/profile.jpg"
+                                alt=""
+                                className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:mb-0 h-full"
+                                width={150}
+                                height={250}
+                            />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                            <div>
+                                <h2 className="text-2xl font-semibold">
+                                    {userBasicInfo.fullName}
+                                </h2>
+                                <p className="text-sm ">
+                                    {userBasicInfo.currentJob}
+                                </p>
                             </div>
-                            <ul className="flex flex-wrap items-center gap-4">
-                                <li>
-                                    <Link
-                                        href="/contact"
-                                        className="inline-flex items-center justify-center rounded-md px-6 py-3 text-center text-base font-medium bg-[#0033A0] dark:bg-blue-600 lg:px-7"
-                                    >
-                                        <Phone size={20} className="mr-2" />
-                                        Contact Me
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href={fileSystemInfo.resumeLink || '#'}
-                                        target="_blank"
-                                        className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium border rounded-md border-white transition duration-300"
-                                    >
-                                        <Download size={20} className="mr-2" />
-                                        Download Resume
-                                    </Link>
-                                </li>
-                            </ul>
+                            <div className="space-y-1">
+                                {Object.keys(iconsTab).map((key, index) => {
+                                    const { icon, link, text } = iconsTab[key];
+                                    return (
+                                        <span
+                                            className="flex items-center space-x-2"
+                                            key={index}
+                                        >
+                                            {icon}
+                                            <Link
+                                                target="_blank"
+                                                className="hover:text-[#0033A0] dark:hover:text-blue-600"
+                                                href={link}
+                                            >
+                                                {text}
+                                            </Link>
+                                        </span>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
+                    <ContactForm />
                 </div>
             </div>
         </div>
