@@ -30,6 +30,7 @@ const DashboardPage = () => {
                 <div className="flex flex-col gap-8">
                     <CodingActive />
                     <Contributions />
+					
                 </div>
             </div>
         </>

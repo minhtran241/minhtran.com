@@ -1,12 +1,9 @@
-'use client';
-
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
-import { useTheme } from 'next-themes';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
-import ContactForm from '@/components/Home/contactForm/contactForm';
+// import ContactForm from '@/components/Home/contactForm/contactForm';
 import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import Image from 'next/image';
 
@@ -34,27 +31,22 @@ const iconsTab = {
 };
 
 const HeroComponent = () => {
-    const { theme } = useTheme();
-    const bgUrl = theme === 'dark' ? '/home/bg-dark.png' : '/home/bg-light.png';
-
-    return (
+ return (
         <div className="relative">
             <div
                 className="absolute top-0 h-full w-full bg-cover bg-center"
                 style={{
-                    backgroundImage: `url(${bgUrl})`,
+                    backgroundImage: `url(/home/hero-bg.png)`,
                 }}
             >
                 <span
                     id="blackOverlay"
-                    className={`absolute h-full w-full bg-black ${
-                        theme === 'dark' ? 'opacity-35' : 'opacity-45'
-                    }`}
+                    className={`absolute h-full w-full bg-black opacity-10`}
                 ></span>
             </div>
-            <div className="relative container py-10">
+            <div className="relative container py-20">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:gap-x-12 xl:grid-cols-2">
-                    <div className="p-8 flex flex-wrap gap-4 rounded bg-white dark:bg-black">
+                    <div className="p-8 flex flex-wrap gap-4 rounded-lg bg-white dark:bg-gray-900 shadow-lg">
                         <div className="flex-shrink-0">
                             <Image
                                 src="/home/headshot.png"
@@ -95,7 +87,7 @@ const HeroComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <ContactForm />
+                    {/* <ContactForm /> */}
                 </div>
             </div>
         </div>

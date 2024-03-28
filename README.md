@@ -1,6 +1,6 @@
 <div align="center">
   <h1>minhtran.com</h1>
-  <p>🔥 Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, Wakatime API, GitHub API, and more. </p>
+  <p>🔥 Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, and more. </p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/minhtran241/minhtran.com)](https://github.com/minhtran241/minhtran.com/stargazers)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
@@ -57,9 +57,9 @@ You can access this feature by opening the command palette [cmd+k], and then typ
 
 Displays song information being played on Spotify in real-time using the Spotify API and SWR.
 
-- ### 🕗 Wakatime Statistics
+- ### 🕗 WakaTime Statistics
 
-Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
+Data is retrieved using the WakaTime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
 
 - ### 📝 Blogs
 
@@ -139,29 +139,28 @@ export const userBasicInfo = {
     instagramLink: INSTAGRAM_LINK,
     twitterLink: TWITTER_LINK,
     email: EMAIL,
-    dataFetchDir: DATA_FETCH_DIR,
-    resumeLink: RESUME_LINK,
 };
 ```
 
 ### 4. Config .env
 
-This repository uses several environment variables. Please copy `.env.example` into `.env`, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, GitHub, and others, please refer to the official documentation provided by each provider.
+This repository uses several environment variables. Please copy `.env.example` into `.env`, then fill in the values with your own. For third-party environment variables such as Spotify, WakaTime, GitHub, and others, please refer to the official documentation provided by each provider.
 
-```
-
+```bash
 NEXT_PUBLIC_BASE_URL=
 
-# GitHub API
-
+# Github
 GITHUB_TOKEN=
 GITHUB_USERNAME=
 GITHUB_API_URL=
 
-# Wakatime API
-
+# WakaTime
 WAKATIME_API_KEY=
 
+# Spotify
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_REFRESH_TOKEN=
 ```
 
 ### 5. Run the development server
