@@ -7,9 +7,7 @@ import { ThemeProvider } from '@/components/Common/themeProvider/theme-provider'
 import { Toaster } from '@/components/ui/sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import { useWindowSize } from '@uidotdev/usehooks';
-// import NowPlayingCard from '@/common/elements/nowPlayingCard';
-import NowPlayingBar from '@/common/elements/nowPlayingBar';
+import SpotifyComponent from '@/components/spotifyComponent';
 
 export const fontSans = FontSans({
     subsets: ['latin'],
@@ -29,8 +27,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    // const { width } = useWindowSize();
-    // const isMobile = width < 480;
     return (
         <html lang="en">
             <body
@@ -51,7 +47,7 @@ export default function RootLayout({ children }) {
                         <SpeedInsights />
                         <Analytics />
                     </div>
-                    <NowPlayingBar />
+                    <SpotifyComponent />
                     <Footer />
                     <Toaster />
                 </ThemeProvider>
