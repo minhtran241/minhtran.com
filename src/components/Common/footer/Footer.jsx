@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white rounded mt-12">
-            <nav className="grid grid-flow-col gap-4">
+        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white mt-12">
+            <nav className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
                 {MENU_TABS.map((item, index) => (
                     <Link
                         href={item.href}
