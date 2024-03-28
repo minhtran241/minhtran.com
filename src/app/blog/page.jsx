@@ -87,7 +87,7 @@ const BlogPage = async () => {
                         </div>
                         <Link
                             href={`/blog/${firstPost.slug}`}
-                            className="mt-2 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
+                            className="mt-2 block text-xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-2xl"
                         >
                             {firstPost.title}
                         </Link>

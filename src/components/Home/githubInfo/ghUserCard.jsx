@@ -46,7 +46,7 @@ const GHUserCard = ({ ghInfo, username, colorTheme = 'blue' }) => {
                         <AvatarFallback>MT</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col">
-                        <h1 className="text-xl font-bold">
+                        <h1 className="text-lg font-bold">
                             {ghInfo.user.name}
                         </h1>
                         <Link
@@ -54,7 +54,7 @@ const GHUserCard = ({ ghInfo, username, colorTheme = 'blue' }) => {
                             target="_blank"
                             className={`text-sm ${
                                 colorTheme === 'blue'
-                                    ? 'text-[#0366d6] dark:text-blue-600'
+                                    ? 'text-[#0033A0] dark:text-blue-600'
                                     : 'text-green-600'
                             }`}
                         >

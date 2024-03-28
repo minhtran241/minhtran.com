@@ -15,11 +15,11 @@ const Milestone = ({ milestone, right }) => {
         .split('.')
         .filter((p) => p.length > 1);
     const icons = {
-        Database: <Database className="text-white" />,
-        Layers: <Layers className="text-white" />,
-        LayoutTemplate: <LayoutTemplate className="text-white" />,
-        HardDrive: <HardDrive className="text-white" />,
-        Code: <Code className="text-white" />,
+        Database: <Database className="text-white h-4 w-4" />,
+        Layers: <Layers className="text-white h-4 w-4" />,
+        LayoutTemplate: <LayoutTemplate className="text-white h-4 w-4" />,
+        HardDrive: <HardDrive className="text-white h-4 w-4" />,
+        Code: <Code className="text-white h-4 w-4" />,
     };
     return right ? (
         <div className="w-full m-0">
@@ -33,15 +33,15 @@ const Milestone = ({ milestone, right }) => {
                             <div className="relative z-20">
                                 <div className="flex flex-wrap items-center">
                                     <div className="p-4 md:w-1/6">
-                                        <p className="text-2xl font-bold  text-bold  text-[#0033A0] dark:text-white">
+                                        <p className="text-xl font-bold  text-bold  text-[#0033A0] dark:text-white">
                                             {month}
                                         </p>
-                                        <span className="text-lg text-[#0033A0] dark:text-white">
+                                        <span className="text-medium text-[#0033A0] dark:text-white">
                                             {year}
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="text-xl font-bold text-[#0033A0] dark:text-blue-600">
+                                        <p className="text-lg font-bold text-[#0033A0] dark:text-blue-600">
                                             {milestone.title}
                                         </p>
                                         <p className=" mb-2 italic text-gray-600 dark:text-gray-400">
@@ -65,7 +65,7 @@ const Milestone = ({ milestone, right }) => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[3px]">
+                <div className="absolute flex items-center justify-center w-7 h-7 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[3px]">
                     {icons[milestone.icon]}
                 </div>
             </div>
@@ -83,15 +83,15 @@ const Milestone = ({ milestone, right }) => {
                             <div className="relative z-20 ">
                                 <div className="flex flex-wrap items-center">
                                     <div className="p-4 md:w-1/6">
-                                        <p className="text-2xl font-bold  text-bold text-[#0033A0] dark:text-white ">
+                                        <p className="text-xl font-bold  text-bold text-[#0033A0] dark:text-white ">
                                             {month}
                                         </p>
-                                        <span className="text-lg text-[#0033A0] dark:text-white">
+                                        <span className="text-medium text-[#0033A0] dark:text-white">
                                             {year}
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="text-xl font-bold text-[#0033A0] dark:text-blue-600">
+                                        <p className="text-lg font-bold text-[#0033A0] dark:text-blue-600">
                                             {milestone.title}
                                         </p>
                                         <p className=" mb-2 italic text-gray-600 dark:text-gray-400">
@@ -115,7 +115,7 @@ const Milestone = ({ milestone, right }) => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[4px]">
+                <div className="absolute flex items-center justify-center w-7 h-7 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[4px]">
                     {icons[milestone.icon]}
                 </div>
             </div>

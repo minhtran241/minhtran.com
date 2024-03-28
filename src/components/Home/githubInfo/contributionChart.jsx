@@ -117,14 +117,14 @@ const ContributionChart = ({ contributionCollection }) => {
         <div className="flex flex-col gap-4 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
             {/* Time range selector */}
             <div className="flex flex-wrap justify-between gap-4">
-                <div className="flex flex-col gap-2">
-                    <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">
+                <div className="flex flex-col">
+                    <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100">
                         {selectedTimeRange.charAt(0).toUpperCase() +
                             selectedTimeRange.slice(1)}{' '}
                         Contributions
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        Total Contributions: {contrCalendar.totalContributions}
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Total Contributions: <span className="text-[#0033A0] dark:text-blue-600">{contrCalendar.totalContributions}</span>
                     </p>
                 </div>
                 <Select

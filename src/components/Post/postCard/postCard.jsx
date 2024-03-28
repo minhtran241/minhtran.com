@@ -40,7 +40,7 @@ const PostCard = ({ post }) => {
                 <div className="mt-2">
                     <Link
                         href={`/blog/${post.slug}`}
-                        className="inline-block text-xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
+                        className="inline-block text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
                     >
                         {post.title}
                     </Link>

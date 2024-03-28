@@ -29,7 +29,7 @@ const ProjectCard = ({ project }) => {
 
             <Link
                 href={`/project/${project.slug}`}
-                className="text-xl font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                className="text-lg font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600 transition"
             >
                 {project.title}
             </Link>

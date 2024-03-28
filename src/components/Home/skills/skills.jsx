@@ -59,7 +59,7 @@ const SkillsComponent = async () => {
                                 <div className="w-7 h-7 inline-flex items-center justify-center rounded-full flex-shrink-0 bg-[#0033A0] dark:bg-blue-600 text-white">
                                     {icons[skill.name]}
                                 </div>
-                                <h2 className=" text-xl title-font font-medium">
+                                <h2 className="text-lg title-font font-medium">
                                     {skill.name}
                                 </h2>
                             </div>

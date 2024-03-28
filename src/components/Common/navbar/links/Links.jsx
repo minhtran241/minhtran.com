@@ -2,27 +2,22 @@ import Link from 'next/link';
 
 const links = [
     {
-        id: 1,
-        title: 'About',
-        path: '/',
-    },
-    {
-        id: 2,
         title: 'Dashboard',
         path: '/dashboard',
     },
     {
-        id: 3,
         title: 'Projects',
         path: '/project',
     },
     {
-        id: 4,
         title: 'Blogs',
         path: '/blog',
     },
     {
-        id: 5,
+        title: 'Contact',
+        path: '/contact',
+    },
+    {
         title: 'README',
         path: '/readme',
     },
@@ -31,8 +26,8 @@ const links = [
 const Links = () => {
     return (
         <>
-            {links.map((link) => (
-                <li key={link.id}>
+            {links.map((link, index) => (
+                <li key={index}>
                     <Link href={link.path}>{link.title}</Link>
                 </li>
             ))}
