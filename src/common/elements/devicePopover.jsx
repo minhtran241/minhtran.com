@@ -1,15 +1,15 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { BsCpu as DeviceIcon, BsDot as DotIcon } from 'react-icons/bs';
 
 import AnimatedBars from './animatedBars';
 import { PAIR_DEVICES } from '../constants/devices';
+import { Dot, Speaker } from 'lucide-react';
 
 const DevicePopover = ({ devices, isShow }) => {
     const listDevices = devices?.map((device) => ({
         ...device,
         icon: PAIR_DEVICES[device?.type]?.icon || (
-            <DeviceIcon
+            <Speaker
                 className="w-auto text-gray-700 dark:text-gray-300"
                 size={24}
             />
@@ -46,7 +46,7 @@ const DevicePopover = ({ devices, isShow }) => {
                             {device?.is_active ? (
                                 <AnimatedBars variant="bg-green-500" />
                             ) : (
-                                <DotIcon
+                                <Dot
                                     className="ml-2 w-auto text-gray-600 dark:text-gray-400"
                                     size={22}
                                 />

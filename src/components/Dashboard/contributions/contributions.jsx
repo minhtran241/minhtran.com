@@ -2,7 +2,7 @@
 
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
-import { BsGithub as GithubIcon } from 'react-icons/bs';
+import { Github } from 'lucide-react'
 import Link from 'next/link';
 import Overview from './overview';
 import Calendar from './calendar';
@@ -26,17 +26,17 @@ const Contributions = () => {
         <section className="flex flex-col gap-y-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
             <SectionHeading
                 title="GitHub Contributions"
-                icon={<GithubIcon className="mr-1" />}
+                icon={<Github className="mr-1 w-5 h-5" />}
             />
             <SectionSubHeading>
-                <p className="dark:text-neutral-400">
+                <p className="dark:text-gray-400">
                     My contributions from last year on github.
                 </p>
                 <Link
                     href={`https://github.com/${username}`}
                     target="_blank"
                     passHref
-                    className="font-code text-sm text-neutral-400 hover:text-neutral-700 dark:text-neutral-600 hover:dark:text-neutral-400"
+                    className="font-code text-sm text-gray-600 dark:text-gray-500 hover:text-[#0033A0] hover:dark:text-blue-600"
                 >
                     @{username}
                 </Link>

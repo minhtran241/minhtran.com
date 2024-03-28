@@ -8,19 +8,21 @@ const SocialMediaList = () => {
         <div className="space-y-5 pb-2">
             <h3 className="text-xl font-medium">Social Media Platforms</h3>
             <div className="flex flex-col justify-between gap-3 md:flex-row">
-                {SOCIAL_MEDIA?.map((item, index) => (
-                    <Button
-                        className={clsx(
-                            'flex w-full items-center justify-center transition-all duration-300 hover:scale-105 md:w-1/5',
-                            item?.className
-                        )}
-                        key={index}
-                        icon={item?.icon}
-                        href={item?.href}
-                    >
-                        {item?.title}
-                    </Button>
-                ))}
+                {SOCIAL_MEDIA?.filter((item) => item.type.includes('s')).map(
+                    (item, index) => (
+                        <Button
+                            className={clsx(
+                                'flex w-full items-center justify-center transition-all duration-300 hover:scale-105 md:w-1/5',
+                                item?.className
+                            )}
+                            key={index}
+                            icon={item?.icon}
+                            href={item?.href}
+                        >
+                            {item?.name}
+                        </Button>
+                    )
+                )}
             </div>
         </div>
     );
@@ -44,10 +46,10 @@ const Button = ({
             {isLoading ? (
                 <>Loading...</>
             ) : (
-                <>
-                    {icon && <>{icon}</>}
+                <div className="flex flex-row gap-2">
+                    {icon && <div className="h-5 w-5">{icon}</div>}
                     {children}
-                </>
+                </div>
             )}
         </Link>
     );

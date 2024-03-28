@@ -3,7 +3,7 @@
 import axios from 'axios';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { FiClock as ClockIcon } from 'react-icons/fi';
+import { Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,7 +18,7 @@ const formInitialState = {
 const ContactForm = () => {
     const [formData, setFormData] = useState(formInitialState);
 
-    const [formErrors, setFormErrors] = useState(formInitialState);
+    const [formErrors, setFormErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
@@ -105,7 +105,7 @@ const ContactForm = () => {
             </div>
 
             <div className="my-5 flex items-center gap-2 dark:text-gray-400">
-                <ClockIcon />
+                <Clock className='w-5 h-5' />
                 <div className="text-sm">
                     <span className="font-medium">Avg. response:</span> 1-2
                     Hours (Working Hours, GMT+7)

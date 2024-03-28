@@ -4,11 +4,9 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
 import { BsSpotify as SpotifyIcon } from 'react-icons/bs';
-import { MdClose as CloseIcon } from 'react-icons/md';
+import { X } from 'lucide-react';
 import useSWR from 'swr';
-
 import { fetcher } from '@/services/fetcher';
-
 import AnimatedBars from './animatedBars';
 
 const NowPlayingCard = ({ isExpand = false }) => {
@@ -78,7 +76,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
                         </div>
                     </div>
                     <div className="flex gap-3 pr-0.5">
-                        <CloseIcon
+                        <X
                             size={28}
                             className="cursor-pointer pt-0.5 text-neutral-900"
                             onClick={handleMusicToggle}

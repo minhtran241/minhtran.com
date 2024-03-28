@@ -71,8 +71,6 @@
 
 @layer utilities {
     .text-gradient {
-        --tw-gradient-from: #0033a0; /* Starting color */
-        --tw-gradient-to: #00a3ff; /* Ending color */
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -81,6 +79,15 @@
             var(--tw-gradient-from),
             var(--tw-gradient-to)
         );
+    }
+    .text-gradient-dark {
+        /* From blue-600 to blue 900 */
+        --tw-gradient-from: #2563eb;
+        --tw-gradient-to: #3b82f6;
+    }
+    .text-gradient-light {
+        --tw-gradient-from: #0033a0; /* Starting color */
+        --tw-gradient-to: #00a3ff; /* Ending color */
     }
 }
 

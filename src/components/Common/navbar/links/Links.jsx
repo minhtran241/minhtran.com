@@ -1,34 +1,12 @@
 import Link from 'next/link';
-
-const links = [
-    {
-        title: 'Dashboard',
-        path: '/dashboard',
-    },
-    {
-        title: 'Projects',
-        path: '/project',
-    },
-    {
-        title: 'Blogs',
-        path: '/blog',
-    },
-    {
-        title: 'Contact',
-        path: '/contact',
-    },
-    {
-        title: 'README',
-        path: '/readme',
-    },
-];
+import { MENU_TABS } from '@/common/constants/menu';
 
 const Links = () => {
     return (
         <>
-            {links.map((link, index) => (
+            {MENU_TABS.slice(1).map((item, index) => (
                 <li key={index}>
-                    <Link href={link.path}>{link.title}</Link>
+                    <Link href={item.href}>{item.title}</Link>
                 </li>
             ))}
         </>

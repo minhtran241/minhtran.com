@@ -6,12 +6,15 @@ const CURRENT_ROLE = 'B.S in Computer and Information Sciences';
 
 const GITHUB_USERNAME = 'minhtran241';
 const GITHUB_LINK = 'https://github.com/minhtran241';
-const LINKEDIN_USER = 'Minh Tran';
-const LINKEDIN_LINK = 'https://www.linkedin.com/in/minh-tran-12a3aa218/';
+const LINKEDIN_USERNAME = 'Minh Tran';
+const LINKEDIN_LINK = 'https://www.linkedin.com/in/tranmiq/';
 const FACEBOOK_LINK = 'https://www.facebook.com/minhtran.venus.dev';
-const INSTAGRAM_LINK = 'https://www.instagram.com/minh.tran.241';
+const FACEBOOK_USERNAME = 'Minh Tran';
+const INSTAGRAM_LINK = 'https://www.instagram.com/minhtran.ig/';
+const INSTAGRAM_USERNAME = 'minhtran.ig';
 const TWITTER_LINK = 'https://twitter.com/QuangMi17303138';
-const EMAIL = 'tranmq@mail.gvsu.edu';
+const TWITTER_USERNAME = 'Minh Tran';
+const EMAIL = 'trqminh24@gmail.com';
 
 export const userBasicInfo = {
     fullName: FULL_NAME,
@@ -21,10 +24,13 @@ export const userBasicInfo = {
     currentRole: CURRENT_ROLE,
     githubUsername: GITHUB_USERNAME,
     githubLink: GITHUB_LINK,
-    linkedinUser: LINKEDIN_USER,
+    linkedinUsername: LINKEDIN_USERNAME,
     linkedinLink: LINKEDIN_LINK,
+    facebookUsername: FACEBOOK_USERNAME,
     facebookLink: FACEBOOK_LINK,
+    instagramUsername: INSTAGRAM_USERNAME,
     instagramLink: INSTAGRAM_LINK,
+    twitterUsername: TWITTER_USERNAME,
     twitterLink: TWITTER_LINK,
     email: EMAIL,
 };

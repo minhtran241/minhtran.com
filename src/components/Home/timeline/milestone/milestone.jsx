@@ -41,13 +41,13 @@ const Milestone = ({ milestone, right }) => {
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="text-lg font-bold text-[#0033A0] dark:text-blue-600">
+                                        <p className="font-bold text-[#0033A0] dark:text-blue-600 sm:text-lg md:text-xl lg:text-lg text-lg">
                                             {milestone.title}
                                         </p>
-                                        <p className=" mb-2 italic text-gray-600 dark:text-gray-400">
+                                        <p className=" mb-2 text-gray-600 dark:text-gray-400 text-base">
                                             {milestone.job_title}
                                         </p>
-                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600">
+                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 text-base">
                                             {paragraphs.map(
                                                 (paragraph, index) => (
                                                     <li
@@ -91,13 +91,13 @@ const Milestone = ({ milestone, right }) => {
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="text-lg font-bold text-[#0033A0] dark:text-blue-600">
+                                        <p className="font-bold text-[#0033A0] dark:text-blue-600  sm:text-lg md:text-xl lg:text-lg text-lg">
                                             {milestone.title}
                                         </p>
-                                        <p className=" mb-2 italic text-gray-600 dark:text-gray-400">
+                                        <p className="mb-2 text-gray-600 dark:text-gray-400 text-base">
                                             {milestone.job_title}
                                         </p>
-                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600">
+                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 text-base">
                                             {paragraphs.map(
                                                 (paragraph, index) => (
                                                     <li

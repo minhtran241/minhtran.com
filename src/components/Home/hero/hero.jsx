@@ -6,6 +6,7 @@ import { fileSystemInfo } from '@/common/constants/fileSystem';
 // import ContactForm from '@/components/Home/contactForm/contactForm';
 import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import Image from 'next/image';
+import { SOCIAL_MEDIA } from '@/common/constants/menu';
 
 const iconsTab = {
     mail: {
@@ -21,7 +22,7 @@ const iconsTab = {
     linkedin: {
         icon: <Linkedin className="h-4 w-4 " />,
         link: userBasicInfo.linkedinLink,
-        text: userBasicInfo.linkedinUser,
+        text: userBasicInfo.linkedinUsername,
     },
     resume: {
         icon: <Briefcase className="h-4 w-4 " />,
@@ -31,7 +32,7 @@ const iconsTab = {
 };
 
 const HeroComponent = () => {
- return (
+    return (
         <div className="relative">
             <div
                 className="absolute top-0 h-full w-full bg-cover bg-center"
@@ -66,22 +67,25 @@ const HeroComponent = () => {
                                 </p>
                             </div>
                             <div className="space-y-1">
-                                {Object.keys(iconsTab).map((key, index) => {
-                                    const { icon, link, text } = iconsTab[key];
+                                {SOCIAL_MEDIA?.filter((item) =>
+                                    item.type.includes('w')
+                                ).map((item, index) => {
                                     return (
-                                        <span
-                                            className="flex items-center space-x-2"
+                                        <div
+                                            className="flex items-center gap-2 leading-none"
                                             key={index}
                                         >
-                                            {icon}
+                                            <span className="text-base h-4 w-4">
+                                                {item.icon}
+                                            </span>
                                             <Link
                                                 target="_blank"
                                                 className="hover:text-[#0033A0] dark:hover:text-blue-600 sm:text-sm text-xs"
-                                                href={link}
+                                                href={item.href}
                                             >
-                                                {text}
+                                                {item.title}
                                             </Link>
-                                        </span>
+                                        </div>
                                     );
                                 })}
                             </div>

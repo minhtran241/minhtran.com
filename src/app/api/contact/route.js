@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'; // defaults to auto
 
 const FORM_API_KEY = process.env.CONTACT_FORM_API_KEY;
 
-export const GET = async (request) => {
+export const POST = async (request) => {
     try {
         const { formData } = request.body;
 

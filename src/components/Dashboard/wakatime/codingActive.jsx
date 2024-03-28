@@ -52,14 +52,14 @@ const CodingActive = ({ lastUpdate }) => {
         <section className="flex flex-col gap-y-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
             <SectionHeading
                 title="Weekly Stats"
-                icon={<WakatimeIcon className="mr-1" />}
+                icon={<WakatimeIcon className="mr-1 h-5 w-5" />}
             />
             <SectionSubHeading>
-                <div className="dark:text-gray-400 md:flex-row md:items-center">
+                <div className="md:flex-row md:items-center">
                     <span>My </span>
                     <Link
                         href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
-                        className="hover:text-gray-900 hover:underline dark:hover:text-gray-100"
+                        className="hover:text-[#0033A0] hover:dark:text-blue-600"
                     >
                         WakaTime
                     </Link>

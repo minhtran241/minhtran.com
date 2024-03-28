@@ -1,5 +1,7 @@
+import { fileSystemInfo } from './fileSystem';
 import { userBasicInfo } from './userBasic';
 import {
+    Briefcase,
     Facebook,
     Github,
     Instagram,
@@ -8,50 +10,94 @@ import {
     Twitter,
 } from 'lucide-react';
 
-const iconSize = 20;
-
 export const SOCIAL_MEDIA = [
     {
-        title: 'Email',
+        name: 'Email',
+        title: userBasicInfo.email,
         href: `mailto:${userBasicInfo.email}`,
-        icon: <Mail size={iconSize} />,
+        type: 'sw', // social and work
+        icon: <Mail className="w-full h-full" />,
         className:
             '!bg-gradient-to-r from-[#D44638] to-[#D44638] border border dark:border-neutral-700',
     },
 
     {
-        title: 'Linkedin',
+        name: 'LinkedIn',
+        title: userBasicInfo.linkedinUsername,
         href: userBasicInfo.linkedinLink,
-        icon: <Linkedin size={iconSize} />,
+        type: 'sw', // social and work
+        icon: <Linkedin className="w-full h-full" />,
         className:
             '!bg-gradient-to-r from-[#0077B5] to-[#00A0DC] border border dark:border-neutral-700',
     },
     {
-        title: 'Twitter',
+        name: 'Twitter',
+        title: userBasicInfo.twitterUsername,
         href: userBasicInfo.twitterLink,
-        icon: <Twitter size={iconSize} />,
+        type: 's', // social only
+        icon: <Twitter className="w-full h-full" />,
         className:
             '!bg-gradient-to-r from-[#1DA1F2] to-[#1DA1F2] border border dark:border-neutral-700',
     },
     {
-        title: 'Instagram',
+        name: 'Instagram',
+        title: userBasicInfo.instagramUsername,
         href: userBasicInfo.instagramLink,
-        icon: <Instagram size={iconSize} />,
+        type: 's', // social only
+        icon: <Instagram className="w-full h-full" />,
         className:
             '!bg-gradient-to-r from-[#E1306C] to-[#405DE6] border border dark:border-neutral-700',
     },
     {
-        title: 'Facebook',
+        name: 'Facebook',
+        title: userBasicInfo.facebookUsername,
         href: userBasicInfo.facebookLink,
-        icon: <Facebook size={iconSize} />,
+        type: 's', // social only
+        icon: <Facebook className="w-full h-full" />,
         className:
             '!bg-gradient-to-r from-[#1877F2] to-[#1877F2] border border dark:border-neutral-700',
     },
     {
-        title: 'Github',
+        name: 'Github',
+        title: userBasicInfo.githubUsername,
         href: userBasicInfo.githubLink,
-        icon: <Github size={iconSize} />,
+        type: 'sw', // social and work
+        icon: <Github className="w-full h-full" />,
         className:
             '!bg-gradient-to-r from-[#333333] to-[#333333] border border dark:border-neutral-700',
+    },
+    {
+        name: 'Resume',
+        title: 'Download Resume',
+        href: fileSystemInfo.resumeLink,
+        type: 'w', // work only
+        icon: <Briefcase className="w-full h-full" />,
+    },
+];
+
+export const MENU_TABS = [
+    {
+        title: 'Home',
+        href: '/',
+    },
+    {
+        title: 'Dashboard',
+        href: '/dashboard',
+    },
+    {
+        title: 'Projects',
+        href: '/project',
+    },
+    {
+        title: 'Blogs',
+        href: '/blog',
+    },
+    {
+        title: 'Contact',
+        href: '/contact',
+    },
+    {
+        title: 'README',
+        href: '/readme',
     },
 ];
