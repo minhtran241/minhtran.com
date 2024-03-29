@@ -39,6 +39,10 @@ To showcase my coding activity, I integrated the [WakaTime API](https://wakatime
 
 I mimicked the GitHub contributions calendar to display my daily coding activity. The data is fetched from the GitHub API and then processed to generate the dynamic and interactive calendar.
 
+### Spotify Integration
+
+To showcase my music taste, I integrated the [Spotify API](https://developer.spotify.com/documentation/web-api/) to dynamically fetch and display my currently playing track. This ensures that my music taste is always up-to-date and accurately reflected on my website.
+
 ## Streamlined Infrastructure
 
 Ditching the complexities of CMS, API, and databases, this iteration of the website focuses on efficiency and simplicity. Content is statically generated at build time, minimizing overheads. Previously, I utilized [ElysiaJS](https://elysiajs.com/) and [PostgreSQL](https://www.postgresql.org/), but transitioned to a static site to streamline operations and costs. Hosting is graciously provided by [Vercel](https://vercel.com/), ensuring seamless deployment. Rest assured, the source code remains securely private.

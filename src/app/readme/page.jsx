@@ -4,12 +4,17 @@ import fs from 'fs/promises';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Image from 'next/image';
 import Link from 'next/link';
+import LinkPreview from '@/common/elements/linkPreview';
+
+const PAGE_TITLE = 'About minhtran.com';
+const PAGE_DESCRIPTION =
+    'Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, Wakatime API, GitHub API, and more.';
 
 // SEO metadata
 export const generateMetadata = async () => {
     return {
-        title: 'About minhtran.com',
-        description: 'Minh Tran personal website',
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
     };
 };
 
@@ -22,32 +27,17 @@ const MARKDOWN_FILE = path.join(
 
 const ReadmePage = async () => {
     const aboutWebsiteMdString = await fs.readFile(MARKDOWN_FILE, 'utf-8');
-    const sectionDescription =
-        'Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, Wakatime API, GitHub API, and more. Source code and usage instruction can be found on';
     return (
         <div className="container mt-12">
             <div className="content-center items-center justify-center">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
-                        <div className="mb-5">
-                            <Image
-                                src="/about-this-website/repo.png"
-                                alt="About this Website Repo BG"
-                                width={1200}
-                                height={600}
-                                layout="responsive"
-                                className="rounded-lg"
-                            />
+                        <div className="mb-5 flex justify-center items-center w-full">
+                            <LinkPreview url="https://github.com/minhtran241/minhtran.com" />
                         </div>
-                        <div className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10">
-                            {sectionDescription}
-                            <span className="text-[#0033A0] dark:text-blue-600 hover:underline ml-1">
-                                <Link href="https://github.com/minhtran241/minhtran.com">
-                                    GitHub
-                                </Link>
-                                .
-                            </span>
-                        </div>
+                        <p className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10">
+                            {PAGE_DESCRIPTION}
+                        </p>
                         <div className="flex flex-col gap-4">
                             <MarkdownRender mdString={aboutWebsiteMdString} />
                         </div>
