@@ -2,13 +2,12 @@ import MarkdownRender from '@/components/Common/markdownRenderer/markdownRendere
 import path from 'path';
 import fs from 'fs/promises';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
-import Image from 'next/image';
-import Link from 'next/link';
 import LinkPreview from '@/common/elements/linkPreview';
 
 const PAGE_TITLE = 'About minhtran.com';
 const PAGE_DESCRIPTION =
     'Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, Wakatime API, GitHub API, and more.';
+const REPO_URL = 'https://github.com/minhtran241/minhtran.com';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -33,11 +32,8 @@ const ReadmePage = async () => {
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
                         <div className="mb-5 flex justify-center items-center w-full">
-                            <LinkPreview url="https://github.com/minhtran241/minhtran.com" />
+                            <LinkPreview url={REPO_URL} />
                         </div>
-                        <p className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10">
-                            {PAGE_DESCRIPTION}
-                        </p>
                         <div className="flex flex-col gap-4">
                             <MarkdownRender mdString={aboutWebsiteMdString} />
                         </div>
