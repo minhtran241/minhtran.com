@@ -12,7 +12,7 @@ const Coding = () => {
                 <Code2 className="mr-1 h-6 w-6" />
                 <h1 className="capitalize">Development Tools</h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {CODING?.map((item, index) => (
                     <Link
                         href={item.href}
@@ -26,7 +26,7 @@ const Coding = () => {
                                 alt={item.name}
                                 width={400}
                                 height={300}
-                                className="rounded-lg w-64 h-48"
+                                className="rounded-lg lg:w-36 lg:h-36 md:w-32 md:h-32 w-28 h-28"
                             />
                         </div>
                         <div className="flex flex-col gap-1 items-center justify-center">
