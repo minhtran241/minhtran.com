@@ -38,10 +38,10 @@ This website is built using these technologies:
 - 〰️ SWR
 - ➰ Framer Motion
 - 💢 Lucide Icons
-- 💢 React Icons
 - 📊 Chart.js
 - 🎥 WakaTime API
 - 👨🏻‍💻 GitHub API
+- 🎵 Spotify API
 
 <br />
 
@@ -53,7 +53,7 @@ On this website, several features will continue to be updated and added in the f
 
 You can access this feature by opening the command palette [cmd+k], and then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI API key)
 
-- ### 🎧 Spotify Status (Unavailable)
+- ### 🎧 Spotify Status
 
 Displays song information being played on Spotify in real-time using the Spotify API and SWR.
 
