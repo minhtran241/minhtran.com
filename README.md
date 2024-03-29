@@ -1,8 +1,8 @@
 <div align="center">
-  <h1>minhtran.com</h1>
+  <h1>ducpham.com</h1>
   <p>🔥 Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, and more. </p>
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/minhtran241/minhtran.com)](https://github.com/minhtran241/minhtran.com/stargazers)
+[![GitHub Repo stars](https://img.shields.io/github/stars/ducpm98/ducpham.com)](https://github.com/ducpm98/ducpham.com/stargazers)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
 
 </div>
@@ -76,11 +76,11 @@ As a developer, I have a lot of projects that I have worked on. This section dis
 
 - Desktop: [https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=desktop](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=desktop)
   
-![image](https://github.com/minhtran241/minhtran.com/blob/main/public/contact/about-this-website/lh-rp-desktop.png)
+![image](https://github.com/ducpm98/ducpham.com/blob/main/public/contact/about-this-website/lh-rp-desktop.png)
 
 - Mobile: [https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=mobile](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=mobile)
 
-![image](https://github.com/minhtran241/minhtran.com/blob/main/public/contact/about-this-website/lh-rp-mobile.png)
+![image](https://github.com/ducpm98/ducpham.com/blob/main/public/contact/about-this-website/lh-rp-mobile.png)
 
 <br /><br />
 
@@ -93,25 +93,25 @@ If you are interested in running this project on your local machine, you can do 
 1. Clone using git
 
    ```bash
-   git clone https://github.com/minhtran241/minhtran.com.git
+   git clone https://github.com/ducpm98/ducpham.com.git
    ```
 
 2. Using `create-next-app`
 
    ```bash
-   npx create-next-app -e https://github.com/minhtran241/minhtran.com project-name
+   npx create-next-app -e https://github.com/ducpm98/ducpham.com project-name
    ```
 
 3. Using `degit`
 
    ```bash
-   npx degit minhtran241/minhtran.com YOUR_APP_NAME
+   npx degit ducpm98/ducpham.com YOUR_APP_NAME
    ```
 
 4. Deploy to Vercel or Netlify, etc
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/minhtran241/minhtran.com)
-   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/minhtran241/minhtran.com)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/ducpm98/ducpham.com)
+   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ducpm98/ducpham.com)
 
 ### 2. Install dependencies
 
