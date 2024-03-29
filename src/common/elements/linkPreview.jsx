@@ -2,12 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Loading from '@/app/loading';
 import axios from 'axios';
-import { extractMetaTags } from '../helpers';
+import { extractMetaTags } from '@/app/actions';
 
 const LinkPreview = async ({ url }) => {
     //here calling the function
     const response = await axios.get(url);
-    const data = extractMetaTags(response);
+    const data = await extractMetaTags(response);
 
     if (!data) {
         return <Loading />;
