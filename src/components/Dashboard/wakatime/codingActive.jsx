@@ -59,6 +59,7 @@ const CodingActive = ({ lastUpdate }) => {
                     <span>My </span>
                     <Link
                         href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
+                        target="_blank"
                         className="hover:text-[#0033A0] hover:dark:text-blue-600"
                     >
                         WakaTime

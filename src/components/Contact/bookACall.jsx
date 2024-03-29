@@ -20,8 +20,8 @@ const BookACall = () => {
                             Minh Tran&apos;s calendar is open for booking a call
                         </p>
                     </div>
-                    <div className="rounded-full border-2  p-3 text-gray-100 border-gray-100">
-                        <Calendar size={22} />
+                    <div className="rounded-full border-2 p-3 text-gray-100 border-gray-100">
+                        <Calendar className="h-5 w-5" />
                     </div>
                 </div>
                 <div className="flex items-center gap-5 text-sm text-gray-200">

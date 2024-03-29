@@ -93,6 +93,10 @@ export const MENU_TABS = [
         href: '/blog',
     },
     {
+        title: 'Uses',
+        href: '/uses',
+    },
+    {
         title: 'Contact',
         href: '/contact',
     },
