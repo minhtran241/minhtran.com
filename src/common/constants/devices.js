@@ -22,7 +22,7 @@ export const PAIR_DEVICES = {
 };
 
 export const USES = {
-    Accessories: [
+    Devices: [
         {
             name: 'MacBook Pro M1 16 inch, 2021',
             metadata: '16GB RAM, 1TB SSD',
@@ -52,7 +52,7 @@ export const USES = {
             image: '/uses/accessories/airpods-pro.jpeg',
         },
     ],
-    Coding: [
+    DevTools: [
         {
             name: 'Visual Studio Code',
             metadata: 'Code Editor',

@@ -1,6 +1,6 @@
 import { GalleryHorizontalEnd } from 'lucide-react';
-import Accessories from '@/components/Uses/accessories';
-import Coding from '@/components/Uses/coding';
+import Devices from '@/components/Uses/devices';
+import DevTools from '@/components/Uses/devtools';
 
 const PAGE_TITLE = "Minh's Uses";
 const PAGE_DESCRIPTION =
@@ -22,8 +22,8 @@ const UsesPage = () => {
                 <div className="flex flex-col gap-8">
                     {/* Accessories section: laptop, iphone, .... */}
                     {/* Laptop first */}
-                    <Accessories />
-                    <Coding />
+                    <Devices />
+                    <DevTools />
                 </div>
             </div>
         </>

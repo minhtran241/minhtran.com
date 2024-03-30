@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Code2 } from 'lucide-react';
 
-const CODING = USES.Coding;
+const DEVTOOLS = USES.DevTools;
 
-const Coding = () => {
+const DevTools = () => {
     return (
         <section className="flex flex-col gap-8">
             <div className="flex items-center gap-1.5 font-semibold lg:text-2xl md:text-xl text-xl">
@@ -13,7 +13,7 @@ const Coding = () => {
                 <h1 className="capitalize">Development Tools</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {CODING?.map((item, index) => (
+                {DEVTOOLS?.map((item, index) => (
                     <Link
                         href={item.href}
                         target="_blank"
@@ -44,4 +44,4 @@ const Coding = () => {
     );
 };
 
-export default Coding;
+export default DevTools;
