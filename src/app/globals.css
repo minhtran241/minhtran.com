@@ -13,47 +13,64 @@
 @layer base {
     :root {
         --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
+        --foreground: 0 0% 3.9%;
+
+        --card: 0 0% 99.7%;
+        --card-foreground: 0 0% 3.9%;
+
         --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
+        --popover-foreground: 0 0% 15.1%;
+
+        --primary: 0 0% 9%;
         --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 72.22% 50.59%;
+
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 94.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 5% 64.9%;
+
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 63.9%;
+
         --radius: 0.5rem;
     }
 
     .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
+        --background: 0 0% 0%;
+        --foreground: 0 0% 100%;
+
+        --card: 0 0% 4%;
         --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
+
+        --popover: 0 0% 4%;
+        --popover-foreground: 0 0% 88%;
+
         --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
+        --primary-foreground: 0 0% 9%;
+
+        --secondary: 0 0% 12.9%;
         --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
+
+        --muted: 0 0% 8%;
+        --muted-foreground: 0 0% 60%;
+
+        --accent: 0 0% 15%;
+        --accent-foreground: 0 0% 100%;
+
         --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 85.7% 97.3%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 14%;
+        --input: 0 0% 14%;
+        --ring: 0 0% 14.9%;
     }
 }
 
@@ -62,7 +79,8 @@
         @apply border-border;
     }
     body {
-        @apply bg-background text-foreground;
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+        @apply bg-background text-foreground font-sans antialiased;
         /* font-feature-settings: "rlig" 1, "calt" 1; */
         font-synthesis-weight: none;
         text-rendering: optimizeLegibility;
@@ -91,83 +109,15 @@
     }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-}
-
 a {
     text-decoration: none;
     color: inherit;
-}
-
-/* .container {
-    width: 1536px;
-    margin: auto;
-    padding-left: 50px;
-    padding-right: 50px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@media (max-width: 1536px) {
-    .container {
-        width: 1366px;
-    }
-}
-
-@media (max-width: 1366px) {
-    .container {
-        width: 1280px;
-    }
-}
-
-@media (max-width: 1280px) {
-    .container {
-        width: 1024px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .container {
-        width: 768px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 640px;
-    }
-}
-
-@media (max-width: 640px) {
-    .container {
-        width: 475px;
-    }
-}
-@media (max-width: 475px) {
-    .container {
-        width: 380px;
-    }
-} */
-
-b,
-strong {
-    @apply font-semibold;
 }
 
 .shadow {
