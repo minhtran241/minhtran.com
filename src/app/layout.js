@@ -48,7 +48,7 @@ export const metadata = {
         creator: '@minhtran241',
         images: [
             {
-                url: `${SITE_URL}/home/headshot.png`,
+                url: '/favicon/apple-touch-icon.png',
                 width: 1200,
                 height: 630,
                 alt: SITE_DESCRIPTION,
@@ -66,7 +66,7 @@ export const metadata = {
         locale: 'en-US',
         images: [
             {
-                url: `${SITE_URL}/home/headshot.png`,
+                url: '/favicon/apple-touch-icon.png',
                 width: 1200,
                 height: 630,
                 alt: SITE_DESCRIPTION,
