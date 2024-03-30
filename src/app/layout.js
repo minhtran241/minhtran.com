@@ -110,10 +110,10 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" className={cn(calcom.variable, 'scroll-smooth')}>
             <body
-                className={cn(
-                    'min-h-screen bg-background antialiased font-sans',
-                    fontSans.variable
-                )}
+            // className={cn(
+            //     'min-h-screen bg-background antialiased font-sans',
+            //     fontSans.variable
+            // )}
             >
                 <ThemeProvider
                     attribute="class"

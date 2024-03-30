@@ -36,18 +36,21 @@ const getSKills = async () => {
     const skills = JSON.parse(skillsData);
     return skills;
 };
+
+const SECTION_TITLE = 'Mainly working with';
+const SECTION_DESCRIPTION =
+    'I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies.';
+
 // bg-gradient-to-r from-[#0033A0] to-[#00A3FF] dark:from-blue-600 dark:to-blue-900
 const SkillsComponent = async () => {
     const skills = await getSKills();
-    const sectionTitle = 'Mainly working with';
-    const sectionDescription =
-        'I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies.';
+
     return (
         <div className="items-center justify-center mt-12  py-12 bg-gray-200 dark:bg-gray-900">
             <div className="container">
                 <SectionLabel
-                    title={sectionTitle}
-                    description={sectionDescription}
+                    title={SECTION_TITLE}
+                    description={SECTION_DESCRIPTION}
                 />
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2 mt-8">
                     {skills.map((skill, index) => (

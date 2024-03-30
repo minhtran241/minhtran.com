@@ -2,34 +2,9 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import { userBasicInfo } from '@/common/constants/userBasic';
-import { fileSystemInfo } from '@/common/constants/fileSystem';
-// import ContactForm from '@/components/Home/contactForm/contactForm';
-import { Mail, Github, Linkedin, Briefcase } from 'lucide-react';
 import Image from 'next/image';
 import { SOCIAL_MEDIA } from '@/common/constants/menu';
-
-const iconsTab = {
-    mail: {
-        icon: <Mail className="h-4 w-4 " />,
-        link: `mailto:${userBasicInfo.email}`,
-        text: userBasicInfo.email,
-    },
-    github: {
-        icon: <Github className="h-4 w-4 " />,
-        link: userBasicInfo.githubLink,
-        text: `@${userBasicInfo.githubUsername}`,
-    },
-    linkedin: {
-        icon: <Linkedin className="h-4 w-4 " />,
-        link: userBasicInfo.linkedinLink,
-        text: userBasicInfo.linkedinUsername,
-    },
-    resume: {
-        icon: <Briefcase className="h-4 w-4 " />,
-        link: fileSystemInfo.resumeLink,
-        text: 'Download Resume',
-    },
-};
+import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 const HeroComponent = () => {
     return (
@@ -37,7 +12,7 @@ const HeroComponent = () => {
             <div
                 className="absolute top-0 h-full w-full bg-cover bg-center"
                 style={{
-                    backgroundImage: `url(/home/hero-bg.png)`,
+                    backgroundImage: `url(${fileSystemInfo.heroBg})`,
                 }}
             >
                 <span
@@ -50,7 +25,7 @@ const HeroComponent = () => {
                     <div className="p-8 flex flex-wrap gap-4 rounded-lg bg-white dark:bg-gray-900 shadow-lg">
                         <div className="flex-shrink-0">
                             <Image
-                                src="/home/headshot.png"
+                                src={fileSystemInfo.headshot}
                                 alt="headshot"
                                 className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:h-full w-20 h-full"
                                 width={150}

@@ -3,19 +3,26 @@
 const nextConfig = {
     images: {
         dangerouslyAllowSVG: true,
-        // domains: ['images.pexels.com', 'avatars.githubusercontent.com'],
         remotePatterns: [
-            // {
-            //     protocol: 'https',
-            //     hostname: 'images.pexels.com',
-            // },
-            // {
-            //     protocol: 'https',
-            //     hostname: 'avatars.githubusercontent.com',
-            // },
             {
                 protocol: 'https',
-                hostname: '**',
+                hostname: 'avatars.githubusercontent.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'opengraph.githubassets.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'img.shields.io',
+            },
+            {
+                protocol: 'https',
+                hostname: 'i.scdn.co',
+            },
+            {
+                protocol: 'https',
+                hostname: 'github.com',
             },
         ],
     },

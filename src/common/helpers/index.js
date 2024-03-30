@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { format, parseISO } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 
@@ -131,3 +132,15 @@ export function getMonthlyChartData(contrCalendar, maxMonths = 30) {
 
     return chartDataPrototype(labels, monthlyData); // Returning chart data
 }
+
+export const getImageBuffer = async (imageUrl) => {
+    try {
+        const response = await axios.get(imageUrl, {
+            responseType: 'arraybuffer',
+        });
+        return Buffer.from(response.data, 'binary');
+    } catch (error) {
+        console.error('Error fetching image:', error);
+        throw error;
+    }
+};

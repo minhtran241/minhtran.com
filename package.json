@@ -33,6 +33,7 @@
     "next": "14.1.0",
     "next-share": "^0.27.0",
     "next-themes": "^0.2.1",
+    "plaiceholder": "^3.0.0",
     "promise": "^8.3.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
