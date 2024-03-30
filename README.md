@@ -1,6 +1,6 @@
 <div align="center">
   <h1>minhtran.com</h1>
-  <p>🔥 Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, and more. </p>
+  <p>☄️ Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, Spotify API, and more. </p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/minhtran241/minhtran.com)](https://github.com/minhtran241/minhtran.com/stargazers)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
@@ -20,9 +20,9 @@ I'm constantly making improvements to add more features and content. This websit
 
 Feel free to use this website as a reference, for inspiration, or as a template, following the provided license. You can access the source code to customize it to your needs.
 
-If you find this website helpful, please consider leaving a rating. 😎👍🏻
+If you find this website helpful, please consider leaving a rating.
 
-If you have any questions, suggestions, or anything else, don't hesitate to reach out to me! 🧑‍💻
+If you have any questions, suggestions, or anything else, don't hesitate to contact me!
 <br /><br />
 
 ## Tech Stack
@@ -74,19 +74,19 @@ As a developer, I have a lot of projects that I have worked on. This section dis
 
 - ### PageSpeed Insights
 
-- Desktop: [https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=desktop](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=desktop)
+- Desktop
   
-![image](https://github.com/minhtran241/minhtran.com/blob/main/public/contact/about-this-website/lh-rp-desktop.png)
+![Desktop PI](https://github.com/minhtran241/minhtran.com/blob/main/public/about-this-website/lh-rp-desktop.png)
 
-- Mobile: [https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=mobile](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fminhtran.com&tab=mobile)
+- Mobile
 
-![image](https://github.com/minhtran241/minhtran.com/blob/main/public/contact/about-this-website/lh-rp-mobile.png)
+![Mobile PI](https://github.com/minhtran241/minhtran.com/blob/main/public/about-this-website/lh-rp-mobile.png)
 
 <br /><br />
 
 ## Getting Started
 
-If you are interested in running this project on your local machine, you can do so in just 3 easy steps below. Additionally, remember to update the `.env.example` file to `.env` and replace the variables with your own in the `.env` file.
+If you want to run this project on your local machine, you can do so in just 3 easy steps below. Additionally, update the `.env.example` file to `.env` and replace the variables with your own in the `.env` file.
 
 ### 1. Clone this template using one of the three ways
 
