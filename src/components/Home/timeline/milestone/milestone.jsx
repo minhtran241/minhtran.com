@@ -3,7 +3,7 @@ import {
     Layers,
     LayoutTemplate,
     HardDrive,
-    Code,
+	Code2,
 } from 'lucide-react';
 
 const Milestone = ({ milestone, right }) => {
@@ -19,7 +19,7 @@ const Milestone = ({ milestone, right }) => {
         Layers: <Layers className="text-white h-4 w-4" />,
         LayoutTemplate: <LayoutTemplate className="text-white h-4 w-4" />,
         HardDrive: <HardDrive className="text-white h-4 w-4" />,
-        Code: <Code className="text-white h-4 w-4" />,
+        Code2: <Code2 className="text-white h-4 w-4" />,
     };
     return right ? (
         <div className="w-full m-0">
