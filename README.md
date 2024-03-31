@@ -123,20 +123,24 @@ npm install
 
 ### 3. Config constants
 
-This repository uses several constants. Please check the `src/common/constants` directory and update the values with your own. For example, the `userBasicInfo.js` file contains the basic information about the user.
+This repository uses several constants. Please check the `src/common/constants` directory and update the values with your own. For example, the `userBasic.js` file contains the basic information about the user.
 
 ```javascript
 export const userBasicInfo = {
+    fullName: FULL_NAME,
     currentJob: CURRENT_JOB,
     currentOrg: CURRENT_ORG,
     currentOrgLink: CURRENT_ORG_LINK,
     currentRole: CURRENT_ROLE,
     githubUsername: GITHUB_USERNAME,
     githubLink: GITHUB_LINK,
-    linkedinUser: LINKEDIN_USER,
+    linkedinUsername: LINKEDIN_USERNAME,
     linkedinLink: LINKEDIN_LINK,
+    facebookUsername: FACEBOOK_USERNAME,
     facebookLink: FACEBOOK_LINK,
+    instagramUsername: INSTAGRAM_USERNAME,
     instagramLink: INSTAGRAM_LINK,
+    twitterUsername: TWITTER_USERNAME,
     twitterLink: TWITTER_LINK,
     email: EMAIL,
 };
