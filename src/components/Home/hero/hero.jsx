@@ -20,7 +20,7 @@ const HeroComponent = () => {
                     className={`absolute h-full w-full bg-black opacity-10`}
                 ></span>
             </div>
-            <div className="relative container py-20">
+            <div className="relative container py-16">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:gap-x-12 xl:grid-cols-2">
                     <div className="p-8 flex flex-wrap gap-4 rounded-lg bg-white dark:bg-gray-900 shadow-lg">
                         <div className="flex-shrink-0">
@@ -37,7 +37,7 @@ const HeroComponent = () => {
                                 <h2 className="font-semibold text-2xl">
                                     {userBasicInfo.fullName}
                                 </h2>
-                                <p className="text-sm">
+                                <p className="lg:text-medium md:text-medium sm:text-sm text-sm">
                                     {userBasicInfo.currentJob}
                                 </p>
                             </div>
@@ -55,7 +55,7 @@ const HeroComponent = () => {
                                             </span>
                                             <Link
                                                 target="_blank"
-                                                className="hover:text-[#0033A0] dark:hover:text-blue-600 sm:text-sm text-xs"
+                                                className="hover:text-[#0033A0] dark:hover:text-blue-600 lg:text-medium md:text-medium sm:text-sm text-sm transition duration-300 ease-in-out"
                                                 href={item.href}
                                             >
                                                 {item.title}
