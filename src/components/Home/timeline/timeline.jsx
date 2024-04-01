@@ -25,16 +25,18 @@ const getMilestones = async () => {
     return sortedMilestones;
 };
 
+const SECTION_TITLE = 'Employment History';
+const SECTION_DESCRIPTION =
+    'My working has been in the field of software development, performance optimization, and system design.';
+
 const TimelineComponent = async () => {
     const milestones = await getMilestones();
-    const sectionTitle = 'Employment History';
-    const sectionDescription =
-        'My working has been in the field of software development, performance optimization, and system design.';
+
     return (
         <div className="items-center justify-center mt-12 container">
             <SectionLabel
-                title={sectionTitle}
-                description={sectionDescription}
+                title={SECTION_TITLE}
+                description={SECTION_DESCRIPTION}
             />
             <div className="flex flex-col justify-center ">
                 {/* lg:max-w-full */}

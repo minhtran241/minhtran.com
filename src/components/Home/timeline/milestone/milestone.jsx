@@ -3,7 +3,7 @@ import {
     Layers,
     LayoutTemplate,
     HardDrive,
-	Code2,
+    Code2,
 } from 'lucide-react';
 
 const Milestone = ({ milestone, right }) => {
@@ -65,7 +65,7 @@ const Milestone = ({ milestone, right }) => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute flex items-center justify-center w-7 h-7 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[3px]">
+                <div className="absolute flex items-center justify-center w-7 h-7 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[4px]">
                     {icons[milestone.icon]}
                 </div>
             </div>

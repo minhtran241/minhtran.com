@@ -35,16 +35,18 @@ const getProjects = async (limit) => {
     }
 };
 
+const SECTION_TITLE = 'Personal Projects';
+const SECTION_DESCRIPTION =
+    'I have worked on these projects in my free time. I have used these projects to learn new technologies and implement new features.';
+
 const ProjectsComponent = async ({ limit }) => {
     const projects = await getProjects(limit || PROJECT_FETCH_LIMIT);
-    const sectionTitle = 'Personal Projects';
-    const sectionDescription =
-        'I have worked on these projects in my free time. I have used these projects to learn new technologies and implement new features.';
+
     return (
         <div className="items-center justify-center mt-12 container">
             <SectionLabel
-                title={sectionTitle}
-                description={sectionDescription}
+                title={SECTION_TITLE}
+                description={SECTION_DESCRIPTION}
             />
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 {projects.map((project, index) => (

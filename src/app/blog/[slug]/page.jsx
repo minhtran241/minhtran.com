@@ -97,7 +97,7 @@ const SinglePostContent = ({ post }) => {
                         <h1 className="font-bold text-[#0033A0] dark:text-blue-600 mb-3 lg:text-4xl md:text-3xl sm:text-3xl text-2xl">
                             {post.title}
                         </h1>
-                        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                        <p className="text-gray-600 dark:text-gray-400">
                             {createdAtText}
                         </p>
                     </div>

@@ -1,4 +1,4 @@
-import { Clock, Minus, PenLine, Calculator } from 'lucide-react';
+import { Clock, Minus, PenLine, WholeWord } from 'lucide-react';
 
 const PostMetadata = ({ post }) => {
     const updatedAtText = new Date(post.updated_at).toLocaleDateString(
@@ -15,22 +15,22 @@ const PostMetadata = ({ post }) => {
             <div className="mb-5 flex flex-col text-sm font-medium text-gray-600 dark:text-gray-400">
                 <div className="mr-5 flex items-center">
                     <span className="">
-                        <Calculator className="h-[1.2rem] w-[1.2rem]" />
+                        <WholeWord className="h-5 w-5" />
                     </span>
                     <p className="ml-2">
                         <span id="view">{post.word_count} words</span>
                     </p>
                     <span className="ml-2">
-                        <Minus className="h-[1.2rem] w-[1.2rem]" />
+                        <Minus className="h-5 w-5" />
                     </span>
                     <span className="ml-2">
-                        <Clock className="h-[1.2rem] w-[1.2rem]" />
+                        <Clock className="h-5 w-5" />
                     </span>
                     <span className="ml-2">{post.read_time}</span>
                 </div>
                 <p className="mr-5 flex items-center">
                     <span className="mr-2">
-                        <PenLine className="h-[1.2rem] w-[1.2rem]" />
+                        <PenLine className="h-5 w-5" />
                     </span>
                     <span className="mr-2">
                         Last updated on {updatedAtText}
