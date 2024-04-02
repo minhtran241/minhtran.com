@@ -78,6 +78,7 @@ const SkillsComponent = async () => {
                                                 width: 'auto',
                                                 height: 'auto',
                                             }}
+                                            className="rounded"
                                         />
                                     </div>
                                 ))}

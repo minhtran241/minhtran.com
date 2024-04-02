@@ -77,6 +77,7 @@ const ProjectCard = ({ project }) => {
                             width: 'auto',
                             height: 'auto',
                         }}
+                        className="rounded"
                     />
                 ))}
             </div>
