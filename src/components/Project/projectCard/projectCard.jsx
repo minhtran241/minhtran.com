@@ -65,7 +65,7 @@ const ProjectCard = ({ project }) => {
                     </Link>
                 </div>
             )}
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-2 mt-4 rounded">
                 {project.tech_stack.map((badge, index) => (
                     <Image
                         key={index}
@@ -77,7 +77,7 @@ const ProjectCard = ({ project }) => {
                             width: 'auto',
                             height: 'auto',
                         }}
-                        className="rounded"
+                        className="!rounded"
                     />
                 ))}
             </div>

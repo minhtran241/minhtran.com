@@ -5,7 +5,7 @@ import { Github, Radio } from 'lucide-react';
 const ProjectMetadata = ({ project }) => {
     return (
         <>
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 rounded">
                 {project.tech_stack.map((badge, index) => (
                     <Image
                         key={index}
@@ -17,6 +17,7 @@ const ProjectMetadata = ({ project }) => {
                             width: 'auto',
                             height: 'auto',
                         }}
+                        className="!rounded"
                     />
                 ))}
             </div>

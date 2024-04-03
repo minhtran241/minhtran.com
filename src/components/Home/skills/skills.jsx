@@ -68,7 +68,7 @@ const SkillsComponent = async () => {
                             </div>
                             <div className="flex flex-wrap gap-4">
                                 {skill.technologies.map((badge, index) => (
-                                    <div key={index}>
+                                    <div key={index} className="rounded">
                                         <Image
                                             src={badge}
                                             alt="skill"
@@ -78,7 +78,7 @@ const SkillsComponent = async () => {
                                                 width: 'auto',
                                                 height: 'auto',
                                             }}
-                                            className="rounded"
+                                            className="!rounded"
                                         />
                                     </div>
                                 ))}
