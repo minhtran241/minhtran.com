@@ -144,3 +144,10 @@ export const getImageBuffer = async (imageUrl) => {
         throw error;
     }
 };
+
+export const getUsername = (domain, link) => {
+    const domainCharAt = link.indexOf(domain);
+    const usernameCharAt = domainCharAt + domain.length;
+    // Return from this index to the end of the string
+    return link.substring(usernameCharAt, link.length);
+};
