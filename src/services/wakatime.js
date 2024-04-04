@@ -19,7 +19,7 @@ export const getReadStats = async () => {
 
     const getData = response.data;
 
-    const is_up_to_date = getData?.data?.is_up_to_date;
+    // const is_up_to_date = getData?.data?.is_up_to_date;
 
     const start_date = getData?.data?.start;
     const end_date = getData?.data?.end;

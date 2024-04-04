@@ -35,7 +35,7 @@ const CodingActiveList = ({ data }) => {
             total: getLanguagesTotalTimeDisplay,
             data: data?.languages,
             styles: {
-                bg: 'bg-gradient-to-r from-amber-400 to-rose-600',
+                bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
             },
         },
         {
@@ -43,7 +43,15 @@ const CodingActiveList = ({ data }) => {
             total: getEditorTotalTimeDisplay,
             data: data?.categories,
             styles: {
-                bg: 'bg-gradient-to-r from-blue-400 to-purple-600',
+                bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
+            },
+        },
+        {
+            title: 'Editors',
+            total: getEditorTotalTimeDisplay,
+            data: data?.editors,
+            styles: {
+                bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
             },
         },
     ];

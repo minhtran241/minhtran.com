@@ -28,8 +28,7 @@ const DashboardPage = () => {
                 </div>
                 <div className="flex flex-col gap-8">
                     <CodingActive />
-                    <Contributions />
-					
+                    <Contributions />	
                 </div>
             </div>
         </>

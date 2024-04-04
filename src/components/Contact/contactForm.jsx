@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
@@ -61,35 +62,44 @@ const ContactForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="flex flex-grow flex-col gap-5">
-                <div className="flex flex-col gap-5 md:flex-row">
-                    <Input
-                        className="border border-[#0033A0] dark:border-blue-600"
-                        type="text"
-                        placeholder="Name*"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                    <Input
-                        className="border border-[#0033A0] dark:border-blue-600"
-                        type="email"
-                        placeholder="Email*"
-                        name="email"
-                        value={formData.email}
+                <div className="flex flex-row gap-5">
+                    <div className="flex flex-col gap-2 w-full">
+                        <Label htmlFor="email">Name</Label>
+                        <Input
+                            className="border border-gray-300 dark:border-gray-700"
+                            type="text"
+                            placeholder="Name*"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="flex flex-col gap-2 w-full">
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                            className="border border-gray-300 dark:border-gray-700"
+                            type="email"
+                            placeholder="Email*"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                        className="border border-gray-300 dark:border-gray-700"
+                        rows={5}
+                        placeholder="Message*"
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
                         required
                     />
                 </div>
-                <Textarea
-                    className="border border-[#0033A0] dark:border-blue-600"
-                    rows={5}
-                    placeholder="Message*"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                />
                 <Button
                     type="submit"
                     disabled={isSubmitDisabled}
@@ -103,9 +113,8 @@ const ContactForm = () => {
                     {isLoading ? 'Sending...' : 'Send Message'}
                 </Button>
             </div>
-
-            <div className="my-5 flex items-center gap-2 dark:text-gray-400">
-                <Clock className='w-5 h-5' />
+            <div className="my-5 flex items-center gap-2">
+                <Clock className="w-5 h-5" />
                 <div className="text-sm">
                     <span className="font-medium">Avg. response:</span> 1-2
                     Hours (Working Hours, GMT+7)

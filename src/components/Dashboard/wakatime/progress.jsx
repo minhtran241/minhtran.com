@@ -14,7 +14,7 @@ const Progress = ({ data, className }) => {
 
     return (
         <div className="flex items-center justify-between gap-3">
-            <div className="w-24">{name}</div>
+            <div className="w-28">{name}</div>
             <div className="relative flex h-3 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-gray-800">
                 <motion.span
                     initial="initial"
