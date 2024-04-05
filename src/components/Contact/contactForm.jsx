@@ -3,171 +3,219 @@
 import axios from 'axios';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { Clock, Info } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { Clock, Loader } from 'lucide-react';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from '@/components/ui/form';
+
+const FormSchema = z.object({
+    name: z.string().optional(),
+    email: z
+        .string()
+        .min(1, 'Email address is required')
+        .email('Invalid email address'),
+    subject: z.string().optional(),
+    message: z.string().min(1, 'Message is required'),
+    'h-captcha-response': z.string().min(1, 'Please complete the captcha'),
+});
 
 const formInitialState = {
     name: '',
     email: '',
     subject: '',
     message: '',
+    'h-captcha-response': '',
 };
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState(formInitialState);
+    const form = useForm({
+        resolver: zodResolver(FormSchema),
+        defaultValues: formInitialState,
+    });
 
-    const [formErrors, setFormErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
-    const [capchaToken, setCapchaToken] = useState('');
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-        // Except: Subject
-        if (name !== 'subject') {
-            setFormErrors({
-                ...formErrors,
-                [name]: value ? undefined : `${name} is required`,
+    const onSubmit = async (data) => {
+        setIsLoading(true);
+        try {
+            const response = await axios.post('/api/contact', {
+                formData: {
+                    ...data,
+                },
             });
-        }
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const hasErrors =
-            Object.values(formErrors).some((error) => error) || !capchaToken;
-
-        if (!hasErrors) {
-            setIsLoading(true);
-            try {
-                const response = await axios.post(
-                    '/api/contact',
-                    { formData },
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    }
+            if (response.data.data.success) {
+                toast.success('Message sent successfully!');
+                form.reset();
+            } else {
+                toast.error(
+                    'Failed to send message, please try again or contact directly through email'
                 );
-                if (response.status === 200) {
-                    toast.success('Message sent successfully');
-                    setFormData(formInitialState);
-                }
-            } catch (error) {
-                console.error(error);
-                toast.error('An error occurred. Please try again later');
             }
+        } catch (error) {
+            console.error(error);
+            toast.error(
+                'Failed to send message, please try again or contact directly through email'
+            );
+        } finally {
+            // Reset the captcha
+            form.setValue('h-captcha-response', '');
             setIsLoading(false);
-        } else {
-            toast.error('Please fill in all required fields');
         }
     };
-
-    const isSubmitDisabled = Object.values(formErrors).some((error) => error);
 
     const onHCaptchaChange = (token) => {
-        setCapchaToken(token);
+        form.setValue('h-captcha-response', token);
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="flex flex-grow flex-col gap-5">
-                <div className="flex flex-row gap-5">
-                    <div className="flex flex-col gap-2 w-full">
-                        <Label htmlFor="name">
-                            Name<span className="text-red-500">*</span>
-                        </Label>
-                        <Input
-                            className="border border-gray-300 dark:border-gray-700"
-                            type="text"
-                            // placeholder="Name*"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
+        <Form {...form}>
+            <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="flex flex-col gap-4"
+            >
+                <div className="flex lg:flex-row flex-col gap-4">
+                    <div className="w-full">
+                        <FormField
+                            control={form.control}
+                            name="username"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="flex flex-row leading-none">
+                                        Name
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            id="name"
+                                            name="name"
+                                            type="name"
+                                            placeholder="Your name"
+                                            {...form.register('name')}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
                         />
                     </div>
-                    <div className="flex flex-col gap-2 w-full">
-                        <Label htmlFor="email">
-                            Email<span className="text-red-500">*</span>
-                        </Label>
-                        <Input
-                            className="border border-gray-300 dark:border-gray-700"
-                            type="email"
-                            // placeholder="Email*"
+                    <div className="w-full">
+                        <FormField
+                            control={form.control}
                             name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="flex flex-row leading-none">
+                                        Email address
+                                        <span className="text-red-500">*</span>
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            placeholder="Your email address"
+                                            {...form.register('email')}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
                         />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input
-                        className="border border-gray-300 dark:border-gray-700"
-                        type="text"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <Label htmlFor="message">
-                        Message<span className="text-red-500">*</span>
-                    </Label>
-                    <Textarea
-                        className="border border-gray-300 dark:border-gray-700"
-                        rows={5}
-                        // placeholder="Message*"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <HCaptcha
-                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                    onVerify={onHCaptchaChange}
+                <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel className="flex flex-row leading-none">
+                                Subject
+                            </FormLabel>
+                            <FormControl>
+                                <Input
+                                    id="subject"
+                                    name="subject"
+                                    type="subject"
+                                    placeholder="Your subject"
+                                    {...form.register('subject')}
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel className="flex flex-row leading-none">
+                                Message <span className="text-red-500">*</span>
+                            </FormLabel>
+                            <FormControl>
+                                <Textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Your message"
+                                    {...form.register('message')}
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="h-captcha-response"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <HCaptcha
+                                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                                    onVerify={onHCaptchaChange}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
                 />
                 <Button
                     type="submit"
-                    disabled={isSubmitDisabled}
                     className={clsx(
                         'w-full rounded-md bg-[#0033A0] dark:bg-blue-600 text-white transition-all duration-300 hover:bg-[#00257D] dark:hover:bg-blue-700',
-                        isSubmitDisabled
+                        isLoading
                             ? 'bg-gray-400 dark:bg-gray-700 cursor-not-allowed'
                             : 'hover:bg-[#00257D] dark:hover:bg-blue-600'
                     )}
+                    disabled={isLoading}
                 >
-                    {isLoading ? 'Sending...' : 'Send Message'}
+                    {isLoading ? <Loader /> : 'Send Message'}
                 </Button>
-            </div>
-            {/* Mark is required */}
-            <div className="mt-5 flex items-center gap-2 text-sm">
-                <Info className="w-4 h-4" />
-                <div className="">
-                    <span className="text-red-500">*</span> Marked fields are
-                    required
+                <div className="mt-3 flex items-center gap-2 text-sm">
+                    <Clock className="w-4 h-4" />
+                    <div className="">
+                        <span className="font-medium">Avg. response:</span> 1-2
+                        Hours (Working Hours, GMT+7)
+                    </div>
                 </div>
-            </div>
-            <div className="mt-3 flex items-center gap-2 text-sm">
-                <Clock className="w-4 h-4" />
-                <div className="">
-                    Avg. response: 1-2 Hours (Working Hours, GMT+7)
-                </div>
-            </div>
-        </form>
+            </form>
+        </Form>
     );
 };
 
