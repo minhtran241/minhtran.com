@@ -128,7 +128,7 @@ const ContactForm = () => {
                     />
                 </div>
                 <HCaptcha
-                    sitekey={process.env.HCAPTCHA_SITE_KEY}
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
                     onVerify={onHCaptchaChange}
                 />
                 <Button
