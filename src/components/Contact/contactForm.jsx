@@ -3,12 +3,13 @@
 import axios from 'axios';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { Clock } from 'lucide-react';
+import { Clock, Info } from 'lucide-react';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const formInitialState = {
     name: '',
@@ -22,22 +23,28 @@ const ContactForm = () => {
     const [formErrors, setFormErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
+    const [capchaToken, setCapchaToken] = useState('');
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
             [name]: value,
         });
-        setFormErrors({
-            ...formErrors,
-            [name]: value ? undefined : `${name} is required`,
-        });
+        // Except: Subject
+        if (name !== 'subject') {
+            setFormErrors({
+                ...formErrors,
+                [name]: value ? undefined : `${name} is required`,
+            });
+        }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const hasErrors = Object.values(formErrors).some((error) => error);
+        const hasErrors =
+            Object.values(formErrors).some((error) => error) || !capchaToken;
 
         if (!hasErrors) {
             setIsLoading(true);
@@ -59,16 +66,22 @@ const ContactForm = () => {
 
     const isSubmitDisabled = Object.values(formErrors).some((error) => error);
 
+    const onHCaptchaChange = (token) => {
+        setCapchaToken(token);
+    };
+
     return (
         <form onSubmit={handleSubmit}>
             <div className="flex flex-grow flex-col gap-5">
                 <div className="flex flex-row gap-5">
                     <div className="flex flex-col gap-2 w-full">
-                        <Label htmlFor="email">Name</Label>
+                        <Label htmlFor="name">
+                            Name<span className="text-red-500">*</span>
+                        </Label>
                         <Input
                             className="border border-gray-300 dark:border-gray-700"
                             type="text"
-                            placeholder="Name*"
+                            // placeholder="Name*"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
@@ -76,11 +89,13 @@ const ContactForm = () => {
                         />
                     </div>
                     <div className="flex flex-col gap-2 w-full">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email">
+                            Email<span className="text-red-500">*</span>
+                        </Label>
                         <Input
                             className="border border-gray-300 dark:border-gray-700"
                             type="email"
-                            placeholder="Email*"
+                            // placeholder="Email*"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
@@ -89,17 +104,33 @@ const ContactForm = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="subject">Subject</Label>
+                    <Input
+                        className="border border-gray-300 dark:border-gray-700"
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <Label htmlFor="message">
+                        Message<span className="text-red-500">*</span>
+                    </Label>
                     <Textarea
                         className="border border-gray-300 dark:border-gray-700"
                         rows={5}
-                        placeholder="Message*"
+                        // placeholder="Message*"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
                     />
                 </div>
+                <HCaptcha
+                    sitekey={process.env.HCAPTCHA_SITE_KEY}
+                    onVerify={onHCaptchaChange}
+                />
                 <Button
                     type="submit"
                     disabled={isSubmitDisabled}
@@ -113,11 +144,18 @@ const ContactForm = () => {
                     {isLoading ? 'Sending...' : 'Send Message'}
                 </Button>
             </div>
-            <div className="my-5 flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <div className="text-sm">
-                    <span className="font-medium">Avg. response:</span> 1-2
-                    Hours (Working Hours, GMT+7)
+            {/* Mark is required */}
+            <div className="mt-5 flex items-center gap-2 text-sm">
+                <Info className="w-4 h-4" />
+                <div className="">
+                    <span className="text-red-500">*</span> Marked fields are
+                    required
+                </div>
+            </div>
+            <div className="mt-3 flex items-center gap-2 text-sm">
+                <Clock className="w-4 h-4" />
+                <div className="">
+                    Avg. response: 1-2 Hours (Working Hours, GMT+7)
                 </div>
             </div>
         </form>
