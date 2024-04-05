@@ -31,4 +31,5 @@ export const userBasicInfo = {
     twitterUsername: getUsername('twitter.com/', TWITTER_LINK),
     twitterLink: TWITTER_LINK,
     email: EMAIL,
+    bookACallLink: 'https://cal.com/minhtran/30min',
 };

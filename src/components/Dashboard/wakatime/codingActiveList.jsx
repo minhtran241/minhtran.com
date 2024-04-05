@@ -46,14 +46,6 @@ const CodingActiveList = ({ data }) => {
                 bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
             },
         },
-        {
-            title: 'Editors',
-            total: getEditorTotalTimeDisplay,
-            data: data?.editors,
-            styles: {
-                bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
-            },
-        },
     ];
 
     if (!data) {

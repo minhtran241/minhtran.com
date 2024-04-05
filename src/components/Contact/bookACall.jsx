@@ -1,3 +1,4 @@
+import { userBasicInfo } from '@/common/constants/userBasic';
 import { Calendar, Clock, Video } from 'lucide-react';
 import Link from 'next/link';
 
@@ -6,7 +7,7 @@ const BookACall = () => {
         <div className="space-y-5 pb-2">
             <h3 className="text-xl font-medium">Book a Call</h3>
             <Link
-                href="https://cal.com/minhtran/30min"
+                href={userBasicInfo.bookACallLink}
                 target="_blank"
                 data-aos-duration="1000"
                 className="flex cursor-pointer flex-col space-y-5 rounded-2xl border bg-white bg-gradient-to-tr px-6 py-5 transition-all duration-300 hover:scale-[101%] hover:shadow-sm dark:border-blue-500  border-[#e2e8f0] from-[#0033A0] to-[#00A3FF] dark:from-blue-600 dark:to-blue-900"
