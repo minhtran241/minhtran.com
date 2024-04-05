@@ -14,6 +14,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 const formInitialState = {
     name: '',
     email: '',
+    subject: '',
     message: '',
 };
 
@@ -49,7 +50,15 @@ const ContactForm = () => {
         if (!hasErrors) {
             setIsLoading(true);
             try {
-                const response = await axios.post('/api/contact', { formData });
+                const response = await axios.post(
+                    '/api/contact',
+                    { formData },
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
                 if (response.status === 200) {
                     toast.success('Message sent successfully');
                     setFormData(formInitialState);

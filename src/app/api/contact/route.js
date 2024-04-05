@@ -7,7 +7,7 @@ const FORM_API_KEY = process.env.CONTACT_FORM_API_KEY;
 
 export const POST = async (request) => {
     try {
-        const { formData } = request.body;
+        const { formData } = await request.json();
 
         const updatedFormData = new FormData();
         updatedFormData.append('access_key', FORM_API_KEY);
