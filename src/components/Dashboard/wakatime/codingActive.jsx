@@ -8,11 +8,11 @@ import Link from 'next/link';
 import CodingActiveList from './codingActiveList';
 import Overview from './overview';
 import { fetcher } from '@/services/fetcher';
-import { SiWakatime as WakatimeIcon } from 'react-icons/si';
 import SectionHeading from '../sectionHeading/sectionHeading';
 import SectionSubHeading from '../sectionHeading/sectionSubHeading';
 import { WAKATIME_USERNAME } from '@/common/constants/wakatimeAPI';
 import { TIMEZONE } from '@/common/constants/timezone';
+import { BarChartHorizontalBig } from 'lucide-react';
 
 const CodingActive = ({ lastUpdate }) => {
     const BASE_URL =
@@ -52,7 +52,7 @@ const CodingActive = ({ lastUpdate }) => {
         <section className="flex flex-col gap-y-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
             <SectionHeading
                 title="Weekly Stats"
-                icon={<WakatimeIcon className="mr-1 h-5 w-5" />}
+                icon={<BarChartHorizontalBig className="mr-1 h-5 w-5" />}
             />
             <SectionSubHeading>
                 <div className="md:flex-row md:items-center">
