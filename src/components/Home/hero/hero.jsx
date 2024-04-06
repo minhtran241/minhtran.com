@@ -37,7 +37,7 @@ const HeroComponent = () => {
                                 <h2 className="font-semibold text-2xl">
                                     {userBasicInfo.fullName}
                                 </h2>
-                                <p className="lg:text-medium md:text-medium sm:text-sm text-sm">
+                                <p className="lg:text-medium md:text-medium sm:text-sm text-medium">
                                     {userBasicInfo.currentJob}
                                 </p>
                             </div>
@@ -47,15 +47,15 @@ const HeroComponent = () => {
                                 ).map((item, index) => {
                                     return (
                                         <div
-                                            className="flex items-center gap-2 leading-none"
+                                            className="flex items-center gap-2 leading-none hover:text-[#0033A0] dark:hover:text-blue-600 lg:text-medium md:text-medium sm:text-sm text-sm transition duration-300 ease-in-out"
                                             key={index}
                                         >
-                                            <span className="text-base h-4 w-4">
+                                            <span className="h-4 w-4">
                                                 {item.icon}
                                             </span>
                                             <Link
                                                 target="_blank"
-                                                className="hover:text-[#0033A0] dark:hover:text-blue-600 lg:text-medium md:text-medium sm:text-sm text-sm transition duration-300 ease-in-out"
+                                                className=""
                                                 href={item.href}
                                             >
                                                 {item.title}

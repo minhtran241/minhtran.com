@@ -38,7 +38,7 @@ const ProjectCard = ({ project }) => {
                     ? `${project.description?.substring(0, 150)}...`
                     : project.description}
             </p>
-			{project.repo_link && (
+            {project.repo_link && (
                 <div className="flex items-center gap-2 mt-4 font-medium text-md leading-none">
                     <Link
                         href={project.repo_link}
@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => {
                 </div>
             )}
             {project.link && (
-                <div className="flex items-center gap-2 mt-2 font-medium text-md leading-none">
+                <div className="flex items-center gap-2 mt-2 font-medium text-medium leading-none">
                     <Link
                         href={project.link}
                         target="_blank"
