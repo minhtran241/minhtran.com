@@ -77,7 +77,7 @@ const NowPlayingBar = () => {
                     </Popover>
                 ) : (
                     <div className="flex items-center gap-1">
-                        <Disc3 size={16} className="mr-1" />
+                        <Disc3 absoluteStrokeWidth size={16} className="mr-1" />
                         <div>Not Playing</div>
                     </div>
                 )}

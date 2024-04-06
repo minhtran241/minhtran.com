@@ -1,7 +1,7 @@
 import { fileSystemInfo } from './fileSystem';
 import { userBasicInfo } from './userBasic';
 import {
-    Briefcase,
+    FileDown,
     Facebook,
     Github,
     Instagram,
@@ -71,7 +71,7 @@ export const SOCIAL_MEDIA = [
         title: 'Download Resume',
         href: fileSystemInfo.resumeLink,
         type: 'w', // work only
-        icon: <Briefcase className="w-full h-full" />,
+        icon: <FileDown className="w-full h-full" />,
     },
 ];
 

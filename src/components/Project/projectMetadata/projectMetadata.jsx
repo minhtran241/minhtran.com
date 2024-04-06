@@ -23,16 +23,16 @@ const ProjectMetadata = ({ project }) => {
             </div>
             <div className="flex flex-col gap-2 mb-5">
                 {project.repo_link && (
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600">
-                        <Github className="h-5 w-5" />
-                        <Link href={project.repo_link}>Repository</Link>
+                    <div className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600">
+                        <Github className="h-4 w-4" />
+                        <Link href={project.repo_link}>Code repository</Link>
                     </div>
                 )}
                 {project.link && (
-                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600">
-                        <Radio className="h-5 w-5" />
+                    <div className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600">
+                        <Radio className="h-4 w-4" />
                         <Link href={project.link}>
-                            Live Product or Documentation
+                            Live product or documentation
                         </Link>
                     </div>
                 )}

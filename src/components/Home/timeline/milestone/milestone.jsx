@@ -30,7 +30,7 @@ const Milestone = ({ milestone, right }) => {
                             <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4">
                                 <div className="hidden h-10 origin-top-right transform -rotate-45 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 lg:block drop-shadow-lg"></div>
                             </div>
-                            <div className="relative z-20">
+                            <div className="relative">
                                 <div className="flex flex-wrap items-center">
                                     <div className="p-4 md:w-1/6">
                                         <p className="text-xl font-bold  text-bold  text-[#0033A0] dark:text-white">
@@ -80,7 +80,7 @@ const Milestone = ({ milestone, right }) => {
                             <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-3 -right-4">
                                 <div className="hidden h-10 origin-bottom-left transform -rotate-45 bg-white dark:bg-black shadow lg:block border border-gray-200 dark:border-gray-700"></div>
                             </div>
-                            <div className="relative z-20 ">
+                            <div className="relative">
                                 <div className="flex flex-wrap items-center">
                                     <div className="p-4 md:w-1/6">
                                         <p className="text-xl font-bold  text-bold text-[#0033A0] dark:text-white ">

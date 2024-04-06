@@ -29,7 +29,7 @@ const ProjectCard = ({ project }) => {
 
             <Link
                 href={`/project/${project.slug}`}
-                className="text-lg font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                className="text-xl font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600 transition"
             >
                 {project.title}
             </Link>
@@ -38,30 +38,29 @@ const ProjectCard = ({ project }) => {
                     ? `${project.description?.substring(0, 150)}...`
                     : project.description}
             </p>
-            {project.link && (
-                <div className="flex flex-row gap-2 mt-4">
-                    <Link
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
-                    >
-                        <Radio className="h-4 w-4" />
-                        View Live
-                    </Link>
-                </div>
-            )}
-
-            {project.repo_link && (
-                <div className="flex flex-row gap-2 mt-4">
+			{project.repo_link && (
+                <div className="flex items-center gap-2 mt-4 font-medium text-md leading-none">
                     <Link
                         href={project.repo_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex gap-1 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold leading-none transition"
+                        className="flex gap-1 text-[#0033A0] dark:text-blue-600 hover:underline"
                     >
                         <Github className="h-4 w-4" />
-                        View Source
+                        Code repository
+                    </Link>
+                </div>
+            )}
+            {project.link && (
+                <div className="flex items-center gap-2 mt-2 font-medium text-md leading-none">
+                    <Link
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex gap-1 text-[#0033A0] dark:text-blue-600 hover:underline"
+                    >
+                        <Radio className="h-4 w-4" />
+                        Live product or documentation
                     </Link>
                 </div>
             )}
