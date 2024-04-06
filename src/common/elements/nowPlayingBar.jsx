@@ -3,8 +3,8 @@
 import { Popover } from '@headlessui/react';
 import Image from 'next/image';
 import { useState } from 'react';
-import { BsSpotify as SpotifyIcon } from 'react-icons/bs';
 import useSWR from 'swr';
+import { Music } from 'lucide-react';
 
 import AnimatedBars from './animatedBars';
 import DevicePopover from './devicePopover';
@@ -77,7 +77,7 @@ const NowPlayingBar = () => {
                     </Popover>
                 ) : (
                     <div className="flex items-center gap-1">
-                        <SpotifyIcon size={16} className="mr-1" />
+                        <Music size={16} className="mr-1" />
                         <div>Not Playing</div>
                     </div>
                 )}
@@ -90,7 +90,7 @@ const NowPlayingBar = () => {
                             onMouseLeave={() => setShowDeviceList(false)}
                         >
                             <div className="flex items-center gap-1">
-                                <SpotifyIcon size={16} className="mr-0.5" />
+                                <Music size={16} className="mr-0.5" />
                                 <div>
                                     Listening on{' '}
                                     <span className="font-medium">
