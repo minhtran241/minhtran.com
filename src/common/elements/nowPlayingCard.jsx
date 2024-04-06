@@ -39,7 +39,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
         >
             {!expand ? (
                 <div
-                    className="m-2 cursor-pointer rounded-full bg-neutral-950 transition-all duration-100"
+                    className="m-2 cursor-pointer rounded-full bg-white dark:bg-neutral-950 transition-all duration-100"
                     onClick={handleMusicToggle}
                 >
                     <Disc3
