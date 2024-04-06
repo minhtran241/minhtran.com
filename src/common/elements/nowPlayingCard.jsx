@@ -7,7 +7,7 @@ import { X } from 'lucide-react';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
 import AnimatedBars from './animatedBars';
-import { Music } from 'lucide-react';
+import { Disc3 } from 'lucide-react';
 
 const NowPlayingCard = ({ isExpand = false }) => {
     const { data } = useSWR('/api/spotify/now-playing', fetcher);
@@ -42,7 +42,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
                     className="m-2 cursor-pointer rounded-full bg-neutral-950 transition-all duration-100"
                     onClick={handleMusicToggle}
                 >
-                    <Music size={44} className="animate-pulse text-green-500" />
+                    <Disc3 size={44} className="animate-pulse text-green-500" />
                 </div>
             ) : (
                 <div className="mt-5 flex items-center justify-between rounded-md bg-green-400 px-3 py-2 font-sora text-neutral-800 dark:bg-green-500 dark:text-neutral-900 ">
