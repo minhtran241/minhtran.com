@@ -53,7 +53,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                 <div className="flex flex-col gap-1 items-start">
                     <div className="flex flex-row items-center justify-center gap-2">
                         <MapPin size={18} />
-                        <span className="">{ghInfo.user.location}</span>
+                        <span className="text-sm">{ghInfo.user.location}</span>
                     </div>
                     {detailsData(ghInfo.user).map((item, index) => (
                         <div
