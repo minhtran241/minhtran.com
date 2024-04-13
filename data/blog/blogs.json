@@ -140,5 +140,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, transformer, architecture"
+  },
+  {
+	"id": 12,
+	"title": "Linear Algebra explained in the context of deep learning",
+	"description": "In this article, I have used top down manner to explain linear algebra for deep learning. First providing the applications and uses and then drilling down to provide the concepts.",
+	"slug": "linear-algebra-explained-in-the-context-of-deep-learning",
+	"thumbnail": "/blog/thumbnails/linear-algebra-explained-in-the-context-of-deep-learning.png",
+	"view_count": 0,
+	"created_at": "2024-04-13T23:56:48",
+	"updated_at": "2024-04-1323:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "linear-algebra, deep-learning, mathematics"
   }
 ]
