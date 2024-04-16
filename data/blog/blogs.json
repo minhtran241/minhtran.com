@@ -153,5 +153,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "linear-algebra, deep-learning, mathematics"
+  },
+  {
+	"id": 13,
+	"title": "Understanding Backpropagation Algorithm",
+	"description": "In this article, I would like to go over the mathematical process of training and optimizing a simple 4-layer neural network. I believe this would help the reader understand how backpropagation works as well as realize its importance.",
+	"slug": "understanding-backpropagation-algorithm",
+	"thumbnail": "/blog/thumbnails/understanding-backpropagation-algorithm.jpg",
+	"view_count": 0,
+	"created_at": "2024-04-14T23:56:48",
+	"updated_at": "2024-04-14T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "backpropagation, neural-networks, deep-learning"
   }
 ]
