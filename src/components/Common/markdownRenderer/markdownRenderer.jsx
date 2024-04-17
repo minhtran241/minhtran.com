@@ -22,6 +22,7 @@ import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javasc
 import swift from 'react-syntax-highlighter/dist/cjs/languages/prism/swift';
 import java from 'react-syntax-highlighter/dist/cjs/languages/prism/java';
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml';
+import sql from 'react-syntax-highlighter/dist/cjs/languages/prism/sql';
 import { toast } from 'sonner';
 import { useTheme } from 'next-themes';
 import Loading from '@/app/loading';
@@ -41,6 +42,7 @@ SyntaxHighlighter.registerLanguage('javascript', javascript);
 SyntaxHighlighter.registerLanguage('swift', swift);
 SyntaxHighlighter.registerLanguage('java', java);
 SyntaxHighlighter.registerLanguage('yml', yaml);
+SyntaxHighlighter.registerLanguage('sql', sql);
 
 export default function MarkdownRender({ mdString }) {
     const { theme } = useTheme();

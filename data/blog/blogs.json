@@ -166,5 +166,18 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "backpropagation, neural-networks, deep-learning"
+  },
+  {
+	"id": 14,
+	"title": "OrioleDB: Solving PostgreSQL wicked problems",
+	"description": "Oriole is a table storage extension for Postgres. It is designed to be a drop-in replacement for Postgres' existing storage engine. In this article, we discuss how OrioleDB solves some of the wicked problems in PostgreSQL.",
+	"slug": "orioledb-solving-postgresql-wicked-problems",
+	"thumbnail": "/blog/thumbnails/orioledb-solving-postgresql-wicked-problems.png",
+	"view_count": 0,
+	"created_at": "2024-04-15T23:56:48",
+	"updated_at": "2024-04-15T23:56:48",
+	"user_id": 1,
+	"is_published": true,
+	"tags": "system-design, key-value-store, distributed-systems"
   }
 ]
