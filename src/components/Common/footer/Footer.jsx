@@ -5,11 +5,11 @@ import Link from 'next/link';
 const Footer = () => {
     return (
         <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white mt-12">
-            <nav className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-4">
+            <nav className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4">
                 {MENU_TABS.map((item, index) => (
                     <Link
                         href={item.href}
-                        className="link link-hover"
+                        className="link link-hover font-medium"
                         key={index}
                     >
                         {item.title}

@@ -6,7 +6,9 @@ const Links = () => {
         <>
             {MENU_TABS.slice(1).map((item, index) => (
                 <li key={index}>
-                    <Link href={item.href}>{item.title}</Link>
+                    <Link href={item.href} className="font-medium">
+                        {item.title}
+                    </Link>
                 </li>
             ))}
         </>

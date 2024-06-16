@@ -15,21 +15,23 @@ const LinkPreview = async ({ url }) => {
         return <Loading />;
     }
 
-    const buffer = await getImageBuffer(data.image);
-    const { base64 } = await getPlaiceholder(buffer);
+    const buffer = data?.image ? await getImageBuffer(data.image) : null;
+    const { base64 } = buffer ? await getPlaiceholder(buffer) : {};
 
     return (
         <Link href={url} className="mockup-window border">
             <div className="flex justify-center px-4 py-8 border-t">
                 <div className="flex flex-col gap-4 items-center">
                     <Image
-                        src={data.image}
+                        src={data?.image ? data.image : '/readme/home-dark.png'}
                         alt={data.title}
                         width={400}
                         height={200}
                         className="rounded-lg"
                         placeholder="blur"
-                        blurDataURL={base64}
+                        blurDataURL={
+                            data?.image ? base64 : '/readme/home-dark.png'
+                        }
                     />
                     <div className="flex flex-col gap-2">
                         <h2 className="text-lg font-semibold">{data.title}</h2>
