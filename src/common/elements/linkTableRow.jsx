@@ -29,11 +29,15 @@ const LinkTableRow = async ({ url, index }) => {
                 {url?.length > 40 ? (
                     <Link
                         href={url}
+                        target="_blank"
+                        rel="noreferrer"
                         className="hover:text-[#0033A0] dark:hover:text-blue-600 hover:underline"
                     >{`${url?.slice(0, 40)}...`}</Link>
                 ) : (
                     <Link
                         href={url}
+                        target="_blank"
+                        rel="noreferrer"
                         className="hover:text-[#0033A0] dark:hover:text-blue-600 hover:underline"
                     >
                         {url}
