@@ -1,4 +1,4 @@
-import { GalleryHorizontalEnd } from 'lucide-react';
+import { BookCheck } from 'lucide-react';
 import LinkTableRow from '@/common/elements/linkTableRow';
 import READING_LIST from '@/common/constants/readingList';
 
@@ -12,7 +12,7 @@ const ReadsPage = async () => {
             <div className="container mt-12">
                 <div className="flex flex-col gap-2 mb-8">
                     <div className="flex items-center gap-1.5 text-3xl font-semibold">
-                        <GalleryHorizontalEnd className="mr-1 h-6 w-6" />
+                        <BookCheck className="mr-1 h-6 w-6" />
                         <h1 className="capitalize">{PAGE_TITLE}</h1>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400">
