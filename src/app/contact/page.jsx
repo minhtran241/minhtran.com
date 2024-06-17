@@ -1,7 +1,7 @@
 import Contact from '@/components/Contact/contact';
 import { Handshake } from 'lucide-react';
 
-const PAGE_TITLE = 'Contact';
+const PAGE_TITLE = 'Contact Information';
 const PAGE_DESCRIPTION =
     "Feel free to get in touch and let's have a discussion about how we can work together.";
 

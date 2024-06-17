@@ -2,9 +2,9 @@ import { GalleryHorizontalEnd } from 'lucide-react';
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
 
-const PAGE_TITLE = "Minh's Uses";
+const PAGE_TITLE = 'Used Devices and Tools';
 const PAGE_DESCRIPTION =
-    'This is a list of my favorite tools and tech that I use daily.';
+    'List of devices and tools that I use for development and daily tasks.';
 
 const UsesPage = () => {
     return (

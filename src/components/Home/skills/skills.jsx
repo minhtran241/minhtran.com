@@ -8,7 +8,7 @@ import {
     Braces,
     Server,
     Database,
-    LayoutTemplate,
+    BrainCircuit,
     BarChart,
     TextSearch,
 } from 'lucide-react';
@@ -16,10 +16,12 @@ import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 const icons = {
     'Programming Languages': <Braces className="text-white h-4 w-4" />,
-    Backend: <Server className="text-white h-4 w-4" />,
+    'Web Development (Focus on Backend)': (
+        <Server className="text-white h-4 w-4" />
+    ),
     'Big Data': <TextSearch className="text-white h-4 w-4" />,
     Databases: <Database className="text-white h-4 w-4" />,
-    Frontend: <LayoutTemplate className="text-white h-4 w-4" />,
+    'ML/DL': <BrainCircuit className="text-white h-4 w-4" />,
     'Monitoring and others': <BarChart className="text-white h-4 w-4" />,
 };
 

@@ -2,8 +2,9 @@ import Contributions from '@/components/Dashboard/contributions/contributions';
 import CodingActive from '@/components/Dashboard/wakatime/codingActive';
 import { Cpu } from 'lucide-react';
 
-const PAGE_TITLE = "Minh's Dashboard";
-const PAGE_DESCRIPTION = "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.";
+const PAGE_TITLE = 'Development Dashboard';
+const PAGE_DESCRIPTION =
+    'Dashboard for development activities and contributions.';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -28,7 +29,7 @@ const DashboardPage = () => {
                 </div>
                 <div className="flex flex-col gap-8">
                     <CodingActive />
-                    <Contributions />	
+                    <Contributions />
                 </div>
             </div>
         </>

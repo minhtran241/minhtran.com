@@ -1,7 +1,7 @@
 import { getUsername } from '../helpers';
 
 const FULL_NAME = 'Minh Tran';
-const CURRENT_JOB = 'Software Engineer / Data Engineer';
+const CURRENT_JOB = 'Software / Data / AI Engineer';
 const CURRENT_ORG = 'Grand Valley State University';
 const CURRENT_ORG_LINK = 'https://www.gvsu.edu/';
 const CURRENT_ROLE = 'B.S in Computer and Information Sciences';

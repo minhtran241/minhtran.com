@@ -2,9 +2,10 @@ import { BookCheck } from 'lucide-react';
 import LinkTableRow from '@/common/elements/linkTableRow';
 import READING_LIST from '@/common/constants/readingList';
 
-const PAGE_TITLE = "Minh's Reading List";
+const PAGE_TITLE = 'Reading List';
 const PAGE_DESCRIPTION =
-    'This is a list of my favorite articles that I read daily.';
+    'List of articles, blogs, and books that I have read and found useful.';
+const SHOWED_READING_LIST = READING_LIST.reverse();
 
 const ReadsPage = async () => {
     return (
@@ -21,7 +22,7 @@ const ReadsPage = async () => {
                 </div>
                 <div className="flex flex-col gap-8">
                     <div className="overflow-x-auto">
-                        <table className="table">
+                        <table className="table table-md">
                             {/* head */}
                             <thead>
                                 <tr>
@@ -40,7 +41,7 @@ const ReadsPage = async () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {READING_LIST.reverse().map((item, index) => (
+                                {SHOWED_READING_LIST.map((item, index) => (
                                     <LinkTableRow
                                         key={index}
                                         url={item}

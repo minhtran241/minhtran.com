@@ -22,8 +22,8 @@ const Navbar = async () => {
                         <Links />
                     </ul>
                 </div>
-                <Link href="/" className="text-xl btn btn-ghost">
-                    minhtran.com
+                <Link href="/" className="text-xl btn btn-ghost uppercase">
+                    Minh Tran
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">

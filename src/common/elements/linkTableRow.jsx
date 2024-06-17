@@ -14,19 +14,21 @@ const LinkTableRow = async ({ url, index }) => {
 
     return (
         <tr className="hover:bg-gray-100 dark:hover:bg-gray-800">
-            <td>{index}</td>
-            <td>
-                {data?.title?.length > 40
+            <td className="text-[#0033A0] dark:text-blue-600">{index}</td>
+            <td className="text-ellipsis overflow-hidden">
+                {/* {data?.title?.length > 40
                     ? `${data?.title?.slice(0, 40)}...`
-                    : data.title}
+                    : data.title} */}
+                {data.title}
             </td>
-            <td>
-                {data?.description?.length > 80
+            <td className="text-ellipsis overflow-hidden">
+                {/* {data?.description?.length > 80
                     ? `${data?.description?.slice(0, 80)}...`
-                    : data.description}
+                    : data.description} */}
+                {data.description}
             </td>
-            <td>
-                {url?.length > 40 ? (
+            <td className="text-ellipsis overflow-hidden">
+                {/* {url?.length > 40 ? (
                     <Link
                         href={url}
                         target="_blank"
@@ -42,7 +44,15 @@ const LinkTableRow = async ({ url, index }) => {
                     >
                         {url}
                     </Link>
-                )}
+                )} */}
+                <Link
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-[#0033A0] dark:hover:text-blue-600 hover:underline"
+                >
+                    {url}
+                </Link>
             </td>
         </tr>
     );
