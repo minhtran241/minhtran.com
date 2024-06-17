@@ -81,10 +81,6 @@ export const MENU_TABS = [
         href: '/',
     },
     {
-        title: 'Dashboard',
-        href: '/dashboard',
-    },
-    {
         title: 'Projects',
         href: '/project',
     },

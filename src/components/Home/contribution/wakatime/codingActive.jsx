@@ -4,15 +4,10 @@ import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
-import Link from 'next/link';
 import CodingActiveList from './codingActiveList';
 import Overview from './overview';
 import { fetcher } from '@/services/fetcher';
-import SectionHeading from '../sectionHeading/sectionHeading';
-import SectionSubHeading from '../sectionHeading/sectionSubHeading';
-import { WAKATIME_USERNAME } from '@/common/constants/wakatimeAPI';
 import { TIMEZONE } from '@/common/constants/timezone';
-import { BarChartHorizontalBig } from 'lucide-react';
 
 const CodingActive = ({ lastUpdate }) => {
     const BASE_URL =
@@ -41,36 +36,8 @@ const CodingActive = ({ lastUpdate }) => {
         formatLastUpdate();
     }, [lastUpdate, data]);
 
-    const renderLastUpdate = () => {
-        if (formattedLastUpdate) {
-            return <span>{formattedLastUpdate}</span>;
-        }
-        return null;
-    };
-
     return (
-        <section className="flex flex-col gap-y-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-            <SectionHeading
-                title="Weekly Stats"
-                icon={<BarChartHorizontalBig className="mr-1 h-5 w-5" />}
-            />
-            <SectionSubHeading>
-                <div className="md:flex-row md:items-center">
-                    <span>My </span>
-                    <Link
-                        href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
-                        target="_blank"
-                        className="hover:text-[#0033A0] hover:dark:text-blue-600"
-                    >
-                        WakaTime
-                    </Link>
-                    <span> last 7 days stats.</span>
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-500">
-                    Last update: {renderLastUpdate()}
-                </div>
-            </SectionSubHeading>
-
+        <section className="flex flex-col gap-y-2 rounded-lg border border-gray-200 dark:border-gray-700">
             <Overview data={data} />
             <CodingActiveList data={data} />
         </section>

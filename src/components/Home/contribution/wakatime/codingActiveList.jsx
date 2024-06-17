@@ -58,16 +58,15 @@ const CodingActiveList = ({ data }) => {
                 <div
                     key={item?.title}
                     className={clsx(
-                        item?.styles?.bg,
-                        'relative flex flex-1 flex-col gap-2 rounded-lg p-[2px]'
+                        // item?.styles?.bg,
+                        'relative flex flex-1 flex-col gap-2 rounded-lg'
                     )}
                 >
-                    <div className="h-full w-full rounded-lg bg-white p-2 dark:bg-black">
-                        <p className="absolute -top-3 left-3 bg-white px-2 dark:bg-black">
+                    <div className="h-full w-full rounded-lg bg-white dark:bg-black p-4">
+                        <p className="text-lg font-bold text-gray-800 dark:text-gray-100">
                             {item?.title}
                         </p>
-
-                        <ul className="flex flex-col gap-1 px-4 py-3">
+                        <ul className="flex flex-col gap-1 py-3">
                             {item?.data?.map((subItem) => (
                                 <li key={subItem?.name}>
                                     <Progress

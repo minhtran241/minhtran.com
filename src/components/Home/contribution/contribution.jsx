@@ -8,8 +8,9 @@ import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
 import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
 import { userBasicInfo } from '@/common/constants/userBasic';
+import CodingActive from './wakatime/codingActive';
 
-const GitHubInfo = () => {
+const Contribution = () => {
     const username = userBasicInfo.githubUsername;
     const reposNum = GITHUB_REPOS_NUM;
     const BASE_URL =
@@ -26,8 +27,8 @@ const GitHubInfo = () => {
         return <Loading />;
     }
 
-    const sectionTitle = 'GitHub Stats';
-    const sectionDescription = `GitHub is where I spend most of my time. You can find me on GitHub at @${username}. Here are some stats about my GitHub account.`;
+    const sectionTitle = 'Contribution Stats';
+    const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${data.user.contributionsCollection.contributionCalendar.totalContributions} commits across ${data.user.repositories.totalCount} public repositories.`;
 
     return (
         <div className="items-center justify-center py-12 bg-gray-200 dark:bg-gray-900">
@@ -47,9 +48,12 @@ const GitHubInfo = () => {
                         }
                     />
                 </div>
+                <div className="mt-8">
+                    <CodingActive />
+                </div>
             </div>
         </div>
     );
 };
 
-export default GitHubInfo;
+export default Contribution;
