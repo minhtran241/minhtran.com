@@ -1,6 +1,11 @@
 import { getUsername } from '../helpers';
 
 const FULL_NAME = 'Minh Tran';
+const ABOUT = [
+    'Built scalable and high-performance software solutions serving over 10,000 users.',
+    'Contributed to published research papers in the field of Edge Computing and IoT.',
+    'Experience in developing and deploying Machine Learning models for real-world applications.',
+];
 const CURRENT_JOB = 'Software / Data / AI Engineer';
 const CURRENT_ORG = 'Grand Valley State University';
 const CURRENT_ORG_LINK = 'https://www.gvsu.edu/';
@@ -16,6 +21,7 @@ const EMAIL = 'trqminh24@gmail.com';
 
 export const userBasicInfo = {
     fullName: FULL_NAME,
+    about: ABOUT,
     currentJob: CURRENT_JOB,
     currentOrg: CURRENT_ORG,
     currentOrgLink: CURRENT_ORG_LINK,

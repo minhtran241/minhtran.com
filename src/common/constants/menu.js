@@ -1,13 +1,13 @@
 import { fileSystemInfo } from './fileSystem';
 import { userBasicInfo } from './userBasic';
 import {
-    FileDown,
     Facebook,
     Github,
     Instagram,
     Linkedin,
     Mail,
     Twitter,
+    Download,
 } from 'lucide-react';
 
 export const SOCIAL_MEDIA = [
@@ -71,7 +71,7 @@ export const SOCIAL_MEDIA = [
         title: 'Download Resume',
         href: fileSystemInfo.resumeLink,
         type: 'w', // work only
-        icon: <FileDown className="w-full h-full" />,
+        icon: <Download className="w-full h-full" />,
     },
 ];
 

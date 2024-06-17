@@ -1,12 +1,13 @@
-import Link from 'next/link';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Image from 'next/image';
-import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import Link from 'next/link';
+import { SOCIAL_MEDIA } from '@/common/constants/menu';
 
 const HeroComponent = () => {
+    const resumeInfo = SOCIAL_MEDIA.filter((item) => item.name === 'Resume')[0];
     return (
         <div className="relative">
             <div
@@ -21,45 +22,43 @@ const HeroComponent = () => {
                 ></span>
             </div>
             <div className="relative container py-16">
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:gap-x-12 xl:grid-cols-2">
-                    <div className="p-8 flex flex-wrap gap-4 rounded-lg bg-white dark:bg-gray-900 shadow-lg">
+                <div className="flex flex-col items-start gap-4">
+                    <div className="p-8 flex gap-4 rounded-lg bg-white dark:bg-gray-900 shadow-lg flex-wrap">
                         <div className="flex-shrink-0">
                             <Image
                                 src={fileSystemInfo.headshot}
                                 alt="headshot"
                                 className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:h-full w-20 h-full"
-                                width={150}
-                                height={250}
+                                width={200}
+                                height={300}
                             />
                         </div>
-                        <div className="flex flex-col space-y-4">
+                        <div className="flex flex-col space-y-2">
                             {/* <div> */}
-                            <div className="font-bold text-xl text-[#0033A0] dark:text-blue-600">
-                                {userBasicInfo.currentJob}
+                            <div className="font-semibold text-xl text-[#0033A0] dark:text-blue-600">
+                                About Me
                             </div>
-                            {/* <p className="lg:text-medium md:text-medium sm:text-sm text-medium">
-                                    {userBasicInfo.currentJob}
-                                </p> */}
-                            {/* </div> */}
+                            {/* download CV */}
+                            <div className="flex items-center gap-1 text-base text-[#0033A0] dark:text-blue-600">
+                                <span className="h-[16px] w-[16px]">
+                                    {resumeInfo.icon}
+                                </span>
+                                <Link
+                                    href={resumeInfo.href}
+                                    className="hover:underline"
+                                >
+                                    {resumeInfo.title}
+                                </Link>
+                            </div>
                             <div className="space-y-1">
-                                {SOCIAL_MEDIA?.filter((item) =>
-                                    item.type.includes('w')
-                                ).map((item, index) => {
+                                {userBasicInfo.about?.map((item, index) => {
                                     return (
                                         <div
-                                            className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600 lg:text-base md:text-base sm:text-sm text-sm"
+                                            className="flex items-center gap-2 lg:text-base md:text-base sm:text-sm text-sm"
                                             key={index}
                                         >
-                                            <span className="h-[16px] w-[16px]">
-                                                {item.icon}
-                                            </span>
-                                            <Link
-                                                target="_blank"
-                                                className=""
-                                                href={item.href}
-                                            >
-                                                {item.title}
-                                            </Link>
+                                            {/* <Dot className="h-[16px] w-[16px]" /> */}
+                                            {item}
                                         </div>
                                     );
                                 })}
