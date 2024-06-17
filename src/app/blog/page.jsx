@@ -60,7 +60,7 @@ const BlogPage = async () => {
                         className="w-full object-cover dark:hover:shadow-black/30 lg:w-1/2"
                     >
                         <Image
-                            className="lg:min-h-[270px] w-full rounded-md border-2 border-[#0033A0] dark:border-white"
+                            className="lg:min-h-[270px] w-full rounded-md border-2 border-[#0033A0] dark:border-blue-600"
                             src={firstPost.thumbnail}
                             alt={firstPost.title}
                             width={433}
