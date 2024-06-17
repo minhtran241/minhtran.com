@@ -14,21 +14,23 @@ const Progress = ({ data, className }) => {
 
     return (
         <div className="flex items-center justify-between gap-3">
-            <div className="w-28">{name}</div>
-            <div className="relative flex h-3 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-gray-800">
+            <div className="w-28 text-sm text-gray-600 dark:text-gray-400">
+                {name}
+            </div>
+            <div className="relative flex h-2 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-gray-800">
                 <motion.span
                     initial="initial"
                     animate="animate"
                     variants={progressVariants}
                     className={cn(
                         className,
-                        'absolute left-0 top-0 h-3 rounded-full px-3'
+                        'absolute left-0 top-0 h-2 rounded-full px-3'
                     )}
                 >
                     &ensp;
                 </motion.span>
             </div>
-            <div className="w-8 text-right text-gray-600 dark:text-gray-100">
+            <div className="w-8 text-right text-sm text-gray-600 dark:text-gray-400">
                 {percent.toFixed(0)}%
             </div>
         </div>

@@ -36,7 +36,7 @@ const ReadsPage = async () => {
                                         Description
                                     </th>
                                     <th className="text-[#0033A0] dark:text-blue-600">
-                                        Link
+                                        Access Link
                                     </th>
                                 </tr>
                             </thead>

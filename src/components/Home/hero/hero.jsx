@@ -34,7 +34,7 @@ const HeroComponent = () => {
                         </div>
                         <div className="flex flex-col space-y-4">
                             {/* <div> */}
-                            <div className="font-medium text-xl">
+                            <div className="font-bold text-xl text-[#0033A0] dark:text-blue-600">
                                 {userBasicInfo.currentJob}
                             </div>
                             {/* <p className="lg:text-medium md:text-medium sm:text-sm text-medium">
@@ -50,7 +50,7 @@ const HeroComponent = () => {
                                             className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600 lg:text-base md:text-base sm:text-sm text-sm"
                                             key={index}
                                         >
-                                            <span className="h-[17px] w-[17px]">
+                                            <span className="h-[16px] w-[16px]">
                                                 {item.icon}
                                             </span>
                                             <Link

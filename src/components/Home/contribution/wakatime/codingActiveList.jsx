@@ -59,7 +59,7 @@ const CodingActiveList = ({ data }) => {
                     key={item?.title}
                     className={clsx(
                         // item?.styles?.bg,
-                        'relative flex flex-1 flex-col gap-2 rounded-lg'
+                        'relative flex flex-1 flex-col gap-2 border border-gray-200 dark:border-gray-700 rounded-lg'
                     )}
                 >
                     <div className="h-full w-full rounded-lg bg-white dark:bg-black p-4">

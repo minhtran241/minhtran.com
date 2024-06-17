@@ -37,7 +37,7 @@ const CodingActive = ({ lastUpdate }) => {
     }, [lastUpdate, data]);
 
     return (
-        <section className="flex flex-col gap-y-2 rounded-lg border border-gray-200 dark:border-gray-700">
+        <section className="flex flex-col gap-y-2">
             <Overview data={data} />
             <CodingActiveList data={data} />
         </section>
