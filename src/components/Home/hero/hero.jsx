@@ -34,7 +34,7 @@ const HeroComponent = () => {
                         </div>
                         <div className="flex flex-col space-y-4">
                             {/* <div> */}
-                            <div className="font-medium text-xl uppercase">
+                            <div className="font-medium text-xl">
                                 {userBasicInfo.currentJob}
                             </div>
                             {/* <p className="lg:text-medium md:text-medium sm:text-sm text-medium">
