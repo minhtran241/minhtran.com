@@ -18,17 +18,15 @@ const Contribution = () => {
             ? 'http://localhost:3000'
             : process.env.NEXT_PUBLIC_BASE_URL;
 
-    const { data } = useSWR(
+    const ghData = useSWR(
         `${BASE_URL}/api/github?username=${username}&reposNum=${reposNum}`,
         fetcher
-    );
+    )?.data;
 
-    if (!data) {
-        return <Loading />;
-    }
+    const wkData = useSWR(`${BASE_URL}/api/wakatime`, fetcher)?.data;
 
     const sectionTitle = 'Contribution Stats';
-    const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${data.user.contributionsCollection.contributionCalendar.totalContributions} commits across ${data.user.repositories.totalCount} public repositories.`;
+    const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${ghData?.user?.contributionsCollection?.contributionCalendar?.totalContributions} commits across ${ghData?.user?.repositories?.totalCount} public repositories.`;
 
     return (
         <div className="items-center justify-center py-12 bg-gray-200 dark:bg-gray-900">
@@ -37,19 +35,37 @@ const Contribution = () => {
                     title={sectionTitle}
                     description={sectionDescription}
                 />
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
-                    <GHUserCard ghInfo={data} username={username} />
-                    <PublicReposCard ghInfo={data} username={username} />
-                </div>
-                <div className="mt-8">
-                    <ContributionChart
-                        contributionCollection={
-                            data.user.contributionsCollection
-                        }
-                    />
-                </div>
-                <div className="mt-8">
-                    <CodingActive />
+                <div className="flex flex-col gap-8">
+                    {ghData ? (
+                        <div>
+                            <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
+                                <GHUserCard
+                                    ghInfo={ghData}
+                                    username={username}
+                                />
+                                <PublicReposCard
+                                    ghInfo={ghData}
+                                    username={username}
+                                />
+                            </div>
+                            <div className="mt-8">
+                                <ContributionChart
+                                    contributionCollection={
+                                        ghData?.user?.contributionsCollection
+                                    }
+                                />
+                            </div>
+                        </div>
+                    ) : (
+                        <Loading />
+                    )}
+                    {wkData ? (
+                        <div>
+                            <CodingActive data={wkData} />
+                        </div>
+                    ) : (
+                        <Loading />
+                    )}
                 </div>
             </div>
         </div>

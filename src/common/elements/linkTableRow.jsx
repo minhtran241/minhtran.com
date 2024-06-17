@@ -9,7 +9,11 @@ const LinkTableRow = async ({ url, index }) => {
     const data = await extractMetaTags(response);
 
     if (!data) {
-        return <Loading />;
+        return (
+            <tr className="hover:bg-gray-100 dark:hover:bg-gray-800">
+                <Loading />
+            </tr>
+        );
     }
 
     return (

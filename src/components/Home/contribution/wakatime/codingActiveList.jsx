@@ -67,7 +67,7 @@ const CodingActiveList = ({ data }) => {
                             {item?.title}
                         </p>
                         <ul className="flex flex-col gap-1 py-3">
-                            {item?.data?.map((subItem) => (
+                            {item?.data?.slice(0, 3)?.map((subItem) => (
                                 <li key={subItem?.name}>
                                     <Progress
                                         data={subItem}
