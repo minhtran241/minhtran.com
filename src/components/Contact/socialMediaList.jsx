@@ -2,11 +2,16 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 import { SOCIAL_MEDIA } from '@/common/constants/menu';
+import { Focus } from 'lucide-react';
 
 const SocialMediaList = () => {
     return (
         <div className="space-y-5 pb-2">
-            <h3 className="text-xl font-medium">Social Media Platforms</h3>
+            <div className="flex items-center gap-1.5 text-xl font-medium">
+                <Focus className="mr-1 h-5 w-5" />
+                <h1 className="capitalize">Social Media Platforms</h1>
+            </div>
+            {/* <h3 className="text-xl font-medium">Social Media Platforms</h3> */}
             <div className="flex flex-col justify-between gap-3 md:flex-row">
                 {SOCIAL_MEDIA?.filter((item) => item.type.includes('s')).map(
                     (item, index) => (

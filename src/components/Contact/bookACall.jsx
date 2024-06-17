@@ -1,11 +1,14 @@
 import { userBasicInfo } from '@/common/constants/userBasic';
-import { Calendar, Clock, Video } from 'lucide-react';
+import { Calendar, Clock, PhoneOutgoing, Video } from 'lucide-react';
 import Link from 'next/link';
 
 const BookACall = () => {
     return (
         <div className="space-y-5 pb-2">
-            <h3 className="text-xl font-medium">Book a Call</h3>
+            <div className="flex items-center gap-1.5 text-xl font-medium">
+                <PhoneOutgoing className="mr-1 h-5 w-5" />
+                <h1 className="capitalize">Book a Call</h1>
+            </div>
             <Link
                 href={userBasicInfo.bookACallLink}
                 target="_blank"

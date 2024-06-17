@@ -8,8 +8,8 @@ const DEVICES = USES.Devices;
 const Devices = () => {
     return (
         <section className="flex flex-col gap-8">
-            <div className="flex items-center gap-1.5 font-semibold lg:text-2xl md:text-xl text-xl">
-                <MonitorSmartphone className="mr-1 h-6 w-6" />
+            <div className="flex items-center gap-1.5 text-xl font-medium">
+                <MonitorSmartphone className="mr-1 h-5 w-5" />
                 <h1 className="capitalize">Accessories</h1>
             </div>
             <div className="flex flex-col gap-8 mb-8">
