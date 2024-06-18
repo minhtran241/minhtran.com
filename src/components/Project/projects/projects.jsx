@@ -35,9 +35,9 @@ const getProjects = async (limit) => {
     }
 };
 
-const SECTION_TITLE = 'Personal Projects';
+const SECTION_TITLE = 'Development Projects';
 const SECTION_DESCRIPTION =
-    'I have worked on these projects in my free time. I have used these projects to learn new technologies and implement new features.';
+    'Here are some of the projects I have personally worked on and contributed to. Most of them are open-source and available on my GitHub.';
 
 const ProjectsComponent = async ({ limit }) => {
     const projects = await getProjects(limit || PROJECT_FETCH_LIMIT);

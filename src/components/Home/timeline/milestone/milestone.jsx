@@ -5,6 +5,7 @@ import {
     HardDrive,
     Code2,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const Milestone = ({ milestone, right }) => {
     const year = new Date(milestone.date).getFullYear();
@@ -41,10 +42,19 @@ const Milestone = ({ milestone, right }) => {
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="font-bold text-[#0033A0] dark:text-blue-600 sm:text-lg md:text-xl lg:text-lg text-lg">
-                                            {milestone.title}
-                                        </p>
-                                        <p className=" mb-2 text-gray-600 dark:text-gray-400 text-base">
+                                        <div className="flex justify-between items-center w-full">
+                                            <p className="font-bold text-[#0033A0] dark:text-blue-600 sm:text-lg md:text-xl lg:text-lg text-lg">
+                                                {milestone.title}
+                                            </p>
+                                            <Link
+                                                href={milestone.link}
+                                                target="_blank"
+                                                className="text-[#0033A0] dark:text-blue-600 text-sm hover:underline"
+                                            >
+                                                [More Info]
+                                            </Link>
+                                        </div>
+                                        <p className="mb-2 text-gray-600 dark:text-gray-400 text-sm">
                                             {milestone.job_title}
                                         </p>
                                         <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 text-base">
@@ -91,10 +101,19 @@ const Milestone = ({ milestone, right }) => {
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
-                                        <p className="font-bold text-[#0033A0] dark:text-blue-600  sm:text-lg md:text-xl lg:text-lg text-lg">
-                                            {milestone.title}
-                                        </p>
-                                        <p className="mb-2 text-gray-600 dark:text-gray-400 text-base">
+                                        <div className="flex justify-between items-center w-full">
+                                            <p className="font-bold text-[#0033A0] dark:text-blue-600  sm:text-lg md:text-xl lg:text-lg text-lg">
+                                                {milestone.title}
+                                            </p>
+                                            <Link
+                                                href={milestone.link}
+                                                target="_blank"
+                                                className="text-[#0033A0] dark:text-blue-600 text-sm hover:underline"
+                                            >
+                                                [More Info]
+                                            </Link>
+                                        </div>
+                                        <p className="mb-2 text-gray-600 dark:text-gray-400 text-sm">
                                             {milestone.job_title}
                                         </p>
                                         <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 text-base">

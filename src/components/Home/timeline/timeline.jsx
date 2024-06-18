@@ -20,14 +20,14 @@ const getMilestones = async () => {
     );
     const milestones = JSON.parse(milestonesData);
     const sortedMilestones = milestones.sort((a, b) => {
-        return new Date(a.date) - new Date(b.date);
+        return new Date(b.date) - new Date(a.date);
     });
     return sortedMilestones;
 };
 
 const SECTION_TITLE = 'Employment History';
 const SECTION_DESCRIPTION =
-    'My working has been in the field of software development, performance optimization, and system design.';
+    'My working has been in the field of software development, performance optimization, system design, and ML/AI. Here are some of the milestones in my career.';
 
 const TimelineComponent = async () => {
     const milestones = await getMilestones();

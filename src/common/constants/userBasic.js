@@ -4,7 +4,7 @@ const FULL_NAME = 'Minh Tran';
 const ABOUT = [
     'Built scalable and high-performance software solutions serving over 10,000 users.',
     'Contributed to published research papers in the field of Edge Computing and IoT.',
-    'Experience in developing and deploying Machine Learning models for real-world applications.',
+    'Developed and deployed a software applied Large Language Models for review analysis.',
 ];
 const CURRENT_JOB = 'Software / Data / AI Engineer';
 const CURRENT_ORG = 'Grand Valley State University';
