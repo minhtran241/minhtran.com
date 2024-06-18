@@ -25,7 +25,6 @@ const Contribution = () => {
 
     const wkData = useSWR(`${BASE_URL}/api/wakatime`, fetcher)?.data;
 
-    console.log(wkData);
     const sectionTitle = 'Contribution Stats';
     const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${ghData?.user?.contributionsCollection?.contributionCalendar?.totalContributions} commits across ${ghData?.user?.repositories?.totalCount} public repositories.`;
 
