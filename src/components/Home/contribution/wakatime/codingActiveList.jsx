@@ -92,8 +92,11 @@ const CodingActiveList = ({ data }) => {
                                 [More Info]
                             </Link>
                         </div>
-                        <p className="text-sm text-[#0033A0] dark:text-blue-600">
-                            WakaTime - Last updated {distance}
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            WakaTime - Last updated{' '}
+                            <span className="text-[#0033A0] dark:text-blue-600">
+                                {distance}
+                            </span>
                         </p>
                         <ul className="flex flex-col gap-1 py-3">
                             {item?.data?.slice(0, 3)?.map((subItem) => (
