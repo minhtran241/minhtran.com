@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CalendarDays, Search, Github, Radio } from 'lucide-react';
+import { CalendarDays, Github, Radio, ScrollText } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
     return (
@@ -21,8 +21,8 @@ const ProjectCard = ({ project }) => {
                     </span>
                 </div>
                 {project?.research_purpose && (
-					<div className="flex flex-row justify-end leading-none gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
-                        <Search className="h-4 w-4" />
+                    <div className="flex flex-row justify-end leading-none gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                        <ScrollText className="h-4 w-4" />
                         <p className="text-xs italic">Research Purpose</p>
                     </div>
                 )}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Radio, Search } from 'lucide-react';
+import { Github, Radio, ScrollText } from 'lucide-react';
 import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '@/components/Project/projectCard/projectCard';
@@ -64,22 +64,26 @@ const ProjectPage = async () => {
                         />
                     </Link>
                     <div className="mt-6 lg:mt-0 lg:w-1/2 ">
-					<div className="flex flex-row justify-between">
-                        <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
-                            {new Date(
-                                firstProject?.created_at
-                            ).toLocaleDateString('en-GB', {
-                                weekday: 'long',
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                            })}
-                        </p>
-						{firstProject?.research_purpose && <div className="flex flex-row gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
-                                <Search className="h-4 w-4" />
-                                <p className="text-xs font-semibold">Research Purpose</p>
-                            </div>}
-							</div>
+                        <div className="flex flex-row justify-between">
+                            <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
+                                {new Date(
+                                    firstProject?.created_at
+                                ).toLocaleDateString('en-GB', {
+                                    weekday: 'long',
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                })}
+                            </p>
+                            {firstProject?.research_purpose && (
+                                <div className="flex flex-row gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                                    <ScrollText className="h-4 w-4" />
+                                    <p className="text-xs font-semibold">
+                                        Research Purpose
+                                    </p>
+                                </div>
+                            )}
+                        </div>
                         <Link
                             href={`/project/${firstProject.slug}`}
                             className="mt-4 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
