@@ -35,7 +35,7 @@ To showcase my music taste, I integrated the [Spotify API](https://developer.spo
 
 ## Deployment
 
-The website is hosted on [Vercel](https://vercel.com/), ensuring a seamless and secure user experience. Leveraging the power of [Next.js](https://nextjs.org/), I crafted a dynamic and responsive website that's optimized for performance and accessibility. By integrating [Vercel Analytics](https://vercel.com/analytics) and [Vercel Speed Insights](https://vercel.com/docs/analytics/speed-insights), I can monitor and enhance the website's performance in real-time. Leveraging the [Vercel CLI](https://vercel.com/download), updates and enhancements are effortlessly pushed live, ensuring a seamless user experience.
+The website is hosted on [Vercel](https://vercel.com/), ensuring a seamless and secure user experience. Leveraging the power of [Next.js](https://nextjs.org/), I crafted a dynamic and responsive website that's optimized for performance and accessibility. By integrating [Vercel Analytics](https://vercel.com/analytics) and [Vercel Speed Insights](https://vercel.com/docs/speed-insights), I can monitor and enhance the website's performance in real-time. Leveraging the [Vercel CLI](https://vercel.com/download), updates and enhancements are effortlessly pushed live, ensuring a seamless user experience.
 
 ## Speed Insights
 
