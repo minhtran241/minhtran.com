@@ -45,6 +45,7 @@ const HeroComponent = () => {
                                 </span>
                                 <Link
                                     href={resumeInfo.href}
+                                    target="_blank"
                                     className="hover:underline"
                                 >
                                     {resumeInfo.title}
