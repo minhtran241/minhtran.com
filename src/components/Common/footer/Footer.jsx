@@ -9,7 +9,7 @@ const Footer = () => {
                 {MENU_TABS.map((item, index) => (
                     <Link
                         href={item.href}
-                        className="link link-hover font-medium"
+                        className="link link-hover font-semibold"
                         key={index}
                     >
                         {item.title}
