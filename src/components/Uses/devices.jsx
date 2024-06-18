@@ -1,7 +1,7 @@
-import { USES } from '@/common/constants/devices';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MonitorSmartphone } from 'lucide-react';
+import { USES } from '../../../data/use/uses';
 
 const DEVICES = USES.Devices;
 

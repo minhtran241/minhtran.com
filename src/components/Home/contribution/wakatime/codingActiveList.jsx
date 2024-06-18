@@ -2,6 +2,11 @@ import Loading from '@/app/loading';
 import { sumTotalFromArray } from '@/common/helpers';
 import Progress from './progress';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { formatDistanceToNowStrict } from 'date-fns';
+import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import { WAKATIME_USERNAME } from '@/common/constants/wakatimeAPI';
+import { TIMEZONE } from '@/common/constants/timezone';
 
 const CodingActiveList = ({ data }) => {
     const getLanguagesTotalHours = sumTotalFromArray(
@@ -28,6 +33,18 @@ const CodingActiveList = ({ data }) => {
     const getEditorTotalTimeDisplay = `${
         Math.floor((getEditorTotalMinutes % 3600) / 60) + getEditorTotalHours
     } hrs ${getEditorTotalMinutes} mins`;
+
+    const lastUpdateDate = data?.last_update;
+    let distance = '';
+    if (lastUpdateDate) {
+        const zonedDate = utcToZonedTime(
+            zonedTimeToUtc(lastUpdateDate, TIMEZONE),
+            TIMEZONE
+        );
+        distance = formatDistanceToNowStrict(zonedDate, {
+            addSuffix: true,
+        });
+    }
 
     const actives = [
         {
@@ -63,8 +80,20 @@ const CodingActiveList = ({ data }) => {
                     )}
                 >
                     <div className="h-full w-full rounded-lg bg-white dark:bg-black p-4">
-                        <p className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                            {item?.title}
+                        <div className="flex items-center justify-between">
+                            <p className="text-lg font-bold text-gray-800 dark:text-gray-100">
+                                {item?.title}
+                            </p>
+                            <Link
+                                href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
+                                target="_blank"
+                                className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline items-baseline flex"
+                            >
+                                [More Info]
+                            </Link>
+                        </div>
+                        <p className="text-sm text-[#0033A0] dark:text-blue-600">
+                            WakaTime - Last updated {distance}
                         </p>
                         <ul className="flex flex-col gap-1 py-3">
                             {item?.data?.slice(0, 3)?.map((subItem) => (

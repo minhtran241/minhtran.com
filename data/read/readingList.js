@@ -15,6 +15,7 @@ const READING_LIST = [
     'https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73',
     'https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf',
     'https://quarkus.io/guides/quarkus-reactive-architecture',
+    'https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8',
 ];
 
 export default READING_LIST;

@@ -2,7 +2,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
 import AnimatedBars from './animatedBars';
-import { PAIR_DEVICES } from '../constants/devices';
+import { PAIR_DEVICES } from '../../../data/use/uses';
 import { Dot, Speaker } from 'lucide-react';
 
 const DevicePopover = ({ devices, isShow }) => {

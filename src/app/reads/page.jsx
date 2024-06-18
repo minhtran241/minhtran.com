@@ -1,6 +1,6 @@
 import { BookCheck } from 'lucide-react';
 import LinkTableRow from '@/common/elements/linkTableRow';
-import READING_LIST from '@/common/constants/readingList';
+import READING_LIST from '../../../data/read/readingList';
 
 const PAGE_TITLE = 'Reading List';
 const PAGE_DESCRIPTION =
