@@ -1,6 +1,5 @@
 import { SOCIAL_MEDIA, MENU_TABS } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -48,12 +47,10 @@ const Footer = () => {
                 <div className="flex items-center justify-center gap-2">
                     <p className="">Hosted on</p>
                     <Link href="https://vercel.com" target="_blank">
-                        <Image
-                            src="https://www.vectorlogo.zone/logos/vercel/vercel-ar21.svg"
-                            alt="Vercel"
-                            width={0}
-                            height={0}
-                            className="h-8 w-auto"
+                        <img
+                            src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"
+                            alt="Vercel Logo"
+                            className="!rounded h-6 w-auto"
                         />
                     </Link>
                 </div>
