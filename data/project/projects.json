@@ -5,12 +5,12 @@
 		"slug": "flexiconnect-architecture",
 		"description": "FlexiConnect Architecture is a distributed system designed with versatile data transport options, providing flexibility and efficiency in handling diverse data sources and destinations.",
 		"tech_stack": [
-			"https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white",
-			"https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white",
-			"https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
-			"https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white",
-			"https://img.shields.io/badge/gRPC-0096D8?style=for-the-badge&logo=grpc&logoColor=white",
-			"https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white"
+			"https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white",
+			"https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=flat-square&logo=rabbitmq&logoColor=white",
+			"https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white",
+			"https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white",
+			"https://img.shields.io/badge/gRPC-0096D8?style=flat-square&logo=grpc&logoColor=white",
+			"https://img.shields.io/badge/docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white"
 		],
 		"link": "",
 		"repo_link": "https://github.com/minhtran241/microservices-go",
@@ -26,12 +26,12 @@
 		"slug": "distributed-video-to-mp3-converter-system",
 		"description": "Modular Microservices architecture for efficient video-to-MP3 conversion. Independent microservices handle video processing and audio extraction, providing adaptability for diverse applications and varying workloads.",
 		"tech_stack": [
-			"https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white",
-			"https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white",
-			"https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
-			"https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white",
-			"https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white",
-			"https://img.shields.io/badge/Microservices-000000?style=for-the-badge&logo=microservices&logoColor=white"
+			"https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white",
+			"https://img.shields.io/badge/MySQL-005C84?style=flat-square&logo=mysql&logoColor=white",
+			"https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white",
+			"https://img.shields.io/badge/docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white",
+			"https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white",
+			"https://img.shields.io/badge/Microservices-000000?style=flat-square&logo=microservices&logoColor=white"
 		],
 		"link": "",
 		"repo_link": "https://github.com/minhtran241/video-to-mp3-conveter-microservices",
@@ -47,9 +47,9 @@
         "slug": "gvcourse-mobile-application",
         "description": "Place to explore every course and receive new course notifications from GV",
         "tech_stack": [
-            "https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white",
-            "https://img.shields.io/badge/SwiftUI-FA7343?style=for-the-badge&logo=swift&logoColor=white",
-            "https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white"
+            "https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white",
+            "https://img.shields.io/badge/SwiftUI-FA7343?style=flat-square&logo=swift&logoColor=white",
+            "https://img.shields.io/badge/Firebase-039BE5?style=flat-square&logo=Firebase&logoColor=white"
         ],
         "link": "https://minhtran241.github.io/gvcourse/",
         "repo_link": "https://github.com/minhtran241/gvcourse",
@@ -65,10 +65,10 @@
 		"slug": "nextcorp",
 		"description": "A comprehensive toolkit designed to cater to the diverse needs of businesses and enterprises built with Next.js, Bun runtime, Elysia.js, and PostgreSQL.",
 		"tech_stack": [
-            "https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge",
-			"https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white",
-			"https://img.shields.io/badge/Bun-FF6600?style=for-the-badge&logo=bun&logoColor=white",
-			"https://img.shields.io/badge/ElysiaJS-FF6600?style=for-the-badge&logo=elysiajs&logoColor=white"
+            "https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=flat-square",
+			"https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white",
+			"https://img.shields.io/badge/Bun-FF6600?style=flat-square&logo=bun&logoColor=white",
+			"https://img.shields.io/badge/ElysiaJS-FF6600?style=flat-square&logo=elysiajs&logoColor=white"
 		],
 		"link": "https://minhtran241.github.io/nextcorp/",
 		"repo_link": "https://github.com/minhtran241/nextcorp",
@@ -84,10 +84,10 @@
 		"slug": "edge-computing-models-analysis",
 		"description": "Collection of edge computing models for IoT analytics. The models are designed to help organizations understand the benefits of edge computing and how it can be used to process data from IoT devices more efficiently. Each model provides an overview of the architecture, advantages, and use cases for edge computing in IoT analytics.",
 		"tech_stack": [
-			"https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
-            "https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi",
-			"https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101",
-			"https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=ResearchGate&logoColor=white"
+			"https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54",
+            "https://img.shields.io/badge/-RaspberryPi-C51A4A?style=flat-square&logo=Raspberry-Pi",
+			"https://img.shields.io/badge/Socket.io-black?style=flat-square&logo=socket.io&badgeColor=010101",
+			"https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=ResearchGate&logoColor=white"
 		],
 		"link": "",
 		"repo_link": "https://github.com/minhtran241/edge-computing-models",
