@@ -1,5 +1,6 @@
 import { SOCIAL_MEDIA, MENU_TABS } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -34,16 +35,28 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <p>
-                    Designed and developed by{' '}
+                <div className="flex items-center justify-center gap-2">
+                    <p>Designed and developed by</p>
                     <Link
                         href={userBasicInfo.githubLink || '#'}
                         className="hover:underline"
                     >
                         Minh Tran
                     </Link>{' '}
-                    @ {new Date().getFullYear()}
-                </p>
+                    <p>@ {new Date().getFullYear()}</p>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                    <p className="">Hosted on</p>
+                    <Link href="https://vercel.com" target="_blank">
+                        <Image
+                            src="https://www.vectorlogo.zone/logos/vercel/vercel-ar21.svg"
+                            alt="Vercel"
+                            width={0}
+                            height={0}
+                            className="h-8 w-auto"
+                        />
+                    </Link>
+                </div>
             </aside>
         </footer>
     );
