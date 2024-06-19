@@ -11,9 +11,12 @@
             "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=fff",
             "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E",
             "https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=fff",
+			"https://img.shields.io/badge/assembly%20script-%23000000.svg?style=for-the-badge&logo=assemblyscript&logoColor=white",
             "https://img.shields.io/badge/Scala-DC322F?style=for-the-badge&logo=scala&logoColor=fff",
             "https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=fff",
-            "https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=fff"        ],
+            "https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=fff",
+			"https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white"
+		],
         "sorted_order": 1,
         "created_at": "2024-02-24T09:18:20.745Z",
         "updated_at": "2024-02-24T09:18:20.745Z"
