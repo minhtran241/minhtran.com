@@ -6,11 +6,11 @@
 		"description": "FlexiConnect Architecture is a distributed system designed with versatile data transport options, providing flexibility and efficiency in handling diverse data sources and destinations.",
 		"tech_stack": [
 			"https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white",
-			"https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=flat-square&logo=rabbitmq&logoColor=white",
+			"https://img.shields.io/badge/Rabbitmq-%23FF6600.svg?&style=flat-square&logo=rabbitmq&logoColor=white",
 			"https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white",
 			"https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white",
 			"https://img.shields.io/badge/gRPC-0096D8?style=flat-square&logo=grpc&logoColor=white",
-			"https://img.shields.io/badge/docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white"
+			"https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white"
 		],
 		"link": "",
 		"repo_link": "https://github.com/minhtran241/microservices-go",
@@ -29,8 +29,8 @@
 			"https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white",
 			"https://img.shields.io/badge/MySQL-005C84?style=flat-square&logo=mysql&logoColor=white",
 			"https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white",
-			"https://img.shields.io/badge/docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white",
-			"https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white",
+			"https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white",
+			"https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white",
 			"https://img.shields.io/badge/Microservices-000000?style=flat-square&logo=microservices&logoColor=white"
 		],
 		"link": "",
@@ -84,7 +84,7 @@
 		"slug": "edge-computing-models-analysis",
 		"description": "Collection of edge computing models for IoT analytics. The models are designed to help organizations understand the benefits of edge computing and how it can be used to process data from IoT devices more efficiently. Each model provides an overview of the architecture, advantages, and use cases for edge computing in IoT analytics.",
 		"tech_stack": [
-			"https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54",
+			"https://img.shields.io/badge/Python-3670A0?style=flat-square&logo=python&logoColor=ffdd54",
             "https://img.shields.io/badge/-RaspberryPi-C51A4A?style=flat-square&logo=Raspberry-Pi",
 			"https://img.shields.io/badge/Socket.io-black?style=flat-square&logo=socket.io&badgeColor=010101",
 			"https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=ResearchGate&logoColor=white"
