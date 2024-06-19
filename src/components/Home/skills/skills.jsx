@@ -68,19 +68,13 @@ const SkillsComponent = async () => {
                                     {skill.name}
                                 </h2>
                             </div>
-                            <div className="flex flex-wrap gap-4">
+                            <div className="flex flex-wrap gap-3">
                                 {skill.technologies.map((badge, index) => (
                                     <div key={index} className="rounded">
-                                        <Image
+                                        <img
                                             src={badge}
                                             alt="skill"
-                                            width={0}
-                                            height={0}
-                                            style={{
-                                                width: 'auto',
-                                                height: 'auto',
-                                            }}
-                                            className="!rounded"
+                                            className="!rounded h-6 w-auto"
                                         />
                                     </div>
                                 ))}

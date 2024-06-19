@@ -120,16 +120,11 @@ const ProjectPage = async () => {
                         {/* Tech stack */}
                         <div className="flex flex-wrap gap-2 mt-4">
                             {firstProject.tech_stack.map((badge, index) => (
-                                <Image
+                                <img
                                     key={index}
                                     src={badge}
                                     alt="skill"
-                                    width={0}
-                                    height={0}
-                                    style={{
-                                        width: 'auto',
-                                        height: 'auto',
-                                    }}
+									className="!rounded h-6 w-auto"
                                 />
                             ))}
                         </div>

@@ -7,17 +7,11 @@ const ProjectMetadata = ({ project }) => {
         <>
             <div className="flex flex-wrap gap-2 mb-5 rounded">
                 {project.tech_stack.map((badge, index) => (
-                    <Image
+                    <img
                         key={index}
                         src={badge}
                         alt="skill"
-                        width={0}
-                        height={0}
-                        style={{
-                            width: 'auto',
-                            height: 'auto',
-                        }}
-                        className="!rounded"
+                        className="!rounded h-6 w-auto"
                     />
                 ))}
             </div>
