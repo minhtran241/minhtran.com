@@ -5,12 +5,10 @@
 		"slug": "flexiconnect-architecture",
 		"description": "FlexiConnect Architecture is a distributed system designed with versatile data transport options, providing flexibility and efficiency in handling diverse data sources and destinations.",
 		"tech_stack": [
-			"https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=fff&style=for-the-badge",
 			"https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=fff",
 			"https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=fff",
 			"https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=fff",
-			"https://img.shields.io/badge/gRPC-0096D8?style=for-the-badge&logo=grpc&logoColor=fff",
-			"https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=fff"
+			"https://img.shields.io/badge/gRPC-0096D8?style=for-the-badge&logo=grpc&logoColor=fff"
 		],
 		"link": "",
 		"repo_link": "https://github.com/minhtran241/microservices-go",
@@ -26,12 +24,10 @@
 		"slug": "distributed-video-to-mp3-converter-system",
 		"description": "Modular Microservices architecture for efficient video-to-MP3 conversion. Independent microservices handle video processing and audio extraction, providing adaptability for diverse applications and varying workloads.",
 		"tech_stack": [
-			"https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
 			"https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=fff",
 			"https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=fff",
 			"https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=fff",
-			"https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white",
-			"https://img.shields.io/badge/Microservices-000000?style=for-the-badge&logo=microservices&logoColor=fff"
+			"https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white"
 		],
 		"link": "",
 		"repo_link": "https://github.com/minhtran241/video-to-mp3-conveter-microservices",
@@ -84,7 +80,6 @@
 		"slug": "edge-computing-models-analysis",
 		"description": "Collection of edge computing models for IoT analytics. The models are designed to help organizations understand the benefits of edge computing and how it can be used to process data from IoT devices more efficiently. Each model provides an overview of the architecture, advantages, and use cases for edge computing in IoT analytics.",
 		"tech_stack": [
-			"https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
             "https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi",
 			"https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101",
 			"https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=ResearchGate&logoColor=white"

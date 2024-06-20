@@ -16,7 +16,7 @@ const READING_LIST = [
     'https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf',
     'https://quarkus.io/guides/quarkus-reactive-architecture',
     'https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8',
-    'https://medium.com/@kdwa2404/vector-quantized-variational-auto-encoder-vq-vae-neural-discrete-representation-learning-a-06c14b385d5c',
+    'https://shashank7-iitd.medium.com/understanding-vector-quantized-variational-autoencoders-vq-vae-323d710a888a',
 ];
 
 export default READING_LIST;

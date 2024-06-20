@@ -1,4 +1,3 @@
-import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import client from '@/services/apollo-client';
 import { gql } from '@apollo/client';
@@ -12,8 +11,57 @@ export const GET = async (request) => {
 
         const username =
             searchParams.get('username') || userBasicInfo.githubUsername;
-        const reposNum =
-            parseInt(searchParams.get('reposNum')) || GITHUB_REPOS_NUM;
+        const reposNum = parseInt(searchParams.get('reposNum')) || 100;
+
+        const repo = searchParams.get('repo');
+
+        if (repo) {
+            const queryResult = await client.query({
+                query: gql`
+                    query GetGitHubRepoInfo(
+                        $username: String!
+                        $repo: String!
+                    ) {
+                        repository(owner: $username, name: $repo) {
+                            name
+                            description
+                            url
+                            createdAt
+                            updatedAt
+                            pushedAt
+                            stargazerCount
+                            forkCount
+                            watchers {
+                                totalCount
+                            }
+                            languages(first: 1) {
+                                edges {
+                                    node {
+                                        name
+                                        color
+                                    }
+                                }
+                            }
+                        }
+                        rateLimit {
+                            limit
+                            cost
+                            remaining
+                            resetAt
+                        }
+                    }
+                `,
+                variables: {
+                    username,
+                    repo,
+                },
+            });
+
+            return NextResponse.json({
+                repo: queryResult.data.repository,
+                rateLimit: queryResult.data.rateLimit,
+            });
+        }
 
         const queryResult = await client.query({
             query: gql`

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Radio } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
 const ProjectMetadata = ({ project }) => {
     return (
@@ -24,7 +24,7 @@ const ProjectMetadata = ({ project }) => {
                 )}
                 {project.link && (
                     <div className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold transition">
-                        <Radio className="h-5 w-5" />
+                        <ExternalLink className="h-5 w-5" />
                         <Link href={project.link}>
                             Live product or documentation
                         </Link>

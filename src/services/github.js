@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
-import client from '../apollo-client';
 import { GITHUB_USERNAME } from '@/common/constants/userBasic';
+import client from './apollo-client';
 
 export const getGitHubUserInfo = async (
     username = GITHUB_USERNAME,
@@ -78,5 +78,62 @@ export const getGitHubUserInfo = async (
     } catch (error) {
         console.error('Error fetching GitHub user info:', error);
         throw new Error('Failed to fetch GitHub user info');
+    }
+};
+
+export const getRepoInfo = async (repoName) => {
+    try {
+        const res = await client.query({
+            query: gql`
+                query GetRepoInfo($repoName: String!) {
+                    repository(name: $repoName) {
+                        name
+                        description
+                        url
+                        stargazerCount
+                        forkCount
+                        watchers {
+                            totalCount
+                        }
+                        issues {
+                            totalCount
+                        }
+                        pullRequests {
+                            totalCount
+                        }
+                        languages(first: 5) {
+                            nodes {
+                                name
+                                color
+                            }
+                        }
+                        licenseInfo {
+                            name
+                        }
+                        updatedAt
+                        pushedAt
+                        createdAt
+                    }
+                    rateLimit {
+                        limit
+                        cost
+                        remaining
+                        resetAt
+                    }
+                }
+            `,
+            variables: {
+                repoName,
+            },
+        });
+
+        // return star, fork, watchers, issues, pull requests, languages, license, updated at, pushed at, created at
+        return {
+            repo: res.data.repository,
+            rateLimit: res.data.rateLimit,
+        };
+    } catch (error) {
+        console.error('Error fetching repo info:', error);
+        throw new Error('Failed to fetch repo info');
     }
 };
