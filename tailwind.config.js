@@ -112,7 +112,6 @@ module.exports = {
         require('tailwind-scrollbar')({ nocompatible: true }),
         require('tailwindcss-animate'),
         require('@tailwindcss/typography'),
-        require('@tailwindcss/line-clamp'),
     ],
 
     daisyui: {
