@@ -19,7 +19,7 @@ const LinkPreviewCard = async ({ url }) => {
     }
 
     let dataTip = '';
-    if (data?.title) dataTip += `Title: ${data.title}\n`;
+    if (data?.title) dataTip += `Title: ${data.title}\n\n`;
     if (data?.description) dataTip += `Description: ${data.description}\n`;
 
     return (
