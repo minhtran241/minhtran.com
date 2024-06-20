@@ -40,7 +40,7 @@ const Footer = () => {
                         href={userBasicInfo.githubLink || '#'}
                         className="hover:underline"
                     >
-                        Minh Tran
+                        {userBasicInfo.fullName}
                     </Link>{' '}
                     <p>@ {new Date().getFullYear()}</p>
                 </div>

@@ -37,18 +37,29 @@ const PostCard = ({ post }) => {
                         </div>
                     ))}
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 gap-2">
                     <Link
                         href={`/blog/${post.slug}`}
                         className="inline-block text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
                     >
                         {post.title}
                     </Link>
-                    <p className="text-md text-justify font-light italic text-gray-600 dark:text-gray-400">
+                    {/* <p className="text-md text-justify font-light italic text-gray-600 dark:text-gray-400">
                         {post.description?.length > 150
                             ? `${post.description?.substring(0, 150)}...`
                             : post.description}
-                    </p>
+                    </p> */}
+                    <div
+                        className="tooltip !text-start cursor-pointer"
+                        data-tip={post.description}
+                    >
+                        <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
+                            {post.description}
+                        </p>
+                        <span className="text-sm text-[#0033A0] dark:text-blue-600">
+                            [Hover to read more]
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

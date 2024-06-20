@@ -4,12 +4,12 @@ import { CalendarDays, Github, Radio, ScrollText } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200 ">
+        <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200">
             {/* Created at */}
             <div className="flex flex-row justify-between mb-4">
-                <div className="flex flex-row justify-start leading-none text-[#0033A0] dark:text-blue-600 gap-2">
-                    <CalendarDays className="h-4 w-4" />
-                    <span className="italic">
+                <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 font-semibold">
+                    <CalendarDays className="h-5 w-5" />
+                    <span className="">
                         {new Date(project?.created_at).toLocaleDateString(
                             'en-GB',
                             {
@@ -21,9 +21,9 @@ const ProjectCard = ({ project }) => {
                     </span>
                 </div>
                 {project?.research_purpose && (
-                    <div className="flex flex-row justify-end leading-none gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                    <div className="flex items-center gap-2 justify-end bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
                         <ScrollText className="h-4 w-4" />
-                        <p className="text-xs italic">Research Purpose</p>
+                        <p className="text-sm">Research Purpose</p>
                     </div>
                 )}
             </div>
@@ -44,18 +44,24 @@ const ProjectCard = ({ project }) => {
             >
                 {project?.title}
             </Link>
-            <p className="text-gray-600 dark:text-gray-400">
-                {project?.description?.length > 150
-                    ? `${project?.description?.substring(0, 150)}...`
-                    : project?.description}
-            </p>
+            <div
+                className="mt-2 tooltip !text-start cursor-pointer"
+                data-tip={project.description}
+            >
+                <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
+                    {project.description}
+                </p>
+                <span className="text-sm text-[#0033A0] dark:text-blue-600">
+                    [Hover to read more]
+                </span>
+            </div>
             {project.repo_link && (
-                <div className="flex items-center gap-2 mt-4 font-medium text-md leading-none">
+                <div className="mt-4">
                     <Link
                         href={project?.repo_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex gap-1 text-[#0033A0] dark:text-blue-600 hover:underline"
+                        className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600 hover:underline font-medium"
                     >
                         <Github className="h-4 w-4" />
                         Code repository
@@ -63,12 +69,12 @@ const ProjectCard = ({ project }) => {
                 </div>
             )}
             {project.link && (
-                <div className="flex items-center gap-2 mt-2 font-medium text-medium leading-none">
+                <div className="mt-1">
                     <Link
                         href={project?.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex gap-1 text-[#0033A0] dark:text-blue-600 hover:underline"
+                        className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600 hover:underline font-medium"
                     >
                         <Radio className="h-4 w-4" />
                         Live product or documentation
