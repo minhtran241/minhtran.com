@@ -22,7 +22,7 @@ const LinkTableRow = async ({ url, index }) => {
             <td className="text-[#0033A0] dark:text-blue-600">{index}</td>
             <td>
                 <Image
-                    src={data.image || 'https://placehold.co/40'}
+                    src={data.image || '/40.svg'}
                     alt={`${data.title} image`}
                     width={40}
                     height={40}
