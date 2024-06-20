@@ -18,7 +18,9 @@ const LinkPreviewCard = async ({ url }) => {
         );
     }
 
-    const dataTip = `Title: ${data.title}\nDescription: ${data.description}\n`;
+    let dataTip;
+    if (data?.title) dataTip += `Title: ${data.title}\n`;
+    if (data?.description) dataTip += `Description: ${data.description}\n`;
 
     return (
         <div
@@ -34,19 +36,17 @@ const LinkPreviewCard = async ({ url }) => {
                 className="flex items-center gap-4"
             >
                 <Image
-                    src={data.image || '/50.svg'}
+                    src={data.image || '/48.svg'}
                     alt={`${data.title} image`}
-                    width={50}
-                    height={50}
-                    className="h-[50px] w-[50px] rounded avatar"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 rounded avatar"
                 />
                 <div className="flex flex-col gap-1">
                     <p className="font-semibold text-sm line-clamp-1">
-                        {data.title || 'No title found'}
+                        {data.title}
                     </p>
-                    <p className="line-clamp-2 text-xs">
-                        {data.description || 'No description found'}
-                    </p>
+                    <p className="line-clamp-2 text-xs">{data.description}</p>
                 </div>
             </Link>
         </div>
