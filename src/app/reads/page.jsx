@@ -5,7 +5,7 @@ import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
 
 const PAGE_TITLE = 'Reading List';
 const PAGE_DESCRIPTION =
-    'List of articles, blogs, and books that I have read and found useful.';
+    'List of articles, blogs, and books that I have read and found useful. All the previews (metadata) are fetched from the respective URLs.';
 const SHOWED_READING_LIST = READING_LIST.reverse();
 
 // SEO metadata
