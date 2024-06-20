@@ -1,27 +1,12 @@
-## Crafting User Experiences
-
-### Design Philosophy
+## Design Philosophy
 
 Using the versatile tool [Figma](https://www.figma.com/), I sculpted a user-friendly interface that prioritizes simplicity and clarity. By employing ample white space and a muted color palette, I aimed to deliver an experience that's both visually soothing and effortlessly navigable. Upholding the principles of inclusively, I ensured adherence to top-notch web accessibility standards. Leveraging [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com), and [DaisyUI](https://daisyui.com/), I brought my design vision to life, complemented by icons from [Lucide](https://lucide.dev).
-
-### Development Mastery
-
-Harnessing the power of **Next.js 14**, I integrated cutting-edge features to enhance performance and functionality:
-
-- [Automatic Image Optimization](https://nextjs.org/docs/basic-features/image-optimization)
-- [Server Action](https://nextjs.org/docs/basic-features/server-action)
-- [Server Components](https://nextjs.org/docs/advanced-features/server-components)
-- [File System Routing](https://nextjs.org/docs/basic-features/pages)
-
-## Markdown Rendering
-
-All content is meticulously crafted in markdown and seamlessly rendered during the build process. Employing [react-markdown](https://github.com/remarkjs/react-markdown) and [remark-rehype](https://github.com/remarkjs/remark-rehype), I ensure a smooth conversion of markdown to HTML. Styles are meticulously applied using [Tailwind CSS Typography](https://github.com/tailwindlabs/tailwindcss-typography) and [prose](https://tailwindcss.com/docs/prose).
 
 ## APIs Integration
 
 ### GitHub API Integration and Chart.js
 
-To showcase my open-sourc contributions, I integrated the [GitHub API](https://docs.github.com/en/rest) to dynamically fetch and display my GitHub information and repositories by using [GitHub GraphQL API](https://docs.github.com/en/graphql) and [Apollo Client](https://www.apollographql.com/docs/react/). This ensures that my GitHub contributions are always up-to-date and accurately reflected on my website.
+To showcase my open-sourc contributions, I integrated the [GitHub API](https://docs.github.com/en/rest) to dynamically fetch and display my GitHub information and repositories by using [GitHub GraphQL API](https://docs.github.com/en/graphql) and [Apollo Clien(https://www.apollographql.com/docs/react/). This ensures that my GitHub contributions are always up-to-date and accurately reflected on my website.
 
 I also integrated [Chart.js](https://www.chartjs.org/) to display my GitHub contributions in a visually appealing way. This ensures that my GitHub contributions are always up-to-date and accurately reflected on my website.
 

@@ -14,7 +14,7 @@ const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 
 const PAGE_TITLE = 'Projects';
 const PAGE_DESCRIPTION =
-    'A collection of my open-source side projects, professional work projects, and research endeavors. Most of them are available on my GitHub.';
+    'Diverse array of my projects, including open-source side projects, professional work, and research initiatives.';
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -47,8 +47,8 @@ const ProjectPage = async () => {
     const projects = await getProjects(PROJECT_FETCH_LIMIT);
     return (
         <>
-            <div className="container mt-12">
-                <div className="flex flex-col gap-2 mb-8">
+            <div className="flex flex-col container mt-12 gap-8">
+                <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-1.5 text-2xl font-semibold">
                         <FolderGit2 className="mr-1 h-6 w-6" />
                         <h1 className="capitalize">{PAGE_TITLE}</h1>
