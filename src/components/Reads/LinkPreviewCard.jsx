@@ -36,11 +36,11 @@ const LinkPreviewCard = async ({ url }) => {
                 className="flex items-center gap-4"
             >
                 <Image
-                    src={data.image || '/48.svg'}
+                    src={data.image || '/56.svg'}
                     alt={`${data.title} image`}
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 rounded avatar"
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 rounded avatar"
                 />
                 <div className="flex flex-col gap-1">
                     <p className="font-semibold text-sm line-clamp-1">
