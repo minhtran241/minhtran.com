@@ -54,6 +54,10 @@ const ReadsPage = async () => {
                                         key={index}
                                         url={item}
                                         index={index + 1}
+                                        isLast={
+                                            index ===
+                                            SHOWED_READING_LIST.length - 1
+                                        }
                                     />
                                 ))}
                             </tbody>
