@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Loading from '@/app/loading';
 import axios from 'axios';
 import { extractMetaTags } from '@/app/actions';
+import Image from 'next/image';
 
-const LinkTableRow = async ({ url, index, isLast }) => {
+const LinkTableRow = async ({ url, index }) => {
     //here calling the function
     const response = await axios.get(url);
     const data = await extractMetaTags(response);
@@ -19,17 +20,18 @@ const LinkTableRow = async ({ url, index, isLast }) => {
     return (
         <tr className="hover:bg-gray-100 dark:hover:bg-gray-800">
             <td className="text-[#0033A0] dark:text-blue-600">{index}</td>
+            <td>
+                <Image
+                    src={data.image || 'https://placehold.co/40'}
+                    alt={`${data.title} image`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded"
+                />
+            </td>
             <td className="text-ellipsis overflow-hidden">{data.title}</td>
-            <td
-                className={`tooltip !text-start cursor-pointer ${
-                    index == 1 ? 'tooltip-bottom' : ''
-                } ${isLast ? 'tooltip-top' : ''}
-				`}
-                data-tip={data.description}
-            >
-                <p className="text-ellipsis overflow-hidden">
-                    {data.description}
-                </p>
+            <td className="text-ellipsis overflow-hidden">
+                {data.description}
             </td>
             <td className="text-ellipsis overflow-hidden">
                 <Link

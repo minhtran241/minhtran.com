@@ -38,6 +38,9 @@ const ReadsPage = async () => {
                                         Index
                                     </th>
                                     <th className="text-[#0033A0] dark:text-blue-600">
+                                        Image
+                                    </th>
+                                    <th className="text-[#0033A0] dark:text-blue-600">
                                         Title
                                     </th>
                                     <th className="text-[#0033A0] dark:text-blue-600">
@@ -54,10 +57,6 @@ const ReadsPage = async () => {
                                         key={index}
                                         url={item}
                                         index={index + 1}
-                                        isLast={
-                                            index ===
-                                            SHOWED_READING_LIST.length - 1
-                                        }
                                     />
                                 ))}
                             </tbody>
