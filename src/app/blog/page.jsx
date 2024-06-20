@@ -3,15 +3,18 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BellRing } from 'lucide-react';
+import { BellRing, NotebookPen } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+
+const PAGE_TITLE = 'Blogs';
+const PAGE_DESCRIPTION =
+    'A collection of my learnings, thoughts, and experiences. I write about backend development, data, AI, and software engineering in general.';
 
 // SEO metadata
 export const generateMetadata = async () => {
     return {
-        title: "Minh Tran's Blog",
-        description:
-            'Explore insights on software engineering and data engineering with Minh Tran.',
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
     };
 };
 
@@ -52,9 +55,18 @@ const BlogPage = async () => {
     const otherPosts = posts.slice(1);
     return (
         <>
-            <div className="items-center justify-center flex flex-col gap-16 container mt-12">
+            <div className="container mt-12">
+                <div className="flex flex-col gap-2 mb-8">
+                    <div className="flex items-center gap-1.5 text-2xl font-semibold">
+                        <NotebookPen className="mr-1 h-6 w-6" />
+                        <h1 className="capitalize">{PAGE_TITLE}</h1>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        {PAGE_DESCRIPTION}
+                    </p>
+                </div>
                 {/* // First post */}
-                <div className="lg:flex lg:items-center lg:gap-12">
+                <div className="lg:flex lg:items-center lg:gap-12 mb-8">
                     <Link
                         href={`/blog/${firstPost.slug}`}
                         className="w-full object-cover dark:hover:shadow-black/30 lg:w-1/2"

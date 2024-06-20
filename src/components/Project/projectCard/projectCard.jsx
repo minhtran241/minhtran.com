@@ -9,7 +9,7 @@ import {
     ExternalLink,
     ScrollText,
     Star,
-    GitBranch
+    GitFork,
 } from 'lucide-react';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
@@ -28,9 +28,9 @@ const ProjectCardComponent = ({ project }) => {
         fetcher
     )?.data?.repo;
 
-	if (!repoData) {
-		return 
-	}
+    if (!repoData) {
+        return;
+    }
 
     return (
         <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200">
@@ -56,7 +56,11 @@ const ProjectCardComponent = ({ project }) => {
                     </div>
                 )}
             </div>
-            <Link href={`/project/${project?.slug}`}>
+            <Link
+                href={project?.link || project?.repo_link}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 <Image
                     className="rounded-lg relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
                     src={project?.thumbnail}
@@ -68,17 +72,19 @@ const ProjectCardComponent = ({ project }) => {
             </Link>
 
             <Link
-                href={`/project/${project.slug}`}
+                href={project?.link || project?.repo_link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xl font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600 transition"
             >
                 {project?.title}
             </Link>
             <div
                 className="mt-2 tooltip !text-start cursor-pointer"
-                data-tip={project.description}
+                data-tip={repoData?.description}
             >
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
-                    {project.description}
+                    {repoData?.description}
                 </p>
                 <span className="text-sm text-[#0033A0] dark:text-blue-600">
                     [Hover to read more]
@@ -122,32 +128,32 @@ const ProjectCardComponent = ({ project }) => {
                                 </span>
                             </div>
                             <div className="flex items-center gap-1">
-                                <GitBranch className="h-4 w-4" />
+                                <GitFork className="h-4 w-4" />
                                 <span className="">{repoData?.forkCount}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
-                    {project.repo_link && (
+                    {project?.link && (
                         <Link
-                            href={project.repo_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
-                        >
-                            <Github className="h-4 w-4" />
-                        </Link>
-                    )}
-                    {project.repo_link && project.link && ' | '}
-                    {project.link && (
-                        <Link
-                            href={project.link}
+                            href={project?.link}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
                         >
                             <ExternalLink className="h-4 w-4" />
+                        </Link>
+                    )}
+                    {project?.repo_link && project?.link && ' | '}
+                    {project?.repo_link && (
+                        <Link
+                            href={project?.repo_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                        >
+                            <Github className="h-4 w-4" />
                         </Link>
                     )}
                 </div>
@@ -156,7 +162,7 @@ const ProjectCardComponent = ({ project }) => {
     );
 };
 
-const ProjectCard = ({project}) => {
+const ProjectCard = ({ project }) => {
     return (
         <Suspense fallback={<Loading />}>
             <ProjectCardComponent project={project} />

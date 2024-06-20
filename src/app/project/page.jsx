@@ -1,6 +1,4 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Github, Radio, ScrollText } from 'lucide-react';
+import { FolderGit2 } from 'lucide-react';
 import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '@/components/Project/projectCard/projectCard';
@@ -14,12 +12,15 @@ const DATA_ATTRS_DIR = path.join(
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 
+const PAGE_TITLE = 'Projects';
+const PAGE_DESCRIPTION =
+    'A collection of my open-source side projects, professional work projects, and research endeavors. Most of them are available on my GitHub.';
+
 // SEO metadata
 export const generateMetadata = async () => {
     return {
-        title: "Minh Tran's Personal Projects",
-        description:
-            'Explore personal projects by Minh Tran - A software engineer and data engineer.',
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
     };
 };
 
@@ -44,95 +45,20 @@ const getProjects = async (limit) => {
 
 const ProjectPage = async () => {
     const projects = await getProjects(PROJECT_FETCH_LIMIT);
-    const firstProject = projects[0];
-    const otherProjects = projects.slice(1);
     return (
         <>
-            <div className="items-center justify-center flex flex-col gap-16 container mt-12">
-                {/* // First project */}
-                <div className="lg:flex lg:items-center w-full lg:gap-12">
-                    <Link
-                        href={`/project/${firstProject.slug}`}
-                        className="w-full object-cover dark:hover:shadow-black/30 lg:w-1/2"
-                    >
-                        <Image
-                            className="lg:min-h-[270px] w-full rounded-md  border-2 border-[#0033A0] dark:border-white"
-                            src={firstProject.thumbnail}
-                            alt={firstProject.title}
-                            width={433}
-                            height={218}
-                        />
-                    </Link>
-                    <div className="mt-6 lg:mt-0 lg:w-1/2 ">
-                        <div className="flex flex-row justify-between">
-                            <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
-                                {new Date(
-                                    firstProject?.created_at
-                                ).toLocaleDateString('en-GB', {
-                                    weekday: 'long',
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric',
-                                })}
-                            </p>
-                            {firstProject?.research_purpose && (
-                                <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
-                                    <ScrollText className="h-4 w-4" />
-                                    <p className="text-xs font-semibold">
-                                        Research Purpose
-                                    </p>
-                                </div>
-                            )}
-                        </div>
-                        <Link
-                            href={`/project/${firstProject.slug}`}
-                            className="mt-4 block text-2xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-3xl"
-                        >
-                            {firstProject.title}
-                        </Link>
-                        <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-400">
-                            {firstProject.description}
-                        </p>
-                        {firstProject.link && (
-                            <div className="flex flex-row gap-2 mt-4">
-                                <Link
-                                    href={firstProject.link}
-                                    target="_blank"
-                                    className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold transition"
-                                >
-                                    <Radio className="h-5 w-5" />
-                                    Live product or documentation
-                                </Link>
-                            </div>
-                        )}
-                        {firstProject.repo_link && (
-                            <div className="flex flex-row gap-2 mt-4">
-                                <Link
-                                    href={firstProject.repo_link}
-                                    target="_blank"
-                                    className="flex items-center gap-2 hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer font-semibold transition"
-                                >
-                                    <Github className="h-5 w-5" />
-                                    Code repository
-                                </Link>
-                            </div>
-                        )}
-                        {/* Tech stack */}
-                        <div className="flex flex-wrap gap-2 mt-4">
-                            {firstProject.tech_stack.map((badge, index) => (
-                                <img
-                                    key={index}
-                                    src={badge}
-                                    alt="skill"
-                                    className="!rounded h-6 w-auto"
-                                />
-                            ))}
-                        </div>
+            <div className="container mt-12">
+                <div className="flex flex-col gap-2 mb-8">
+                    <div className="flex items-center gap-1.5 text-2xl font-semibold">
+                        <FolderGit2 className="mr-1 h-6 w-6" />
+                        <h1 className="capitalize">{PAGE_TITLE}</h1>
                     </div>
+                    <p className="text-gray-600 dark:text-gray-400">
+                        {PAGE_DESCRIPTION}
+                    </p>
                 </div>
-                {/* // Other projects */}
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
-                    {otherProjects.map((project, index) => (
+                    {projects.map((project, index) => (
                         // same height for all cards
                         <ProjectCard key={index} project={project} />
                     ))}
