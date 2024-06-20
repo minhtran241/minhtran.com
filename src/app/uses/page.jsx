@@ -6,6 +6,14 @@ const PAGE_TITLE = 'Used Devices and Tools';
 const PAGE_DESCRIPTION =
     'List of devices and tools that I use for development and daily tasks.';
 
+// SEO metadata
+export const generateMetadata = async () => {
+    return {
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+    };
+};
+
 const UsesPage = () => {
     return (
         <>

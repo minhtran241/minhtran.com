@@ -76,7 +76,7 @@ const ProjectPage = async () => {
                                 })}
                             </p>
                             {firstProject?.research_purpose && (
-                                <div className="flex flex-row gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                                <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
                                     <ScrollText className="h-4 w-4" />
                                     <p className="text-xs font-semibold">
                                         Research Purpose

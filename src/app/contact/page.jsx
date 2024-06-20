@@ -5,6 +5,14 @@ const PAGE_TITLE = 'Contact Information';
 const PAGE_DESCRIPTION =
     "Feel free to get in touch and let's have a discussion about how we can work together.";
 
+// SEO metadata
+export const generateMetadata = async () => {
+    return {
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+    };
+};
+
 const ContactPage = () => {
     return (
         <div className="container mt-12">
@@ -19,8 +27,6 @@ const ContactPage = () => {
             </div>
             <Contact />
         </div>
-        //     </div>
-        // </div>
     );
 };
 

@@ -7,6 +7,14 @@ const PAGE_DESCRIPTION =
     'List of articles, blogs, and books that I have read and found useful.';
 const SHOWED_READING_LIST = READING_LIST.reverse();
 
+// SEO metadata
+export const generateMetadata = async () => {
+    return {
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+    };
+};
+
 const ReadsPage = async () => {
     return (
         <>
