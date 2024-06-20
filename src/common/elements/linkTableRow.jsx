@@ -20,13 +20,13 @@ const LinkTableRow = async ({ url, index }) => {
     return (
         <tr className="hover:bg-gray-100 dark:hover:bg-gray-800">
             <td className="text-[#0033A0] dark:text-blue-600">{index}</td>
-            <td className="avatar">
+            <td>
                 <Image
                     src={data.image || '/40.svg'}
                     alt={`${data.title} image`}
                     width={40}
                     height={40}
-                    className="h-10 w-10 rounded"
+                    className="h-10 w-10 rounded avatar"
                 />
             </td>
             <td className="text-ellipsis overflow-hidden">{data.title}</td>
