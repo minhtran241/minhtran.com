@@ -24,7 +24,7 @@ const HeroComponent = () => {
             <div className="relative container py-16">
                 <div className="flex flex-col items-start gap-4">
                     <div className="bg-white dark:bg-gray-900 shadow-lg mockup-window border">
-                        <div className="flex flex-wrap gap-4 justify-center p-8 border-t">
+                        <div className="flex flex-wrap gap-4 justify-center p-6 border-t">
                             <div className="flex flex-shrink-0">
                                 <Image
                                     src={fileSystemInfo.headshot}
@@ -40,12 +40,16 @@ const HeroComponent = () => {
                                     About Me
                                 </div>
                                 {/* download CV */}
-                                <div className="">
-                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] dark:text-blue-600">
+                                <Link
+                                    href={resumeInfo.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] dark:text-blue-600 rounded">
                                         {resumeInfo.icon}
                                         {resumeInfo.title}
                                     </button>
-                                </div>
+                                </Link>
                                 <div className="space-y-1">
                                     {userBasicInfo.about?.map((item, index) => {
                                         return (
