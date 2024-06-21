@@ -9,7 +9,6 @@
 			"https://img.shields.io/badge/gRPC-0096D8?style=for-the-badge&logo=grpc&logoColor=fff"
 		],
 		"repo_link": "https://github.com/minhtran241/microservices-go",
-		"thumbnail": "/project/thumbnails/flexiconnect-architecture.png",
 		"research_purpose": false,
 		"created_at": "2024-02-24T06:42:10.768Z",
 		"updated_at": "2024-02-24T06:42:10.768Z"
@@ -38,13 +37,24 @@
             "https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"
         ],
         "repo_link": "https://github.com/minhtran241/gvcourse",
-        "thumbnail": "/project/thumbnails/gvcourse-mobile-application.jpeg",
 		"research_purpose": false,
         "created_at": "2024-02-24T09:02:47.787Z",
         "updated_at": "2024-02-24T09:02:47.787Z"
     },
 	{
 		"id": 4,
+		"title": "Personal Portfolio",
+		"tech_stack": [
+			"https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge",
+			"https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=fff",
+			"https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white"
+		],
+		"repo_link": "https://github.com/minhtran241/minhtran.com",
+		"created_at": "2024-02-24T09:02:47.787Z",
+		"updated_at": "2024-02-24T09:02:47.787Z"
+	},
+	{
+		"id": 5,
 		"title": "Nextcorp",
 		"tech_stack": [
             "https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge",
@@ -59,7 +69,7 @@
 		"updated_at": "2024-03-10T09:02:47.787Z"
 	},
 	{
-		"id": 5,
+		"id": 6,
 		"title": "Edge Computing Models Analysis",
 		"tech_stack": [
             "https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi",

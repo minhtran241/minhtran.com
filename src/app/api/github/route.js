@@ -38,13 +38,10 @@ export const GET = async (request) => {
                                 name
                             }
                             homepageUrl
-                            languages(first: 1) {
-                                edges {
-                                    node {
-                                        name
-                                        color
-                                    }
-                                }
+                            openGraphImageUrl
+                            primaryLanguage {
+                                name
+                                color
                             }
                         }
                         rateLimit {

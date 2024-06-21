@@ -49,7 +49,7 @@ const ProjectCardComponent = ({ project }) => {
         addSuffix: true,
     });
     const licenseName = repoData?.licenseInfo?.name;
-	const homepageUrl = repoData?.homepageUrl || project?.repo_link
+    const homepageUrl = repoData?.homepageUrl || project?.repo_link;
 
     return (
         <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200 gap-3">
@@ -72,14 +72,10 @@ const ProjectCardComponent = ({ project }) => {
                     </div>
                 )}
             </div>
-            <Link
-                href={homepageUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <Link href={homepageUrl} target="_blank" rel="noopener noreferrer">
                 <Image
                     className="rounded-lg relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
-                    src={project?.thumbnail}
+                    src={project?.thumbnail || repoData?.openGraphImageUrl}
                     alt={project?.title}
                     width={0}
                     height={0}
@@ -121,26 +117,18 @@ const ProjectCardComponent = ({ project }) => {
             <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap justify-between text-gray-600 dark:text-gray-400 text-sm">
                     <div className="flex flex-col gap-2">
-                        {/* Language with color */}
                         <div className="flex items-center gap-4">
-                            {repoData?.languages?.edges.map(
-                                (language, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex items-center gap-2"
-                                    >
-                                        <div
-                                            className="rounded-full h-3 w-3"
-                                            style={{
-                                                backgroundColor: `${language.node.color}`,
-                                            }}
-                                        ></div>
-                                        <span className="">
-                                            {language.node.name}
-                                        </span>
-                                    </div>
-                                )
-                            )}
+                            <div className="flex items-center gap-2">
+                                <div
+                                    className="rounded-full h-3 w-3"
+                                    style={{
+                                        backgroundColor: `${repoData?.primaryLanguage?.color}`,
+                                    }}
+                                ></div>
+                                <span className="">
+                                    {repoData?.primaryLanguage?.name}
+                                </span>
+                            </div>
                             <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1">
                                     <Star className="h-4 w-4" />
