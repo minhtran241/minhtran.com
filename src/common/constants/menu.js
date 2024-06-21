@@ -101,8 +101,4 @@ export const MENU_TABS = [
         title: 'Contact',
         href: '/contact',
     },
-    {
-        title: 'README',
-        href: '/readme',
-    },
 ];
