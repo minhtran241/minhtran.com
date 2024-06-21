@@ -8,7 +8,6 @@
 			"https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=fff",
 			"https://img.shields.io/badge/gRPC-0096D8?style=for-the-badge&logo=grpc&logoColor=fff"
 		],
-		"link": "",
 		"repo_link": "https://github.com/minhtran241/microservices-go",
 		"thumbnail": "/project/thumbnails/flexiconnect-architecture.png",
 		"research_purpose": false,
@@ -24,7 +23,6 @@
 			"https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=fff",
 			"https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white"
 		],
-		"link": "",
 		"repo_link": "https://github.com/minhtran241/video-to-mp3-conveter-microservices",
 		"thumbnail": "/project/thumbnails/distributed-video-to-mp3-converter-system.png",
 		"research_purpose": false,
@@ -39,7 +37,6 @@
             "https://img.shields.io/badge/SwiftUI-FF4400?style=for-the-badge&logo=swift&logoColor=fff",
             "https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34"
         ],
-        "link": "https://minhtran241.github.io/gvcourse/",
         "repo_link": "https://github.com/minhtran241/gvcourse",
         "thumbnail": "/project/thumbnails/gvcourse-mobile-application.jpeg",
 		"research_purpose": false,
@@ -55,7 +52,6 @@
 			"https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white",
 			"https://img.shields.io/badge/Elysia.js-%23000000.svg?style=for-the-badge&logo=elysiajs&logoColor=white"
 		],
-		"link": "https://minhtran241.github.io/nextcorp/",
 		"repo_link": "https://github.com/minhtran241/nextcorp",
 		"thumbnail": "/project/thumbnails/nextcorp.png",
 		"research_purpose": false,
@@ -70,7 +66,6 @@
 			"https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101",
 			"https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=ResearchGate&logoColor=white"
 		],
-		"link": "",
 		"repo_link": "https://github.com/minhtran241/edge-computing-models",
 		"thumbnail": "/project/thumbnails/edge-computing-models-analysis.png",
 		"research_purpose": true,

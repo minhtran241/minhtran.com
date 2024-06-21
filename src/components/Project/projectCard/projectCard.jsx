@@ -49,13 +49,14 @@ const ProjectCardComponent = ({ project }) => {
         addSuffix: true,
     });
     const licenseName = repoData?.licenseInfo?.name;
+	const homepageUrl = repoData?.homepageUrl || project?.repo_link
 
     return (
-        <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200">
+        <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200 gap-3">
             {/* Created at */}
-            <div className="flex flex-row justify-between mb-4">
-                <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 font-semibold">
-                    <CalendarDays className="h-5 w-5" />
+            <div className="flex flex-row justify-between">
+                <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
+                    <CalendarDays className="h-4 w-4" />
                     <span className="">
                         {new Date(createdAt).toLocaleDateString('en-GB', {
                             day: 'numeric',
@@ -65,14 +66,14 @@ const ProjectCardComponent = ({ project }) => {
                     </span>
                 </div>
                 {project?.research_purpose && (
-                    <div className="flex items-center gap-2 justify-end bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                    <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
                         <ScrollText className="h-4 w-4" />
-                        <p className="text-sm">Research Purpose</p>
+                        <span className="">Research Purpose</span>
                     </div>
                 )}
             </div>
             <Link
-                href={project?.link || project?.repo_link}
+                href={homepageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -87,15 +88,15 @@ const ProjectCardComponent = ({ project }) => {
             </Link>
 
             <Link
-                href={project?.link || project?.repo_link}
+                href={homepageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl font-bold mt-4 hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                className="text-xl font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 transition"
             >
                 {project?.title}
             </Link>
             <div
-                className="mt-2 tooltip !text-start cursor-pointer"
+                className="tooltip !text-start cursor-pointer"
                 data-tip={repoData?.description}
             >
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
@@ -105,7 +106,7 @@ const ProjectCardComponent = ({ project }) => {
                     [Hover to read more]
                 </span>
             </div>
-            <div className="flex flex-wrap gap-2 mt-4 rounded">
+            <div className="flex flex-wrap gap-2 rounded">
                 {project?.tech_stack.map((badge, index) => (
                     <img
                         key={index}
@@ -117,77 +118,85 @@ const ProjectCardComponent = ({ project }) => {
             </div>
             <div className="flex-grow"></div>
             {/* Make this down to bottom of the card */}
-            <div className="flex items-center justify-between text-gray-600 dark:text-gray-400 mt-4 text-sm">
-                <div className="flex flex-col gap-2">
-                    {/* Language with color */}
-                    <div className="flex items-center gap-4">
-                        {repoData?.languages?.edges.map((language, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center gap-2"
-                            >
-                                <div
-                                    className="rounded-full h-3 w-3"
-                                    style={{
-                                        backgroundColor: `${language.node.color}`,
-                                    }}
-                                ></div>
-                                <span className="">{language.node.name}</span>
-                            </div>
-                        ))}
-                        <div className="flex items-center gap-2">
-                            <div className="flex items-center gap-1">
-                                <Star className="h-4 w-4" />
-                                <span className="">
-                                    {repoData?.stargazerCount}
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <GitFork className="h-4 w-4" />
-                                <span className="">{repoData?.forkCount}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <Eye className="h-4 w-4" />
-                                <span className="">
-                                    {repoData?.watchers?.totalCount}
-                                </span>
+            <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap justify-between text-gray-600 dark:text-gray-400 text-sm">
+                    <div className="flex flex-col gap-2">
+                        {/* Language with color */}
+                        <div className="flex items-center gap-4">
+                            {repoData?.languages?.edges.map(
+                                (language, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex items-center gap-2"
+                                    >
+                                        <div
+                                            className="rounded-full h-3 w-3"
+                                            style={{
+                                                backgroundColor: `${language.node.color}`,
+                                            }}
+                                        ></div>
+                                        <span className="">
+                                            {language.node.name}
+                                        </span>
+                                    </div>
+                                )
+                            )}
+                            <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-1">
+                                    <Star className="h-4 w-4" />
+                                    <span className="">
+                                        {repoData?.stargazerCount}
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <GitFork className="h-4 w-4" />
+                                    <span className="">
+                                        {repoData?.forkCount}
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <Eye className="h-4 w-4" />
+                                    <span className="">
+                                        {repoData?.watchers?.totalCount}
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="flex items-center gap-2">
+                        {repoData?.homepageUrl && (
+                            <Link
+                                href={repoData?.homepageUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                            >
+                                <ExternalLink className="h-4 w-4" />
+                            </Link>
+                        )}
+                        {repoData?.homepageUrl && ' | '}
+                        {project?.repo_link && (
+                            <Link
+                                href={project?.repo_link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                            >
+                                <Github className="h-4 w-4" />
+                            </Link>
+                        )}
+                    </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    {project?.link && (
-                        <Link
-                            href={project?.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
-                        >
-                            <ExternalLink className="h-4 w-4" />
-                        </Link>
-                    )}
-                    {project?.repo_link && project?.link && ' | '}
-                    {project?.repo_link && (
-                        <Link
-                            href={project?.repo_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
-                        >
-                            <Github className="h-4 w-4" />
-                        </Link>
-                    )}
+                <div className="flex flex-wrap gap-2 text-gray-600 dark:text-gray-400 text-sm justify-between">
+                    <p className="flex items-center gap-2">
+                        <Scale className="h-4 w-4" />
+                        <p>{licenseName || 'No License'}</p>
+                    </p>
+                    <p className="flex items-center gap-2">
+                        <ArrowUpFromLine className="h-4 w-4" />
+                        <p>{pushedAtDistance}</p>
+                    </p>
                 </div>
-            </div>
-            <div className="flex items-center justify-between gap-1 mt-2 text-sm text-gray-600 dark:text-gray-400">
-                <p className="flex items-center gap-2">
-                    <Scale className="h-4 w-4" />
-                    <p>{licenseName || 'No License'}</p>
-                </p>
-                <p className="flex items-center gap-2">
-                    <ArrowUpFromLine className="h-4 w-4" />
-                    <p>{pushedAtDistance}</p>
-                </p>
             </div>
         </div>
     );
