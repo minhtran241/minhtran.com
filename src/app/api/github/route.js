@@ -34,6 +34,10 @@ export const GET = async (request) => {
                             watchers {
                                 totalCount
                             }
+                            licenseInfo {
+                                name
+                            }
+                            homepageUrl
                             languages(first: 1) {
                                 edges {
                                     node {

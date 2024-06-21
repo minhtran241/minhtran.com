@@ -11,6 +11,8 @@ import {
     Star,
     GitFork,
     Eye,
+    ArrowUpFromLine,
+    Scale,
 } from 'lucide-react';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
@@ -46,6 +48,7 @@ const ProjectCardComponent = ({ project }) => {
     const pushedAtDistance = formatDistanceToNowStrict(zonedDate, {
         addSuffix: true,
     });
+    const licenseName = repoData?.licenseInfo?.name;
 
     return (
         <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200">
@@ -114,7 +117,7 @@ const ProjectCardComponent = ({ project }) => {
             </div>
             <div className="flex-grow"></div>
             {/* Make this down to bottom of the card */}
-            <div className="flex items-center justify-between text-gray-600 dark:text-gray-400 mt-4 text-base">
+            <div className="flex items-center justify-between text-gray-600 dark:text-gray-400 mt-4 text-sm">
                 <div className="flex flex-col gap-2">
                     {/* Language with color */}
                     <div className="flex items-center gap-4">
@@ -176,11 +179,15 @@ const ProjectCardComponent = ({ project }) => {
                     )}
                 </div>
             </div>
-            {/* Pushed at */}
-            <div className="flex items-center gap-2 justify-end mt-4 text-sm text-gray-600 dark:text-gray-400">
-                <span className="text-[#0033A0] dark:text-blue-600">
-                    Last updated {pushedAtDistance}
-                </span>
+            <div className="flex items-center justify-between gap-1 mt-2 text-sm text-gray-600 dark:text-gray-400">
+                <p className="flex items-center gap-2">
+                    <Scale className="h-4 w-4" />
+                    <p>{licenseName || 'No License'}</p>
+                </p>
+                <p className="flex items-center gap-2">
+                    <ArrowUpFromLine className="h-4 w-4" />
+                    <p>{pushedAtDistance}</p>
+                </p>
             </div>
         </div>
     );
