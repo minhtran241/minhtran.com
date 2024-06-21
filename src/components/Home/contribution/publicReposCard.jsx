@@ -8,11 +8,9 @@ const PublicReposCard = ({ ghInfo, username, colorTheme = 'blue' }) => {
                     Recent Pushed Repositories (Public)
                 </h1>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                    <span className="text-[#0033A0] dark:text-blue-600">
-                        {ghInfo.user.repositories.nodes.length}/
-                        {ghInfo.user.repositories.totalCount}
-                    </span>{' '}
-                    repositories
+                    {ghInfo.user.repositories.nodes.length}/
+                    {ghInfo.user.repositories.totalCount} {' '}
+                    Repositories
                 </p>
             </div>
             <div className="flex flex-col gap-1 items-start mt-3">

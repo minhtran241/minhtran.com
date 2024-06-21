@@ -10,10 +10,14 @@ import {
     ScrollText,
     Star,
     GitFork,
+    Eye,
 } from 'lucide-react';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
 import { userBasicInfo } from '@/common/constants/userBasic';
+import { formatDistanceToNowStrict } from 'date-fns';
+import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import { TIMEZONE } from '@/common/constants/timezone';
 
 const ProjectCardComponent = ({ project }) => {
     const username = userBasicInfo.githubUsername;
@@ -29,8 +33,19 @@ const ProjectCardComponent = ({ project }) => {
     )?.data?.repo;
 
     if (!repoData) {
-        return;
+        return <Loading />;
     }
+
+    const createdAt = repoData?.createdAt;
+
+    const pushedAt = repoData?.pushedAt;
+    const zonedDate = utcToZonedTime(
+        zonedTimeToUtc(pushedAt, TIMEZONE),
+        TIMEZONE
+    );
+    const pushedAtDistance = formatDistanceToNowStrict(zonedDate, {
+        addSuffix: true,
+    });
 
     return (
         <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200">
@@ -39,14 +54,11 @@ const ProjectCardComponent = ({ project }) => {
                 <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 font-semibold">
                     <CalendarDays className="h-5 w-5" />
                     <span className="">
-                        {new Date(project?.created_at).toLocaleDateString(
-                            'en-GB',
-                            {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                            }
-                        )}
+                        {new Date(createdAt).toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric',
+                        })}
                     </span>
                 </div>
                 {project?.research_purpose && (
@@ -131,6 +143,12 @@ const ProjectCardComponent = ({ project }) => {
                                 <GitFork className="h-4 w-4" />
                                 <span className="">{repoData?.forkCount}</span>
                             </div>
+                            <div className="flex items-center gap-1">
+                                <Eye className="h-4 w-4" />
+                                <span className="">
+                                    {repoData?.watchers?.totalCount}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,6 +175,12 @@ const ProjectCardComponent = ({ project }) => {
                         </Link>
                     )}
                 </div>
+            </div>
+            {/* Pushed at */}
+            <div className="flex items-center gap-2 justify-end mt-4 text-sm text-gray-600 dark:text-gray-400">
+                <span className="text-[#0033A0] dark:text-blue-600">
+                    Last updated {pushedAtDistance}
+                </span>
             </div>
         </div>
     );

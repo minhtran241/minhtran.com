@@ -12,7 +12,7 @@ const DATA_ATTRS_DIR = path.join(
 );
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 
-const PAGE_TITLE = 'Projects';
+const PAGE_TITLE = 'Development Projects';
 const PAGE_DESCRIPTION =
     'Diverse array of my projects, including open-source side projects, professional work, and research initiatives.';
 

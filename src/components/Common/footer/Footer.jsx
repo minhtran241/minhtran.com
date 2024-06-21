@@ -1,21 +1,12 @@
-import { SOCIAL_MEDIA, MENU_TABS } from '@/common/constants/menu';
+import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
+import { techStack } from '@/common/constants/websiteInfo';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white mt-12">
-            <nav className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4">
-                {MENU_TABS.map((item, index) => (
-                    <Link
-                        href={item.href}
-                        className="link link-hover font-semibold"
-                        key={index}
-                    >
-                        {item.title}
-                    </Link>
-                ))}
-            </nav>
+        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white mt-12 gap-6">
             <nav>
                 <div className="grid grid-flow-col gap-4">
                     {SOCIAL_MEDIA?.filter((item) =>
@@ -26,7 +17,7 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-5 h-5"
+                            className="w-5 h-5 hover:opacity-70 dark:hover:text-blue-600 transition"
                         >
                             {item.icon}
                         </Link>
@@ -34,17 +25,19 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <div className="flex items-center justify-center gap-2">
-                    <p>Designed and developed by</p>
+                <div className="items-center justify-center">
+                    <span>Designed and developed by</span>
+                    <span> </span>
                     <Link
                         href={userBasicInfo.githubLink || '#'}
                         className="hover:underline"
                     >
                         {userBasicInfo.fullName}
-                    </Link>{' '}
-                    <p>@ {new Date().getFullYear()}</p>
+                    </Link>
+					<span> </span>
+                    <span>@ {new Date().getFullYear()}</span>
                 </div>
-                <div className="flex items-center justify-center gap-2">
+                {/* <div className="flex items-center justify-center gap-2">
                     <p className="">Hosted on</p>
                     <Link href="https://vercel.com" target="_blank">
                         <img
@@ -53,6 +46,23 @@ const Footer = () => {
                             className="!rounded h-6 w-auto"
                         />
                     </Link>
+                </div> */}
+                {/* Built with */}
+                <div className="flex items-center justify-center gap-2">
+                    <p className="">Built with</p>
+                    {techStack.map((item, index) => (
+                        <Link key={index} href={item.link} target="_blank">
+                            <Image
+                                src={item.logo}
+                                alt={item.alt}
+                                width={20}
+                                height={20}
+                                className={`h-4 w-auto ${
+                                    item.invert ? 'filter invert' : ''
+                                }`}
+                            />
+                        </Link>
+                    ))}
                 </div>
             </aside>
         </footer>

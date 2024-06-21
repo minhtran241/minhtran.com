@@ -124,7 +124,7 @@ const ContributionChart = ({ contributionCollection }) => {
                         Contributions
                     </h2>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Total Contributions: <span className="text-[#0033A0] dark:text-blue-600">{contrCalendar.totalContributions}</span>
+                        {contrCalendar.totalContributions} Total Contributions
                     </p>
                 </div>
                 <Select
