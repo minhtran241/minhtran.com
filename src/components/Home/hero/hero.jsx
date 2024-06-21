@@ -23,46 +23,42 @@ const HeroComponent = () => {
             </div>
             <div className="relative container py-16">
                 <div className="flex flex-col items-start gap-4">
-                    <div className="p-8 flex gap-4 rounded-lg bg-white dark:bg-gray-900 shadow-lg flex-wrap">
-                        <div className="flex-shrink-0">
-                            <Image
-                                src={fileSystemInfo.headshot}
-                                alt="headshot"
-                                className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:h-full w-20 h-full"
-                                width={200}
-                                height={300}
-                            />
-                        </div>
-                        <div className="flex flex-col space-y-2">
-                            {/* <div> */}
-                            <div className="font-semibold text-xl text-[#0033A0] dark:text-blue-600">
-                                About Me
+                    <div className="bg-white dark:bg-gray-900 shadow-lg mockup-window border border-base-300">
+                        <div className="flex flex-wrap gap-4 justify-center p-8 border-t border-base-300">
+                            <div className="flex flex-shrink-0">
+                                <Image
+                                    src={fileSystemInfo.headshot}
+                                    alt="headshot"
+                                    className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:h-full w-20 h-full"
+                                    width={200}
+                                    height={300}
+                                />
                             </div>
-                            {/* download CV */}
-                            <div className="flex items-center gap-1 text-base text-[#0033A0] dark:text-blue-600">
-                                <span className="h-[16px] w-[16px]">
-                                    {resumeInfo.icon}
-                                </span>
-                                <Link
-                                    href={resumeInfo.href}
-                                    target="_blank"
-                                    className="hover:underline"
-                                >
-                                    {resumeInfo.title}
-                                </Link>
-                            </div>
-                            <div className="space-y-1">
-                                {userBasicInfo.about?.map((item, index) => {
-                                    return (
-                                        <div
-                                            className="flex items-center gap-2 lg:text-base md:text-base sm:text-sm text-sm"
-                                            key={index}
-                                        >
-                                            {/* <Dot className="h-[16px] w-[16px]" /> */}
-                                            {item}
-                                        </div>
-                                    );
-                                })}
+                            <div className="flex flex-col space-y-2">
+                                {/* <div> */}
+                                <div className="font-semibold text-xl text-[#0033A0] dark:text-blue-600">
+                                    About Me
+                                </div>
+                                {/* download CV */}
+                                <div className="">
+                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] dark:text-blue-600">
+                                        {resumeInfo.icon}
+                                        {resumeInfo.title}
+                                    </button>
+                                </div>
+                                <div className="space-y-1">
+                                    {userBasicInfo.about?.map((item, index) => {
+                                        return (
+                                            <div
+                                                className="flex items-center gap-2 lg:text-base md:text-base sm:text-sm text-sm"
+                                                key={index}
+                                            >
+                                                {/* <Dot className="h-[16px] w-[16px]" /> */}
+                                                {item}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </div>
