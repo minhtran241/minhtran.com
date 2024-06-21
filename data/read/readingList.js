@@ -1,4 +1,4 @@
-const READING_LIST = [
+const ARTICLE_LIST = [
     'https://medium.com/strapi/demystifying-strapis-populate-filtering-88a95f4dfd6f',
     'https://horace.io/brrr_intro.html',
     'https://dev-discuss.pytorch.org/t/min-cut-optimal-recomputation-i-e-activation-checkpointing-with-aotautograd/467',
@@ -17,7 +17,15 @@ const READING_LIST = [
     'https://quarkus.io/guides/quarkus-reactive-architecture',
     'https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8',
     'https://shashank7-iitd.medium.com/understanding-vector-quantized-variational-autoencoders-vq-vae-323d710a888a',
-    'https://ar5iv.labs.arxiv.org/html/2002.02112',
 ];
 
-export default READING_LIST;
+const PAPER_LIST = [
+    // vq-vae-gan
+    'https://ar5iv.labs.arxiv.org/html/2002.02112',
+    // vq-vae1
+    'https://ar5iv.labs.arxiv.org/html/1711.00937',
+    // vq-vae2
+    'https://ar5iv.labs.arxiv.org/html/1906.00446',
+];
+
+export { ARTICLE_LIST, PAPER_LIST };
