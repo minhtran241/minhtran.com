@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -56,9 +57,13 @@ const PostCard = ({ post }) => {
                         <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
                             {post.description}
                         </p>
-                        <span className="text-sm text-[#0033A0] dark:text-blue-600">
-                            [Hover to read more]
-                        </span>
+                        <Link
+                            href={`/blog/${post.slug}`}
+                            className="flex items-center justify-end gap-2 text-sm text-[#0033A0] dark:text-blue-600"
+                        >
+                            Read More
+                            <ArrowRight className="h-4 w-4 inline-block" />
+                        </Link>
                     </div>
                 </div>
             </div>

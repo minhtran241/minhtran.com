@@ -17,7 +17,7 @@ const ContactPage = () => {
     return (
         <div className="container mt-12">
             <div className="flex flex-col gap-2 mb-8">
-                <div className="flex items-center gap-1.5 text-2xl font-semibold">
+                <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
                     <Handshake className="mr-1 h-6 w-6" />
                     <h1 className="capitalize">{PAGE_TITLE}</h1>
                 </div>
