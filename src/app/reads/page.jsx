@@ -2,6 +2,7 @@ import { BookCheck, Newspaper, ScrollText } from 'lucide-react';
 // import LinkTableRow from '@/common/elements/linkTableRow';
 import { ARTICLE_LIST, PAPER_LIST } from '../../../data/read/readingList';
 import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
+import Breakline from '@/common/elements/breakline';
 
 const PAGE_TITLE = 'Reading List';
 const PAGE_DESCRIPTION =
@@ -30,7 +31,7 @@ const ReadsPage = async () => {
                         {PAGE_DESCRIPTION}
                     </p>
                 </div>
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
                         <div className="flex items-center gap-1.5 text-xl font-medium">
                             <ScrollText className="mr-1 h-5 w-5" />
@@ -42,6 +43,7 @@ const ReadsPage = async () => {
                             ))}
                         </div>
                     </section>
+                    <Breakline />
                     <section className="flex flex-col gap-8">
                         <div className="flex items-center gap-1.5 text-xl font-medium">
                             <Newspaper className="mr-1 h-5 w-5" />

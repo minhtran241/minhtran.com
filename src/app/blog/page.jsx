@@ -3,8 +3,15 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BellRing, Newspaper } from 'lucide-react';
+import {
+    BellRing,
+    Newspaper,
+    BrainCircuit,
+    Database,
+    Server,
+} from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import Breakline from '@/common/elements/breakline';
 
 const PAGE_TITLE = 'Tech Blogs';
 const PAGE_DESCRIPTION =
@@ -49,10 +56,33 @@ const getPosts = async (limit) => {
     }
 };
 
+const CATEGORIES = [
+    {
+        name: 'Machine Learning & Deep Learning',
+        icon: <BrainCircuit className="mr-1 w-5 h-5" />,
+    },
+    {
+        name: 'Web Development',
+        icon: <Server className="mr-1 w-5 h-5" />,
+    },
+    {
+        name: 'Databases',
+        icon: <Database className="mr-1 w-5 h-5" />,
+    },
+];
+
 const BlogPage = async () => {
     const posts = await getPosts();
     const firstPost = posts[0];
     const otherPosts = posts.slice(1);
+    const groupedPosts = CATEGORIES.map((category) => ({
+        ...category,
+        posts: otherPosts.filter(
+            (post) =>
+                post.category.toLowerCase() === category.name.toLowerCase()
+        ),
+    }));
+
     return (
         <>
             <div className="flex flex-col container mt-12 gap-8">
@@ -79,7 +109,7 @@ const BlogPage = async () => {
                             height={218}
                         />
                     </Link>
-                    <div className="mt-4 lg:mt-0 lg:w-1/2 ">
+                    <div className="mt-4 lg:mt-0 lg:w-1/2 flex flex-col gap-4">
                         <div className="flex flex-row justify-between">
                             <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
                                 {new Date(
@@ -94,19 +124,21 @@ const BlogPage = async () => {
                             {/* Latest label */}
                             <div className="flex flex-row gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
                                 <BellRing className="h-4 w-4" />
-                                <p className="text-xs font-semibold">Latest</p>
+                                <p className="text-xs font-semibold">
+                                    Latest {firstPost.category}
+                                </p>
                             </div>
                         </div>
                         <Link
                             href={`/blog/${firstPost.slug}`}
-                            className="mt-2 block text-xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-2xl"
+                            className="block text-xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-2xl"
                         >
                             {firstPost.title}
                         </Link>
-                        <p className="text-md md:text-md mt-3 text-justify text-gray-600 dark:text-gray-400">
+                        <p className="text-md md:text-md text-justify text-gray-600 dark:text-gray-400">
                             {firstPost.description}
                         </p>
-                        <div className="flex flex-wrap leading-none gap-2 mt-4 text-[#0033A0] dark:text-blue-600">
+                        {/* <div className="flex flex-wrap leading-none gap-2 text-[#0033A0] dark:text-blue-600">
                             {firstPost.tags?.map((tag, index) => (
                                 <div
                                     key={index}
@@ -116,16 +148,42 @@ const BlogPage = async () => {
                                     #{tag}
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
-                    {otherPosts.map((post, i) => (
-                        <div className="w-full" key={i}>
-                            <PostCard post={post} />
+                <div className="flex flex-col gap-4">
+                    {groupedPosts.map((category, index) => (
+                        <div key={index}>
+                            <section className="flex flex-col gap-8">
+                                <div className="flex items-center gap-1.5 text-xl font-medium">
+                                    {category.icon}
+                                    <h1 className="capitalize">
+                                        {category.name}
+                                    </h1>
+                                </div>
+                                <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">
+                                    {category.posts.map((post, index) => (
+                                        <PostCard key={index} post={post} />
+                                    ))}
+                                </div>
+                            </section>
+                            {index !== groupedPosts.length - 1 && <Breakline />}
                         </div>
                     ))}
                 </div>
+                {/* {groupedPosts.map((category, index) => (
+                    <div key={index} className="mt-8">
+                        <div className="flex items-center gap-1.5 text-xl font-semibold">
+                            {category.icon}
+                            <h2 className="capitalize">{category.name}</h2>
+                        </div>
+                        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3">
+                            {category.posts.map((post, index) => (
+                                <PostCard key={index} post={post} />
+                            ))}
+                        </div>
+                    </div>
+                ))} */}
             </div>
         </>
     );

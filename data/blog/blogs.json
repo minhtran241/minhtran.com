@@ -10,7 +10,8 @@
 	"updated_at": "2024-03-02T16:22:48.255Z",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, transformer, llms"
+	"tags": "nlp, transformer, llms",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 2,
@@ -23,7 +24,8 @@
 	"updated_at": "2024-03-02T22:22:48.255Z",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, transformer, tokenization, padding, mapping, llms"
+	"tags": "nlp, transformer, tokenization, padding, mapping, llms",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 3,
@@ -36,7 +38,8 @@
 	"updated_at": "2024-03-03T14:11:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "cloudflare, nginx, pingora, proxy"
+	"tags": "cloudflare, nginx, pingora, proxy",
+	"category": "Web Development"
   },
   {
 	"id": 4,
@@ -49,7 +52,8 @@
 	"updated_at": "2024-03-03T16:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, transformer, llms, fine-tuning, peft, lora"
+	"tags": "nlp, transformer, llms, fine-tuning, peft, lora",
+	"category": "Machine Learning & Deep Learning"
   }, 
   {
 	"id": 5,
@@ -62,7 +66,8 @@
 	"updated_at": "2024-03-03T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, llms, rag, retrieval, generation, generativeai"
+	"tags": "nlp, llms, rag, retrieval, generation, generativeai",
+	"category": "Machine Learning & Deep Learning"
   }, {
 	"id": 6,
 	"title": "Design a Payment System",
@@ -74,7 +79,8 @@
 	"updated_at": "2024-03-04T14:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "system-design, payment, transactions"
+	"tags": "system-design, payment, transactions",
+	"category": "Web Development"
   },
   {
 	"id": 7,
@@ -87,7 +93,8 @@
 	"updated_at": "2024-03-04T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "postgresql, indexing, create-index-concurrently, hot, heap-only-tuple"
+	"tags": "postgresql, indexing, create-index-concurrently, hot, heap-only-tuple",
+	"category": "Databases"
   },
   {
 	"id": 8,
@@ -100,7 +107,8 @@
 	"updated_at": "2024-03-05T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, llms, txtai, embeddings, semantic-search, vector-database"
+	"tags": "nlp, llms, txtai, embeddings, semantic-search, vector-database",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 9,
@@ -113,7 +121,8 @@
 	"updated_at": "2024-03-06T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, llms, embeddings, semantic-search, vector-database, vector-indexing"
+	"tags": "nlp, llms, embeddings, semantic-search, vector-database, vector-indexing",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 10,
@@ -126,7 +135,8 @@
 	"updated_at": "2024-03-09T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, llms, rag, retrieval, generation, generativeai, complex-rag"
+	"tags": "nlp, llms, rag, retrieval, generation, generativeai, complex-rag",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 11,
@@ -139,7 +149,8 @@
 	"updated_at": "2024-04-01T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "nlp, llms, transformer, architecture"
+	"tags": "nlp, llms, transformer, architecture",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 12,
@@ -152,7 +163,8 @@
 	"updated_at": "2024-04-1323:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "linear-algebra, deep-learning, mathematics"
+	"tags": "linear-algebra, deep-learning, mathematics",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 13,
@@ -165,7 +177,8 @@
 	"updated_at": "2024-04-14T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "backpropagation, neural-networks, deep-learning"
+	"tags": "backpropagation, neural-networks, deep-learning",
+	"category": "Machine Learning & Deep Learning"
   },
   {
 	"id": 14,
@@ -178,6 +191,7 @@
 	"updated_at": "2024-04-15T23:56:48",
 	"user_id": 1,
 	"is_published": true,
-	"tags": "system-design, key-value-store, distributed-systems"
+	"tags": "system-design, key-value-store, distributed-systems",
+	"category": "Databases"
   }
 ]

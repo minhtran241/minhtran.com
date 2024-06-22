@@ -10,7 +10,7 @@ const PostCard = ({ post }) => {
             className="wow fadeInUp relative overflow-hidden"
             data-wow-delay=".1s"
         >
-            <div className="overflow-hidden">
+            <div className="overflow-hidden flex flex-col gap-2">
                 <Link href={`/blog/${post.slug}`}>
                     <div className="relative w-full lg:h-56 md:h-52 sm:h-44 h-44">
                         <Image
@@ -26,7 +26,7 @@ const PostCard = ({ post }) => {
                     </div>
                 </Link>
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-4">
+                {/* <div className="flex flex-wrap gap-2 mt-4">
                     {post.tags?.map((tag, index) => (
                         <div
                             key={index}
@@ -36,8 +36,8 @@ const PostCard = ({ post }) => {
                             #{tag}
                         </div>
                     ))}
-                </div>
-                <div className="mt-2 gap-2">
+                </div> */}
+                <div className="gap-2">
                     <Link
                         href={`/blog/${post.slug}`}
                         className="inline-block text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"

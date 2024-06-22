@@ -1,6 +1,6 @@
 import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
-import { techStack } from '@/common/constants/websiteInfo';
+import { TECHSTACK } from '@/common/constants/site';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -50,7 +50,7 @@ const Footer = () => {
                 {/* Built with */}
                 <div className="flex items-center justify-center gap-2">
                     <p className="">Built with</p>
-                    {techStack.map((item, index) => (
+                    {TECHSTACK.map((item, index) => (
                         <Link key={index} href={item.link} target="_blank">
                             <Image
                                 src={item.logo}

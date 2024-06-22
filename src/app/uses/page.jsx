@@ -1,6 +1,7 @@
 import { GalleryHorizontalEnd } from 'lucide-react';
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
+import Breakline from '@/common/elements/breakline';
 
 const PAGE_TITLE = 'Used Devices and Tools';
 const PAGE_DESCRIPTION =
@@ -27,10 +28,11 @@ const UsesPage = () => {
                         {PAGE_DESCRIPTION}
                     </p>
                 </div>
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
                     {/* Accessories section: laptop, iphone, .... */}
                     {/* Laptop first */}
                     <Devices />
+                    <Breakline />
                     <DevTools />
                 </div>
             </div>
