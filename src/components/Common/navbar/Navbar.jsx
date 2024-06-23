@@ -34,20 +34,25 @@ const Navbar = async () => {
             </div>
             <div className="navbar-end">
                 {/* Umami share link */}
-                <Link
-                    href={process.env.UMAMI_SHARE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-ghost"
+                <div
+                    className="tooltip tooltip-bottom dark:tooltip-info"
+                    data-tip="Umami Analytics"
                 >
-                    <Image
-                        src="/logos/umami-color.svg"
-                        alt="Umami Logo"
-                        width={20}
-                        height={20}
-						className="filter invert"
-                    />
-                </Link>
+                    <Link
+                        href={process.env.UMAMI_SHARE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-ghost"
+                    >
+                        <Image
+                            src="/logos/umami-color.svg"
+                            alt="Umami Logo"
+                            width={20}
+                            height={20}
+                            className="filter invert"
+                        />
+                    </Link>
+                </div>
                 <DropdownTheme />
             </div>
         </div>

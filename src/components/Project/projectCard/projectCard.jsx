@@ -92,7 +92,7 @@ const ProjectCardComponent = ({ project }) => {
                 {project?.title}
             </Link>
             <div
-                className="tooltip !text-start cursor-pointer"
+                className="tooltip dark:tooltip-primary !text-start cursor-pointer"
                 data-tip={repoData?.description}
             >
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
