@@ -8,7 +8,6 @@ import { Clock, Loader } from 'lucide-react';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -195,10 +194,10 @@ const ContactForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button
+                <button
                     type="submit"
                     className={clsx(
-                        'w-full rounded-md bg-[#0033A0] dark:bg-blue-600 text-white transition-all duration-300 hover:bg-[#00257D] dark:hover:bg-blue-700',
+                        'btn btn-sm sm:btn-sm md:btn-md lg:btn-md w-full bg-[#0033A0] dark:bg-blue-600 text-white transition-all duration-300 hover:bg-[#00257D] dark:hover:bg-blue-700',
                         isLoading
                             ? 'bg-gray-400 dark:bg-gray-700 cursor-not-allowed'
                             : 'hover:bg-[#00257D] dark:hover:bg-blue-600'
@@ -206,7 +205,7 @@ const ContactForm = () => {
                     disabled={isLoading}
                 >
                     {isLoading ? <Loader /> : 'Send Message'}
-                </Button>
+                </button>
                 <div className="mt-3 flex items-center gap-2 text-sm">
                     <Clock className="w-4 h-4" />
                     <div className="">

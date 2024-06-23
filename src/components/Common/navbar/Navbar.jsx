@@ -1,7 +1,8 @@
 import Links from './links/Links';
 import DropdownTheme from '../themeProvider/dropdownTheme';
-import { Menu } from 'lucide-react';
+import { Menu, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = async () => {
     return (
@@ -32,6 +33,21 @@ const Navbar = async () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {/* Umami share link */}
+                <Link
+                    href={process.env.UMAMI_SHARE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-ghost"
+                >
+                    <Image
+                        src="/logos/umami-color.svg"
+                        alt="Umami Logo"
+                        width={20}
+                        height={20}
+						className="filter invert"
+                    />
+                </Link>
                 <DropdownTheme />
             </div>
         </div>

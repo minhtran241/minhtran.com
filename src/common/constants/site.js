@@ -54,3 +54,33 @@ export const TECHSTACK = [
         alt: 'Lucide Logo',
     },
 ];
+
+export const CONSUMED_APIS = [
+    {
+        name: 'GitHub',
+        link: 'https://developer.github.com/v3/',
+        logo: '/logos/github-color.svg',
+        alt: 'Github Logo',
+        invert: true,
+    },
+    {
+        name: 'WakaTime',
+        link: 'https://wakatime.com/developers',
+        logo: '/logos/wakatime.svg',
+        alt: 'WakaTime Logo',
+        invert: true,
+    },
+    {
+        name: 'Spotify',
+        link: 'https://developer.spotify.com/documentation/web-api/',
+        logo: '/logos/spotify-color.svg',
+        alt: 'Spotify Logo',
+    },
+    {
+        name: 'Cal',
+        link: 'https://developer.cal.com',
+        logo: '/logos/caldotcom-color.svg',
+        alt: 'Cal Logo',
+		invert: true
+    },
+];

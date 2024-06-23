@@ -109,6 +109,13 @@ const calcom = localFont({
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={cn(calcom.variable, 'scroll-smooth')}>
+            <head>
+                <script
+                    defer
+                    src="https://cloud.umami.is/script.js"
+                    data-website-id={process.env.UMAMI_WEBSITE_ID}
+                ></script>
+            </head>
             <body
             // className={cn(
             //     'min-h-screen bg-background antialiased font-sans',

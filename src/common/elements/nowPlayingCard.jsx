@@ -42,10 +42,17 @@ const NowPlayingCard = ({ isExpand = false }) => {
                     className="m-2 cursor-pointer rounded-full bg-white dark:bg-neutral-950 transition-all duration-100"
                     onClick={handleMusicToggle}
                 >
-                    <Disc3
+                    {/* <Disc3
                         absoluteStrokeWidth
                         size={44}
                         className="animate-pulse text-green-500"
+                    /> */}
+                    <Image
+                        src="/logos/spotify-color.svg"
+                        alt="Spotify"
+                        width={44}
+                        height={44}
+                        className="animate-pulse"
                     />
                 </div>
             ) : (

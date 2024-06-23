@@ -1,6 +1,6 @@
 import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
-import { TECHSTACK } from '@/common/constants/site';
+import { TECHSTACK, CONSUMED_APIS } from '@/common/constants/site';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,7 +34,7 @@ const Footer = () => {
                     >
                         {userBasicInfo.fullName}
                     </Link>
-					<span> </span>
+                    <span> </span>
                     <span>@ {new Date().getFullYear()}</span>
                 </div>
                 {/* <div className="flex items-center justify-center gap-2">
@@ -51,6 +51,23 @@ const Footer = () => {
                 <div className="flex items-center justify-center gap-2">
                     <p className="">Built with</p>
                     {TECHSTACK.map((item, index) => (
+                        <Link key={index} href={item.link} target="_blank">
+                            <Image
+                                src={item.logo}
+                                alt={item.alt}
+                                width={20}
+                                height={20}
+                                className={`h-4 w-auto ${
+                                    item.invert ? 'filter invert' : ''
+                                }`}
+                            />
+                        </Link>
+                    ))}
+                </div>
+                {/* APIs Usage */}
+                <div className="flex items-center justify-center gap-2">
+                    <p className="">Consuming APIs from</p>
+                    {CONSUMED_APIS.map((item, index) => (
                         <Link key={index} href={item.link} target="_blank">
                             <Image
                                 src={item.logo}
