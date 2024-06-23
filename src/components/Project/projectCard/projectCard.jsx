@@ -95,12 +95,12 @@ const ProjectCardComponent = ({ project }) => {
                 className="tooltip !text-start cursor-pointer"
                 data-tip={repoData?.description}
             >
-                <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
+                <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
                     {repoData?.description}
                 </p>
-                <span className="text-sm text-[#0033A0] dark:text-blue-600">
+                {/* <span className="text-sm text-[#0033A0] dark:text-blue-600">
                     [Hover to read more]
-                </span>
+                </span> */}
             </div>
             <div className="flex flex-wrap gap-2 rounded">
                 {project?.tech_stack.map((badge, index) => (
