@@ -89,7 +89,7 @@ const ContactForm = () => {
                     <div className="w-full">
                         <FormField
                             control={form.control}
-                            name="username"
+                            name="name"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel className="flex flex-row leading-none">

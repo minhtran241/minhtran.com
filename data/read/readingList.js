@@ -26,6 +26,8 @@ const PAPER_LIST = [
     'https://ar5iv.labs.arxiv.org/html/1711.00937',
     // vq-vae2
     'https://ar5iv.labs.arxiv.org/html/1906.00446',
+    // group norm
+    'https://ar5iv.labs.arxiv.org/html/1803.08494',
 ];
 
 export { ARTICLE_LIST, PAPER_LIST };
