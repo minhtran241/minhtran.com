@@ -20,14 +20,18 @@ const ARTICLE_LIST = [
 ];
 
 const PAPER_LIST = [
-    // vq-vae-gan
-    'https://ar5iv.labs.arxiv.org/html/2002.02112',
+    // group norm
+    'https://ar5iv.labs.arxiv.org/html/1803.08494',
+    //gan
+    'https://ar5iv.labs.arxiv.org/html/1406.2661',
+    // vae
+    'https://ar5iv.labs.arxiv.org/html/1312.6114',
     // vq-vae1
     'https://ar5iv.labs.arxiv.org/html/1711.00937',
     // vq-vae2
     'https://ar5iv.labs.arxiv.org/html/1906.00446',
-    // group norm
-    'https://ar5iv.labs.arxiv.org/html/1803.08494',
+    // vq-vae-gan
+    'https://ar5iv.labs.arxiv.org/html/2002.02112',
 ];
 
 export { ARTICLE_LIST, PAPER_LIST };
