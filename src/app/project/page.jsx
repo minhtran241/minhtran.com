@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '@/components/Project/projectCard/projectCard';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 
 const PROJECT_FETCH_LIMIT = 100;
 const DATA_ATTRS_DIR = path.join(
@@ -15,6 +16,14 @@ const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, 'projects.json');
 const PAGE_TITLE = 'Development Projects';
 const PAGE_DESCRIPTION =
     'Diverse array of my projects, including open-source side projects, professional work, and research initiatives.';
+
+const BREADCRUMBS = [
+    {
+        href: '/project',
+        icon: <FolderGit2 className="h-4 w-4 stroke-current" />,
+        text: 'Projects',
+    },
+];
 
 // SEO metadata
 export const generateMetadata = async () => {
@@ -48,7 +57,7 @@ const ProjectPage = async () => {
     return (
         <>
             <div className="flex flex-col container mt-12 gap-8">
-                <div className="flex flex-col gap-2">
+                {/* <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
                         <FolderGit2 className="mr-1 h-6 w-6" />
                         <h1 className="capitalize">{PAGE_TITLE}</h1>
@@ -56,7 +65,8 @@ const ProjectPage = async () => {
                     <p className="text-gray-600 dark:text-gray-400">
                         {PAGE_DESCRIPTION}
                     </p>
-                </div>
+                </div> */}
+                <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
                     {projects.map((project, index) => (
                         // same height for all cards

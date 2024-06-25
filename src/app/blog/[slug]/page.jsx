@@ -8,8 +8,9 @@ import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronsLeft, ChevronsRight } from 'lucide-react';
+import { ChevronsLeft, ChevronsRight, FolderOpen, FolderPen } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -79,6 +80,19 @@ const getPost = async (slug) => {
 };
 
 const SinglePostContent = ({ post }) => {
+	const BREADCRUMBS = [
+		{
+			href: '/blog',
+			icon: <FolderOpen className="h-4 w-4 stroke-current" />,
+			text: 'Blogs',
+		},
+		{
+			href: `/blog/${post.slug}`,
+			icon: <FolderPen className="h-4 w-4 stroke-current" />,
+			text: post.title,
+		},
+	];
+
     const createdAtText = new Date(post.created_at).toLocaleDateString(
         'en-US',
         {
@@ -90,8 +104,9 @@ const SinglePostContent = ({ post }) => {
     );
 
     return (
-        <div className="container mt-12">
-            <div className="content-center items-center justify-center mb-5">
+        <div className="container flex flex-col gap-4 mt-12">
+			<Breadcrumbs breadcrumbs={BREADCRUMBS} />
+            <div className="content-center items-center justify-center">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
                         <h1 className="font-bold text-[#0033A0] dark:text-blue-600 mb-3 lg:text-4xl md:text-3xl sm:text-3xl text-2xl">

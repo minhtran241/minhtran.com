@@ -20,6 +20,8 @@ const ARTICLE_LIST = [
 ];
 
 const PAPER_LIST = [
+    // attention is all you need
+    'https://ar5iv.labs.arxiv.org/html/1706.03762',
     // group norm
     'https://ar5iv.labs.arxiv.org/html/1803.08494',
     //gan

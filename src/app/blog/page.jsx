@@ -5,13 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
     BellRing,
-    Newspaper,
+    FolderPen,
     BrainCircuit,
     Database,
     Server,
 } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breakline from '@/common/elements/breakline';
+import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 
 const PAGE_TITLE = 'Tech Blogs';
 const PAGE_DESCRIPTION =
@@ -71,6 +72,14 @@ const CATEGORIES = [
     },
 ];
 
+const BREADCRUMBS = [
+    {
+        href: '/blog',
+        icon: <FolderPen className="h-4 w-4 stroke-current" />,
+        text: 'Blogs',
+    },
+];
+
 const BlogPage = async () => {
     const posts = await getPosts();
     const firstPost = posts[0];
@@ -86,7 +95,7 @@ const BlogPage = async () => {
     return (
         <>
             <div className="flex flex-col container mt-12 gap-8">
-                <div className="flex flex-col gap-2">
+                {/* <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
                         <Newspaper className="mr-1 h-6 w-6" />
                         <h1 className="capitalize">{PAGE_TITLE}</h1>
@@ -94,7 +103,8 @@ const BlogPage = async () => {
                     <p className="text-gray-600 dark:text-gray-400">
                         {PAGE_DESCRIPTION}
                     </p>
-                </div>
+                </div> */}
+				<Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 {/* // First post */}
                 <div className="lg:flex lg:items-center lg:gap-12">
                     <Link
