@@ -1,4 +1,4 @@
-import { FolderGit2 } from 'lucide-react';
+import { FolderOpen } from 'lucide-react';
 import path from 'path';
 import fs from 'fs/promises';
 import ProjectCard from '@/components/Project/projectCard/projectCard';
@@ -20,7 +20,7 @@ const PAGE_DESCRIPTION =
 const BREADCRUMBS = [
     {
         href: '/project',
-        icon: <FolderGit2 className="h-4 w-4 stroke-current" />,
+        icon: <FolderOpen className="h-4 w-4 stroke-current" />,
         text: 'Projects',
     },
 ];

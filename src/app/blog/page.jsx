@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
     BellRing,
-    FolderPen,
     BrainCircuit,
     Database,
     Server,
+    FolderOpen,
 } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breakline from '@/common/elements/breakline';
@@ -75,7 +75,7 @@ const CATEGORIES = [
 const BREADCRUMBS = [
     {
         href: '/blog',
-        icon: <FolderPen className="h-4 w-4 stroke-current" />,
+        icon: <FolderOpen className="h-4 w-4 stroke-current" />,
         text: 'Blogs',
     },
 ];
@@ -104,7 +104,7 @@ const BlogPage = async () => {
                         {PAGE_DESCRIPTION}
                     </p>
                 </div> */}
-				<Breadcrumbs breadcrumbs={BREADCRUMBS} />
+                <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 {/* // First post */}
                 <div className="lg:flex lg:items-center lg:gap-12">
                     <Link

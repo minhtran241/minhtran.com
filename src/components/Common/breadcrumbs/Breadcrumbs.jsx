@@ -15,7 +15,7 @@ const Breadcrumbs = ({ breadcrumbs }) => {
                     <li key={index}>
                         <Link
                             href={breadcrumb.href}
-                            className="flex items-center gap-2 text-[#0033A0] dark:text-blue-600"
+                            className={`flex items-center gap-2 ${index === breadcrumbs.length - 1 && 'text-[#0033A0] dark:text-blue-600'}`}
                         >
                             {breadcrumb.icon}
                             {breadcrumb.text}

@@ -1,4 +1,4 @@
-import { Folder, Newspaper, ScrollText } from 'lucide-react';
+import { FolderOpen, Newspaper, ScrollText } from 'lucide-react';
 // import LinkTableRow from '@/common/elements/linkTableRow';
 import { ARTICLE_LIST, PAPER_LIST } from '../../../data/read/readingList';
 import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
@@ -14,7 +14,7 @@ const SHOWED_PAPER_LIST = PAPER_LIST.reverse();
 const BREADCRUMBS = [
     {
         href: '/reads',
-        icon: <Folder className="h-4 w-4 stroke-current" />,
+        icon: <FolderOpen className="h-4 w-4 stroke-current" />,
         text: 'Reads',
     },
 ];

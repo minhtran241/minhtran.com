@@ -1,5 +1,5 @@
 import Contact from '@/components/Contact/contact';
-import { Folder } from 'lucide-react';
+import { FolderOpen, AppWindow } from 'lucide-react';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 
 const PAGE_TITLE = 'Contact Information';
@@ -17,7 +17,7 @@ export const generateMetadata = async () => {
 const BREADCRUMBS = [
     {
         href: '/contact',
-        icon: <Folder className="h-4 w-4 stroke-current" />,
+        icon: <AppWindow className="h-4 w-4 stroke-current" />,
         text: 'Contact',
     },
 ];
@@ -34,7 +34,7 @@ const ContactPage = () => {
                     {PAGE_DESCRIPTION}
                 </p>
             </div> */}
-			<Breadcrumbs breadcrumbs={BREADCRUMBS} />
+            <Breadcrumbs breadcrumbs={BREADCRUMBS} />
             <Contact />
         </div>
     );

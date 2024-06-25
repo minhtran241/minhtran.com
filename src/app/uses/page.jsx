@@ -1,4 +1,4 @@
-import { Folder } from 'lucide-react';
+import { FolderOpen } from 'lucide-react';
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
 import Breakline from '@/common/elements/breakline';
@@ -11,7 +11,7 @@ const PAGE_DESCRIPTION =
 const BREADCRUMBS = [
     {
         href: '/uses',
-        icon: <Folder className="h-4 w-4 stroke-current" />,
+        icon: <FolderOpen className="h-4 w-4 stroke-current" />,
         text: 'Uses',
     },
 ];
