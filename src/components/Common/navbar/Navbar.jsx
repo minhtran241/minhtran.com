@@ -1,10 +1,27 @@
 import Links from './links/Links';
 import DropdownTheme from '../themeProvider/dropdownTheme';
-import { Menu, TrendingUp } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { getClient } from '@umami/api-client';
 
 const Navbar = async () => {
+    const client = getClient();
+    const { ok, status, data, error } = await client.getWebsiteStats(
+        process.env.UMAMI_WEBSITE_ID,
+        {
+            startAt: 0,
+            endAt: new Date().getTime(),
+        }
+    );
+    if (!ok || error) {
+        console.error('Error fetching website stats', status, error);
+    }
+
+    const webstats = {
+        Pageviews: data?.pageviews?.value,
+        Visits: data?.visits?.value,
+        Visitors: data?.visitors?.value,
+    };
     return (
         <div className="navbar bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white">
             <div className="navbar-start ">
@@ -33,24 +50,32 @@ const Navbar = async () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* Umami share link */}
+                {/* Umami info list dropdown */}
                 <div
-                    className="tooltip tooltip-bottom dark:tooltip-info"
-                    data-tip="Umami Analytics"
+                    className="tooltip tooltip-bottom dark:tooltip-info relative"
+                    data-tip="Umami analytics"
                 >
                     <Link
                         href={process.env.UMAMI_SHARE_URL}
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-ghost"
+                        className="dropdown"
                     >
-                        <Image
-                            src="/logos/umami-color.svg"
-                            alt="Umami Logo"
-                            width={20}
-                            height={20}
-                            className="filter invert"
-                        />
+                        <div
+                            tabIndex={0}
+                            role="button"
+                            className="btn btn-ghost"
+                        >
+                            <div className="flex items-center gap-4">
+                                {Object.keys(webstats).map((key, index) => (
+                                    <div key={index} className="flex flex-col">
+                                        <span className="text-xs">{key}</span>
+                                        <span className="text-lg">
+                                            {webstats[key]?.toLocaleString()}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </Link>
                 </div>
                 <DropdownTheme />

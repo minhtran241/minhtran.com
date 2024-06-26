@@ -8,7 +8,6 @@ export const PROJECT_LIST = [
     'strapi-plugin-github-projects',
     'strapi-mdevblog',
     'gRPC-introduction',
-    'restaurant-management',
     'contract-template-truffle',
     'flask-blog',
 ];

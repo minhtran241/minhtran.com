@@ -21,7 +21,10 @@ const DropdownTheme = () => {
                     <span className="sr-only">Toggle theme</span>
                 </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="dark:bg-gray-900">
+            <DropdownMenuContent
+                align="end"
+                className="dark:bg-gray-900 border-none"
+            >
                 <DropdownMenuItem
                     onClick={() => setTheme('light')}
                     className="dark:hover:bg-gray-800"

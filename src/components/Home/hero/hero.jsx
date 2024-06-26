@@ -34,18 +34,18 @@ const HeroComponent = () => {
                                     height={300}
                                 />
                             </div>
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col gap-3">
                                 {/* <div> */}
-                                <div className="font-semibold text-xl text-[#0033A0] dark:text-white">
-                                    About Me
-                                </div>
+                                <p className="font-semibold text-xl text-[#0033A0] dark:text-white">
+                                    About me
+                                </p>
                                 {/* download CV */}
                                 <Link
                                     href={resumeInfo.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] dark:text-blue-600 rounded bg-gray-100 hover:bg-gray-200 border-none hover:border-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white">
+                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] rounded bg-gray-100 hover:bg-gray-200 border-none hover:border-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white">
                                         {resumeInfo.icon}
                                         {resumeInfo.title}
                                     </button>

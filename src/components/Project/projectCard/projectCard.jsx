@@ -15,9 +15,10 @@ import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
 
 const ProjectCard = async ({ project }) => {
-    const projectName = project?.name.split('-').join(' ');
-    const capitalizedProjectName =
-        projectName.charAt(0).toUpperCase() + projectName.slice(1);
+    const projectName = project?.name
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
     let pushedAtDistance = '';
     if (project?.pushedAt) {
         const zonedDate = utcToZonedTime(
@@ -69,7 +70,7 @@ const ProjectCard = async ({ project }) => {
                 rel="noopener noreferrer"
                 className="text-xl font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 transition"
             >
-                {capitalizedProjectName}
+                {projectName}
             </Link>
             <div
                 className="tooltip dark:tooltip-primary !text-start cursor-pointer"
