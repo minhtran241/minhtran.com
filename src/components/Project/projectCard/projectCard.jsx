@@ -37,14 +37,15 @@ const ProjectCardComponent = ({ project }) => {
                 <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
                     <CalendarDays className="h-4 w-4" />
                     <span className="">
-                        {new Date(project?.createdAt).toLocaleDateString(
-                            'en-GB',
-                            {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                            }
-                        )}
+                        {project?.createdAt &&
+                            new Date(project?.createdAt).toLocaleDateString(
+                                'en-GB',
+                                {
+                                    day: 'numeric',
+                                    month: 'short',
+                                    year: 'numeric',
+                                }
+                            )}
                     </span>
                 </div>
             </div>
