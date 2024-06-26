@@ -45,10 +45,6 @@ const ProjectPage = async () => {
         PROJECT_LIST.includes(repo.name)
     );
 
-    if (!projects || projects.length === 0) {
-        return <Loading />;
-    }
-
     return (
         <>
             <div className="flex flex-col container mt-12 gap-8">

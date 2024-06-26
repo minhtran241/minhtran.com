@@ -59,7 +59,7 @@ export const GET = async (request) => {
                                     name
                                     color
                                 }
-                                repositoryTopics(first: 4) {
+                                repositoryTopics(first: 7) {
                                     nodes {
                                         topic {
                                             name

@@ -14,7 +14,7 @@ import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = async ({ project }) => {
     const projectName = project?.name.split('-').join(' ');
     const capitalizedProjectName =
         projectName.charAt(0).toUpperCase() + projectName.slice(1);
@@ -55,7 +55,7 @@ const ProjectCard = ({ project }) => {
             >
                 <Image
                     className="rounded-lg relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
-                    src={project?.thumbnail || project?.openGraphImageUrl}
+                    src={project?.openGraphImageUrl}
                     alt={project?.name}
                     width={0}
                     height={0}
