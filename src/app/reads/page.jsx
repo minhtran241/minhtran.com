@@ -4,7 +4,7 @@ import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
 import Breakline from '@/common/elements/breakline';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 
-export const maxDuration = 300; // Set the maximum duration for the loading spinner
+export const maxDuration = 60;
 
 const PAGE_TITLE = 'Reading List';
 const PAGE_DESCRIPTION =
