@@ -24,11 +24,11 @@ const LinkPreviewCard = async ({ url }) => {
 
     return (
         <div
-            className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:border border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out tooltip dark:tooltip-primary !text-start"
+            className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:border border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out tooltip dark:tooltip-info !text-start"
             data-tip={dataTip}
         >
             <div className="absolute top-2 right-2">
-                <ExternalLink className="h-4 w-4 text-[#0033A0] dark:text-blue-600" />
+                <ExternalLink className="h-3 w-3 text-[#0033A0] dark:text-blue-600" />
             </div>
             <Link
                 href={url}

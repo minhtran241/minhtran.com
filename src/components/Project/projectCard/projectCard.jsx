@@ -73,7 +73,7 @@ const ProjectCard = async ({ project }) => {
                 {projectName}
             </Link>
             <div
-                className="tooltip dark:tooltip-primary !text-start cursor-pointer"
+                className="tooltip dark:tooltip-info !text-start cursor-pointer"
                 data-tip={project?.description}
             >
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-3">

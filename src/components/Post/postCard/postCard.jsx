@@ -50,7 +50,7 @@ const PostCard = ({ post }) => {
                             : post.description}
                     </p> */}
             <div
-                className="tooltip dark:tooltip-primary !text-start cursor-pointer"
+                className="tooltip dark:tooltip-info !text-start cursor-pointer"
                 data-tip={post.description}
             >
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
