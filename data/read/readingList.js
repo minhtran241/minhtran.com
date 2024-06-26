@@ -12,7 +12,7 @@ const ARTICLE_LIST = [
     'https://quarkus.io/guides/quarkus-reactive-architecture',
     'https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8',
     'https://shashank7-iitd.medium.com/understanding-vector-quantized-variational-autoencoders-vq-vae-323d710a888a',
-    'https://erdem.pl/2023/11/step-by-step-visual-introduction-to-diffusion-models',
+    // 'https://erdem.pl/2023/11/step-by-step-visual-introduction-to-diffusion-models',
 ];
 
 const PAPER_LIST = [
