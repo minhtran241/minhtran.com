@@ -37,13 +37,13 @@ const ProjectPage = async () => {
         `${BASE_URL}/api/github?username=${username}`
     );
 
-    if (!repoData) {
-        return <Loading />;
-    }
-
     const projects = repoData?.data?.user?.repositories?.nodes?.filter((repo) =>
         PROJECT_LIST.includes(repo.name)
     );
+
+    if (!projects || projects.length === 0) {
+        return <Loading />;
+    }
 
     return (
         <>
