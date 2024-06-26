@@ -11,7 +11,7 @@ const Navbar = async () => {
     const { ok, status, data, error } = await client.getWebsiteStats(
         process.env.UMAMI_WEBSITE_ID,
         {
-            startAt: 0,
+            startAt: new Date().getTime() - 24 * 60 * 60 * 1000, // 24 hours ago
             endAt: new Date().getTime(),
         }
     );
@@ -59,7 +59,7 @@ const Navbar = async () => {
                         target="_blank"
                         tabIndex={0}
                         className="lg:hidden tooltip tooltip-bottom dark:tooltip-info items-center flex btn btn-ghost"
-                        data-tip="Umami analytics"
+                        data-tip="Umami Analytics (Last 24 hours)"
                     >
                         <Image
                             src="/logos/umami-color.svg"
@@ -75,7 +75,7 @@ const Navbar = async () => {
                     href={process.env.UMAMI_SHARE_URL}
                     target="_blank"
                     className="navbar-center hidden lg:flex tooltip tooltip-bottom dark:tooltip-info relative btn btn-ghost"
-                    data-tip="Umami analytics"
+                    data-tip="Umami Analytics (Last 24 hours)"
                 >
                     <ul className="flex items-center gap-4">
                         {Object.keys(webstats).map((key, index) => (
