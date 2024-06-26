@@ -11,57 +11,14 @@ export const GET = async (request) => {
 
         const username =
             searchParams.get('username') || userBasicInfo.githubUsername;
-        const reposNum = parseInt(searchParams.get('reposNum')) || 100;
-
-        const repo = searchParams.get('repo');
-
-        if (repo) {
-            const queryResult = await client.query({
-                query: gql`
-                    query GetGitHubRepoInfo(
-                        $username: String!
-                        $repo: String!
-                    ) {
-                        repository(owner: $username, name: $repo) {
-                            name
-                            description
-                            url
-                            createdAt
-                            updatedAt
-                            pushedAt
-                            stargazerCount
-                            forkCount
-                            watchers {
-                                totalCount
-                            }
-                            licenseInfo {
-                                name
-                            }
-                            homepageUrl
-                            openGraphImageUrl
-                            primaryLanguage {
-                                name
-                                color
-                            }
-                        }
-                        rateLimit {
-                            limit
-                            cost
-                            remaining
-                            resetAt
-                        }
-                    }
-                `,
-                variables: {
-                    username,
-                    repo,
-                },
-            });
-
-            return NextResponse.json({
-                repo: queryResult.data.repository,
-                rateLimit: queryResult.data.rateLimit,
-            });
+        let reposNum = 100;
+        if (searchParams.get('reposNum')) {
+            reposNum = parseInt(searchParams.get('reposNum'));
+            if (reposNum < 1 || reposNum > 100) {
+                return NextResponse.json({
+                    error: 'Invalid number of repositories. Please provide a number between 1 and 100.',
+                });
+            }
         }
 
         const queryResult = await client.query({
@@ -83,7 +40,32 @@ export const GET = async (request) => {
                             totalCount
                             nodes {
                                 name
+                                description
                                 url
+                                createdAt
+                                updatedAt
+                                pushedAt
+                                stargazerCount
+                                forkCount
+                                watchers {
+                                    totalCount
+                                }
+                                licenseInfo {
+                                    name
+                                }
+                                homepageUrl
+                                openGraphImageUrl
+                                primaryLanguage {
+                                    name
+                                    color
+                                }
+                                repositoryTopics(first: 4) {
+                                    nodes {
+                                        topic {
+                                            name
+                                        }
+                                    }
+                                }
                             }
                         }
                         followers {
@@ -126,7 +108,7 @@ export const GET = async (request) => {
             `,
             variables: {
                 username,
-                reposNum: reposNum,
+                reposNum,
             },
         });
 

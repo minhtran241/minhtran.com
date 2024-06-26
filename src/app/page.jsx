@@ -4,8 +4,6 @@ import Hero from '@/components/Home/hero/hero';
 import Skills from '@/components/Home/skills/skills';
 import Contribution from '@/components/Home/contribution/contribution';
 
-const PROJECT_LIMIT = 3;
-
 export const generateMetadata = async () => {
     return {
         title: 'Minh Tran - Software Engineer & Data Engineer',
@@ -34,7 +32,7 @@ const Home = () => {
             <Contribution />
             <Timeline />
             <Skills />
-            <Projects limit={PROJECT_LIMIT} />
+            <Projects />
         </>
     );
 };
