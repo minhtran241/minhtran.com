@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Loading from '@/app/loading';
 import { ExternalLink } from 'lucide-react';
 
+export const maxDuration = 300;
+
 const LinkPreviewCard = async ({ url }) => {
     //here calling the function
     const response = await axios.get(url);
