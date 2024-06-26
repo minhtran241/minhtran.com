@@ -1,5 +1,4 @@
 import { FolderOpen, Newspaper, ScrollText } from 'lucide-react';
-// import LinkTableRow from '@/common/elements/linkTableRow';
 import { ARTICLE_LIST, PAPER_LIST } from '../../../data/read/readingList';
 import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
 import Breakline from '@/common/elements/breakline';
@@ -29,19 +28,10 @@ export const generateMetadata = async () => {
     };
 };
 
-const ReadsPage = async () => {
+const ReadsPage = () => {
     return (
         <>
             <div className="container flex flex-col gap-4 mt-12">
-                {/* <div className="flex flex-col gap-2 mb-8">
-                    <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
-                        <BookCheck className="mr-1 h-6 w-6" />
-                        <h1 className="capitalize">{PAGE_TITLE}</h1>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        {PAGE_DESCRIPTION}
-                    </p>
-                </div> */}
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">

@@ -1,5 +1,4 @@
 const ARTICLE_LIST = [
-    'https://medium.com/strapi/demystifying-strapis-populate-filtering-88a95f4dfd6f',
     'https://horace.io/brrr_intro.html',
     'https://karpathy.github.io/2015/05/21/rnn-effectiveness/',
     'https://quix.io/blog/redpanda-vs-kafka-comparison',
@@ -12,7 +11,7 @@ const ARTICLE_LIST = [
     'https://quarkus.io/guides/quarkus-reactive-architecture',
     'https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8',
     'https://shashank7-iitd.medium.com/understanding-vector-quantized-variational-autoencoders-vq-vae-323d710a888a',
-    // 'https://erdem.pl/2023/11/step-by-step-visual-introduction-to-diffusion-models',
+    'https://erdem.pl/2023/11/step-by-step-visual-introduction-to-diffusion-models',
 ];
 
 const PAPER_LIST = [

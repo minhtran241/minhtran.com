@@ -18,14 +18,10 @@ const LinkPreviewCard = async ({ url }) => {
         );
     }
 
-    let dataTip = '';
-    if (data?.title) dataTip += `Title: ${data.title}`;
-    if (data?.description) dataTip += `\nDescription: ${data.description}\n`;
-
     return (
         <div
             className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:border border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out tooltip dark:tooltip-info !text-start"
-            data-tip={dataTip}
+            data-tip={data.title}
         >
             <div className="absolute top-2 right-2">
                 <ExternalLink className="h-3 w-3 text-[#0033A0] dark:text-blue-600" />
