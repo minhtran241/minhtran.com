@@ -4,6 +4,7 @@ import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { getClient } from '@umami/api-client';
 import Image from 'next/image';
+import { userBasicInfo } from '@/common/constants/userBasic';
 
 const Navbar = async () => {
     const client = getClient();
@@ -42,7 +43,7 @@ const Navbar = async () => {
                     </ul>
                 </div>
                 <Link href="/" className="text-xl btn btn-ghost uppercase">
-                    Minh Tran
+                    {userBasicInfo.fullName}
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -50,7 +51,7 @@ const Navbar = async () => {
                     <Links />
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-2">
                 {/* Umami info list dropdown if small */}
                 <div className="dropdown">
                     <Link
@@ -87,7 +88,6 @@ const Navbar = async () => {
                         ))}
                     </ul>
                 </Link>
-
                 <DropdownTheme />
             </div>
         </div>

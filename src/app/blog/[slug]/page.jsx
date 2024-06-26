@@ -12,7 +12,7 @@ import {
     ChevronsLeft,
     ChevronsRight,
     FileText,
-    FolderOpen
+    FolderOpen,
 } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
@@ -88,12 +88,16 @@ const SinglePostContent = ({ post }) => {
     const BREADCRUMBS = [
         {
             href: '/blog',
-            icon: <FolderOpen className="h-4 w-4 stroke-current" />,
+            icon: (
+                <FolderOpen className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
+            ),
             text: 'Blogs',
         },
         {
             href: `/blog/${post.slug}`,
-            icon: <FileText className="h-4 w-4 stroke-current" />,
+            icon: (
+                <FileText className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
+            ),
             text: post.title,
         },
     ];

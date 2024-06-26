@@ -75,7 +75,9 @@ const CATEGORIES = [
 const BREADCRUMBS = [
     {
         href: '/blog',
-        icon: <FolderOpen className="h-4 w-4 stroke-current" />,
+        icon: (
+            <FolderOpen className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
+        ),
         text: 'Blogs',
     },
 ];

@@ -21,7 +21,8 @@ const BookACall = () => {
                             <span>Schedule a 1 on 1 meeting</span>
                         </div>
                         <p className="text-sm text-gray-300 md:text-base">
-                            Minh Tran&apos;s calendar is open for booking a call
+                            {userBasicInfo.fullName}&apos;s calendar is open for
+                            booking a call
                         </p>
                     </div>
                     <div className="rounded-full border-2 p-3 text-gray-100 border-gray-100">

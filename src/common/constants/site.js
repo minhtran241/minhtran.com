@@ -77,10 +77,10 @@ export const CONSUMED_APIS = [
         alt: 'Spotify Logo',
     },
     {
-        name: 'Cal',
-        link: 'https://developer.cal.com',
-        logo: '/logos/caldotcom-color.svg',
-        alt: 'Cal Logo',
-		invert: true
+        name: 'Umami',
+        link: 'https://umami.is/docs/api',
+        logo: '/logos/umami-color.svg',
+        alt: 'Umami Logo',
+        invert: true,
     },
 ];
