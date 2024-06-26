@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
-import Loading from '@/app/loading';
 import {
     CalendarDays,
     Github,
@@ -16,23 +14,24 @@ import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
 
-const ProjectCardComponent = ({ project }) => {
+const ProjectCard = ({ project }) => {
     const projectName = project?.name.split('-').join(' ');
     const capitalizedProjectName =
         projectName.charAt(0).toUpperCase() + projectName.slice(1);
-    const pushedAt = project?.pushedAt;
-    const zonedDate = utcToZonedTime(
-        zonedTimeToUtc(pushedAt, TIMEZONE),
-        TIMEZONE
-    );
-    const pushedAtDistance = formatDistanceToNowStrict(zonedDate, {
-        addSuffix: true,
-    });
+    let pushedAtDistance = '';
+    if (project?.pushedAt) {
+        const zonedDate = utcToZonedTime(
+            zonedTimeToUtc(project?.pushedAt, TIMEZONE),
+            TIMEZONE
+        );
+        pushedAtDistance = formatDistanceToNowStrict(zonedDate, {
+            addSuffix: true,
+        });
+    }
     const licenseName = project?.licenseInfo?.name;
 
     return (
         <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200 gap-3">
-            {/* Created at */}
             <div className="flex flex-row justify-between">
                 <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
                     <CalendarDays className="h-4 w-4" />
@@ -79,9 +78,6 @@ const ProjectCardComponent = ({ project }) => {
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
                     {project?.description}
                 </p>
-                {/* <span className="text-sm text-[#0033A0] dark:text-blue-600">
-                    [Hover to read more]
-                </span> */}
             </div>
             <div className="flex flex-wrap gap-2 rounded">
                 {project?.repositoryTopics?.nodes?.map((node, index) => (
@@ -168,14 +164,6 @@ const ProjectCardComponent = ({ project }) => {
                 </div>
             </div>
         </div>
-    );
-};
-
-const ProjectCard = ({ project }) => {
-    return (
-        <Suspense fallback={<Loading />}>
-            <ProjectCardComponent project={project} />
-        </Suspense>
     );
 };
 
