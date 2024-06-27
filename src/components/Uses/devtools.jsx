@@ -24,13 +24,13 @@ const DevTools = () => {
                             <Image
                                 src={item.image}
                                 alt={item.name}
-                                width={400}
-                                height={300}
-                                className="rounded-lg lg:w-36 lg:h-36 md:w-32 md:h-32 w-28 h-28"
+                                width={112}
+                                height={112}
+                                className="rounded-lg lg:w-32 lg:h-32 md:w-28 md:h-28 w-24 h-24"
                             />
                         </div>
                         <div className="flex flex-col gap-1 items-center justify-center">
-                            <h3 className="text-lg font-semibold">
+                            <h3 className="font-semibold lg:text-lg md:text-base text-sm">
                                 {item.name}
                             </h3>
                             <p className="text-gray-600 dark:text-gray-400">

@@ -22,13 +22,13 @@ const Devices = () => {
                         <Image
                             src={DEVICES[0]?.image}
                             alt={DEVICES[0]?.name}
-                            width={1200}
-                            height={600}
+                            width={800}
+                            height={400}
                             className="rounded-lg"
                         />
                     </div>
                     <div className="flex flex-col gap-1 items-center justify-center">
-                        <h3 className="text-xl font-semibold">
+                        <h3 className="font-semibold lg:text-xl md:text-lg text-base">
                             {DEVICES[0]?.name}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-400">
@@ -50,11 +50,11 @@ const Devices = () => {
                                     alt={item.name}
                                     width={400}
                                     height={300}
-                                    className="rounded-lg w-64 h-64"
+                                    className="rounded-lg w-56 h-56"
                                 />
                             </div>
                             <div className="flex flex-col gap-1 items-center justify-center">
-                                <h3 className="text-lg font-semibold">
+                                <h3 className="font-semibold lg:text-lg md:text-base text-sm">
                                     {item.name}
                                 </h3>
                                 <p className="text-gray-600 dark:text-gray-400">
