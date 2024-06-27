@@ -1,5 +1,6 @@
 export const PROJECT_LIST = [
     'edge-computing-models',
+    'ML-DL-GenAI',
     'nextcorp',
     'minhtran.com',
     'gvcourse',
