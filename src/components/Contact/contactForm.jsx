@@ -72,7 +72,7 @@ const ContactForm = () => {
         // Daisy UI contact form
         <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
             <div>
-                <label className="input input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
+                <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
                     <User className="w-4 h-4 opacity-70" />
                     <input
                         id="name"
@@ -88,7 +88,7 @@ const ContactForm = () => {
                 </span>
             </div>
             <div>
-                <label className="input input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
+                <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
                     <Mail className="w-4 h-4 opacity-70" />
                     <input
                         id="email"
