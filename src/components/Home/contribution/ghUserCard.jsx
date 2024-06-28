@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MapPin, FileCode, Users, User, BookMarked } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const detailsData = (data) => {
@@ -32,10 +32,16 @@ const GHUserCard = ({ ghInfo, username }) => {
         <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-row items-center justify-center gap-4">
-                    <Avatar className="w-12 h-12">
-                        <AvatarImage src={ghInfo.user.avatarUrl} />
-                        <AvatarFallback>MT</AvatarFallback>
-                    </Avatar>
+                    <div className="avatar">
+                        <div className="w-12 h-12 rounded-full">
+                            <Image
+                                src={ghInfo.user.avatarUrl}
+                                alt="avatar"
+                                width={100}
+                                height={100}
+                            />
+                        </div>
+                    </div>
                     <div className="flex flex-col">
                         <h1 className="font-semibold lg:text-lg text-base">
                             {ghInfo.user.name}

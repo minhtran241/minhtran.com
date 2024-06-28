@@ -7,7 +7,6 @@ import {
     Linkedin,
     Mail,
     Twitter,
-    Download,
     FileDown,
 } from 'lucide-react';
 
@@ -72,7 +71,7 @@ export const SOCIAL_MEDIA = [
         title: 'Download Resume',
         href: fileSystemInfo.resumeLink,
         type: 'w', // work only
-        icon: <FileDown className="w-5 h-5" />,
+        icon: <FileDown className="lg:w-5 lg:h-5 w-4 h-4" />,
     },
 ];
 
