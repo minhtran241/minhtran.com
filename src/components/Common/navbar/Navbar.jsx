@@ -37,7 +37,7 @@ const Navbar = async () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-md w-52 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white"
+                        className="menu menu-sm dropdown-content rounded-box mt-3 z-[1] p-2 shadow text-black dark:text-white bg-white dark:bg-gray-900"
                     >
                         <Links />
                     </ul>

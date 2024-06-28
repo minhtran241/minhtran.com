@@ -1,6 +1,6 @@
 'use client';
 
-import { Sun, MoonStar } from 'lucide-react';
+import { Sun, MoonStar, SunMoon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 const DropdownTheme = () => {
@@ -20,14 +20,14 @@ const DropdownTheme = () => {
                 </div>
                 <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-black dark:text-white bg-white dark:bg-gray-900"
+                    className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 p-2 shadow text-black dark:text-white bg-white dark:bg-gray-900"
                 >
                     <li>
                         <button
                             onClick={() => setTheme('light')}
                             className="btn btn-ghost"
                         >
-                            Light
+                            <Sun className="h-4 w-4" />
                         </button>
                     </li>
                     <li>
@@ -35,7 +35,7 @@ const DropdownTheme = () => {
                             onClick={() => setTheme('dark')}
                             className="btn btn-ghost"
                         >
-                            Dark
+                            <MoonStar className="h-4 w-4" />
                         </button>
                     </li>
                     <li>
@@ -43,7 +43,7 @@ const DropdownTheme = () => {
                             onClick={() => setTheme('system')}
                             className="btn btn-ghost"
                         >
-                            System
+                            <SunMoon className="h-4 w-4" />
                         </button>
                     </li>
                 </ul>

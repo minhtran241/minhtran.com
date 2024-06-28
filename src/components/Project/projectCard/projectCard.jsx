@@ -54,13 +54,13 @@ const ProjectCard = async ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
+                {/* open graph image */}
                 <Image
-                    className="rounded-lg relative w-full border-2 border-[#0033A0] dark:border-white lg:h-52 md:h-48 sm:h-40 h-40"
                     src={project?.openGraphImageUrl}
-                    alt={project?.name}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
+                    alt={projectName}
+                    width={500}
+                    height={250}
+                    className="rounded-lg border border-[#0033A0] dark:border-blue-600"
                 />
             </Link>
 
@@ -120,12 +120,12 @@ const ProjectCard = async ({ project }) => {
                                         {project?.forkCount}
                                     </span>
                                 </div>
-                                <div className="flex items-center gap-1">
+                                {/* <div className="flex items-center gap-1">
                                     <Eye className="h-4 w-4" />
                                     <span className="">
                                         {project?.watchers?.totalCount}
                                     </span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

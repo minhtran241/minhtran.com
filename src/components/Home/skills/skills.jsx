@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import fs from 'fs/promises';
 import path from 'path';
 import { Suspense } from 'react';
@@ -45,7 +44,6 @@ const SECTION_TITLE = 'Mainly working with';
 const SECTION_DESCRIPTION =
     'I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies.';
 
-// bg-gradient-to-r from-[#0033A0] to-[#00A3FF] dark:from-blue-600 dark:to-blue-900
 const SkillsComponent = async () => {
     const skills = await getSKills();
 

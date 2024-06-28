@@ -13,15 +13,6 @@ import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
 import { useTheme } from 'next-themes';
 import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from '@/components/ui/select';
-import {
     getDailyChartData,
     getMonthlyChartData,
     getWeeklyChartData,
@@ -127,27 +118,17 @@ const ContributionChart = ({ contributionCollection }) => {
                         {contrCalendar.totalContributions} Total Contributions
                     </p>
                 </div>
-                <Select
-                    onValueChange={(e) => {
-                        setSelectedTimeRange(e);
-                    }}
+                <select
+                    className="select select-bordered w-full max-w-xs bg-white dark:bg-gray-900 dark:text-white"
+                    onChange={(e) => setSelectedTimeRange(e.target.value)}
                     defaultValue={selectedTimeRange}
                 >
-                    <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Select Time Range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectGroup>
-                            <SelectLabel>Time Range</SelectLabel>
-                            {Object.keys(GET_CHART_DATA).map((range, index) => (
-                                <SelectItem key={index} value={range}>
-                                    {range.charAt(0).toUpperCase() +
-                                        range.slice(1)}
-                                </SelectItem>
-                            ))}
-                        </SelectGroup>
-                    </SelectContent>
-                </Select>
+                    {Object.keys(GET_CHART_DATA).map((range, index) => (
+                        <option key={index} value={range}>
+                            {range.charAt(0).toUpperCase() + range.slice(1)}
+                        </option>
+                    ))}
+                </select>
             </div>
             {/* Chart */}
             <div style={{ height: '300px', width: '100%' }}>

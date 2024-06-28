@@ -71,7 +71,7 @@ export const SOCIAL_MEDIA = [
         title: 'Download Resume',
         href: fileSystemInfo.resumeLink,
         type: 'w', // work only
-        icon: <FileDown className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FileDown className="w-4 h-4" />,
     },
 ];
 
