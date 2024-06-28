@@ -23,7 +23,6 @@ import swift from 'react-syntax-highlighter/dist/cjs/languages/prism/swift';
 import java from 'react-syntax-highlighter/dist/cjs/languages/prism/java';
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml';
 import sql from 'react-syntax-highlighter/dist/cjs/languages/prism/sql';
-import { toast } from 'sonner';
 import { useTheme } from 'next-themes';
 import Loading from '@/app/loading';
 import Image from 'next/image';
@@ -84,9 +83,6 @@ export default function MarkdownRender({ mdString }) {
                                                 setTimeout(() => {
                                                     setCopyTip('Copy code');
                                                 }, 2000);
-                                                toast(
-                                                    'Code copied to clipboard!'
-                                                );
                                             }}
                                         >
                                             <Copy className="h-5 w-5 cursor-pointer text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600 dark:text-base-300" />

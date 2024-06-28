@@ -40,13 +40,7 @@ export const TECHSTACK = [
         logo: '/logos/daisyui-color.svg',
         alt: 'DaisyUI Logo',
     },
-    {
-        name: 'ShadcnUI',
-        link: 'https://ui.shadcn.com',
-        logo: '/logos/shadcnui-color.svg',
-        alt: 'ShadcnUI Logo',
-        invert: true,
-    },
+
     {
         name: 'Lucide',
         link: 'https://www.lucide.dev',

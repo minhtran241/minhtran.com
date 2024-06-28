@@ -118,7 +118,7 @@ const SinglePostContent = ({ post }) => {
             <div className="content-center items-center justify-center">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
-                        <h1 className="font-bold text-[#0033A0] dark:text-blue-600 mb-3 lg:text-4xl md:text-3xl sm:text-3xl text-2xl">
+                        <h1 className="font-bold text-[#0033A0] dark:text-blue-600 mb-3 lg:text-3xl md:text-2xl sm:text-xl text-xl">
                             {post.title}
                         </h1>
                         <p className="text-gray-600 dark:text-gray-400">
@@ -146,7 +146,7 @@ const SinglePostContent = ({ post }) => {
                                 className="rounded-lg"
                             />
                         </div>
-                        <p className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10">
+                        <p className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10 lg:text-base md:text-base sm:text-sm text-sm text-gray-600 dark:text-gray-400">
                             {post.description}
                         </p>
                         <div className="flex flex-col gap-4">

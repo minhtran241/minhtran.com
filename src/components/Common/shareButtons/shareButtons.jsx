@@ -6,9 +6,9 @@ import {
     TwitterShareButton,
     EmailShareButton,
 } from 'next-share';
-import { Facebook, Twitter, Linkedin, Mail, Link2 } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Mail, Link2, Check } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { toast } from 'sonner';
+import { useState } from 'react';
 
 const ShareButton = ({ onClick, children }) => (
     <div
@@ -25,9 +25,11 @@ const SharePost = () => {
     const path = usePathname();
     const url = process.env.NEXT_PUBLIC_BASE_URL + path;
 
+    const [isLinkCopied, setIsLinkCopied] = useState(false);
+
     const handleCopyLink = () => {
+        setIsLinkCopied(true);
         navigator.clipboard.writeText(url);
-        toast('Link copied to clipboard!');
     };
 
     const shareButtons = [
@@ -67,7 +69,11 @@ const SharePost = () => {
     return (
         <div className="flex flex-row">
             <ShareButton onClick={handleCopyLink}>
-                <Link2 className="h-[1.2rem] w-[1.2rem]" />
+                {isLinkCopied ? (
+                    <Check className="h-[1.2rem] w-[1.2rem] text-green-500" />
+                ) : (
+                    <Link2 className="h-[1.2rem] w-[1.2rem]" />
+                )}
             </ShareButton>
             {shareButtons.map(({ ButtonComponent, icon, props }, index) => (
                 <ButtonComponent key={index} {...props}>

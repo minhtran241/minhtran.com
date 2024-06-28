@@ -119,7 +119,7 @@ const ContributionChart = ({ contributionCollection }) => {
                     </p>
                 </div>
                 <select
-                    className="select select-bordered w-full max-w-xs bg-white dark:bg-gray-900 dark:text-white"
+                    className="select select-bordered max-w-xs bg-white dark:bg-gray-900 dark:text-white"
                     onChange={(e) => setSelectedTimeRange(e.target.value)}
                     defaultValue={selectedTimeRange}
                 >

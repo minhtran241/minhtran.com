@@ -4,21 +4,10 @@ import axios from 'axios';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Clock, Loader } from 'lucide-react';
-import { toast } from 'sonner';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Clock, Loader, User, Mail, CircleCheck, CircleX } from 'lucide-react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
 
 const FormSchema = z.object({
     name: z.string().optional(),
@@ -26,7 +15,6 @@ const FormSchema = z.object({
         .string()
         .min(1, 'Email address is required')
         .email('Invalid email address'),
-    subject: z.string().optional(),
     message: z.string().min(1, 'Message is required'),
     'h-captcha-response': z.string().min(1, 'Please complete the captcha'),
 });
@@ -34,7 +22,6 @@ const FormSchema = z.object({
 const formInitialState = {
     name: '',
     email: '',
-    subject: '',
     message: '',
     'h-captcha-response': '',
 };
@@ -46,6 +33,8 @@ const ContactForm = () => {
     });
 
     const [isLoading, setIsLoading] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState('');
 
     const onSubmit = async (data) => {
         setIsLoading(true);
@@ -56,18 +45,18 @@ const ContactForm = () => {
                 },
             });
             if (response.data.data.success) {
-                toast.success('Message sent successfully!');
+                setIsSuccess(true);
                 form.reset();
             } else {
-                toast.error(
+                setError(
                     'Failed to send message, please try again or contact directly through email'
                 );
             }
         } catch (error) {
-            console.error(error);
-            toast.error(
+            setError(
                 'Failed to send message, please try again or contact directly through email'
             );
+            console.error(error);
         } finally {
             // Reset the captcha
             form.setValue('h-captcha-response', '');
@@ -80,120 +69,62 @@ const ContactForm = () => {
     };
 
     return (
-        <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="flex flex-col gap-4"
-            >
-                <div className="flex lg:flex-row flex-col gap-4">
-                    <div className="w-full">
-                        <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="flex flex-row leading-none">
-                                        Name
-                                    </FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            id="name"
-                                            name="name"
-                                            type="name"
-                                            placeholder="Your name"
-                                            {...form.register('name')}
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-                    <div className="w-full">
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="flex flex-row leading-none">
-                                        Email address
-                                        <span className="text-red-500">*</span>
-                                    </FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            id="email"
-                                            name="email"
-                                            type="email"
-                                            placeholder="Your email address"
-                                            {...form.register('email')}
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-                </div>
-                <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel className="flex flex-row leading-none">
-                                Subject
-                            </FormLabel>
-                            <FormControl>
-                                <Input
-                                    id="subject"
-                                    name="subject"
-                                    type="subject"
-                                    placeholder="Your subject"
-                                    {...form.register('subject')}
-                                    {...field}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
+        // Daisy UI contact form
+        <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+            <div>
+                <label className="input input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
+                    <User className="w-4 h-4 opacity-70" />
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        className="grow"
+                        placeholder="Name"
+                        {...form.register('name')}
+                    />
+                </label>
+                <span className="text-red-500 dark:text-red-400 text-sm">
+                    {form.formState.errors['name']?.message}
+                </span>
+            </div>
+            <div>
+                <label className="input input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
+                    <Mail className="w-4 h-4 opacity-70" />
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        className="grow"
+                        placeholder="Email*"
+                        {...form.register('email')}
+                    />
+                </label>
+                <span className="text-red-500 dark:text-red-400 text-sm">
+                    {form.formState.errors['email']?.message}
+                </span>
+            </div>
+            <div>
+                <textarea
+                    className="textarea textarea-bordered flex items-center gap-2 bg-white dark:bg-gray-900 w-full"
+                    id="message"
                     name="message"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel className="flex flex-row leading-none">
-                                Message <span className="text-red-500">*</span>
-                            </FormLabel>
-                            <FormControl>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    placeholder="Your message"
-                                    {...form.register('message')}
-                                    {...field}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
+                    {...form.register('message')}
+                    placeholder="Message*"
+                ></textarea>
+                <span className="text-red-500 dark:text-red-400 text-sm">
+                    {form.formState.errors['message']?.message}
+                </span>
+            </div>
+            <div>
+                <HCaptcha
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                    onVerify={onHCaptchaChange}
                 />
-                <FormField
-                    control={form.control}
-                    name="h-captcha-response"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormControl>
-                                <HCaptcha
-                                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                                    onVerify={onHCaptchaChange}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                <span className="text-red-500 dark:text-red-400 text-sm">
+                    {form.formState.errors['h-captcha-response']?.message}
+                </span>
+            </div>
+            <div>
                 <button
                     type="submit"
                     className={clsx(
@@ -206,15 +137,28 @@ const ContactForm = () => {
                 >
                     {isLoading ? <Loader /> : 'Send Message'}
                 </button>
-                <div className="mt-3 flex items-center gap-2 text-sm sm:text-xs">
-                    <Clock className="w-4 h-4" />
-                    <div className="">
-                        <span className="font-medium">Avg. response:</span> 1-2
-                        Hours (Working Hours, GMT+7)
-                    </div>
+            </div>
+            {/* DaisyUI info */}
+            {isSuccess && (
+                <div role="alert" className="alert alert-success">
+                    <CircleCheck className="h-5 w-5 shrink-0 stroke-current" />
+                    <span>Message sent successfully!</span>
                 </div>
-            </form>
-        </Form>
+            )}
+            {error && (
+                <div role="alert" className="alert alert-error">
+                    <CircleX className="h-5 w-5 shrink-0 stroke-current" />
+                    <span>{error}</span>
+                </div>
+            )}
+            <div className="flex items-center gap-2 text-sm sm:text-xs">
+                <Clock className="w-4 h-4" />
+                <div className="">
+                    <span className="font-medium">Avg. response:</span> 1-2
+                    Hours (Working Hours, GMT+7)
+                </div>
+            </div>
+        </form>
     );
 };
 

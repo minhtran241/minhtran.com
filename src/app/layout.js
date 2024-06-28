@@ -5,7 +5,6 @@ import { Inter as FontSans } from 'next/font/google';
 import { cn } from '@/common/libs/cn';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/Common/themeProvider/theme-provider';
-import { Toaster } from '@/components/ui/sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import SpotifyComponent from '@/components/spotifyComponent';
@@ -117,10 +116,10 @@ export default function RootLayout({ children }) {
                 ></script>
             </head>
             <body
-            // className={cn(
-            //     'min-h-screen bg-background antialiased font-sans',
-            //     fontSans.variable
-            // )}
+                className={cn(
+                    'min-h-screen bg-background antialiased font-sans',
+                    fontSans.variable
+                )}
             >
                 <ThemeProvider
                     attribute="class"
@@ -136,7 +135,6 @@ export default function RootLayout({ children }) {
                     </div>
                     <SpotifyComponent />
                     <Footer />
-                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>

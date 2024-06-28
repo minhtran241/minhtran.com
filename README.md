@@ -1,6 +1,6 @@
 <div align="center">
   <h1>minhtran.com</h1>
-  <p>☄️ Personal website was built originally from scratch using Next.js, Tailwind CSS, shadcn/ui, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, Spotify API, and more. </p>
+  <p>☄️ Personal website was built originally from scratch using Next.js, Tailwind CSS, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, Spotify API, and more. </p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/minhtran241/minhtran.com)](https://github.com/minhtran241/minhtran.com/stargazers)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
@@ -31,7 +31,6 @@ This website is built using these technologies:
 
 - ◼️ Next.js 14.1.0
 - 💠 Tailwind CSS 3
-- ♦ shadcn/ui
 - 🌺 daisyUI
 - ☀️ Apollo Client
 - ←→ Axios
