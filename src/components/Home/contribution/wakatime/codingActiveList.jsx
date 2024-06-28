@@ -81,7 +81,7 @@ const CodingActiveList = ({ data }) => {
                 >
                     <div className="h-full w-full rounded-lg bg-white dark:bg-black p-4">
                         <div className="flex items-center justify-between">
-                            <p className="text-lg font-bold text-gray-800 dark:text-gray-100">
+                            <p className="font-semibold lg:text-lg text-base text-gray-800 dark:text-gray-100">
                                 {item?.title}
                             </p>
                             <Link

@@ -15,14 +15,16 @@ import {
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 const icons = {
-    'Programming Languages': <Braces className="text-white h-4 w-4" />,
-    'Web Development (Focus on Backend)': (
-        <Server className="text-white h-4 w-4" />
+    'Programming Languages': (
+        <Braces className="text-white lg:h-4 lg:w-4 h-3 w-3" />
     ),
-    'Big Data': <TextSearch className="text-white h-4 w-4" />,
-    Databases: <Database className="text-white h-4 w-4" />,
-    'ML/DL': <BrainCircuit className="text-white h-4 w-4" />,
-    'Monitoring and others': <BarChart className="text-white h-4 w-4" />,
+    'Web Development': <Server className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
+    'Big Data': <TextSearch className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
+    Databases: <Database className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
+    'ML/DL': <BrainCircuit className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
+    'Monitoring and others': (
+        <BarChart className="text-white lg:h-4 lg:w-4 h-3 w-3" />
+    ),
 };
 
 const DATA_ATTRS_DIR = path.join(
@@ -60,11 +62,11 @@ const SkillsComponent = async () => {
                             className="rounded-lg p-4 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out"
                             key={index}
                         >
-                            <div className="flex flex-row gap-2 mb-5">
-                                <div className="w-7 h-7 inline-flex items-center justify-center rounded-full flex-shrink-0 bg-[#0033A0] dark:bg-blue-600 text-white">
+                            <div className="flex items-center gap-2 mb-5">
+                                <div className="lg:w-6 lg:h-6 w-5 h-5 inline-flex items-center justify-center rounded-full flex-shrink-0 bg-[#0033A0] dark:bg-blue-600 text-white">
                                     {icons[skill.name]}
                                 </div>
-                                <h2 className="text-lg title-font font-medium">
+                                <h2 className="title-font font-medium lg:text-lg text-base">
                                     {skill.name}
                                 </h2>
                             </div>
@@ -74,7 +76,7 @@ const SkillsComponent = async () => {
                                         <img
                                             src={badge}
                                             alt="skill"
-                                            className="!rounded h-6 w-auto"
+                                            className="!rounded w-auto lg:h-6 h-5"
                                         />
                                     </div>
                                 ))}

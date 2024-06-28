@@ -134,20 +134,18 @@ const BlogPage = async () => {
                                 })}
                             </p>
                             {/* Latest label */}
-                            <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md">
+                            <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md text-xs font-medium">
                                 <BellRing className="h-4 w-4" />
-                                <p className="text-xs font-medium">
-                                    Latest {firstPost.category}
-                                </p>
+                                Latest {firstPost.category}
                             </div>
                         </div>
                         <Link
                             href={`/blog/${firstPost.slug}`}
-                            className="block text-xl font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600 md:text-2xl"
+                            className="block lg:text-2xl md:text-xl text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
                         >
                             {firstPost.title}
                         </Link>
-                        <p className="text-md md:text-md text-justify text-gray-600 dark:text-gray-400">
+                        <p className="lg:text-base md:text-base text-sm text-justify text-gray-600 dark:text-gray-400">
                             {firstPost.description}
                         </p>
                         {/* <div className="flex flex-wrap leading-none gap-2 text-[#0033A0] dark:text-blue-600">

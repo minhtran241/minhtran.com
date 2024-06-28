@@ -48,9 +48,9 @@ const ProjectsComponent = async () => {
             {/* See More */}
             <div className="flex justify-center mt-8">
                 <Link href="/project">
-                    <div className="flex flex-row items-center gap-2 text-lg font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer transition">
+                    <div className="flex flex-row items-center gap-2 font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer transition lg:text-lg text-base">
                         See More
-                        <ChevronsRight className="h-6 w-6" />
+                        <ChevronsRight className="lg:h-6 lg:w-6 h-5 w-5" />
                     </div>
                 </Link>
             </div>

@@ -36,7 +36,7 @@ const HeroComponent = () => {
                             </div>
                             <div className="flex flex-col gap-3">
                                 {/* <div> */}
-                                <p className="font-semibold text-xl text-[#0033A0] dark:text-white">
+                                <p className="font-semibold text-[#0033A0] dark:text-white lg:text-xl md:text-lg sm:text-base text-base">
                                     About me
                                 </p>
                                 {/* download CV */}

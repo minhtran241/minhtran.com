@@ -23,7 +23,7 @@
     },
     {
         "id": 2,
-        "name": "Web Development (Focus on Backend)",
+        "name": "Web Development",
         "technologies": [
             "https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=fff",
 			"https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white",

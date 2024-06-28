@@ -32,7 +32,7 @@ const OverviewItem = ({ label, value }) => (
         <span className="text-sm text-gray-600 dark:text-gray-400">
             {label}
         </span>
-        <span className="text-lg font-semibold">{value}</span>
+        <span className="font-semibold lg:text-lg text-base">{value}</span>
     </div>
 );
 

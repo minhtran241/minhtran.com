@@ -34,16 +34,16 @@ const Milestone = ({ milestone, right }) => {
                             <div className="relative">
                                 <div className="flex flex-wrap items-center">
                                     <div className="p-4 md:w-1/6">
-                                        <p className="text-xl font-bold  text-bold  text-[#0033A0] dark:text-white">
+                                        <p className="font-semibold lg:text-xl text-lg  text-[#0033A0] dark:text-white">
                                             {month}
                                         </p>
-                                        <span className="text-medium text-[#0033A0] dark:text-white">
+                                        <span className="lg:text-lg text-base text-[#0033A0] dark:text-white">
                                             {year}
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
                                         <div className="flex justify-between items-center w-full">
-                                            <p className="font-bold text-[#0033A0] dark:text-blue-600 sm:text-lg md:text-xl lg:text-lg text-lg">
+                                            <p className="text-[#0033A0] dark:text-blue-600 font-semibold lg:text-lg text-base">
                                                 {milestone.title}
                                             </p>
                                             <Link
@@ -57,7 +57,7 @@ const Milestone = ({ milestone, right }) => {
                                         <p className="mb-2 text-gray-600 dark:text-gray-400 text-sm">
                                             {milestone.job_title}
                                         </p>
-                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 text-base">
+                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 lg:text-base md:text-base text-sm">
                                             {paragraphs.map(
                                                 (paragraph, index) => (
                                                     <li
@@ -93,16 +93,16 @@ const Milestone = ({ milestone, right }) => {
                             <div className="relative">
                                 <div className="flex flex-wrap items-center">
                                     <div className="p-4 md:w-1/6">
-                                        <p className="text-xl font-bold  text-bold text-[#0033A0] dark:text-white ">
+                                        <p className="font-semibold lg:text-xl text-lg text-[#0033A0] dark:text-white ">
                                             {month}
                                         </p>
-                                        <span className="text-medium text-[#0033A0] dark:text-white">
+                                        <span className="lg:text-lg text-base text-[#0033A0] dark:text-white">
                                             {year}
                                         </span>
                                     </div>
                                     <div className="flex-1 p-4 pr-4 border-l">
                                         <div className="flex justify-between items-center w-full">
-                                            <p className="font-bold text-[#0033A0] dark:text-blue-600  sm:text-lg md:text-xl lg:text-lg text-lg">
+                                            <p className="text-[#0033A0] dark:text-blue-600 font-semibold lg:text-lg text-base">
                                                 {milestone.title}
                                             </p>
                                             <Link
@@ -116,7 +116,7 @@ const Milestone = ({ milestone, right }) => {
                                         <p className="mb-2 text-gray-600 dark:text-gray-400 text-sm">
                                             {milestone.job_title}
                                         </p>
-                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 text-base">
+                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 lg:text-base md:text-base text-sm">
                                             {paragraphs.map(
                                                 (paragraph, index) => (
                                                     <li

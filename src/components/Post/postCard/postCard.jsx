@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
                         alt={post.title}
                         fill
                     />
-                    <div className="absolute right-0 top-0 mr-3 mt-3 flex h-[75px] w-[75px] flex-col items-center justify-center rounded-full px-4 text-sm transition duration-500 ease-in-out bg-[#0033A0] dark:bg-blue-600 text-white  border border-[#0033A0] dark:border-blue-600">
+                    <div className="absolute right-0 top-0 mr-3 mt-3 flex flex-col items-center justify-center rounded-full px-4 text-sm transition duration-500 ease-in-out bg-[#0033A0] dark:bg-blue-600 text-white  border border-[#0033A0] dark:border-blue-600 lg:h-[75px] lg:w-[75px] md:h-[65px] md:w-[65px] sm:h-[55px] sm:w-[55px] h-[55px] w-[55px]">
                         <span className="font-bold">{date}</span>
                         <small>{month}</small>
                     </div>
@@ -40,7 +40,7 @@ const PostCard = ({ post }) => {
             {/* <div className=""> */}
             <Link
                 href={`/blog/${post.slug}`}
-                className="inline-block text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
+                className="inline-block lg:text-xl md:text-lg text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
             >
                 {post.title}
             </Link>
@@ -53,7 +53,7 @@ const PostCard = ({ post }) => {
                 className="tooltip dark:tooltip-info !text-start cursor-pointer"
                 data-tip={post.description}
             >
-                <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 line-clamp-3 lg:text-base md:text-base text-sm">
                     {post.description}
                 </p>
                 {/* <Link

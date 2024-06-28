@@ -118,7 +118,7 @@ const ContributionChart = ({ contributionCollection }) => {
             {/* Time range selector */}
             <div className="flex flex-wrap justify-between gap-4">
                 <div className="flex flex-col">
-                    <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100">
+                    <h2 className="text-gray-800 dark:text-gray-100 font-semibold lg:text-lg text-base">
                         {selectedTimeRange.charAt(0).toUpperCase() +
                             selectedTimeRange.slice(1)}{' '}
                         Contributions

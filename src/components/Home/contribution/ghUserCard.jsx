@@ -5,22 +5,22 @@ import Link from 'next/link';
 const detailsData = (data) => {
     return [
         {
-            icon: <BookMarked size={18} />,
+            icon: <BookMarked className="h-4 w-4" />,
             title: 'Public Repos',
             value: data.repositories ? data.repositories.totalCount : 0,
         },
         {
-            icon: <Users size={18} />,
+            icon: <Users className="h-4 w-4" />,
             title: 'Followers',
             value: data.followers ? data.followers.totalCount : 0,
         },
         {
-            icon: <User size={18} />,
+            icon: <User className="h-4 w-4" />,
             title: 'Following',
             value: data.following ? data.following.totalCount : 0,
         },
         {
-            icon: <FileCode size={18} />,
+            icon: <FileCode className="h-4 w-4" />,
             title: 'Gists',
             value: data.gists ? data.gists.totalCount : 0,
         },
@@ -37,7 +37,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                         <AvatarFallback>MT</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col">
-                        <h1 className="text-lg font-bold">
+                        <h1 className="font-semibold lg:text-lg text-base">
                             {ghInfo.user.name}
                         </h1>
                         <Link
@@ -49,7 +49,9 @@ const GHUserCard = ({ ghInfo, username }) => {
                         </Link>
                     </div>
                 </div>
-                <p className="">{ghInfo.user.bio}</p>
+                <p className="lg:text-base md:text-base text-sm">
+                    {ghInfo.user.bio}
+                </p>
                 <div className="flex flex-col gap-1 items-start">
                     <div className="flex flex-row items-center justify-center gap-2">
                         <MapPin size={18} />

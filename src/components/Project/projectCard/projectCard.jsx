@@ -68,7 +68,7 @@ const ProjectCard = async ({ project }) => {
                 href={project?.homepageUrl || project?.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                className="font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 transition lg:text-xl md:text-lg text-lg"
             >
                 {projectName}
             </Link>
@@ -76,7 +76,7 @@ const ProjectCard = async ({ project }) => {
                 className="tooltip dark:tooltip-info !text-start cursor-pointer"
                 data-tip={project?.description}
             >
-                <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 line-clamp-3 lg:text-base md:text-base text-sm">
                     {project?.description}
                 </p>
             </div>
