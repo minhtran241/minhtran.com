@@ -206,7 +206,7 @@ const ContactForm = () => {
                 >
                     {isLoading ? <Loader /> : 'Send Message'}
                 </button>
-                <div className="mt-3 flex items-center gap-2 text-sm">
+                <div className="mt-3 flex items-center gap-2 text-sm sm:text-xs">
                     <Clock className="w-4 h-4" />
                     <div className="">
                         <span className="font-medium">Avg. response:</span> 1-2

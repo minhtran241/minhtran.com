@@ -37,8 +37,8 @@ const ReadsPage = () => {
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
-                        <div className="flex items-center gap-1.5 text-xl font-medium text-[#0033A0] dark:text-white">
-                            <ScrollText className="mr-1 h-5 w-5" />
+                        <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                            <ScrollText className="lg:h-5 lg:w-5 h-4 w-4" />
                             <h1 className="capitalize">Papers</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">
@@ -49,8 +49,8 @@ const ReadsPage = () => {
                     </section>
                     <Breakline />
                     <section className="flex flex-col gap-8">
-                        <div className="flex items-center gap-1.5 text-xl font-medium text-[#0033A0] dark:text-white">
-                            <Newspaper className="mr-1 h-5 w-5" />
+                        <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                            <Newspaper className="lg:h-5 lg:w-5 h-4 w-4" />
                             <h1 className="capitalize">Articles</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">

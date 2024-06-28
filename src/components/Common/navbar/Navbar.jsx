@@ -33,7 +33,7 @@ const Navbar = async () => {
                         role="button"
                         className="btn btn-ghost lg:hidden"
                     >
-                        <Menu className="h-5 w-5" />
+                        <Menu className="lg:h-5 lg:w-5 h-4 w-4" />
                     </div>
                     <ul
                         tabIndex={0}
@@ -42,7 +42,10 @@ const Navbar = async () => {
                         <Links />
                     </ul>
                 </div>
-                <Link href="/" className="text-xl btn btn-ghost uppercase">
+                <Link
+                    href="/"
+                    className="btn btn-ghost uppercase lg:text-xl text-lg"
+                >
                     {userBasicInfo.fullName}
                 </Link>
             </div>
@@ -51,14 +54,13 @@ const Navbar = async () => {
                     <Links />
                 </ul>
             </div>
-            <div className="navbar-end gap-2">
-                {/* Umami info list dropdown if small */}
-                <div className="dropdown">
+            <div className="navbar-end">
+                <div className="">
                     <Link
                         href={process.env.UMAMI_SHARE_URL}
                         target="_blank"
                         tabIndex={0}
-                        className="lg:hidden tooltip tooltip-bottom dark:tooltip-info items-center flex btn btn-ghost"
+                        className="lg:hidden tooltip tooltip-bottom dark:tooltip-info items-center flex btn btn-ghost btn-circle"
                         data-tip="Umami Analytics (Last 24 hours)"
                     >
                         <Image
@@ -66,28 +68,27 @@ const Navbar = async () => {
                             width={0}
                             height={0}
                             alt="Umami logo"
-                            className="filter invert h-5 w-5"
+                            className="filter invert lg:h-5 lg:w-5 h-4 w-4"
                         />
                     </Link>
+                    <Link
+                        href={process.env.UMAMI_SHARE_URL}
+                        target="_blank"
+                        className="hidden lg:flex tooltip tooltip-bottom dark:tooltip-info relative btn btn-ghost"
+                        data-tip="Umami Analytics (Last 24 hours)"
+                    >
+                        <ul className="flex items-center gap-4">
+                            {Object.keys(webstats).map((key, index) => (
+                                <li key={index} className="flex flex-col">
+                                    <span className="text-xs">{key}</span>
+                                    <span className="text-lg">
+                                        {webstats[key]?.toLocaleString()}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </Link>
                 </div>
-                {/* Umami info list dropdown if large */}
-                <Link
-                    href={process.env.UMAMI_SHARE_URL}
-                    target="_blank"
-                    className="navbar-center hidden lg:flex tooltip tooltip-bottom dark:tooltip-info relative btn btn-ghost"
-                    data-tip="Umami Analytics (Last 24 hours)"
-                >
-                    <ul className="flex items-center gap-4">
-                        {Object.keys(webstats).map((key, index) => (
-                            <li key={index} className="flex flex-col">
-                                <span className="text-xs">{key}</span>
-                                <span className="text-lg">
-                                    {webstats[key]?.toLocaleString()}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </Link>
                 <DropdownTheme />
             </div>
         </div>

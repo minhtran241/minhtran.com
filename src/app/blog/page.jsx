@@ -59,16 +59,16 @@ const getPosts = async (limit) => {
 
 const CATEGORIES = [
     {
-        name: 'Machine Learning & Deep Learning',
-        icon: <BrainCircuit className="mr-1 w-5 h-5" />,
+        name: 'ML/DL',
+        icon: <BrainCircuit className="lg:h-5 lg:w-5 h-4 w-4" />,
     },
     {
         name: 'Web Development',
-        icon: <Server className="mr-1 w-5 h-5" />,
+        icon: <Server className="lg:h-5 lg:w-5 h-4 w-4" />,
     },
     {
         name: 'Databases',
-        icon: <Database className="mr-1 w-5 h-5" />,
+        icon: <Database className="lg:h-5 lg:w-5 h-4 w-4" />,
     },
 ];
 
@@ -122,7 +122,7 @@ const BlogPage = async () => {
                         />
                     </Link>
                     <div className="mt-4 lg:mt-0 lg:w-1/2 flex flex-col gap-4">
-                        <div className="flex flex-row justify-between">
+                        <div className="flex flex-wrap gap-2 justify-between">
                             <p className="text-sm font-semibold uppercase text-[#0033A0] dark:text-blue-600">
                                 {new Date(
                                     firstPost?.created_at
@@ -134,9 +134,9 @@ const BlogPage = async () => {
                                 })}
                             </p>
                             {/* Latest label */}
-                            <div className="flex flex-row gap-2 bg-[#0033A0] dark:bg-blue-600 text-white px-2 py-1 rounded-md">
+                            <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md">
                                 <BellRing className="h-4 w-4" />
-                                <p className="text-xs font-semibold">
+                                <p className="text-xs font-medium">
                                     Latest {firstPost.category}
                                 </p>
                             </div>
@@ -168,7 +168,7 @@ const BlogPage = async () => {
                     {groupedPosts.map((category, index) => (
                         <div key={index}>
                             <section className="flex flex-col gap-8">
-                                <div className="flex items-center gap-1.5 text-xl font-medium text-[#0033A0] dark:text-white">
+                                <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
                                     {category.icon}
                                     <h1 className="capitalize">
                                         {category.name}

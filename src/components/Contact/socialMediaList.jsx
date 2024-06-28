@@ -7,8 +7,8 @@ import { Focus } from 'lucide-react';
 const SocialMediaList = () => {
     return (
         <div className="space-y-5 pb-2">
-            <div className="flex items-center gap-1.5 text-xl font-medium text-[#0033A0] dark:text-white">
-                <Focus className="mr-1 h-5 w-5" />
+            <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                <Focus className="lg:h-5 lg:w-5 h-4 w-4" />
                 <h1 className="capitalize">Social Media Platforms</h1>
             </div>
             {/* <h3 className="text-xl font-medium">Social Media Platforms</h3> */}

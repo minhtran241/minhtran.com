@@ -5,8 +5,8 @@ import Link from 'next/link';
 const BookACall = () => {
     return (
         <div className="space-y-5 pb-2">
-            <div className="flex items-center gap-1.5 text-xl font-medium text-[#0033A0] dark:text-white">
-                <PhoneOutgoing className="mr-1 h-5 w-5" />
+            <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                <PhoneOutgoing className="lg:h-5 lg:w-5 h-4 w-4" />
                 <h1 className="capitalize">Book a Call</h1>
             </div>
             <Link
@@ -17,7 +17,7 @@ const BookACall = () => {
             >
                 <div className="flex items-start justify-between gap-5">
                     <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-base font-medium md:text-lg text-white">
+                        <div className="flex items-center gap-2 lg:text-lg text-sm font-medium md:text-base text-white">
                             <span>Schedule a 1 on 1 meeting</span>
                         </div>
                         <p className="text-sm text-gray-300 md:text-base">
@@ -26,16 +26,16 @@ const BookACall = () => {
                         </p>
                     </div>
                     <div className="rounded-full border-2 p-3 text-gray-100 border-gray-100">
-                        <Calendar className="h-5 w-5" />
+                        <Calendar className="lg:h-5 lg:w-5 h-4 w-4" />
                     </div>
                 </div>
                 <div className="flex items-center gap-5 text-sm text-gray-200">
                     <div className="flex items-center gap-2">
-                        <Clock size={18} />
+                        <Clock className="lg:h-5 lg:w-5 h-4 w-4" />
                         <span>30 Minutes</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Video size={18} />
+                        <Video className="lg:h-5 lg:w-5 h-4 w-4" />
                         <span>Cal Video (Zoom)</span>
                     </div>
                 </div>

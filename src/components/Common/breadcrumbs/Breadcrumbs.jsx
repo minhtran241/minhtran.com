@@ -4,7 +4,7 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 
 const Breadcrumbs = ({ breadcrumbs }) => {
     return (
-        <div className="breadcrumbs lg:text-lg md:text-base text-base lg:font-semibold md:font-medium font-medium text-gray-600 dark:text-gray-400">
+        <div className="breadcrumbs lg:text-lg md:text-base text-base font-semibold text-gray-600 dark:text-gray-400">
             <ul>
                 <li>
                     <Link

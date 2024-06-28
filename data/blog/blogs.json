@@ -11,7 +11,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, llms",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 2,
@@ -25,7 +25,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, tokenization, padding, mapping, llms",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 3,
@@ -53,7 +53,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, transformer, llms, fine-tuning, peft, lora",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   }, 
   {
 	"id": 5,
@@ -67,7 +67,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, rag, retrieval, generation, generativeai",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   }, {
 	"id": 6,
 	"title": "Design a Payment System",
@@ -108,7 +108,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, txtai, embeddings, semantic-search, vector-database",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 9,
@@ -122,7 +122,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, embeddings, semantic-search, vector-database, vector-indexing",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 10,
@@ -136,7 +136,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, rag, retrieval, generation, generativeai, complex-rag",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 11,
@@ -150,7 +150,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "nlp, llms, transformer, architecture",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 12,
@@ -164,7 +164,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "linear-algebra, deep-learning, mathematics",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 13,
@@ -178,7 +178,7 @@
 	"user_id": 1,
 	"is_published": true,
 	"tags": "backpropagation, neural-networks, deep-learning",
-	"category": "Machine Learning & Deep Learning"
+	"category": "ML/DL"
   },
   {
 	"id": 14,

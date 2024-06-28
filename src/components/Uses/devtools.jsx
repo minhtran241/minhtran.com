@@ -8,8 +8,8 @@ const DEVTOOLS = USES.DevTools;
 const DevTools = () => {
     return (
         <section className="flex flex-col gap-8">
-            <div className="flex items-center gap-1.5 text-xl font-medium text-[#0033A0] dark:text-white">
-                <Code2 className="mr-1 h-5 w-5" />
+            <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                <Code2 className="lg:h-5 lg:w-5 h-4 w-4" />
                 <h1 className="capitalize">Development Tools</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -33,7 +33,7 @@ const DevTools = () => {
                             <h3 className="font-semibold lg:text-lg md:text-base text-sm">
                                 {item.name}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400">
+                            <p className="text-gray-600 dark:text-gray-400 lg:text-base md:text-sm text-xs">
                                 {item.metadata}
                             </p>
                         </div>
