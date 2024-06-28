@@ -17,15 +17,15 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-5 h-5 hover:opacity-70 dark:hover:text-blue-600 transition"
+                            className="lg:w-5 lg:h-5 w-4 h-4 hover:opacity-70 dark:hover:text-blue-600 transition"
                         >
                             {item.icon}
                         </Link>
                     ))}
                 </div>
             </nav>
-            <aside>
-                <div className="items-center justify-center">
+            <aside className="items-center justify-center  lg:text-base md:text-sm sm:text-xs text-xs">
+                <div className="">
                     <span>Designed and developed by</span>
                     <span> </span>
                     <Link
@@ -48,7 +48,7 @@ const Footer = () => {
                     </Link>
                 </div> */}
                 {/* Built with */}
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex gap-2">
                     <p className="">Built with</p>
                     {TECHSTACK.map((item, index) => (
                         <Link key={index} href={item.link} target="_blank">
@@ -65,7 +65,7 @@ const Footer = () => {
                     ))}
                 </div>
                 {/* APIs Usage */}
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex gap-2">
                     <p className="">Consuming APIs from</p>
                     {CONSUMED_APIS.map((item, index) => (
                         <Link key={index} href={item.link} target="_blank">
