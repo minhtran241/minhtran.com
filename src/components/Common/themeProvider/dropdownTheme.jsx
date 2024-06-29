@@ -25,7 +25,7 @@ const DropdownTheme = () => {
                     <li>
                         <button
                             onClick={() => setTheme('light')}
-                            className="btn btn-ghost"
+                            className="btn btn-ghost !btn-circle"
                         >
                             <Sun className="lg:h-5 lg:w-5 h-4 w-4" />
                         </button>
@@ -33,7 +33,7 @@ const DropdownTheme = () => {
                     <li>
                         <button
                             onClick={() => setTheme('dark')}
-                            className="btn btn-ghost"
+                            className="btn btn-ghost !btn-circle"
                         >
                             <MoonStar className="lg:h-5 lg:w-5 h-4 w-4" />
                         </button>
@@ -41,7 +41,7 @@ const DropdownTheme = () => {
                     <li>
                         <button
                             onClick={() => setTheme('system')}
-                            className="btn btn-ghost"
+                            className="btn btn-ghost !btn-circle"
                         >
                             <SunMoon className="lg:h-5 lg:w-5 h-4 w-4" />
                         </button>
