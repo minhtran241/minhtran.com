@@ -11,9 +11,7 @@ const PAGE_DESCRIPTION =
 const BREADCRUMBS = [
     {
         href: '/uses',
-        icon: (
-            <FolderOpen className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
-        ),
+        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
         text: 'Uses',
     },
 ];

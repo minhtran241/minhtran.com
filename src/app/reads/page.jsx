@@ -15,9 +15,7 @@ const SHOWED_PAPER_LIST = PAPER_LIST.reverse();
 const BREADCRUMBS = [
     {
         href: '/reads',
-        icon: (
-            <FolderOpen className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
-        ),
+        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
         text: 'Reads',
     },
 ];
@@ -38,7 +36,7 @@ const ReadsPage = () => {
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
                         <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                            <ScrollText className="lg:h-5 lg:w-5 h-4 w-4" />
+                            <ScrollText className="lg:h-6 lg:w-6 h-5 w-5" />
                             <h1 className="capitalize">Papers</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">
@@ -50,7 +48,7 @@ const ReadsPage = () => {
                     <Breakline />
                     <section className="flex flex-col gap-8">
                         <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                            <Newspaper className="lg:h-5 lg:w-5 h-4 w-4" />
+                            <Newspaper className="lg:h-6 lg:w-6 h-5 w-5" />
                             <h1 className="capitalize">Articles</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">

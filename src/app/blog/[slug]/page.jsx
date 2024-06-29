@@ -89,15 +89,13 @@ const SinglePostContent = ({ post }) => {
         {
             href: '/blog',
             icon: (
-                <FolderOpen className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
+                <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />
             ),
             text: 'Blogs',
         },
         {
             href: `/blog/${post.slug}`,
-            icon: (
-                <FileText className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
-            ),
+            icon: <FileText className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
             text: post.title,
         },
     ];

@@ -14,8 +14,8 @@ const DropdownTheme = () => {
                     role="button"
                     className="btn btn-ghost btn-circle"
                 >
-                    <Sun className="lg:h-5 lg:w-5 h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <MoonStar className="absolute lg:h-5 lg:w-5 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                    <Sun className="lg:h-6 lg:w-6 h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <MoonStar className="absolute lg:h-6 lg:w-6 h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     <span className="sr-only">Toggle theme</span>
                 </div>
                 <ul
@@ -27,7 +27,7 @@ const DropdownTheme = () => {
                             onClick={() => setTheme('light')}
                             className="btn btn-ghost"
                         >
-                            <Sun className="h-4 w-4" />
+                            <Sun className="lg:h-5 lg:w-5 h-4 w-4" />
                         </button>
                     </li>
                     <li>
@@ -35,7 +35,7 @@ const DropdownTheme = () => {
                             onClick={() => setTheme('dark')}
                             className="btn btn-ghost"
                         >
-                            <MoonStar className="h-4 w-4" />
+                            <MoonStar className="lg:h-5 lg:w-5 h-4 w-4" />
                         </button>
                     </li>
                     <li>
@@ -43,7 +43,7 @@ const DropdownTheme = () => {
                             onClick={() => setTheme('system')}
                             className="btn btn-ghost"
                         >
-                            <SunMoon className="h-4 w-4" />
+                            <SunMoon className="lg:h-5 lg:w-5 h-4 w-4" />
                         </button>
                     </li>
                 </ul>

@@ -9,7 +9,7 @@ const Devices = () => {
     return (
         <section className="flex flex-col gap-8">
             <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                <MonitorSmartphone className="lg:h-5 lg:w-5 h-4 w-4" />
+                <MonitorSmartphone className="lg:h-6 lg:w-6 h-5 w-5" />
                 <h1 className="capitalize">Accessories</h1>
             </div>
             <div className="flex flex-col gap-8 mb-8">

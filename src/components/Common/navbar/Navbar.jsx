@@ -33,7 +33,7 @@ const Navbar = async () => {
                         role="button"
                         className="btn btn-ghost lg:hidden"
                     >
-                        <Menu className="lg:h-5 lg:w-5 h-4 w-4" />
+                        <Menu className="lg:h-6 lg:w-6 h-5 w-5" />
                     </div>
                     <ul
                         tabIndex={0}
@@ -68,7 +68,7 @@ const Navbar = async () => {
                             width={0}
                             height={0}
                             alt="Umami logo"
-                            className="filter invert lg:h-5 lg:w-5 h-4 w-4"
+                            className="filter invert lg:h-6 lg:w-6 h-5 w-5"
                         />
                     </Link>
                     <Link

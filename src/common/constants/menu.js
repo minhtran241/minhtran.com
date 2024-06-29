@@ -16,7 +16,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.email,
         href: `mailto:${userBasicInfo.email}`,
         type: 'sw', // social and work
-        icon: <Mail className="w-full h-full" />,
+        icon: <Mail className="w-5 h-5" />,
         className:
             '!bg-gradient-to-r from-[#D44638] to-[#D44638] border border dark:border-neutral-700',
     },
@@ -26,7 +26,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.linkedinUsername,
         href: userBasicInfo.linkedinLink,
         type: 'sw', // social and work
-        icon: <Linkedin className="w-full h-full" />,
+        icon: <Linkedin className="w-5 h-5" />,
         className:
             '!bg-gradient-to-r from-[#0077B5] to-[#00A0DC] border border dark:border-neutral-700',
     },
@@ -35,7 +35,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.twitterUsername,
         href: userBasicInfo.twitterLink,
         type: 's', // social only
-        icon: <Twitter className="w-full h-full" />,
+        icon: <Twitter className="w-5 h-5" />,
         className:
             '!bg-gradient-to-r from-[#1DA1F2] to-[#1DA1F2] border border dark:border-neutral-700',
     },
@@ -44,7 +44,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.instagramUsername,
         href: userBasicInfo.instagramLink,
         type: 's', // social only
-        icon: <Instagram className="w-full h-full" />,
+        icon: <Instagram className="w-5 h-5" />,
         className:
             '!bg-gradient-to-r from-[#E1306C] to-[#405DE6] border border dark:border-neutral-700',
     },
@@ -53,7 +53,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.facebookUsername,
         href: userBasicInfo.facebookLink,
         type: 's', // social only
-        icon: <Facebook className="w-full h-full" />,
+        icon: <Facebook className="w-5 h-5" />,
         className:
             '!bg-gradient-to-r from-[#1877F2] to-[#1877F2] border border dark:border-neutral-700',
     },
@@ -62,7 +62,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.githubUsername,
         href: userBasicInfo.githubLink,
         type: 'sw', // social and work
-        icon: <Github className="w-full h-full" />,
+        icon: <Github className="w-5 h-5" />,
         className:
             '!bg-gradient-to-r from-[#333333] to-[#333333] border border dark:border-neutral-700',
     },

@@ -60,24 +60,22 @@ const getPosts = async (limit) => {
 const CATEGORIES = [
     {
         name: 'ML/DL',
-        icon: <BrainCircuit className="lg:h-5 lg:w-5 h-4 w-4" />,
+        icon: <BrainCircuit className="lg:h-6 lg:w-6 h-5 w-5" />,
     },
     {
         name: 'Web Development',
-        icon: <Server className="lg:h-5 lg:w-5 h-4 w-4" />,
+        icon: <Server className="lg:h-6 lg:w-6 h-5 w-5" />,
     },
     {
         name: 'Databases',
-        icon: <Database className="lg:h-5 lg:w-5 h-4 w-4" />,
+        icon: <Database className="lg:h-6 lg:w-6 h-5 w-5" />,
     },
 ];
 
 const BREADCRUMBS = [
     {
         href: '/blog',
-        icon: (
-            <FolderOpen className="stroke-current lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4" />
-        ),
+        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
         text: 'Blogs',
     },
 ];
