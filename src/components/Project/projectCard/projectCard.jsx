@@ -63,7 +63,6 @@ const ProjectCard = async ({ project }) => {
                     className="rounded-lg border border-[#0033A0] dark:border-blue-600"
                 />
             </Link>
-
             <Link
                 href={project?.homepageUrl || project?.url}
                 target="_blank"

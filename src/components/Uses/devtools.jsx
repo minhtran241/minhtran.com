@@ -26,7 +26,7 @@ const DevTools = () => {
                                 alt={item.name}
                                 width={112}
                                 height={112}
-                                className="rounded-lg lg:w-32 lg:h-32 md:w-28 md:h-28 w-24 h-24"
+                                className="rounded-lg lg:w-28 lg:h-28 md:w-24 md:h-24 w-20 h-20"
                             />
                         </div>
                         <div className="flex flex-col gap-1 items-center justify-center">

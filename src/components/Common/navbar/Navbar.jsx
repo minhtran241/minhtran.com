@@ -2,28 +2,10 @@ import Links from './links/Links';
 import DropdownTheme from '../themeProvider/dropdownTheme';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { getClient } from '@umami/api-client';
-import Image from 'next/image';
 import { userBasicInfo } from '@/common/constants/userBasic';
+import WebStats from './webStats/webStats';
 
-const Navbar = async () => {
-    const client = getClient();
-    const { ok, status, data, error } = await client.getWebsiteStats(
-        process.env.UMAMI_WEBSITE_ID,
-        {
-            startAt: new Date().getTime() - 24 * 60 * 60 * 1000, // 24 hours ago
-            endAt: new Date().getTime(),
-        }
-    );
-    if (!ok || error) {
-        console.error('Error fetching website stats', status, error);
-    }
-
-    const webstats = {
-        Pageviews: data?.pageviews?.value,
-        Visits: data?.visits?.value,
-        Visitors: data?.visitors?.value,
-    };
+const Navbar = () => {
     return (
         <div className="navbar bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white">
             <div className="navbar-start">
@@ -55,40 +37,7 @@ const Navbar = async () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="">
-                    <Link
-                        href={process.env.UMAMI_SHARE_URL}
-                        target="_blank"
-                        tabIndex={0}
-                        className="lg:hidden tooltip tooltip-bottom dark:tooltip-info items-center flex btn btn-ghost btn-circle"
-                        data-tip="Umami Analytics (Last 24 hours)"
-                    >
-                        <Image
-                            src="/logos/umami-color.svg"
-                            width={0}
-                            height={0}
-                            alt="Umami logo"
-                            className="filter invert lg:h-6 lg:w-6 h-5 w-5"
-                        />
-                    </Link>
-                    <Link
-                        href={process.env.UMAMI_SHARE_URL}
-                        target="_blank"
-                        className="hidden lg:flex tooltip tooltip-bottom dark:tooltip-info relative btn btn-ghost"
-                        data-tip="Umami Analytics (Last 24 hours)"
-                    >
-                        <ul className="flex items-center gap-4">
-                            {Object.keys(webstats).map((key, index) => (
-                                <li key={index} className="flex flex-col">
-                                    <span className="text-xs">{key}</span>
-                                    <span className="text-lg">
-                                        {webstats[key]?.toLocaleString()}
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
-                    </Link>
-                </div>
+                <WebStats />
                 <DropdownTheme />
             </div>
         </div>

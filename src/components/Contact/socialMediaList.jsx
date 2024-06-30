@@ -18,7 +18,7 @@ const SocialMediaList = () => {
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`btn ${item.className} flex items-center justify-center gap-2 text-white`}
+                            className={`btn ${item.className} flex items-center justify-center gap-2 text-white border-none`}
                         >
                             {item.icon}
                             {item.name}
