@@ -57,7 +57,7 @@ const SkillsComponent = async () => {
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2 mt-8">
                     {skills.map((skill, index) => (
                         <div
-                            className="rounded-lg p-4 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out"
+                            className="rounded-box p-4 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out"
                             key={index}
                         >
                             <div className="flex items-center gap-2 mb-5">

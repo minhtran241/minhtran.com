@@ -48,7 +48,7 @@ const Footer = () => {
                     </Link>
                 </div> */}
                 {/* Built with */}
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                     <p className="">Built with</p>
                     {TECHSTACK.map((item, index) => (
                         <Link key={index} href={item.link} target="_blank">
@@ -65,7 +65,7 @@ const Footer = () => {
                     ))}
                 </div>
                 {/* APIs Usage */}
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                     <p className="">Consuming APIs from</p>
                     {CONSUMED_APIS.map((item, index) => (
                         <Link key={index} href={item.link} target="_blank">

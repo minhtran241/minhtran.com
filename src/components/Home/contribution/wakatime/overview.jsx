@@ -28,7 +28,7 @@ const Overview = ({ data }) => {
 };
 
 const OverviewItem = ({ label, value }) => (
-    <div className="flex flex-col bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+    <div className="flex flex-col bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
         <span className="text-sm text-gray-600 dark:text-gray-400">
             {label}
         </span>

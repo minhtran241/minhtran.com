@@ -7,7 +7,8 @@ const WebStats = async () => {
     const { ok, status, data, error } = await client.getWebsiteStats(
         process.env.UMAMI_WEBSITE_ID,
         {
-            startAt: new Date().getTime() - 24 * 60 * 60 * 1000, // 24 hours ago
+            // startAt: new Date().getTime() - 24 * 60 * 60 * 1000, // 24 hours ago
+            startAt: 0,
             endAt: new Date().getTime(),
         }
     );
@@ -17,13 +18,13 @@ const WebStats = async () => {
 
     const webstats = {
         Pageviews: data?.pageviews?.value,
-        Visits: data?.visits?.value,
+        // Visits: data?.visits?.value,
         Visitors: data?.visitors?.value,
     };
     return (
         <div
             className="tooltip tooltip-bottom dark:tooltip-info"
-            data-tip="Last 24 hours"
+            data-tip="Powered by Umami"
         >
             <Link
                 href={process.env.UMAMI_SHARE_URL}

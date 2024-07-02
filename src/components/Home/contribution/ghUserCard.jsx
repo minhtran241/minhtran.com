@@ -29,7 +29,7 @@ const detailsData = (data) => {
 
 const GHUserCard = ({ ghInfo, username }) => {
     return (
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-row items-center justify-center gap-4">
                     <div className="avatar">

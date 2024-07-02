@@ -24,7 +24,7 @@ const Devices = () => {
                             alt={DEVICES[0]?.name}
                             width={800}
                             height={400}
-                            className="rounded-lg"
+                            className="rounded-box"
                         />
                     </div>
                     <div className="flex flex-col gap-1 items-center justify-center">
@@ -50,7 +50,7 @@ const Devices = () => {
                                     alt={item.name}
                                     width={400}
                                     height={300}
-                                    className="rounded-lg w-56 h-56"
+                                    className="rounded-box w-56 h-56"
                                 />
                             </div>
                             <div className="flex flex-col gap-1 items-center justify-center">

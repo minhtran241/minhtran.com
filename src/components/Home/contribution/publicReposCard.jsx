@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const PublicReposCard = ({ ghInfo, username, colorTheme = 'blue' }) => {
     return (
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
             <div className="flex flex-col items-start">
                 <h1 className="font-semibold lg:text-lg text-base">
                     Recent Pushed Repositories (Public)

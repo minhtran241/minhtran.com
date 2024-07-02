@@ -32,7 +32,7 @@ const ProjectCard = async ({ project }) => {
     const licenseName = project?.licenseInfo?.name;
 
     return (
-        <div className="flex flex-col p-4 rounded-lg border dark:border-gray-700 border-gray-200 gap-3">
+        <div className="flex flex-col p-4 rounded-box border dark:border-gray-700 border-gray-200 gap-3">
             <div className="flex flex-row justify-between">
                 <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
                     <CalendarDays className="h-4 w-4" />

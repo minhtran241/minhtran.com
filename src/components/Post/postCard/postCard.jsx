@@ -14,7 +14,7 @@ const PostCard = ({ post }) => {
             <Link href={`/blog/${post.slug}`}>
                 <div className="relative w-full lg:h-56 md:h-52 sm:h-44 h-44">
                     <Image
-                        className="border rounded-lg border-[#0033A0] "
+                        className="border rounded-box border-[#0033A0] "
                         src={post.thumbnail}
                         alt={post.title}
                         fill

@@ -141,7 +141,7 @@ const SinglePostContent = ({ post }) => {
                                 width={1200}
                                 height={600}
                                 layout="responsive"
-                                className="rounded-lg"
+                                className="rounded-box"
                             />
                         </div>
                         <p className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10 lg:text-base md:text-base sm:text-sm text-sm text-gray-600 dark:text-gray-400">
@@ -165,7 +165,7 @@ const SinglePostContent = ({ post }) => {
                             {/* Prev and Next cards */}
                             <div className="justify-between grid grid-cols-1 gap-8 md:grid-cols-2">
                                 {post.prev && (
-                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-md hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer">
+                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-box hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer transition duration-300">
                                         <p className="text-sm text-gray-600 dark:text-gray-400">
                                             Older Blog
                                         </p>
@@ -184,7 +184,7 @@ const SinglePostContent = ({ post }) => {
                                     </div>
                                 )}
                                 {post.next && (
-                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-md hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer">
+                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-box hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer transition duration-300">
                                         <p className="text-sm text-right text-gray-600 dark:text-gray-400">
                                             Newer Blog
                                         </p>

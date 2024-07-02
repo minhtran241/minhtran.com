@@ -76,36 +76,34 @@ const CodingActiveList = ({ data }) => {
                     key={item?.title}
                     className={clsx(
                         // item?.styles?.bg,
-                        'relative flex flex-1 flex-col gap-2 border border-gray-200 dark:border-gray-700 rounded-lg'
+                        'h-full w-full relative flex flex-1 flex-col gap-2 border border-gray-200 dark:border-gray-700 rounded-box bg-white dark:bg-black p-4'
                     )}
                 >
-                    <div className="h-full w-full rounded-lg bg-white dark:bg-black p-4">
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold lg:text-lg text-base text-gray-800 dark:text-gray-100">
-                                {item?.title}
-                            </p>
-                            <Link
-                                href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
-                                target="_blank"
-                                className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline items-baseline flex"
-                            >
-                                [More Info]
-                            </Link>
-                        </div>
-                        <p className="text-sm text-[#0033A0] dark:text-blue-600">
-                            WakaTime - Last updated {distance}
+                    <div className="flex items-center justify-between">
+                        <p className="font-semibold lg:text-lg text-base text-gray-800 dark:text-gray-100">
+                            {item?.title}
                         </p>
-                        <ul className="flex flex-col gap-1 py-3">
-                            {item?.data?.slice(0, 3)?.map((subItem) => (
-                                <li key={subItem?.name}>
-                                    <Progress
-                                        data={subItem}
-                                        className={item?.styles?.bg}
-                                    />
-                                </li>
-                            ))}
-                        </ul>
+                        <Link
+                            href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
+                            target="_blank"
+                            className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline items-baseline flex"
+                        >
+                            [More Info]
+                        </Link>
                     </div>
+                    <p className="text-sm text-[#0033A0] dark:text-blue-600">
+                        WakaTime - Last updated {distance}
+                    </p>
+                    <ul className="flex flex-col gap-1 py-3">
+                        {item?.data?.slice(0, 3)?.map((subItem) => (
+                            <li key={subItem?.name}>
+                                <Progress
+                                    data={subItem}
+                                    className={item?.styles?.bg}
+                                />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             ))}
         </div>

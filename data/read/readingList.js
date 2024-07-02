@@ -12,6 +12,7 @@ const ARTICLE_LIST = [
     'https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8',
     'https://shashank7-iitd.medium.com/understanding-vector-quantized-variational-autoencoders-vq-vae-323d710a888a',
     'https://erdem.pl/2023/11/step-by-step-visual-introduction-to-diffusion-models',
+    'https://towardsdatascience.com/decision-trees-explained-entropy-information-gain-gini-index-ccp-pruning-4d78070db36c',
 ];
 
 const PAPER_LIST = [
