@@ -45,7 +45,7 @@ const HeroComponent = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] rounded bg-gray-100 hover:bg-gray-200 border-none hover:border-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white">
+                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] bg-gray-100 hover:bg-gray-200 border-none hover:border-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white">
                                         {resumeInfo.icon}
                                         {resumeInfo.title}
                                     </button>
