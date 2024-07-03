@@ -13,7 +13,7 @@ const Progress = ({ data, className }) => {
     };
 
     return (
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-2">
             <div className="w-28 text-sm text-gray-600 dark:text-gray-400">
                 {name}
             </div>

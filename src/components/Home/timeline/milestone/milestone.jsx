@@ -34,7 +34,7 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                     timeline_end ? 'timeline-end' : 'timeline-start md:text-end'
                 } mb-10`}
             >
-                <time className="font-mono italic text-[#0033A0] dark:text-blue-600">
+                <time className="font-semibold text-[#0033A0] dark:text-blue-600">
                     {timeStr}
                 </time>
                 <div className="lg:text-lg text-base font-bold hover:text-[#0033A0] dark:hover:text-blue-600">

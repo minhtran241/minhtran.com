@@ -70,29 +70,24 @@ const CodingActiveList = ({ data }) => {
     }
 
     return (
-        <div className="mt-2 flex flex-col gap-6 sm:flex-row sm:gap-4">
+        <Link
+            href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
+            target="_blank"
+            className="mt-2 flex flex-col gap-6 sm:flex-row sm:gap-4"
+        >
             {actives.map((item) => (
                 <div
                     key={item?.title}
                     className={clsx(
                         // item?.styles?.bg,
-                        'h-full w-full relative flex flex-1 flex-col gap-2 border border-gray-200 dark:border-gray-700 rounded-box bg-white dark:bg-black p-4'
+                        'h-full w-full relative flex flex-1 flex-col border border-gray-200 dark:border-gray-700 rounded-box bg-white dark:bg-black p-4'
                     )}
                 >
-                    <div className="flex items-center justify-between">
-                        <p className="font-semibold lg:text-lg text-base text-gray-800 dark:text-gray-100">
-                            {item?.title}
-                        </p>
-                        <Link
-                            href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
-                            target="_blank"
-                            className="text-sm text-[#0033A0] dark:text-blue-600 hover:underline items-baseline flex"
-                        >
-                            [More Info]
-                        </Link>
-                    </div>
+                    <p className="font-semibold lg:text-lg text-base text-gray-800 dark:text-gray-100">
+                        {item?.title}
+                    </p>
                     <p className="text-sm text-[#0033A0] dark:text-blue-600">
-                        WakaTime - Last updated {distance}
+                        Last updated {distance}
                     </p>
                     <ul className="flex flex-col gap-1 py-3">
                         {item?.data?.slice(0, 3)?.map((subItem) => (
@@ -106,7 +101,7 @@ const CodingActiveList = ({ data }) => {
                     </ul>
                 </div>
             ))}
-        </div>
+        </Link>
     );
 };
 
