@@ -33,28 +33,22 @@ const TimelineComponent = async () => {
     const milestones = await getMilestones();
 
     return (
-        <div className="items-center justify-center mt-12 container">
+        <div className="mt-12 container">
             <SectionLabel
                 title={SECTION_TITLE}
                 description={SECTION_DESCRIPTION}
             />
-            <div className="flex flex-col justify-center ">
-                {/* lg:max-w-full */}
-                <div className="w-full mx-auto">
-                    <div className="relative">
-                        <div className="absolute hidden w-1 h-full transform -translate-x-1/2 bg-[#0033A0] dark:bg-blue-600 lg:block left-1/2 rounded-full"></div>
-                        <div className="space-y-2 lg:space-y-4">
-                            {milestones.map((milestone, index) => (
-                                <Milestone
-                                    milestone={milestone}
-                                    right={index % 2 === 0}
-                                    key={index}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                {milestones.map((milestone, index) => (
+                    <Milestone
+                        milestone={milestone}
+                        first={index === 0}
+                        last={index === milestones.length - 1}
+                        timeline_end={index % 2 === 0}
+                        key={index}
+                    />
+                ))}
+            </ul>
         </div>
     );
 };

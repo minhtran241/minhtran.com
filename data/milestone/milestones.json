@@ -6,7 +6,6 @@
 		"link": "https://www.gvsu.edu/it/",
         "job_title": "IT Services Technician",
         "description": "Collaborated with faculty and staff to understand their technology needs and provide appropriate solutions and support. Provided technical support to faculty, staff, and students in troubleshooting and resolving technology-related issues.",
-        "icon": "HardDrive",
         "created_at": "2024-02-24T09:41:22.055Z",
         "updated_at": "2024-02-24T09:41:22.055Z"
     },
@@ -17,7 +16,6 @@
 		"link": "https://thienkhoi.com",
         "job_title": "Database Administrator",
         "description": "Optimized database performance to ensure the smooth operation of real estate systems that serve 10,000+ users. Wrote SQL to generate daily and monthly requested reports; implemented procedures to meet the needs of the company.",
-        "icon": "Database",
         "created_at": "2024-02-24T09:41:22.056Z",
         "updated_at": "2024-02-24T09:41:22.056Z"
     },
@@ -28,7 +26,6 @@
 		"link": "https://pama.com.vn",
         "job_title": "Software Engineer",
         "description": "Worked well with Strapi, designed UI/UX, implemented the frontend, and monitored the system. Contributed to the development of innovative software solutions that meet the specific needs and requirements of the company.",
-        "icon": "LayoutTemplate",
         "created_at": "2024-02-24T09:41:22.055Z",
         "updated_at": "2024-02-24T09:41:22.055Z"
     },
@@ -39,7 +36,6 @@
 		"link": "https://www.gvsu.edu/bluenucleus/about-us-5.htm",
 		"job_title": "Research Assistant",
 		"description": "Developed and implemented a microservice architecture for a web application that allows users to extract themes from reviews. Fine-tuned a new model to improve the accuracy of the theme extraction.",
-		"icon": "Code2",
 		"created_at": "2024-03-24T09:41:22.056Z",
 		"updated_at": "2024-03-24T09:41:22.056Z"
 	}

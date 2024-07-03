@@ -1,144 +1,55 @@
-import {
-    Database,
-    Layers,
-    LayoutTemplate,
-    HardDrive,
-    Code2,
-} from 'lucide-react';
 import Link from 'next/link';
 
-const Milestone = ({ milestone, right }) => {
-    const year = new Date(milestone.date).getFullYear();
-    const month = new Date(milestone.date).toLocaleString('default', {
-        month: 'short',
+const Milestone = ({ milestone, first, last, timeline_end }) => {
+    const timeStr = new Date(milestone.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
     });
+    if (!milestone) {
+        return null;
+    }
     const paragraphs = milestone.description
         .split('.')
         .filter((p) => p.length > 1);
-    const icons = {
-        Database: <Database className="text-white h-4 w-4" />,
-        Layers: <Layers className="text-white h-4 w-4" />,
-        LayoutTemplate: <LayoutTemplate className="text-white h-4 w-4" />,
-        HardDrive: <HardDrive className="text-white h-4 w-4" />,
-        Code2: <Code2 className="text-white h-4 w-4" />,
-    };
-    return right ? (
-        <div className="w-full m-0">
-            <div className="flex flex-col items-center w-full">
-                <div className="flex items-center justify-end w-full mx-0">
-                    <div className="w-full lg:w-[50%] lg:pl-8">
-                        <div className="relative flex-1 mb-10 lg:mb-8  shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 w-full">
-                            <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4">
-                                <div className="hidden h-10 origin-top-right transform -rotate-45 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 lg:block drop-shadow-lg"></div>
-                            </div>
-                            <div className="relative">
-                                <div className="flex flex-wrap items-center">
-                                    <div className="p-4 md:w-1/6">
-                                        <p className="font-semibold lg:text-xl text-lg  text-[#0033A0] dark:text-white">
-                                            {month}
-                                        </p>
-                                        <span className="lg:text-lg text-base text-[#0033A0] dark:text-white">
-                                            {year}
-                                        </span>
-                                    </div>
-                                    <div className="flex-1 p-4 pr-4 border-l">
-                                        <div className="flex justify-between items-center w-full">
-                                            <p className="text-[#0033A0] dark:text-blue-600 font-semibold lg:text-lg text-base">
-                                                {milestone.title}
-                                            </p>
-                                            <Link
-                                                href={milestone.link}
-                                                target="_blank"
-                                                className="text-[#0033A0] dark:text-blue-600 text-sm hover:underline"
-                                            >
-                                                [More Info]
-                                            </Link>
-                                        </div>
-                                        <p className="mb-2 text-gray-600 dark:text-gray-400 text-sm">
-                                            {milestone.job_title}
-                                        </p>
-                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 lg:text-base md:text-base text-sm">
-                                            {paragraphs.map(
-                                                (paragraph, index) => (
-                                                    <li
-                                                        key={index}
-                                                        className="mb-2 ml-5"
-                                                    >
-                                                        {paragraph}.
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+    return (
+        <li>
+            {!first && <hr className="bg-neutral-200 dark:bg-gray-800" />}
+            <div className="timeline-middle">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="text-[#0033A0] dark:text-blue-600 h-5 w-5"
+                >
+                    <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clipRule="evenodd"
+                    />
+                </svg>
+            </div>
+            <div
+                className={`${
+                    timeline_end ? 'timeline-end' : 'timeline-start md:text-end'
+                } mb-10`}
+            >
+                <time className="font-mono italic text-[#0033A0] dark:text-blue-600">
+                    {timeStr}
+                </time>
+                <div className="lg:text-lg text-base font-bold hover:text-[#0033A0] dark:hover:text-blue-600">
+                    <Link href={milestone.link} target="_blank" className="">
+                        {milestone.job_title}, {milestone.title}
+                    </Link>
                 </div>
-                <div className="absolute flex items-center justify-center w-7 h-7 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[4px]">
-                    {icons[milestone.icon]}
+                <div className="text-sm">
+                    {paragraphs.map((p, index) => (
+                        <p key={index}>{p}.</p>
+                    ))}
                 </div>
             </div>
-        </div>
-    ) : (
-        // min width 600px
-        <div className="w-full m-0">
-            <div className="flex flex-col items-center w-full">
-                <div className="flex items-center justify-start w-full mx-0">
-                    <div className="w-full lg:w-[50%] lg:pr-8">
-                        <div className="relative flex-1 mb-10 rounded-lg shadow-lg lg:mb-8 border border-gray-200 dark:border-gray-700">
-                            <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-3 -right-4">
-                                <div className="hidden h-10 origin-bottom-left transform -rotate-45 bg-white dark:bg-black shadow lg:block border border-gray-200 dark:border-gray-700"></div>
-                            </div>
-                            <div className="relative">
-                                <div className="flex flex-wrap items-center">
-                                    <div className="p-4 md:w-1/6">
-                                        <p className="font-semibold lg:text-xl text-lg text-[#0033A0] dark:text-white ">
-                                            {month}
-                                        </p>
-                                        <span className="lg:text-lg text-base text-[#0033A0] dark:text-white">
-                                            {year}
-                                        </span>
-                                    </div>
-                                    <div className="flex-1 p-4 pr-4 border-l">
-                                        <div className="flex justify-between items-center w-full">
-                                            <p className="text-[#0033A0] dark:text-blue-600 font-semibold lg:text-lg text-base">
-                                                {milestone.title}
-                                            </p>
-                                            <Link
-                                                href={milestone.link}
-                                                target="_blank"
-                                                className="text-[#0033A0] dark:text-blue-600 text-sm hover:underline"
-                                            >
-                                                [More Info]
-                                            </Link>
-                                        </div>
-                                        <p className="mb-2 text-gray-600 dark:text-gray-400 text-sm">
-                                            {milestone.job_title}
-                                        </p>
-                                        <ul className="list-disc marker:text-[#0033A0] dark:marker:text-blue-600 lg:text-base md:text-base text-sm">
-                                            {paragraphs.map(
-                                                (paragraph, index) => (
-                                                    <li
-                                                        key={index}
-                                                        className="mb-2 ml-5"
-                                                    >
-                                                        {paragraph}.
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="absolute flex items-center justify-center w-7 h-7 transform -translate-x-1/2 -translate-y-4 bg-[#0033A0] dark:bg-blue-600 rounded-full left-1/2 lg:translate-y-[4px]">
-                    {icons[milestone.icon]}
-                </div>
-            </div>
-        </div>
+            {!last && <hr className="bg-neutral-200 dark:bg-gray-800" />}
+        </li>
     );
 };
 
