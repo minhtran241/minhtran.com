@@ -16,7 +16,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.email,
         href: `mailto:${userBasicInfo.email}`,
         type: 'sw', // social and work
-        icon: <Mail className="w-4 h-4" />,
+        icon: <Mail className="lg:w-5 lg:h-5 w-4 h-4" />,
         className:
             '!bg-gradient-to-r from-[#D44638] to-[#D44638] border border dark:border-neutral-700',
     },
@@ -26,7 +26,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.linkedinUsername,
         href: userBasicInfo.linkedinLink,
         type: 'sw', // social and work
-        icon: <Linkedin className="w-4 h-4" />,
+        icon: <Linkedin className="lg:w-5 lg:h-5 w-4 h-4" />,
         className:
             '!bg-gradient-to-r from-[#0077B5] to-[#00A0DC] border border dark:border-neutral-700',
     },
@@ -35,7 +35,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.twitterUsername,
         href: userBasicInfo.twitterLink,
         type: 's', // social only
-        icon: <Twitter className="w-4 h-4" />,
+        icon: <Twitter className="lg:w-5 lg:h-5 w-4 h-4" />,
         className:
             '!bg-gradient-to-r from-[#1DA1F2] to-[#1DA1F2] border border dark:border-neutral-700',
     },
@@ -44,7 +44,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.instagramUsername,
         href: userBasicInfo.instagramLink,
         type: 's', // social only
-        icon: <Instagram className="w-4 h-4" />,
+        icon: <Instagram className="lg:w-5 lg:h-5 w-4 h-4" />,
         className:
             '!bg-gradient-to-r from-[#E1306C] to-[#405DE6] border border dark:border-neutral-700',
     },
@@ -53,7 +53,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.facebookUsername,
         href: userBasicInfo.facebookLink,
         type: 's', // social only
-        icon: <Facebook className="w-4 h-4" />,
+        icon: <Facebook className="lg:w-5 lg:h-5 w-4 h-4" />,
         className:
             '!bg-gradient-to-r from-[#1877F2] to-[#1877F2] border border dark:border-neutral-700',
     },
@@ -62,7 +62,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.githubUsername,
         href: userBasicInfo.githubLink,
         type: 'sw', // social and work
-        icon: <Github className="w-4 h-4" />,
+        icon: <Github className="lg:w-5 lg:h-5 w-4 h-4" />,
         className:
             '!bg-gradient-to-r from-[#333333] to-[#333333] border border dark:border-neutral-700',
     },
@@ -71,7 +71,7 @@ export const SOCIAL_MEDIA = [
         title: 'Download Resume',
         href: fileSystemInfo.resumeLink,
         type: 'w', // work only
-        icon: <FileDown className="w-4 h-4" />,
+        icon: <FileDown className="lg:w-5 lg:h-5 w-4 h-4" />,
     },
 ];
 

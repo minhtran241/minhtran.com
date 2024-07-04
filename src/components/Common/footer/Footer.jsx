@@ -17,7 +17,7 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="lg:w-5 lg:h-5 w-4 h-4 hover:opacity-70 dark:hover:text-blue-600 transition"
+                            className="hover:opacity-70 dark:hover:text-blue-600 transition"
                         >
                             {item.icon}
                         </Link>
