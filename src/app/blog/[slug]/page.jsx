@@ -8,14 +8,15 @@ import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-    ChevronsLeft,
-    ChevronsRight,
-    FileText,
-    FolderOpen,
-} from 'lucide-react';
+// import {
+//     ChevronsLeft,
+//     ChevronsRight,
+//     FileText,
+//     FolderOpen,
+// } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -88,14 +89,12 @@ const SinglePostContent = ({ post }) => {
     const BREADCRUMBS = [
         {
             href: '/blog',
-            icon: (
-                <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />
-            ),
+            icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
             text: 'Blogs',
         },
         {
             href: `/blog/${post.slug}`,
-            icon: <FileText className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
+            icon: <FontAwesomeIcon icon="fa-duotone fa-file-lines" />,
             text: post.title,
         },
     ];
@@ -111,7 +110,7 @@ const SinglePostContent = ({ post }) => {
     );
 
     return (
-        <div className="container flex flex-col gap-4 mt-12">
+        <div className="container flex flex-col gap-4 py-12">
             <Breadcrumbs breadcrumbs={BREADCRUMBS} />
             <div className="content-center items-center justify-center">
                 <div className="flex flex-wrap justify-center">
@@ -171,9 +170,10 @@ const SinglePostContent = ({ post }) => {
                                         </p>
                                         <Link
                                             href={`/blog/${post.prev.slug}`}
-                                            className="flex flex-row gap-2 text-[#0033A0] dark:text-blue-600 font-semibold"
+                                            className="flex items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold"
                                         >
-                                            <ChevronsLeft className="w-6 h-6" />
+                                            {/* <ChevronsLeft className="w-6 h-6" /> */}
+                                            <FontAwesomeIcon icon="fa-duotone fa-chevrons-left" />
                                             {post.prev.title.length > 100
                                                 ? post.prev.title.slice(
                                                       0,
@@ -190,7 +190,7 @@ const SinglePostContent = ({ post }) => {
                                         </p>
                                         <Link
                                             href={`/blog/${post.next.slug}`}
-                                            className="flex flex-row gap-2 text-[#0033A0] dark:text-blue-600 font-semibold text-right"
+                                            className="flex items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold text-right"
                                         >
                                             {post.next.title.length > 100
                                                 ? post.next.title.slice(
@@ -198,7 +198,8 @@ const SinglePostContent = ({ post }) => {
                                                       100
                                                   ) + '...'
                                                 : post.next.title}{' '}
-                                            <ChevronsRight className="w-6 h-6" />
+                                            {/* <ChevronsRight className="w-6 h-6" /> */}
+                                            <FontAwesomeIcon icon="fa-duotone fa-chevrons-right" />
                                         </Link>
                                     </div>
                                 )}

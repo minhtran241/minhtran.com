@@ -8,7 +8,7 @@ import {
     oneLight,
 } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Copy } from 'lucide-react';
+// import { Copy } from 'lucide-react';
 import { Suspense, useState } from 'react';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
@@ -28,6 +28,7 @@ import Loading from '@/app/loading';
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 SyntaxHighlighter.registerLanguage('tsx', tsx);
 SyntaxHighlighter.registerLanguage('typescript', typescript);
@@ -85,7 +86,10 @@ export default function MarkdownRender({ mdString }) {
                                                 }, 2000);
                                             }}
                                         >
-                                            <Copy className="h-5 w-5 cursor-pointer text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600 dark:text-base-300" />
+                                            {/* <Copy className="h-5 w-5 cursor-pointer text-gray-400 hover:text-[#0033A0] dark:hover:text-blue-600 dark:text-base-300" /> */}
+                                            <div className="cursor-pointer text-gray-400 dark:text-base-300 hover:text-[#0033A0] dark:hover:text-blue-600">
+                                                <FontAwesomeIcon icon="fa-duotone fa-copy" />
+                                            </div>
                                         </CopyToClipboard>
                                     </button>
                                     <span

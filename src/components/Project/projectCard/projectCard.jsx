@@ -1,18 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-    CalendarDays,
-    Github,
-    ExternalLink,
-    Star,
-    GitFork,
-    Eye,
-    ArrowUpFromLine,
-    Scale,
-} from 'lucide-react';
+// import {
+//     CalendarDays,
+//     Github,
+//     ExternalLink,
+//     Star,
+//     GitFork,
+//     Eye,
+//     ArrowUpFromLine,
+//     Scale,
+// } from 'lucide-react';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const ProjectCard = async ({ project }) => {
     const projectName = project?.name
@@ -35,7 +36,8 @@ const ProjectCard = async ({ project }) => {
         <div className="flex flex-col p-4 rounded-box border dark:border-gray-700 border-gray-200 gap-3">
             <div className="flex flex-row justify-between">
                 <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
-                    <CalendarDays className="h-4 w-4" />
+                    {/* <CalendarDays className="h-4 w-4" /> */}
+                    <FontAwesomeIcon icon="fa-duotone fa-calendar-days" />
                     <span className="">
                         {project?.createdAt &&
                             new Date(project?.createdAt).toLocaleDateString(
@@ -108,13 +110,15 @@ const ProjectCard = async ({ project }) => {
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1">
-                                    <Star className="h-4 w-4" />
+                                    {/* <Star className="h-4 w-4" /> */}
+                                    <FontAwesomeIcon icon="fa-duotone fa-star" />
                                     <span className="">
                                         {project?.stargazerCount}
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-1">
-                                    <GitFork className="h-4 w-4" />
+                                    {/* <GitFork className="h-4 w-4" /> */}
+                                    <FontAwesomeIcon icon="fa-duotone fa-code-fork" />
                                     <span className="">
                                         {project?.forkCount}
                                     </span>
@@ -136,7 +140,8 @@ const ProjectCard = async ({ project }) => {
                                 rel="noopener noreferrer"
                                 className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
                             >
-                                <ExternalLink className="h-4 w-4" />
+                                {/* <ExternalLink className="h-4 w-4" /> */}
+                                <FontAwesomeIcon icon="fa-duotone fa-arrow-up-right-from-square" />
                             </Link>
                         )}
                         {project?.homepageUrl && ' | '}
@@ -147,18 +152,21 @@ const ProjectCard = async ({ project }) => {
                                 rel="noopener noreferrer"
                                 className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
                             >
-                                <Github className="h-4 w-4" />
+                                {/* <Github className="h-4 w-4" /> */}
+                                <FontAwesomeIcon icon="fa-brands fa-github" />
                             </Link>
                         )}
                     </div>
                 </div>
                 <div className="flex flex-wrap gap-2 text-gray-600 dark:text-gray-400 text-sm justify-between">
                     <div className="flex items-center gap-2">
-                        <Scale className="h-4 w-4" />
+                        {/* <Scale className="h-4 w-4" /> */}
+                        <FontAwesomeIcon icon="fa-duotone fa-scale-balanced" />
                         <p>{licenseName || 'No License'}</p>
                     </div>
                     <div className="flex items-center gap-2">
-                        <ArrowUpFromLine className="h-4 w-4" />
+                        {/* <ArrowUpFromLine className="h-4 w-4" /> */}
+                        <FontAwesomeIcon icon="fa-duotone fa-up-from-line" />
                         <p>{pushedAtDistance}</p>
                     </div>
                 </div>

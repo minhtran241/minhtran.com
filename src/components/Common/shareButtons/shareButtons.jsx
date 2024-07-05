@@ -6,14 +6,15 @@ import {
     TwitterShareButton,
     EmailShareButton,
 } from 'next-share';
-import { Facebook, Twitter, Linkedin, Mail, Link2, Check } from 'lucide-react';
+// import { Facebook, Twitter, Linkedin, Mail, Link2, Check } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const ShareButton = ({ onClick, children }) => (
     <div
         onClick={onClick}
-        className="hover:bg-[#0033A0] dark:hover:bg-white hover:text-white dark:hover:text-black rounded-full p-2 cursor-pointer transition-all duration-300 mr-2 border border-gray-300 dark:border-gray-700"
+        className="hover:bg-[#0033A0] dark:hover:bg-white hover:text-white dark:hover:text-black w-8 h-8 inline-flex items-center justify-center rounded-full cursor-pointer transition-all duration-300 mr-2 border border-gray-300 dark:border-gray-700"
     >
         {children}
     </div>
@@ -35,7 +36,7 @@ const SharePost = () => {
     const shareButtons = [
         {
             ButtonComponent: EmailShareButton,
-            icon: <Mail className="h-[1.2rem] w-[1.2rem]" />,
+            icon: <FontAwesomeIcon icon="fa-duotone fa-envelope" />,
             props: {
                 url,
                 subject: status,
@@ -45,12 +46,12 @@ const SharePost = () => {
         },
         {
             ButtonComponent: LinkedinShareButton,
-            icon: <Linkedin className="h-[1.2rem] w-[1.2rem]" />,
+            icon: <FontAwesomeIcon icon="fa-brands fa-linkedin-in" />,
             props: { url, title: status, windowWidth: 670, windowHeight: 400 },
         },
         {
             ButtonComponent: FacebookShareButton,
-            icon: <Facebook className="h-[1.2rem] w-[1.2rem]" />,
+            icon: <FontAwesomeIcon icon="fa-brands fa-facebook-f" />,
             props: {
                 url,
                 quote: status,
@@ -61,7 +62,7 @@ const SharePost = () => {
         },
         {
             ButtonComponent: TwitterShareButton,
-            icon: <Twitter className="h-[1.2rem] w-[1.2rem]" />,
+            icon: <FontAwesomeIcon icon="fa-brands fa-x-twitter" />,
             props: { url, title: status, windowWidth: 670, windowHeight: 400 },
         },
     ];
@@ -70,9 +71,9 @@ const SharePost = () => {
         <div className="flex flex-row">
             <ShareButton onClick={handleCopyLink}>
                 {isLinkCopied ? (
-                    <Check className="h-[1.2rem] w-[1.2rem] text-green-500" />
+                    <FontAwesomeIcon icon="fa-duotone fa-check-double" />
                 ) : (
-                    <Link2 className="h-[1.2rem] w-[1.2rem]" />
+                    <FontAwesomeIcon icon="fa-duotone fa-link-horizontal" />
                 )}
             </ShareButton>
             {shareButtons.map(({ ButtonComponent, icon, props }, index) => (

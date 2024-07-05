@@ -1,21 +1,31 @@
-import { Laptop, Smartphone, Tablet } from 'lucide-react';
+// import { Laptop, Smartphone, Tablet } from 'lucide-react';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
-const iconSize = 24;
-const iconClassName = 'w-auto text-neutral-700 dark:text-neutral-300';
+// const iconSize = 24;
+const iconClassName = 'w-auto';
 
 export const PAIR_DEVICES = {
     Computer: {
-        icon: <Laptop className={iconClassName} size={iconSize} />,
+        // icon: <Laptop className={iconClassName} size={iconSize} />,
+        icon: (
+            <FontAwesomeIcon icon={`fa-duotone fa-laptop ${iconClassName}`} />
+        ),
         model: 'MacBook Pro M1',
         id: 'minhtran-mac',
     },
     Smartphone: {
-        icon: <Smartphone className={iconClassName} size={iconSize} />,
+        icon: (
+            <FontAwesomeIcon
+                icon={`fa-duotone fa-mobile-notch ${iconClassName}`}
+            />
+        ),
         model: 'iPhone 13',
         id: 'minhtran-iphone',
     },
     Tablet: {
-        icon: <Tablet className={iconClassName} size={iconSize} />,
+        icon: (
+            <FontAwesomeIcon icon={`fa-duotone fa-tablet ${iconClassName}`} />
+        ),
         model: 'iPad Pro 2021',
         id: 'minhtran-ipad',
     },

@@ -40,12 +40,18 @@ export const TECHSTACK = [
         logo: '/logos/daisyui-color.svg',
         alt: 'DaisyUI Logo',
     },
-
+    // {
+    //     name: 'Lucide',
+    //     link: 'https://www.lucide.dev',
+    //     logo: '/logos/lucide-color.svg',
+    //     alt: 'Lucide Logo',
+    // },
     {
-        name: 'Lucide',
-        link: 'https://www.lucide.dev',
-        logo: '/logos/lucide-color.svg',
-        alt: 'Lucide Logo',
+        name: 'Font Awesome',
+        link: 'https://fontawesome.com',
+        logo: '/logos/fontawesome.svg',
+        alt: 'Font Awesome Logo',
+		invert: true,
     },
 ];
 

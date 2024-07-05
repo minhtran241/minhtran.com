@@ -1,9 +1,10 @@
 import Links from './links/Links';
 import DropdownTheme from '../themeProvider/dropdownTheme';
-import { Menu } from 'lucide-react';
+// import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import WebStats from './webStats/webStats';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const Navbar = () => {
     return (
@@ -13,9 +14,10 @@ const Navbar = () => {
                     <div
                         tabIndex={0}
                         role="button"
-                        className="btn btn-ghost lg:hidden"
+                        className="btn btn-ghost lg:hidden fa-lg"
                     >
-                        <Menu className="lg:h-6 lg:w-6 h-5 w-5" />
+                        {/* <Menu className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+                        <FontAwesomeIcon icon="fa-duotone fa-bars" />
                     </div>
                     <ul
                         tabIndex={0}

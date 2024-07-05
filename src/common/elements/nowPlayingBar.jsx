@@ -4,12 +4,11 @@ import { Popover } from '@headlessui/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import useSWR from 'swr';
-import { Disc3 } from 'lucide-react';
-
 import AnimatedBars from './animatedBars';
 import DevicePopover from './devicePopover';
 import PlayerPopover from './playerPopover';
 import { fetcher } from '@/services/fetcher';
+// import FontAwesomeIcon from './FontAwesomeIcon';
 
 const NowPlayingBar = () => {
     const [isShowDeviceList, setShowDeviceList] = useState(false);
@@ -85,6 +84,7 @@ const NowPlayingBar = () => {
                             height={16}
                             className="mr-1"
                         />
+                        {/* <FontAwesomeIcon icon="fa-brands fa-spotify" /> */}
                         <div>Not Playing</div>
                     </div>
                 )}
@@ -105,6 +105,7 @@ const NowPlayingBar = () => {
                                     height={16}
                                     className="mr-0.5"
                                 />
+                                {/* <FontAwesomeIcon icon="fa-brands fa-spotify" /> */}
                                 <div>
                                     Listening on{' '}
                                     <span className="font-medium">

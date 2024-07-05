@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+// import { ArrowLeft } from 'lucide-react';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const Error = () => {
     return (
@@ -20,7 +21,8 @@ const Error = () => {
                 className="flex items-center space-x-2 bg-[#0033A0] hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-4 py-2 mt-6 rounded transition duration-150"
                 title="Return Home"
             >
-                <ArrowLeft className="h-5 w-5" />
+                {/* <ArrowLeft className="h-5 w-5" /> */}
+                <FontAwesomeIcon icon="fa-duotone fa-arrow-left" />
                 <span>Return Home</span>
             </Link>
         </div>

@@ -1,10 +1,11 @@
-import { FolderOpen } from 'lucide-react';
+// import { FolderOpen } from 'lucide-react';
 import ProjectCard from '@/components/Project/projectCard/projectCard';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Loading from '../loading';
 import { PROJECT_LIST } from '../../../data/project/projectList';
 import axios from 'axios';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const PAGE_TITLE = 'Development Projects';
 const PAGE_DESCRIPTION =
@@ -13,7 +14,8 @@ const PAGE_DESCRIPTION =
 const BREADCRUMBS = [
     {
         href: '/project',
-        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
+        // icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Projects',
     },
 ];
@@ -47,7 +49,7 @@ const ProjectPage = async () => {
 
     return (
         <>
-            <div className="flex flex-col container mt-12 gap-8">
+            <div className="flex flex-col container py-12 gap-8">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
                     {projects.map((project, index) => (

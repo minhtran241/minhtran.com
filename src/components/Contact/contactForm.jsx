@@ -4,10 +4,11 @@ import axios from 'axios';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Clock, Loader, User, Mail, CircleCheck, CircleX } from 'lucide-react';
+// import { Clock, Loader, User, Mail, CircleCheck, CircleX } from 'lucide-react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const FormSchema = z.object({
     name: z.string().optional(),
@@ -73,7 +74,8 @@ const ContactForm = () => {
             <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
                 <div>
                     <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
-                        <User className="w-4 h-4 opacity-70" />
+                        {/* <User className="w-4 h-4 opacity-70" /> */}
+                        <FontAwesomeIcon icon="fa-duotone fa-user" />
                         <input
                             id="name"
                             name="name"
@@ -89,7 +91,8 @@ const ContactForm = () => {
                 </div>
                 <div>
                     <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
-                        <Mail className="w-4 h-4 opacity-70" />
+                        {/* <Mail className="w-4 h-4 opacity-70" /> */}
+                        <FontAwesomeIcon icon="fa-duotone fa-envelope" />
                         <input
                             id="email"
                             name="email"
@@ -135,17 +138,23 @@ const ContactForm = () => {
                         )}
                         disabled={isLoading}
                     >
-                        {isLoading ? <Loader /> : 'Send Message'}
+                        {isLoading ? (
+                            <FontAwesomeIcon icon="fa-sharp fa-regular fa-loader fa-spin-pulse" />
+                        ) : (
+                            'Send Message'
+                        )}
                     </button>
                 </div>
                 {error && (
                     <div role="alert" className="alert alert-error">
-                        <CircleX className="h-5 w-5 shrink-0 stroke-current" />
+                        {/* <CircleX className="h-5 w-5 shrink-0 stroke-current" /> */}
+                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark" />
                         <span>{error}</span>
                     </div>
                 )}
                 <div className="flex items-center gap-2 text-sm sm:text-xs">
-                    <Clock className="w-4 h-4" />
+                    {/* <Clock className="w-4 h-4" /> */}
+                    <FontAwesomeIcon icon="fa-duotone fa-clock" />
                     <div className="">
                         <span className="font-medium">Avg. response:</span> 1-2
                         Hours (Working Hours, GMT+7)
@@ -156,8 +165,10 @@ const ContactForm = () => {
                 id="success_dialog"
                 className="modal modal-bottom sm:modal-middle"
             >
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Message Sent</h3>
+                <div className="modal-box bg-white dark:bg-gray-900">
+                    <h3 className="font-bold text-lg text-[#0033A0] dark:text-blue-600">
+                        Message Sent
+                    </h3>
                     <p className="py-4">
                         Thank you for reaching out! I will get back to you as
                         soon as possible.
@@ -165,7 +176,9 @@ const ContactForm = () => {
                     <div className="modal-action">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn">Close</button>
+                            <button className="btn bg-[#0033A0] dark:bg-blue-600 text-white hover:bg-[#00257D] dark:hover:bg-blue-700">
+                                Close
+                            </button>
                         </form>
                     </div>
                 </div>

@@ -1,8 +1,9 @@
-import { FolderOpen } from 'lucide-react';
+// import { FolderOpen } from 'lucide-react';
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
 import Breakline from '@/common/elements/breakline';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const PAGE_TITLE = 'Used Devices and Tools';
 const PAGE_DESCRIPTION =
@@ -11,7 +12,7 @@ const PAGE_DESCRIPTION =
 const BREADCRUMBS = [
     {
         href: '/uses',
-        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Uses',
     },
 ];
@@ -27,7 +28,7 @@ export const generateMetadata = async () => {
 const UsesPage = () => {
     return (
         <>
-            <div className="container mt-12">
+            <div className="container py-12">
                 {/* <div className="flex flex-col gap-2 mb-8">
                     <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
                         <GalleryHorizontalEnd className="mr-1 h-6 w-6" />

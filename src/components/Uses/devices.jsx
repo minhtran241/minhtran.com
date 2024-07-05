@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { MonitorSmartphone } from 'lucide-react';
+// import { MonitorSmartphone } from 'lucide-react';
 import { USES } from '../../../data/use/uses';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const DEVICES = USES.Devices;
 
@@ -9,7 +10,8 @@ const Devices = () => {
     return (
         <section className="flex flex-col gap-8">
             <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                <MonitorSmartphone className="lg:h-6 lg:w-6 h-5 w-5" />
+                {/* <MonitorSmartphone className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+                <FontAwesomeIcon icon="fa-duotone fa-laptop-mobile" />
                 <h1 className="capitalize">Devices</h1>
             </div>
             <div className="flex flex-col gap-8 mb-8">

@@ -3,26 +3,30 @@ import path from 'path';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
-import {
-    Braces,
-    Server,
-    Database,
-    BrainCircuit,
-    BarChart,
-    TextSearch,
-} from 'lucide-react';
+// import {
+//     Braces,
+//     Server,
+//     Database,
+//     BrainCircuit,
+//     BarChart,
+//     TextSearch,
+// } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const icons = {
     'Programming Languages': (
-        <Braces className="text-white lg:h-4 lg:w-4 h-3 w-3" />
+        // <Braces className="text-white lg:h-4 lg:w-4 h-3 w-3" />
+        <FontAwesomeIcon icon="fa-duotone fa-brackets-curly" />
     ),
-    'Web Development': <Server className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
-    'Big Data': <TextSearch className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
-    Databases: <Database className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
-    'ML/DL': <BrainCircuit className="text-white lg:h-4 lg:w-4 h-3 w-3" />,
+    'Web Development': (
+        <FontAwesomeIcon icon="fa-duotone fa-browser" />
+    ),
+    'Big Data': <FontAwesomeIcon icon="fa-duotone fa-arrow-up-big-small" />,
+    Databases: <FontAwesomeIcon icon="fa-duotone fa-database" />,
+    'ML/DL': <FontAwesomeIcon icon="fa-duotone fa-head-side-gear" />,
     'Monitoring and others': (
-        <BarChart className="text-white lg:h-4 lg:w-4 h-3 w-3" />
+        <FontAwesomeIcon icon="fa-duotone fa-monitor-waveform" />
     ),
 };
 
@@ -48,7 +52,7 @@ const SkillsComponent = async () => {
     const skills = await getSKills();
 
     return (
-        <div className="items-center justify-center mt-12  py-12 bg-gray-200 dark:bg-gray-900">
+        <div className="items-center justify-center py-12 bg-gray-200 dark:bg-gray-900">
             <div className="container">
                 <SectionLabel
                     title={SECTION_TITLE}
@@ -61,7 +65,7 @@ const SkillsComponent = async () => {
                             key={index}
                         >
                             <div className="flex items-center gap-2 mb-5">
-                                <div className="lg:w-6 lg:h-6 w-5 h-5 inline-flex items-center justify-center rounded-full flex-shrink-0 bg-[#0033A0] dark:bg-blue-600 text-white">
+                                <div className="w-6 h-6 inline-flex items-center justify-center rounded-full bg-[#0033A0] dark:bg-blue-600 text-white fa-sm">
                                     {icons[skill.name]}
                                 </div>
                                 <h2 className="title-font font-medium lg:text-lg text-base">

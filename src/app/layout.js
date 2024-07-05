@@ -1,9 +1,13 @@
 import './globals.css';
+import '../../assets/fa6/css/brands.min.css';
+import '../../assets/fa6/css/fontawesome.min.css';
+import '../../assets/fa6/css/duotone.min.css';
+import '../../assets/fa6/css/solid.min.css';
+import localFont from 'next/font/local';
 import Navbar from '@/components/Common/navbar/Navbar';
 import Footer from '@/components/Common/footer/Footer';
-import { Inter as FontSans } from 'next/font/google';
+// import { Inter as FontSans } from 'next/font/google';
 import { cn } from '@/common/libs/cn';
-import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/Common/themeProvider/theme-provider';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
@@ -15,10 +19,88 @@ import {
     SITE_NAME,
 } from '@/common/constants/site';
 
-export const fontSans = FontSans({
-    subsets: ['latin'],
-    variable: '--font-sans',
+const MazzardH = localFont({
+    src: [
+        {
+            path: '../../assets/font/Mazzard/MazzardH-Regular.otf',
+            weight: '400',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardH-Medium.otf',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardH-SemiBold.otf',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardH-Bold.otf',
+            weight: '700',
+            style: 'normal',
+        },
+    ],
+    variable: '--font-mazzardh',
 });
+
+const MazzardL = localFont({
+    src: [
+        {
+            path: '../../assets/font/Mazzard/MazzardL-Regular.otf',
+            weight: '400',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardL-Medium.otf',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardL-SemiBold.otf',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardL-Bold.otf',
+            weight: '700',
+            style: 'normal',
+        },
+    ],
+    variable: '--font-mazzardl',
+});
+
+const MazzardM = localFont({
+    src: [
+        {
+            path: '../../assets/font/Mazzard/MazzardM-Regular.otf',
+            weight: '400',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardM-Medium.otf',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardM-SemiBold.otf',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../../assets/font/Mazzard/MazzardM-Bold.otf',
+            weight: '700',
+            style: 'normal',
+        },
+    ],
+    variable: '--font-mazzardm',
+});
+
+// export const fontSans = FontSans({
+//     subsets: ['latin'],
+//     variable: '--font-sans',
+// });
 
 export const metadata = {
     metadataBase: new URL(SITE_URL),
@@ -100,14 +182,9 @@ export const metadata = {
     },
 };
 
-const calcom = localFont({
-    src: '../../public/fonts/CalSans-SemiBold.woff2',
-    variable: '--font-title',
-});
-
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={cn(calcom.variable, 'scroll-smooth')}>
+        <html lang="en" className={cn('scroll-smooth')}>
             <head>
                 <script
                     defer
@@ -116,10 +193,7 @@ export default function RootLayout({ children }) {
                 ></script>
             </head>
             <body
-                className={cn(
-                    'min-h-screen bg-background antialiased font-sans',
-                    fontSans.variable
-                )}
+                className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh`}
             >
                 <ThemeProvider
                     attribute="class"
@@ -128,7 +202,7 @@ export default function RootLayout({ children }) {
                     disableTransitionOnChange
                 >
                     <Navbar />
-                    <div className="dark:text-white text-black">
+                    <div className="dark:text-white text-black bg-white dark:bg-black">
                         {children}
                         <SpeedInsights />
                         <Analytics />

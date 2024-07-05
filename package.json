@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.4.0",
   "dependencies": {
     "@apollo/client": "^3.9.7",
     "@emotion/styled": "^11.11.0",
@@ -26,7 +30,6 @@
     "date-fns-tz": "^2.0.1",
     "framer-motion": "^11.2.10",
     "jsdom": "^24.0.0",
-    "lucide-react": "^0.396.0",
     "next": "^14.2.4",
     "next-share": "^0.27.0",
     "next-themes": "^0.2.1",

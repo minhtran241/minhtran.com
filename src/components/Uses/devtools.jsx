@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Code2 } from 'lucide-react';
+// import { Code2 } from 'lucide-react';
 import { USES } from '../../../data/use/uses';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const DEVTOOLS = USES.DevTools;
 
@@ -9,7 +10,8 @@ const DevTools = () => {
     return (
         <section className="flex flex-col gap-8">
             <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                <Code2 className="lg:h-6 lg:w-6 h-5 w-5" />
+                {/* <Code2 className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+                <FontAwesomeIcon icon="fa-duotone fa-code" />
                 <h1 className="capitalize">Development Tools</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

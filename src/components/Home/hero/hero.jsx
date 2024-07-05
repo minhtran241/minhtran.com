@@ -23,7 +23,7 @@ const HeroComponent = () => {
             </div>
             <div className="relative container py-16">
                 <div className="flex flex-col items-start gap-4">
-                    <div className="bg-white dark:bg-gray-900 shadow-lg mockup-window border">
+                    <div className="bg-white dark:bg-gray-900 shadow-lg mockup-window">
                         <div className="flex flex-wrap gap-4 justify-center p-6 border-t">
                             <div className="flex flex-shrink-0">
                                 <Image

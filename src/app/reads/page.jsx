@@ -1,8 +1,9 @@
-import { FolderOpen, Newspaper, ScrollText } from 'lucide-react';
+// import { FolderOpen, Newspaper, ScrollText } from 'lucide-react';
 import { ARTICLE_LIST, PAPER_LIST } from '../../../data/read/readingList';
 import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
 import Breakline from '@/common/elements/breakline';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 export const maxDuration = 60;
 
@@ -15,7 +16,7 @@ const SHOWED_PAPER_LIST = PAPER_LIST.reverse();
 const BREADCRUMBS = [
     {
         href: '/reads',
-        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Reads',
     },
 ];
@@ -31,12 +32,13 @@ export const generateMetadata = async () => {
 const ReadsPage = () => {
     return (
         <>
-            <div className="container flex flex-col gap-4 mt-12">
+            <div className="container flex flex-col gap-4 py-12">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
                         <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                            <ScrollText className="lg:h-6 lg:w-6 h-5 w-5" />
+                            {/* <ScrollText className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+                            <FontAwesomeIcon icon="fa-duotone fa-file-magnifying-glass" />
                             <h1 className="capitalize">Papers</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">
@@ -48,7 +50,8 @@ const ReadsPage = () => {
                     <Breakline />
                     <section className="flex flex-col gap-8">
                         <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                            <Newspaper className="lg:h-6 lg:w-6 h-5 w-5" />
+                            {/* <Newspaper className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+							<FontAwesomeIcon icon="fa-duotone fa-newspaper" />
                             <h1 className="capitalize">Articles</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">

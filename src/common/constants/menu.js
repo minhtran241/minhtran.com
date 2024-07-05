@@ -1,14 +1,15 @@
+import FontAwesomeIcon from '../elements/FontAwesomeIcon';
 import { fileSystemInfo } from './fileSystem';
 import { userBasicInfo } from './userBasic';
-import {
-    Facebook,
-    Github,
-    Instagram,
-    Linkedin,
-    Mail,
-    Twitter,
-    FileDown,
-} from 'lucide-react';
+// import {
+//     Facebook,
+//     Github,
+//     Instagram,
+//     Linkedin,
+//     Mail,
+//     Twitter,
+//     FileDown,
+// } from 'lucide-react';
 
 export const SOCIAL_MEDIA = [
     {
@@ -16,7 +17,8 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.email,
         href: `mailto:${userBasicInfo.email}`,
         type: 'sw', // social and work
-        icon: <Mail className="lg:w-5 lg:h-5 w-4 h-4" />,
+        // icon: <Mail className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-envelope" />,
         className:
             '!bg-gradient-to-r from-[#D44638] to-[#D44638] border border dark:border-neutral-700',
     },
@@ -26,7 +28,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.linkedinUsername,
         href: userBasicInfo.linkedinLink,
         type: 'sw', // social and work
-        icon: <Linkedin className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-brands fa-linkedin" />,
         className:
             '!bg-gradient-to-r from-[#0077B5] to-[#00A0DC] border border dark:border-neutral-700',
     },
@@ -35,7 +37,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.twitterUsername,
         href: userBasicInfo.twitterLink,
         type: 's', // social only
-        icon: <Twitter className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-brands fa-x-twitter" />,
         className:
             '!bg-gradient-to-r from-[#1DA1F2] to-[#1DA1F2] border border dark:border-neutral-700',
     },
@@ -44,7 +46,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.instagramUsername,
         href: userBasicInfo.instagramLink,
         type: 's', // social only
-        icon: <Instagram className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-brands fa-instagram" />,
         className:
             '!bg-gradient-to-r from-[#E1306C] to-[#405DE6] border border dark:border-neutral-700',
     },
@@ -53,7 +55,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.facebookUsername,
         href: userBasicInfo.facebookLink,
         type: 's', // social only
-        icon: <Facebook className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-brands fa-facebook" />,
         className:
             '!bg-gradient-to-r from-[#1877F2] to-[#1877F2] border border dark:border-neutral-700',
     },
@@ -62,7 +64,7 @@ export const SOCIAL_MEDIA = [
         title: userBasicInfo.githubUsername,
         href: userBasicInfo.githubLink,
         type: 'sw', // social and work
-        icon: <Github className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-brands fa-github" />,
         className:
             '!bg-gradient-to-r from-[#333333] to-[#333333] border border dark:border-neutral-700',
     },
@@ -71,7 +73,7 @@ export const SOCIAL_MEDIA = [
         title: 'Download Resume',
         href: fileSystemInfo.resumeLink,
         type: 'w', // work only
-        icon: <FileDown className="lg:w-5 lg:h-5 w-4 h-4" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-file-pdf" />,
     },
 ];
 

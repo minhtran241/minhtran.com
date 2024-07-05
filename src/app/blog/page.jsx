@@ -3,16 +3,17 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-    BellRing,
-    BrainCircuit,
-    Database,
-    Server,
-    FolderOpen,
-} from 'lucide-react';
+// import {
+//     BellRing,
+//     BrainCircuit,
+//     Database,
+//     Server,
+//     FolderOpen,
+// } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breakline from '@/common/elements/breakline';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const PAGE_TITLE = 'Tech Blogs';
 const PAGE_DESCRIPTION =
@@ -60,22 +61,22 @@ const getPosts = async (limit) => {
 const CATEGORIES = [
     {
         name: 'ML/DL',
-        icon: <BrainCircuit className="lg:h-6 lg:w-6 h-5 w-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-head-side-gear" />,
     },
     {
         name: 'Web Development',
-        icon: <Server className="lg:h-6 lg:w-6 h-5 w-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-browser" />,
     },
     {
         name: 'Databases',
-        icon: <Database className="lg:h-6 lg:w-6 h-5 w-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-database" />,
     },
 ];
 
 const BREADCRUMBS = [
     {
         href: '/blog',
-        icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
+        icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Blogs',
     },
 ];
@@ -94,7 +95,7 @@ const BlogPage = async () => {
 
     return (
         <>
-            <div className="flex flex-col container mt-12 gap-8">
+            <div className="flex flex-col container py-12 gap-8">
                 {/* <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
                         <Newspaper className="mr-1 h-6 w-6" />
@@ -133,7 +134,8 @@ const BlogPage = async () => {
                             </p>
                             {/* Latest label */}
                             <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md text-xs font-medium">
-                                <BellRing className="h-4 w-4" />
+                                {/* <BellRing className="h-4 w-4" /> */}
+                                <FontAwesomeIcon icon="fa-duotone fa-bell-on" />
                                 Latest {firstPost.category}
                             </div>
                         </div>

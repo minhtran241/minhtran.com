@@ -3,16 +3,18 @@ import { Fragment } from 'react';
 
 import AnimatedBars from './animatedBars';
 import { PAIR_DEVICES } from '../../../data/use/uses';
-import { Dot, Speaker } from 'lucide-react';
+// import { Dot, Speaker } from 'lucide-react';
+import FontAwesomeIcon from './FontAwesomeIcon';
 
 const DevicePopover = ({ devices, isShow }) => {
     const listDevices = devices?.map((device) => ({
         ...device,
         icon: PAIR_DEVICES[device?.type]?.icon || (
-            <Speaker
-                className="w-auto text-gray-700 dark:text-gray-300"
-                size={24}
-            />
+            // <Speaker
+            //     className="w-auto text-gray-700 dark:text-gray-300"
+            //     size={24}
+            // />
+            <FontAwesomeIcon icon="fa-duotone fa-speaker" />
         ),
     }));
 
@@ -46,10 +48,7 @@ const DevicePopover = ({ devices, isShow }) => {
                             {device?.is_active ? (
                                 <AnimatedBars variant="bg-green-500" />
                             ) : (
-                                <Dot
-                                    className="ml-2 w-auto text-gray-600 dark:text-gray-400"
-                                    size={22}
-                                />
+                                <FontAwesomeIcon icon="fa-duotone fa-circle-dot" />
                             )}
                         </div>
                     ))}
@@ -58,5 +57,10 @@ const DevicePopover = ({ devices, isShow }) => {
         </Transition>
     );
 };
-
+{
+    /* <Dot
+                                    className="ml-2 w-auto text-gray-600 dark:text-gray-400"
+                                    size={22}
+                                /> */
+}
 export default DevicePopover;

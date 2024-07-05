@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white mt-12 gap-6">
+        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white py-12 gap-6">
             <nav>
                 <div className="grid grid-flow-col gap-4">
                     {SOCIAL_MEDIA?.filter((item) =>
@@ -17,7 +17,7 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:opacity-70 dark:hover:text-blue-600 transition"
+                            className="lg:text-base text-sm"
                         >
                             {item.icon}
                         </Link>

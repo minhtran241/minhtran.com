@@ -43,7 +43,7 @@ const WebStats = async () => {
             <Link
                 href={process.env.UMAMI_SHARE_URL}
                 target="_blank"
-                className="hidden lg:flex relative btn btn-ghost"
+                className="hidden lg:flex btn btn-ghost"
             >
                 <ul className="flex items-center gap-4">
                     {Object.keys(webstats).map((key, index) => (

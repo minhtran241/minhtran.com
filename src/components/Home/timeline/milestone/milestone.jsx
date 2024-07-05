@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const Milestone = ({ milestone, first, last, timeline_end }) => {
     const timeStr = new Date(milestone.date).toLocaleDateString('en-US', {
@@ -16,7 +17,7 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
         <li>
             {!first && <hr className="bg-neutral-200 dark:bg-gray-800" />}
             <div className="timeline-middle">
-                <svg
+                {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -27,7 +28,8 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
                         clipRule="evenodd"
                     />
-                </svg>
+                </svg> */}
+				<FontAwesomeIcon icon="fa-duotone fa-circle-check text-[#0033A0] dark:text-blue-600" />
             </div>
             <div
                 className={`${
