@@ -133,7 +133,7 @@ const BlogPage = async () => {
                                 })}
                             </p>
                             {/* Latest label */}
-                            <div className="flex items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md text-xs font-medium">
+                            <div className="flex leading-none gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md text-xs font-medium">
                                 {/* <BellRing className="h-4 w-4" /> */}
                                 <FontAwesomeIcon icon="fa-duotone fa-bell-on" />
                                 Latest {firstPost.category}
@@ -166,11 +166,14 @@ const BlogPage = async () => {
                     {groupedPosts.map((category, index) => (
                         <div key={index}>
                             <section className="flex flex-col gap-8">
-                                <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                                {/* <div className="flex flex-row items-center gap-2 lg:text-lg text-base font-semibold">
                                     {category.icon}
-                                    <h1 className="capitalize">
-                                        {category.name}
-                                    </h1>
+                                    {category.name}
+								</div> */}
+                                <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                                    {/* <Mailbox className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+                                    {category.icon}
+                                    {category.name}
                                 </div>
                                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
                                     {category.posts.map((post, index) => (

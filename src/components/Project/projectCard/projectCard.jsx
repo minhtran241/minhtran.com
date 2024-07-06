@@ -35,20 +35,18 @@ const ProjectCard = async ({ project }) => {
     return (
         <div className="flex flex-col p-4 rounded-box border dark:border-gray-700 border-gray-200 gap-3">
             <div className="flex flex-row justify-between">
-                <div className="flex items-center gap-2 justify-start text-[#0033A0] dark:text-blue-600 text-sm">
+                <div className="flex leading-none gap-2 text-[#0033A0] dark:text-blue-600 text-sm">
                     {/* <CalendarDays className="h-4 w-4" /> */}
                     <FontAwesomeIcon icon="fa-duotone fa-calendar-days" />
-                    <span className="">
-                        {project?.createdAt &&
-                            new Date(project?.createdAt).toLocaleDateString(
-                                'en-GB',
-                                {
-                                    day: 'numeric',
-                                    month: 'short',
-                                    year: 'numeric',
-                                }
-                            )}
-                    </span>
+                    {project?.createdAt &&
+                        new Date(project?.createdAt).toLocaleDateString(
+                            'en-GB',
+                            {
+                                day: 'numeric',
+                                month: 'short',
+                                year: 'numeric',
+                            }
+                        )}
                 </div>
             </div>
             <Link
@@ -109,19 +107,15 @@ const ProjectCard = async ({ project }) => {
                                 </span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="flex items-center gap-1">
+                                <div className="flex leading-none gap-1">
                                     {/* <Star className="h-4 w-4" /> */}
                                     <FontAwesomeIcon icon="fa-duotone fa-star" />
-                                    <span className="">
-                                        {project?.stargazerCount}
-                                    </span>
+                                    {project?.stargazerCount}
                                 </div>
-                                <div className="flex items-center gap-1">
+                                <div className="flex leading-none gap-1">
                                     {/* <GitFork className="h-4 w-4" /> */}
                                     <FontAwesomeIcon icon="fa-duotone fa-code-fork" />
-                                    <span className="">
-                                        {project?.forkCount}
-                                    </span>
+                                    {project?.forkCount}
                                 </div>
                                 {/* <div className="flex items-center gap-1">
                                     <Eye className="h-4 w-4" />
@@ -159,12 +153,12 @@ const ProjectCard = async ({ project }) => {
                     </div>
                 </div>
                 <div className="flex flex-wrap gap-2 text-gray-600 dark:text-gray-400 text-sm justify-between">
-                    <div className="flex items-center gap-2">
+                    <div className="flex leading-none gap-2">
                         {/* <Scale className="h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-scale-balanced" />
                         <p>{licenseName || 'No License'}</p>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex leading-none gap-2">
                         {/* <ArrowUpFromLine className="h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-up-from-line" />
                         <p>{pushedAtDistance}</p>

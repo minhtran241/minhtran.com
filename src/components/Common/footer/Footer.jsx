@@ -17,7 +17,7 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="lg:text-base text-sm"
+                            className="lg:text-lg text-base"
                         >
                             {item.icon}
                         </Link>
