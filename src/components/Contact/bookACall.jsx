@@ -1,12 +1,11 @@
 import { userBasicInfo } from '@/common/constants/userBasic';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
-// import { Calendar, Clock, Headset, Video } from 'lucide-react';
 import Link from 'next/link';
 
 const BookACall = () => {
     return (
         <div className="space-y-5 pb-2">
-            <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+            <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
                 {/* <Headset className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                 <FontAwesomeIcon icon="fa-duotone fa-headset" />
                 <h1 className="capitalize">Book a Call</h1>
@@ -27,18 +26,18 @@ const BookACall = () => {
                             booking a call
                         </p>
                     </div>
-                    <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center text-white">
+                    <div className="lg:w-8 lg:h-8 w-7 h-7 inline-flex lg:text-base text-sm border-2 border-white rounded-full items-center justify-center text-white">
                         {/* <Calendar className="lg:h-5 lg:w-5 h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-calendar-days" />
                     </div>
                 </div>
                 <div className="flex items-center gap-5 text-sm text-gray-200">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-row items-center gap-2">
                         {/* <Clock className="lg:h-5 lg:w-5 h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-clock" />
                         <span>30 Minutes</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-row items-center gap-2">
                         {/* <Video className="lg:h-5 lg:w-5 h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-video" />
                         <span>Cal Video (Zoom)</span>

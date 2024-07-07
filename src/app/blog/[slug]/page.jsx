@@ -8,12 +8,6 @@ import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import Link from 'next/link';
-// import {
-//     ChevronsLeft,
-//     ChevronsRight,
-//     FileText,
-//     FolderOpen,
-// } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
@@ -89,12 +83,10 @@ const SinglePostContent = ({ post }) => {
     const BREADCRUMBS = [
         {
             href: '/blog',
-            icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
             text: 'Blogs',
         },
         {
             href: `/blog/${post.slug}`,
-            icon: <FontAwesomeIcon icon="fa-duotone fa-file-lines" />,
             text: post.title,
         },
     ];
@@ -154,9 +146,10 @@ const SinglePostContent = ({ post }) => {
                                     {post.tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
+                                            className="flex flex-row items-center gap-1 px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
                                         >
-                                            #{tag}
+                                            <FontAwesomeIcon icon="fa-duotone fa-tag" />
+                                            {tag}
                                         </span>
                                     ))}
                                 </div>
@@ -190,7 +183,7 @@ const SinglePostContent = ({ post }) => {
                                         </p>
                                         <Link
                                             href={`/blog/${post.next.slug}`}
-                                            className="flex items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold text-right"
+                                            className="flex flex-row items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold text-right"
                                         >
                                             {post.next.title.length > 100
                                                 ? post.next.title.slice(

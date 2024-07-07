@@ -73,7 +73,7 @@ const ContactForm = () => {
         <div>
             <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
                 <div>
-                    <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
+                    <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex flex-row items-center gap-2 bg-white dark:bg-gray-900">
                         {/* <User className="w-4 h-4 opacity-70" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-user" />
                         <input
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     </span>
                 </div>
                 <div>
-                    <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex items-center gap-2 bg-white dark:bg-gray-900">
+                    <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex flex-row items-center gap-2 bg-white dark:bg-gray-900">
                         {/* <Mail className="w-4 h-4 opacity-70" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-envelope" />
                         <input
@@ -152,7 +152,7 @@ const ContactForm = () => {
                         <span>{error}</span>
                     </div>
                 )}
-                <div className="flex items-center gap-2 text-sm sm:text-xs">
+                <div className="flex flex-row items-center gap-2 text-sm sm:text-xs">
                     {/* <Clock className="w-4 h-4" /> */}
                     <FontAwesomeIcon icon="fa-duotone fa-clock" />
                     <div className="">

@@ -3,13 +3,6 @@ import fs from 'fs/promises';
 import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
-// import {
-//     BellRing,
-//     BrainCircuit,
-//     Database,
-//     Server,
-//     FolderOpen,
-// } from 'lucide-react';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breakline from '@/common/elements/breakline';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
@@ -76,7 +69,6 @@ const CATEGORIES = [
 const BREADCRUMBS = [
     {
         href: '/blog',
-        icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Blogs',
     },
 ];
@@ -96,15 +88,6 @@ const BlogPage = async () => {
     return (
         <>
             <div className="flex flex-col container py-12 gap-8">
-                {/* <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
-                        <Newspaper className="mr-1 h-6 w-6" />
-                        <h1 className="capitalize">{PAGE_TITLE}</h1>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        {PAGE_DESCRIPTION}
-                    </p>
-                </div> */}
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 {/* // First post */}
                 <div className="lg:flex lg:items-center lg:gap-12">
@@ -133,9 +116,8 @@ const BlogPage = async () => {
                                 })}
                             </p>
                             {/* Latest label */}
-                            <div className="flex leading-none gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md text-xs font-medium">
-                                {/* <BellRing className="h-4 w-4" /> */}
-                                <FontAwesomeIcon icon="fa-duotone fa-bell-on" />
+                            <div className="flex flex-row items-center gap-2 bg-[#0033A0] dark:bg-blue-600 text-white p-2 rounded-md text-xs font-medium">
+                                <FontAwesomeIcon icon="fa-duotone fa-sparkles" />
                                 Latest {firstPost.category}
                             </div>
                         </div>
@@ -148,17 +130,18 @@ const BlogPage = async () => {
                         <p className="lg:text-base md:text-base text-sm text-justify text-gray-600 dark:text-gray-400">
                             {firstPost.description}
                         </p>
-                        {/* <div className="flex flex-wrap leading-none gap-2 text-[#0033A0] dark:text-blue-600">
+                        <div className="flex flex-wrap leading-none gap-2 text-[#0033A0] dark:text-blue-600">
                             {firstPost.tags?.map((tag, index) => (
                                 <div
                                     key={index}
                                     // href={`/blog?tag=${tag}`}
-                                    className="px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
+                                    className="flex flex-row items-center gap-1 px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
                                 >
-                                    #{tag}
+                                    <FontAwesomeIcon icon="fa-duotone fa-tag" />
+                                    {tag}
                                 </div>
                             ))}
-                        </div> */}
+                        </div>
                     </div>
                 </div>
                 <Breakline />
@@ -170,7 +153,7 @@ const BlogPage = async () => {
                                     {category.icon}
                                     {category.name}
 								</div> */}
-                                <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                                <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
                                     {/* <Mailbox className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                                     {category.icon}
                                     {category.name}

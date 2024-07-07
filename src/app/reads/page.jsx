@@ -1,4 +1,3 @@
-// import { FolderOpen, Newspaper, ScrollText } from 'lucide-react';
 import { ARTICLE_LIST, PAPER_LIST } from '../../../data/read/readingList';
 import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
 import Breakline from '@/common/elements/breakline';
@@ -16,7 +15,6 @@ const SHOWED_PAPER_LIST = PAPER_LIST.reverse();
 const BREADCRUMBS = [
     {
         href: '/reads',
-        icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Reads',
     },
 ];
@@ -36,7 +34,7 @@ const ReadsPage = () => {
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
-                        <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                        <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
                             {/* <ScrollText className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                             <FontAwesomeIcon icon="fa-duotone fa-file-magnifying-glass" />
                             <h1 className="capitalize">Papers</h1>
@@ -49,9 +47,9 @@ const ReadsPage = () => {
                     </section>
                     <Breakline />
                     <section className="flex flex-col gap-8">
-                        <div className="flex items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                        <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
                             {/* <Newspaper className="lg:h-6 lg:w-6 h-5 w-5" /> */}
-							<FontAwesomeIcon icon="fa-duotone fa-newspaper" />
+                            <FontAwesomeIcon icon="fa-duotone fa-newspaper" />
                             <h1 className="capitalize">Articles</h1>
                         </div>
                         <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-x-4 lg:gap-x-6 xl:grid-cols-3">
@@ -67,37 +65,3 @@ const ReadsPage = () => {
 };
 
 export default ReadsPage;
-
-// <div className="overflow-x-auto">
-// <table className="table table-md">
-// 	{/* head */}
-// 	<thead>
-// 		<tr>
-// 			<th className="text-[#0033A0] dark:text-blue-600">
-// 				Index
-// 			</th>
-// 			<th className="text-[#0033A0] dark:text-blue-600">
-// 				Image
-// 			</th>
-// 			<th className="text-[#0033A0] dark:text-blue-600">
-// 				Title
-// 			</th>
-// 			<th className="text-[#0033A0] dark:text-blue-600">
-// 				Description
-// 			</th>
-// 			<th className="text-[#0033A0] dark:text-blue-600">
-// 				Access Link
-// 			</th>
-// 		</tr>
-// 	</thead>
-// 	<tbody>
-// 		{SHOWED_READING_LIST.map((item, index) => (
-// 			<LinkTableRow
-// 				key={index}
-// 				url={item}
-// 				index={index + 1}
-// 			/>
-// 		))}
-// 	</tbody>
-// </table>
-// </div>

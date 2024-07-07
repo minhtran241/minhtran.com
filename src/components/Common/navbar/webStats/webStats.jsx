@@ -30,7 +30,7 @@ const WebStats = async () => {
                 href={process.env.UMAMI_SHARE_URL}
                 target="_blank"
                 tabIndex={0}
-                className="lg:hidden items-center flex btn btn-ghost btn-circle"
+                className="lg:hidden flex items-center gap-2 btn btn-ghost btn-circle"
             >
                 <Image
                     src="/logos/umami-color.svg"
@@ -43,11 +43,14 @@ const WebStats = async () => {
             <Link
                 href={process.env.UMAMI_SHARE_URL}
                 target="_blank"
-                className="hidden lg:flex btn btn-ghost"
+                className="hidden lg:flex items-center gap-2 btn btn-ghost"
             >
                 <ul className="flex items-center gap-4">
                     {Object.keys(webstats).map((key, index) => (
-                        <li key={index} className="flex flex-col">
+                        <li
+                            key={index}
+                            className="flex flex-col items-center gap-1"
+                        >
                             <span className="text-xs">{key}</span>
                             <span className="text-lg">
                                 {webstats[key]?.toLocaleString()}

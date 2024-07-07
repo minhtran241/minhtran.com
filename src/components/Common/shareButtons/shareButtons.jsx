@@ -6,15 +6,14 @@ import {
     TwitterShareButton,
     EmailShareButton,
 } from 'next-share';
-// import { Facebook, Twitter, Linkedin, Mail, Link2, Check } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, React } from 'react';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const ShareButton = ({ onClick, children }) => (
     <div
         onClick={onClick}
-        className="hover:bg-[#0033A0] dark:hover:bg-white hover:text-white dark:hover:text-black w-8 h-8 inline-flex items-center justify-center rounded-full cursor-pointer transition-all duration-300 mr-2 border border-gray-300 dark:border-gray-700"
+        className="btn btn-circle btn-sm flex items-center justify-center dark:bg-gray-800 bg-gray-100 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700 hover:bg-gray-200"
     >
         {children}
     </div>
@@ -68,7 +67,7 @@ const SharePost = () => {
     ];
 
     return (
-        <div className="flex flex-row">
+        <div className="flex flex-row space-x-2">
             <ShareButton onClick={handleCopyLink}>
                 {isLinkCopied ? (
                     <FontAwesomeIcon icon="fa-duotone fa-check-double" />
