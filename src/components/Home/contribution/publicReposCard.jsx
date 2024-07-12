@@ -1,6 +1,7 @@
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Link from 'next/link';
 
-const PublicReposCard = ({ ghInfo, username, colorTheme = 'blue' }) => {
+const PublicReposCard = ({ ghInfo, username }) => {
     return (
         <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
             <div className="flex flex-col items-start">
@@ -12,19 +13,17 @@ const PublicReposCard = ({ ghInfo, username, colorTheme = 'blue' }) => {
                     {ghInfo.user.repositories.totalCount} Repositories
                 </p>
             </div>
-            <div className="flex flex-col gap-1 items-start mt-3">
+            {/* 2 cols */}
+            <div className="grid grid-cols-3 gap-2 mt-4">
                 {ghInfo.user.repositories.nodes.map((repo, index) => (
                     <Link
                         key={index}
                         href={repo.url}
                         target="_blank"
-                        className={`text-sm hover:underline ${
-                            colorTheme === 'blue'
-                                ? 'text-[#0033A0] dark:text-blue-600'
-                                : 'text-green-600'
-                        }`}
+                        className="flex flex-row items-center gap-1 px-2 py-1 text-xs font-semibold border border-gray-300 dark:border-gray-600 rounded-md cursor-pointer hover:text-[#0033A0] dark:hover:text-blue-600 transition-colors duration-300 hover:border-[#0033A0] dark:hover:border-blue-600"
                     >
-                        {username}/{repo.name}
+                        <FontAwesomeIcon icon="fa-duotone fa-bookmark" />
+                        {repo.name}
                     </Link>
                 ))}
             </div>

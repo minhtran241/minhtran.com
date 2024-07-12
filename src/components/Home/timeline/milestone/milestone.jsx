@@ -29,7 +29,7 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                         clipRule="evenodd"
                     />
                 </svg> */}
-				<FontAwesomeIcon icon="fa-duotone fa-circle-check text-[#0033A0] dark:text-blue-600" />
+                <FontAwesomeIcon icon="fa-duotone fa-circle-check text-[#0033A0] dark:text-blue-600" />
             </div>
             <div
                 className={`${
@@ -39,8 +39,12 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                 <time className="font-semibold text-[#0033A0] dark:text-blue-600">
                     {timeStr}
                 </time>
-                <div className="lg:text-lg text-base font-bold hover:text-[#0033A0] dark:hover:text-blue-600">
-                    <Link href={milestone.link} target="_blank" className="">
+                <div className="">
+                    <Link
+                        href={milestone.link}
+                        target="_blank"
+                        className="lg:text-lg text-base font-bold hover:text-[#0033A0] dark:hover:text-blue-600 transition-colors duration-300"
+                    >
                         {milestone.job_title}, {milestone.title}
                     </Link>
                 </div>

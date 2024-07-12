@@ -36,7 +36,7 @@ This website is built using these technologies:
 - ←→ Axios
 - 〰️ SWR
 - ➰ Framer Motion
-- 💢 Lucide Icons
+- 🏳️ Font Awesome Icon 6
 - 📊 Chart.js
 - 🎥 WakaTime API
 - 👨🏻‍💻 GitHub API
