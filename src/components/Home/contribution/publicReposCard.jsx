@@ -1,7 +1,6 @@
-import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Link from 'next/link';
 
-const PublicReposCard = ({ ghInfo, username }) => {
+const PublicReposCard = ({ ghInfo }) => {
     return (
         <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
             <div className="flex flex-col items-start">
@@ -20,9 +19,8 @@ const PublicReposCard = ({ ghInfo, username }) => {
                         key={index}
                         href={repo.url}
                         target="_blank"
-                        className="flex flex-row items-center gap-1 px-2 py-1 text-xs font-semibold border border-gray-300 dark:border-gray-600 rounded-md cursor-pointer hover:text-[#0033A0] dark:hover:text-blue-600 transition-colors duration-300 hover:border-[#0033A0] dark:hover:border-blue-600"
+                        className="flex btn btn-xs lg:btn-sm md:btn-sm btn-active btn-link text-[#0033A0] dark:text-blue-600"
                     >
-                        <FontAwesomeIcon icon="fa-duotone fa-bookmark" />
                         {repo.name}
                     </Link>
                 ))}

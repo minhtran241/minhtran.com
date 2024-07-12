@@ -43,10 +43,7 @@ const Contribution = () => {
                                     ghInfo={ghData}
                                     username={username}
                                 />
-                                <PublicReposCard
-                                    ghInfo={ghData}
-                                    username={username}
-                                />
+                                <PublicReposCard ghInfo={ghData} />
                             </div>
                             <div className="mt-8">
                                 <ContributionChart
