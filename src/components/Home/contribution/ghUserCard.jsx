@@ -59,7 +59,10 @@ const GHUserCard = ({ ghInfo, username }) => {
                 <p className="lg:text-base md:text-base text-sm">
                     {ghInfo.user.bio}
                 </p>
-                <ul className="fa-ul md:text-base text-sm" style={{ '--fa-li-width': '4em' }}>
+                <ul
+                    className="fa-ul md:text-base text-sm"
+                    style={{ '--fa-li-width': '4em' }}
+                >
                     {/* <div className="flex gap-2 items-center">
                         <FontAwesomeIcon icon="fa-duotone fa-location-dot" />
                         <span className="text-sm">{ghInfo.user.location}</span>
@@ -73,7 +76,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                     {detailsData(ghInfo.user).map((item, index) => (
                         <li key={index}>
                             <span className="fa-li">{item.icon}</span>
-                            {item.title}: {item.value}
+                            {item.value} {item.title}
                         </li>
                     ))}
                 </ul>

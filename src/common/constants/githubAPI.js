@@ -1,1 +1,1 @@
-export const GITHUB_REPOS_NUM = 12;
+export const GITHUB_REPOS_NUM = 5;
