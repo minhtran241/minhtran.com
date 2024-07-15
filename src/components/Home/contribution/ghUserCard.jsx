@@ -1,12 +1,11 @@
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
-// import { MapPin, FileCode, Users, User, BookMarked } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const detailsData = (data) => {
     return [
         {
-            icon: <FontAwesomeIcon icon="fa-duotone fa-bookmark" />,
+            icon: <FontAwesomeIcon icon="fa-duotone fa-book-bookmark" />,
             title: 'Public Repos',
             value: data.repositories ? data.repositories.totalCount : 0,
         },
@@ -34,7 +33,7 @@ const GHUserCard = ({ ghInfo, username }) => {
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-row items-center justify-center gap-4">
                     <div className="avatar">
-                        <div className="w-12 h-12 rounded-full">
+                        <div className="w-10 h-10 rounded-full">
                             <Image
                                 src={ghInfo.user.avatarUrl}
                                 alt="avatar"
