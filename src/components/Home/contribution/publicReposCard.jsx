@@ -41,13 +41,13 @@ const PublicReposCard = ({ ghInfo }) => {
                                 <Link
                                     href={repo.url}
                                     target="_blank"
-                                    className="text-[#0033A0] dark:text-blue-600 hover:underline"
+                                    className="text-[#0033A0] dark:text-blue-600"
                                 >
-                                    {repo.name}
+                                    {repo.name}{' '}
+                                    <span className="text-gray-600 dark:text-gray-400">
+                                        ({distance})
+                                    </span>
                                 </Link>
-                                <span className="text-gray-600 dark:text-gray-400">
-                                    ({distance})
-                                </span>
                             </li>
                         );
                     })}

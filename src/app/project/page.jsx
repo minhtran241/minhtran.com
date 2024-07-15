@@ -1,4 +1,3 @@
-// import { FolderOpen } from 'lucide-react';
 import ProjectCard from '@/components/Project/projectCard/projectCard';
 import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
 import { userBasicInfo } from '@/common/constants/userBasic';
@@ -14,7 +13,6 @@ const PAGE_DESCRIPTION =
 const BREADCRUMBS = [
     {
         href: '/project',
-        // icon: <FolderOpen className="stroke-current lg:w-6 lg:h-6 w-5 h-5" />,
         icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Projects',
     },

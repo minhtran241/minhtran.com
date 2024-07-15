@@ -165,7 +165,6 @@ const SinglePostContent = ({ post }) => {
                                             href={`/blog/${post.prev.slug}`}
                                             className="flex items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold"
                                         >
-                                            {/* <ChevronsLeft className="w-6 h-6" /> */}
                                             <FontAwesomeIcon icon="fa-duotone fa-chevrons-left" />
                                             {post.prev.title.length > 100
                                                 ? post.prev.title.slice(
@@ -191,7 +190,6 @@ const SinglePostContent = ({ post }) => {
                                                       100
                                                   ) + '...'
                                                 : post.next.title}{' '}
-                                            {/* <ChevronsRight className="w-6 h-6" /> */}
                                             <FontAwesomeIcon icon="fa-duotone fa-chevrons-right" />
                                         </Link>
                                     </div>

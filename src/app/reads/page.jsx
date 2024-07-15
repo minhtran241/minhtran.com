@@ -35,7 +35,6 @@ const ReadsPage = () => {
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
                         <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                            {/* <ScrollText className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                             <FontAwesomeIcon icon="fa-duotone fa-file-magnifying-glass" />
                             <h1 className="capitalize">Papers</h1>
                         </div>
@@ -48,7 +47,6 @@ const ReadsPage = () => {
                     <Breakline />
                     <section className="flex flex-col gap-8">
                         <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                            {/* <Newspaper className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                             <FontAwesomeIcon icon="fa-duotone fa-newspaper" />
                             <h1 className="capitalize">Articles</h1>
                         </div>

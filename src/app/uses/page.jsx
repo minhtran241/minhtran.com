@@ -1,4 +1,3 @@
-// import { FolderOpen } from 'lucide-react';
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
 import Breakline from '@/common/elements/breakline';
@@ -29,19 +28,8 @@ const UsesPage = () => {
     return (
         <>
             <div className="container py-12">
-                {/* <div className="flex flex-col gap-2 mb-8">
-                    <div className="flex items-center gap-1.5 text-2xl font-semibold text-[#0033A0] dark:text-white">
-                        <GalleryHorizontalEnd className="mr-1 h-6 w-6" />
-                        <h1 className="capitalize">{PAGE_TITLE}</h1>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        {PAGE_DESCRIPTION}
-                    </p>
-                </div> */}
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4 mt-4">
-                    {/* Accessories section: laptop, iphone, .... */}
-                    {/* Laptop first */}
                     <Devices />
                     <Breakline />
                     <DevTools />

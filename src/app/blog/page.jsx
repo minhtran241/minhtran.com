@@ -149,12 +149,7 @@ const BlogPage = async () => {
                     {groupedPosts.map((category, index) => (
                         <div key={index}>
                             <section className="flex flex-col gap-8">
-                                {/* <div className="flex flex-row items-center gap-2 lg:text-lg text-base font-semibold">
-                                    {category.icon}
-                                    {category.name}
-								</div> */}
                                 <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                                    {/* <Mailbox className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                                     {category.icon}
                                     {category.name}
                                 </div>
@@ -168,19 +163,6 @@ const BlogPage = async () => {
                         </div>
                     ))}
                 </div>
-                {/* {groupedPosts.map((category, index) => (
-                    <div key={index} className="mt-8">
-                        <div className="flex items-center gap-1.5 text-xl font-semibold">
-                            {category.icon}
-                            <h2 className="capitalize">{category.name}</h2>
-                        </div>
-                        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3">
-                            {category.posts.map((post, index) => (
-                                <PostCard key={index} post={post} />
-                            ))}
-                        </div>
-                    </div>
-                ))} */}
             </div>
         </>
     );
