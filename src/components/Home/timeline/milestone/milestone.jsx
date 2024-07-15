@@ -43,7 +43,7 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                     <Link
                         href={milestone.link}
                         target="_blank"
-                        className="lg:text-lg text-base font-bold hover:text-[#0033A0] dark:hover:text-blue-600 transition-colors duration-300"
+                        className="lg:text-lg text-base font-bold hover:text-[#0033A0] dark:hover:text-blue-600 transition"
                     >
                         {milestone.job_title}, {milestone.title}
                     </Link>

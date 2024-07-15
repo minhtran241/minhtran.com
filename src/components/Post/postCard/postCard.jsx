@@ -6,10 +6,6 @@ const PostCard = ({ post }) => {
     const month = createdAt.toLocaleString('default', { month: 'long' });
     const date = new Date(post.created_at).getDate();
     return (
-        // <div
-        //     className="wow fadeInUp relative overflow-hidden"
-        //     data-wow-delay=".1s"
-        // >
         <div className="flex flex-col gap-2">
             <Link href={`/blog/${post.slug}`}>
                 <div className="relative w-full lg:h-56 md:h-52 sm:h-44 h-44">
@@ -37,18 +33,12 @@ const PostCard = ({ post }) => {
                         </div>
                     ))}
                 </div> */}
-            {/* <div className=""> */}
             <Link
                 href={`/blog/${post.slug}`}
                 className="inline-block lg:text-xl md:text-lg text-lg font-semibold transition hover:text-[#0033A0] dark:hover:text-blue-600"
             >
                 {post.title}
             </Link>
-            {/* <p className="text-md text-justify font-light italic text-gray-600 dark:text-gray-400">
-                        {post.description?.length > 150
-                            ? `${post.description?.substring(0, 150)}...`
-                            : post.description}
-                    </p> */}
             <div
                 className="tooltip dark:tooltip-info !text-start cursor-pointer"
                 data-tip={post.description}
@@ -56,17 +46,8 @@ const PostCard = ({ post }) => {
                 <p className="text-gray-600 dark:text-gray-400 line-clamp-3 lg:text-base md:text-base text-sm">
                     {post.description}
                 </p>
-                {/* <Link
-                            href={`/blog/${post.slug}`}
-                            className="flex items-center justify-end gap-2 text-sm text-[#0033A0] dark:text-blue-600"
-                        >
-                            Read More
-                            <ArrowRight className="h-4 w-4 inline-block" />
-                        </Link> */}
             </div>
-            {/* </div> */}
         </div>
-        // </div>
     );
 };
 
