@@ -18,6 +18,7 @@ import {
     SITE_DESCRIPTION,
     SITE_NAME,
 } from '@/common/constants/site';
+import CustomCursor from '@/components/Common/cursor/CustomCursor';
 
 const MazzardH = localFont({
     src: [
@@ -203,6 +204,7 @@ export default function RootLayout({ children }) {
                 >
                     <Navbar />
                     <div className="dark:text-white text-black bg-white dark:bg-black">
+                        <CustomCursor />
                         {children}
                         <SpeedInsights />
                         <Analytics />
