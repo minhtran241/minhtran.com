@@ -1,5 +1,6 @@
 'use client';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import { useWindowSize } from '@uidotdev/usehooks';
 import React, { useEffect, useRef, useState } from 'react';
 
 const CustomCursor = () => {
@@ -14,8 +15,8 @@ const CustomCursor = () => {
         // Event listener for mouse movement
         const handleMouseMove = (e) => {
             setPosition({
-                x: e.clientX + 10,
-                y: e.clientY - 10,
+                x: e.clientX,
+                y: e.clientY,
             });
         };
         // Event listener for mouse click
@@ -36,16 +37,20 @@ const CustomCursor = () => {
         };
     }, []); // useEffect runs only once on mount
 
-    return (
+    const { width } = useWindowSize();
+    const isMobile = width < 480;
+
+    return isMobile ? (
+        <></>
+    ) : (
         <>
             <div
                 style={{ top: position.y, left: position.x }}
                 ref={cursorRef}
-                className={`p-0 fixed pointer-events-none transition-all -translate-x-1/2 -translate-y-1/2 ease-in duration-500 z-50 ${
-                    clicked ? 'scale-150' : ''
-                }`}
+                className={`fixed pointer-events-none transition-all -translate-x-1/2 -translate-y-1/2 ease-in duration-300 z-50 w-6 h-6 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 fa-sm
+				${clicked ? 'scale-150' : ''}`}
             >
-                <FontAwesomeIcon icon="fa-duotone fa-poo lg:fa-xl md:fa-lg fa-lg" />
+                <FontAwesomeIcon icon="fa-duotone fa-wand-magic-sparkles text-white" />
             </div>
         </>
     );
