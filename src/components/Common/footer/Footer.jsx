@@ -5,15 +5,23 @@ import { MENU_TABS } from '@/common/constants/menu';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-primary text-primary-content py-12 gap-6">
+        <footer className="footer footer-center p-10 bg-primary text-primary-content rounded">
             <nav className="grid grid-flow-col gap-4">
-			<Link href='/' className="link link-hover">Minh</Link>
-			{MENU_TABS.slice(1).map((item, index) => (
-                <Link key={index} href={item.href} className="link link-hover">{item.title}</Link>
-			))}
+                {/* <Link href="/" className="link link-hover">
+                    Minh
+                </Link> */}
+                {MENU_TABS.slice(1).map((item, index) => (
+                    <Link
+                        key={index}
+                        href={item.href}
+                        className="link link-hover"
+                    >
+                        {item.title}
+                    </Link>
+                ))}
             </nav>
             <nav>
-                <div className="grid grid-flow-col gap-4">
+                <div className="grid grid-flow-col gap-4 fa-lg">
                     {SOCIAL_MEDIA?.filter((item) =>
                         item.type.includes('s')
                     ).map((item, index) => (
@@ -22,8 +30,7 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="btn btn-ghost fill-current fa-lg"
-                            role="button"
+                            className="fill-current"
                         >
                             {item.icon}
                         </Link>
@@ -31,15 +38,13 @@ const Footer = () => {
                 </div>
             </nav>
             <aside className="flex items-center">
-                <span>Designed and developed by</span>
-                {/* <span> </span> */}
+                <span>A work by </span>
                 <Link
                     href={userBasicInfo.githubLink || '#'}
                     className="link link-hover"
                 >
                     {userBasicInfo.fullName}
                 </Link>
-                {/* <span> </span> */}
                 <span>@ {new Date().getFullYear()}</span>
             </aside>
         </footer>
