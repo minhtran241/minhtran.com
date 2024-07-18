@@ -4,7 +4,25 @@ import React, { useEffect } from 'react';
 import { themeChange } from 'theme-change';
 
 const ThemeChanger = () => {
-    const themeValues = ['light', 'dark', 'nord', 'night', 'winter', 'dracula'];
+    const themeValues = [
+        'light',
+        'dark',
+		'cupcake',
+		'cyberpunk',
+        'nord',
+        'night',
+		'autumn',
+        'winter',
+        'dracula',
+		'forest',
+		'sunset',
+		'cmyk', 
+        'corporate',
+        'synthwave',
+        'retro',
+        'fantasy',
+		'lofi'
+    ];
 
     useEffect(() => {
         themeChange(false);

@@ -26,7 +26,7 @@ const Navbar = () => {
                 </div>
                 <Link
                     href="/"
-                    className="btn btn-ghost uppercase lg:text-xl text-lg"
+                    className="btn btn-ghost lg:text-xl md:text-lg text-base"
                 >
                     {userBasicInfo.fullName}
                 </Link>
@@ -37,8 +37,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <WebStats />
                 <ThemeChanger />
+                <WebStats />
             </div>
         </div>
     );

@@ -101,7 +101,7 @@ const BlogPage = async () => {
                     </Link>
                     <div className="mt-4 lg:mt-0 lg:w-1/2 flex flex-col gap-4">
                         <div className="flex flex-wrap gap-2 justify-between">
-                            <p className="text-sm font-semibold uppercase text-secondary">
+                            <p className="text-sm font-semibold uppercase text-primary">
                                 {new Date(
                                     firstPost?.created_at
                                 ).toLocaleDateString('en-GB', {

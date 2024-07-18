@@ -36,7 +36,7 @@ const PublicReposCard = ({ ghInfo }) => {
                         return (
                             <li
                                 key={index}
-                                className="flex gap-2 items-center hover:text-primary"
+                                className="flex gap-2 items-center text-primary"
                             >
                                 <span className="fa-li">
                                     <FontAwesomeIcon icon="fa-duotone fa-book-bookmark" />
@@ -44,7 +44,7 @@ const PublicReposCard = ({ ghInfo }) => {
                                 <Link
                                     href={repo.url}
                                     target="_blank"
-                                    className=""
+                                    className="link link-hover"
                                 >
                                     {repo.name} ({distance})
                                 </Link>

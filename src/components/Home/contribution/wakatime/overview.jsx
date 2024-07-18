@@ -30,7 +30,7 @@ const Overview = ({ data }) => {
 const OverviewItem = ({ label, value }) => (
     <div className="flex flex-col bg-base-100 border rounded-box p-4">
         <span className="text-sm">{label}</span>
-        <span className="card-title lg:text-lg text-base">
+        <span className="card-title lg:text-lg text-base text-primary">
             {value}
         </span>
     </div>

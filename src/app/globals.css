@@ -12,18 +12,3 @@
         scrollbar-width: none; /* Firefox */
     }
 }
-
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-/* a {
-    text-decoration: none;
-    color: inherit;
-} */
-
-/* .shadow {
-    @apply shadow-[0_12px_24px_-6px_rgba(45,67,121,0.1)];
-} */
