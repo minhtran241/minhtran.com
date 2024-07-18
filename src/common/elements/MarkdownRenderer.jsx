@@ -65,7 +65,7 @@ const MarkdownRender = ({ mdString }) => (
                                     style={{
                                         right: 0,
                                     }}
-                                    className="tooltip tooltip-left absolute z-40 mr-2 mt-5"
+                                    className="tooltip tooltip-left absolute z-40 mt-5 mr-3"
                                     data-tip={copyTip}
                                 >
                                     <CopyToClipboard
@@ -78,7 +78,7 @@ const MarkdownRender = ({ mdString }) => (
                                             }, 2000);
                                         }}
                                     >
-                                        <div className="cursor-pointer text-gray-300/40 hover:text-base-200">
+                                        <div className="text-gray-300/40 hover:text-gray-200">
                                             <FontAwesomeIcon icon="fa-duotone fa-copy" />
                                         </div>
                                     </CopyToClipboard>
