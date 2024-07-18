@@ -1,4 +1,3 @@
-import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Link from 'next/link';
 
 const Milestone = ({ milestone, first, last, timeline_end }) => {
