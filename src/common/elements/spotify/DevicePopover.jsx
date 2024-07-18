@@ -1,19 +1,14 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-import AnimatedBars from './animatedBars';
-import { PAIR_DEVICES } from '../../../data/use/uses';
-// import { Dot, Speaker } from 'lucide-react';
-import FontAwesomeIcon from './FontAwesomeIcon';
+import AnimatedBars from './AnimatedBars';
+import { PAIR_DEVICES } from '../../../../data/uses';
+import FontAwesomeIcon from '../FontAwesomeIcon';
 
 const DevicePopover = ({ devices, isShow }) => {
     const listDevices = devices?.map((device) => ({
         ...device,
         icon: PAIR_DEVICES[device?.type]?.icon || (
-            // <Speaker
-            //     className="w-auto text-gray-700 dark:text-gray-300"
-            //     size={24}
-            // />
             <FontAwesomeIcon icon="fa-duotone fa-speaker" />
         ),
     }));
@@ -30,7 +25,7 @@ const DevicePopover = ({ devices, isShow }) => {
             leaveTo="opacity-0 translate-y-1"
         >
             <Popover.Panel className="absolute bottom-10 right-0 z-20 w-max">
-                <div className="flex flex-col gap-5 overflow-hidden rounded-lg bg-gray-100 px-6 py-5 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-black dark:text-white">
+                <div className="flex flex-col gap-5 overflow-hidden rounded-lg px-6 py-5 shadow-lg ring-1 ring-black ring-opacity-5 bg-base-200">
                     {listDevices?.map((device, index) => (
                         <div
                             key={index}
@@ -41,7 +36,7 @@ const DevicePopover = ({ devices, isShow }) => {
                                 <span className="font-sora font-medium">
                                     {device?.name}
                                 </span>
-                                <span className="text-xs font-light text-gray-600 dark:text-gray-400">
+                                <span className="text-xs font-light text-gray-500">
                                     {device?.model}
                                 </span>
                             </div>
@@ -57,10 +52,5 @@ const DevicePopover = ({ devices, isShow }) => {
         </Transition>
     );
 };
-{
-    /* <Dot
-                                    className="ml-2 w-auto text-gray-600 dark:text-gray-400"
-                                    size={22}
-                                /> */
-}
+
 export default DevicePopover;

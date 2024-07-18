@@ -3,11 +3,10 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
-// import { X } from 'lucide-react';
 import useSWR from 'swr';
-import { fetcher } from '@/services/fetcher';
-import AnimatedBars from './animatedBars';
-import FontAwesomeIcon from './FontAwesomeIcon';
+import AnimatedBars from './AnimatedBars';
+import FontAwesomeIcon from '../FontAwesomeIcon';
+import { fetcher } from '@/common/libs/fetcher';
 
 const NowPlayingCard = ({ isExpand = false }) => {
     const { data } = useSWR('/api/spotify/now-playing', fetcher);
@@ -39,7 +38,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
         >
             {!expand ? (
                 <div
-                    className="m-2 cursor-pointer rounded-full bg-white dark:bg-neutral-950 transition-all duration-100"
+                    className="cursor-pointer rounded-full bg-white dark:bg-neutral-950 transition-all duration-100"
                     onClick={handleMusicToggle}
                 >
                     <Image
@@ -49,7 +48,6 @@ const NowPlayingCard = ({ isExpand = false }) => {
                         height={44}
                         className="animate-pulse"
                     />
-                    {/* <FontAwesomeIcon icon="fa-brands fa-spotify fa-xl text-green-500 animate-pulse" /> */}
                 </div>
             ) : (
                 <div className="mt-5 flex items-center justify-between rounded-md bg-green-400 px-3 py-2 font-sora text-neutral-800 dark:bg-green-500 dark:text-neutral-900 ">
@@ -83,11 +81,6 @@ const NowPlayingCard = ({ isExpand = false }) => {
                         className="flex gap-3 pr-0.5"
                         onClick={handleMusicToggle}
                     >
-                        {/* <X
-                            size={28}
-                            className="cursor-pointer pt-0.5 text-neutral-900"
-                            onClick={handleMusicToggle}
-                        /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-circle-xmark fa-lg cursor-pointer pt-0.5" />
                     </div>
                 </div>

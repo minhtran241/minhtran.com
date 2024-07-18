@@ -1,15 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// import {
-//     CalendarDays,
-//     Github,
-//     ExternalLink,
-//     Star,
-//     GitFork,
-//     Eye,
-//     ArrowUpFromLine,
-//     Scale,
-// } from 'lucide-react';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
@@ -33,11 +23,10 @@ const ProjectCard = async ({ project }) => {
     const licenseName = project?.licenseInfo?.name;
 
     return (
-        <div className="flex flex-col p-4 rounded-box border dark:border-gray-700 border-gray-200 gap-3">
-            <div className="flex flex-row justify-between">
-                <div className="flex leading-none gap-2 text-[#0033A0] dark:text-blue-600 text-sm">
-                    {/* <CalendarDays className="h-4 w-4" /> */}
-                    <FontAwesomeIcon icon="fa-duotone fa-calendar-days" />
+        <div className="flex flex-col p-4 rounded-box gap-3 bg-base-200 border">
+            <div className="justify-end card-actions">
+                <div className="badge badge-secondary flex items-center gap-2 rounded-full">
+                    <FontAwesomeIcon icon="fa-solid fa-calendar-days" />
                     {project?.createdAt &&
                         new Date(project?.createdAt).toLocaleDateString(
                             'en-GB',
@@ -60,31 +49,26 @@ const ProjectCard = async ({ project }) => {
                     alt={projectName}
                     width={500}
                     height={250}
-                    className="rounded-lg border border-[#0033A0] dark:border-blue-600"
+                    className="rounded-box"
                 />
             </Link>
             <Link
                 href={project?.homepageUrl || project?.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 transition lg:text-xl md:text-lg text-lg"
+                className="card-title hover:text-primary transition lg:text-xl md:text-lg text-lg"
             >
                 {projectName}
             </Link>
             <div
-                className="tooltip dark:tooltip-info !text-start cursor-pointer"
+                className="tooltip !text-start cursor-pointer"
                 data-tip={project?.description}
             >
-                <p className="text-gray-600 dark:text-gray-400 line-clamp-3 lg:text-base md:text-base text-sm">
-                    {project?.description}
-                </p>
+                <p className="line-clamp-3 text-sm">{project?.description}</p>
             </div>
-            <div className="flex flex-wrap gap-2 rounded">
+            <div className="card-actions">
                 {project?.repositoryTopics?.nodes?.map((node, index) => (
-                    <p
-                        key={index}
-                        className="text-sm bg-blue-100 dark:bg-blue-900 text-[#0033A0] dark:text-blue-200 px-2 py-1 rounded-lg"
-                    >
+                    <p key={index} className="badge badge-outline">
                         {node?.topic?.name}
                     </p>
                 ))}
@@ -92,7 +76,7 @@ const ProjectCard = async ({ project }) => {
             <div className="flex-grow"></div>
             {/* Make this down to bottom of the card */}
             <div className="flex flex-col gap-2">
-                <div className="flex flex-wrap justify-between text-gray-600 dark:text-gray-400 text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
@@ -108,21 +92,13 @@ const ProjectCard = async ({ project }) => {
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="flex leading-none gap-1">
-                                    {/* <Star className="h-4 w-4" /> */}
                                     <FontAwesomeIcon icon="fa-duotone fa-star" />
                                     {project?.stargazerCount}
                                 </div>
                                 <div className="flex leading-none gap-1">
-                                    {/* <GitFork className="h-4 w-4" /> */}
                                     <FontAwesomeIcon icon="fa-duotone fa-code-fork" />
                                     {project?.forkCount}
                                 </div>
-                                {/* <div className="flex items-center gap-1">
-                                    <Eye className="h-4 w-4" />
-                                    <span className="">
-                                        {project?.watchers?.totalCount}
-                                    </span>
-                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -132,9 +108,8 @@ const ProjectCard = async ({ project }) => {
                                 href={project?.homepageUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                                className="hover:text-primary transition"
                             >
-                                {/* <ExternalLink className="h-4 w-4" /> */}
                                 <FontAwesomeIcon icon="fa-duotone fa-arrow-up-right-from-square" />
                             </Link>
                         )}
@@ -144,22 +119,19 @@ const ProjectCard = async ({ project }) => {
                                 href={project?.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-[#0033A0] dark:hover:text-blue-600 transition"
+                                className="hover:text-primary transition"
                             >
-                                {/* <Github className="h-4 w-4" /> */}
                                 <FontAwesomeIcon icon="fa-brands fa-github" />
                             </Link>
                         )}
                     </div>
                 </div>
-                <div className="flex flex-wrap gap-2 text-gray-600 dark:text-gray-400 text-sm justify-between">
+                <div className="flex flex-wrap gap-2  text-sm justify-between">
                     <div className="flex leading-none gap-2">
-                        {/* <Scale className="h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-scale-balanced" />
                         <p>{licenseName || 'No License'}</p>
                     </div>
                     <div className="flex leading-none gap-2">
-                        {/* <ArrowUpFromLine className="h-4 w-4" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-up-from-line" />
                         <p>{pushedAtDistance}</p>
                     </div>

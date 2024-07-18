@@ -1,14 +1,13 @@
 import Links from './links/Links';
-import DropdownTheme from '../themeProvider/dropdownTheme';
-// import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import WebStats from './webStats/webStats';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import ThemeChanger from '@/common/elements/ThemeChanger';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white">
+        <div className="navbar bg-primary text-primary-content">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -16,12 +15,11 @@ const Navbar = () => {
                         role="button"
                         className="btn btn-ghost lg:hidden fa-lg"
                     >
-                        {/* <Menu className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-bars" />
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content rounded-box mt-3 z-[1] p-2 shadow text-black dark:text-white bg-white dark:bg-gray-900"
+                        className="menu menu-sm dropdown-content rounded-box mt-3 z-[1] p-2 shadow bg-base-100 text-base-content"
                     >
                         <Links />
                     </ul>
@@ -40,7 +38,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <WebStats />
-                <DropdownTheme />
+                <ThemeChanger />
             </div>
         </div>
     );

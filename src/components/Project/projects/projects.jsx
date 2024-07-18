@@ -1,12 +1,10 @@
 import Link from 'next/link';
-// import { ChevronsRight } from 'lucide-react';
 import { Suspense } from 'react';
 import ProjectCard from '../projectCard/projectCard';
-import Loading from '@/app/loading';
 import SectionLabel from '../../Home/sectionLabel/sectionLabel';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import axios from 'axios';
-import { PROJECT_LIST } from '../../../../data/project/projectList';
+import { PROJECT_LIST } from '../../../../data/projectList';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const PROJECT_FETCH_LIMIT = 3;
@@ -27,7 +25,11 @@ const ProjectsComponent = async () => {
     );
 
     if (!repoData) {
-        return <Loading />;
+        return (
+            <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
+                <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
+            </div>
+        );
     }
 
     const projects = repoData?.data?.user?.repositories?.nodes
@@ -35,7 +37,7 @@ const ProjectsComponent = async () => {
         .slice(0, PROJECT_FETCH_LIMIT);
 
     return (
-        <div className="bg-white dark:bg-black">
+        <div className="">
             <div className="py-12 container">
                 <SectionLabel
                     title={SECTION_TITLE}
@@ -49,10 +51,9 @@ const ProjectsComponent = async () => {
                 </div>
                 {/* See More */}
                 <div className="flex justify-center mt-8">
-                    <Link href="/project">
-                        <div className="flex flex-row items-center gap-2 font-semibold hover:text-[#0033A0] dark:hover:text-blue-600 cursor-pointer transition lg:text-lg text-base">
+                    <Link href="/projects">
+                        <div className="flex flex-row items-center gap-2 font-semibold hover:text-primary cursor-pointer transition lg:text-lg text-base">
                             See More
-                            {/* <ChevronsRight className="lg:h-6 lg:w-6 h-5 w-5" /> */}
                             <FontAwesomeIcon icon="fa-duotone fa-chevrons-right" />
                         </div>
                     </Link>
@@ -64,7 +65,13 @@ const ProjectsComponent = async () => {
 
 const Projects = () => {
     return (
-        <Suspense fallback={<Loading />}>
+        <Suspense
+            fallback={
+                <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
+                    <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
+                </div>
+            }
+        >
             <ProjectsComponent />
         </Suspense>
     );

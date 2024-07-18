@@ -1,5 +1,5 @@
 import Contact from '@/components/Contact/contact';
-import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const PAGE_TITLE = 'Contact Information';

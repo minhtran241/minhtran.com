@@ -1,8 +1,8 @@
 import ProjectCard from '@/components/Project/projectCard/projectCard';
-import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Loading from '../loading';
-import { PROJECT_LIST } from '../../../data/project/projectList';
+import { PROJECT_LIST } from '../../../data/projectList';
 import axios from 'axios';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
@@ -12,7 +12,7 @@ const PAGE_DESCRIPTION =
 
 const BREADCRUMBS = [
     {
-        href: '/project',
+        href: '/projects',
         icon: <FontAwesomeIcon icon="fa-duotone fa-folder-open" />,
         text: 'Projects',
     },

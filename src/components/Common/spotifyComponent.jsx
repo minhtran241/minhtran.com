@@ -1,7 +1,7 @@
 'use client';
 
-import NowPlayingBar from '@/common/elements/nowPlayingBar';
-import NowPlayingCard from '@/common/elements/nowPlayingCard';
+import NowPlayingBar from '@/common/elements/spotify/NowPlayingBar';
+import NowPlayingCard from '@/common/elements/spotify/NowPlayingCard';
 import { useWindowSize } from '@uidotdev/usehooks';
 
 const SpotifyComponent = () => {

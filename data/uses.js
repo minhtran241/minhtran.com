@@ -1,12 +1,9 @@
-// import { Laptop, Smartphone, Tablet } from 'lucide-react';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
-// const iconSize = 24;
 const iconClassName = 'w-auto';
 
 export const PAIR_DEVICES = {
     Computer: {
-        // icon: <Laptop className={iconClassName} size={iconSize} />,
         icon: (
             <FontAwesomeIcon icon={`fa-duotone fa-laptop ${iconClassName}`} />
         ),
@@ -98,20 +95,6 @@ export const USES = {
             id: 'minhtran-androidstudio',
             image: '/uses/coding/androidstudio.svg',
         },
-        // {
-        //     name: 'iTerm2',
-        //     metadata: 'Terminal Emulator',
-        //     href: 'https://iterm2.com/',
-        //     id: 'minhtran-iterm',
-        //     image: '/uses/coding/iterm.svg',
-        // },
-        // {
-        //     name: 'Oh My Zsh',
-        //     metadata: 'Shell Customization',
-        //     href: 'https://ohmyz.sh/',
-        //     id: 'minhtran-ohmyzsh',
-        //     image: '/uses/coding/ohmyzsh.svg',
-        // },
         {
             name: 'Warp',
             metadata: 'Terminal Reimagined',

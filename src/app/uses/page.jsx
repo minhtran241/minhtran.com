@@ -1,7 +1,7 @@
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
-import Breakline from '@/common/elements/breakline';
-import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import Breakline from '@/common/elements/Breakline';
+import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const PAGE_TITLE = 'Used Devices and Tools';

@@ -10,17 +10,11 @@ export const SITE_DESCRIPTION =
 
 export const TECHSTACK = [
     {
-        name: 'Figma',
-        link: 'https://www.figma.com',
-        logo: '/logos/figma-color.svg',
-        alt: 'Figma Logo',
-    },
-    {
         name: 'Next.js',
         link: 'https://nextjs.org',
         logo: '/logos/nextdotjs-color.svg',
         alt: 'Next.js Logo',
-        invert: true,
+        // invert: true,
     },
     {
         name: 'Tailwind CSS',
@@ -39,19 +33,14 @@ export const TECHSTACK = [
         link: 'https://www.daisyui.com',
         logo: '/logos/daisyui-color.svg',
         alt: 'DaisyUI Logo',
+        // invert: true,
     },
-    // {
-    //     name: 'Lucide',
-    //     link: 'https://www.lucide.dev',
-    //     logo: '/logos/lucide-color.svg',
-    //     alt: 'Lucide Logo',
-    // },
     {
         name: 'Font Awesome',
         link: 'https://fontawesome.com',
         logo: '/logos/fontawesome.svg',
         alt: 'Font Awesome Logo',
-		invert: true,
+        // invert: true,
     },
 ];
 
@@ -61,14 +50,14 @@ export const CONSUMED_APIS = [
         link: 'https://developer.github.com/v3/',
         logo: '/logos/github-color.svg',
         alt: 'Github Logo',
-        invert: true,
+        // invert: true,
     },
     {
         name: 'WakaTime',
         link: 'https://wakatime.com/developers',
         logo: '/logos/wakatime.svg',
         alt: 'WakaTime Logo',
-        invert: true,
+        // invert: true,
     },
     {
         name: 'Spotify',
@@ -81,6 +70,6 @@ export const CONSUMED_APIS = [
         link: 'https://umami.is/docs/api',
         logo: '/logos/umami-color.svg',
         alt: 'Umami Logo',
-        invert: true,
+        // invert: true,
     },
 ];

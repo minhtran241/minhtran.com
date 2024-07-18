@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-[#0033A0] text-white dark:bg-gray-900 dark:text-white py-12 gap-6">
+        <footer className="footer footer-center p-10 bg-primary text-primary-content py-12 gap-6">
             <nav>
                 <div className="grid grid-flow-col gap-4">
                     {SOCIAL_MEDIA?.filter((item) =>
@@ -24,7 +24,7 @@ const Footer = () => {
                     ))}
                 </div>
             </nav>
-            <aside className="items-center justify-center  lg:text-base md:text-sm sm:text-xs text-xs">
+            <aside className="items-center justify-center lg:text-base md:text-sm sm:text-xs text-xs">
                 <div className="">
                     <span>Designed and developed by</span>
                     <span> </span>

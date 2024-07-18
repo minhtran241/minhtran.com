@@ -1,14 +1,14 @@
 'use client';
-import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 import PublicReposCard from './publicReposCard';
 import GHUserCard from './ghUserCard';
 import ContributionChart from './contributionChart';
 import useSWR from 'swr';
-import { fetcher } from '@/services/fetcher';
 import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import CodingActive from './wakatime/codingActive';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import { fetcher } from '@/common/libs/fetcher';
 
 const Contribution = () => {
     const username = userBasicInfo.githubUsername;
@@ -29,7 +29,7 @@ const Contribution = () => {
     const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${ghData?.user?.contributionsCollection?.contributionCalendar?.totalContributions} commits across ${ghData?.user?.repositories?.totalCount} public repositories.`;
 
     return (
-        <div className="items-center justify-center py-12 bg-gray-200 dark:bg-gray-900">
+        <div className="items-center justify-center py-12 bg-base-300">
             <div className="container">
                 <SectionLabel
                     title={sectionTitle}
@@ -54,14 +54,18 @@ const Contribution = () => {
                             </div>
                         </div>
                     ) : (
-                        <Loading />
+                        <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
+                            <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
+                        </div>
                     )}
                     {wkData ? (
                         <div>
                             <CodingActive data={wkData} />
                         </div>
                     ) : (
-                        <Loading />
+                        <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
+                            <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
+                        </div>
                     )}
                 </div>
             </div>

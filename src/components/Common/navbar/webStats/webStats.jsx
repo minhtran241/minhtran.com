@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getClient } from '@umami/api-client';
-import Image from 'next/image';
+// import Image from 'next/image';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const WebStats = async () => {
     const client = getClient();
@@ -22,23 +23,21 @@ const WebStats = async () => {
         Visitors: data?.visitors?.value,
     };
     return (
-        <div
-            className="tooltip tooltip-bottom dark:tooltip-info"
-            data-tip="Powered by Umami"
-        >
+        <div className="tooltip tooltip-bottom" data-tip="Powered by Umami">
             <Link
                 href={process.env.UMAMI_SHARE_URL}
                 target="_blank"
                 tabIndex={0}
-                className="lg:hidden flex items-center gap-2 btn btn-ghost btn-circle"
+                className="lg:hidden flex items-center gap-2 btn btn-ghost fa-lg"
             >
-                <Image
+                {/* <Image
                     src="/logos/umami-color.svg"
                     width={0}
                     height={0}
                     alt="Umami logo"
                     className="filter invert lg:h-6 lg:w-6 h-5 w-5"
-                />
+                /> */}
+                <FontAwesomeIcon icon="fa-duotone fa-chart-mixed" />
             </Link>
             <Link
                 href={process.env.UMAMI_SHARE_URL}

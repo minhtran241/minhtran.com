@@ -4,7 +4,6 @@ import axios from 'axios';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-// import { Clock, Loader, User, Mail, CircleCheck, CircleX } from 'lucide-react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -72,88 +71,72 @@ const ContactForm = () => {
         // Daisy UI contact form
         <div>
             <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-                <div>
-                    <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex flex-row items-center gap-2 bg-white dark:bg-gray-900">
-                        {/* <User className="w-4 h-4 opacity-70" /> */}
-                        <FontAwesomeIcon icon="fa-duotone fa-user" />
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            className="grow"
-                            placeholder="Name"
-                            {...form.register('name')}
-                        />
-                    </label>
-                    <span className="text-red-500 dark:text-red-400 text-sm">
-                        {form.formState.errors['name']?.message}
-                    </span>
-                </div>
-                <div>
-                    <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex flex-row items-center gap-2 bg-white dark:bg-gray-900">
-                        {/* <Mail className="w-4 h-4 opacity-70" /> */}
-                        <FontAwesomeIcon icon="fa-duotone fa-envelope" />
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            className="grow"
-                            placeholder="Email*"
-                            {...form.register('email')}
-                        />
-                    </label>
-                    <span className="text-red-500 dark:text-red-400 text-sm">
-                        {form.formState.errors['email']?.message}
-                    </span>
-                </div>
-                <div>
-                    <textarea
-                        className="textarea textarea-bordered flex items-center gap-2 bg-white dark:bg-gray-900 w-full"
-                        id="message"
-                        name="message"
-                        {...form.register('message')}
-                        placeholder="Message*"
-                    ></textarea>
-                    <span className="text-red-500 dark:text-red-400 text-sm">
-                        {form.formState.errors['message']?.message}
-                    </span>
-                </div>
-                <div>
-                    <HCaptcha
-                        sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                        onVerify={onHCaptchaChange}
+                <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex flex-row items-center gap-2">
+                    <FontAwesomeIcon icon="fa-duotone fa-user" />
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        className="grow"
+                        placeholder="Name"
+                        {...form.register('name')}
                     />
-                    <span className="text-red-500 dark:text-red-400 text-sm">
-                        {form.formState.errors['h-captcha-response']?.message}
-                    </span>
-                </div>
-                <div>
-                    <button
-                        type="submit"
-                        className={clsx(
-                            'btn btn-sm sm:btn-sm md:btn-md lg:btn-md w-full bg-[#0033A0] dark:bg-blue-600 text-white hover:bg-[#00257D] dark:hover:bg-blue-700 border-none',
-                            isLoading
-                                ? 'bg-gray-400 dark:bg-gray-700 cursor-not-allowed'
-                                : 'hover:bg-[#00257D] dark:hover:bg-blue-600'
-                        )}
-                        disabled={isLoading}
-                    >
-                        {isLoading ? (
-                            <FontAwesomeIcon icon="fa-sharp fa-regular fa-loader fa-spin-pulse" />
-                        ) : (
-                            'Send Message'
-                        )}
-                    </button>
-                </div>
+                </label>
+                <span className="text-error text-sm">
+                    {form.formState.errors['name']?.message}
+                </span>
+                <label className="input input-sm sm:input-sm md:input-md lg:input-md input-bordered flex flex-row items-center gap-2">
+                    <FontAwesomeIcon icon="fa-duotone fa-envelope" />
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        className="grow"
+                        placeholder="Email*"
+                        {...form.register('email')}
+                    />
+                </label>
+                <span className="text-error text-sm">
+                    {form.formState.errors['email']?.message}
+                </span>
+                <textarea
+                    className="textarea textarea-bordered flex items-center gap-2 w-full"
+                    id="message"
+                    name="message"
+                    {...form.register('message')}
+                    placeholder="Message*"
+                ></textarea>
+                <span className="text-error text-sm">
+                    {form.formState.errors['message']?.message}
+                </span>
+                <HCaptcha
+                    sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                    onVerify={onHCaptchaChange}
+                />
+                <span className="text-error text-sm">
+                    {form.formState.errors['h-captcha-response']?.message}
+                </span>
+                <button
+                    type="submit"
+                    className={clsx(
+                        'btn btn-active btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-md w-full',
+                        isLoading ? 'cursor-not-allowed' : ''
+                    )}
+                    disabled={isLoading}
+                >
+                    {isLoading ? (
+                        <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin" />
+                    ) : (
+                        'Send Message'
+                    )}
+                </button>
                 {error && (
                     <div role="alert" className="alert alert-error">
-                        {/* <CircleX className="h-5 w-5 shrink-0 stroke-current" /> */}
                         <FontAwesomeIcon icon="fa-duotone fa-circle-xmark" />
                         <span>{error}</span>
                     </div>
                 )}
                 <div className="flex flex-row items-center gap-2 text-sm sm:text-xs">
-                    {/* <Clock className="w-4 h-4" /> */}
                     <FontAwesomeIcon icon="fa-duotone fa-clock" />
                     <div className="">
                         <span className="font-medium">Avg. response:</span> 1-2
@@ -165,8 +148,8 @@ const ContactForm = () => {
                 id="success_dialog"
                 className="modal modal-bottom sm:modal-middle"
             >
-                <div className="modal-box bg-white dark:bg-gray-900">
-                    <h3 className="font-bold text-lg text-[#0033A0] dark:text-blue-600">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg text-primary">
                         Message Sent
                     </h3>
                     <p className="py-4">
@@ -176,7 +159,7 @@ const ContactForm = () => {
                     <div className="modal-action">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn bg-[#0033A0] dark:bg-blue-600 text-white hover:bg-[#00257D] dark:hover:bg-blue-700">
+                            <button className="btn btn-active btn-primary">
                                 Close
                             </button>
                         </form>

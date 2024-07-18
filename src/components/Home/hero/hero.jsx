@@ -1,13 +1,11 @@
 import { Suspense } from 'react';
-import Loading from '@/app/loading';
+import Link from 'next/link';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Image from 'next/image';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
-import Link from 'next/link';
-import { SOCIAL_MEDIA } from '@/common/constants/menu';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const HeroComponent = () => {
-    const resumeInfo = SOCIAL_MEDIA.filter((item) => item.name === 'Resume')[0];
     return (
         <div className="relative">
             <div
@@ -18,38 +16,39 @@ const HeroComponent = () => {
             >
                 <span
                     id="blackOverlay"
-                    className={`absolute h-full w-full bg-black opacity-10`}
+                    className={`absolute h-full w-full opacity-10`}
                 ></span>
             </div>
             <div className="relative container py-16">
                 <div className="flex flex-col items-start gap-4">
-                    <div className="bg-white dark:bg-gray-900 shadow-lg mockup-window">
-                        <div className="flex flex-wrap gap-4 justify-center p-6 border-t">
+                    <div className="shadow mockup-window bg-base-300 border">
+                        <div className="flex flex-wrap gap-4 justify-center px-4 py-8 bg-base-200">
                             <div className="flex flex-shrink-0">
                                 <Image
                                     src={fileSystemInfo.headshot}
                                     alt="headshot"
-                                    className="object-cover object-center rounded-lg dark:bg-gray-500 sm:w-32 sm:h-full w-20 h-full"
+                                    className="object-cover object-center rounded-box sm:w-32 sm:h-full w-20 h-full border border-base-100"
                                     width={200}
                                     height={300}
                                 />
                             </div>
                             <div className="flex flex-col gap-3">
-                                {/* <div> */}
-                                <p className="font-semibold text-[#0033A0] dark:text-white lg:text-xl md:text-lg sm:text-base text-base">
+                                <p className="font-semibold lg:text-xl md:text-lg sm:text-base text-base">
                                     About me
                                 </p>
                                 {/* download CV */}
-                                <Link
-                                    href={resumeInfo.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <button className="btn btn-xs sm:btn-sm md:btn-sm lg:btn-medium text-[#0033A0] bg-gray-100 hover:bg-gray-200 border-none hover:border-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white">
-                                        {resumeInfo.icon}
-                                        {resumeInfo.title}
-                                    </button>
-                                </Link>
+                                <div>
+                                    <Link
+                                        href={fileSystemInfo.resumeLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        role="button"
+                                        className="btn btn-active btn-xs sm:btn-sm md:btn-sm lg:btn-medium btn-primary"
+                                    >
+                                        <FontAwesomeIcon icon="fa-duotone fa-file-pdf" />
+                                        Download Resume
+                                    </Link>
+                                </div>
                                 <div className="space-y-1">
                                     {userBasicInfo.about?.map((item, index) => {
                                         return (
@@ -57,7 +56,6 @@ const HeroComponent = () => {
                                                 className="flex items-center gap-2 lg:text-base md:text-base sm:text-sm text-sm"
                                                 key={index}
                                             >
-                                                {/* <Dot className="h-[16px] w-[16px]" /> */}
                                                 {item}
                                             </div>
                                         );
@@ -66,7 +64,6 @@ const HeroComponent = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <ContactForm /> */}
                 </div>
             </div>
         </div>
@@ -75,7 +72,9 @@ const HeroComponent = () => {
 
 const Hero = () => {
     return (
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
+			<FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
+		</div>}>
             <HeroComponent />
         </Suspense>
     );

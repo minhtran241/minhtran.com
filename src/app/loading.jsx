@@ -1,7 +1,9 @@
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+
 const Loading = () => {
     return (
-        <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible py-12">
-            <span className="loading loading-bars loading-lg text-[#0033A0] dark:text-blue-600"></span>
+        <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-3x h-dvh">
+            <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
         </div>
     );
 };

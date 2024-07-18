@@ -14,10 +14,8 @@ const Progress = ({ data, className }) => {
 
     return (
         <div className="flex items-center justify-between gap-2">
-            <div className="w-28 text-sm text-gray-600 dark:text-gray-400">
-                {name}
-            </div>
-            <div className="relative flex h-2 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-gray-800">
+            <div className="w-28 text-sm">{name}</div>
+            <div className="relative flex h-2 flex-1 justify-center rounded-full bg-neutral-200">
                 {/* <div
                     className={cn(
                         className,
@@ -37,9 +35,7 @@ const Progress = ({ data, className }) => {
                     &ensp;
                 </motion.span>
             </div>
-            <div className="w-8 text-right text-sm text-gray-600 dark:text-gray-400">
-                {percent.toFixed(0)}%
-            </div>
+            <div className="w-8 text-right text-sm">{percent.toFixed(0)}%</div>
         </div>
     );
 };

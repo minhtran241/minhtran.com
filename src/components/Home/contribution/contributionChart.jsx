@@ -11,7 +11,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
-import { useTheme } from 'next-themes';
 import {
     getDailyChartData,
     getMonthlyChartData,
@@ -42,7 +41,6 @@ const DEFAULT_TIME_RANGE = Object.keys(GET_CHART_DATA)[0];
  */
 const ContributionChart = ({ contributionCollection }) => {
     // State variables
-    const { theme } = useTheme();
     // { totalContributions, weeks, months }
     const contrCalendar = contributionCollection.contributionCalendar;
     const [selectedTimeRange, setSelectedTimeRange] =
@@ -96,30 +94,32 @@ const ContributionChart = ({ contributionCollection }) => {
         },
     };
 
-    // Check for dark mode and adjust colors accordingly
-    const isDarkMode = theme === 'dark';
-    if (isDarkMode && chartData) {
-        chartData.datasets[0].borderColor = 'rgba(0, 51, 160, 1)'; // Adjust line color for dark mode
-        chartData.datasets[0].backgroundColor = 'rgba(0, 51, 160, 1)'; // Adjust point color for dark mode
+    if (chartData) {
+        // add primary daisyUI color to line
+        chartData.datasets[0].borderColor = '#4B5563';
+        chartData.datasets[0].backgroundColor = '#4B5563';
+        chartData.datasets[0].pointBackgroundColor = '#4B5563';
+        chartData.datasets[0].pointBorderColor = '#4B5563';
+        chartData.datasets[0].pointHoverBackgroundColor = '#4B5563';
     }
 
     // Render the ContributionChart component
     return (
-        <div className="flex flex-col gap-4 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
+        <div className="flex flex-col gap-4 bg-base-100 border rounded-box p-4">
             {/* Time range selector */}
             <div className="flex flex-wrap justify-between gap-4">
                 <div className="flex flex-col">
-                    <h2 className="text-gray-800 dark:text-gray-100 font-semibold lg:text-lg text-base">
+                    <h2 className="card-title lg:text-lg text-base">
                         {selectedTimeRange.charAt(0).toUpperCase() +
                             selectedTimeRange.slice(1)}{' '}
                         Contributions
                     </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm opacity-70">
                         {contrCalendar.totalContributions} Total Contributions
                     </p>
                 </div>
                 <select
-                    className="select select-bordered max-w-xs bg-white dark:bg-gray-900 dark:text-white"
+                    className="select select-bordered max-w-xs"
                     onChange={(e) => setSelectedTimeRange(e.target.value)}
                     defaultValue={selectedTimeRange}
                 >

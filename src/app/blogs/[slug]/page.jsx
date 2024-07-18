@@ -1,16 +1,16 @@
 import { Suspense } from 'react';
-import ShareButtons from '@/components/Common/shareButtons/shareButtons';
+import ShareButtons from '@/components/Post/shareButtons/shareButtons';
 import PostMetadata from '@/components/Post/postMetadata/postMetadata';
 import fs from 'fs/promises';
 import path from 'path';
-import MarkdownRender from '@/components/Common/markdownRenderer/markdownRenderer';
 import readingTime from 'reading-time';
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import Link from 'next/link';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
-import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import MarkdownRender from '@/common/elements/MarkdownRenderer';
 
 // SEO metadata
 export const generateMetadata = async ({ params }) => {
@@ -21,14 +21,14 @@ export const generateMetadata = async ({ params }) => {
         image: p.thumbnail,
         author: 'Minh Tran',
         keywords: p.tags,
-        canonical: process.env.NEXT_PUBLIC_BASE_URL + `/blog/${p.slug}`,
+        canonical: process.env.NEXT_PUBLIC_BASE_URL + `/blogs/${p.slug}`,
         openGraph: {
             type: 'article',
             article: {
                 publishedTime: p?.created_at,
                 authors: ['Minh Tran'],
             },
-            url: process.env.NEXT_PUBLIC_BASE_URL + `/blog/${p?.slug}`,
+            url: process.env.NEXT_PUBLIC_BASE_URL + `/blogs/${p?.slug}`,
             images: [
                 {
                     url: p?.thumbnail,
@@ -41,11 +41,7 @@ export const generateMetadata = async ({ params }) => {
 
 // * Fetch data from local JSON
 const DATA_ATTRS_FILENAME = 'blogs.json';
-const DATA_ATTRS_DIR = path.join(
-    process.cwd(),
-    fileSystemInfo.dataFetchDir,
-    'blog'
-);
+const DATA_ATTRS_DIR = path.join(fileSystemInfo.dataFetchDir, 'blogs');
 const DATA_ATTRS_FILE = path.join(DATA_ATTRS_DIR, DATA_ATTRS_FILENAME);
 const DATA_CONTENTS_DIR = path.join(DATA_ATTRS_DIR, 'contents');
 
@@ -82,11 +78,11 @@ const getPost = async (slug) => {
 const SinglePostContent = ({ post }) => {
     const BREADCRUMBS = [
         {
-            href: '/blog',
+            href: '/blogs',
             text: 'Blogs',
         },
         {
-            href: `/blog/${post.slug}`,
+            href: `/blogs/${post.slug}`,
             text: post.title,
         },
     ];
@@ -107,12 +103,10 @@ const SinglePostContent = ({ post }) => {
             <div className="content-center items-center justify-center">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-full justify-center lg:w-9/12">
-                        <h1 className="font-bold text-[#0033A0] dark:text-blue-600 mb-3 lg:text-3xl md:text-2xl sm:text-xl text-xl">
+                        <h1 className="font-bold text-primary  mb-3 lg:text-3xl md:text-2xl sm:text-xl text-xl">
                             {post.title}
                         </h1>
-                        <p className="text-gray-600 dark:text-gray-400">
-                            {createdAtText}
-                        </p>
+                        <p className="">{createdAtText}</p>
                     </div>
                 </div>
             </div>
@@ -135,35 +129,35 @@ const SinglePostContent = ({ post }) => {
                                 className="rounded-box"
                             />
                         </div>
-                        <p className="mb-5 font-semibold border-b border-[#e9e9e9] pb-[20px] dark:border-white dark:border-opacity-10 lg:text-base md:text-base sm:text-sm text-sm text-gray-600 dark:text-gray-400">
+                        <p className="mb-5 font-semibold border-b border-gray-300 pb-[20px] lg:text-base md:text-base sm:text-sm text-sm">
                             {post.description}
                         </p>
                         <div className="flex flex-col gap-4">
                             <MarkdownRender mdString={post.content} />
                             <div className="flex flex-row gap-2">
                                 <h5 className="mb-3 font-semibold">Tags:</h5>
-                                <div className="mb-5 flex flex-wrap gap-2">
+                                <div className="card-actions">
                                     {post.tags.map((tag, index) => (
-                                        <span
+                                        <div
                                             key={index}
-                                            className="flex flex-row items-center gap-1 px-2 py-1 text-xs font-semibold text-[#0033A0] dark:text-blue-600 border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer"
+                                            className="badge badge-outline flex items-center gap-1"
                                         >
                                             <FontAwesomeIcon icon="fa-duotone fa-tag" />
                                             {tag}
-                                        </span>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
                             {/* Prev and Next cards */}
                             <div className="justify-between grid grid-cols-1 gap-8 md:grid-cols-2">
                                 {post.prev && (
-                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-box hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer transition duration-300">
-                                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary cursor-pointer transition duration-300">
+                                        <p className="text-sm text-gray-500">
                                             Older Blog
                                         </p>
                                         <Link
-                                            href={`/blog/${post.prev.slug}`}
-                                            className="flex items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold"
+                                            href={`/blogs/${post.prev.slug}`}
+                                            className="flex items-center gap-4 text-primary  font-semibold"
                                         >
                                             <FontAwesomeIcon icon="fa-duotone fa-chevrons-left" />
                                             {post.prev.title.length > 100
@@ -176,13 +170,13 @@ const SinglePostContent = ({ post }) => {
                                     </div>
                                 )}
                                 {post.next && (
-                                    <div className="flex flex-col gap-1 border border-gray-300 dark:border-gray-600 p-4 rounded-box hover:border-[#0033A0] dark:hover:border-blue-600 cursor-pointer transition duration-300">
-                                        <p className="text-sm text-right text-gray-600 dark:text-gray-400">
+                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary cursor-pointer transition duration-300">
+                                        <p className="text-sm text-right text-gray-500">
                                             Newer Blog
                                         </p>
                                         <Link
-                                            href={`/blog/${post.next.slug}`}
-                                            className="flex flex-row items-center gap-4 text-[#0033A0] dark:text-blue-600 font-semibold text-right"
+                                            href={`/blogs/${post.next.slug}`}
+                                            className="flex items-center gap-4 text-primary font-semibold text-right"
                                         >
                                             {post.next.title.length > 100
                                                 ? post.next.title.slice(

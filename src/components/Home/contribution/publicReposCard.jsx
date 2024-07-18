@@ -7,13 +7,13 @@ import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 
 const PublicReposCard = ({ ghInfo }) => {
     return (
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
+        <div className="bg-base-100 border rounded-box p-4">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-col">
-                    <h1 className="font-semibold lg:text-lg text-base">
+                    <h1 className="card-title lg:text-lg text-base">
                         {userBasicInfo.fullName}&apos;s Repositories
                     </h1>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm opacity-70">
                         {ghInfo.user.repositories.nodes.length}/
                         {ghInfo.user.repositories.totalCount} Repositories
                     </p>
@@ -34,19 +34,19 @@ const PublicReposCard = ({ ghInfo }) => {
                             addSuffix: true,
                         });
                         return (
-                            <li key={index} className="flex gap-2 items-center">
+                            <li
+                                key={index}
+                                className="flex gap-2 items-center hover:text-primary"
+                            >
                                 <span className="fa-li">
-                                    <FontAwesomeIcon icon="fa-duotone fa-code-commit" />
+                                    <FontAwesomeIcon icon="fa-duotone fa-book-bookmark" />
                                 </span>
                                 <Link
                                     href={repo.url}
                                     target="_blank"
-                                    className="text-[#0033A0] dark:text-blue-600"
+                                    className=""
                                 >
-                                    {repo.name}{' '}
-                                    <span className="text-gray-600 dark:text-gray-400">
-                                        ({distance})
-                                    </span>
+                                    {repo.name} ({distance})
                                 </Link>
                             </li>
                         );

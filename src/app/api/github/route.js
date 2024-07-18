@@ -1,5 +1,5 @@
 import { userBasicInfo } from '@/common/constants/userBasic';
-import client from '@/services/apollo-client';
+import client from '@/common/libs/apollo';
 import { gql } from '@apollo/client';
 import { NextResponse } from 'next/server';
 

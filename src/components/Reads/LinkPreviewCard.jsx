@@ -2,9 +2,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { extractMetaTags } from '@/app/actions';
 import Image from 'next/image';
-import Loading from '@/app/loading';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
-// import { ExternalLink } from 'lucide-react';
 
 const LinkPreviewCard = async ({ url }) => {
     //here calling the function
@@ -13,20 +11,19 @@ const LinkPreviewCard = async ({ url }) => {
 
     if (!data) {
         return (
-            <div className="hover:bg-gray-100 dark:hover:bg-gray-800">
-                <Loading />
+            <div className="p-6 fa-2x">
+                <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
             </div>
         );
     }
 
     return (
         <div
-            className="p-6 bg-gray-100 dark:bg-gray-800 rounded-box hover:border border border-gray-200 dark:border-gray-700 hover:border-[#0033A0] dark:hover:border-blue-600 transition duration-300 ease-in-out tooltip dark:tooltip-info !text-start"
+            className="py-4 px-6 rounded-box bg-base-300 border border-base-100 hover:border-primary transition duration-300 ease-in-out tooltip !text-start"
             data-tip={data.title}
         >
             <div className="absolute top-2 right-2">
-                {/* <ExternalLink className="h-3 w-3 text-[#0033A0] dark:text-blue-600" /> */}
-                <FontAwesomeIcon icon="fa-duotone fa-square-arrow-up-right text-[#0033A0] dark:text-blue-600" />
+                <FontAwesomeIcon icon="fa-duotone fa-square-arrow-up-right text-secondary" />
             </div>
             <Link
                 href={url}
@@ -41,10 +38,12 @@ const LinkPreviewCard = async ({ url }) => {
                     className="h-14 w-14 rounded avatar"
                 />
                 <div className="flex flex-col gap-1">
-                    <p className="font-semibold text-sm line-clamp-1">
+                    <p className="font-semibold line-clamp-1 text-sm">
                         {data.title}
                     </p>
-                    <p className="line-clamp-2 text-xs">{data.description}</p>
+                    <p className="line-clamp-2 text-xs opacity-70">
+                        {data.description}
+                    </p>
                 </div>
             </Link>
         </div>

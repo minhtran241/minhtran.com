@@ -6,19 +6,18 @@ import '../../assets/fa6/css/solid.min.css';
 import localFont from 'next/font/local';
 import Navbar from '@/components/Common/navbar/Navbar';
 import Footer from '@/components/Common/footer/Footer';
-// import { Inter as FontSans } from 'next/font/google';
 import { cn } from '@/common/libs/cn';
-import { ThemeProvider } from '@/components/Common/themeProvider/theme-provider';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import SpotifyComponent from '@/components/spotifyComponent';
 import {
     SITE_URL,
     SITE_TITLE,
     SITE_DESCRIPTION,
     SITE_NAME,
 } from '@/common/constants/site';
-import CustomCursor from '@/components/Common/cursor/CustomCursor';
+import CustomCursor from '@/common/elements/CustomCursor';
+import ScrollToTopButton from '@/common/elements/ScrollToTopButton';
+import SpotifyComponent from '@/components/Common/spotifyComponent';
 
 const MazzardH = localFont({
     src: [
@@ -98,11 +97,6 @@ const MazzardM = localFont({
     variable: '--font-mazzardm',
 });
 
-// export const fontSans = FontSans({
-//     subsets: ['latin'],
-//     variable: '--font-sans',
-// });
-
 export const metadata = {
     metadataBase: new URL(SITE_URL),
     title: {
@@ -137,7 +131,7 @@ export const metadata = {
             },
         ],
     },
-    keywords: ['minhtran241', 'Next.js', 'React', 'Node.js', 'Tailwind CSS'],
+    keywords: ['minhtran241', 'Next.js', 'Node.js', 'Tailwind CSS', 'daisyUI'],
     creator: 'minhtran241',
     openGraph: {
         url: SITE_URL,
@@ -196,22 +190,16 @@ export default function RootLayout({ children }) {
             <body
                 className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh`}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    <Navbar />
-                    <div className="dark:text-white text-black bg-white dark:bg-black">
-                        <CustomCursor />
-                        {children}
-                        <SpeedInsights />
-                        <Analytics />
-                    </div>
-                    <SpotifyComponent />
-                    <Footer />
-                </ThemeProvider>
+                <Navbar />
+                <div className="">
+                    <CustomCursor />
+                    {children}
+                    <ScrollToTopButton />
+                    <SpeedInsights />
+                    <Analytics />
+                </div>
+                <SpotifyComponent />
+                <Footer />
             </body>
         </html>
     );

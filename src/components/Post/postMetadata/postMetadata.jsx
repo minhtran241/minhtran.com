@@ -1,5 +1,4 @@
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
-// import { Clock, Minus, PenLine, WholeWord } from 'lucide-react';
 
 const PostMetadata = ({ post }) => {
     const updatedAtText = new Date(post.updated_at).toLocaleDateString(
@@ -13,7 +12,7 @@ const PostMetadata = ({ post }) => {
     );
     return (
         <div className="flex flex-col items-center">
-            <div className="mb-5 flex flex-col text-sm font-medium text-gray-600 dark:text-gray-400">
+            <div className="mb-5 flex flex-col text-sm font-medium">
                 <div className="mr-5 flex flex-row gap-2 items-center">
                     <FontAwesomeIcon icon="fa-duotone fa-file-circle-info" />
                     {post.word_count} words

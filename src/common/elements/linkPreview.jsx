@@ -38,7 +38,7 @@ const LinkPreview = async ({ url }) => {
                         <p className="text-sm text-base-content-secondary">
                             {data.description}
                         </p>
-                        <p className="text-sm text-base-content-secondary hover:text-[#0033A0] dark:hover:text-blue-600 underline">
+                        <p className="text-sm text-base-content-secondary hover:text-primary underline">
                             {url}
                         </p>
                     </div>

@@ -11,6 +11,9 @@ const CustomCursor = () => {
     // State to track click event
     const [clicked, setClicked] = useState(false);
 
+    const { width } = useWindowSize();
+    const isMobile = width < 480;
+
     useEffect(() => {
         // Event listener for mouse movement
         const handleMouseMove = (e) => {
@@ -37,9 +40,6 @@ const CustomCursor = () => {
         };
     }, []); // useEffect runs only once on mount
 
-    const { width } = useWindowSize();
-    const isMobile = width < 480;
-
     return isMobile ? (
         <></>
     ) : (
@@ -50,7 +50,7 @@ const CustomCursor = () => {
                 className={`fixed pointer-events-none transition-all -translate-x-1/2 -translate-y-1/2 ease-in duration-300 z-50
 				${clicked ? 'scale-150' : ''}`}
             >
-                <FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles fa-gradient" />
+                <FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles text-accent" />
             </div>
         </>
     );

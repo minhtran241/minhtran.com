@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
-import { WAKATIME_USERNAME } from '@/common/constants/wakatimeAPI';
 import { TIMEZONE } from '@/common/constants/timezone';
 
 const CodingActiveList = ({ data }) => {
@@ -52,7 +51,7 @@ const CodingActiveList = ({ data }) => {
             total: getLanguagesTotalTimeDisplay,
             data: data?.languages,
             styles: {
-                bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
+                bg: 'bg-gradient-to-r from-primary to-secondary',
             },
         },
         {
@@ -60,7 +59,7 @@ const CodingActiveList = ({ data }) => {
             total: getEditorTotalTimeDisplay,
             data: data?.categories,
             styles: {
-                bg: 'bg-gradient-to-r from-[#0033A0] to-blue-600 dark:from-blue-600 dark:to-blue-900',
+                bg: 'bg-gradient-to-r from-primary to-secondary',
             },
         },
     ];
@@ -71,7 +70,7 @@ const CodingActiveList = ({ data }) => {
 
     return (
         <Link
-            href={`https://wakatime.com/@${WAKATIME_USERNAME}`}
+            href={`https://wakatime.com/@${process.env.WAKATIME_USERNAME}`}
             target="_blank"
             className="mt-2 flex flex-col gap-6 sm:flex-row sm:gap-4"
         >
@@ -80,13 +79,13 @@ const CodingActiveList = ({ data }) => {
                     key={item?.title}
                     className={clsx(
                         // item?.styles?.bg,
-                        'h-full w-full relative flex flex-1 flex-col border border-gray-200 dark:border-gray-700 rounded-box bg-white dark:bg-black p-4'
+                        'h-full w-full relative flex flex-1 flex-col bg-base-100 border rounded-box p-4'
                     )}
                 >
-                    <p className="font-semibold lg:text-lg text-base text-gray-800 dark:text-gray-100">
+                    <p className="card-title lg:text-lg text-base">
                         {item?.title}
                     </p>
-                    <p className="text-sm text-[#0033A0] dark:text-blue-600">
+                    <p className="text-sm opacity-70">
                         Last updated {distance}
                     </p>
                     <ul className="flex flex-col gap-1 py-3">

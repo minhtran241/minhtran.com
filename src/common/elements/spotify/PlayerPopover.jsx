@@ -17,7 +17,7 @@ const PlayerPopover = ({ isShow, playing }) => {
             leaveTo="opacity-0 translate-y-1"
         >
             <Popover.Panel className="absolute bottom-10 left-0 z-20 w-60">
-                <div className="flex flex-col gap-5 overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-black dark:text-white">
+                <div className="flex flex-col gap-5 overflow-hidden rounded-lg bg-base-200 0 p-4 shadow-lg ring-1 ring-black ring-opacity-5">
                     {albumImageUrl && (
                         <Image
                             className="rounded-md"
@@ -34,17 +34,13 @@ const PlayerPopover = ({ isShow, playing }) => {
                             <div className="text-[15px] text-green-500">
                                 {title}
                             </div>
-                            <div className="text-sm text-gray-700 dark:text-gray-300">
+                            <div className="text-sm text-base-content">
                                 {artist}
                             </div>
                         </div>
                         <div className="flex flex-col text-[13px]">
-                            <span className="text-gray-500 dark:text-gray-500">
-                                Album:
-                            </span>
-                            <span className="text-gray-600 dark:text-gray-400">
-                                {album}
-                            </span>
+                            <span className="text-gray-500">Album:</span>
+                            <span className="text-base-content">{album}</span>
                         </div>
                     </div>
                 </div>

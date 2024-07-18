@@ -6,11 +6,6 @@
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
 
 </div>
-<br />
-
-Light Mode | Dark Mode
---- | ---
-![Light Mode](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-light.png) | ![Dark Mode](https://github.com/minhtran241/minhtran.com/blob/main/public/readme/home-dark.png)
 
 ## Introduction
 
@@ -23,7 +18,6 @@ Feel free to use this website as a reference, for inspiration, or as a template,
 If you find this website helpful, please consider leaving a rating.
 
 If you have any questions, suggestions, or anything else, don't hesitate to contact me!
-<br /><br />
 
 ## Tech Stack
 
@@ -159,14 +153,24 @@ GITHUB_API_URL=
 
 # WakaTime
 WAKATIME_API_KEY=
+WAKATIME_USERNAME=
 
 # Spotify
 SPOTIFY_CLIENT_ID=
 SPOTIFY_CLIENT_SECRET=
 SPOTIFY_REFRESH_TOKEN=
+SPOTIFY_CODE=
 
-# Contact Form
+# Web3Forms
 CONTACT_FORM_API_KEY=
+HCAPTCHA_SITE_KEY=
+
+# Umami
+UMAMI_API_CLIENT_USER_ID=
+UMAMI_SHARE_URL=
+UMAMI_WEBSITE_ID=
+UMAMI_API_KEY=
+UMAMI_API_CLIENT_ENDPOINT=
 ```
 
 ### 5. Run the development server

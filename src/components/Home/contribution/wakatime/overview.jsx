@@ -28,11 +28,11 @@ const Overview = ({ data }) => {
 };
 
 const OverviewItem = ({ label, value }) => (
-    <div className="flex flex-col bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
-        <span className="text-sm text-gray-600 dark:text-gray-400">
-            {label}
+    <div className="flex flex-col bg-base-100 border rounded-box p-4">
+        <span className="text-sm">{label}</span>
+        <span className="card-title lg:text-lg text-base">
+            {value}
         </span>
-        <span className="font-semibold lg:text-lg text-base">{value}</span>
     </div>
 );
 

@@ -4,11 +4,10 @@ import { Popover } from '@headlessui/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import useSWR from 'swr';
-import AnimatedBars from './animatedBars';
-import DevicePopover from './devicePopover';
-import PlayerPopover from './playerPopover';
-import { fetcher } from '@/services/fetcher';
-// import FontAwesomeIcon from './FontAwesomeIcon';
+import PlayerPopover from './PlayerPopover';
+import AnimatedBars from './AnimatedBars';
+import DevicePopover from './DevicePopover';
+import { fetcher } from '@/common/libs/fetcher';
 
 const NowPlayingBar = () => {
     const [isShowDeviceList, setShowDeviceList] = useState(false);
@@ -30,7 +29,7 @@ const NowPlayingBar = () => {
     if (!playingData?.songUrl) return null;
 
     return (
-        <div className="fixed bottom-0 z-[99999] hidden w-full lg:block">
+        <div className="fixed bottom-0 z-[99998] hidden w-full lg:block">
             <div className="flex justify-between bg-green-400 px-4 pb-0.5 pt-[2.5px] text-[14px] text-neutral-800 dark:bg-green-500 dark:text-neutral-900">
                 {playingData?.songUrl ? (
                     <Popover className="relative">
@@ -76,7 +75,6 @@ const NowPlayingBar = () => {
                     </Popover>
                 ) : (
                     <div className="flex items-center gap-1">
-                        {/* <Disc3 absoluteStrokeWidth size={16} className="mr-1" /> */}
                         <Image
                             src="/logos/spotify.svg"
                             alt="Spotify"
@@ -84,7 +82,6 @@ const NowPlayingBar = () => {
                             height={16}
                             className="mr-1"
                         />
-                        {/* <FontAwesomeIcon icon="fa-brands fa-spotify" /> */}
                         <div>Not Playing</div>
                     </div>
                 )}
@@ -97,7 +94,6 @@ const NowPlayingBar = () => {
                             onMouseLeave={() => setShowDeviceList(false)}
                         >
                             <div className="flex items-center gap-1">
-                                {/* <Disc3 size={16} className="mr-0.5" /> */}
                                 <Image
                                     src="/logos/spotify.svg"
                                     alt="Spotify"
@@ -105,7 +101,6 @@ const NowPlayingBar = () => {
                                     height={16}
                                     className="mr-0.5"
                                 />
-                                {/* <FontAwesomeIcon icon="fa-brands fa-spotify" /> */}
                                 <div>
                                     Listening on{' '}
                                     <span className="font-medium">

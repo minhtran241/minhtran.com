@@ -1,4 +1,4 @@
-import { PAIR_DEVICES } from '../../data/use/uses';
+import { PAIR_DEVICES } from '../../data/uses';
 import axios from 'axios';
 import querystring from 'querystring';
 

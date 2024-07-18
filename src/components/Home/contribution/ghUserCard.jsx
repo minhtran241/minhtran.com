@@ -29,7 +29,7 @@ const detailsData = (data) => {
 
 const GHUserCard = ({ ghInfo, username }) => {
     return (
-        <div className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-box p-4">
+        <div className="rounded-box p-4 bg-base-100 border">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-row items-center justify-center gap-4">
                     <div className="avatar">
@@ -43,13 +43,13 @@ const GHUserCard = ({ ghInfo, username }) => {
                         </div>
                     </div>
                     <div className="flex flex-col">
-                        <h1 className="font-semibold lg:text-lg text-base">
+                        <h1 className="card-title lg:text-lg text-base">
                             {ghInfo.user.name}
                         </h1>
                         <Link
                             href={`https://github.com/${username}`}
                             target="_blank"
-                            className="text-sm text-[#0033A0] dark:text-blue-600"
+                            className="text-sm opacity-70 hover:text-primary"
                         >
                             @{username}
                         </Link>
@@ -62,10 +62,6 @@ const GHUserCard = ({ ghInfo, username }) => {
                     className="fa-ul md:text-base text-sm"
                     style={{ '--fa-li-width': '4em' }}
                 >
-                    {/* <div className="flex gap-2 items-center">
-                        <FontAwesomeIcon icon="fa-duotone fa-location-dot" />
-                        <span className="text-sm">{ghInfo.user.location}</span>
-                    </div> */}
                     <li>
                         <span class="fa-li">
                             <FontAwesomeIcon icon="fa-duotone fa-location-dot" />

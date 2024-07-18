@@ -1,7 +1,7 @@
-import { ARTICLE_LIST, PAPER_LIST } from '../../../data/read/readingList';
+import { ARTICLE_LIST, PAPER_LIST } from '../../../data/readingList';
 import LinkPreviewCard from '@/components/Reads/LinkPreviewCard';
-import Breakline from '@/common/elements/breakline';
-import Breadcrumbs from '@/components/Common/breadcrumbs/Breadcrumbs';
+import Breakline from '@/common/elements/Breakline';
+import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 export const maxDuration = 60;
@@ -34,7 +34,7 @@ const ReadsPage = () => {
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4">
                     <section className="flex flex-col gap-8">
-                        <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                        <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
                             <FontAwesomeIcon icon="fa-duotone fa-file-magnifying-glass" />
                             <h1 className="capitalize">Papers</h1>
                         </div>
@@ -46,7 +46,7 @@ const ReadsPage = () => {
                     </section>
                     <Breakline />
                     <section className="flex flex-col gap-8">
-                        <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
+                        <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
                             <FontAwesomeIcon icon="fa-duotone fa-newspaper" />
                             <h1 className="capitalize">Articles</h1>
                         </div>

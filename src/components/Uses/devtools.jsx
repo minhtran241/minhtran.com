@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { USES } from '../../../data/use/uses';
+import { USES } from '../../../data/uses';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const DEVTOOLS = USES.DevTools;
@@ -8,8 +8,7 @@ const DEVTOOLS = USES.DevTools;
 const DevTools = () => {
     return (
         <section className="flex flex-col gap-8">
-            <div className="flex flex-row items-center gap-2 text-[#0033A0] dark:text-white font-semibold lg:text-xl md:text-lg text-base">
-                {/* <Code2 className="lg:h-6 lg:w-6 h-5 w-5" /> */}
+            <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
                 <FontAwesomeIcon icon="fa-duotone fa-code" />
                 <h1 className="capitalize">Development Tools</h1>
             </div>
@@ -19,7 +18,7 @@ const DevTools = () => {
                         href={item.href}
                         target="_blank"
                         key={index}
-                        className="flex flex-col gap-4 hover:scale-[101%] transition-all duration-300"
+                        className="flex flex-col gap-4 hover:scale-[101%] hover:text-primary transition-all duration-300"
                     >
                         <div className="flex items-center justify-center">
                             <Image
@@ -34,7 +33,7 @@ const DevTools = () => {
                             <h3 className="font-semibold lg:text-lg md:text-base text-sm">
                                 {item.name}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 lg:text-base md:text-sm text-xs">
+                            <p className="lg:text-base md:text-sm text-xs">
                                 {item.metadata}
                             </p>
                         </div>

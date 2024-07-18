@@ -13,7 +13,7 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 const ShareButton = ({ onClick, children }) => (
     <div
         onClick={onClick}
-        className="btn btn-circle btn-sm flex items-center justify-center dark:bg-gray-800 bg-gray-100 dark:text-gray-300 text-gray-700 dark:hover:bg-gray-700 hover:bg-gray-200"
+        className="btn btn-circle btn-sm flex items-center justify-center bg-base-300 hover:bg-primary hover:text-primary-content"
     >
         {children}
     </div>
