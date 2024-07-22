@@ -29,7 +29,7 @@ const Contribution = () => {
     const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${ghData?.user?.contributionsCollection?.contributionCalendar?.totalContributions} commits across ${ghData?.user?.repositories?.totalCount} public repositories.`;
 
     return (
-        <div className="items-center justify-center py-12 bg-base-300">
+        <div className="items-center justify-center">
             <div className="container">
                 <SectionLabel
                     title={sectionTitle}

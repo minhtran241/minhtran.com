@@ -37,11 +37,12 @@ const ProjectsComponent = async () => {
         .slice(0, PROJECT_FETCH_LIMIT);
 
     return (
-        <div className="">
-            <div className="py-12 container">
+        <div className="bg-primary text-primary-content">
+            <div className="container py-12">
                 <SectionLabel
                     title={SECTION_TITLE}
                     description={SECTION_DESCRIPTION}
+                    primary={false}
                 />
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                     {projects.map((project, index) => (

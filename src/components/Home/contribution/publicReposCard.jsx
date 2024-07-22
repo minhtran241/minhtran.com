@@ -7,7 +7,7 @@ import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 
 const PublicReposCard = ({ ghInfo }) => {
     return (
-        <div className="bg-base-100 border rounded-box p-4">
+        <div className="rounded-box p-4 border shadow bg-base-200">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-col">
                     <h1 className="card-title lg:text-lg text-base">

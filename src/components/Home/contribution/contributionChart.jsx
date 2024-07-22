@@ -105,7 +105,7 @@ const ContributionChart = ({ contributionCollection }) => {
 
     // Render the ContributionChart component
     return (
-        <div className="flex flex-col gap-4 bg-base-100 border rounded-box p-4">
+        <div className="flex flex-col gap-4 rounded-box p-4 border shadow bg-base-200">
             {/* Time range selector */}
             <div className="flex flex-wrap justify-between gap-4">
                 <div className="flex flex-col">

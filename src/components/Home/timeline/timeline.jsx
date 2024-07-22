@@ -7,7 +7,10 @@ import SectionLabel from '../sectionLabel/sectionLabel';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 
 // * FETCH MILESTONES FROM LOCAL JSON
-const DATA_ATTRS_FILE = path.join(fileSystemInfo.dataFetchDir, 'milestones.json');
+const DATA_ATTRS_FILE = path.join(
+    fileSystemInfo.dataFetchDir,
+    'milestones.json'
+);
 const getMilestones = async () => {
     const milestonesData = await fs.readFile(
         path.join(DATA_ATTRS_FILE),
@@ -28,11 +31,12 @@ const TimelineComponent = async () => {
     const milestones = await getMilestones();
 
     return (
-        <div className="">
+        <div className="bg-primary text-primary-content">
             <div className="container py-12">
                 <SectionLabel
                     title={SECTION_TITLE}
                     description={SECTION_DESCRIPTION}
+                    primary={false}
                 />
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {milestones.map((milestone, index) => (

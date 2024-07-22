@@ -36,23 +36,23 @@ const SkillsComponent = async () => {
     const skills = await getSKills();
 
     return (
-        <div className="items-center justify-center py-12 bg-base-300">
-            <div className="container">
+        <div className="flex items-center justify-center">
+            <div className="container pb-12">
                 <SectionLabel
                     title={SECTION_TITLE}
                     description={SECTION_DESCRIPTION}
                 />
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2 mt-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 xl:grid-cols-2 mt-8">
                     {skills.map((skill, index) => (
                         <div
-                            className="rounded-box p-4 bg-base-100 border hover:border-primary transition duration-300 ease-in-out"
+                            className="rounded-box p-4 border shadow-lg bg-base-200 transition-shadow duration-300 hover:shadow-xl"
                             key={index}
                         >
                             <div className="flex items-center gap-2 mb-5">
-                                <div className="w-6 h-6 inline-flex items-center justify-center rounded-full bg-primary text-white fa-sm">
+                                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white">
                                     {icons[skill.name]}
                                 </div>
-                                <h2 className="card-title lg:text-lg text-base">
+                                <h2 className="card-title text-lg">
                                     {skill.name}
                                 </h2>
                             </div>
@@ -61,8 +61,8 @@ const SkillsComponent = async () => {
                                     <div key={index} className="rounded">
                                         <img
                                             src={badge}
-                                            alt="skill"
-                                            className="!rounded w-auto lg:h-6 h-5"
+                                            alt={`${skill.name} badge`}
+                                            className="rounded w-auto h-6"
                                         />
                                     </div>
                                 ))}
