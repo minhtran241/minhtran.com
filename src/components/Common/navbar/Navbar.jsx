@@ -4,10 +4,11 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import WebStats from './webStats/webStats';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import ThemeChanger from '@/common/elements/ThemeChanger';
+// import Image from 'next/image';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-primary text-primary-content sticky top-0 z-50">
+        <div className="navbar bg-primary text-primary-content sticky z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -30,6 +31,13 @@ const Navbar = () => {
                 >
                     {userBasicInfo.fullName}
                 </Link>
+                {/* <Image
+                    src="/memojihello.png"
+                    alt="headshot"
+                    className="max-w-sm rounded-lg"
+                    width={40}
+                    height={40}
+                /> */}
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

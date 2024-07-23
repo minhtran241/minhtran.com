@@ -7,21 +7,20 @@ const ThemeChanger = () => {
     const themeValues = [
         'light',
         'dark',
-		'cupcake',
-		'cyberpunk',
+        'cupcake',
+        'cyberpunk',
         'nord',
         'night',
-		'autumn',
+        'autumn',
         'winter',
         'dracula',
-		'forest',
-		'sunset',
-		'cmyk', 
+        'sunset',
+        'cmyk',
         'corporate',
         'synthwave',
         'retro',
         'fantasy',
-		'lofi'
+        'lofi',
     ];
 
     useEffect(() => {

@@ -47,7 +47,7 @@ const CustomCursor = () => {
             <div
                 style={{ top: position.y, left: position.x }}
                 ref={cursorRef}
-                className={`fixed pointer-events-none transition-all -translate-x-1/2 -translate-y-1/2 ease-in duration-300 z-50
+                className={`fixed pointer-events-none transition-all -translate-x-1/2 -translate-y-1/2 ease-in duration-300 z-[99999]
 				${clicked ? 'scale-150' : ''}`}
             >
                 <FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles text-accent" />

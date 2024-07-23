@@ -2,6 +2,7 @@ import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Link from 'next/link';
 import { MENU_TABS } from '@/common/constants/menu';
+// import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -38,13 +39,20 @@ const Footer = () => {
                 </div>
             </nav>
             <aside className="flex items-center">
-                <span>A work by </span>
+                <span>Made by </span>
                 <Link
                     href={userBasicInfo.githubLink || '#'}
                     className="link link-hover"
                 >
                     {userBasicInfo.fullName}
                 </Link>
+                {/* <Image
+                    src="/memojialo.png"
+                    alt="headshot"
+                    className="max-w-sm rounded-lg"
+                    width={20}
+                    height={20}
+                /> */}
                 <span>@ {new Date().getFullYear()}</span>
             </aside>
         </footer>
