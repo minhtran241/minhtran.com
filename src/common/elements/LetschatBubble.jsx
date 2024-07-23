@@ -13,39 +13,39 @@ const LetschatBubble = () => {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 m-10 z-[99998]">
+        <div className="fixed top-1/4 right-0 z-[99998] m-10">
             {isExpanded ? (
                 <div
-                    className="relative animate-bounce rounded-full shadow-lg flex items-center justify-center p-2 md:p-3 bg-accent tooltip tooltip-open tooltip-accent"
+                    className="relative animate-bounce rounded-full shadow-lg flex items-center justify-center bg-accent tooltip tooltip-open tooltip-left tooltip-accent"
                     data-tip="Hi there! Let's chat!"
                 >
                     <Link href="/contact" role="button" className="">
                         <Image
                             src="/memoji/memojialo.png"
                             alt="headshot"
-                            className="max-w-xs md:max-w-sm rounded-full border-2 border-accent-content shadow-md"
-                            width={80}
-                            height={80}
+                            className="max-w-xs md:max-w-sm rounded-full shadow-lg"
+                            width={60}
+                            height={60}
                         />
                     </Link>
                     <button
                         onClick={handleToggle}
-                        className="btn btn-circle btn-sm absolute top-0 right-0 bg-accent text-accent-content fa-sm"
+                        className="btn btn-circle btn-xs absolute top-0 right-0 bg-accent text-accent-content"
                     >
-                        <FontAwesomeIcon icon="fa-solid fa-xmark" />
+                        <FontAwesomeIcon icon="fa-solid fa-minus fa-sm" />
                     </button>
                 </div>
             ) : (
                 <button
                     onClick={handleToggle}
-                    className="animate-bounce rounded-full shadow-lg flex items-center justify-center p-2 md:p-3 bg-accent"
+                    className="animate-bounce rounded-full shadow-lg flex items-center justify-center bg-accent"
                 >
                     <Image
                         src="/memoji/memojialo.png"
                         alt="headshot"
-                        className="max-w-xs md:max-w-sm rounded-full border border-accent-content shadow-md"
-                        width={30}
-                        height={30}
+                        className="max-w-xs md:max-w-sm rounded-full shadow-lg"
+                        width={44}
+                        height={44}
                     />
                 </button>
             )}

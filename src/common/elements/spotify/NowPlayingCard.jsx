@@ -33,7 +33,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
         <div
             className={clsx(
                 'z-50 fixed bottom-0 w-full p-3',
-                !expand && 'flex justify-end'
+                !expand && 'flex justify-start'
             )}
         >
             {!expand ? (
