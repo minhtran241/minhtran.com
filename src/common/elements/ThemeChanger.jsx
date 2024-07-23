@@ -30,8 +30,8 @@ const ThemeChanger = () => {
     return (
         <div className="dropdown" data-choose-theme>
             <div tabIndex={0} role="button" className="btn btn-ghost">
+                <FontAwesomeIcon icon="fa-duotone fa-solid fa-paint-roller" />
                 Theme
-                <FontAwesomeIcon icon="fa-duotone fa-caret-down" />
             </div>
             <ul
                 tabIndex={0}

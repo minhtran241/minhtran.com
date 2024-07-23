@@ -24,7 +24,7 @@ const Navbar = () => {
                         <Links />
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost" role="button">
+                <Link href="/" className="btn btn-ghost text-xl" role="button">
                     {userBasicInfo.fullName}
                 </Link>
             </div>

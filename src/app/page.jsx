@@ -1,5 +1,5 @@
 import Timeline from '@/components/Home/timeline/timeline';
-import Projects from '@/components/Project/projects/projects';
+// import Projects from '@/components/Project/projects/projects';
 import Hero from '@/components/Home/hero/hero';
 import Skills from '@/components/Home/skills/skills';
 import Contribution from '@/components/Home/contribution/contribution';
