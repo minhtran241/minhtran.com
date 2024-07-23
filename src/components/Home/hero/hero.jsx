@@ -22,8 +22,9 @@ const HeroComponent = () => {
                         <span>
                             <FontAwesomeIcon icon="fa-duotone fa-solid fa-circle-info text-primary" />
                         </span>
-                        <span className="text-primary">About</span>
-                        Me
+                        <p>
+							<span className="text-primary">About</span>{' '}Me
+                        </p>
                     </div>
                     <ul
                         className="fa-ul lg:text-base md:text-base sm:text-sm text-sm py-6"
