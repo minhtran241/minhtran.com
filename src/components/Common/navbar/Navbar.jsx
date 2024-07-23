@@ -4,7 +4,6 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import WebStats from './webStats/webStats';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import ThemeChanger from '@/common/elements/ThemeChanger';
-// import Image from 'next/image';
 
 const Navbar = () => {
     return (

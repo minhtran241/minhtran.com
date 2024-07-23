@@ -7,10 +7,9 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const HeroComponent = () => {
     return (
-        <div className="hero bg-base-200 min-h-fit py-12">
+        <div className="hero bg-base-200 min-h-fit py-12 rounded-b-3xl">
             <div className="hero-content flex-col lg:flex-row">
                 <Image
-                    // src={fileSystemInfo.headshot}
                     src="/memoji/memojihello.png"
                     alt="headshot"
                     className="max-w-sm rounded-lg"
@@ -23,7 +22,7 @@ const HeroComponent = () => {
                             <FontAwesomeIcon icon="fa-duotone fa-solid fa-circle-info text-primary" />
                         </span>
                         <p>
-							<span className="text-primary">About</span>{' '}Me
+                            <span className="text-primary">About</span> Me
                         </p>
                     </div>
                     <ul

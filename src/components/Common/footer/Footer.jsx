@@ -6,7 +6,7 @@ import { MENU_TABS } from '@/common/constants/menu';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-primary text-primary-content rounded">
+        <footer className="footer footer-center p-10 bg-primary text-primary-content rounded-t-box">
             <nav className="grid grid-flow-col gap-4">
                 {/* <Link href="/" className="link link-hover">
                     Minh

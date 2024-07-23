@@ -31,7 +31,7 @@ const TimelineComponent = async () => {
     const milestones = await getMilestones();
 
     return (
-        <div className="bg-primary text-primary-content">
+        <div className="bg-primary text-primary-content rounded-box">
             <div className="container py-12">
                 <SectionLabel
                     title={SECTION_TITLE}
