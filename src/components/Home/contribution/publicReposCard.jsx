@@ -4,19 +4,32 @@ import Link from 'next/link';
 import { TIMEZONE } from '@/common/constants/timezone';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import Image from 'next/image';
 
 const PublicReposCard = ({ ghInfo }) => {
     return (
         <div className="rounded-box p-4 border shadow bg-base-200">
             <div className="flex flex-col items-start gap-3">
-                <div className="flex flex-col">
-                    <h1 className="card-title lg:text-lg text-base">
-                        {userBasicInfo.fullName}&apos;s Repositories
-                    </h1>
-                    <p className="text-sm opacity-70">
-                        {ghInfo.user.repositories.nodes.length}/
-                        {ghInfo.user.repositories.totalCount} Repositories
-                    </p>
+                <div className="flex flex-row items-center justify-center gap-4">
+                    <div className="avatar">
+                        <div className="w-10 h-10 rounded-full">
+                            <Image
+                                src='/memoji/memojimac-styled.png'
+                                alt="avatar"
+                                width={100}
+                                height={100}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <h1 className="card-title lg:text-lg text-base">
+                            {userBasicInfo.fullName}&apos;s Repositories
+                        </h1>
+                        <p className="text-sm opacity-70">
+                            {ghInfo.user.repositories.nodes.length}/
+                            {ghInfo.user.repositories.totalCount} Repositories
+                        </p>
+                    </div>
                 </div>
                 <p className="lg:text-base md:text-base text-sm">
                     Public repositories that recently updated

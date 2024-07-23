@@ -17,6 +17,7 @@ import {
     getWeeklyChartData,
 } from '@/common/helpers';
 import Loading from '@/app/loading';
+import Image from 'next/image';
 
 // Register ChartJS components using ChartJS.register
 ChartJS.register(
@@ -108,15 +109,28 @@ const ContributionChart = ({ contributionCollection }) => {
         <div className="flex flex-col gap-4 rounded-box p-4 border shadow bg-base-200">
             {/* Time range selector */}
             <div className="flex flex-wrap justify-between gap-4">
-                <div className="flex flex-col">
-                    <h2 className="card-title lg:text-lg text-base">
-                        {selectedTimeRange.charAt(0).toUpperCase() +
-                            selectedTimeRange.slice(1)}{' '}
-                        Contributions
-                    </h2>
-                    <p className="text-sm opacity-70">
-                        {contrCalendar.totalContributions} Total Contributions
-                    </p>
+                <div className="flex flex-row items-center justify-center gap-4">
+                    <div className="avatar">
+                        <div className="w-10 h-10 rounded-full">
+                            <Image
+                                src="/memoji/memojifocus-styled.png"
+                                alt="avatar"
+                                width={100}
+                                height={100}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <h2 className="card-title lg:text-lg text-base">
+                            {selectedTimeRange.charAt(0).toUpperCase() +
+                                selectedTimeRange.slice(1)}{' '}
+                            Contributions
+                        </h2>
+                        <p className="text-sm opacity-70">
+                            {contrCalendar.totalContributions} Total
+                            Contributions
+                        </p>
+                    </div>
                 </div>
                 <select
                     className="select select-bordered max-w-xs"

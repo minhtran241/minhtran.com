@@ -35,7 +35,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                     <div className="avatar">
                         <div className="w-10 h-10 rounded-full">
                             <Image
-                                src={ghInfo.user.avatarUrl}
+                                src="/memoji/memojinormal-styled.png"
                                 alt="avatar"
                                 width={100}
                                 height={100}

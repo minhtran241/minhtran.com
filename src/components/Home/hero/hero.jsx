@@ -11,7 +11,7 @@ const HeroComponent = () => {
             <div className="hero-content flex-col lg:flex-row">
                 <Image
                     // src={fileSystemInfo.headshot}
-                    src="/memoji/memojimac.png"
+                    src="/memoji/memojihello.png"
                     alt="headshot"
                     className="max-w-sm rounded-lg"
                     width={200}
