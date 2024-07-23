@@ -4,7 +4,6 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import WebStats from './webStats/webStats';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import ThemeChanger from '@/common/elements/ThemeChanger';
-import Image from 'next/image';
 
 const Navbar = () => {
     return (
@@ -25,21 +24,9 @@ const Navbar = () => {
                         <Links />
                     </ul>
                 </div>
-                <div className="flex items-center gap-2">
-                    <Link
-                        href="/"
-                        className="btn btn-ghost lg:text-xl md:text-lg text-base"
-                    >
-                        {userBasicInfo.fullName}
-                    </Link>
-                    <Image
-                        src="/memoji/memojialo.png"
-                        alt="headshot"
-                        className="max-w-sm rounded-lg"
-                        width={36}
-                        height={36}
-                    />
-                </div>
+                <Link href="/" className="btn btn-ghost" role="button">
+                    {userBasicInfo.fullName}
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

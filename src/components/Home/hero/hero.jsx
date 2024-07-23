@@ -46,7 +46,7 @@ const HeroComponent = () => {
                             role="button"
                             className="btn btn-active btn-primary"
                         >
-                            <FontAwesomeIcon icon="fa-duotone fa-file-pdf" />
+                            <FontAwesomeIcon icon="fa-duotone fa-file-user" />
                             Download Resume
                         </Link>
                     </div>

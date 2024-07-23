@@ -14,11 +14,11 @@ const ScrollToTopButton = () => {
     const { scrollYProgress } = useScroll();
     const controls = useAnimationControls();
 
-    const { width } = useWindowSize();
-    const isMobile = width < 480;
+    // const { width } = useWindowSize();
+    // const isMobile = width < 480;
 
     function scrollToTop() {
-        if (isMobile) return;
+        // if (isMobile) return;
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -32,9 +32,7 @@ const ScrollToTopButton = () => {
         });
     });
 
-    return isMobile ? (
-        <></>
-    ) : (
+    return (
         <motion.button
             className="fixed bottom-0 p-3 m-10 rounded-box shadow-lg bg-accent z-[99998] right-0"
             variants={ScrollToTopContainerVariants}
