@@ -33,7 +33,7 @@ const OverviewItem = ({ label, value }) => (
     <div className="stats border shadow bg-base-200 rounded-box">
         <div className="stat">
             <div className="stat-title text-sm flex items-center gap-2">
-                <FontAwesomeIcon icon="fa-duotone fa-solid fa-gauge-simple-high" />{' '}
+                <FontAwesomeIcon icon="fa-duotone fa-solid fa-laptop-code" />{' '}
                 {label}
             </div>
             <div className="stat-value lg:text-lg text-base text-primary">
