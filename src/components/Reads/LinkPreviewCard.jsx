@@ -3,6 +3,7 @@ import axios from 'axios';
 import { extractMetaTags } from '@/app/actions';
 import Image from 'next/image';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import Loading from '@/app/loading';
 
 const LinkPreviewCard = async ({ url }) => {
     //here calling the function
@@ -10,11 +11,7 @@ const LinkPreviewCard = async ({ url }) => {
     const data = await extractMetaTags(response);
 
     if (!data) {
-        return (
-            <div className="p-6 fa-2x">
-                <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
-            </div>
-        );
+        return <Loading fullPage={false} />;
     }
 
     return (

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const CodingActiveList = ({ data }) => {
     const getLanguagesTotalHours = sumTotalFromArray(
@@ -51,7 +52,7 @@ const CodingActiveList = ({ data }) => {
             total: getLanguagesTotalTimeDisplay,
             data: data?.languages,
             styles: {
-                bg: 'bg-gradient-to-r from-primary to-secondary',
+                // bg: 'bg-gradient-to-r from-primary to-secondary',
             },
         },
         {
@@ -59,7 +60,7 @@ const CodingActiveList = ({ data }) => {
             total: getEditorTotalTimeDisplay,
             data: data?.categories,
             styles: {
-                bg: 'bg-gradient-to-r from-primary to-secondary',
+                // bg: 'bg-gradient-to-r from-primary to-secondary',
             },
         },
     ];
@@ -83,6 +84,7 @@ const CodingActiveList = ({ data }) => {
                     )}
                 >
                     <p className="card-title lg:text-lg text-base">
+                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-bars-progress" />{' '}
                         {item?.title}
                     </p>
                     <p className="text-sm opacity-70">

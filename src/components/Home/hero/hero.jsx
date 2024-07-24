@@ -4,6 +4,7 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import Image from 'next/image';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import Loading from '@/app/loading';
 
 const HeroComponent = () => {
     return (
@@ -58,13 +59,7 @@ const HeroComponent = () => {
 
 const Hero = () => {
     return (
-        <Suspense
-            fallback={
-                <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
-                    <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
-                </div>
-            }
-        >
+        <Suspense fallback={<Loading fullPage={false} />}>
             <HeroComponent />
         </Suspense>
     );

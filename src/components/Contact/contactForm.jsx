@@ -125,7 +125,7 @@ const ContactForm = () => {
                     disabled={isLoading}
                 >
                     {isLoading ? (
-                        <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin" />
+                        <FontAwesomeIcon icon="fa-duotone fa-atom-simple fa-spin" />
                     ) : (
                         'Send Message'
                     )}

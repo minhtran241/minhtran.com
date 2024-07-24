@@ -1,3 +1,5 @@
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+
 const { formatDate } = require('@/common/helpers');
 
 const Overview = ({ data }) => {
@@ -28,11 +30,16 @@ const Overview = ({ data }) => {
 };
 
 const OverviewItem = ({ label, value }) => (
-    <div className="flex flex-col border shadow bg-base-200 rounded-box p-4">
-        <span className="text-sm">{label}</span>
-        <span className="card-title lg:text-lg text-base text-primary">
-            {value}
-        </span>
+    <div className="stats border shadow bg-base-200 rounded-box">
+        <div className="stat">
+            <div className="stat-title text-sm flex items-center gap-2">
+                <FontAwesomeIcon icon="fa-duotone fa-solid fa-gauge-simple-high" />{' '}
+                {label}
+            </div>
+            <div className="stat-value lg:text-lg text-base text-primary">
+                {value}
+            </div>
+        </div>
     </div>
 );
 

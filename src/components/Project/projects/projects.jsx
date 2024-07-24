@@ -6,6 +6,7 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import axios from 'axios';
 import { PROJECT_LIST } from '../../../../data/projectList';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import Loading from '@/app/loading';
 
 const PROJECT_FETCH_LIMIT = 3;
 
@@ -13,7 +14,7 @@ const SECTION_TITLE = 'Development Projects';
 const SECTION_DESCRIPTION =
     'A collection of my open-source side projects, professional work projects, and research endeavors. Most of them are available on my GitHub.';
 
-const ProjectsComponent = async () => {
+const Projects = async () => {
     const username = userBasicInfo.githubUsername;
     const BASE_URL =
         process.env.NODE_ENV === 'development'
@@ -25,11 +26,7 @@ const ProjectsComponent = async () => {
     );
 
     if (!repoData) {
-        return (
-            <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
-                <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
-            </div>
-        );
+        return <Loading fullPage={false} />;
     }
 
     const projects = repoData?.data?.user?.repositories?.nodes
@@ -61,20 +58,6 @@ const ProjectsComponent = async () => {
                 </div>
             </div>
         </div>
-    );
-};
-
-const Projects = () => {
-    return (
-        <Suspense
-            fallback={
-                <div className="grid w-full place-items-center overflow-x-scroll lg:overflow-visible fa-2x p-6">
-                    <FontAwesomeIcon icon="fa-duotone fa-cog fa-spin text-primary" />
-                </div>
-            }
-        >
-            <ProjectsComponent />
-        </Suspense>
     );
 };
 
