@@ -2,6 +2,7 @@ import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Link from 'next/link';
 import { MENU_TABS } from '@/common/constants/menu';
+import { HOSTED_ON, TECHSTACK } from '@/common/constants/site';
 // import Image from 'next/image';
 
 const Footer = () => {
@@ -38,22 +39,36 @@ const Footer = () => {
                     ))}
                 </div>
             </nav>
-            <aside className="flex items-center">
-                <span>Made by </span>
-                <Link
-                    href={userBasicInfo.githubLink || '#'}
-                    className="link link-hover"
-                >
-                    {userBasicInfo.fullName}
-                </Link>
-                {/* <Image
-                    src="/memojialo.png"
-                    alt="headshot"
-                    className="max-w-sm rounded-lg"
-                    width={20}
-                    height={20}
-                /> */}
-                <span>@ {new Date().getFullYear()}</span>
+            <aside className="flex flex-col items-center">
+                <div className="">
+                    Powered by{' '}
+                    {Object.entries(TECHSTACK).map(([key, value], index) => (
+                        <Link
+                            href={value}
+                            key={index}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-accent"
+                        >
+                            {index !== Object.entries(TECHSTACK).length - 1
+                                ? `${key}, `
+                                : `and ${key}`}
+                        </Link>
+                    ))}
+                    . Hosted on{' '}
+                    <Link
+                        href={HOSTED_ON.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-accent"
+                    >
+                        {HOSTED_ON.name}
+                    </Link>
+                    .
+                </div>
+                <p className="flex items-center">
+                    © {new Date().getFullYear()} {userBasicInfo.fullName}
+                </p>
             </aside>
         </footer>
     );

@@ -8,4 +8,13 @@ export const SITE_TITLE = 'Minh Tran - Software Engineer / Data Engineer';
 export const SITE_DESCRIPTION =
     'Personal website of Minh Tran, a software engineer and data engineer.';
 
-export const TECHSTACK = ['Next.js', 'Tailwind CSS', 'daisyUI', 'Node.js'];
+export const TECHSTACK = {
+    'Next.js': 'https://nextjs.org/',
+    'Tailwind CSS': 'https://tailwindcss.com/',
+    daisyUI: 'https://daisyui.com/',
+};
+
+export const HOSTED_ON = {
+	name: 'Vercel',
+	url: 'https://vercel.com/',
+};
