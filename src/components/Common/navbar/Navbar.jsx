@@ -7,7 +7,7 @@ import ThemeChanger from '@/common/elements/ThemeChanger';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-primary text-primary-content top-0 z-50 shadow-lg bg-opacity-90 fixed">
+        <div className="navbar bg-primary text-primary-content top-0 z-50 shadow-lg bg-opacity-90 fixed rounded-box">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
