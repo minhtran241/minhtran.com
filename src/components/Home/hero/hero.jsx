@@ -8,7 +8,7 @@ import Loading from '@/app/loading';
 
 const HeroComponent = () => {
     return (
-        <div className="hero bg-base-200 min-h-fit py-12 rounded-b-3xl">
+        <div className="hero bg-primary min-h-fit pb-24 pt-36 rounded-b-box">
             <div className="hero-content flex-col lg:flex-row">
                 <Image
                     src="/memoji/memojihello.png"
@@ -18,16 +18,16 @@ const HeroComponent = () => {
                     height={300}
                 />
                 <div>
-                    <div className="font-bold flex items-center gap-4 lg:text-4xl md:text-3xl sm:text-2xl text-xl">
+                    <div className="font-bold flex items-center gap-4 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-primary-content">
                         <span>
-                            <FontAwesomeIcon icon="fa-duotone fa-solid fa-circle-info text-primary" />
+                            <FontAwesomeIcon icon="fa-solid fa-circle-info text-accent" />
                         </span>
                         <p>
-                            <span className="text-primary">About</span> Me
+                            <span className="text-accent">About</span> Me
                         </p>
                     </div>
                     <ul
-                        className="fa-ul lg:text-base md:text-base sm:text-sm text-sm py-6"
+                        className="fa-ul lg:text-base md:text-base sm:text-sm text-sm py-6 text-primary-content"
                         style={{ '--fa-li-width': '4em' }}
                     >
                         {userBasicInfo.about?.map((item, index) => (
@@ -45,7 +45,7 @@ const HeroComponent = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             role="button"
-                            className="btn btn-active btn-primary"
+                            className="btn btn-active btn-accent"
                         >
                             <FontAwesomeIcon icon="fa-duotone fa-file-user" />
                             Download Resume

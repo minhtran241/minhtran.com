@@ -49,7 +49,7 @@ const SkillsComponent = async () => {
                             key={index}
                         >
                             <div className="flex items-center gap-2 mb-5">
-                                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white">
+                                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-primary-content">
                                     {icons[skill.name]}
                                 </div>
                                 <h2 className="card-title text-lg">

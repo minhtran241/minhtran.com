@@ -14,8 +14,8 @@ const SectionLabel = ({ title, description, primary = true }) => {
                         <div
                             className={`flex-1 h-2 bg-gradient-to-r from-primary to-secondary ${
                                 primary
-                                    ? 'bg-gradient-to-r from-primary to-secondary'
-                                    : 'bg-gradient-to-r from-primary-content to-accent'
+                                    ? 'bg-gradient-to-r from-base-200 to-primary'
+                                    : 'bg-gradient-to-r from-primary to-primary-content'
                             }`}
                         ></div>
                     </div>

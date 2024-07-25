@@ -27,7 +27,7 @@ export const generateMetadata = async () => {
 const UsesPage = () => {
     return (
         <>
-            <div className="container py-12">
+            <div className="container py-12 mt-16">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="flex flex-col gap-4 mt-4">
                     <Devices />

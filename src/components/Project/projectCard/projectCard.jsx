@@ -92,11 +92,11 @@ const ProjectCard = async ({ project }) => {
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="flex leading-none gap-1">
-                                    <FontAwesomeIcon icon="fa-duotone fa-star" />
+                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-star" />
                                     {project?.stargazerCount}
                                 </div>
                                 <div className="flex leading-none gap-1">
-                                    <FontAwesomeIcon icon="fa-duotone fa-code-fork" />
+                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-code-fork" />
                                     {project?.forkCount}
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ const ProjectCard = async ({ project }) => {
                                 rel="noopener noreferrer"
                                 className="hover:text-primary transition"
                             >
-                                <FontAwesomeIcon icon="fa-duotone fa-arrow-up-right-from-square" />
+                                <FontAwesomeIcon icon="fa-duotone fa-solid fa-eye" />
                             </Link>
                         )}
                         {project?.homepageUrl && ' | '}
@@ -128,11 +128,11 @@ const ProjectCard = async ({ project }) => {
                 </div>
                 <div className="flex flex-wrap gap-2  text-sm justify-between">
                     <div className="flex leading-none gap-2">
-                        <FontAwesomeIcon icon="fa-duotone fa-scale-balanced" />
+                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-scale-balanced" />
                         <p>{licenseName || 'No License'}</p>
                     </div>
                     <div className="flex leading-none gap-2">
-                        <FontAwesomeIcon icon="fa-duotone fa-up-from-line" />
+                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-up-from-line" />
                         <p>{pushedAtDistance}</p>
                     </div>
                 </div>

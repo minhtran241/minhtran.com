@@ -83,7 +83,7 @@ const BlogPage = async () => {
 
     return (
         <>
-            <div className="flex flex-col container py-12 gap-8">
+            <div className="flex flex-col container py-12 gap-8 mt-16">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 {/* // First post */}
                 <div className="lg:flex lg:items-center lg:gap-12">

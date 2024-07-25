@@ -25,7 +25,7 @@ const BREADCRUMBS = [
 const ContactPage = () => {
     return (
         <>
-            <div className="container flex flex-col py-12 gap-4">
+            <div className="container flex flex-col py-12 gap-4 mt-16">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <Contact />
             </div>

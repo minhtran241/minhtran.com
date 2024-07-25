@@ -47,7 +47,7 @@ const ProjectPage = async () => {
 
     return (
         <>
-            <div className="flex flex-col container py-12 gap-8">
+            <div className="flex flex-col container py-12 gap-8 mt-16">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
                     {projects.map((project, index) => (
