@@ -14,7 +14,7 @@ const Progress = ({ data, className }) => {
 
     return (
         <div className="flex items-center justify-between gap-2">
-            <div className="w-28 text-sm">{name}</div>
+            <div className="w-28 text-sm opacity-70">{name}</div>
             <progress
                 className={cn(className, 'flex-1 progress progress-primary')}
                 value={percent}
@@ -32,7 +32,9 @@ const Progress = ({ data, className }) => {
                     &ensp;
                 </motion.span> */}
             </progress>
-            <div className="w-8 text-right text-sm">{percent.toFixed(0)}%</div>
+            <div className="w-8 text-right text-sm opacity-70">
+                {percent.toFixed(0)}%
+            </div>
         </div>
     );
 };

@@ -2,14 +2,11 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import { cn } from '@/common/libs/cn';
 
 const LoadingIcons = [
+    'fa-atom',
     'fa-atom-simple',
     'fa-gear',
-    'fa-spinner',
     'fa-sun',
-    'fa-arrows-spin',
-    'fa-atom',
     'fa-snowflake',
-    'fa-spinner-scale',
 ];
 
 const Loading = ({ fullPage = true }) => {

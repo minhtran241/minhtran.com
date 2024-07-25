@@ -10,12 +10,12 @@ const icons = {
     'Programming Languages': (
         <FontAwesomeIcon icon="fa-duotone fa-brackets-curly fa-sm" />
     ),
-    'Web Development': <FontAwesomeIcon icon="fa-solid fa-browser" />,
-    'Big Data': <FontAwesomeIcon icon="fa-solid fa-arrow-up-big-small" />,
-    Databases: <FontAwesomeIcon icon="fa-solid fa-database" />,
-    'ML/DL': <FontAwesomeIcon icon="fa-solid fa-head-side-gear" />,
+    'Web Development': <FontAwesomeIcon icon="fa-solid fa-browser fa-sm" />,
+    'Big Data': <FontAwesomeIcon icon="fa-solid fa-arrow-up-big-small fa-sm" />,
+    Databases: <FontAwesomeIcon icon="fa-solid fa-database fa-sm" />,
+    'ML/DL': <FontAwesomeIcon icon="fa-solid fa-brain-circuit fa-sm" />,
     'Monitoring and others': (
-        <FontAwesomeIcon icon="fa-solid fa-monitor-waveform" />
+        <FontAwesomeIcon icon="fa-solid fa-monitor-waveform fa-sm" />
     ),
 };
 

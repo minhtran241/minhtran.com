@@ -25,8 +25,8 @@ const BookACall = () => {
                             booking a call
                         </p>
                     </div>
-                    <div className="lg:w-8 lg:h-8 w-7 h-7 inline-flex lg:text-base text-sm border-2 border-primary-content rounded-full items-center justify-center">
-                        <FontAwesomeIcon icon="fa-duotone fa-calendar-days" />
+                    <div className="lg:w-8 lg:h-8 w-7 h-7 inline-flex lg:text-base text-sm rounded-full items-center justify-center">
+                        <FontAwesomeIcon icon="fa-regular fa-circle-calendar fa-xl" />
                     </div>
                 </div>
                 <div className="flex items-center gap-5 text-sm">
