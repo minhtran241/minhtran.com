@@ -12,7 +12,7 @@ export const TECHSTACK = {
     'Next.js': 'https://nextjs.org/',
     'Tailwind CSS': 'https://tailwindcss.com/',
     daisyUI: 'https://daisyui.com/',
-    Fontawesome: 'https://fontawesome.com/',
+    'Font Awesome': 'https://fontawesome.com/',
 };
 
 export const HOSTED_ON = {

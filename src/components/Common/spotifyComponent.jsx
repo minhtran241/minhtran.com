@@ -85,7 +85,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
                         </Link>
                     </div>
                     <div
-                        className="flex gap-3 pr-0.5"
+                        className="flex pr-1 cursor-pointer"
                         onClick={handleMusicToggle}
                     >
                         <FontAwesomeIcon icon="fa-duotone fa-circle-xmark fa-lg cursor-pointer pt-0.5" />
