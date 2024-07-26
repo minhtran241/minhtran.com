@@ -106,7 +106,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
                         height={16}
                         className="animate-pulse"
                     />
-                    <p className="text-sm font-semibold">No song is playing</p>
+                    <p className="text-sm font-medium">No song is playing</p>
                     <div
                         className="flex cursor-pointer"
                         onClick={handleMusicToggle}
