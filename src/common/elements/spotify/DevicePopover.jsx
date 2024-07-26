@@ -24,8 +24,10 @@ const DevicePopover = ({ devices, isShow }) => {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
         >
-            <Popover.Panel className="absolute bottom-10 right-0 z-20 w-max">
-                <div className="flex flex-col gap-5 overflow-hidden rounded-lg px-6 py-5 shadow-lg ring-1 ring-black ring-opacity-5 bg-base-200">
+            {/* <Popover.Panel className="absolute bottom-10 right-0 z-20 w-max">
+			<div className="flex flex-col gap-5 overflow-hidden rounded-lg px-6 py-5 shadow-lg ring-1 ring-black ring-opacity-5 bg-base-200"> */}
+            <Popover.Panel className="absolute bottom-24 left-0 z-[99998] shadow-lg w-max rounded-box bg-base-200 border ring-1 ring-black ring-opacity-5">
+                <div className="flex flex-col gap-5 overflow-hidden px-6 py-5">
                     {listDevices?.map((device, index) => (
                         <div
                             key={index}
@@ -36,7 +38,7 @@ const DevicePopover = ({ devices, isShow }) => {
                                 <span className="font-sora font-medium">
                                     {device?.name}
                                 </span>
-                                <span className="text-xs font-light text-gray-500">
+                                <span className="text-xs font-light opacity-70">
                                     {device?.model}
                                 </span>
                             </div>

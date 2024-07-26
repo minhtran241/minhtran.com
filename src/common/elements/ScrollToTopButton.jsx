@@ -34,7 +34,7 @@ const ScrollToTopButton = () => {
 
     return (
         <motion.button
-            className="fixed bottom-0 p-3 m-10 rounded-box shadow-lg bg-accent z-[99998] right-0"
+            className="fixed bottom-0 rounded-full shadow-lg bg-accent z-[99997] m-10 right-0 w-[44px] h-[44px]"
             variants={ScrollToTopContainerVariants}
             initial="hide"
             animate={controls}
