@@ -56,7 +56,7 @@ const Footer = () => {
                                 : `and ${key}`}
                         </Link>
                     ))}
-                    . Hosted on{' '}
+                    {/* . Hosted on{' '}
                     <Link
                         href={HOSTED_ON.url}
                         target="_blank"
@@ -65,7 +65,7 @@ const Footer = () => {
                     >
                         {HOSTED_ON.name}
                     </Link>
-                    .
+                    . */}
                 </div>
                 <p className="flex items-center">
                     © {new Date().getFullYear()} {userBasicInfo.fullName}

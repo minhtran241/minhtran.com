@@ -12,9 +12,10 @@ export const TECHSTACK = {
     'Next.js': 'https://nextjs.org/',
     'Tailwind CSS': 'https://tailwindcss.com/',
     daisyUI: 'https://daisyui.com/',
+    Fontawesome: 'https://fontawesome.com/',
 };
 
 export const HOSTED_ON = {
-	name: 'Vercel',
-	url: 'https://vercel.com/',
+    name: 'Vercel',
+    url: 'https://vercel.com/',
 };

@@ -2,7 +2,7 @@
 
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import { useAnimationControls, motion, useScroll } from 'framer-motion';
-import { useWindowSize } from '@uidotdev/usehooks';
+// import { useWindowSize } from '@uidotdev/usehooks';
 import { useEffect } from 'react';
 
 const ScrollToTopContainerVariants = {
