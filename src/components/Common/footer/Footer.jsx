@@ -7,6 +7,7 @@ import { MENU_TABS } from '@/common/constants/menu';
 import { HOSTED_ON, TECHSTACK } from '@/common/constants/site';
 
 const Footer = () => {
+    const techStackEntries = Object.entries(TECHSTACK);
     return (
         <footer className="footer footer-center p-10 bg-primary text-primary-content rounded-t-box">
             <nav className="grid grid-flow-col gap-4">
@@ -43,20 +44,21 @@ const Footer = () => {
             <aside className="flex flex-col items-center">
                 <div className="">
                     Powered by{' '}
-                    {Object.entries(TECHSTACK).map(([key, value], index) => (
-                        <Link
-                            href={value}
-                            key={index}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-accent"
-                        >
-                            {index !== Object.entries(TECHSTACK).length - 1
-                                ? `${key}, `
-                                : `and ${key}`}
-                        </Link>
+                    {techStackEntries.map(([key, value], index) => (
+                        <span key={index}>
+                            <Link
+                                href={value}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-accent"
+                            >
+                                {key}
+                            </Link>
+                            {index < techStackEntries.length - 2 && ', '}
+                            {index === techStackEntries.length - 2 && ', and '}
+                        </span>
                     ))}
-                    {/* . Hosted on{' '}
+                    . Hosted on{' '}
                     <Link
                         href={HOSTED_ON.url}
                         target="_blank"
@@ -65,7 +67,7 @@ const Footer = () => {
                     >
                         {HOSTED_ON.name}
                     </Link>
-                    . */}
+                    .
                 </div>
                 <p className="flex items-center">
                     © {new Date().getFullYear()} {userBasicInfo.fullName}

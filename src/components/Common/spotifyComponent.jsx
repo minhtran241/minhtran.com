@@ -36,7 +36,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
         ),
     }));
 
-    if (!playingData?.songUrl) return null;
+    // if (!playingData?.songUrl) return null;
     const handleMusicToggle = () => setExpand(!expand);
 
     return !expand ? (
@@ -55,7 +55,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
     ) : (
         <div className="fixed bottom-0 m-10 rounded-box shadow-lg bg-green-400 z-[99998] left-0">
             {playingData?.songUrl ? (
-                <div className="flex gap-3 items-center justify-between rounded-md bg-green-400 px-3 py-2 font-sora text-neutral-800">
+                <div className="flex gap-3 items-center justify-between rounded-md bg-green-400 p-3 font-sora text-neutral-800">
                     <div className="flex items-center gap-3">
                         {playingData?.albumImageUrl && (
                             <Image
@@ -73,34 +73,40 @@ const SpotifyComponent = ({ isExpand = false }) => {
                             rel="noopener noreferrer"
                             className="flex flex-col pt-0.5 hover:cursor-pointer"
                         >
-                            <p className="text-sm font-semibold hover:underline line-clamp-2">
+                            <p className="text-sm font-semibold line-clamp-2">
                                 {playingData?.title} on {listDevices[0]?.icon}
                             </p>
                             <div className="flex items-center gap-2">
                                 <AnimatedBars />
-                                <span className="pt-1 text-xs text-neutral-800 line-clamp-1">
+                                <span className="pt-1 text-xs opacity-80 line-clamp-1">
                                     {playingData?.artist}
                                 </span>
                             </div>
                         </Link>
                     </div>
                     <div
-                        className="flex pr-1 cursor-pointer"
+                        className="flex cursor-pointer"
                         onClick={handleMusicToggle}
                     >
-                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark fa-lg cursor-pointer pt-0.5" />
+                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark cursor-pointer pt-0.5" />
                     </div>
                 </div>
             ) : (
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-3 justify-between rounded-md bg-green-400 p-3 font-sora text-neutral-800">
                     <Image
-                        src="/logos/spotify-color.svg"
+                        src="/logos/spotify.svg"
                         alt="Spotify"
                         width={16}
                         height={16}
-                        className="mr-1"
+                        className="animate-pulse"
                     />
-                    <div>Not Playing</div>
+                    <p className="text-sm font-semibold">No song is playing</p>
+                    <div
+                        className="flex cursor-pointer"
+                        onClick={handleMusicToggle}
+                    >
+                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark cursor-pointer pt-0.5" />
+                    </div>
                 </div>
             )}
         </div>
