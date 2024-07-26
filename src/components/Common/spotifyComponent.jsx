@@ -11,7 +11,7 @@ import { fetcher } from '@/common/libs/fetcher';
 import Image from 'next/image';
 import AnimatedBars from '@/common/elements/spotify/AnimatedBars';
 // import DevicePopover from '@/common/elements/spotify/DevicePopover';
-import { PAIR_DEVICES } from '../../../data/uses';
+// import { PAIR_DEVICES } from '../../../data/uses';
 import Link from 'next/link';
 
 const SpotifyComponent = ({ isExpand = false }) => {
@@ -24,17 +24,17 @@ const SpotifyComponent = ({ isExpand = false }) => {
 
     const { data: playingData } = useSWR('/api/spotify/now-playing', fetcher);
 
-    const { data: devicesData = [] } = useSWR(
-        '/api/spotify/available-devices',
-        fetcher
-    );
+    // const { data: devicesData = [] } = useSWR(
+    //     '/api/spotify/available-devices',
+    //     fetcher
+    // );
 
-    const listDevices = devicesData?.map((device) => ({
-        ...device,
-        icon: PAIR_DEVICES[device?.type]?.icon || (
-            <FontAwesomeIcon icon="fa-duotone fa-speaker fa-sm" />
-        ),
-    }));
+    // const listDevices = devicesData?.map((device) => ({
+    //     ...device,
+    //     icon: PAIR_DEVICES[device?.type]?.icon || (
+    //         <FontAwesomeIcon icon="fa-duotone fa-speaker fa-sm" />
+    //     ),
+    // }));
 
     // if (!playingData?.songUrl) return null;
     const handleMusicToggle = () => setExpand(!expand);
@@ -73,12 +73,18 @@ const SpotifyComponent = ({ isExpand = false }) => {
                             rel="noopener noreferrer"
                             className="flex flex-col pt-0.5 hover:cursor-pointer"
                         >
-                            <p className="text-sm font-semibold line-clamp-2">
-                                {playingData?.title} on {listDevices[0]?.icon}
+                            <p className="text-sm font-medium line-clamp-2">
+                                {playingData?.title}
                             </p>
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 text-xs">
+                                <FontAwesomeIcon icon="fa-duotone fa-solid fa-album" />
+                                <span className="opacity-80 line-clamp-1">
+                                    {playingData?.album}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2 text-xs">
                                 <AnimatedBars />
-                                <span className="pt-1 text-xs opacity-80 line-clamp-1">
+                                <span className="pt-1 text-[14px] opacity-80 line-clamp-1">
                                     {playingData?.artist}
                                 </span>
                             </div>

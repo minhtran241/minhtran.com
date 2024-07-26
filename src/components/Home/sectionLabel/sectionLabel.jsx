@@ -10,11 +10,11 @@ const SectionLabel = ({ title, description, primary = true }) => {
                     >
                         {title}
                     </h1>
-                    <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded">
+                    <div className="flex w-24 mt-1 mb-6 overflow-hidden rounded-box">
                         <div
-                            className={`flex-1 h-2 bg-gradient-to-r from-primary to-secondary ${
+                            className={`flex-1 h-2 ${
                                 primary
-                                    ? 'bg-gradient-to-r from-base-200 to-primary'
+                                    ? 'bg-gradient-to-r from-base-100 to-primary'
                                     : 'bg-gradient-to-r from-primary to-primary-content'
                             }`}
                         ></div>
