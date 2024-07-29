@@ -55,7 +55,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
     ) : (
         <div className="fixed bottom-0 m-10 rounded-box shadow-lg bg-green-400 z-[99998] left-0">
             {playingData?.songUrl ? (
-                <div className="flex gap-3 items-center justify-between rounded-md bg-green-400 p-3 font-sora text-neutral-800">
+                <div className="flex gap-3 items-center justify-between rounded-box bg-green-400 p-3 font-sora text-neutral-800">
                     <div className="flex items-center gap-3">
                         {playingData?.albumImageUrl && (
                             <Image
@@ -98,7 +98,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
                     </div>
                 </div>
             ) : (
-                <div className="flex items-center gap-3 justify-between rounded-md bg-green-400 p-3 font-sora text-neutral-800">
+                <div className="flex items-center gap-3 justify-between rounded-box bg-green-400 p-3 font-sora text-neutral-800">
                     <Image
                         src="/logos/spotify.svg"
                         alt="Spotify"
