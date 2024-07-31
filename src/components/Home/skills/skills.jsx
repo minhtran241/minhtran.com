@@ -8,7 +8,7 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const icons = {
     'Programming Languages': (
-        <FontAwesomeIcon icon="fa-duotone fa-brackets-curly fa-sm" />
+        <FontAwesomeIcon icon="fa-solid fa-brackets-curly fa-sm" />
     ),
     'Web Development': <FontAwesomeIcon icon="fa-solid fa-browser fa-sm" />,
     'Big Data': <FontAwesomeIcon icon="fa-solid fa-arrow-up-big-small fa-sm" />,
