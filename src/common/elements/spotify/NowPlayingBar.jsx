@@ -55,7 +55,7 @@ const NowPlayingBar = () => {
                                         />
                                     )}
                                     <div
-                                        className="flex gap-1 hover:cursor-pointer hover:underline"
+                                        className="flex gap-1 hover: hover:underline"
                                         onClick={() =>
                                             handleOpenSongUrl(
                                                 playingData?.songUrl

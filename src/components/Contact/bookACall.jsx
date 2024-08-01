@@ -13,7 +13,7 @@ const BookACall = () => {
                 href={userBasicInfo.bookACallLink}
                 target="_blank"
                 data-aos-duration="1000"
-                className="flex cursor-pointer flex-col space-y-5 rounded-box border bg-gradient-to-tr from-primary to-secondary text-primary-content px-6 py-5"
+                className="flex  flex-col space-y-5 rounded-box border bg-gradient-to-tr from-primary to-secondary text-primary-content px-6 py-5"
             >
                 <div className="flex items-start justify-between gap-5">
                     <div className="space-y-1">

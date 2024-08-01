@@ -20,7 +20,7 @@ const HeroComponent = () => {
                 <div>
                     <div className="font-bold flex items-center gap-4 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-primary-content">
                         <span>
-                            <FontAwesomeIcon icon="fa-solid fa-circle-info text-accent" />
+                            <FontAwesomeIcon icon="fa-solid fa-circle-info fa-bounce text-accent" />
                         </span>
                         <p>
                             <span className="text-accent">About</span> Me
@@ -33,7 +33,7 @@ const HeroComponent = () => {
                         {userBasicInfo.about?.map((item, index) => (
                             <li key={index}>
                                 <span className="fa-li">
-                                    <FontAwesomeIcon icon="fa-duotone fa-award-simple" />
+                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-hundred-points fa-beat" />
                                 </span>
                                 {item}
                             </li>

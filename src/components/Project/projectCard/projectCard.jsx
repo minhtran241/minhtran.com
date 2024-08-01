@@ -61,7 +61,7 @@ const ProjectCard = async ({ project }) => {
                 {projectName}
             </Link>
             <div
-                className="tooltip !text-start cursor-pointer"
+                className="tooltip !text-start "
                 data-tip={project?.description}
             >
                 <p className="line-clamp-3 text-sm">{project?.description}</p>

@@ -41,7 +41,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
 
     return !expand ? (
         <div
-            className="fixed bottom-0 m-10 shadow-lg z-[99998] left-0 cursor-pointer rounded-full bg-black transition-all duration-100"
+            className="fixed bottom-0 m-10 shadow-lg z-[99998] left-0  rounded-full bg-black transition-all duration-100"
             onClick={handleMusicToggle}
         >
             <Image
@@ -71,7 +71,7 @@ const SpotifyComponent = ({ isExpand = false }) => {
                             href={playingData?.songUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex flex-col pt-0.5 hover:cursor-pointer"
+                            className="flex flex-col pt-0.5 hover:"
                         >
                             <p className="text-sm font-medium line-clamp-2">
                                 {playingData?.title}
@@ -90,11 +90,8 @@ const SpotifyComponent = ({ isExpand = false }) => {
                             </div>
                         </Link>
                     </div>
-                    <div
-                        className="flex cursor-pointer"
-                        onClick={handleMusicToggle}
-                    >
-                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark cursor-pointer pt-0.5" />
+                    <div className="flex " onClick={handleMusicToggle}>
+                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark  pt-0.5" />
                     </div>
                 </div>
             ) : (
@@ -107,11 +104,8 @@ const SpotifyComponent = ({ isExpand = false }) => {
                         className="animate-pulse"
                     />
                     <p className="text-sm font-medium">No song is playing</p>
-                    <div
-                        className="flex cursor-pointer"
-                        onClick={handleMusicToggle}
-                    >
-                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark cursor-pointer pt-0.5" />
+                    <div className="flex " onClick={handleMusicToggle}>
+                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark  pt-0.5" />
                     </div>
                 </div>
             )}

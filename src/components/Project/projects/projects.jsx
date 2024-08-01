@@ -50,7 +50,7 @@ const Projects = async () => {
                 {/* See More */}
                 <div className="flex justify-center mt-8">
                     <Link href="/projects">
-                        <div className="flex flex-row items-center gap-2 font-semibold hover:text-primary cursor-pointer transition lg:text-lg text-base">
+                        <div className="flex flex-row items-center gap-2 font-semibold hover:text-primary  transition lg:text-lg text-base">
                             See More
                             <FontAwesomeIcon icon="fa-duotone fa-chevrons-right" />
                         </div>

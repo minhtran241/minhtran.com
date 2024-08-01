@@ -18,8 +18,8 @@ const CustomCursor = () => {
         // Event listener for mouse movement
         const handleMouseMove = (e) => {
             setPosition({
-                x: e.clientX + 10,
-                y: e.clientY - 10,
+                x: e.clientX,
+                y: e.clientY,
             });
         };
         // Event listener for mouse click
@@ -47,10 +47,9 @@ const CustomCursor = () => {
             <div
                 style={{ top: position.y, left: position.x }}
                 ref={cursorRef}
-                className={`fixed pointer-events-none transition-all -translate-x-1/2 -translate-y-1/2 ease-in duration-300 z-[99999]
-				${clicked ? 'scale-150' : ''}`}
+                className="fixed pointer-events-none -translate-x-1/2 -translate-y-1/2 fa-lg z-[99999]"
             >
-                <FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles text-accent" />
+                <FontAwesomeIcon icon="fa-duotone fa-solid fa-arrow-pointer fa-beat" />
             </div>
         </>
     );

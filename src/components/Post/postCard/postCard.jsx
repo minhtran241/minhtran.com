@@ -27,7 +27,7 @@ const PostCard = ({ post }) => {
                         <div
                             key={index}
                             // href={`/blog?tag=${tag}`}
-                            className="px-2 py-1 text-xs font-semibold text-primary  border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-primary dark:hover:border-blue-600 cursor-pointer"
+                            className="px-2 py-1 text-xs font-semibold text-primary  border border-gray-300 dark:border-gray-600 rounded-md italic hover:border-primary dark:hover:border-blue-600 "
                         >
                             #{tag}
                         </div>
@@ -39,10 +39,7 @@ const PostCard = ({ post }) => {
             >
                 {post.title}
             </Link>
-            <div
-                className="tooltip !text-start cursor-pointer"
-                data-tip={post.description}
-            >
+            <div className="tooltip !text-start " data-tip={post.description}>
                 <p className="line-clamp-3 text-sm opacity-70">
                     {post.description}
                 </p>

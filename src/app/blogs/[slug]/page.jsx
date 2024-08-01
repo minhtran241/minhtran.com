@@ -151,7 +151,7 @@ const SinglePostContent = ({ post }) => {
                             {/* Prev and Next cards */}
                             <div className="justify-between grid grid-cols-1 gap-8 md:grid-cols-2">
                                 {post.prev && (
-                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary cursor-pointer transition duration-300">
+                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary  transition duration-300">
                                         <p className="text-sm text-gray-500">
                                             Older Blog
                                         </p>
@@ -170,7 +170,7 @@ const SinglePostContent = ({ post }) => {
                                     </div>
                                 )}
                                 {post.next && (
-                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary cursor-pointer transition duration-300">
+                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary  transition duration-300">
                                         <p className="text-sm text-right text-gray-500">
                                             Newer Blog
                                         </p>

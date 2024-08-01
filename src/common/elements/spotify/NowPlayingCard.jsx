@@ -38,7 +38,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
         >
             {!expand ? (
                 <div
-                    className="cursor-pointer rounded-full bg-white dark:bg-neutral-950 transition-all duration-100"
+                    className=" rounded-full bg-white dark:bg-neutral-950 transition-all duration-100"
                     onClick={handleMusicToggle}
                 >
                     <Image
@@ -63,7 +63,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
                             />
                         )}
                         <div
-                            className="flex flex-col pt-0.5 hover:cursor-pointer hover:underline"
+                            className="flex flex-col pt-0.5 hover: hover:underline"
                             onClick={() => handleOpenSongUrl(data?.songUrl)}
                         >
                             <div className="text-sm font-medium">
@@ -81,7 +81,7 @@ const NowPlayingCard = ({ isExpand = false }) => {
                         className="flex gap-3 pr-0.5"
                         onClick={handleMusicToggle}
                     >
-                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark fa-lg cursor-pointer pt-0.5" />
+                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark fa-lg  pt-0.5" />
                     </div>
                 </div>
             )}

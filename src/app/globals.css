@@ -12,3 +12,8 @@
         scrollbar-width: none; /* Firefox */
     }
 }
+
+/* Pointer none (cursor-none) */
+* {
+    cursor: none !important;
+}
