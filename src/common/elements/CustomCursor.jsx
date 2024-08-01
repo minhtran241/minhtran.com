@@ -47,9 +47,10 @@ const CustomCursor = () => {
             <div
                 style={{ top: position.y, left: position.x }}
                 ref={cursorRef}
-                className="fixed pointer-events-none -translate-x-1/2 -translate-y-1/2 fa-lg z-[99999]"
+                className={`fixed pointer-events-none -translate-x-1/2 -translate-y-1/2 fa-lg z-[99999] transition-transform duration-200 ease-in-out transform 
+				${clicked ? 'scale-150' : ''}`}
             >
-                <FontAwesomeIcon icon="fa-duotone fa-solid fa-arrow-pointer fa-beat" />
+                <FontAwesomeIcon icon="fa-duotone fa-solid fa-arrow-pointer" />
             </div>
         </>
     );
