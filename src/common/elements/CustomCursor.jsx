@@ -152,7 +152,7 @@ const CustomCursor = () => {
                     scaleY: pointerShadowScale.y,
                     rotate: pointerShadowAngle,
                 }}
-                className="w-5 h-5 fixed bg-secondary rounded-full pointer-events-none z-[999999]"
+                className="w-6 h-6 fixed bg-secondary rounded-full pointer-events-none z-[999999]"
                 animate={{
                     width: cursorSize,
                     height: cursorSize,
@@ -163,7 +163,7 @@ const CustomCursor = () => {
                 style={{ left: mouse.x, top: mouse.y }}
                 className="fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[999999]"
             >
-                <FontAwesomeIcon icon="fa-duotone fa-solid fa-mouse-field text-secondary-content fa-xs" />
+                <FontAwesomeIcon icon="fa-solid fa-ufo text-secondary-content fa-xs" />
             </motion.div>
         </>
     );

@@ -40,7 +40,7 @@ const ScrollToTopButton = () => {
             animate={controls}
             onClick={scrollToTop}
         >
-            <FontAwesomeIcon icon="fa-duotone fa-solid fa-plane-up text-accent-content fa-bounce" />
+            <FontAwesomeIcon icon="fa-brands fa-space-awesome text-accent-content fa-bounce" />
         </motion.button>
     );
 };
