@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDistanceToNowStrict } from 'date-fns';
-import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import { toZonedTime, fromZonedTime } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
@@ -12,8 +12,8 @@ const ProjectCard = async ({ project }) => {
         .join(' ');
     let pushedAtDistance = '';
     if (project?.pushedAt) {
-        const zonedDate = utcToZonedTime(
-            zonedTimeToUtc(project?.pushedAt, TIMEZONE),
+        const zonedDate = toZonedTime(
+            fromZonedTime(project?.pushedAt, TIMEZONE),
             TIMEZONE
         );
         pushedAtDistance = formatDistanceToNowStrict(zonedDate, {
