@@ -5,6 +5,7 @@ import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import Image from 'next/image';
 
 const icons = {
     'Programming Languages': (
@@ -59,10 +60,13 @@ const SkillsComponent = async () => {
                             <div className="flex flex-wrap gap-3">
                                 {skill.technologies.map((badge, index) => (
                                     <div key={index} className="rounded">
-                                        <img
+                                        <Image
                                             src={badge}
                                             alt={`${skill.name} badge`}
                                             className="rounded w-auto h-6"
+                                            width={100}
+                                            height={50}
+                                            loading="lazy"
                                         />
                                     </div>
                                 ))}

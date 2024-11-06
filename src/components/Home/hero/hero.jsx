@@ -16,6 +16,7 @@ const HeroComponent = () => {
                     className="max-w-sm rounded-lg"
                     width={200}
                     height={300}
+                    loading="eager"
                 />
                 <div>
                     <div className="font-bold flex items-center gap-4 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-primary-content">

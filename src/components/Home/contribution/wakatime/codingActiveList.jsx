@@ -4,7 +4,7 @@ import Progress from './progress';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { formatDistanceToNowStrict } from 'date-fns';
-import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import { toZonedTime, fromZonedTime } from 'date-fns-tz';
 import { TIMEZONE } from '@/common/constants/timezone';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
@@ -37,8 +37,8 @@ const CodingActiveList = ({ data }) => {
     const lastUpdateDate = data?.last_update;
     let distance = '';
     if (lastUpdateDate) {
-        const zonedDate = utcToZonedTime(
-            zonedTimeToUtc(lastUpdateDate, TIMEZONE),
+        const zonedDate = toZonedTime(
+            fromZonedTime(lastUpdateDate, TIMEZONE),
             TIMEZONE
         );
         distance = formatDistanceToNowStrict(zonedDate, {

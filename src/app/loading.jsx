@@ -1,18 +1,7 @@
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
-import { cn } from '@/common/libs/cn';
 
-const LoadingIcons = [
-    'fa-atom',
-    'fa-atom-simple',
-    'fa-gear',
-    'fa-sun',
-    'fa-snowflake',
-];
 
 const Loading = ({ fullPage = true }) => {
-    // Pick a random loading icon
-    const randomIcon =
-        LoadingIcons[Math.floor(Math.random() * LoadingIcons.length)];
 
     return (
         <div
@@ -21,10 +10,7 @@ const Loading = ({ fullPage = true }) => {
             }`}
         >
             <FontAwesomeIcon
-                icon={cn(
-                    'fa-duotone fa-solid fa-spin fa-2x text-primary',
-                    randomIcon
-                )}
+                icon='fa-duotone fa-solid fa-spin fa-atom-simple fa-2x text-primary'
             />
         </div>
     );

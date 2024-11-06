@@ -44,7 +44,7 @@ const MarkdownRender = ({ mdString }) => (
         <article className="prose prose-base prose-pre:not-prose prose-headings:text-primary prose-headings:my-4 prose-ul:my-2 prose-p:my-4  prose-li:my-0 prose-hr:text-gray marker:text-primary items-center justify-center !max-w-full md:prose-pre:text-base lg:prose-pre:text-base sm:prose-pre:text-sm prose-img:mx-auto prose-figcaption:text-center prose-figcaption:my-2 prose-img:mb-2 prose-img:rounded-box prose-figcaption:text-gray-500 prose-blockquote:my-4 prose-blockquote:p-4 prose-blockquote:bg-base-300 prose-blockquote:rounded-box prose-code:rounded-box">
             <Markdown
                 rehypePlugins={[rehypeRaw]}
-                linkTarget="_blank"
+                // linkTarget="_blank"
                 components={{
                     pre: (pre) => {
                         const codeChunk =

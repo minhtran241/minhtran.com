@@ -63,7 +63,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                     style={{ '--fa-li-width': '4em' }}
                 >
                     <li>
-                        <span class="fa-li">
+                        <span className="fa-li">
                             <FontAwesomeIcon icon="fa-duotone fa-location-dot" />
                         </span>
                         {ghInfo.user.location}

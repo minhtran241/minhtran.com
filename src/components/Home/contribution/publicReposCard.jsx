@@ -3,7 +3,7 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Link from 'next/link';
 import { TIMEZONE } from '@/common/constants/timezone';
 import { formatDistanceToNowStrict } from 'date-fns';
-import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import { toZonedTime, fromZonedTime } from 'date-fns-tz';
 import Image from 'next/image';
 
 const PublicReposCard = ({ ghInfo }) => {
@@ -14,7 +14,7 @@ const PublicReposCard = ({ ghInfo }) => {
                     <div className="avatar">
                         <div className="w-10 h-10 rounded-full">
                             <Image
-                                src='/memoji/memojimac-styled.png'
+                                src="/memoji/memojimac-styled.png"
                                 alt="avatar"
                                 width={100}
                                 height={100}
@@ -39,8 +39,8 @@ const PublicReposCard = ({ ghInfo }) => {
                     style={{ '--fa-li-width': '4em' }}
                 >
                     {ghInfo.user.repositories.nodes.map((repo, index) => {
-                        const zonedDate = utcToZonedTime(
-                            zonedTimeToUtc(repo.pushedAt, TIMEZONE),
+                        const zonedDate = toZonedTime(
+                            fromZonedTime(repo.pushedAt, TIMEZONE),
                             TIMEZONE
                         );
                         const distance = formatDistanceToNowStrict(zonedDate, {

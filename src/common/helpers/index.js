@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { format, parseISO } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+import { toZonedTime } from 'date-fns-tz';
 
 export const formatDate = (date, type = 'MMMM dd, yyyy') => {
     if (!date) {
         return '';
     }
 
-    const formattedDate = format(utcToZonedTime(parseISO(date)), type);
+    const formattedDate = format(toZonedTime(parseISO(date)), type);
     return formattedDate;
 };
 

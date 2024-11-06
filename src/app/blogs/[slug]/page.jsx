@@ -13,7 +13,8 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import MarkdownRender from '@/common/elements/MarkdownRenderer';
 
 // SEO metadata
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async (props) => {
+    const params = await props.params;
     const p = getPost(params.slug);
     return {
         title: p.title,
@@ -125,7 +126,7 @@ const SinglePostContent = ({ post }) => {
                                 alt={post.title}
                                 width={1200}
                                 height={600}
-                                layout="responsive"
+                                // layout="responsive"
                                 className="rounded-box"
                             />
                         </div>
@@ -197,7 +198,8 @@ const SinglePostContent = ({ post }) => {
     );
 };
 
-const SinglePostPage = async ({ params }) => {
+const SinglePostPage = async (props) => {
+    const params = await props.params;
     const { slug } = params;
     const post = await getPost(slug);
 
