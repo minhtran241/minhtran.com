@@ -35,6 +35,7 @@ const Footer = () => {
                             target="_blank"
                             rel="noreferrer"
                             className="fill-current"
+                            aria-label={item.name}
                         >
                             {item.icon}
                         </Link>
@@ -50,7 +51,7 @@ const Footer = () => {
                                 href={value}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-accent"
+                                className="hover:underline"
                             >
                                 {key}
                             </Link>
@@ -63,7 +64,7 @@ const Footer = () => {
                         href={HOSTED_ON.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-accent"
+                        className="hover:underline"
                     >
                         {HOSTED_ON.name}
                     </Link>

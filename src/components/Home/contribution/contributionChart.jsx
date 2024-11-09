@@ -136,6 +136,8 @@ const ContributionChart = ({ contributionCollection }) => {
                     className="select select-bordered max-w-xs"
                     onChange={(e) => setSelectedTimeRange(e.target.value)}
                     defaultValue={selectedTimeRange}
+                    aria-label="Select time range"
+                    aria-labelledby="Select time range"
                 >
                     {Object.keys(GET_CHART_DATA).map((range, index) => (
                         <option key={index} value={range}>

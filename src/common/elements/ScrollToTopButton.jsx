@@ -39,6 +39,8 @@ const ScrollToTopButton = () => {
             initial="hide"
             animate={controls}
             onClick={scrollToTop}
+            aria-label="Scroll to top"
+            role="button"
         >
             <FontAwesomeIcon icon="fa-brands fa-space-awesome text-accent-content fa-bounce" />
         </motion.button>

@@ -28,7 +28,14 @@ const ThemeChanger = () => {
 
     return (
         <div className="dropdown" data-choose-theme>
-            <div tabIndex={0} role="button" className="btn btn-ghost">
+            <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost"
+                aria-label="Choose theme"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
                 <FontAwesomeIcon icon="fa-duotone fa-solid fa-droplet" />
                 <FontAwesomeIcon icon="fa-duotone fa-solid fa-caret-down" />
             </div>
