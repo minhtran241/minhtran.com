@@ -187,6 +187,7 @@ export default function RootLayout({ children }) {
                     src="https://cloud.umami.is/script.js"
                     data-website-id={process.env.UMAMI_WEBSITE_ID}
                 ></script>
+                <link rel="preload" href="/memoji/memojihello.png" as="image" />
             </head>
             <body
                 className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh`}
