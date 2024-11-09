@@ -29,7 +29,7 @@ const fetchSkillsData = async () => {
         const data = await fs.readFile(SKILLS_FILE_PATH, 'utf-8');
         const skills = JSON.parse(data);
 
-        await Promise.all(
+        await global.Promise.all(
             skills.map(async (skill) => {
                 try {
                     skill.badges = await fs.readdir(
