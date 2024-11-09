@@ -195,7 +195,7 @@ export default function RootLayout({ children }) {
                 <Navbar />
                 {/* <LetschatBubble /> */}
                 {/* <div className="mt-16"> */}
-                <CustomCursor />
+                {/* <CustomCursor /> */}
                 {children}
                 <ScrollToTopButton />
                 <SpeedInsights />
