@@ -50,6 +50,7 @@ const HeroComponent = () => {
                             rel="noopener noreferrer"
                             role="button"
                             className="btn btn-active btn-accent"
+                            prefetch={false}
                         >
                             <FontAwesomeIcon icon="fa-duotone fa-file-user" />
                             Download Resume
