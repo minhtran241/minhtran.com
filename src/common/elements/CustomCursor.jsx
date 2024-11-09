@@ -132,7 +132,7 @@ const CustomCursor = () => {
     const cursorSize = isHovered ? SHADOW_SIZE_ON_HOVER : SHADOW_SIZE;
 
     return (
-        <>
+        <div className="cursor">
             <motion.div
                 transformTemplate={({
                     translateX,
@@ -165,7 +165,7 @@ const CustomCursor = () => {
             >
                 <FontAwesomeIcon icon="fa-solid fa-ufo text-secondary-content fa-xs" />
             </motion.div>
-        </>
+        </div>
     );
 };
 

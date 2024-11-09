@@ -55,7 +55,7 @@ const GHUserCard = ({ ghInfo, username }) => {
                         </Link>
                     </div>
                 </div>
-                <p className="lg:text-base md:text-base md:gap-0 text-sm gap-y-2">
+                <p className="lg:text-base md:text-base text-sm">
                     {ghInfo.user.bio}
                 </p>
                 <ul
