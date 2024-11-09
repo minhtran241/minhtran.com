@@ -9,4 +9,5 @@ export const fileSystemInfo = {
     heroBg: '/home/hero-bg.png',
     dataFetchDir: path.join(process.cwd(), DATA_FETCH_DIR),
     resumeLink: RESUME_LINK,
+    resumeFileName: 'minhtranResume.pdf',
 };

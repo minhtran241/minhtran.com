@@ -16,7 +16,8 @@ const HeroComponent = () => {
                     className="max-w-sm rounded-lg"
                     width={200}
                     height={300}
-                    loading="eager"
+                    priority={true} // Adds preload for better LCP
+                    // loading="eager"
                 />
                 <div>
                     <div className="font-bold flex items-center gap-4 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-primary-content">
@@ -43,6 +44,8 @@ const HeroComponent = () => {
                     <div>
                         <Link
                             href={fileSystemInfo.resumeLink}
+                            download={fileSystemInfo.resumeFileName}
+                            locale={false}
                             target="_blank"
                             rel="noopener noreferrer"
                             role="button"
