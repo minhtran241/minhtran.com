@@ -14,6 +14,7 @@ const Navbar = () => {
                         tabIndex={0}
                         role="button"
                         className="btn btn-ghost lg:hidden fa-lg"
+                        aria-label="Menu"
                     >
                         <FontAwesomeIcon icon="fa-duotone fa-bars" />
                     </div>

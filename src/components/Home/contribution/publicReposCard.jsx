@@ -35,7 +35,7 @@ const PublicReposCard = ({ ghInfo }) => {
                     Public repositories that recently updated
                 </p>
                 <ul
-                    className="fa-ul md:text-base text-sm"
+                    className="fa-ul md:text-base md:gap-0 text-sm gap-y-2"
                     style={{ '--fa-li-width': '4em' }}
                 >
                     {ghInfo.user.repositories.nodes.map((repo, index) => {

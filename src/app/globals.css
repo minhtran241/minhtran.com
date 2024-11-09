@@ -26,3 +26,9 @@
     border-radius: 50%;
     pointer-events: none;
 }
+
+@media only screen and (max-width: 700px) {
+    body .cursor {
+        display: 'none';
+    }
+}

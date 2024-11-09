@@ -29,6 +29,7 @@ const WebStats = async () => {
                 tabIndex={0}
                 className="lg:hidden flex items-center gap-2 btn btn-ghost fa-lg"
                 role="button"
+                aria-label="Web Stats"
             >
                 <FontAwesomeIcon icon="fa-duotone fa-chart-mixed" />
             </Link>
