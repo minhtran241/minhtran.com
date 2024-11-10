@@ -20,7 +20,7 @@ const ResumeViewer = () => {
 
             {isModalOpen && (
                 <dialog className="modal modal-open">
-                    <div className="modal-box w-11/12 max-w-5xl">
+                    <div className="modal-box md:max-w-[800px] max-w-[400px]">
                         {/* Close button */}
                         <button
                             onClick={() => setIsModalOpen(false)}
@@ -29,14 +29,13 @@ const ResumeViewer = () => {
                         >
                             <FontAwesomeIcon icon="fa-duotone fa-times" />
                         </button>
-
                         <h3 className="font-bold md:text-lg text-base">
                             Minh&apos;s Resume
                         </h3>
                         <div className="mt-4">
                             <iframe
                                 src={fileSystemInfo.resumeLink}
-                                className="w-full h-[75vh]" // Adjust height as needed
+                                className="w-full md:h-[800px] h-[400px]"
                                 title="Resume Preview"
                                 aria-label="Resume Preview"
                             ></iframe>
