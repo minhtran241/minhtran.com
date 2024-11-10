@@ -23,18 +23,18 @@ If you have any questions, suggestions, or anything else, don't hesitate to cont
 
 This website is built using these technologies:
 
-- ◼️ Next.js 14.1.0
-- 💠 Tailwind CSS 3
-- 🌺 daisyUI
-- ☀️ Apollo Client
-- ←→ Axios
-- 〰️ SWR
-- ➰ Framer Motion
-- 🏳️ Font Awesome Icon 6
-- 📊 Chart.js
-- 🎥 WakaTime API
-- 👨🏻‍💻 GitHub API
-- 🎵 Spotify API
+-   ◼️ Next.js 15
+-   💠 Tailwind CSS 3
+-   🌺 daisyUI
+-   ☀️ Apollo Client
+-   ←→ Axios
+-   〰️ SWR
+-   ➰ Framer Motion
+-   🏳️ Font Awesome Icon 6
+-   📊 Chart.js
+-   🎥 WakaTime API
+-   👨🏻‍💻 GitHub API
+-   🎵 Spotify API
 
 <br />
 
@@ -42,36 +42,36 @@ This website is built using these technologies:
 
 On this website, several features will continue to be updated and added in the future.
 
-- ### 🤖 ChatGPT AI (Unavailable)
+-   ### 🤖 ChatGPT AI (Unavailable)
 
 You can access this feature by opening the command palette [cmd+k], and then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI API key)
 
-- ### 🎧 Spotify Status
+-   ### 🎧 Spotify Status
 
 Displays song information being played on Spotify in real-time using the Spotify API and SWR.
 
-- ### 🕗 WakaTime Statistics
+-   ### 🕗 WakaTime Statistics
 
 Data is retrieved using the WakaTime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
 
-- ### 📝 Blogs
+-   ### 📝 Blogs
 
 The markdown files are server-side rendered using the [React Markdown](https://github.com/remarkjs/react-markdown) and the [remark](https://github.com/remarkjs/react-markdown) library. The markdown files are stored in the `data/blog` directory. The blog posts are displayed on the blog page and the blog details page.
 
-- ### 🗳 Projects
+-   ### 🗳 Projects
 
 As a developer, I have a lot of projects that I have worked on. This section displays the projects I have worked on. The markdown files are stored in the `data/projects` directory and rendered server-side.
 <br /><br />
 
 ## Performance
 
-- ### PageSpeed Insights
+-   ### PageSpeed Insights
 
-- Desktop
-  
+-   Desktop
+
 ![Desktop PI](https://github.com/minhtran241/minhtran.com/blob/main/public/about-this-website/lh-rp-desktop.png)
 
-- Mobile
+-   Mobile
 
 ![Mobile PI](https://github.com/minhtran241/minhtran.com/blob/main/public/about-this-website/lh-rp-mobile.png)
 
@@ -85,26 +85,26 @@ If you want to run this project on your local machine, you can do so in just 3 e
 
 1. Clone using git
 
-   ```bash
-   git clone https://github.com/minhtran241/minhtran.com.git
-   ```
+    ```bash
+    git clone https://github.com/minhtran241/minhtran.com.git
+    ```
 
 2. Using `create-next-app`
 
-   ```bash
-   npx create-next-app -e https://github.com/minhtran241/minhtran.com project-name
-   ```
+    ```bash
+    npx create-next-app -e https://github.com/minhtran241/minhtran.com project-name
+    ```
 
 3. Using `degit`
 
-   ```bash
-   npx degit minhtran241/minhtran.com YOUR_APP_NAME
-   ```
+    ```bash
+    npx degit minhtran241/minhtran.com YOUR_APP_NAME
+    ```
 
 4. Deploy to Vercel or Netlify, etc
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/minhtran241/minhtran.com)
-   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/minhtran241/minhtran.com)
+    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/minhtran241/minhtran.com)
+    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/minhtran241/minhtran.com)
 
 ### 2. Install dependencies
 

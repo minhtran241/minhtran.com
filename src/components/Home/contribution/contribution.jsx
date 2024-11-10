@@ -30,7 +30,7 @@ const Contribution = () => {
 
     return (
         <div className="items-center justify-center">
-            <div className="container">
+            <div className="container pb-12">
                 <SectionLabel
                     title={sectionTitle}
                     description={sectionDescription}
@@ -46,10 +46,10 @@ const Contribution = () => {
                                 <PublicReposCard ghInfo={ghData} />
                             </div>
                             <ContributionChart
-                                    contributionCollection={
-                                        ghData?.user?.contributionsCollection
-                                    }
-                                />
+                                contributionCollection={
+                                    ghData?.user?.contributionsCollection
+                                }
+                            />
                             <CodingActive data={wkData} />
                         </div>
                     ) : (
