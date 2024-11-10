@@ -35,9 +35,12 @@ const ResumeViewer = () => {
                         <div className="mt-4">
                             <iframe
                                 src={fileSystemInfo.resumeLink}
-                                className="w-full md:h-[800px] h-[400px]"
+                                className="w-full md:h-[800px] h-[500px]"
                                 title="Resume Preview"
                                 aria-label="Resume Preview"
+                                width="100%"
+                                height={500}
+                                tabIndex={0}
                             ></iframe>
                         </div>
                     </div>
