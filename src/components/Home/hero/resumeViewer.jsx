@@ -37,8 +37,8 @@ const ResumeViewer = () => {
                             <iframe
                                 src={fileSystemInfo.resumeLink}
                                 className="w-full h-[75vh]" // Adjust height as needed
-                                title="Minh's Resume"
-                                aria-label="Minh's Resume"
+                                title="Resume Preview"
+                                aria-label="Resume Preview"
                             ></iframe>
                         </div>
                     </div>
