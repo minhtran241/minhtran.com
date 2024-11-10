@@ -31,7 +31,7 @@ const ResumeViewer = () => {
                         </button>
 
                         <h3 className="font-bold md:text-lg text-base">
-                            Minh's Resume
+                            Minh&apos;s Resume
                         </h3>
                         <div className="mt-4">
                             <iframe
