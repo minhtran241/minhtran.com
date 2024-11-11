@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Loading from '@/app/loading';
-import ResumeViewer from './resumeViewer';
+// import ResumeViewer from './resumeViewer';
 
 const HeroComponent = () => {
     return (
@@ -41,7 +41,22 @@ const HeroComponent = () => {
                             </li>
                         ))}
                     </ul>
-                    <ResumeViewer />
+                    {/* <ResumeViewer /> */}
+                    <div>
+                        <Link
+                            href={fileSystemInfo.resumeLink}
+                            // download={fileSystemInfo.resumeFileName}
+                            locale={false}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            role="button"
+                            className="btn btn-active btn-accent"
+                            prefetch={false}
+                        >
+                            <FontAwesomeIcon icon="fa-duotone fa-file-user" />
+                            Download Resume
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
