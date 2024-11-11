@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Loading from '@/app/loading';
+import Link from 'next/link';
 // import ResumeViewer from './resumeViewer';
 
 const HeroComponent = () => {
