@@ -97,6 +97,7 @@ const BlogPage = async () => {
                             alt={firstPost.title}
                             width={433}
                             height={218}
+                            loading="lazy"
                         />
                     </Link>
                     <div className="mt-4 lg:mt-0 lg:w-1/2 flex flex-col gap-4">

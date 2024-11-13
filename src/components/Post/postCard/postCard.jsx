@@ -14,6 +14,7 @@ const PostCard = ({ post }) => {
                         src={post.thumbnail}
                         alt={post.title}
                         fill
+                        loading="lazy"
                     />
                     <div className="absolute right-0 top-0 mr-3 mt-3 flex flex-col items-center justify-center rounded-full px-4 text-sm lg:h-[75px] lg:w-[75px] md:h-[65px] md:w-[65px] sm:h-[55px] sm:w-[55px] h-[55px] w-[55px] bg-secondary text-secondary-content border border-secondary-content">
                         <span className="font-bold">{date}</span>

@@ -25,6 +25,7 @@ const Devices = () => {
                             width={800}
                             height={400}
                             className="rounded-box"
+                            loading="lazy"
                         />
                     </div>
                     <div className="flex flex-col gap-1 items-center justify-center">

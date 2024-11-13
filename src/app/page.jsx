@@ -29,11 +29,11 @@ const Home = () => {
     return (
         <div className="flex flex-col gap-12">
             <Hero />
-            <Skills />
-            {/* <Contribution /> */}
-            <Timeline />
-            <Contribution />
             {/* <Skills /> */}
+            <Contribution />
+            <Timeline />
+            {/* <Contribution /> */}
+            <Skills />
             {/* <Projects /> */}
         </div>
     );

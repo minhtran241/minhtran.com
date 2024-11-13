@@ -50,6 +50,7 @@ const ProjectCard = async ({ project }) => {
                     width={500}
                     height={250}
                     className="rounded-box"
+                    loading="lazy"
                 />
             </Link>
             <Link

@@ -30,7 +30,7 @@ const Contribution = () => {
 
     return (
         <div className="items-center justify-center">
-            <div className="container pb-12">
+            <div className="container">
                 <SectionLabel
                     title={sectionTitle}
                     description={sectionDescription}
