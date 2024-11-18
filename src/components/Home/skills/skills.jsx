@@ -15,8 +15,8 @@ const ICONS_MAP = {
     'Big Data': <FontAwesomeIcon icon="fa-solid fa-arrow-up-big-small fa-sm" />,
     Databases: <FontAwesomeIcon icon="fa-solid fa-database fa-sm" />,
     'ML/DL': <FontAwesomeIcon icon="fa-solid fa-brain-circuit fa-sm" />,
-    'Monitoring and others': (
-        <FontAwesomeIcon icon="fa-solid fa-monitor-waveform fa-sm" />
+    'DevOps & Automation': (
+        <FontAwesomeIcon icon="fa-solid  fa-screwdriver-wrench fa-sm" />
     ),
 };
 
