@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>minhtran.com</h1>
+  <h1>Minh Tran's site</h1>
   <p>☄️ Personal website was built originally from scratch using Next.js, Tailwind CSS, daisyUI, SWR, Chart.js, Apollo, WakaTime API, GitHub API, Spotify API, and more. </p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/minhtran241/minhtran.com)](https://github.com/minhtran241/minhtran.com/stargazers)

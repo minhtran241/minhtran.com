@@ -2,7 +2,7 @@ export const PROJECT_LIST = [
     'edge-computing-models',
     'ML-DL-GenAI',
     'nextcorp',
-    'minhtran.com',
+    'minhtran-site',
     'gvcourse',
     'video-to-mp3-conveter-microservices',
     'flexiconnect-architecture',
