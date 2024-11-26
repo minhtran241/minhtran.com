@@ -3,22 +3,22 @@ import Link from 'next/link';
 import { USES } from '../../../data/uses';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
-const DEVTOOLS = USES.DevTools;
+const SOFTWARES = USES.Softwares;
 
-const DevTools = () => {
+const Softwares = () => {
     return (
         <section className="flex flex-col gap-8">
             <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
-                <FontAwesomeIcon icon="fa-duotone fa-terminal" />
-                <h1 className="capitalize">Development Tools</h1>
+                <FontAwesomeIcon icon="fa-duotone fa-cubes" />
+                <h1 className="capitalize">Softwares</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {DEVTOOLS?.map((item, index) => (
+                {SOFTWARES?.map((item, index) => (
                     <Link
                         href={item.href}
                         target="_blank"
                         key={index}
-                        className="flex flex-col gap-4 hover:text-primary border dark:border-none border-gray-200 rounded-box p-4 hover:border-primary"
+                        className="flex flex-col gap-4 hover:text-primary border border-gray-200 rounded-box p-4 hover:border-primary"
                     >
                         <div className="flex items-center justify-center">
                             <Image
@@ -45,4 +45,4 @@ const DevTools = () => {
     );
 };
 
-export default DevTools;
+export default Softwares;

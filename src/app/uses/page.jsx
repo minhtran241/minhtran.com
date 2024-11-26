@@ -3,6 +3,7 @@ import DevTools from '@/components/Uses/devtools';
 import Breakline from '@/common/elements/Breakline';
 import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import Softwares from '@/components/Uses/software';
 
 const PAGE_TITLE = 'Used Devices and Tools';
 const PAGE_DESCRIPTION =
@@ -33,6 +34,8 @@ const UsesPage = () => {
                     <Devices />
                     <Breakline />
                     <DevTools />
+                    <Breakline />
+                    <Softwares />
                 </div>
             </div>
         </>

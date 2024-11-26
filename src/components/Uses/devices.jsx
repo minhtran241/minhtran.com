@@ -43,7 +43,7 @@ const Devices = () => {
                             href={item.href}
                             target="_blank"
                             key={index}
-                            className="flex flex-col gap-4 hover:scale-[101%] hover:text-primary transition-all duration-300"
+                            className="flex flex-col gap-4 hover:text-primary border border-gray-200 rounded-box p-4 hover:border-primary"
                         >
                             <div className="flex items-center justify-center">
                                 <Image
