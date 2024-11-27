@@ -43,4 +43,8 @@ export const PROJECT_LIST = [
         name: 'contract-template-truffle',
         thumbnail: 'contract-template-truffle.png',
     },
+    {
+        name: 'arxiv-citation-network',
+        thumbnail: 'arxiv-citation-network.png',
+    },
 ];

@@ -104,6 +104,10 @@ const ProjectCard = async ({ project }) => {
                                     <FontAwesomeIcon icon="fa-duotone fa-solid fa-code-fork" />
                                     {project?.forkCount}
                                 </div>
+                                <div className="flex leading-none gap-1">
+                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-users" />
+                                    {project?.collaborators?.nodes?.length}
+                                </div>
                             </div>
                         </div>
                     </div>

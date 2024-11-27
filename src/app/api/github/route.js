@@ -59,6 +59,11 @@ export const GET = async (request) => {
                                     name
                                     color
                                 }
+                                collaborators {
+                                    nodes {
+                                        name
+                                    }
+                                }
                                 repositoryTopics(first: 7) {
                                     nodes {
                                         topic {
