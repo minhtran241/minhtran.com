@@ -67,10 +67,10 @@ export const MENU_TABS = [
         title: 'Blogs',
         href: '/blogs',
     },
-    {
-        title: 'Reads',
-        href: '/reads',
-    },
+    // {
+    //     title: 'Reads',
+    //     href: '/reads',
+    // },
     {
         title: 'Uses',
         href: '/uses',

@@ -156,17 +156,17 @@ export const USES = {
         {
             name: 'Stats',
             metadata: 'System monitor',
-            href: 'https://stats.uses.vercel.app/',
+            href: 'https://github.com/exelban/stats',
             id: 'minhtran-stats',
             image: '/uses/softwares/stats.png',
         },
-        {
-            name: 'Parallels Desktop',
-            metadata: 'Virtual Machine',
-            href: 'https://www.parallels.com/',
-            id: 'minhtran-parallels',
-            image: '/uses/softwares/parallels-desktop.png',
-        },
+        // {
+        //     name: 'Parallels Desktop',
+        //     metadata: 'Virtual Machine',
+        //     href: 'https://www.parallels.com/',
+        //     id: 'minhtran-parallels',
+        //     image: '/uses/softwares/parallels-desktop.png',
+        // },
         {
             name: 'RealVNC Viewer',
             metadata: 'Remote Desktop',

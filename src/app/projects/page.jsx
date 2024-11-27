@@ -41,9 +41,19 @@ const ProjectPage = async () => {
         return <Loading />;
     }
 
-    const projects = repoData?.data?.user?.repositories?.nodes?.filter((repo) =>
-        PROJECT_LIST.includes(repo.name)
+    let projects = repoData?.data?.user?.repositories?.nodes?.filter((repo) =>
+        PROJECT_LIST.some((project) => project.name === repo.name)
     );
+
+    projects = projects.map((project) => {
+        const projectData = PROJECT_LIST.find(
+            (projectItem) => projectItem.name === project.name
+        );
+        return {
+            ...project,
+            ...projectData,
+        };
+    });
 
     return (
         <>

@@ -45,11 +45,15 @@ const ProjectCard = async ({ project }) => {
             >
                 {/* open graph image */}
                 <Image
-                    src={project?.openGraphImageUrl}
+                    src={
+                        project.thumbnail
+                            ? `/projects/${project.thumbnail}`
+                            : project?.openGraphImageUrl
+                    }
                     alt={projectName}
-                    width={500}
-                    height={250}
-                    className="rounded-box"
+                    width={800}
+                    height={400}
+                    className="rounded-box w-full h-48 object-cover"
                     loading="lazy"
                 />
             </Link>
