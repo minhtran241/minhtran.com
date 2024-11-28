@@ -24,9 +24,9 @@ const Softwares = () => {
                             <Image
                                 src={item.image}
                                 alt={item.name}
-                                width={112}
-                                height={112}
-                                className="rounded-box lg:w-28 lg:h-28 md:w-24 md:h-24 w-20 h-20"
+                                width={100}
+                                height={100}
+                                className="rounded-box lg:w-20 lg:h-20 md:w-16 md:h-16 w-12 h-12 object-cover"
                                 loading="lazy"
                             />
                         </div>

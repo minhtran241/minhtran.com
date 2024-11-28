@@ -4,8 +4,8 @@ export const PROJECT_LIST = [
         // thumbnail: 'edge-computing-models.png',
     },
     {
-        name: 'ML-DL-GenAI',
-        // thumbnail: 'ML-DL-GenAI.png',
+        name: 'ML-DL-LLM-GenAI',
+        thumbnail: 'ML-DL-LLM-GenAI.png',
     },
     {
         name: 'nextcorp',
