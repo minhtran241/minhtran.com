@@ -13,8 +13,8 @@ function ChatMessage({ message, isUser }) {
         </div>
     ) : (
         <div className="chat chat-start">
-            <div className="chat-image avatar online">
-                <div className="w-10 rounded-full">
+            <div className="chat-image avatar">
+                <div className="w-8 h-8 rounded-full">
                     <img alt="Assistant avatar" src="/home/ava.png" />
                 </div>
             </div>
@@ -25,8 +25,14 @@ function ChatMessage({ message, isUser }) {
     );
 }
 
-export default function BubbleChat() {
-    const [conversation, setConversation] = useState([]);
+export default function LLMChat() {
+    const [conversation, setConversation] = useState([
+        {
+            role: 'assistant',
+            content:
+                'Hello! I&#39;m Minh&#39;s virtual assistant. How can I help you today?',
+        },
+    ]);
     const [input, setInput] = useState('');
     const [isOpen, setIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -45,7 +51,7 @@ export default function BubbleChat() {
     const sendMessage = async () => {
         if (!input.trim()) return;
 
-        const userMessage = { role: 'user', content: input };
+        const userMessage = { role: 'user', content: input.trim() };
         setConversation((prev) => [...prev, userMessage]);
         setInput('');
         setIsLoading(true);
@@ -82,8 +88,8 @@ export default function BubbleChat() {
             )}
 
             {isOpen && (
-                <div className="rounded-lg shadow-lg bg-base-300 w-80 h-96 flex flex-col">
-                    <div className="h-16 bg-secondary flex justify-between items-center px-4 rounded-t-lg">
+                <div className="rounded-lg shadow-lg bg-base-300 w-[22rem] h-[28rem] flex flex-col">
+                    <div className="h-[3.5rem] bg-secondary flex justify-between items-center px-2 rounded-t-lg">
                         <div className="flex items-center gap-2 text-sm">
                             <div className="avatar online">
                                 <div className="w-8 rounded-full">
@@ -93,9 +99,14 @@ export default function BubbleChat() {
                                     />
                                 </div>
                             </div>
-                            <h1 className="text-secondary-content">
-                                Virtual Minh
-                            </h1>
+                            <div className="flex flex-col">
+                                <h1 className="text-secondary-content">
+                                    Virtual Minh
+                                </h1>
+                                <p className="text-xs text-secondary-content">
+                                    command-nightly
+                                </p>
+                            </div>
                         </div>
                         <button
                             onClick={toggleChat}
@@ -107,7 +118,7 @@ export default function BubbleChat() {
                     </div>
 
                     <div
-                        className="h-80 flex-grow overflow-auto p-2 text-xs"
+                        className="h-[24.5rem] overflow-y-auto p-2 text-sm"
                         ref={chatContainerRef}
                     >
                         {conversation.map((message, index) => (
