@@ -104,7 +104,7 @@ export default function LLMChat() {
                             </div>
                             <div className="flex flex-col">
                                 <h1 className="text-secondary-content">
-                                    Minh's Virtual Assistant
+                                    Minh&apos; Virtual Assistant
                                 </h1>
                                 <p className="text-xs text-secondary-content opacity-90">
                                     Model: Cohere (command-nightly)
