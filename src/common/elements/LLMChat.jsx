@@ -15,7 +15,10 @@ function ChatMessage({ message, isUser }) {
         <div className="chat chat-start">
             <div className="chat-image avatar">
                 <div className="w-8 h-8 rounded-full">
-                    <img alt="Assistant avatar" src="/home/ava.png" />
+                    <img
+                        alt="Assistant avatar"
+                        src="/assets/llmchat/ai-headshot.png"
+                    />
                 </div>
             </div>
             <div className="chat-bubble">
@@ -94,17 +97,17 @@ export default function LLMChat() {
                             <div className="avatar online">
                                 <div className="w-8 rounded-full">
                                     <img
-                                        src="/home/ava.png"
-                                        alt="Virtual Minh"
+                                        src="/assets/llmchat/ai-headshot.png"
+                                        alt="virtual assistant"
                                     />
                                 </div>
                             </div>
                             <div className="flex flex-col">
                                 <h1 className="text-secondary-content">
-                                    Virtual Minh
+                                    Minh's Virtual Assistant
                                 </h1>
-                                <p className="text-xs text-secondary-content">
-                                    command-nightly
+                                <p className="text-xs text-secondary-content opacity-90">
+                                    Model: Cohere (command-nightly)
                                 </p>
                             </div>
                         </div>

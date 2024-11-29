@@ -42,9 +42,9 @@ This website is built using these technologies:
 
 On this website, several features will continue to be updated and added in the future.
 
--   ### 🤖 ChatGPT AI (Unavailable)
+-   ### 🤖 AI Virtual Assistant
 
-You can access this feature by opening the command palette [cmd+k], and then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI API key)
+The AI virtual assistant is built using the [AI SDK](https://sdk.vercel.ai) provided by Vercel. The AI virtual assistant can answer questions, provide information, and more. The AI virtual assistant is displayed on the bottom right corner of the website.
 
 -   ### 🎧 Spotify Status
 
