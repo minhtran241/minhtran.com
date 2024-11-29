@@ -18,6 +18,7 @@ import {
 import CustomCursor from '@/common/elements/CustomCursor';
 import ScrollToTopButton from '@/common/elements/ScrollToTopButton';
 import SpotifyComponent from '@/components/Common/spotifyComponent';
+import BubbleChat from '@/common/elements/BubbleChat';
 // import LetschatBubble from '@/common/elements/LetschatBubble';
 
 const MazzardH = localFont({
@@ -197,7 +198,8 @@ export default function RootLayout({ children }) {
                 {/* <div className="mt-16"> */}
                 {/* <CustomCursor /> */}
                 {children}
-                <ScrollToTopButton />
+                {/* <ScrollToTopButton /> */}
+                <BubbleChat />
                 <SpeedInsights />
                 <Analytics />
                 <SpotifyComponent />

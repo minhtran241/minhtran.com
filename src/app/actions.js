@@ -1,6 +1,10 @@
 'use server';
 
 import { JSDOM } from 'jsdom';
+import { streamText } from 'ai';
+import { cohere } from '@ai-sdk/cohere';
+import { createStreamableValue } from 'ai/rsc';
+import { getChatbotSystemPrompt } from './prompts';
 
 // Function to fetch Open Graph details for a given URL
 export const extractMetaTags = async (response) => {
@@ -56,3 +60,32 @@ export const extractMetaTags = async (response) => {
         console.error('Error fetching Open Graph details', error);
     }
 };
+
+// Define the `continueConversation` function
+export async function continueConversation(history) {
+    // Create a streamable value
+    const stream = createStreamableValue();
+
+    (async () => {
+        // Set up the text stream using the AI SDK
+        const { textStream } = streamText({
+            model: cohere('command-nightly'),
+            system: getChatbotSystemPrompt(),
+            messages: history,
+        });
+
+        // Process the streaming text
+        for await (const text of textStream) {
+            stream.update(text);
+        }
+
+        // Mark the stream as complete
+        stream.done();
+    })();
+
+    // Return the conversation history and new streamed message
+    return {
+        messages: history,
+        newMessage: stream.value,
+    };
+}
