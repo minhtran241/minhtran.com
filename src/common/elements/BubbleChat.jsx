@@ -70,14 +70,14 @@ export default function BubbleChat() {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 z-[99999]">
+        <div className="fixed bottom-0 right-0 m-10 z-[99999]">
             {!isOpen && (
                 <button
                     className="btn btn-circle btn-active btn-secondary flex items-center justify-center"
                     onClick={toggleChat}
                     aria-label="Open chat"
                 >
-                    <FontAwesomeIcon icon="fa-solid fa-comment-dots text-secondary-content" />
+                    <FontAwesomeIcon icon="fa-solid fa-comment-dots text-secondary-content fa-bounce" />
                 </button>
             )}
 

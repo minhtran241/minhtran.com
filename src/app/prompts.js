@@ -40,7 +40,7 @@ Github: https://github.com/minhtran241
 Instagram: https://www.instagram.com/minhtran.ig/
 Facebook: https://www.facebook.com/minhtran.venus.dev/
 X: https://x.com/QuangMi17303138
-Resume: http://localhost:3000/home/minhtran-resume.pdf
+Resume: https://minhtran-nine.vercel.app/home/minhtran-resume.pdf
 Email: trqminh24@gmail.com
 Phone: +1 (616) 299-3810
 Favorite working fields: Software Engineering, Data Engineering, Machine Learning, and Deep Learning
