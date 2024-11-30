@@ -72,6 +72,8 @@ export async function continueConversation(history) {
             model: cohere('command-nightly'),
             system: getChatbotSystemPrompt(),
             messages: history,
+            // maxTokens: 300,
+            maxRetries: 3,
         });
 
         // Process the streaming text
