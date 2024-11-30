@@ -39,9 +39,11 @@ const SpotifyComponent = ({ isExpand = false }) => {
     // if (!playingData?.songUrl) return null;
     const handleMusicToggle = () => setExpand(!expand);
 
+    if (!playingData?.songUrl) return null;
+
     return !expand ? (
         <div
-            className="fixed bottom-0 m-10 shadow-lg z-[99998] left-0  rounded-full bg-black transition-all duration-100"
+            className="fixed bottom-0 m-10 shadow-lg z-[99998] left-0 rounded-full bg-black transition-all duration-100"
             onClick={handleMusicToggle}
         >
             <Image
@@ -90,9 +92,9 @@ const SpotifyComponent = ({ isExpand = false }) => {
                             </div>
                         </Link>
                     </div>
-                    <div className="flex " onClick={handleMusicToggle}>
-                        <FontAwesomeIcon icon="fa-duotone fa-circle-xmark  pt-0.5" />
-                    </div>
+                    <button className="btn btn-circle btn-ghost btn-xs flex" onClick={handleMusicToggle}>
+                        <FontAwesomeIcon icon="fa-solid fa-times pt-0.5" />
+                    </button>
                 </div>
             ) : (
                 <div className="flex items-center gap-3 justify-between rounded-box bg-green-400 p-3 font-sora text-neutral-800">

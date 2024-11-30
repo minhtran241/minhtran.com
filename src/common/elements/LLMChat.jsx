@@ -16,10 +16,10 @@ function ChatMessage({ message, isUser }) {
     ) : (
         <div className="chat chat-start">
             <div className="chat-image avatar">
-                <div className="w-8 h-8 rounded-full">
+                <div className="w-8 h-8 rounded-full bg-secondary">
                     <img
                         alt="Assistant avatar"
-                        src="/assets/llmchat/ai-headshot.png"
+                        src="/assets/llmchat/ai-headshot-2.png"
                     />
                 </div>
             </div>
@@ -123,18 +123,23 @@ export default function LLMChat() {
     };
 
     return (
-        <div
-            className="fixed bottom-0 right-0 z-[99999]"
-        >
+        <div className="fixed bottom-0 right-0 z-[99999]">
             {!isOpen && (
-                <button
-                    className="btn btn-circle btn-active btn-secondary flex items-center justify-center m-10  tooltip tooltip-secondary tooltip-left"
+                <div
+                    className="m-8 cursor-pointer tooltip tooltip-left tooltip-secondary"
                     onClick={toggleChat}
                     aria-label="Open chat"
-					data-tip="Minh's virtual assistant"
+                    data-tip="Minh's Virtual Assistant"
                 >
-                    <FontAwesomeIcon icon="fa-solid fa-message-bot text-secondary-content fa-bounce fa-xl" />
-                </button>
+                    <div className="avatar online">
+                        <div className="ring-secondary ring-offset-base-100 w-[42px] h-[42px] rounded-full ring ring-offset-0">
+                            <img
+                                src="/assets/llmchat/ai-headshot-2.png"
+                                alt="virtual assistant"
+                            />
+                        </div>
+                    </div>
+                </div>
             )}
 
             {isOpen && (
@@ -144,7 +149,7 @@ export default function LLMChat() {
                             <div className="avatar online">
                                 <div className="w-8 rounded-full">
                                     <img
-                                        src="/assets/llmchat/ai-headshot.png"
+                                        src="/assets/llmchat/ai-headshot-2.png"
                                         alt="virtual assistant"
                                     />
                                 </div>
