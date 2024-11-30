@@ -5,6 +5,8 @@ import ReactMarkdown from 'react-markdown';
 import { readStreamableValue } from 'ai/rsc';
 import { continueConversation } from '@/app/actions';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
+import rehypeRaw from 'rehype-raw'; // Allows parsing HTML in Markdown
+import remarkGfm from 'remark-gfm'; // Enables GitHub-flavored Markdown
 
 function ChatMessage({ message, isUser }) {
     return isUser ? (
@@ -22,7 +24,49 @@ function ChatMessage({ message, isUser }) {
                 </div>
             </div>
             <div className="chat-bubble">
-                <ReactMarkdown>{message.content}</ReactMarkdown>
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw]}
+                    components={{
+                        a: ({ href, children }) => (
+                            <a
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 underline hover:text-blue-500"
+                            >
+                                {children}
+                            </a>
+                        ),
+                        img: ({ src, alt }) => (
+                            <img
+                                src={src}
+                                alt={alt}
+                                className="rounded-lg max-w-full"
+                            />
+                        ),
+                        ul: ({ children }) => (
+                            <ul className="list-disc list-inside mb-2">
+                                {children}
+                            </ul>
+                        ),
+                        ol: ({ children }) => (
+                            <ol className="list-decimal list-inside mb-2">
+                                {children}
+                            </ol>
+                        ),
+                        li: ({ children }) => (
+                            <li className="mb-1">{children}</li>
+                        ),
+                        blockquote: ({ children }) => (
+                            <blockquote className="border-l-4 border-gray-300 pl-2 italic mb-2">
+                                {children}
+                            </blockquote>
+                        ),
+                    }}
+                >
+                    {message.content}
+                </ReactMarkdown>
             </div>
         </div>
     );
