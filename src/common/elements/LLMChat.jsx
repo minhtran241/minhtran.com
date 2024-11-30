@@ -123,14 +123,17 @@ export default function LLMChat() {
     };
 
     return (
-        <div className="fixed bottom-0 right-0 z-[99999]">
+        <div
+            className="fixed bottom-0 right-0 z-[99999]"
+        >
             {!isOpen && (
                 <button
-                    className="btn btn-circle btn-active btn-secondary flex items-center justify-center m-10"
+                    className="btn btn-circle btn-active btn-secondary flex items-center justify-center m-10  tooltip tooltip-secondary tooltip-left"
                     onClick={toggleChat}
                     aria-label="Open chat"
+					data-tip="Minh's virtual assistant"
                 >
-                    <FontAwesomeIcon icon="fa-solid fa-comment-dots text-secondary-content fa-bounce" />
+                    <FontAwesomeIcon icon="fa-solid fa-message-bot text-secondary-content fa-bounce fa-xl" />
                 </button>
             )}
 
@@ -151,7 +154,7 @@ export default function LLMChat() {
                                     Minh&apos;s Virtual Assistant
                                 </h1>
                                 <p className="text-xs text-secondary-content opacity-90">
-                                    Model: Cohere (command-nightly)
+                                    I reply in real-time
                                 </p>
                             </div>
                         </div>
@@ -187,7 +190,7 @@ export default function LLMChat() {
                         <input
                             type="text"
                             className="input input-primary w-full input-sm"
-                            placeholder="Type a message..."
+                            placeholder="Questions about Minh?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             required
