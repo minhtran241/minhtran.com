@@ -79,10 +79,10 @@ export default function LLMChat() {
     };
 
     return (
-        <div className="fixed bottom-0 right-0 m-10 z-[99999]">
+        <div className="fixed bottom-0 right-0 z-[99999]">
             {!isOpen && (
                 <button
-                    className="btn btn-circle btn-active btn-secondary flex items-center justify-center"
+                    className="btn btn-circle btn-active btn-secondary flex items-center justify-center m-10"
                     onClick={toggleChat}
                     aria-label="Open chat"
                 >
@@ -91,8 +91,8 @@ export default function LLMChat() {
             )}
 
             {isOpen && (
-                <div className="rounded-lg shadow-lg bg-base-300 w-[22rem] h-[28rem] flex flex-col">
-                    <div className="h-[3.5rem] bg-secondary flex justify-between items-center px-2 rounded-t-lg">
+                <div className="rounded-box shadow-lg bg-base-300 w-[22rem] h-[28rem] flex flex-col m-4">
+                    <div className="h-[3.5rem] bg-secondary flex justify-between items-center px-2 rounded-t-box">
                         <div className="flex items-center gap-2 text-sm">
                             <div className="avatar online">
                                 <div className="w-8 rounded-full">
