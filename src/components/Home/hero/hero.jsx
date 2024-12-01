@@ -21,13 +21,11 @@ const HeroComponent = () => {
                     priority={true} // Adds preload for better LCP
                 />
                 <div>
-                    <div className="font-bold flex items-center gap-4 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-primary-content">
+                    <div className="font-semibold flex items-center gap-4 lg:text-3xl md:text-2xl sm:text-xl text-lg text-primary-content">
                         <span>
-                            <FontAwesomeIcon icon="fa-solid fa-circle-info fa-bounce text-accent" />
+                            <FontAwesomeIcon icon="fa-solid fa-circle-info" />
                         </span>
-                        <p>
-                            <span className="text-accent">About</span> Me
-                        </p>
+                        <p>About Me</p>
                     </div>
                     <ul
                         className="fa-ul lg:text-base md:text-base sm:text-sm text-sm py-6 text-primary-content"
@@ -36,7 +34,7 @@ const HeroComponent = () => {
                         {userBasicInfo.about?.map((item, index) => (
                             <li key={index}>
                                 <span className="fa-li">
-                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-hundred-points fa-beat" />
+                                    <FontAwesomeIcon icon="fa-solid fa-star fa-beat" />
                                 </span>
                                 {item}
                             </li>

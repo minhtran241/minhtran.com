@@ -5,20 +5,12 @@ import { themeChange } from 'theme-change';
 
 const ThemeChanger = () => {
     const themeValues = [
-        'light',
-        'dark',
+        // 'light',
+        // 'dark',
+        'night',
+        'winter',
+        'lofi',
         'corporate',
-        'synthwave',
-        'halloween',
-        'fantasy',
-        'luxury',
-        'cmyk',
-        'autumn',
-        'business',
-        'acid',
-        'lemonade',
-        'coffee',
-        'dim',
         'nord',
     ];
 
