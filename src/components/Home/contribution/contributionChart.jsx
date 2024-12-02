@@ -112,11 +112,6 @@ const ContributionChart = ({ contributionCollection }) => {
 
                 // Apply the gradient
                 chartData.datasets[0].backgroundColor = gradient;
-                chartData.datasets[0].borderColor = 'rgb(45, 186, 78)';
-                chartData.datasets[0].pointBackgroundColor = 'rgb(45, 186, 78)';
-                chartData.datasets[0].pointBorderColor = 'rgb(45, 186, 78)';
-                chartData.datasets[0].pointHoverBackgroundColor =
-                    'rgb(45, 186, 78)';
                 chartInstance.update(); // Trigger chart update
             }
         }
