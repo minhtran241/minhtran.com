@@ -103,7 +103,7 @@ const ContributionChart = ({ contributionCollection }) => {
 
             if (chartElement) {
                 const ctx = chartElement.getContext('2d');
-
+                // Add small delay to work when deploy
                 setTimeout(() => {
                     if (ctx) {
                         const gradient = ctx.createLinearGradient(0, 0, 0, 300);
@@ -124,7 +124,7 @@ const ContributionChart = ({ contributionCollection }) => {
                         // Update the state with the new chartData
                         setChartData(updatedChartData);
                     }
-                }, 0);
+                }, 100);
             }
         }
     }, [chartData]); // Re-run when chartData changes
