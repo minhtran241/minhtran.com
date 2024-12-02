@@ -44,20 +44,37 @@ const DEFAULT_TIME_RANGE = Object.keys(GET_CHART_DATA)[0];
  */
 const ContributionChart = ({ contributionCollection }) => {
     // State variables
-    // { totalContributions, weeks, months }
     const contrCalendar = contributionCollection.contributionCalendar;
     const [selectedTimeRange, setSelectedTimeRange] =
         useState(DEFAULT_TIME_RANGE);
     const [chartData, setChartData] = useState(null);
 
-    // Reverse the weeks and months arrays to display the most recent data first
-    // weeks.reverse();
-
     // Effect to update chart data when selected time range changes
-    useEffect(
-        () => setChartData(GET_CHART_DATA[selectedTimeRange](contrCalendar)),
-        [selectedTimeRange]
-    );
+    useEffect(() => {
+        const data = GET_CHART_DATA[selectedTimeRange](contrCalendar);
+
+        if (typeof window !== 'undefined' && data) {
+            // Create gradient only once the data is available and window is defined
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, 'rgba(45, 186, 78, 0.5)');
+                gradient.addColorStop(1, 'rgba(45, 186, 78, 0)');
+
+                // Update chartData with gradient in the backgroundColor
+                setChartData({
+                    ...data,
+                    datasets: [
+                        {
+                            ...data.datasets[0],
+                            backgroundColor: gradient,
+                        },
+                    ],
+                });
+            }
+        }
+    }, [selectedTimeRange, contrCalendar]); // Re-run on time range or contribution collection change
 
     // Chart options
     const options = {
@@ -96,38 +113,6 @@ const ContributionChart = ({ contributionCollection }) => {
             },
         },
     };
-
-    useEffect(() => {
-        if (chartData && typeof window !== 'undefined') {
-            const chartElement = document.getElementById('myChart');
-
-            if (chartElement) {
-                const ctx = chartElement.getContext('2d');
-                // Add small delay to work when deploy
-                setTimeout(() => {
-                    if (ctx) {
-                        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                        gradient.addColorStop(0, 'rgba(45, 186, 78, 0.5)');
-                        gradient.addColorStop(1, 'rgba(45, 186, 78, 0)');
-
-                        // Create a new chartData object to avoid mutating the current state
-                        const updatedChartData = {
-                            ...chartData,
-                            datasets: [
-                                {
-                                    ...chartData.datasets[0],
-                                    backgroundColor: gradient,
-                                },
-                            ],
-                        };
-
-                        // Update the state with the new chartData
-                        setChartData(updatedChartData);
-                    }
-                }, 100);
-            }
-        }
-    }, [chartData]); // Re-run when chartData changes
 
     // Render the ContributionChart component
     return (
