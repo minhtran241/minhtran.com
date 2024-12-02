@@ -98,22 +98,36 @@ const ContributionChart = ({ contributionCollection }) => {
     };
 
     useEffect(() => {
-        if (
-            chartData &&
-            typeof document !== 'undefined' &&
-            document.getElementById('myChart')
-        ) {
-            const ctx = document.getElementById('myChart').getContext('2d');
+        if (chartData && typeof window !== 'undefined') {
+            const chartElement = document.getElementById('myChart');
 
-            if (ctx) {
-                const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                gradient.addColorStop(0, 'rgba(45, 186, 78, 0.5)');
-                gradient.addColorStop(1, 'rgba(45, 186, 78, 0)');
-                chartData.datasets[0].backgroundColor = gradient;
-                setChartData(chartData);
+            if (chartElement) {
+                const ctx = chartElement.getContext('2d');
+
+                setTimeout(() => {
+                    if (ctx) {
+                        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                        gradient.addColorStop(0, 'rgba(45, 186, 78, 0.5)');
+                        gradient.addColorStop(1, 'rgba(45, 186, 78, 0)');
+
+                        // Create a new chartData object to avoid mutating the current state
+                        const updatedChartData = {
+                            ...chartData,
+                            datasets: [
+                                {
+                                    ...chartData.datasets[0],
+                                    backgroundColor: gradient,
+                                },
+                            ],
+                        };
+
+                        // Update the state with the new chartData
+                        setChartData(updatedChartData);
+                    }
+                }, 0);
             }
         }
-    }, [chartData]);
+    }, [chartData]); // Re-run when chartData changes
 
     // Render the ContributionChart component
     return (
