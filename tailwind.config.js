@@ -78,8 +78,6 @@ module.exports = {
             'winter',
             'lofi',
             'corporate',
-            // 'business',
-            'nord',
         ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
         darkMode: ['selector', '[data-theme="night"]'],
         darkTheme: 'night', // name of one of the included themes for dark mode

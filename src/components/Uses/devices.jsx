@@ -8,11 +8,11 @@ const DEVICES = USES.Devices;
 const Devices = () => {
     return (
         <section className="flex flex-col gap-8">
-            <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
+            <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">
                 <FontAwesomeIcon icon="fa-duotone fa-laptop-mobile" />
                 <h1 className="capitalize">Devices</h1>
             </div>
-            <div className="flex flex-col gap-8 mb-8">
+            <div className="flex flex-col gap-8">
                 <Link
                     href={DEVICES[0]?.href || '#'}
                     target="_blank"

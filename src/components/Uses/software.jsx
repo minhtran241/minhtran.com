@@ -8,7 +8,7 @@ const SOFTWARES = USES.Softwares;
 const Softwares = () => {
     return (
         <section className="flex flex-col gap-8">
-            <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
+            <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">
                 <FontAwesomeIcon icon="fa-duotone fa-cubes" />
                 <h1 className="capitalize">Softwares</h1>
             </div>

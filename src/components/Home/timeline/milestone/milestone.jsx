@@ -14,13 +14,13 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
 
     return (
         <li>
-            {!first && <hr className="bg-accent" />}
+            {!first && <hr className="bg-primary" />}
             <div className="timeline-middle">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="text-accent h-5 w-5"
+                    className="text-primary h-5 w-5"
                 >
                     <path
                         fillRule="evenodd"
@@ -34,12 +34,12 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                     timeline_end ? 'timeline-end' : 'timeline-start md:text-end'
                 } mb-10`}
             >
-                <time className="font-mono">{timeStr}</time>
+                <time className="font-mono text-primary">{timeStr}</time>
                 <div className="">
                     <Link
                         href={milestone.link}
                         target="_blank"
-                        className="lg:text-lg text-base font-black link link-hover"
+                        className="lg:text-lg text-base font-bold hover:text-primary"
                     >
                         {milestone.job_title}, {milestone.title}
                     </Link>
@@ -50,7 +50,7 @@ const Milestone = ({ milestone, first, last, timeline_end }) => {
                     ))}
                 </div>
             </div>
-            {!last && <hr className="bg-accent" />}
+            {!last && <hr className="bg-primary" />}
         </li>
     );
 };

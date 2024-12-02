@@ -136,7 +136,7 @@ const ContactForm = () => {
                         <span>{error}</span>
                     </div>
                 )}
-                <div className="flex flex-row items-center gap-2 text-sm sm:text-xs">
+                <div className="flex flex-row items-center gap-2 text-md sm:text-sm">
                     <FontAwesomeIcon icon="fa-duotone fa-clock" />
                     <div className="">
                         <span className="font-medium">Avg. response:</span> 1-2

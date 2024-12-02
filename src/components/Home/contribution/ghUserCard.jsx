@@ -29,7 +29,7 @@ const detailsData = (data) => {
 
 const GHUserCard = ({ ghInfo, username }) => {
     return (
-        <div className="rounded-box p-4 border shadow bg-base-200">
+        <div className="rounded-box p-4 shadow border border-gray-200">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-row items-center justify-center gap-4">
                     <div className="avatar">
@@ -46,13 +46,15 @@ const GHUserCard = ({ ghInfo, username }) => {
                         <h1 className="card-title lg:text-lg text-base">
                             {ghInfo.user.name}
                         </h1>
-                        <Link
-                            href={`https://github.com/${username}`}
-                            target="_blank"
-                            className="text-sm text-primary link link-hover"
-                        >
-                            @{username}
-                        </Link>
+                        <div className="badge badge-sm badge-primary">
+                            <Link
+                                href={`https://github.com/${username}`}
+                                target="_blank"
+                                className=""
+                            >
+                                @{username}
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <p className="lg:text-base md:text-base text-sm">

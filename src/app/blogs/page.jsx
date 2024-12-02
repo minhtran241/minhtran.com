@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
-import Breakline from '@/common/elements/Breakline';
+// import Breakline from '@/common/elements/Breakline';
 
 const PAGE_TITLE = 'Tech Blogs';
 const PAGE_DESCRIPTION =
@@ -83,7 +83,7 @@ const BlogPage = async () => {
 
     return (
         <>
-            <div className="flex flex-col container py-12 gap-8 mt-16">
+            <div className="flex flex-col container py-12 gap-12 mt-16">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
                 {/* // First post */}
                 <div className="lg:flex lg:items-center lg:gap-12">
@@ -141,12 +141,12 @@ const BlogPage = async () => {
                         </div>
                     </div>
                 </div>
-                <Breakline />
-                <div className="flex flex-col gap-4">
+                {/* <Breakline /> */}
+                <div className="flex flex-col gap-12">
                     {groupedPosts.map((category, index) => (
                         <div key={index}>
                             <section className="flex flex-col gap-8">
-                                <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
+                                <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">
                                     {category.icon}
                                     {category.name}
                                 </div>
@@ -156,7 +156,7 @@ const BlogPage = async () => {
                                     ))}
                                 </div>
                             </section>
-                            {index !== groupedPosts.length - 1 && <Breakline />}
+                            {/* {index !== groupedPosts.length - 1 && <Breakline />} */}
                         </div>
                     ))}
                 </div>

@@ -1,6 +1,6 @@
 import Devices from '@/components/Uses/devices';
 import DevTools from '@/components/Uses/devtools';
-import Breakline from '@/common/elements/Breakline';
+// import Breakline from '@/common/elements/Breakline';
 import Breadcrumbs from '@/common/elements/Breadcrumbs';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Softwares from '@/components/Uses/software';
@@ -30,11 +30,11 @@ const UsesPage = () => {
         <>
             <div className="container py-12 mt-16">
                 <Breadcrumbs breadcrumbs={BREADCRUMBS} />
-                <div className="flex flex-col gap-4 mt-4">
+                <div className="flex flex-col gap-12 mt-4">
                     <Devices />
-                    <Breakline />
+                    {/* <Breakline /> */}
                     <DevTools />
-                    <Breakline />
+                    {/* <Breakline /> */}
                     <Softwares />
                 </div>
             </div>

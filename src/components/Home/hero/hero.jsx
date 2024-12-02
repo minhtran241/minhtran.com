@@ -10,7 +10,8 @@ import Link from 'next/link';
 
 const HeroComponent = () => {
     return (
-        <div className="hero bg-primary min-h-fit pb-24 pt-36 rounded-b-box">
+        // border length is 1/4 of the screen bottom (centered)
+        <div className="hero min-h-fit pt-36 pb-8 bg-opacity-30">
             <div className="hero-content flex-col lg:flex-row">
                 <Image
                     src="/memoji/memojihello.png"
@@ -20,15 +21,12 @@ const HeroComponent = () => {
                     height={300}
                     priority={true} // Adds preload for better LCP
                 />
-                <div>
-                    <div className="font-semibold flex items-center gap-4 lg:text-3xl md:text-2xl sm:text-xl text-lg text-primary-content">
-                        <span>
-                            <FontAwesomeIcon icon="fa-solid fa-circle-info" />
-                        </span>
-                        <p>About Me</p>
-                    </div>
+                <div className="flex flex-col gap-4 lg:pl-10 lg:pt-0 pt-5">
+                    <p className="font-bold lg:text-3xl md:text-2xl sm:text-xl text-lg">
+                        About Me
+                    </p>
                     <ul
-                        className="fa-ul lg:text-base md:text-base sm:text-sm text-sm py-6 text-primary-content"
+                        className="fa-ul lg:text-base md:text-base sm:text-sm text-sm"
                         style={{ '--fa-li-width': '4em' }}
                     >
                         {userBasicInfo.about?.map((item, index) => (
@@ -49,7 +47,7 @@ const HeroComponent = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             role="button"
-                            className="btn btn-active btn-accent"
+                            className="btn btn-active btn-primary"
                             prefetch={false}
                         >
                             <FontAwesomeIcon icon="fa-duotone fa-file-user" />

@@ -66,10 +66,10 @@ const SkillsList = async () => {
                     title={SECTION_HEADING}
                     description={SECTION_DESCRIPTION}
                 />
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 xl:grid-cols-2 mt-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 xl:grid-cols-2">
                     {skills.map((skill, idx) => (
                         <div
-                            className="rounded-box p-4 border shadow-lg bg-base-200 transition-shadow duration-300 hover:shadow-xl"
+                            className="rounded-box p-4 border shadow-lg border-gray-200 transition-shadow duration-300 hover:shadow-xl"
                             key={idx}
                         >
                             <div className="flex items-center gap-2 mb-5">

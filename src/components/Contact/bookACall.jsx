@@ -5,7 +5,7 @@ import Link from 'next/link';
 const BookACall = () => {
     return (
         <div className="space-y-5 pb-2">
-            <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
+            <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">
                 <FontAwesomeIcon icon="fa-duotone fa-headset" />
                 <h1 className="capitalize">Book a Call</h1>
             </div>

@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const PublicReposCard = ({ ghInfo }) => {
     return (
-        <div className="rounded-box p-4 border shadow bg-base-200">
+        <div className="rounded-box p-4 border shadow border-gray-200">
             <div className="flex flex-col items-start gap-3">
                 <div className="flex flex-row items-center justify-center gap-4">
                     <div className="avatar">

@@ -5,7 +5,7 @@ import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 const SocialMediaList = () => {
     return (
         <div className="space-y-5 pb-2">
-            <div className="flex flex-row items-center gap-2 text-primary font-semibold lg:text-xl md:text-lg text-base">
+            <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">
                 <FontAwesomeIcon icon="fa-duotone fa-messages" />
                 <h1 className="capitalize">Social Media Platforms</h1>
             </div>
