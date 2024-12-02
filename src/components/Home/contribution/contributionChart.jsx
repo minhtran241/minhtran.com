@@ -1,16 +1,16 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import {
     Chart as ChartJS,
+    Filler,
     CategoryScale,
     LinearScale,
     Tooltip,
     PointElement,
     LineElement,
 } from 'chart.js';
-import { Chart, Filler } from 'chart.js';
-import { Chart as ReactChart, Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
 import {
     getDailyChartData,
@@ -97,25 +97,23 @@ const ContributionChart = ({ contributionCollection }) => {
         },
     };
 
-    const chartInstanceRef = useRef(null);
-
     useEffect(() => {
-        if (chartInstanceRef.current && chartData) {
-            const chartInstance = chartInstanceRef.current;
-            const ctx = chartInstance.canvas.getContext('2d');
+        if (
+            chartData &&
+            typeof document !== 'undefined' &&
+            document.getElementById('myChart')
+        ) {
+            const ctx = document.getElementById('myChart').getContext('2d');
 
             if (ctx) {
-                // Create gradient
                 const gradient = ctx.createLinearGradient(0, 0, 0, 300);
                 gradient.addColorStop(0, 'rgba(45, 186, 78, 0.5)');
                 gradient.addColorStop(1, 'rgba(45, 186, 78, 0)');
-
-                // Apply the gradient
                 chartData.datasets[0].backgroundColor = gradient;
-                chartInstance.update(); // Trigger chart update
+                setChartData(chartData);
             }
         }
-    }, [chartData]); // Re-run if chartData changes
+    }, [chartData]);
 
     // Render the ContributionChart component
     return (
@@ -162,14 +160,7 @@ const ContributionChart = ({ contributionCollection }) => {
             {/* Chart */}
             <div style={{ height: '300px', width: '100%' }}>
                 {chartData ? (
-                    <Line
-                        options={options}
-                        data={chartData}
-                        id="myChart"
-                        ref={(chart) => {
-                            if (chart) chartInstanceRef.current = chart;
-                        }}
-                    />
+                    <Line options={options} data={chartData} id="myChart" />
                 ) : (
                     <Loading />
                 )}

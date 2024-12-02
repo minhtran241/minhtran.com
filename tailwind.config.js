@@ -74,8 +74,8 @@ module.exports = {
         themes: [
             // 'light',
             // 'dark',
+			'winter',
             'night',
-            'winter',
             'lofi',
             'corporate',
         ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
