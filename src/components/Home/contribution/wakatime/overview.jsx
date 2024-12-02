@@ -32,7 +32,7 @@ const Overview = ({ data }) => {
 const OverviewItem = ({ label, value }) => (
     <div className="stats border shadow border-gray-200 rounded-box">
         <div className="stat">
-            <div className="stat-title text-sm flex items-center gap-2">
+            <div className="col-start-1 whitespace-nowrap flex items-center gap-2">
                 <FontAwesomeIcon icon="fa-duotone fa-solid fa-laptop-code" />{' '}
                 {label}
             </div>

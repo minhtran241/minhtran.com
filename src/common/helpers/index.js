@@ -26,20 +26,22 @@ export const sumTotalFromArray = (data, key) => {
  * @param {number[]} data - Array of data points for the chart.
  * @returns {Object} - Chart data object.
  */
-const chartDataPrototype = (labels, data) => ({
-    labels,
-    datasets: [
-        {
-            label: 'Contributions',
-            data,
-            fill: false,
-            borderColor: 'rgb(0, 51, 160)',
-            backgroundColor: 'rgb(0, 51, 160)',
-            borderWidth: 2,
-            pointRadius: 4,
-        },
-    ],
-});
+const chartDataPrototype = (labels, data) => {
+    return {
+        labels,
+        datasets: [
+            {
+                label: 'Contributions',
+                data,
+                fill: true,
+                tension: 0.4,
+                borderColor: 'rgba(45, 186, 78)',
+                pointRadius: 0,
+                pointHoverRadius: 2,
+            },
+        ],
+    };
+};
 
 /**
  * Generates chart data for daily contributions.

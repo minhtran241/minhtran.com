@@ -16,10 +16,10 @@ function ChatMessage({ message, isUser }) {
     ) : (
         <div className="chat chat-start">
             <div className="chat-image avatar">
-                <div className="w-8 h-8 rounded-full bg-secondary">
+                <div className="w-8 h-8 rounded-full bg-primary">
                     <img
                         alt="Assistant avatar"
-                        src="/assets/llmchat/ai-headshot-2.png"
+                        src="/assets/llmchat/chatbot-avatar.png"
                     />
                 </div>
             </div>
@@ -126,15 +126,15 @@ export default function LLMChat() {
         <div className="fixed bottom-0 right-0 z-[99999]">
             {!isOpen && (
                 <div
-                    className="m-8 cursor-pointer tooltip tooltip-left tooltip-secondary"
+                    className="m-8 cursor-pointer tooltip tooltip-left tooltip-primary"
                     onClick={toggleChat}
                     aria-label="Open chat"
                     data-tip="Minh's Virtual Assistant"
                 >
                     <div className="avatar online">
-                        <div className="ring-secondary ring-offset-base-100 w-[42px] h-[42px] rounded-full ring ring-offset-0">
+                        <div className="ring-primary ring-offset-base-100 w-[42px] h-[42px] rounded-full ring ring-offset-0">
                             <img
-                                src="/assets/llmchat/ai-headshot-2.png"
+                                src="/assets/llmchat/chatbot-avatar.png"
                                 alt="virtual assistant"
                             />
                         </div>
@@ -144,21 +144,21 @@ export default function LLMChat() {
 
             {isOpen && (
                 <div className="rounded-box shadow-lg bg-base-300 w-[22rem] h-[28rem] flex flex-col m-4">
-                    <div className="h-[3.5rem] bg-secondary flex justify-between items-center px-2 rounded-t-box">
+                    <div className="h-[3.5rem] bg-primary flex justify-between items-center px-2 rounded-t-box">
                         <div className="flex items-center gap-2 text-sm">
                             <div className="avatar online">
                                 <div className="w-8 rounded-full">
                                     <img
-                                        src="/assets/llmchat/ai-headshot-2.png"
+                                        src="/assets/llmchat/chatbot-avatar.png"
                                         alt="virtual assistant"
                                     />
                                 </div>
                             </div>
                             <div className="flex flex-col">
-                                <h1 className="text-secondary-content">
+                                <h1 className="text-primary-content">
                                     Minh&apos;s Virtual Assistant
                                 </h1>
-                                <p className="text-xs text-secondary-content opacity-90">
+                                <p className="text-xs text-primary-content opacity-90">
                                     I reply in real-time
                                 </p>
                             </div>
@@ -168,7 +168,7 @@ export default function LLMChat() {
                             className="btn btn-sm btn-circle btn-ghost"
                             aria-label="Minimize chat"
                         >
-                            <FontAwesomeIcon icon="fa-solid fa-minus text-secondary-content" />
+                            <FontAwesomeIcon icon="fa-solid fa-minus text-primary-content" />
                         </button>
                     </div>
 
@@ -202,13 +202,13 @@ export default function LLMChat() {
                         />
                         <button
                             type="submit"
-                            className={`btn btn-circle btn-active btn-secondary btn-sm ${
+                            className={`btn btn-circle btn-active btn-primary btn-sm ${
                                 isLoading ? 'animate-pulse' : ''
                             }`}
                             disabled={isLoading}
                             aria-label="Send message"
                         >
-                            <FontAwesomeIcon icon="fa-solid fa-paper-plane text-secondary-content text-sm" />
+                            <FontAwesomeIcon icon="fa-solid fa-paper-plane text-primary-content text-sm" />
                         </button>
                     </form>
                 </div>

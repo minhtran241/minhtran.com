@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -9,7 +9,8 @@ import {
     PointElement,
     LineElement,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Chart, Filler } from 'chart.js';
+import { Chart as ReactChart, Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
 import {
     getDailyChartData,
@@ -25,7 +26,8 @@ ChartJS.register(
     LinearScale,
     PointElement,
     LineElement,
-    Tooltip
+    Tooltip,
+    Filler
 );
 
 // Constants
@@ -95,14 +97,30 @@ const ContributionChart = ({ contributionCollection }) => {
         },
     };
 
-    if (chartData) {
-        // add primary daisyUI color to line
-        chartData.datasets[0].borderColor = '#4B5563';
-        chartData.datasets[0].backgroundColor = '#4B5563';
-        chartData.datasets[0].pointBackgroundColor = '#4B5563';
-        chartData.datasets[0].pointBorderColor = '#4B5563';
-        chartData.datasets[0].pointHoverBackgroundColor = '#4B5563';
-    }
+    const chartInstanceRef = useRef(null);
+
+    useEffect(() => {
+        if (chartInstanceRef.current && chartData) {
+            const chartInstance = chartInstanceRef.current;
+            const ctx = chartInstance.canvas.getContext('2d');
+
+            if (ctx) {
+                // Create gradient
+                const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, 'rgba(45, 186, 78, 0.5)');
+                gradient.addColorStop(1, 'rgba(45, 186, 78, 0)');
+
+                // Apply the gradient
+                chartData.datasets[0].backgroundColor = gradient;
+                chartData.datasets[0].borderColor = 'rgb(45, 186, 78)';
+                chartData.datasets[0].pointBackgroundColor = 'rgb(45, 186, 78)';
+                chartData.datasets[0].pointBorderColor = 'rgb(45, 186, 78)';
+                chartData.datasets[0].pointHoverBackgroundColor =
+                    'rgb(45, 186, 78)';
+                chartInstance.update(); // Trigger chart update
+            }
+        }
+    }, [chartData]); // Re-run if chartData changes
 
     // Render the ContributionChart component
     return (
@@ -126,7 +144,7 @@ const ContributionChart = ({ contributionCollection }) => {
                                 selectedTimeRange.slice(1)}{' '}
                             Contributions
                         </h2>
-                        <p className="text-sm opacity-70">
+                        <p className="text-sm">
                             {contrCalendar.totalContributions} Total
                             Contributions
                         </p>
@@ -149,7 +167,14 @@ const ContributionChart = ({ contributionCollection }) => {
             {/* Chart */}
             <div style={{ height: '300px', width: '100%' }}>
                 {chartData ? (
-                    <Line options={options} data={chartData} id="myChart" />
+                    <Line
+                        options={options}
+                        data={chartData}
+                        id="myChart"
+                        ref={(chart) => {
+                            if (chart) chartInstanceRef.current = chart;
+                        }}
+                    />
                 ) : (
                     <Loading />
                 )}

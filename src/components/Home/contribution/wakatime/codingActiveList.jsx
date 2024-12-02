@@ -87,9 +87,7 @@ const CodingActiveList = ({ data }) => {
                         <FontAwesomeIcon icon="fa-duotone fa-solid fa-bars-progress" />{' '}
                         {item?.title}
                     </p>
-                    <p className="text-sm opacity-70">
-                        Last updated {distance}
-                    </p>
+                    <p className="text-sm">Last updated {distance}</p>
                     <ul className="flex flex-col gap-1 py-3">
                         {item?.data?.slice(0, 3)?.map((subItem) => (
                             <li key={subItem?.name}>

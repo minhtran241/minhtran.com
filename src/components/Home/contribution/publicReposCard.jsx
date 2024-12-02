@@ -25,7 +25,7 @@ const PublicReposCard = ({ ghInfo }) => {
                         <h1 className="card-title lg:text-lg text-base">
                             {userBasicInfo.fullName}&apos;s Repositories
                         </h1>
-                        <p className="text-sm opacity-70">
+                        <p className="text-sm">
                             {ghInfo.user.repositories.nodes.length}/
                             {ghInfo.user.repositories.totalCount} Repositories
                         </p>
