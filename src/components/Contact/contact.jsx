@@ -1,4 +1,3 @@
-import Breakline from '@/common/elements/Breakline';
 import BookACall from './bookACall';
 import ContactForm from './contactForm';
 import SocialMediaList from './socialMediaList';
@@ -8,9 +7,7 @@ const Contact = () => {
     return (
         <section className="flex flex-col gap-12 space-y-6">
             <SocialMediaList />
-            {/* <Breakline /> */}
             <BookACall />
-            {/* <Breakline /> */}
             <div className="space-y-5">
                 <div className="space-y-2">
                     <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">
