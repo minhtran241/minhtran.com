@@ -48,13 +48,13 @@ const SpotifyStatus = () => {
     const progressPercentage = (progress / duration) * 100;
 
     return (
-        <div className="border rounded-box p-3 bg-base-100 text-base-content backdrop-blur-md text-left">
+        <div className="flex flex-col border rounded-box p-3 bg-base-100 text-base-content backdrop-blur-md text-left justify-start">
             {/* Tiny header with Spotify icon and 'Listening to' */}
-            <div>
-                <div className="flex items-center space-x-2 text-green-500">
-                    <span>Listening to Spotify</span>
-                    <FontAwesomeIcon icon="fa-brands fa-spotify" />
-                </div>
+            <div className="flex items-center gap-2 text-green-500">
+                <span className="text-sm font-medium">
+                    Listening to Spotify
+                </span>
+                <FontAwesomeIcon icon="fa-brands fa-spotify" />
             </div>
             {/* Album Cover and Song Info */}
             <div className="flex items-center gap-4">
@@ -70,11 +70,21 @@ const SpotifyStatus = () => {
                         href={songUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium text-ellipsis whitespace-nowrap overflow-hidden block"
+                        className="text-sm font-medium text-ellipsis whitespace-nowrap overflow-hidden block line-clamp-1"
+                        style={{
+                            whiteSpace: 'normal', // Allow text wrapping
+                            wordBreak: 'break-word', // Break long words to avoid overflow
+                        }}
                     >
                         {limitString(title, 30, false)}
                     </Link>
-                    <span className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block">
+                    <span
+                        className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block"
+                        style={{
+                            whiteSpace: 'normal', // Allow text wrapping
+                            wordBreak: 'break-word', // Break long words to avoid overflow
+                        }}
+                    >
                         {limitString(artist, 30, true)}
                     </span>
                     {/* <span className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block">
