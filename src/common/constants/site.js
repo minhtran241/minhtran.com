@@ -1,6 +1,6 @@
 export const SITE_URL =
     process.env.NODE_ENV === 'production'
-        ? 'https://minhtran-nine.vercel.app'
+        ? 'https://tranmq.vercel.app'
         : 'http://localhost:3000';
 
 export const SITE_NAME = 'Minh Tran';
