@@ -15,9 +15,6 @@ import {
     SITE_DESCRIPTION,
     SITE_NAME,
 } from '@/common/constants/site';
-import CustomCursor from '@/common/elements/CustomCursor';
-import ScrollToTopButton from '@/common/elements/ScrollToTopButton';
-import SpotifyComponent from '@/components/Common/spotifyComponent';
 import LLMChat from '@/common/elements/LLMChat';
 // import LetschatBubble from '@/common/elements/LetschatBubble';
 
@@ -194,17 +191,11 @@ export default function RootLayout({ children }) {
                 className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh`}
             >
                 <Navbar />
-                {/* <LetschatBubble /> */}
-                {/* <div className="mt-16"> */}
-                {/* <CustomCursor /> */}
                 {children}
-                {/* <ScrollToTopButton /> */}
                 <LLMChat />
                 <SpeedInsights />
                 <Analytics />
-                <SpotifyComponent />
                 <Footer />
-                {/* </div> */}
             </body>
         </html>
     );

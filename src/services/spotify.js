@@ -96,6 +96,10 @@ export const getNowPlaying = async () => {
     const songUrl = responseData?.item?.external_urls?.spotify ?? '';
     const title = responseData?.item?.name ?? '';
 
+    // Get real-time progress and duration of the song
+    const progress = responseData.progress_ms;
+    const duration = responseData.item.duration_ms;
+
     return {
         status,
         isPlaying,
@@ -105,6 +109,8 @@ export const getNowPlaying = async () => {
             artist,
             songUrl,
             title,
+            progress,
+            duration,
         },
     };
 };

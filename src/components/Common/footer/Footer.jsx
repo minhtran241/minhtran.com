@@ -1,10 +1,10 @@
 'use client';
-
 import { SOCIAL_MEDIA } from '@/common/constants/menu';
 import { userBasicInfo } from '@/common/constants/userBasic';
 import Link from 'next/link';
 import { MENU_TABS } from '@/common/constants/menu';
 import { HOSTED_ON, TECHSTACK } from '@/common/constants/site';
+import SpotifyStatus from './SpotifyStatus';
 
 const Footer = () => {
     const techStackEntries = Object.entries(TECHSTACK);
@@ -42,6 +42,7 @@ const Footer = () => {
                     ))}
                 </div>
             </nav>
+            <SpotifyStatus />
             <aside className="flex flex-col items-center">
                 <div className="">
                     Powered by{' '}
