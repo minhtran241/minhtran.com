@@ -72,10 +72,10 @@ const SpotifyStatus = () => {
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-ellipsis whitespace-nowrap overflow-hidden block"
                     >
-                        {limitString(title, 35, false)}
+                        {limitString(title, 30, false)}
                     </Link>
                     <span className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block">
-                        {limitString(artist, 35, true)}
+                        {limitString(artist, 30, true)}
                     </span>
                     {/* <span className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block">
                         {limitString(album, 50, false)}
