@@ -76,7 +76,7 @@ const SpotifyStatus = () => {
                             wordBreak: 'break-word', // Break long words to avoid overflow
                         }}
                     >
-                        {limitString(title, 30, false)}
+                        {limitString(title, 50, false)}
                     </Link>
                     <span
                         className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block"
@@ -85,7 +85,7 @@ const SpotifyStatus = () => {
                             wordBreak: 'break-word', // Break long words to avoid overflow
                         }}
                     >
-                        {limitString(artist, 30, true)}
+                        {limitString(artist, 50, true)}
                     </span>
                     {/* <span className="text-xs text-ellipsis whitespace-nowrap overflow-hidden block">
                         {limitString(album, 50, false)}
