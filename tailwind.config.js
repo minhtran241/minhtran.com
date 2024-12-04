@@ -51,6 +51,13 @@ module.exports = {
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
+                scroll: 'scroll 10s linear infinite',
+            },
+            keyframes: {
+                scroll: {
+                    from: { transform: 'translateX(0)' },
+                    to: { transform: 'translateX(-100%)' },
+                },
             },
             typography: {
                 DEFAULT: { css: disabledCss },
@@ -74,7 +81,7 @@ module.exports = {
         themes: [
             // 'light',
             // 'dark',
-			'winter',
+            'winter',
             'night',
             'lofi',
             'corporate',

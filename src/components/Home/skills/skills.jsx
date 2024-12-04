@@ -16,7 +16,7 @@ const ICONS_MAP = {
     Databases: <FontAwesomeIcon icon="fa-solid fa-database fa-sm" />,
     'ML/DL': <FontAwesomeIcon icon="fa-solid fa-brain-circuit fa-sm" />,
     'DevOps & Automation': (
-        <FontAwesomeIcon icon="fa-solid  fa-screwdriver-wrench fa-sm" />
+        <FontAwesomeIcon icon="fa-solid fa-screwdriver-wrench fa-sm" />
     ),
 };
 
@@ -66,33 +66,47 @@ const SkillsList = async () => {
                     title={SECTION_HEADING}
                     description={SECTION_DESCRIPTION}
                 />
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-8 xl:grid-cols-2">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-8 xl:grid-cols-3">
                     {skills.map((skill, idx) => (
-                        <div
-                            className="rounded-box p-4 border shadow-lg border-gray-200 transition-shadow duration-300 hover:shadow-xl"
-                            key={idx}
-                        >
-                            <div className="flex items-center gap-2 mb-5">
-                                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-primary-content">
-                                    {ICONS_MAP[skill.name]}
-                                </div>
-                                <h2 className="card-title text-lg">
-                                    {skill.name}
-                                </h2>
+                        <div key={idx} className="bg-base-100 relative">
+                            <div className="flex items-center justify-between font-bold">
+                                {skill.name}
                             </div>
-                            <div className="flex flex-wrap gap-3">
-                                {skill.badges.map((badge, badgeIdx) => (
-                                    <div key={badgeIdx} className="rounded">
-                                        <Image
-                                            src={`/assets/skills/${skill.assets_folder}/${badge}`}
-                                            alt={`${skill.name} badge`}
-                                            className="rounded w-auto h-6"
-                                            width={100}
-                                            height={50}
-                                            loading="lazy"
-                                        />
+                            <div className="relative overflow-hidden rounded-box border border-gray-200 mt-4">
+                                <div className="relative before:absolute before:left-0 before:top-0 before:h-full before:w-8 before:bg-gradient-to-r before:from-base-100 before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:h-full after:w-8 after:bg-gradient-to-l after:from-base-100 after:to-transparent after:z-10">
+                                    <div className="relative flex h-24 animate-[scroll_10s_linear_infinite] items-center">
+                                        {skill.badges.map((badge, badgeIdx) => (
+                                            <div
+                                                key={badgeIdx}
+                                                className="flex-shrink-0 p-2 rounded"
+                                            >
+                                                <Image
+                                                    src={`/assets/skills/${skill.assets_folder}/${badge}`}
+                                                    alt={`${skill.name} badge`}
+                                                    className="object-contain rounded w-auto h-6"
+                                                    width={100}
+                                                    height={50}
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        ))}
+                                        {skill.badges.map((badge, badgeIdx) => (
+                                            <div
+                                                key={`clone-${badgeIdx}`}
+                                                className="flex-shrink-0 w-24 h-24 p-2"
+                                            >
+                                                <Image
+                                                    src={`/assets/skills/${skill.assets_folder}/${badge}`}
+                                                    alt={`${skill.name} badge`}
+                                                    className="object-contain"
+                                                    width={96}
+                                                    height={96}
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         </div>
                     ))}
