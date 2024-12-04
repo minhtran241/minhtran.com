@@ -57,14 +57,11 @@ const SkillsList = async () => {
                         {allBadges
                             .slice(0, allBadges.length / 2)
                             .map((badge, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex-shrink-0 p-2 rounded"
-                                >
+                                <div key={idx} className="flex-shrink-0 p-2">
                                     <Image
                                         src={`/assets/skills/${badge}`}
                                         alt={`Badge for ${badge}`}
-                                        className="object-contain rounded-box w-auto h-6"
+                                        className="object-contain w-auto h-6"
                                         width={100}
                                         height={50}
                                         loading="lazy"
@@ -76,14 +73,11 @@ const SkillsList = async () => {
                         {allBadges
                             .slice(allBadges.length / 2)
                             .map((badge, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex-shrink-0 p-2 rounded"
-                                >
+                                <div key={idx} className="flex-shrink-0 p-2">
                                     <Image
                                         src={`/assets/skills/${badge}`}
                                         alt={`Badge for ${badge}`}
-                                        className="object-contain rounded w-auto h-6"
+                                        className="object-contain w-auto h-6"
                                         width={100}
                                         height={50}
                                         loading="lazy"
