@@ -48,17 +48,23 @@ module.exports = {
                 mazzardh: 'var(--font-mazzardh)',
                 mazzardm: 'var(--font-mazzardm)',
             },
+            keyframes: {
+                scroll: {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                },
+                'scroll-reverse': {
+                    '0%': { transform: 'translateX(-100%)' },
+                    '100%': { transform: 'translateX(0)' },
+                },
+            },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
-                scroll: 'scroll 10s linear infinite',
+                'infinite-slider': 'scroll 20s linear infinite',
+                'infinite-slider-reverse': 'scroll-reverse 20s linear infinite',
             },
-            keyframes: {
-                scroll: {
-                    from: { transform: 'translateX(0)' },
-                    to: { transform: 'translateX(-100%)' },
-                },
-            },
+
             typography: {
                 DEFAULT: { css: disabledCss },
                 sm: { css: disabledCss },
