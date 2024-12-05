@@ -7,10 +7,11 @@ const ThemeChanger = () => {
     const themeValues = [
         // 'light',
         // 'dark',
-		'winter',
+        'winter',
         'night',
-        'lofi',
+        // 'lofi',
         'corporate',
+        'business',
     ];
 
     useEffect(() => {

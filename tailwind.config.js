@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import catppuccin from '@catppuccin/daisyui';
 
 const disabledCss = {
     'code::before': false,
@@ -89,8 +90,9 @@ module.exports = {
             // 'dark',
             'winter',
             'night',
-            'lofi',
+            // 'lofi',
             'corporate',
+            'business',
         ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
         darkMode: ['selector', '[data-theme="night"]'],
         darkTheme: 'night', // name of one of the included themes for dark mode
