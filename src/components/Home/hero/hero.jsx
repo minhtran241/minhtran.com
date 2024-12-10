@@ -47,7 +47,7 @@ const HeroComponent = () => {
                                     <span className="fa-li text-primary">
                                         <FontAwesomeIcon icon="fa-solid fa-location-arrow" />
                                     </span>
-                                    Grand Rapids, Michigan, United States
+                                    Grand Rapids, MI, USA
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="fa-li text-primary">

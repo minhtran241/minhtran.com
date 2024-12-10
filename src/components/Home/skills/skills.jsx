@@ -54,9 +54,9 @@ const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
 // Component to render badges in a carousel
 const BadgesCarousel = ({ badges, direction = 'normal' }) => (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center overflow-hidden">
         <div
-            className={`overflow-hidden relative flex items-center gap-4 ${
+            className={`relative flex items-center gap-4 ${
                 direction === 'reverse'
                     ? 'animate-infinite-slider-reverse'
                     : 'animate-infinite-slider'
