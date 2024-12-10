@@ -17,10 +17,7 @@ function ChatMessage({ message, isUser }) {
         <div className="chat chat-start">
             <div className="chat-image avatar">
                 <div className="w-8 h-8 rounded-full bg-primary">
-                    <img
-                        alt="Assistant avatar"
-                        src="/assets/llmchat/chatbot-avatar.png"
-                    />
+                    <img alt="Assistant avatar" src="/memoji/memojialo.png" />
                 </div>
             </div>
             <div className="chat-bubble">
@@ -134,7 +131,7 @@ export default function LLMChat() {
                     <div className="avatar online">
                         <div className="ring-primary ring-offset-base-100 w-[42px] h-[42px] rounded-full ring ring-offset-0">
                             <img
-                                src="/assets/llmchat/chatbot-avatar.png"
+                                src="/memoji/memojialo.png"
                                 alt="virtual assistant"
                             />
                         </div>
@@ -149,7 +146,7 @@ export default function LLMChat() {
                             <div className="avatar online">
                                 <div className="w-8 rounded-full">
                                     <img
-                                        src="/assets/llmchat/chatbot-avatar.png"
+                                        src="/memoji/memojialo.png"
                                         alt="virtual assistant"
                                     />
                                 </div>

@@ -23,126 +23,104 @@ const ProjectCard = async ({ project }) => {
     const licenseName = project?.licenseInfo?.name;
 
     return (
-        <div className="flex flex-col p-4 rounded-box gap-3 bg-base-200 border">
-            <div className="justify-end card-actions">
-                <div className="badge badge-secondary flex items-center gap-2 rounded-full">
-                    <FontAwesomeIcon icon="fa-solid fa-calendar-days" />
-                    {project?.createdAt &&
-                        new Date(project?.createdAt).toLocaleDateString(
-                            'en-GB',
-                            {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                            }
-                        )}
+        <div className="flex flex-col md:flex-row items-center gap-6 p-6 bg-base-100 shadow-lg rounded-box border border-base-300">
+            {/* Left Side: Image */}
+            <div className="flex-shrink-0 w-full md:w-1/3">
+                <Link
+                    href={project?.homepageUrl || project?.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Image
+                        src={
+                            project.thumbnail
+                                ? `/projects/${project.thumbnail}`
+                                : project?.openGraphImageUrl
+                        }
+                        alt={projectName}
+                        width={400}
+                        height={300}
+                        className="rounded-box object-cover"
+                        loading="lazy"
+                    />
+                </Link>
+            </div>
+
+            {/* Right Side: Info */}
+            <div className="flex-grow w-full md:w-2/3 flex flex-col gap-4">
+                {/* Title */}
+                <Link
+                    href={project?.homepageUrl || project?.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-2xl font-bold hover:text-primary transition"
+                >
+                    {projectName}
+                </Link>
+
+                {/* Description */}
+                <p className="text-sm line-clamp-3">{project?.description}</p>
+
+                {/* Topics */}
+                <div className="flex flex-wrap gap-2">
+                    {project?.repositoryTopics?.nodes?.map((node, index) => (
+                        <span
+                            key={index}
+                            className="badge badge-primary badge-outline text-xs"
+                        >
+                            {node?.topic?.name}
+                        </span>
+                    ))}
                 </div>
-            </div>
-            <Link
-                href={project?.homepageUrl || project?.url}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                {/* open graph image */}
-                <Image
-                    src={
-                        project.thumbnail
-                            ? `/projects/${project.thumbnail}`
-                            : project?.openGraphImageUrl
-                    }
-                    alt={projectName}
-                    width={800}
-                    height={400}
-                    className="rounded-box w-full h-48 object-cover"
-                    loading="lazy"
-                />
-            </Link>
-            <Link
-                href={project?.homepageUrl || project?.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-title hover:text-primary transition lg:text-xl md:text-lg text-lg"
-            >
-                {projectName}
-            </Link>
-            <div
-                className="tooltip !text-start "
-                data-tip={project?.description}
-            >
-                <p className="line-clamp-3 text-sm">{project?.description}</p>
-            </div>
-            <div className="card-actions">
-                {project?.repositoryTopics?.nodes?.map((node, index) => (
-                    <p key={index} className="badge badge-outline">
-                        {node?.topic?.name}
-                    </p>
-                ))}
-            </div>
-            <div className="flex-grow"></div>
-            {/* Make this down to bottom of the card */}
-            <div className="flex flex-col gap-2">
+
+                {/* Details */}
                 <div className="flex flex-wrap justify-between text-sm">
-                    <div className="flex flex-col gap-2">
-                        <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-2">
-                                <div
-                                    className="rounded-full h-3 w-3"
-                                    style={{
-                                        backgroundColor: `${project?.primaryLanguage?.color}`,
-                                    }}
-                                ></div>
-                                <span className="">
-                                    {project?.primaryLanguage?.name}
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="flex leading-none gap-1">
-                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-star" />
-                                    {project?.stargazerCount}
-                                </div>
-                                <div className="flex leading-none gap-1">
-                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-code-fork" />
-                                    {project?.forkCount}
-                                </div>
-                                <div className="flex leading-none gap-1">
-                                    <FontAwesomeIcon icon="fa-duotone fa-solid fa-users" />
-                                    {project?.collaborators?.nodes?.length}
-                                </div>
-                            </div>
+                    <div className="flex gap-4 items-center">
+                        <div className="flex items-center gap-2">
+                            <div
+                                className="rounded-full h-3 w-3"
+                                style={{
+                                    backgroundColor: `${project?.primaryLanguage?.color}`,
+                                }}
+                            ></div>
+                            <span>{project?.primaryLanguage?.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <FontAwesomeIcon icon="fa-duotone fa-star" />
+                            {project?.stargazerCount}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <FontAwesomeIcon icon="fa-duotone fa-code-fork" />
+                            {project?.forkCount}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <FontAwesomeIcon icon="fa-duotone fa-solid fa-users" />
+                            {project?.collaborators?.nodes?.length}
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
-                        {project?.homepageUrl && (
-                            <Link
-                                href={project?.homepageUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-primary transition"
-                            >
-                                <FontAwesomeIcon icon="fa-duotone fa-solid fa-eye" />
-                            </Link>
-                        )}
-                        {project?.homepageUrl && ' | '}
-                        {project?.url && (
-                            <Link
-                                href={project?.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-primary transition"
-                            >
-                                <FontAwesomeIcon icon="fa-brands fa-github" />
-                            </Link>
-                        )}
+                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-scale-balanced" />
+                        <span>{licenseName || 'No License'}</span>
                     </div>
                 </div>
-                <div className="flex flex-wrap gap-2  text-sm justify-between">
-                    <div className="flex leading-none gap-2">
-                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-scale-balanced" />
-                        <p>{licenseName || 'No License'}</p>
+
+                {/* Footer */}
+                <div className="flex justify-between text-xs">
+                    <div>
+                        <FontAwesomeIcon icon="fa-duotone fa-calendar-days" />{' '}
+                        {project?.createdAt &&
+                            new Date(project?.createdAt).toLocaleDateString(
+                                'en-GB',
+                                {
+                                    day: 'numeric',
+                                    month: 'short',
+                                    year: 'numeric',
+                                }
+                            )}
                     </div>
-                    <div className="flex leading-none gap-2">
-                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-up-from-line" />
-                        <p>{pushedAtDistance}</p>
+                    <div>
+                        <FontAwesomeIcon icon="fa-duotone fa-up-from-line" />{' '}
+                        {pushedAtDistance}
                     </div>
                 </div>
             </div>

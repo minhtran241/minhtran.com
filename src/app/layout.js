@@ -188,7 +188,7 @@ export default function RootLayout({ children }) {
                 <link rel="preload" href="/memoji/memojihello.png" as="image" />
             </head>
             <body
-                className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh`}
+                className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh bg-base-300`}
             >
                 <Navbar />
                 {children}

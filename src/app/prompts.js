@@ -68,8 +68,8 @@ This website, built with **Next.js 15**, **Tailwind CSS**, and various APIs (e.g
 - **Contact:** Send emails or book meetings via the form.  
 
 **Additional Features:**  
-- Theme switching (4 themes: Night, Winter, Lofi, Corporate).
-- Live Spotify status on the bottom-left icon.  
+- Theme switching (4 themes: Night, Winter, Corporate, Business).
+- Live Spotify status in the footer.
 - Analytics via [Umami](https://cloud.umami.is/share/Wd8ZmhLDJjU7UVi6/tranmq.vercel.app).  
 
 When answering questions:  

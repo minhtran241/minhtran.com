@@ -5,6 +5,7 @@ import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import Image from 'next/image';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const SKILLS_FILE_PATH = path.join(fileSystemInfo.dataFetchDir, 'skills.json');
 const ASSETS_PATH = path.join(process.cwd(), 'public', 'assets', 'skills');
@@ -55,7 +56,7 @@ const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 const BadgesCarousel = ({ badges, direction = 'normal' }) => (
     <div className="flex items-center justify-center">
         <div
-            className={`relative flex items-center gap-4 ${
+            className={`overflow-hidden relative flex items-center gap-4 ${
                 direction === 'reverse'
                     ? 'animate-infinite-slider-reverse'
                     : 'animate-infinite-slider'
@@ -66,9 +67,9 @@ const BadgesCarousel = ({ badges, direction = 'normal' }) => (
                     <Image
                         src={`/assets/skills/${badge}`}
                         alt={`Badge for ${badge}`}
-                        className="object-contain w-auto"
                         width={150}
                         height={100}
+                        className="object-contain w-auto"
                     />
                 </div>
             ))}
@@ -91,13 +92,14 @@ const SkillsList = async () => {
 
     return (
         <div className="flex items-center justify-center">
-            <div className="container pb-12">
+            <div className="container bg-base-100 rounded-box p-8">
                 <SectionLabel
-                    title="Mainly working with"
+                    title="Worked with"
                     description="I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies."
+                    icon=<FontAwesomeIcon icon="fa-duotone fa-gear-code" />
                 />
                 <div className="p-6 rounded-box border border-gray-200 dark:border-gray-800">
-                    <div className="flex flex-col space-y-4  [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:bg-black dark:[mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
+                    <div className="flex flex-col gap-4 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:bg-black dark:[mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
                         <BadgesCarousel badges={firstHalf} />
                         <BadgesCarousel
                             badges={secondHalf}

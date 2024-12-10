@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import catppuccin from '@catppuccin/daisyui';
 
 const disabledCss = {
     'code::before': false,
@@ -24,23 +23,37 @@ module.exports = {
     prefix: '',
     theme: {
         screens: {
-            sm: '540px',
-            md: '720px',
-            lg: '960px',
-            'lg-max': { max: '960px' },
-            xl: '1140px',
-            '2xl': '1320px',
+            xs: '475px',
+            sm: '640px',
+            // => @media (min-width: 640px) { ... }
+
+            md: '768px',
+            // => @media (min-width: 768px) { ... }
+
+            lg: '1024px',
+            // => @media (min-width: 1024px) { ... }
+
+            xl: '1280px',
+            // => @media (min-width: 1280px) { ... }
+
+            '2xl': '1536px',
+            // => @media (min-width: 1536px) { ... }
         },
         container: {
             center: true,
-            padding: '2rem',
+            // padding: '2rem',
+            padding: {
+                DEFAULT: '1rem',
+                sm: '2rem',
+                lg: '4rem',
+                xl: '5rem',
+                '2xl': '6rem',
+            },
             screens: {
-                sm: '540px',
-                md: '720px',
-                lg: '960px',
-                'lg-max': { max: '960px' },
-                xl: '1140px',
-                '2xl': '1320px',
+                sm: '100%',
+                md: '100%',
+                lg: '1024px',
+                xl: '1280px',
             },
         },
         extend: {
@@ -58,12 +71,18 @@ module.exports = {
                     '0%': { transform: 'translateX(-100%)' },
                     '100%': { transform: 'translateX(0)' },
                 },
+                gradientMove: {
+                    '0%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                    '100%': { backgroundPosition: '0% 50%' },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'infinite-slider': 'scroll 25s linear infinite',
                 'infinite-slider-reverse': 'scroll-reverse 25s linear infinite',
+                gradient: 'gradientMove 6s ease infinite',
             },
 
             typography: {

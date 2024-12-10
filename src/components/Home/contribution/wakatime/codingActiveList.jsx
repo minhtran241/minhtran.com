@@ -80,7 +80,7 @@ const CodingActiveList = ({ data }) => {
                     key={item?.title}
                     className={clsx(
                         // item?.styles?.bg,
-                        'h-full w-full relative flex flex-1 flex-col border shadow border-gray-200 rounded-box p-4'
+                        'h-full w-full relative flex flex-1 flex-col border border-gray-200 rounded-box p-4'
                     )}
                 >
                     <p className="card-title lg:text-lg text-base">

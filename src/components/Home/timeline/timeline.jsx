@@ -5,6 +5,7 @@ import path from 'path';
 import { Suspense } from 'react';
 import SectionLabel from '../sectionLabel/sectionLabel';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 // * FETCH MILESTONES FROM LOCAL JSON
 const DATA_ATTRS_FILE = path.join(
@@ -31,25 +32,23 @@ const TimelineComponent = async () => {
     const milestones = await getMilestones();
 
     return (
-        <div className="">
-            <div className="container">
-                <SectionLabel
-                    title={SECTION_TITLE}
-                    description={SECTION_DESCRIPTION}
-                    primary={false}
-                />
-                <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-                    {milestones.map((milestone, index) => (
-                        <Milestone
-                            milestone={milestone}
-                            first={index === 0}
-                            last={index === milestones.length - 1}
-                            timeline_end={index % 2 === 0}
-                            key={index}
-                        />
-                    ))}
-                </ul>
-            </div>
+        <div className="container bg-base-100 rounded-box p-8 mb-12">
+            <SectionLabel
+                title={SECTION_TITLE}
+                description={SECTION_DESCRIPTION}
+                icon=<FontAwesomeIcon icon="fa-duotone fa-briefcase" />
+            />
+            <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                {milestones.map((milestone, index) => (
+                    <Milestone
+                        milestone={milestone}
+                        first={index === 0}
+                        last={index === milestones.length - 1}
+                        timeline_end={index % 2 === 0}
+                        key={index}
+                    />
+                ))}
+            </ul>
         </div>
     );
 };

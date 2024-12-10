@@ -1,7 +1,7 @@
 'use client';
 import SectionLabel from '../sectionLabel/sectionLabel';
-import PublicReposCard from './publicReposCard';
-import GHUserCard from './ghUserCard';
+// import PublicReposCard from './publicReposCard';
+// import GHUserCard from './ghUserCard';
 import ContributionChart from './contributionChart';
 import useSWR from 'swr';
 import { GITHUB_REPOS_NUM } from '@/common/constants/githubAPI';
@@ -9,6 +9,7 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import CodingActive from './wakatime/codingActive';
 import { fetcher } from '@/common/libs/fetcher';
 import Loading from '@/app/loading';
+import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const Contribution = () => {
     const username = userBasicInfo.githubUsername;
@@ -30,21 +31,22 @@ const Contribution = () => {
 
     return (
         <div className="items-center justify-center">
-            <div className="container">
+            <div className="container bg-base-100 rounded-box p-8">
                 <SectionLabel
                     title={sectionTitle}
                     description={sectionDescription}
+                    icon=<FontAwesomeIcon icon="fa-duotone fa-code-pull-request" />
                 />
                 <div className="flex flex-col gap-8">
                     {ghData && wkData ? (
                         <div className="flex flex-col gap-8">
-                            <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
+                            {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-2">
                                 <GHUserCard
                                     ghInfo={ghData}
                                     username={username}
                                 />
                                 <PublicReposCard ghInfo={ghData} />
-                            </div>
+                            </div> */}
                             <ContributionChart
                                 contributionCollection={
                                     ghData?.user?.contributionsCollection

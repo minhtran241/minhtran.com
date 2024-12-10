@@ -1,5 +1,5 @@
 import FontAwesomeIcon from '../elements/FontAwesomeIcon';
-import { userBasicInfo } from './userBasic';
+import { userBasicInfo } from '@/common/constants/userBasic';
 
 export const SOCIAL_MEDIA = [
     {
@@ -58,14 +58,17 @@ export const MENU_TABS = [
     {
         title: 'Home',
         href: '/',
+        icon: <FontAwesomeIcon icon="fa-duotone fa-home" />,
     },
     {
         title: 'Projects',
         href: '/projects',
+        icon: <FontAwesomeIcon icon="fa-duotone fa-project-diagram" />,
     },
     {
         title: 'Blogs',
         href: '/blogs',
+        icon: <FontAwesomeIcon icon="fa-duotone fa-blog" />,
     },
     // {
     //     title: 'Reads',
@@ -74,9 +77,11 @@ export const MENU_TABS = [
     {
         title: 'Uses',
         href: '/uses',
+        icon: <FontAwesomeIcon icon="fa-duotone fa-tools" />,
     },
     {
         title: 'Contact',
         href: '/contact',
+        icon: <FontAwesomeIcon icon="fa-duotone fa-envelope" />,
     },
 ];

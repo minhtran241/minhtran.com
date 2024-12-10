@@ -1,6 +1,5 @@
 import Links from './links/Links';
 import Link from 'next/link';
-import { userBasicInfo } from '@/common/constants/userBasic';
 import WebStats from './webStats/webStats';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import ThemeChanger from '@/common/elements/ThemeChanger';
@@ -26,7 +25,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link href="/" className="btn btn-ghost text-xl" role="button">
-                    {userBasicInfo.fullName}
+                    <FontAwesomeIcon icon="fa-duotone fa-home" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
