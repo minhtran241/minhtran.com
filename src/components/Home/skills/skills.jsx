@@ -52,23 +52,21 @@ const fetchSkillsData = async () => {
 // Utility to shuffle an array
 const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
-// Component to render badges in a carousel
 const BadgesCarousel = ({ badges, direction = 'normal' }) => (
     <div className="overflow-hidden">
         <div
-            className={`flex flex-row gap-8 ${
+            className={`flex gap-4 sm:gap-8 ${
                 direction === 'reverse'
                     ? 'animate-infinite-slider-reverse'
                     : 'animate-infinite-slider'
             }`}
+            style={{ minWidth: '100%' }} // Ensures the flex container respects the viewport width
         >
             {badges.map((badge, idx) => (
                 <img
                     src={`/assets/skills/${badge}`}
                     alt={`Badge for ${badge}`}
-                    // width={64}
-                    // height={40}
-                    className="rounded-box"
+                    className="rounded-box w-auto"
                     key={idx}
                 />
             ))}
@@ -90,15 +88,15 @@ const SkillsList = async () => {
     const secondHalf = allBadges.slice(halfway);
 
     return (
-        <div className="flex container items-center justify-center">
-            <div className="bg-base-100 rounded-box p-8">
+        <div className="container text-base-content items-center justify-center">
+            <div className="bg-base-100 rounded-box mx-auto p-8">
                 <SectionLabel
                     title="Worked with"
                     description="I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies."
-                    icon=<FontAwesomeIcon icon="fa-duotone fa-gear-code" />
+                    icon={<FontAwesomeIcon icon="fa-duotone fa-gear-code" />}
                 />
-                <div className="p-6 rounded-box border border-gray-200 dark:border-gray-800">
-                    <div className="flex flex-col gap-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:bg-black dark:[mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
+                <div className="py-4 sm:py-6 rounded-box border border-gray-200 dark:border-gray-800 overflow-x-auto">
+                    <div className="flex flex-col gap-4 sm:gap-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:bg-black dark:[mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
                         <BadgesCarousel badges={firstHalf} />
                         <BadgesCarousel
                             badges={secondHalf}
