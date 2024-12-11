@@ -32,7 +32,7 @@ const SpotifyStatus = () => {
 
     if (!playingData?.songUrl) {
         return (
-            <div className="border rounded-box p-3 bg-base-100 text-base-content backdrop-blur-md text-left">
+            <div className="border rounded-box p-3 bg-base-100 text-green-500 backdrop-blur-md text-left border-green-500">
                 <div className="flex items-center space-x-2">
                     <span>No music playing</span>
                     <FontAwesomeIcon icon="fa-brands fa-spotify" />
