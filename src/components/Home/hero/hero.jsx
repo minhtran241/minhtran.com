@@ -14,13 +14,13 @@ const HeroComponent = () => {
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-8">
                     {/* Profile Picture */}
                     <div className="avatar">
-                        <div className="rounded-full ring ring-primary ring-offset-2 w-36 h-36 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div className="rounded-full ring ring-primary ring-offset-2 w-32 h-32 overflow-hidden">
                             <Image
                                 src="/home/headshot.png"
                                 alt={`${userBasicInfo.fullName} headshot`}
                                 width={128}
                                 height={128}
-                                className="rounded-full"
+                                className=""
                             />
                         </div>
                     </div>
@@ -94,6 +94,7 @@ const HeroComponent = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn btn-primary flex items-center gap-2"
+                                    prefetch={false}
                                 >
                                     <FontAwesomeIcon icon="fa-duotone fa-file-user" />
                                     Download Resume

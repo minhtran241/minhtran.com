@@ -80,8 +80,8 @@ module.exports = {
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
-                'infinite-slider': 'scroll 25s linear infinite',
-                'infinite-slider-reverse': 'scroll-reverse 25s linear infinite',
+                'infinite-slider': 'scroll 20s linear infinite',
+                'infinite-slider-reverse': 'scroll-reverse 20s linear infinite',
             },
             typography: {
                 DEFAULT: { css: disabledCss },
