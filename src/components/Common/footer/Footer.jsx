@@ -9,7 +9,7 @@ import SpotifyStatus from './SpotifyStatus';
 const Footer = () => {
     const techStackEntries = Object.entries(TECHSTACK);
     return (
-        <footer className="footer footer-center p-10 bg-primary text-primary-content rounded-t-box">
+        <footer className="footer footer-center p-10 bg-base-100 text-base-content rounded-t-box">
             <nav className="grid grid-flow-col gap-4">
                 {/* <Link href="/" className="link link-hover">
                     Minh
@@ -18,7 +18,7 @@ const Footer = () => {
                     <Link
                         key={index}
                         href={item.href}
-                        className="link link-hover"
+                        className="hover:text-primary"
                     >
                         {item.title}
                     </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="fill-current"
+                            className="fill-current hover:text-primary"
                             aria-label={item.name}
                         >
                             {item.icon}
@@ -52,7 +52,7 @@ const Footer = () => {
                                 href={value}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="hover:underline"
+                                className="link link-primary link-hover"
                             >
                                 {key}
                             </Link>
@@ -65,7 +65,7 @@ const Footer = () => {
                         href={HOSTED_ON.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="hover:underline"
+                        className="link link-primary link-hover"
                     >
                         {HOSTED_ON.name}
                     </Link>

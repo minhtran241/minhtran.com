@@ -9,9 +9,9 @@ const ThemeChanger = () => {
         // 'dark',
         'winter',
         'night',
-        // 'lofi',
+        'lofi',
         'corporate',
-        'business',
+        // 'business',
     ];
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const ThemeChanger = () => {
             <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost"
+                className="btn btn-ghost text-base-content hover:text-primary"
                 aria-label="Choose theme"
                 aria-haspopup="true"
                 aria-expanded="false"

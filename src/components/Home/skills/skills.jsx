@@ -90,8 +90,8 @@ const SkillsList = async () => {
     const secondHalf = allBadges.slice(halfway);
 
     return (
-        <div className="flex items-center justify-center">
-            <div className="container bg-base-100 rounded-box p-8">
+        <div className="flex container items-center justify-center">
+            <div className="bg-base-100 rounded-box p-8">
                 <SectionLabel
                     title="Worked with"
                     description="I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies."

@@ -1,8 +1,9 @@
-import Timeline from '@/components/Home/timeline/timeline';
+import Employment from '@/components/Home/employment/employment';
 // import Projects from '@/components/Project/projects/projects';
 import Hero from '@/components/Home/hero/hero';
 import Skills from '@/components/Home/skills/skills';
 import Contribution from '@/components/Home/contribution/contribution';
+import Education from '@/components/Home/education/education';
 
 export const generateMetadata = async () => {
     return {
@@ -31,7 +32,8 @@ const Home = () => {
             <Hero />
             <Skills />
             <Contribution />
-            <Timeline />
+            <Employment />
+            <Education />
             {/* <Contribution /> */}
             {/* <Skills /> */}
             {/* <Projects /> */}

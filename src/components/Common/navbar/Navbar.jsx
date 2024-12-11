@@ -6,13 +6,13 @@ import ThemeChanger from '@/common/elements/ThemeChanger';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-primary text-primary-content top-0 z-50 shadow-lg bg-opacity-90 fixed rounded-b-box">
+        <div className="navbar bg-base-100 text-primary-content top-0 z-50 shadow-lg bg-opacity-90 fixed rounded-b-box">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
                         tabIndex={0}
                         role="button"
-                        className="btn btn-ghost lg:hidden fa-lg"
+                        className="btn btn-ghost lg:hidden fa-lg text-base-content hover:text-primary"
                         aria-label="Menu"
                     >
                         <FontAwesomeIcon icon="fa-duotone fa-bars" />
@@ -24,7 +24,11 @@ const Navbar = () => {
                         <Links />
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost text-xl" role="button">
+                <Link
+                    href="/"
+                    className="btn btn-ghost text-xl text-base-content hover:text-primary"
+                    role="button"
+                >
                     <FontAwesomeIcon icon="fa-duotone fa-home" />
                 </Link>
             </div>

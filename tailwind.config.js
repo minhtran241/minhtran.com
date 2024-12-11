@@ -41,14 +41,14 @@ module.exports = {
         },
         container: {
             center: true,
-            // padding: '2rem',
-            padding: {
-                DEFAULT: '1rem',
-                sm: '2rem',
-                lg: '4rem',
-                xl: '5rem',
-                '2xl': '6rem',
-            },
+            padding: '2rem',
+            // padding: {
+            //     DEFAULT: '1rem',
+            //     sm: '2rem',
+            //     lg: '4rem',
+            //     xl: '5rem',
+            //     '2xl': '6rem',
+            // },
             screens: {
                 sm: '100%',
                 md: '100%',
@@ -107,9 +107,9 @@ module.exports = {
             // 'dark',
             'winter',
             'night',
-            // 'lofi',
+            'lofi',
             'corporate',
-            'business',
+            // 'business',
         ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
         darkMode: ['selector', '[data-theme="night"]'],
         darkTheme: 'night', // name of one of the included themes for dark mode

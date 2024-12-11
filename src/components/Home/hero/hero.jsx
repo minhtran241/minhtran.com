@@ -8,9 +8,9 @@ import Loading from '@/app/loading';
 
 const HeroComponent = () => {
     return (
-        <div className="hero pt-32">
+        <div className="pt-32 text-base-content container">
             {/* Hero Container */}
-            <div className="container mx-auto bg-base-100 shadow-lg rounded-lg p-8">
+            <div className="mx-auto bg-base-100 shadow-lg rounded-lg p-8">
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-8">
                     {/* Profile Picture */}
                     <div className="avatar">

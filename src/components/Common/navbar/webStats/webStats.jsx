@@ -22,7 +22,7 @@ const WebStats = async () => {
         Visitors: data?.visitors?.value,
     };
     return (
-        <>
+        <div className='text-base-content hover:text-primary'>
             <Link
                 href={process.env.UMAMI_SHARE_URL}
                 target="_blank"
@@ -52,7 +52,7 @@ const WebStats = async () => {
                     ))}
                 </ul>
             </Link>
-        </>
+        </div>
     );
 };
 
