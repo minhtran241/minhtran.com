@@ -32,7 +32,7 @@ const SpotifyStatus = () => {
 
     if (!playingData?.songUrl) {
         return (
-            <div className="border rounded-box p-3 bg-primary text-primary-content backdrop-blur-md text-left">
+            <div className="border rounded-box p-3 bg-base-100 text-base-content backdrop-blur-md text-left">
                 <div className="flex items-center space-x-2">
                     <span>No music playing</span>
                     <FontAwesomeIcon icon="fa-brands fa-spotify" />
@@ -48,9 +48,9 @@ const SpotifyStatus = () => {
     const progressPercentage = (progress / duration) * 100;
 
     return (
-        <div className="flex flex-col border rounded-box p-3 bg-primary text-primary-content backdrop-blur-md text-left justify-start">
+        <div className="flex flex-col border rounded-box p-3 bg-base-100 text-base-content backdrop-blur-md text-left justify-start border-green-500">
             {/* Tiny header with Spotify icon and 'Listening to' */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-green-500">
                 <span className="text-sm font-medium">
                     Listening to Spotify
                 </span>
@@ -92,8 +92,8 @@ const SpotifyStatus = () => {
                     </span> */}
                     {/* Progress Bar */}
                     <progress
-                        // className="progress [&::-webkit-progress-value]:bg-black [&::-moz-progress-bar]:bg-black mt-2 h-1"
-                        className="progress progress-primary-content mt-2 h-1"
+                        className="progress [&::-webkit-progress-value]:bg-green-500 [&::-moz-progress-bar]:bg-green-500 mt-2 h-1"
+                        // className="progress progress-base-content mt-2 h-1"
                         value={progressPercentage}
                         max={100}
                     ></progress>

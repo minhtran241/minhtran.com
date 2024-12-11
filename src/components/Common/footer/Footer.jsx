@@ -9,7 +9,7 @@ import SpotifyStatus from './SpotifyStatus';
 const Footer = () => {
     const techStackEntries = Object.entries(TECHSTACK);
     return (
-        <footer className="footer footer-center p-10 bg-base-100 text-base-content rounded-t-box">
+        <footer className="footer footer-center p-10 bg-base-300 text-base-content">
             <nav className="grid grid-flow-col gap-4">
                 {/* <Link href="/" className="link link-hover">
                     Minh
