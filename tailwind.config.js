@@ -82,9 +82,7 @@ module.exports = {
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'infinite-slider': 'scroll 25s linear infinite',
                 'infinite-slider-reverse': 'scroll-reverse 25s linear infinite',
-                gradient: 'gradientMove 6s ease infinite',
             },
-
             typography: {
                 DEFAULT: { css: disabledCss },
                 sm: { css: disabledCss },

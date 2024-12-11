@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import Loading from '@/app/loading';
 import SectionLabel from '../sectionLabel/sectionLabel';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
-import Image from 'next/image';
+// import Image from 'next/image';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 
 const SKILLS_FILE_PATH = path.join(fileSystemInfo.dataFetchDir, 'skills.json');
@@ -54,24 +54,23 @@ const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
 // Component to render badges in a carousel
 const BadgesCarousel = ({ badges, direction = 'normal' }) => (
-    <div className="flex items-center justify-center overflow-hidden">
+    <div className="overflow-hidden">
         <div
-            className={`relative flex items-center gap-4 ${
+            className={`flex flex-row gap-8 ${
                 direction === 'reverse'
                     ? 'animate-infinite-slider-reverse'
                     : 'animate-infinite-slider'
             }`}
         >
             {badges.map((badge, idx) => (
-                <div key={idx} className="flex-shrink-0 p-2">
-                    <Image
-                        src={`/assets/skills/${badge}`}
-                        alt={`Badge for ${badge}`}
-                        width={150}
-                        height={100}
-                        className="object-contain w-auto"
-                    />
-                </div>
+                <img
+                    src={`/assets/skills/${badge}`}
+                    alt={`Badge for ${badge}`}
+                    // width={64}
+                    // height={40}
+                    className="rounded-box"
+                    key={idx}
+                />
             ))}
         </div>
     </div>
@@ -99,7 +98,7 @@ const SkillsList = async () => {
                     icon=<FontAwesomeIcon icon="fa-duotone fa-gear-code" />
                 />
                 <div className="p-6 rounded-box border border-gray-200 dark:border-gray-800">
-                    <div className="flex flex-col gap-4 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:bg-black dark:[mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
+                    <div className="flex flex-col gap-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:bg-black dark:[mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
                         <BadgesCarousel badges={firstHalf} />
                         <BadgesCarousel
                             badges={secondHalf}
