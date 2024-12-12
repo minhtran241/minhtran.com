@@ -46,7 +46,7 @@ const HeroComponent = () => {
     };
 
     return (
-        <div className="pt-32 text-base-content container">
+        <div className="pt-28 text-base-content container">
             <div className="mx-auto bg-base-100 rounded-box p-8">
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-8">
                     {/* Profile Picture */}
