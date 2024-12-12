@@ -23,7 +23,7 @@
         "logo": "/home/employment/thienkhoi.png",
         "title": "Database Administrator",
         "employment_type": "Freelance",
-        "location": "Hanoi, Hanoi, Vietnam",
+        "location": "Hanoi, Vietnam",
         "location_type": "Remote",
         "description": "Optimized database performance to ensure the smooth operation of real estate systems that serve 10,000+ users. Wrote SQL to generate daily and monthly requested reports; implemented procedures to meet the needs of the company.",
         "created_at": "2024-02-24T09:41:22.056Z",
@@ -54,7 +54,7 @@
         "employment_type": "Part-time",
         "location": "Grand Rapids, Michigan, United States",
         "location_type": "On-site",
-        "description": "Developed and implemented a microservice architecture for a web application that allows users to extract themes from reviews. Fine-tuned a new model to improve the accuracy of the theme extraction.",
+        "description": "Winter 2024: Developed and implemented a microservice architecture for a web application that allows users to extract themes from reviews using LLM. Fall 2024: Built a CI/CD pipeline for the official LakerMobile application using Fastlane and GitHub Actions.",
         "created_at": "2024-03-24T09:41:22.056Z",
         "updated_at": "2024-03-24T09:41:22.056Z",
         "current": true

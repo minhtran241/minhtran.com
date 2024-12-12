@@ -25,8 +25,7 @@ const getMilestones = async () => {
 };
 
 const SECTION_TITLE = 'Employment History';
-const SECTION_DESCRIPTION =
-    'My working has been in the field of software development, performance optimization, system design, and ML/AI. Here are some of the milestones in my career.';
+const SECTION_DESCRIPTION = '';
 
 const EmploymentComponent = async () => {
     const milestones = await getMilestones();

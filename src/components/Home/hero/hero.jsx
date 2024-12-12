@@ -1,3 +1,5 @@
+'use client';
+
 import { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,11 +7,46 @@ import { userBasicInfo } from '@/common/constants/userBasic';
 import { fileSystemInfo } from '@/common/constants/fileSystem';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Loading from '@/app/loading';
+import { SOCIAL_MEDIA } from '@/common/constants/menu';
+
+const ContactInfoModal = () => (
+    <dialog id="contact_info_modal" className="modal">
+        <div className="modal-box">
+            <h3 className="text-lg font-bold flex items-center gap-2 mb-4">
+                <span className="text-primary">
+                    <FontAwesomeIcon icon="fa-solid fa-info-circle" />
+                </span>
+                Contact Information
+            </h3>
+            <ul className="fa-ul space-y-2">
+                {SOCIAL_MEDIA.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                        <span className="fa-li">{item.icon}</span>
+                        <p>{item.name}:</p>
+                        <Link
+                            href={item.href}
+                            target="_blank"
+                            className="link link-primary"
+                        >
+                            {item.title}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+            <button>Close</button>
+        </form>
+    </dialog>
+);
 
 const HeroComponent = () => {
+    const handleShowModal = () => {
+        document.getElementById('contact_info_modal')?.showModal();
+    };
+
     return (
         <div className="pt-32 text-base-content container">
-            {/* Hero Container */}
             <div className="mx-auto bg-base-100 rounded-box p-8">
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-8">
                     {/* Profile Picture */}
@@ -20,7 +57,6 @@ const HeroComponent = () => {
                                 alt={`${userBasicInfo.fullName} headshot`}
                                 width={128}
                                 height={128}
-                                className=""
                             />
                         </div>
                     </div>
@@ -62,18 +98,6 @@ const HeroComponent = () => {
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="fa-li text-primary">
-                                        <FontAwesomeIcon icon="fa-brands fa-github" />
-                                    </span>
-                                    <Link
-                                        href={userBasicInfo.githubLink}
-                                        target="_blank"
-                                        className="link link-primary"
-                                    >
-                                        {userBasicInfo.githubUsername}
-                                    </Link>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span className="fa-li text-primary">
                                         <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                                     </span>
                                     <Link
@@ -84,26 +108,45 @@ const HeroComponent = () => {
                                         {userBasicInfo.linkedinUsername}
                                     </Link>
                                 </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="fa-li text-primary">
+                                        <FontAwesomeIcon icon="fa-solid fa-info-circle" />
+                                    </span>
+                                    <button
+                                        onClick={handleShowModal}
+                                        className="font-semibold link link-primary link-hover"
+                                    >
+                                        More Info
+                                    </button>
+                                </li>
                             </ul>
 
                             {/* Call-to-Action Button */}
-                            <div>
+                            <div className="flex flex-col gap-4">
                                 <Link
                                     href={fileSystemInfo.resumeLink}
-                                    locale={false}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn btn-primary flex items-center gap-2"
-                                    prefetch={false}
                                 >
                                     <FontAwesomeIcon icon="fa-duotone fa-file-user" />
                                     Download Resume
+                                </Link>
+                                <Link
+                                    href={userBasicInfo.bookACallLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-primary flex items-center gap-2"
+                                >
+                                    <FontAwesomeIcon icon="fa-duotone fa-headset" />
+                                    Book a Call
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <ContactInfoModal />
         </div>
     );
 };

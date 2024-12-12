@@ -4,6 +4,7 @@ import Hero from '@/components/Home/hero/hero';
 import Skills from '@/components/Home/skills/skills';
 import Contribution from '@/components/Home/contribution/contribution';
 import Education from '@/components/Home/education/education';
+import Publications from '@/components/Home/publications/publications';
 
 export const generateMetadata = async () => {
     return {
@@ -28,12 +29,13 @@ export const generateMetadata = async () => {
 
 const Home = () => {
     return (
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-6">
             <Hero />
             <Skills />
             <Contribution />
             <Employment />
             <Education />
+            <Publications />
             {/* <Contribution /> */}
             {/* <Skills /> */}
             {/* <Projects /> */}

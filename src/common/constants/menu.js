@@ -79,9 +79,9 @@ export const MENU_TABS = [
         href: '/uses',
         icon: <FontAwesomeIcon icon="fa-duotone fa-tools" />,
     },
-    {
-        title: 'Contact',
-        href: '/contact',
-        icon: <FontAwesomeIcon icon="fa-duotone fa-envelope" />,
-    },
+    // {
+    //     title: 'Contact',
+    //     href: '/contact',
+    //     icon: <FontAwesomeIcon icon="fa-duotone fa-envelope" />,
+    // },
 ];

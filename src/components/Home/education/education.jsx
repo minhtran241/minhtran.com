@@ -25,14 +25,13 @@ const getMilestones = async () => {
 };
 
 const SECTION_TITLE = 'Education';
-const SECTION_DESCRIPTION =
-    'My education has been in the field of computer science and mathematics. Here are some of the milestones in my academic career.';
+const SECTION_DESCRIPTION = '';
 
 const EducationComponent = async () => {
     const milestones = await getMilestones();
 
     return (
-        <div className="container mb-12">
+        <div className="container">
             <div className="bg-base-100 rounded-box p-8">
                 <SectionLabel
                     title={SECTION_TITLE}
