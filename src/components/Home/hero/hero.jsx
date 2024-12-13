@@ -26,7 +26,7 @@ const ContactInfoModal = () => (
                         <Link
                             href={item.href}
                             target="_blank"
-                            className="link link-primary"
+                            className="link link-primary link-hover"
                         >
                             {item.title}
                         </Link>
