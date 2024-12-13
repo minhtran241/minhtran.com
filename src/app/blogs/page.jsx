@@ -73,13 +73,24 @@ const BlogPage = async () => {
     const posts = await getPosts();
     const firstPost = posts[0];
     const otherPosts = posts.slice(1);
-    const groupedPosts = CATEGORIES.map((category) => ({
-        ...category,
-        posts: otherPosts.filter(
-            (post) =>
-                post.category.toLowerCase() === category.name.toLowerCase()
-        ),
-    }));
+    // group posts based on categories but follow order of the latest post
+    const groupedPosts = CATEGORIES.map((category) => {
+        const posts = otherPosts.filter(
+            (post) => post.category === category.name
+        );
+        return {
+            ...category,
+            posts,
+        };
+    });
+
+    const sortedGroupedPosts = groupedPosts.sort((a, b) => {
+        const latestPostA = a.posts[0];
+        const latestPostB = b.posts[0];
+        return (
+            new Date(latestPostB.created_at) - new Date(latestPostA.created_at)
+        );
+    });
 
     return (
         <>
@@ -143,7 +154,7 @@ const BlogPage = async () => {
                 </div>
                 {/* <Breakline /> */}
                 <div className="flex flex-col gap-12">
-                    {groupedPosts.map((category, index) => (
+                    {sortedGroupedPosts.map((category, index) => (
                         <div key={index}>
                             <section className="flex flex-col gap-8">
                                 <div className="flex flex-row items-center gap-2 font-bold lg:text-2xl md:text-xl sm:text-lg text-lg">

@@ -101,94 +101,98 @@ const SinglePostContent = ({ post }) => {
     return (
         <div className="container flex flex-col gap-4 py-12 mt-16">
             <Breadcrumbs breadcrumbs={BREADCRUMBS} />
-            <div className="content-center items-center justify-center">
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-full justify-center lg:w-9/12">
-                        <h1 className="font-bold text-primary  mb-3 lg:text-3xl md:text-2xl sm:text-xl text-xl">
-                            {post.title}
-                        </h1>
-                        <p className="">{createdAtText}</p>
+            <div className="container bg-base-100 text-base-content rounded-box py-8">
+                <div className="content-center items-center justify-center">
+                    <div className="flex flex-wrap justify-center">
+                        <div className="w-full justify-center lg:w-9/12">
+                            <h1 className="font-bold text-primary  mb-3 lg:text-3xl md:text-2xl sm:text-xl text-xl">
+                                {post.title}
+                            </h1>
+                            <p className="">{createdAtText}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="content-center items-center justify-center">
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-full justify-center lg:w-9/12">
-                        <div className="flex flex-wrap items-center justify-between">
-                            <PostMetadata post={post} />
-                            <div className="mb-5">
-                                <ShareButtons />
-                            </div>
-                        </div>
-                        <div className="mb-5">
-                            <Image
-                                src={post.thumbnail}
-                                alt={post.title}
-                                width={1200}
-                                height={600}
-                                // layout="responsive"
-                                className="rounded-box"
-                            />
-                        </div>
-                        <p className="mb-5 font-semibold border-b border-gray-300 pb-[20px] lg:text-base md:text-base sm:text-sm text-sm">
-                            {post.description}
-                        </p>
-                        <div className="flex flex-col gap-4">
-                            <MarkdownRender mdString={post.content} />
-                            <div className="flex flex-row gap-2">
-                                <h5 className="mb-3 font-semibold">Tags:</h5>
-                                <div className="card-actions">
-                                    {post.tags.map((tag, index) => (
-                                        <div
-                                            key={index}
-                                            className="badge badge-outline flex items-center gap-1"
-                                        >
-                                            <FontAwesomeIcon icon="fa-duotone fa-tag" />
-                                            {tag}
-                                        </div>
-                                    ))}
+                <div className="content-center items-center justify-center">
+                    <div className="flex flex-wrap justify-center">
+                        <div className="w-full justify-center lg:w-9/12">
+                            <div className="flex flex-wrap items-center justify-between">
+                                <PostMetadata post={post} />
+                                <div className="mb-5">
+                                    <ShareButtons />
                                 </div>
                             </div>
-                            {/* Prev and Next cards */}
-                            <div className="justify-between grid grid-cols-1 gap-8 md:grid-cols-2">
-                                {post.prev && (
-                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary  transition duration-300">
-                                        <p className="text-sm text-gray-500">
-                                            Older Blog
-                                        </p>
-                                        <Link
-                                            href={`/blogs/${post.prev.slug}`}
-                                            className="flex items-center gap-4 text-primary  font-semibold"
-                                        >
-                                            <FontAwesomeIcon icon="fa-duotone fa-chevrons-left" />
-                                            {post.prev.title.length > 100
-                                                ? post.prev.title.slice(
-                                                      0,
-                                                      100
-                                                  ) + '...'
-                                                : post.prev.title}
-                                        </Link>
+                            <div className="mb-5">
+                                <Image
+                                    src={post.thumbnail}
+                                    alt={post.title}
+                                    width={1200}
+                                    height={600}
+                                    // layout="responsive"
+                                    className="rounded-box"
+                                />
+                            </div>
+                            <p className="mb-5 font-semibold border-b border-gray-300 pb-[20px] lg:text-base md:text-base sm:text-sm text-sm">
+                                {post.description}
+                            </p>
+                            <div className="flex flex-col gap-4">
+                                <MarkdownRender mdString={post.content} />
+                                <div className="flex flex-row gap-2">
+                                    <h5 className="mb-3 font-semibold">
+                                        Tags:
+                                    </h5>
+                                    <div className="card-actions">
+                                        {post.tags.map((tag, index) => (
+                                            <div
+                                                key={index}
+                                                className="badge badge-outline flex items-center gap-1"
+                                            >
+                                                <FontAwesomeIcon icon="fa-duotone fa-tag" />
+                                                {tag}
+                                            </div>
+                                        ))}
                                     </div>
-                                )}
-                                {post.next && (
-                                    <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary  transition duration-300">
-                                        <p className="text-sm text-right text-gray-500">
-                                            Newer Blog
-                                        </p>
-                                        <Link
-                                            href={`/blogs/${post.next.slug}`}
-                                            className="flex items-center gap-4 text-primary font-semibold text-right"
-                                        >
-                                            {post.next.title.length > 100
-                                                ? post.next.title.slice(
-                                                      0,
-                                                      100
-                                                  ) + '...'
-                                                : post.next.title}{' '}
-                                            <FontAwesomeIcon icon="fa-duotone fa-chevrons-right" />
-                                        </Link>
-                                    </div>
-                                )}
+                                </div>
+                                {/* Prev and Next cards */}
+                                <div className="justify-between grid grid-cols-1 gap-8 md:grid-cols-2">
+                                    {post.prev && (
+                                        <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary  transition duration-300">
+                                            <p className="text-sm text-gray-500">
+                                                Older Blog
+                                            </p>
+                                            <Link
+                                                href={`/blogs/${post.prev.slug}`}
+                                                className="flex items-center gap-4 text-primary  font-semibold"
+                                            >
+                                                <FontAwesomeIcon icon="fa-duotone fa-chevrons-left" />
+                                                {post.prev.title.length > 100
+                                                    ? post.prev.title.slice(
+                                                          0,
+                                                          100
+                                                      ) + '...'
+                                                    : post.prev.title}
+                                            </Link>
+                                        </div>
+                                    )}
+                                    {post.next && (
+                                        <div className="flex flex-col gap-1 border p-4 rounded-box hover:border-primary  transition duration-300">
+                                            <p className="text-sm text-right text-gray-500">
+                                                Newer Blog
+                                            </p>
+                                            <Link
+                                                href={`/blogs/${post.next.slug}`}
+                                                className="flex items-center gap-4 text-primary font-semibold text-right"
+                                            >
+                                                {post.next.title.length > 100
+                                                    ? post.next.title.slice(
+                                                          0,
+                                                          100
+                                                      ) + '...'
+                                                    : post.next.title}{' '}
+                                                <FontAwesomeIcon icon="fa-duotone fa-chevrons-right" />
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
