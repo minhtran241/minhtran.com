@@ -29,7 +29,7 @@ const SECTION_DESCRIPTION = '';
 // Helper: Render Collaborators
 const renderCollaborators = (collaborators) => (
     <p className="text-sm flex flex-wrap gap-2 items-center">
-        <FontAwesomeIcon icon="fa-solid fa-users" className="text-primary" />
+        <FontAwesomeIcon icon="fa-duotone fa-users" className="text-primary" />
         {collaborators.map((collaborator, index) => (
             <span key={index}>
                 <Link
