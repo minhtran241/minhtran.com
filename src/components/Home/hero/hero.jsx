@@ -129,7 +129,7 @@ const HeroComponent = () => {
                                     rel="noopener noreferrer"
                                     className="btn btn-primary flex items-center gap-2"
                                 >
-                                    <FontAwesomeIcon icon="fa-duotone fa-file-user" />
+                                    <FontAwesomeIcon icon="fa-solid fa-file-user" />
                                     Download Resume
                                 </Link>
                                 <Link
@@ -138,7 +138,7 @@ const HeroComponent = () => {
                                     rel="noopener noreferrer"
                                     className="btn btn-primary flex items-center gap-2"
                                 >
-                                    <FontAwesomeIcon icon="fa-duotone fa-headset" />
+                                    <FontAwesomeIcon icon="fa-solid fa-headset" />
                                     Book a Call
                                 </Link>
                             </div>
