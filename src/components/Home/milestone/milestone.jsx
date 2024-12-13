@@ -51,7 +51,7 @@ const Milestone = ({ milestone }) => {
         <Link
             href={milestone.link}
             target="_blank"
-            className="flex flex-col md:flex-row items-start gap-4 p-4 hover:bg-base-100 rounded-r-box transition-colors duration-300"
+            className="flex flex-col md:flex-row items-start gap-4 p-4 hover:bg-base-200 rounded-r-box transition-colors duration-300"
         >
             {/* Company Avatar */}
             {milestone.logo && (
