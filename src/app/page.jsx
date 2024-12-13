@@ -33,9 +33,10 @@ const Home = () => {
             <Hero />
             <Skills />
             <Contribution />
+            <Publications />
             <Employment />
             <Education />
-            <Publications />
+            {/* <Publications /> */}
             {/* <Contribution /> */}
             {/* <Skills /> */}
             {/* <Projects /> */}

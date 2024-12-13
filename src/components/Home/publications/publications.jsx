@@ -23,18 +23,19 @@ const getMilestones = async () => {
 };
 
 // Constants
-const SECTION_TITLE = 'Publications';
+const SECTION_TITLE = 'Research Work';
 const SECTION_DESCRIPTION = '';
 
 // Helper: Render Collaborators
 const renderCollaborators = (collaborators) => (
-    <p className="text-sm flex items-center gap-2">
+    <p className="text-sm flex flex-wrap gap-2 items-center">
         <FontAwesomeIcon icon="fa-solid fa-users" className="text-primary" />
         {collaborators.map((collaborator, index) => (
             <span key={index}>
                 <Link
                     href={collaborator.link}
                     className="link link-primary link-hover"
+                    target="_blank"
                 >
                     {collaborator.name}
                 </Link>
@@ -58,23 +59,25 @@ const Publications = async () => {
     const milestones = await getMilestones();
 
     return (
-        <div className="container">
-            <div className="bg-base-100 rounded-box p-8">
+        <div className="container mx-auto px-4">
+            <div className="bg-base-100 rounded-box shadow-lg p-6 md:p-8">
                 <SectionLabel
                     title={SECTION_TITLE}
                     description={SECTION_DESCRIPTION}
-                    icon=<FontAwesomeIcon
-                        icon="fa-duotone fa-newspaper"
-                        className="text-primary"
-                    />
+                    icon={
+                        <FontAwesomeIcon
+                            icon="fa-duotone fa-newspaper"
+                            className="text-primary"
+                        />
+                    }
                 />
-                <ul className="flex flex-col border-l-2 border-primary list-none p-0">
+                <ul className="flex flex-col gap-6 list-none mt-4">
                     {milestones.map((milestone) => (
-                        <li
+                        <article
                             key={milestone.id}
-                            className="flex flex-col md:flex-row items-start gap-4 p-4"
+                            className="border-l-4 border-primary p-4 bg-base-200 rounded-md"
                         >
-                            <div className="flex flex-col flex-1 gap-2">
+                            <div className="flex flex-col gap-2">
                                 {/* Publication Date */}
                                 <time
                                     className="text-sm text-primary font-semibold"
@@ -91,16 +94,12 @@ const Publications = async () => {
                                 </time>
 
                                 {/* Title and status badge */}
-                                <div className="flex items-center gap-2">
+                                <div className="flex flex-wrap items-center gap-2">
                                     <h1 className="text-lg font-bold">
-                                        {/* <FontAwesomeIcon
-                                            icon="fa-solid fa-circle-check"
-                                            className="text-primary"
-                                        /> */}
                                         {milestone.title}
                                     </h1>
                                     {milestone.status && (
-                                        <span className="badge badge-sm badge-primary">
+                                        <span className="badge badge-primary">
                                             {milestone.status}
                                         </span>
                                     )}
@@ -138,8 +137,8 @@ const Publications = async () => {
                                 {/* DOI */}
                                 {milestone.doi && renderDOI(milestone.doi)}
 
-                                {/* Paper Link and Source Code: */}
-                                <div className="flex flex-row gap-2 text-sm">
+                                {/* Links: Paper & Source Code */}
+                                <div className="flex flex-wrap gap-2 mt-2">
                                     {milestone.paper_link && (
                                         <Link
                                             href={milestone.paper_link}
@@ -160,7 +159,7 @@ const Publications = async () => {
                                     )}
                                 </div>
                             </div>
-                        </li>
+                        </article>
                     ))}
                 </ul>
             </div>

@@ -85,7 +85,8 @@ const Milestone = ({ milestone }) => {
                 </p>
 
                 {/* Address */}
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 flex items-center gap-2">
+                    <FontAwesomeIcon icon="fa-solid fa-map-marker-alt" />
                     {milestone.location}{' '}
                     {milestone.location_type
                         ? `· ${milestone.location_type}`
@@ -94,7 +95,9 @@ const Milestone = ({ milestone }) => {
 
                 {/* Grade */}
                 {milestone.grade && (
-                    <p className="text-sm">Grade: {milestone.grade}</p>
+                    <p className="text-sm">
+                        <strong>Grade:</strong> {milestone.grade}
+                    </p>
                 )}
 
                 {/* Description */}

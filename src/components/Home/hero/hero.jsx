@@ -46,7 +46,7 @@ const HeroComponent = () => {
     };
 
     return (
-        <div className="pt-28 text-base-content container">
+        <div className="pt-26 text-base-content container">
             <div className="mx-auto bg-base-100 rounded-box p-8">
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-8">
                     {/* Profile Picture */}
@@ -81,7 +81,7 @@ const HeroComponent = () => {
                             <ul className="fa-ul space-y-2">
                                 <li className="flex items-center gap-2">
                                     <span className="fa-li text-primary">
-                                        <FontAwesomeIcon icon="fa-solid fa-location-arrow" />
+                                        <FontAwesomeIcon icon="fa-solid fa-map-marker-alt" />
                                     </span>
                                     Grand Rapids, MI, USA
                                 </li>
