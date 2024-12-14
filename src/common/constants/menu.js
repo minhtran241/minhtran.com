@@ -30,7 +30,7 @@ export const SOCIAL_MEDIA = [
     },
     {
         name: 'Instagram',
-        title: userBasicInfo.instagramUsername,
+        title: `@${userBasicInfo.instagramUsername}`,
         href: userBasicInfo.instagramLink,
         type: 's', // social only
         icon: <FontAwesomeIcon icon="fa-brands fa-instagram" />,

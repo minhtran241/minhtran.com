@@ -19,6 +19,7 @@ import swift from 'react-syntax-highlighter/dist/cjs/languages/prism/swift';
 import java from 'react-syntax-highlighter/dist/cjs/languages/prism/java';
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml';
 import sql from 'react-syntax-highlighter/dist/cjs/languages/prism/sql';
+import c from 'react-syntax-highlighter/dist/cjs/languages/prism/c';
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import React from 'react';
@@ -38,6 +39,7 @@ SyntaxHighlighter.registerLanguage('swift', swift);
 SyntaxHighlighter.registerLanguage('java', java);
 SyntaxHighlighter.registerLanguage('yml', yaml);
 SyntaxHighlighter.registerLanguage('sql', sql);
+SyntaxHighlighter.registerLanguage('c', c);
 
 const MarkdownRender = ({ mdString }) => (
     <Suspense fallback={<Loading />}>
@@ -54,7 +56,7 @@ const MarkdownRender = ({ mdString }) => (
                         const [copyTip, setCopyTip] = useState('Copy code');
 
                         const language =
-                            pre.children[0]?.props.className.replace(
+                            pre.children?.props?.className?.replace(
                                 /language-/g,
                                 ''
                             );
@@ -78,7 +80,7 @@ const MarkdownRender = ({ mdString }) => (
                                             }, 2000);
                                         }}
                                     >
-                                        <div className="text-gray-300/40 hover:text-gray-200">
+                                        <div className="text-white hover:text-gray-200">
                                             <FontAwesomeIcon icon="fa-duotone fa-copy" />
                                         </div>
                                     </CopyToClipboard>
@@ -88,7 +90,7 @@ const MarkdownRender = ({ mdString }) => (
                                         bottom: 0,
                                         right: 0,
                                     }}
-                                    className="absolute z-40 mb-5 rounded mr-2 text-base-content bg-gray-300/40 text-xs uppercase backdrop-blur-sm p-1"
+                                    className="absolute z-40 mb-5 rounded mr-2 text-white bg-gray-300/40 text-xs uppercase backdrop-blur-sm p-1"
                                 >
                                     {language}
                                 </span>
