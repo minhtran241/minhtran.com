@@ -32,7 +32,7 @@ const EducationComponent = async () => {
 
     return (
         <div className="container">
-            <div className="bg-base-100 rounded-box p-8">
+            <div className="bg-base-100 rounded-box p-8 shadow-lg">
                 <SectionLabel
                     title={SECTION_TITLE}
                     description={SECTION_DESCRIPTION}

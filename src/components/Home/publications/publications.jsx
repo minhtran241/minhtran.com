@@ -99,7 +99,7 @@ const Publications = async () => {
                                         {milestone.title}
                                     </h1>
                                     {milestone.status && (
-                                        <span className="badge badge-primary">
+                                        <span className="badge badge-primary badge-outline uppercase">
                                             {milestone.status}
                                         </span>
                                     )}

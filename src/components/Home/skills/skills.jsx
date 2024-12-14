@@ -89,7 +89,7 @@ const SkillsList = async () => {
 
     return (
         <div className="container text-base-content items-center justify-center">
-            <div className="bg-base-100 rounded-box mx-auto p-8">
+            <div className="bg-base-100 rounded-box mx-auto p-8 shadow-lg">
                 <SectionLabel
                     title="Worked with"
                     description="I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies."

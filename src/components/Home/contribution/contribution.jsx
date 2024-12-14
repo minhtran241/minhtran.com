@@ -31,7 +31,7 @@ const Contribution = () => {
 
     return (
         <div className="container items-center justify-center">
-            <div className="bg-base-100 rounded-box p-8">
+            <div className="bg-base-100 rounded-box p-8 shadow-lg">
                 <SectionLabel
                     title={sectionTitle}
                     description={sectionDescription}

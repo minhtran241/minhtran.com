@@ -50,7 +50,7 @@ const HeroComponent = () => {
 
     return (
         <div className="pt-28 text-base-content container mx-auto">
-            <div className="bg-base-100 rounded-box p-8">
+            <div className="bg-base-100 rounded-box p-4 shadow-lg">
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-10">
                     {/* Profile Picture */}
                     <div className="avatar">
@@ -86,43 +86,41 @@ const HeroComponent = () => {
                             {/* Contact Details */}
                             <ul className="fa-ul space-y-3">
                                 <li className="flex items-center gap-3">
-                                    <span className="fa-li text-primary">
+                                    <span className="fa-li">
                                         <FontAwesomeIcon icon="fa-solid fa-map-marker-alt" />
                                     </span>
-                                    <span className="font-medium">
-                                        Grand Rapids, MI, USA
-                                    </span>
+                                    <span>Grand Rapids, MI, USA</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="fa-li text-primary">
+                                    <span className="fa-li">
                                         <FontAwesomeIcon icon="fa-solid fa-envelope" />
                                     </span>
                                     <Link
                                         href={`mailto:${userBasicInfo.email}`}
-                                        className="link link-primary"
+                                        className="link link-primary link-hover"
                                     >
                                         {userBasicInfo.email}
                                     </Link>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="fa-li text-primary">
+                                    <span className="fa-li">
                                         <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                                     </span>
                                     <Link
                                         href={userBasicInfo.linkedinLink}
                                         target="_blank"
-                                        className="link link-primary"
+                                        className="link link-primary link-hover"
                                     >
                                         {userBasicInfo.linkedinUsername}
                                     </Link>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="fa-li text-primary">
+                                    <span className="fa-li">
                                         <FontAwesomeIcon icon="fa-solid fa-info-circle" />
                                     </span>
                                     <button
                                         onClick={handleShowModal}
-                                        className="link link-primary link-hover font-semibold"
+                                        className="link link-primary link-hover font-medium"
                                     >
                                         More Info
                                     </button>
@@ -137,7 +135,7 @@ const HeroComponent = () => {
                                     rel="noopener noreferrer"
                                     className="btn btn-primary btn-md flex items-center gap-2"
                                 >
-                                    <FontAwesomeIcon icon="fa-solid fa-file-user" />
+                                    <FontAwesomeIcon icon="fa-solid fa-file-pdf" />
                                     Download Resume
                                 </Link>
                                 <Link

@@ -105,7 +105,7 @@ const Milestone = ({ milestone }) => {
                     {paragraphs.map((p, index) => (
                         <li key={index} className="flex items-start gap-2">
                             <span className="fa-li text-primary">
-                                <FontAwesomeIcon icon="fa-solid fa-check" />
+                                <FontAwesomeIcon icon="fa-duotone fa-circle-check" />
                             </span>
                             <p className="text-sm">{p.trim()}.</p>
                         </li>
