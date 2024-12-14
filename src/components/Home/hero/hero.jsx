@@ -50,7 +50,7 @@ const HeroComponent = () => {
 
     return (
         <div className="pt-28 text-base-content container mx-auto">
-            <div className="bg-base-100 shadow-lg rounded-box p-8">
+            <div className="bg-base-100 rounded-box p-8">
                 <div className="hero-content flex flex-col lg:flex-row items-center gap-10">
                     {/* Profile Picture */}
                     <div className="avatar">

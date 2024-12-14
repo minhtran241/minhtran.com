@@ -21,7 +21,7 @@ export const SOCIAL_MEDIA = [
         className: '!bg-gradient-to-r from-[#0077B5] to-[#00A0DC] border',
     },
     {
-        name: 'Twitter',
+        name: 'X',
         title: userBasicInfo.twitterUsername,
         href: userBasicInfo.twitterLink,
         type: 's', // social only
