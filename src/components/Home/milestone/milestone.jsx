@@ -30,7 +30,7 @@ const calculateDuration = (startDate, endDate) => {
 
 // Helper function to split description into paragraphs
 const getParagraphs = (description) =>
-    description.split('.').filter((p) => p.trim().length > 0);
+    description.split('#').filter((p) => p.trim().length > 0);
 
 const Milestone = ({ milestone }) => {
     if (!milestone) return null;
@@ -107,7 +107,7 @@ const Milestone = ({ milestone }) => {
                             <span className="fa-li text-primary">
                                 <FontAwesomeIcon icon="fa-duotone fa-circle-check" />
                             </span>
-                            <p className="text-sm">{p.trim()}.</p>
+                            <p className="text-sm">{p.trim()}</p>
                         </li>
                     ))}
                 </ul>

@@ -123,7 +123,7 @@ const HeroComponent = () => {
                                         onClick={handleShowModal}
                                         className="link link-primary link-hover font-medium"
                                     >
-                                        More Info
+                                        Contact info
                                     </button>
                                 </li>
                             </ul>
