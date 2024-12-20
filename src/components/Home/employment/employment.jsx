@@ -19,7 +19,7 @@ const getMilestones = async () => {
     );
     const milestones = JSON.parse(milestonesData);
     const sortedMilestones = milestones.sort((a, b) => {
-        return new Date(b.start_date) - new Date(a.start_date);
+        return new Date(b.end_date) - new Date(a.end_date);
     });
     return sortedMilestones;
 };
