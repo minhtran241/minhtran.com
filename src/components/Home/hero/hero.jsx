@@ -8,6 +8,7 @@ import { fileSystemInfo } from '@/common/constants/fileSystem';
 import FontAwesomeIcon from '@/common/elements/FontAwesomeIcon';
 import Loading from '@/app/loading';
 import { SOCIAL_MEDIA } from '@/common/constants/menu';
+// import ResumeViewer from './resumeViewer';
 
 const ContactInfoModal = () => (
     <dialog id="contact_info_modal" className="modal">
@@ -138,6 +139,7 @@ const HeroComponent = () => {
                                     <FontAwesomeIcon icon="fa-solid fa-file-pdf" />
                                     Download Resume
                                 </Link>
+                                {/* <ResumeViewer /> */}
                                 <Link
                                     href={userBasicInfo.bookACallLink}
                                     target="_blank"

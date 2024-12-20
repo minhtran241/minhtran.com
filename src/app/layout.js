@@ -188,10 +188,12 @@ export default function RootLayout({ children }) {
                 <link rel="preload" href="/memoji/memojihello.png" as="image" />
             </head>
             <body
-                className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh bg-base-300`}
+                className={`${MazzardH.variable} ${MazzardL.variable} ${MazzardM.variable} font-mazzardh bg-base-300 scroll-smooth`}
             >
                 <Navbar />
-                {children}
+                <main className="container mx-auto px-4 sm:px-8 py-6">
+                    {children}
+                </main>
                 <LLMChat />
                 <SpeedInsights />
                 <Analytics />
