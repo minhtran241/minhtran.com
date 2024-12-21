@@ -48,6 +48,7 @@ const CodingActiveList = ({ data }) => {
 
     const actives = [
         {
+            icon: <FontAwesomeIcon icon="fa-duotone fa-solid fa-code" />,
             title: 'Languages',
             total: getLanguagesTotalTimeDisplay,
             data: data?.languages,
@@ -56,6 +57,7 @@ const CodingActiveList = ({ data }) => {
             },
         },
         {
+            icon: <FontAwesomeIcon icon="fa-duotone fa-solid fa-laptop" />,
             title: 'Categories',
             total: getEditorTotalTimeDisplay,
             data: data?.categories,
@@ -84,8 +86,7 @@ const CodingActiveList = ({ data }) => {
                     )}
                 >
                     <p className="card-title lg:text-lg text-base">
-                        <FontAwesomeIcon icon="fa-duotone fa-solid fa-bars-progress" />{' '}
-                        {item?.title}
+                        {item?.icon} {item?.title}
                     </p>
                     <p className="text-sm">Last updated {distance}</p>
                     <ul className="flex flex-col gap-1 py-3">

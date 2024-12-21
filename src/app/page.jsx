@@ -32,8 +32,8 @@ const Home = () => {
         <div className="flex flex-col gap-6">
             <Hero />
             <Skills />
-            <Contribution />
             <Publications />
+            <Contribution />
             <Employment />
             <Education />
             {/* <Publications /> */}

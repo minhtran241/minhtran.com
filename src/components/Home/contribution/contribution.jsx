@@ -27,7 +27,7 @@ const Contribution = () => {
     const wkData = useSWR(`${BASE_URL}/api/wakatime`, fetcher)?.data;
 
     const sectionTitle = 'Contribution Stats';
-    const sectionDescription = `Here are some stats about my contribution monitored by WakaTime and GitHub. I have made a total of ${ghData?.user?.contributionsCollection?.contributionCalendar?.totalContributions} commits across ${ghData?.user?.repositories?.totalCount} public repositories.`;
+    const sectionDescription = `Total of ${ghData?.user?.contributionsCollection?.contributionCalendar?.totalContributions} commits across ${ghData?.user?.repositories?.totalCount} public repositories.`;
 
     return (
         <div className="container items-center justify-center">

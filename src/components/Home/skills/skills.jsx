@@ -92,7 +92,7 @@ const SkillsList = async () => {
             <div className="bg-base-100 rounded-box mx-auto p-8 shadow-lg">
                 <SectionLabel
                     title="Worked with"
-                    description="I have experience working with these technologies and tools. I am always open to learning new things and working with new technologies."
+                    description=""
                     icon={<FontAwesomeIcon icon="fa-duotone fa-gear-code" />}
                 />
                 <div className="py-4 sm:py-6 rounded-box border border-gray-200 dark:border-gray-800 overflow-x-auto">
